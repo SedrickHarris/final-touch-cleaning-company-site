@@ -920,3 +920,55 @@ PASS
 #### Remaining TODOs
 - TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from FAQ hub (same as homepage — restore when pages ship)
 - TODO-BATCH-3/4: service and city page links could be added to relevant FAQ category footers once those pages ship
+
+
+### Batch 2 Rebuild — Free Quote (/free-quote) + Contact (/contact) — Level 4 Conversion
+Status: Committed
+Date: 2026-05-18
+
+#### Routing
+- Page type: Free Quote + Contact
+- Page value: High
+- AI depth selected: Level 4 Conversion
+- Prompt A used: conversion-page-research-prompt.md (both pages researched together)
+- Prompt B used: conversion-page-implementation-prompt.md (each page implemented separately)
+
+#### Content Gaps Fixed — /free-quote
+1. Metadata title: bare "Free Quote" -> "Request a Free Cleaning Quote | Final Touch | Las Vegas, NV" (57 chars)
+2. Meta description: no phone -> 151 chars with Las Vegas + Clark County + phone
+3. openGraph block: absent -> added
+4. Hero heading: generic "Tell us about your space" -> search-intent headline with Las Vegas + Clark County
+5. "How fast will I hear back?" FAQ: evasive answer -> honest routing to phone/email with form-status disclosure
+6. Internal links: 0 -> 3 live links (/services in What to include, /locations on city bullet, /faq below accordion)
+
+#### Content Gaps Fixed — /contact
+1. Metadata title: bare "Contact" -> "Contact Final Touch Cleaning Company | Las Vegas, NV" (54 chars)
+2. Meta description: no phone in correct position -> 149 chars with phone prominent
+3. openGraph block: absent -> added
+4. Hero heading: "Talk to a real person" -> "Get in touch with Final Touch Cleaning Company"
+5. Step 4 of "What happens next": brand-voice filler -> real process step ("We do the job and follow up")
+6. New FAQ: "What services does Final Touch offer?" -> routes to services + walkthrough
+7. New FAQ: "Is Final Touch a local company or a franchise?" -> owner names, family-owned, not a call center
+8. Internal links: 1 (/locations tile) -> 3 live links (/services in What to include, /locations tile, /faq below accordion)
+
+#### FAQ Counts
+- /free-quote: 10 (unchanged count, 1 answer rewritten)
+- /contact: 10 (was 8, +2 new FAQs)
+
+#### Files Changed
+- app/free-quote/page.tsx
+- app/contact/page.tsx
+
+#### Validation Results
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+- CTA greps — passed
+
+#### Pass/Fail Gate Result
+PASS
+
+#### Remaining TODOs
+- TODO-BATCH-2: QuoteFormPlaceholder still needs real form endpoint wiring on both pages
+- TODO-VERIFY: business hours on /contact still pending owner confirmation
+- TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from either page

@@ -1,14 +1,24 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import FAQSection from '@/components/shared/FAQSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: `Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request. ${SITE.name} serves ${SITE.serviceArea.county}, ${SITE.serviceArea.state}.`,
+  title: 'Contact Final Touch Cleaning Company | Las Vegas, NV',
+  description:
+    'Call (702) 444-5077, email info@finaltouchcleaningteam.com, or send a quote request. Final Touch serves Las Vegas, Henderson, and Clark County, NV.',
   alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact Final Touch Cleaning Company | Clark County, NV',
+    description:
+      'Call, email, or send a quote request. Scott & Nicole Maland own and run Final Touch, a family-owned cleaning company based in Southern Nevada.',
+    type: 'website',
+    url: `${SITE.url}/contact`,
+  },
 };
 
 const faq = [
@@ -34,7 +44,7 @@ const faq = [
   },
   {
     q: 'Are your online forms active yet?',
-    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We are wiring the form to our scheduling system shortly.`,
   },
   {
     q: 'What should I do if I am not sure which service I need?',
@@ -42,7 +52,15 @@ const faq = [
   },
   {
     q: 'What are your business hours?',
-    a: `Call ${SITE.phone.display} or email ${SITE.email.display} and we'll get back to you. Specific business hours will be posted here once we've confirmed our published schedule.`,
+    a: `Call ${SITE.phone.display} or email ${SITE.email.display} and we will get back to you. Specific business hours will be posted here once we have confirmed our published schedule.`,
+  },
+  {
+    q: 'What services does Final Touch offer?',
+    a: `Seven core services: commercial and office cleaning, janitorial routes, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Not sure which fits your job? Tell us what triggered the request and we will match it on the walkthrough.`,
+  },
+  {
+    q: 'Is Final Touch a local company or a franchise?',
+    a: `${SITE.owners} own and run Final Touch. It is a family-run cleaning company based in Southern Nevada, not a franchise or a staffing platform. When you call, you reach the owners or the team, not a call center.`,
   },
 ];
 
@@ -81,7 +99,6 @@ const faqJsonLd = {
 
 // TODO-VERIFY: business hours of operation. Until confirmed, the page does
 // not claim specific hours. Phone and email are always-listed channels.
-// Owners respond when available.
 
 function ContactTile({
   label,
@@ -116,7 +133,7 @@ export default function ContactPage() {
     <>
       <HeroSection
         eyebrow="Contact"
-        heading="Talk to a real person."
+        heading="Get in touch with Final Touch Cleaning Company."
         sub={`Call, email, or send a quote request. We serve every part of ${SITE.serviceArea.county}, Nevada. The phone is answered by the owners or the team, not a call center.`}
         primaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         secondaryCta={{ label: 'Email us', href: SITE.email.href }}
@@ -146,7 +163,7 @@ export default function ContactPage() {
             <ContactTile
               label="Service area"
               value={`${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`}
-              href="/locations"
+              href={ROUTES.locations}
             />
           </div>
           <p className="mt-6 text-sm text-muted">
@@ -165,7 +182,13 @@ export default function ContactPage() {
           <ul className="mt-8 space-y-3 text-base text-brand-black">
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>Type of space: home, office, retail, post-construction, vacation rental.</span>
+              <span>
+                Type of space: home, office, retail, post-construction, vacation rental. Not sure which service fits?{' '}
+                <Link href={ROUTES.services} className="text-brand-blue font-semibold hover:underline">
+                  See all our cleaning services
+                </Link>
+                .
+              </span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
@@ -181,7 +204,7 @@ export default function ContactPage() {
             </li>
           </ul>
           <p className="mt-6 text-sm text-muted">
-            None of this is required. We&apos;ll cover what&apos;s missing on the walkthrough.
+            None of this is required. We will cover what is missing on the walkthrough.
           </p>
         </div>
       </section>
@@ -203,19 +226,17 @@ export default function ContactPage() {
               {
                 step: '02',
                 title: 'We schedule a walkthrough',
-                body:
-                  'A short conversation about the space, phone or on-site, whichever fits the job.',
+                body: 'A short conversation about the space, phone or on-site, whichever fits the job.',
               },
               {
                 step: '03',
                 title: 'You get a real quote',
-                body:
-                  'A real number for the work, not a templated rate. No pressure to book.',
+                body: 'A real number for the work, not a templated rate. No pressure to book.',
               },
               {
                 step: '04',
-                title: 'We do the job',
-                body: 'Same team, same standard, every corner finished.',
+                title: 'We do the job and follow up',
+                body: 'Same team, same finishing standard. If anything needs attention after the job, we want to know.',
               },
             ].map((item) => (
               <li
@@ -243,6 +264,18 @@ export default function ContactPage() {
       </section>
 
       <FAQSection items={faq} heading="Common questions about reaching us" defaultOpenFirst />
+
+      {/* /faq link - surfaces the full FAQ hub */}
+      <div className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 text-center">
+          <p className="text-sm text-muted">
+            More questions?{' '}
+            <Link href={ROUTES.faq} className="font-semibold text-brand-blue hover:underline">
+              Read all frequently asked questions →
+            </Link>
+          </p>
+        </div>
+      </div>
 
       <script
         type="application/ld+json"
