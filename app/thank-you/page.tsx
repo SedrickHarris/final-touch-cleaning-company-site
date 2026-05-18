@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Thanks for reaching out',
   description: `Thanks for contacting ${SITE.name}. We'll be in touch shortly.`,
   alternates: { canonical: '/thank-you' },
-  // Thank-you pages should not be indexed — they are confirmation surfaces
+  // Thank-you pages should not be indexed. They are confirmation surfaces
   // reached only after a successful form submission.
   robots: { index: false, follow: true },
 };
@@ -38,7 +38,7 @@ export default function ThankYouPage() {
             </li>
             <li className="flex gap-2.5">
               <span aria-hidden="true" className="text-brand-blue">•</span>
-              You get a real quote after the walkthrough — no templated rates.
+              You get a real quote after the walkthrough. No templated rates.
             </li>
             <li className="flex gap-2.5">
               <span aria-hidden="true" className="text-brand-blue">•</span>
@@ -57,13 +57,13 @@ export default function ThankYouPage() {
         <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href={ROUTES.home}
-            className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-6 py-3.5 text-base font-semibold text-brand-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
+            className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-6 py-3.5 text-base font-semibold text-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
           >
             Back to home
           </Link>
           <Link
             href={ROUTES.services}
-            className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-6 py-3.5 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-brand-white transition-colors min-h-[48px]"
+            className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-6 py-3.5 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-white transition-colors min-h-[48px]"
           >
             See our services
           </Link>

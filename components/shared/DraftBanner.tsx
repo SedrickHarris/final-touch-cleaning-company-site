@@ -2,11 +2,11 @@ type Props = {
   message?: string;
 };
 
-// Used at the top of legal pages whose copy is placeholder pending
-// owner-approved legal review. Per Batch 2 spec — visible banner on
-// /privacy-policy, /terms-of-service, /cookie-policy.
+// Visible banner at the top of legal pages whose copy is placeholder pending
+// owner-approved legal review. Per Batch 2 spec, used on /privacy-policy,
+// /terms-of-service, /cookie-policy.
 export default function DraftBanner({
-  message = 'Draft — pending legal review. Do not publish as final.',
+  message = 'Draft: pending legal review. Do not publish as final.',
 }: Props) {
   return (
     <div

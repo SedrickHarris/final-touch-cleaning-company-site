@@ -17,20 +17,28 @@ const faq = [
     a: `Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request through the form. We answer phone calls from real people, not a call center.`,
   },
   {
+    q: 'Can I call instead of using the form?',
+    a: `Yes. Calling ${SITE.phone.display} is often the fastest way to reach us. The phone is answered by ${SITE.owners} or someone on the team.`,
+  },
+  {
     q: 'What information should I have ready?',
-    a: 'It helps to know the type of space (home, office, retail, post-construction), rough square footage, the city or neighborhood, and timing. None of it is required — we can walk through it on the call.',
+    a: 'It helps to know the type of space (home, office, retail, post-construction), rough square footage, the city or neighborhood, and timing. None of it is required. We can walk through it on the call.',
   },
   {
     q: 'What happens after I send a quote request?',
-    a: 'We respond to set up a short walkthrough — usually a phone call or a brief on-site visit if the job calls for it. After the walkthrough you get a real quote, not a templated rate.',
+    a: 'We respond to set up a short walkthrough, usually a phone call or a brief on-site visit if the job calls for it. After the walkthrough you get a real quote, not a templated rate.',
   },
   {
     q: 'Where do you work?',
-    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
+    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
   },
   {
     q: 'Are your online forms active yet?',
     a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+  },
+  {
+    q: 'What should I do if I am not sure which service I need?',
+    a: 'Tell us what triggered the request: moving in, finishing a build, opening a store, resetting a space. We will match it to the right service during the walkthrough. There is no charge for that conversation.',
   },
   {
     q: 'What are your business hours?',
@@ -38,8 +46,9 @@ const faq = [
   },
 ];
 
-// Organization schema with contactPoint. Service-area-only — no street address.
-// TODO-VERIFY: business hours (openingHours). Add only after owner confirms.
+// Organization schema with contactPoint. Service-area-only, no street
+// address. TODO-VERIFY: business hours (openingHours). Add only after owner
+// confirms.
 const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -70,9 +79,9 @@ const faqJsonLd = {
   })),
 };
 
-// TODO-VERIFY: business hours of operation. Until confirmed, the page does not
-// claim specific hours. Phone and email are always-listed channels; owners
-// respond when available.
+// TODO-VERIFY: business hours of operation. Until confirmed, the page does
+// not claim specific hours. Phone and email are always-listed channels.
+// Owners respond when available.
 
 function ContactTile({
   label,
@@ -108,7 +117,7 @@ export default function ContactPage() {
       <HeroSection
         eyebrow="Contact"
         heading="Talk to a real person."
-        sub={`Call, email, or send a quote request. We serve every part of ${SITE.serviceArea.county}, Nevada — and the phone is answered by the owners or the team, not a call center.`}
+        sub={`Call, email, or send a quote request. We serve every part of ${SITE.serviceArea.county}, Nevada. The phone is answered by the owners or the team, not a call center.`}
         primaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         secondaryCta={{ label: 'Email us', href: SITE.email.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -156,7 +165,7 @@ export default function ContactPage() {
           <ul className="mt-8 space-y-3 text-base text-brand-black">
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>Type of space — home, office, retail, post-construction, vacation rental.</span>
+              <span>Type of space: home, office, retail, post-construction, vacation rental.</span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
@@ -164,11 +173,11 @@ export default function ContactPage() {
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>Rough size and timing — one-time, recurring, or move-in/move-out tied.</span>
+              <span>Rough size and timing: one-time, recurring, or move-in/move-out tied.</span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>Anything specific — pets, post-construction dust, hard-water buildup, access notes.</span>
+              <span>Anything specific: pets, post-construction dust, hard-water buildup, access notes.</span>
             </li>
           </ul>
           <p className="mt-6 text-sm text-muted">
@@ -195,7 +204,7 @@ export default function ContactPage() {
                 step: '02',
                 title: 'We schedule a walkthrough',
                 body:
-                  'A short conversation about the space — phone or on-site, whichever fits the job.',
+                  'A short conversation about the space, phone or on-site, whichever fits the job.',
               },
               {
                 step: '03',

@@ -39,7 +39,7 @@ export default function AccessibilityStatementPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Use semantic HTML and clear heading hierarchy.</li>
               <li>
-                Maintain sufficient color contrast (WCAG AA — body text at
+                Maintain sufficient color contrast (WCAG AA: body text at
                 least 4.5:1; large text at least 3:1).
               </li>
               <li>

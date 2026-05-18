@@ -15,7 +15,7 @@ type Props = {
   sub?: string;
   primaryCta: CTA;
   secondaryCta?: CTA;
-  /** Right-column slot — typically a quote form. Presence implies split layout. */
+  /** Right-column slot. Typically a quote form. Presence implies split layout. */
   formSlot?: ReactNode;
   /** Force layout. Defaults to 'split' when `formSlot` is provided. */
   layout?: 'standard' | 'split';
@@ -115,7 +115,7 @@ export default function HeroSection({
             >
               <Link
                 href={primaryCta.href}
-                className="group inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-6 py-4 text-base font-semibold text-brand-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
+                className="group inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-6 py-4 text-base font-semibold text-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
               >
                 {primaryCta.label}
                 <span
@@ -128,7 +128,7 @@ export default function HeroSection({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-6 py-4 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-brand-white transition-colors min-h-[48px] tabular-nums"
+                  className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-6 py-4 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-white transition-colors min-h-[48px] tabular-nums"
                 >
                   {secondaryCta.label}
                 </Link>

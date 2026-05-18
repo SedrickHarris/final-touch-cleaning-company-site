@@ -574,3 +574,141 @@ Standards preserved:
 - ✅ Static export compatibility (Cloudflare Pages still builds clean)
 
 All carry-forward TODOs unchanged: form endpoint wiring, favicon/OG image, owner-verified trust signals (license, insurance, satisfaction guarantee, years-in-business), real service photos, legal-copy replacement on draft pages.
+
+### Batch 2.2 — Live UI, CTA, Content Depth, AEO FAQ, and Copy Cleanup Patch
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+After reviewing the live Cloudflare Pages deploy, three issues remained: some CTA buttons still appeared blank, page content was still thin, AEO FAQs were under-developed, and customer-facing copy contained em dashes (against the Site OS copy standard). This pass:
+- Defensively rebuilt every CTA-bearing component to use Tailwind built-in color tokens (`text-white`, `border-white`) instead of `text-brand-white`/`border-brand-white` so cascade behavior is guaranteed even outside the `@layer base` fix already committed in Batch 2.1.
+- Strengthened depth on the 7 highest-priority pages with verified-facts content.
+- Built `/faq` into an AEO answer hub with 9 grouped categories and 36 total FAQs.
+- Replaced every em dash in customer-facing code paths (page copy, FAQ Q/A, schema text, form copy, banner text, constants used in body content).
+
+Cause of remaining button issues:
+Two reinforcing causes addressed in this pass:
+1. Batch 2.1's `@layer base` fix is correct, but the live deploy the user reviewed (`10da6090`) predated it. To be doubly defensive for any future cascade quirk or alternate-build environment, the buttons now use `text-white` (Tailwind built-in) instead of the custom `text-brand-white` (@theme token). Both resolve to `#FFFFFF` but the built-in is generated regardless of `@theme` configuration changes.
+2. `hover:text-brand-white` on outlined buttons changed to `hover:text-white` so the hover state can never depend on the custom token either. Same for `border-brand-white` → `border-white` and `text-white/85` (the latter already used Tailwind built-in).
+
+Button fixes completed:
+- `components/layout/Header.tsx` — desktop primary CTA uses `text-white`; mobile-menu phone-fallback hover uses `hover:text-white`; mobile-menu primary CTA uses `text-white`. Logo `aria-label` em dash converted to comma. Mobile menu phone label kept as `· ` (middot, not em dash).
+- `components/shared/HeroSection.tsx` — primary CTA `text-white`; secondary CTA `hover:text-white` on the dark-bg hover state.
+- `components/shared/CTASection.tsx` — heading on blue tone `text-white`; primary blue-tone CTA `bg-white text-brand-blue`; secondary blue-tone CTA `border-white/60 text-white hover:bg-white hover:text-brand-blue` (was `border-white/50 text-brand-white hover:bg-white/10` which only changed background opacity on hover; now hover swaps to fully filled white background with brand-blue text for a confidently readable hover state); soft-tone secondary `hover:text-white` on the dark-bg hover.
+- `components/shared/QuoteFormPlaceholder.tsx` — disabled submit button uses `text-white` and refreshed help text.
+
+Pages strengthened (depth + AEO):
+- `/` (homepage) — already had Beyond-Elite-style sections from Batch 2.1 (TrustBar, Services preview, Who we help, Why Final Touch, How the quote process works, Final CTA). Added a new **Service area callout** between How-it-works and FAQ that explicitly names Clark County + the 4 cities, the service-area-only positioning ("no public storefront"), and links to `/locations`. FAQ rebuilt at 10 items (was 8), AEO-styled (direct-answer first sentence, plain language, natural keyword placement).
+- `/about` — same prose structure, FAQ expanded to 7 items with the AEO-style "What makes Final Touch different from a basic cleaning service?" added.
+- `/services` — hero sub rewritten without em dashes; "Choose by the moment" rewritten; "Cleaning by location" callout kept; FAQ expanded to 10 items including direct AEO questions ("Does Final Touch offer post-construction cleanup?", "Does Final Touch offer commercial office cleaning?", "Does Final Touch offer janitorial services?", "Does Final Touch offer retail space cleaning?").
+- `/locations` — hero, grid, "One team, county-wide" all rewritten without em dashes. FAQ expanded to 9 items with explicit per-city affirmations ("Does Final Touch serve Las Vegas?", "Does Final Touch serve Henderson?", "Does Final Touch serve North Las Vegas?", "Does Final Touch serve Boulder City?", "Does Final Touch serve all of Clark County?").
+- `/contact` — hero, contact tiles, "What to include", 4-step "What happens next" all rewritten without em dashes. FAQ expanded to 8 items with "Can I call instead of using the form?" and "What should I do if I am not sure which service I need?" added.
+- `/free-quote` — hero, "What to include" 5-bullet section, "What you get", 3-step process all rewritten without em dashes. FAQ expanded to 10 items, AEO-styled with explicit "How do I request a cleaning quote?", "Do you provide pricing online?", "Can I call instead of using the form?", and the city-list affirmation.
+- `/faq` — **major rebuild**. Previously 17 FAQs in 5 groups. Now **36 FAQs in 9 categories**:
+  1. General company questions (4)
+  2. Service area questions (7)
+  3. Quote and contact questions (6)
+  4. Cleaning service questions (4)
+  5. Move-in, move-out, and deep cleaning (4)
+  6. Commercial, office, retail, and janitorial (4)
+  7. Post-construction cleanup (3)
+  8. Scheduling and recurring cleaning (3)
+  9. Trust, safety, and service expectations (4)
+
+AEO FAQ writing rules applied throughout:
+- Direct question phrasing
+- Answer in the first sentence (or, where natural, the first half of the answer)
+- Plain language, no hedging
+- Concise answers (most 40–80 words)
+- City and service terms appear naturally where relevant
+- No keyword stuffing
+- No invented claims (no licenses, insurance, guarantees, reviews, ratings, hours, emergency/same-day/24-7 service)
+
+FAQ counts (before → after this pass):
+
+| Page | Before | After | Notes |
+|---|---:|---:|---|
+| / | 8 | 10 | Added: "What cleaning services...", "Do you provide pricing online?" |
+| /free-quote | 7 | 10 | Added: "How do I request a cleaning quote?", "Do you provide pricing online?", "Can I call instead of using the form?", reorganized for AEO |
+| /contact | 6 | 8 | Added: "Can I call instead of using the form?", "What should I do if I am not sure which service I need?" |
+| /services | 5 | 10 | Added: "What cleaning services does Final Touch offer?", "Does Final Touch offer post-construction cleanup?", "Does Final Touch offer commercial office cleaning?", "Does Final Touch offer janitorial services?", "Does Final Touch offer retail space cleaning?", "What should I do if I am not sure which service I need?" |
+| /locations | 6 | 9 | Added per-city affirmations: Las Vegas, Henderson, North Las Vegas, Boulder City. Also "How does Final Touch handle service areas without a public storefront?" |
+| /about | 6 | 7 | Added: "What makes Final Touch different from a basic cleaning service?" |
+| /faq | 17 | 36 | Full rebuild into 9 grouped categories |
+| **Total site FAQs** | **55** | **90** | **+35 new AEO-style items** |
+
+/faq page category groups (this batch creates these 9 sections):
+1. General company questions (4 items)
+2. Service area questions (7 items)
+3. Quote and contact questions (6 items)
+4. Cleaning service questions (4 items)
+5. Move-in, move-out, and deep cleaning (4 items)
+6. Commercial, office, retail, and janitorial (4 items)
+7. Post-construction cleanup (3 items)
+8. Scheduling and recurring cleaning (3 items)
+9. Trust, safety, and service expectations (4 items)
+
+Customer-facing em dashes removed:
+- Pre-batch count: 85 in `app/`, 15 in `components/`, 4 in `lib/`. Total 104 em dashes across 25 files.
+- Post-batch grep of customer-facing files (page copy, form copy, banner, constants):
+  - `app/*.tsx`: customer-facing em dashes → **0** (only 1 remaining em dash in `app/globals.css` is a CSS developer comment)
+  - `components/shared/*.tsx`: customer-facing em dashes → **0**
+    - `QuoteFormPlaceholder.tsx`, `DraftBanner.tsx`, form labels, all body copy clean
+  - `lib/constants/*.ts`: customer-facing em dashes → **0**
+    - `seo.ts` default description rewritten, `routes.ts` shortDescription rewritten, `site.ts` was already clean
+- Remaining em dashes (all developer-only, not rendered to HTML):
+  - `app/globals.css` line 66: `/* Skip link — unlayered so it always wins focus state regardless of inheritance. */` (CSS comment)
+  - `components/shared/FAQSection.tsx` line 16: JSDoc comment
+  - `components/shared/ServiceCard.tsx` line 20: JSDoc comment
+  - `components/shared/ServiceImagePlaceholder.tsx` line 15: JSDoc comment
+  - `components/shared/ServicesPreview.tsx` line 19: JSDoc comment
+  - `components/shared/TrustBar.tsx` line 7: JSDoc comment
+  - `lib/motion.ts` line 8: inline `// out-quint — quick start, soft finish` JS comment
+
+Per the Batch 2.2 spec, developer comments are explicitly excluded from the em dash cleanup requirement. Built HTML grep confirms **zero em dashes** in any rendered output across all 13 routes.
+
+FAQ/schema sync:
+- Every page that has visible FAQs also has a `FAQPage` JSON-LD block.
+- `acceptedAnswer.text` is generated from the same `faq` array variable that the visible `<FAQSection>` renders. This guarantees exact text match.
+- No schema-only FAQs exist.
+- No `AggregateRating`, `Review`, `Product`, pricing, or fake `LocalBusiness` schema introduced.
+- Schema on legal pages remains absent (per spec).
+
+Validation:
+- `npm run lint` — passed clean
+- `npm run type-check` — passed clean
+- `npm run build` — succeeded; 13 routes prerendered as static; compile 2.6s, TS 2.4s.
+
+Static export confirmed:
+- `out/index.html` ✓
+- `out/about.html` ✓
+- `out/services.html` ✓
+- `out/locations.html` ✓
+- `out/contact.html` ✓
+- `out/free-quote.html` ✓
+- `out/faq.html` ✓
+- All other route HTML files + `out/404.html` + `_next/` assets
+
+Built HTML CTA verification (from `out/index.html`):
+- "Request a Free Quote" × 4 ✓
+- "Get My Cleaning Estimate" × 2 ✓
+- "Call Now" × 5 ✓
+- "View details" × 7 ✓ (service card CTAs)
+- "View Services" present in nav-link copy ("View all services") ✓
+- Built `out/faq.html`: "Request a Free Quote" × 6, "Call Now" × 5 ✓
+- Built `out/contact.html`: "Call Now" × 3, "Email us" × 2 ✓
+
+Em dash verification on built HTML:
+- `grep -c "—" out/*.html` across all 8 conversion / brand / FAQ pages: **0 matches**
+- No customer-facing em dashes in rendered output.
+
+No-fake-data confirmation: No new reviews, ratings, testimonials, license numbers, insurance details, awards, certifications, years in business, before/after results, customer/team/project photos, pricing guarantees, satisfaction guarantees, same-day claims, emergency claims, 24/7 claims, or unsupported trust signals were added. The new AEO FAQs use only verified facts in `lib/constants/site.ts` (owners, phone, email, service area) and brand-voice positioning already approved in `docs/site-os/final-touch-build-context.md` (family-owned, local team, detail-focused work, free-quote process). Service-area-only positioning explicitly maintained on `/locations` and the new homepage service-area callout. The "Are the online forms active yet?" answer is honest disclosure. The "Do you provide pricing online?" answer is explicit transparency about why we walkthrough first.
+
+Remaining TODOs (unchanged from prior batches):
+- Form endpoint wiring (`QuoteFormPlaceholder` is still placeholder)
+- Owner-supplied favicon set + OG image
+- Owner-verified trust signals (license, insurance, satisfaction guarantee, years-in-business) for `Organization` JSON-LD on `/about` and `/contact`
+- Real service photos to replace placeholders in `ServiceImagePlaceholder`
+- Legal-copy replacement (`/privacy-policy`, `/terms-of-service`, `/cookie-policy` still display the DraftBanner)
+- Business hours on `/contact` (FAQ explicitly says hours will be posted once confirmed)
+- Per-service pages (`TODO-BATCH-3`), per-city pages (`TODO-BATCH-4`), neighborhood pages (`TODO-BATCH-5`), service+city matrix (`TODO-BATCH-6`)

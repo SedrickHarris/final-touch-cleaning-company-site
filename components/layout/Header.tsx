@@ -34,7 +34,7 @@ export default function Header() {
           <Link
             href={ROUTES.home}
             className="flex flex-col leading-tight shrink-0"
-            aria-label={`${SITE.name} — home`}
+            aria-label={`${SITE.name}, home`}
           >
             <span className="font-display font-semibold text-lg lg:text-xl text-brand-black tracking-tight">
               {SITE.shortName}
@@ -80,7 +80,7 @@ export default function Header() {
             </a>
             <Link
               href={ROUTES.freeQuote}
-              className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
+              className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
             >
               {CTAS.primary}
             </Link>
@@ -155,13 +155,13 @@ export default function Header() {
                 <div className="mt-4 flex flex-col gap-2 px-1">
                   <a
                     href={SITE.phone.href}
-                    className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-4 py-3 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-brand-white transition-colors min-h-[48px] tabular-nums"
+                    className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-4 py-3 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-white transition-colors min-h-[48px] tabular-nums"
                   >
                     {CTAS.call} · {SITE.phone.display}
                   </a>
                   <Link
                     href={ROUTES.freeQuote}
-                    className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-4 py-3 text-base font-semibold text-brand-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
+                    className="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-4 py-3 text-base font-semibold text-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
                     onClick={() => setOpen(false)}
                   >
                     {CTAS.primary}

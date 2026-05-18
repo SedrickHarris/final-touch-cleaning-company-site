@@ -10,30 +10,50 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Cleaning Services',
-  description: `Final Touch offers seven cleaning services across ${SITE.serviceArea.county}, NV: commercial & office, janitorial, post-construction, move-in, move-out, deep cleaning, and retail space cleaning. Free quotes — call ${SITE.phone.display}.`,
+  description: `Final Touch offers seven cleaning services across ${SITE.serviceArea.county}, NV: commercial & office, janitorial, post-construction, move-in, move-out, deep cleaning, and retail space cleaning. Free quotes. Call ${SITE.phone.display}.`,
   alternates: { canonical: '/services' },
 };
 
 const faq = [
   {
+    q: 'What cleaning services does Final Touch Cleaning Company offer?',
+    a: 'Seven core services: commercial and office cleaning, janitorial routes, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning.',
+  },
+  {
     q: 'Do you provide both residential and commercial cleaning?',
-    a: 'Yes — both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
+    a: 'Yes, both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
   },
   {
     q: 'How do I choose between move-in cleaning and deep cleaning?',
-    a: 'Move-in cleaning prepares a space for someone to settle in — top-to-bottom before the boxes arrive. Deep cleaning is for periodic resets in a space you already live in or operate from. Both reach the corners standard service skips; the difference is timing and intent.',
+    a: 'Move-in cleaning prepares a space for someone to settle in: top-to-bottom before the boxes arrive. Deep cleaning is for periodic resets in a space you already live in or operate from. Both reach the corners standard service skips. The difference is timing and intent.',
+  },
+  {
+    q: 'Does Final Touch offer post-construction cleanup?',
+    a: 'Yes. Post-construction cleanup is one of our seven core services. We handle the dust, residue, and fine grit that lands on every surface after a build or renovation.',
+  },
+  {
+    q: 'Does Final Touch offer commercial office cleaning?',
+    a: 'Yes. We clean offices and commercial interiors across Clark County, both as one-time jobs and as ongoing janitorial routes.',
+  },
+  {
+    q: 'Does Final Touch offer janitorial services?',
+    a: 'Yes. We schedule ongoing janitorial routes for offices, retail, and commercial operations. The rhythm and scope are tailored to your space during the walkthrough.',
+  },
+  {
+    q: 'Does Final Touch offer retail space cleaning?',
+    a: 'Yes. Retail space cleaning is one of our seven core services. Customer-ready cleans for storefronts, showrooms, and retail interiors.',
   },
   {
     q: 'Do you offer one-time cleans or only ongoing service?',
-    a: 'Both. We do one-time jobs (move-in, move-out, post-construction, deep cleaning) and ongoing janitorial routes for offices, retail, and commercial spaces. Tell us about your space and we\'ll suggest the right fit.',
+    a: 'Both. One-time jobs (move-in, move-out, post-construction, deep cleaning) and ongoing janitorial routes for offices, retail, and commercial spaces. Tell us about your space and we\'ll suggest the right fit.',
   },
   {
-    q: 'What kinds of businesses hire Final Touch?',
-    a: 'Offices, retail stores, post-construction sites, property managers, and small commercial operations. We tailor the scope and schedule to each space.',
+    q: 'What should I do if I am not sure which service I need?',
+    a: 'Tell us what triggered the request: moving in, finishing a build, opening a store, resetting a space, keeping an office tidy week to week. We\'ll match it to the right service on the walkthrough. No charge for that conversation.',
   },
   {
     q: 'Where do you work?',
-    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
+    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
   },
 ];
 
@@ -62,7 +82,7 @@ export default function ServicesPage() {
       <HeroSection
         eyebrow="Services"
         heading="Seven services. One standard."
-        sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada — from a single deep clean to ongoing janitorial routes. Every job ends with the same finishing checklist: baseboards, vents, switch plates, edges, and corners.`}
+        sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada. From a single deep clean to ongoing janitorial routes, every job ends with the same finishing checklist: baseboards, vents, switch plates, edges, and corners.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
@@ -78,7 +98,7 @@ export default function ServicesPage() {
           <ServicesPreview services={SERVICES} />
 
           {/* TODO-BATCH-3: Per-service pages at /services/<slug> are not yet
-              built. Cards above link to those routes — they will 404 until
+              built. Cards above link to those routes. They will 404 until
               Batch 3 ships. */}
           <p className="mt-12 text-sm text-muted">
             Need help choosing? Call{' '}
@@ -126,7 +146,7 @@ export default function ServicesPage() {
             </p>
             <p>
               <strong className="font-semibold">Just need a reset?</strong>{' '}
-              Deep cleaning is for the corners standard service skips — a
+              Deep cleaning is for the corners standard service skips. A
               periodic top-to-bottom that takes a space back to baseline.
             </p>
           </div>
@@ -144,7 +164,7 @@ export default function ServicesPage() {
               Cleaning across all of {SITE.serviceArea.county}.
             </h2>
             <p className="mt-3 text-base text-brand-black leading-relaxed">
-              Final Touch serves {SITE.serviceArea.cities.join(', ')} — every
+              Final Touch serves {SITE.serviceArea.cities.join(', ')}: every
               part of {SITE.serviceArea.county}. Same team, same finishing
               standard, no matter where the job is.
             </p>

@@ -7,38 +7,50 @@ import { CTAS, SITE } from '@/lib/constants/site';
 
 export const metadata: Metadata = {
   title: 'Free Quote',
-  description: `Request a free cleaning quote from ${SITE.name}. Family-owned, serving ${SITE.serviceArea.county}, ${SITE.serviceArea.state}. No pressure — just a real number after a quick walkthrough.`,
+  description: `Request a free cleaning quote from ${SITE.name}. Family-owned, serving ${SITE.serviceArea.county}, ${SITE.serviceArea.state}. No pressure. Just a real number after a quick walkthrough.`,
   alternates: { canonical: '/free-quote' },
 };
 
 const faq = [
   {
+    q: 'How do I request a cleaning quote?',
+    a: `Send the form above, call ${SITE.phone.display}, or email ${SITE.email.display}. Tell us the type of space, the city, and rough timing. We'll set up a short walkthrough and give you a real number.`,
+  },
+  {
     q: 'Is the quote really free?',
     a: 'Yes. Quotes are free and there\'s no pressure to book.',
   },
   {
+    q: 'What should I include in a quote request?',
+    a: 'Space type (home, office, retail, post-construction), rough square footage, the city or neighborhood within Clark County, your timing, and anything specific to the space (pets, post-construction dust, hard-water buildup, access notes). None of it is required. We will cover the rest on the walkthrough.',
+  },
+  {
     q: 'How do you put together a quote?',
-    a: 'We start with a short walkthrough — phone or on-site, depending on the job. After the walkthrough you get a real number based on your space, your scope, and your timing.',
+    a: 'We start with a short walkthrough, phone or on-site depending on the job. After the walkthrough you get a real number based on your space, your scope, and your timing.',
   },
   {
-    q: 'What information should I include in the request?',
-    a: 'The type of space (home, office, retail, post-construction), rough square footage, the city or neighborhood, and your timing. If you don\'t know all of it, that\'s fine — we\'ll cover the rest on the walkthrough.',
+    q: 'Do you provide pricing online?',
+    a: 'No. Pricing depends on the space, the scope, and the timing. We give you a real number after a short walkthrough rather than a one-size-fits-all rate that changes when we arrive.',
   },
   {
-    q: 'What if I\'m not sure which cleaning service I need?',
-    a: 'That\'s what the walkthrough is for. Tell us what triggered the request — moving in, finishing a build, opening a store, resetting a space — and we\'ll match it to the right service.',
+    q: 'What if I am not sure which cleaning service I need?',
+    a: 'That\'s what the walkthrough is for. Tell us what triggered the request: moving in, finishing a build, opening a store, resetting a space. We\'ll match it to the right service.',
   },
   {
     q: 'How fast will I hear back?',
     a: `We answer the phone and respond to email and form requests when our team is available. Call ${SITE.phone.display} if you need to reach someone directly.`,
   },
   {
-    q: 'Are your online forms active yet?',
+    q: 'Can I call instead of using the form?',
+    a: `Yes. Calling ${SITE.phone.display} is often the fastest way to reach us. The phone is answered by ${SITE.owners} or someone on the team.`,
+  },
+  {
+    q: 'Are the online forms active yet?',
     a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
   },
   {
-    q: 'Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?',
-    a: `Yes. Final Touch serves all of ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
+    q: 'Do you serve Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County?',
+    a: `Yes. Final Touch serves all of ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
   },
 ];
 
@@ -58,7 +70,7 @@ export default function FreeQuotePage() {
       <HeroSection
         eyebrow="Free quote"
         heading="Tell us about your space."
-        sub={`We'll set up a short walkthrough and put a real number on the job — not a templated rate. Free, no pressure. Or call ${SITE.phone.display} to talk now.`}
+        sub={`We'll set up a short walkthrough and put a real number on the job, not a templated rate. Free, no pressure. Or call ${SITE.phone.display} to talk now.`}
         primaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         secondaryCta={{ label: 'Email us', href: SITE.email.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -70,43 +82,43 @@ export default function FreeQuotePage() {
           <SectionHeader
             eyebrow="What to include"
             heading="A few details help us prep a real quote."
-            sub="None of this is required — we'll cover anything missing on the walkthrough — but the more you can share up front, the faster we can get you a number."
+            sub="None of this is required. We'll cover anything missing on the walkthrough. But the more you can share up front, the faster we can get you a number."
           />
           <ul className="mt-8 space-y-3.5 text-base sm:text-lg text-brand-black">
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
               <span>
-                <strong className="font-semibold">Space type</strong> — home,
+                <strong className="font-semibold">Space type</strong>: home,
                 office, retail, post-construction, vacation rental, or other.
               </span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
               <span>
-                <strong className="font-semibold">Rough size</strong> — square
-                footage or number of bedrooms/bathrooms is enough.
+                <strong className="font-semibold">Rough size</strong>: square
+                footage or number of bedrooms and bathrooms is enough.
               </span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
               <span>
                 <strong className="font-semibold">City or neighborhood</strong>{' '}
-                — anywhere in {SITE.serviceArea.county}: {SITE.serviceArea.cities.join(', ')}.
+                anywhere in {SITE.serviceArea.county}: {SITE.serviceArea.cities.join(', ')}.
               </span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
               <span>
-                <strong className="font-semibold">Timing</strong> — one-time,
-                recurring, or tied to a move-in/move-out date.
+                <strong className="font-semibold">Timing</strong>: one-time,
+                recurring, or tied to a move-in or move-out date.
               </span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
               <span>
-                <strong className="font-semibold">Anything specific</strong> —
-                pets, post-construction dust, hard-water buildup, the corners you
-                want extra attention on.
+                <strong className="font-semibold">Anything specific</strong>:
+                pets, post-construction dust, hard-water buildup, the corners
+                you want extra attention on.
               </span>
             </li>
           </ul>
@@ -123,7 +135,7 @@ export default function FreeQuotePage() {
           <ul className="mt-8 space-y-3.5 text-base sm:text-lg text-brand-black">
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>A short walkthrough — phone or on-site, whichever fits the job.</span>
+              <span>A short walkthrough: phone or on-site, whichever fits the job.</span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
@@ -131,7 +143,7 @@ export default function FreeQuotePage() {
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
-              <span>Honest pricing — no surprise add-ons, no upsell at the end.</span>
+              <span>Honest pricing: no surprise add-ons, no upsell at the end.</span>
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
@@ -177,7 +189,7 @@ export default function FreeQuotePage() {
                 step: '02',
                 title: 'Walkthrough',
                 body:
-                  'A short conversation about the space — phone or on-site, whichever fits the job.',
+                  'A short conversation about the space, phone or on-site, whichever fits the job.',
               },
               {
                 step: '03',

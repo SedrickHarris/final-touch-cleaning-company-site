@@ -7,8 +7,8 @@ export const SEO_DEFAULTS = {
   siteUrl: SITE.url,
   siteName: SITE.name,
   titleTemplate: `%s | ${SITE.shortName}`,
-  defaultTitle: `${SITE.name} — Cleaning Services in ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`,
-  description: `${SITE.name} delivers detail-focused cleaning across ${SITE.serviceArea.county}, Nevada — ${cityList}. Family-owned by ${SITE.owners}. Free quotes — call ${SITE.phone.display}.`,
+  defaultTitle: `${SITE.name}: Cleaning Services in ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`,
+  description: `${SITE.name} delivers detail-focused cleaning across ${SITE.serviceArea.county}, Nevada, including ${cityList}. Family-owned by ${SITE.owners}. Free quotes. Call ${SITE.phone.display}.`,
   themeColor: '#1A5FB4',
   locale: 'en_US',
 } as const;

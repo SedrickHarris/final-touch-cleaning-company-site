@@ -1,8 +1,8 @@
-// TODO-VERIFY: Replace placeholder copy with owner-approved legal copy before
-// launch. Have legal counsel review jurisdiction-specific requirements (Nevada
-// state law, federal — GLBA, CCPA-equivalent rules where applicable). The
-// content below is a generic structural draft suitable for review, NOT for
-// publication as final.
+// TODO-VERIFY: Replace placeholder copy with owner-approved legal copy
+// before launch. Have legal counsel review jurisdiction-specific
+// requirements (Nevada state law, federal: GLBA, CCPA-equivalent rules
+// where applicable). The content below is a generic structural draft
+// suitable for review, NOT for publication as final.
 import type { Metadata } from 'next';
 import DraftBanner from '@/components/shared/DraftBanner';
 import { SITE } from '@/lib/constants/site';

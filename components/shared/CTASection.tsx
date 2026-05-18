@@ -13,7 +13,7 @@ type Props = {
   primaryCta: CTA;
   secondaryCta?: CTA;
   tone?: 'blue' | 'soft';
-  /** Right-column slot — typically a quote form. Presence implies split layout. */
+  /** Right-column slot. Typically a quote form. Presence implies split layout. */
   formSlot?: ReactNode;
   /** Force layout. Defaults to 'split' when `formSlot` is provided, else 'standard'. */
   layout?: 'standard' | 'split';
@@ -36,14 +36,14 @@ export default function CTASection({
 
   const isBlue = tone === 'blue';
   const wrapClass = isBlue ? 'bg-brand-blue' : 'bg-soft-blue';
-  const headingClass = isBlue ? 'text-brand-white' : 'text-brand-black';
+  const headingClass = isBlue ? 'text-white' : 'text-brand-black';
   const subClass = isBlue ? 'text-white/85' : 'text-muted';
   const primaryClass = isBlue
-    ? 'bg-brand-white text-brand-blue hover:bg-soft-blue'
-    : 'bg-brand-blue text-brand-white hover:bg-brand-blue-hover';
+    ? 'bg-white text-brand-blue hover:bg-soft-blue'
+    : 'bg-brand-blue text-white hover:bg-brand-blue-hover';
   const secondaryClass = isBlue
-    ? 'border-2 border-white/50 text-brand-white hover:bg-white/10'
-    : 'border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-white';
+    ? 'border-2 border-white/60 text-white hover:bg-white hover:text-brand-blue'
+    : 'border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-white';
 
   const containerClass = isWide
     ? 'max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12'

@@ -9,30 +9,42 @@ import { LOCATIONS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Service Area',
-  description: `Final Touch serves all of ${SITE.serviceArea.county}, Nevada — including ${SITE.serviceArea.cities.join(', ')}. Local team, free quotes — call ${SITE.phone.display}.`,
+  description: `Final Touch serves all of ${SITE.serviceArea.county}, Nevada, including ${SITE.serviceArea.cities.join(', ')}. Local team, free quotes. Call ${SITE.phone.display}.`,
   alternates: { canonical: '/locations' },
 };
 
 const faq = [
   {
-    q: 'What areas do you serve?',
-    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
+    q: 'What areas does Final Touch serve?',
+    a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
   },
   {
-    q: 'Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?',
-    a: `Yes — all of them. Final Touch covers every city in ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of which part of the county you're in.`,
+    q: 'Does Final Touch serve Las Vegas?',
+    a: 'Yes. Las Vegas is one of our primary service cities. Homes, offices, retail, post-construction sites, and ongoing janitorial routes across the city.',
+  },
+  {
+    q: 'Does Final Touch serve Henderson?',
+    a: 'Yes. Henderson is one of our primary service cities. Same team and same finishing standard across Henderson neighborhoods and business corridors.',
+  },
+  {
+    q: 'Does Final Touch serve North Las Vegas?',
+    a: 'Yes. North Las Vegas is in our primary service area. Residential and commercial cleaning, on the same schedule and finishing checklist as the rest of the county.',
+  },
+  {
+    q: 'Does Final Touch serve Boulder City?',
+    a: 'Yes. Boulder City is in our primary service area. Local cleaning for Boulder City homes and storefronts.',
+  },
+  {
+    q: 'Does Final Touch serve all of Clark County?',
+    a: `Yes. We work across ${SITE.serviceArea.county}, with the same team and the same finishing standard regardless of which part of the county you're in.`,
+  },
+  {
+    q: 'How does Final Touch handle service areas without a public storefront?',
+    a: 'Final Touch is a service-area business. We come to you. There is no public storefront to visit, but our team is based in Southern Nevada and we cover every part of Clark County on the same schedule.',
   },
   {
     q: 'Do you have a separate team for each city?',
-    a: 'No — we run one team across the whole county. Crew scheduling is based on location and timing, but the standards, training, and finishing checklist are the same everywhere.',
-  },
-  {
-    q: 'Where is Final Touch based?',
-    a: `Final Touch is based in Southern Nevada and operates as a service-area business — we come to you. We don't have a public storefront to visit, but we do serve every part of ${SITE.serviceArea.county}.`,
-  },
-  {
-    q: 'How do you decide which crew handles a job?',
-    a: 'We schedule based on location, timing, and the scope of the job. The same standards apply to every crew — owner-set, owner-checked.',
+    a: 'No. We run one team across the whole county. Crew scheduling is based on location and timing, but the standards, training, and finishing checklist are the same everywhere.',
   },
   {
     q: 'Do you travel outside Clark County?',
@@ -65,7 +77,7 @@ export default function LocationsPage() {
       <HeroSection
         eyebrow="Service area"
         heading={`Cleaning across ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}.`}
-        sub={`Final Touch serves every part of ${SITE.serviceArea.county} — ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
+        sub={`Final Touch serves every part of ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
@@ -75,11 +87,11 @@ export default function LocationsPage() {
           <SectionHeader
             eyebrow="Where we work"
             heading="Five service areas. One standard."
-            sub={`We cover every corner of ${SITE.serviceArea.county}, Nevada — from new-build communities in the southwest to downtown corridors and Boulder City.`}
+            sub={`We cover every corner of ${SITE.serviceArea.county}, Nevada, from new-build communities in the southwest to downtown corridors and Boulder City.`}
           />
 
           {/* TODO-BATCH-4: Per-city pages at /locations/<city> are not yet
-              built. Cards link to those routes — they will 404 until Batch 4
+              built. Cards link to those routes. They will 404 until Batch 4
               ships. */}
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {LOCATIONS.map((loc) => (
@@ -117,7 +129,7 @@ export default function LocationsPage() {
             <p>
               Final Touch isn&apos;t a franchise pool of independent contractors
               or a marketplace of subcontractors. {SITE.owners} run one team
-              across all of {SITE.serviceArea.county} — the same training, the
+              across all of {SITE.serviceArea.county}: the same training, the
               same finishing checklist, the same owner-checked standards.
             </p>
             <p>
@@ -129,7 +141,7 @@ export default function LocationsPage() {
               when we&apos;re done.
             </p>
             <p>
-              Final Touch is a service-area business — we come to you. There
+              Final Touch is a service-area business, so we come to you. There
               isn&apos;t a public storefront to visit, but if you&apos;re in{' '}
               {SITE.serviceArea.county}, we&apos;re in your service area.
             </p>

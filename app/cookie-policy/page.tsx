@@ -1,8 +1,8 @@
-// TODO-VERIFY: Replace placeholder copy with owner-approved legal copy before
-// launch. Update the listed cookie categories to reflect the actual cookies
-// in use (analytics IDs, session cookies, etc.) once analytics integrations
-// are wired. Verify jurisdiction-specific consent requirements with legal
-// counsel.
+// TODO-VERIFY: Replace placeholder copy with owner-approved legal copy
+// before launch. Update the listed cookie categories to reflect the
+// actual cookies in use (analytics IDs, session cookies, etc.) once
+// analytics integrations are wired. Verify jurisdiction-specific consent
+// requirements with legal counsel.
 import type { Metadata } from 'next';
 import DraftBanner from '@/components/shared/DraftBanner';
 import { SITE } from '@/lib/constants/site';
@@ -63,15 +63,15 @@ export default function CookiePolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Essential cookies</strong> — required for the site to
+                <strong>Essential cookies:</strong> required for the site to
                 function. These do not require consent.
               </li>
               <li>
-                <strong>Analytics cookies</strong> — measure how the site is
+                <strong>Analytics cookies:</strong> measure how the site is
                 used so we can improve it.
               </li>
               <li>
-                <strong>Functional cookies</strong> — remember settings such as
+                <strong>Functional cookies:</strong> remember settings such as
                 language or display preferences.
               </li>
             </ul>
@@ -80,7 +80,7 @@ export default function CookiePolicyPage() {
               Managing cookies
             </h2>
             <p>
-              You can control cookies through your browser settings — block all
+              You can control cookies through your browser settings: block all
               cookies, accept only certain categories, or delete existing
               cookies. Note that blocking essential cookies may prevent parts of
               the site from working.

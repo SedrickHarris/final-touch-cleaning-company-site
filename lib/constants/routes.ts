@@ -120,7 +120,7 @@ export const LOCATIONS: ReadonlyArray<{
     slug: 'clark-county',
     name: 'Clark County',
     href: '/locations/clark-county',
-    shortDescription: 'County-wide service for Clark County, Nevada — one team, one standard.',
+    shortDescription: 'County-wide service for Clark County, Nevada. One team, one standard.',
   },
 ] as const;
 

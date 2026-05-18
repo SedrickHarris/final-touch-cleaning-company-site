@@ -2,21 +2,21 @@
 
 import { SITE } from '@/lib/constants/site';
 
-// TODO-BATCH-2: Wire to live form endpoint (vendor TBD — likely GoHighLevel).
+// TODO-BATCH-2: Wire to live form endpoint (vendor TBD, likely GoHighLevel).
 // Until then, all inputs render disabled and submit is intercepted. No data
 // leaves the page. Visitors are directed to phone/email as the live channel.
-// See docs/site-os/no-fake-data-policy.md §9 (no live integrations without
+// See docs/site-os/no-fake-data-policy.md sec 9 (no live integrations without
 // explicit owner approval and a verified data path).
 //
-// Width is controlled by the parent — typically a grid track in HeroSection /
-// CTASection's split layout. The form is always `w-full` so it fills its
-// container; the parent caps it (e.g. `lg:max-w-xl`).
+// Width is controlled by the parent (typically a grid track in HeroSection /
+// CTASection split layout). The form is always w-full so it fills its
+// container; the parent caps it (e.g. lg:max-w-xl).
 export default function QuoteFormPlaceholder() {
   return (
     <form
       noValidate
       onSubmit={(e) => e.preventDefault()}
-      aria-label="Free cleaning quote — placeholder form"
+      aria-label="Free cleaning quote placeholder form"
       className="w-full bg-brand-white rounded-[14px] border border-border-subtle shadow-[0_8px_28px_rgba(26,26,26,0.06)] p-6 sm:p-8"
     >
       <div className="mb-6">
@@ -54,7 +54,7 @@ export default function QuoteFormPlaceholder() {
         <Field
           label="City"
           name="city"
-          placeholder="Las Vegas / Henderson / North Las Vegas / Boulder City"
+          placeholder="Las Vegas, Henderson, North Las Vegas, or Boulder City"
           className="sm:col-span-2"
         />
       </div>
@@ -78,15 +78,15 @@ export default function QuoteFormPlaceholder() {
       </div>
 
       <p className="mt-4 text-xs text-muted">
-        Form not yet active. We&apos;ll wire this to our scheduling system shortly — until then, please call or email.
+        Form not yet active. We&apos;ll wire this to our scheduling system shortly. Until then, please call or email.
       </p>
 
       <button
         type="submit"
         disabled
         aria-disabled="true"
-        title="Form is not yet active — please call or email"
-        className="mt-5 inline-flex w-full sm:w-auto items-center justify-center rounded-[10px] bg-brand-blue px-6 py-4 text-base font-semibold text-brand-white opacity-70 cursor-not-allowed min-h-[48px]"
+        title="Form is not yet active. Please call or email."
+        className="mt-5 inline-flex w-full sm:w-auto items-center justify-center rounded-[10px] bg-brand-blue px-6 py-4 text-base font-semibold text-white opacity-70 cursor-not-allowed min-h-[48px]"
       >
         Request quote
       </button>
