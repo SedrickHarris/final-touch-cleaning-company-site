@@ -1,0 +1,5 @@
+# Per-batch deliverable outputs land here.
+#
+# When Batch 2 ships, save the final report, any per-page drafts, and any
+# generated content artifacts in this folder. Keeps the implementation log
+# tight and the outputs auditable.

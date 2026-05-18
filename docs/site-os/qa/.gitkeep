@@ -1,0 +1,8 @@
+# Per-page and per-batch QA reports land here.
+#
+# When a QA prompt produces a structured report, save it here with a name like:
+#   page-qa-2026-05-17-services-deep-cleaning.md
+#   seo-aeo-qa-2026-05-17-batch-3.md
+#
+# Keeps the implementation log focused on what changed and the QA trail
+# auditable per-page.
