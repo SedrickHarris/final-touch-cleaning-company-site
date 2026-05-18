@@ -79,6 +79,51 @@ export const SERVICES: ReadonlyArray<{
   },
 ] as const;
 
+export type LocationSlug =
+  | 'las-vegas'
+  | 'henderson'
+  | 'north-las-vegas'
+  | 'boulder-city'
+  | 'clark-county';
+
+export const LOCATIONS: ReadonlyArray<{
+  slug: LocationSlug;
+  name: string;
+  href: string;
+  shortDescription: string;
+}> = [
+  {
+    slug: 'las-vegas',
+    name: 'Las Vegas',
+    href: '/locations/las-vegas',
+    shortDescription: 'Cleaning services for homes and businesses across Las Vegas.',
+  },
+  {
+    slug: 'henderson',
+    name: 'Henderson',
+    href: '/locations/henderson',
+    shortDescription: 'Detail-focused cleaning across Henderson neighborhoods and corridors.',
+  },
+  {
+    slug: 'north-las-vegas',
+    name: 'North Las Vegas',
+    href: '/locations/north-las-vegas',
+    shortDescription: 'Cleaning services for North Las Vegas residents and businesses.',
+  },
+  {
+    slug: 'boulder-city',
+    name: 'Boulder City',
+    href: '/locations/boulder-city',
+    shortDescription: 'Local cleaning for Boulder City homes and storefronts.',
+  },
+  {
+    slug: 'clark-county',
+    name: 'Clark County',
+    href: '/locations/clark-county',
+    shortDescription: 'County-wide service for Clark County, Nevada — one team, one standard.',
+  },
+] as const;
+
 export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Services',  href: ROUTES.services },
   { label: 'Locations', href: ROUTES.locations },

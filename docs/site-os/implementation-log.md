@@ -230,3 +230,103 @@ Validation:
 Remaining TODOs:
 - TODO-BATCH-2+ (in ServiceImagePlaceholder) — Replace each card's placeholder with an owner-supplied photo of the relevant service when assets are approved. Use next/image, maintain the 16:10 aspect ratio, apply object-cover. Do not auto-pull from Google Places / GBP / stock libraries.
 - All Batch 1.x carry-forward TODOs unchanged (form endpoint, favicon/OG, owner-verified trust signals).
+
+### Batch 2 — Core Brand Pages
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Built all 11 Tier 1 core brand pages per docs/site-build-plan.md "Recommended Build Order" Batch 2 and docs/site-os/prompts/build/batch-2-core-brand-pages-prompt.md. Two pages use the two-column split hero with form (/contact, /free-quote); the other nine use the standard single-column hero. All pages reuse Batch 1 components — no new conversion-section components needed. Added one small reusable DraftBanner component for the three legal pages.
+
+Pages created (11):
+- app/about/page.tsx
+- app/services/page.tsx
+- app/locations/page.tsx
+- app/contact/page.tsx
+- app/faq/page.tsx
+- app/free-quote/page.tsx
+- app/thank-you/page.tsx
+- app/privacy-policy/page.tsx
+- app/terms-of-service/page.tsx
+- app/accessibility-statement/page.tsx
+- app/cookie-policy/page.tsx
+
+Components created:
+- components/shared/DraftBanner.tsx — visible "Draft — pending legal review" banner used on /privacy-policy, /terms-of-service, /cookie-policy.
+
+Components reused (no changes):
+- HeroSection (split mode on /contact, /free-quote; standard mode on the rest)
+- CTASection (standard mode, tone="blue")
+- FAQSection (single use per page on most; 5 grouped sections on /faq)
+- SectionHeader
+- TrustBar (/about)
+- QuoteFormPlaceholder (/contact, /free-quote hero form slot)
+- ServicesPreview (/services)
+- ServiceCard + ServiceImagePlaceholder (/locations — used for the LocationCard role with LOCATIONS data)
+
+Constants updated:
+- lib/constants/routes.ts — Added LOCATIONS array (slug, name, href, shortDescription per city + Clark County) parallel to SERVICES. Powers the /locations hub grid and gives future Batch 4 city pages a single source for city metadata.
+
+Design-standard compliance:
+- Two-column split hero with form on /contact and /free-quote (per docs/site-os/reference/service-business-design-standards.md § 1).
+- Single-column hero on /about, /services, /locations, /faq, /thank-you, /privacy-policy, /terms-of-service, /accessibility-statement, /cookie-policy.
+- ServiceCard with ServiceImagePlaceholder used on the /services preview grid and /locations grid — no empty image slots.
+- All CTAs `min-h-[48px]`; tap-to-call uses `tel:+17024445077`; single primary CTA per view.
+- One H1 per page, sequential heading hierarchy.
+- Fraunces (display) + Manrope (body) inherited from app/layout.tsx via the existing next/font setup.
+- Approved brand tokens only — no raw hex outside the existing @theme block.
+
+SEO/AEO coverage:
+- Unique `metadata.title` + `description` on every page via per-page `export const metadata: Metadata = {...}`. Title inherits the `%s | Final Touch` template from app/layout.tsx.
+- `alternates.canonical` set on every page.
+- Direct-answer opening paragraph on every page within the first 100 words.
+- FAQ sections on /about (4), /services (4), /locations (4), /contact (4), /free-quote (4), /faq (17 total across 5 groups).
+- Internal links: every non-legal page links to /free-quote, the phone number, and 1+ related Tier 1 or future Tier 2/3 page.
+- TODO-BATCH-3 and TODO-BATCH-4 comments mark forward-looking links to routes that 404 until those batches ship.
+- FAQPage JSON-LD on /about, /services, /locations, /contact, /faq, /free-quote — text matches visible FAQ exactly.
+- Organization JSON-LD on /about and /contact (with `contactPoint` on /contact). No `streetAddress` (service-area-only); founder fields populated from SITE.owners; areaServed from the verified service area.
+- BreadcrumbList JSON-LD on /services, /locations, /faq.
+- No AggregateRating / Review / Product schema (no owner-verified review data yet).
+
+No-fake-data compliance:
+- No reviews, ratings, testimonials, review counts
+- No license numbers, license types, "Licensed & Insured" claims
+- No insurance carriers, policy numbers
+- No years-in-business, jobs-completed counts
+- No awards, certifications, accreditations
+- No pricing claims, satisfaction guarantees
+- No team-member details beyond Scott & Nicole
+- No customer / team / project / before-after photos
+- No same-day / emergency / 24/7 / specific response-time claims
+- No street address (service-area-only business per docs/site-os/no-fake-data-policy.md §2)
+- All claims that would normally appear at this scope flagged with TODO-VERIFY comments
+
+Legal-page treatment:
+- /privacy-policy, /terms-of-service, /cookie-policy all carry the visible `<DraftBanner />` and a `// TODO-VERIFY:` comment at the top of the file
+- Placeholder copy is generic-structural-draft suitable for legal review, NOT for publication as final
+- No schema on legal pages
+- No keyword optimization on legal pages
+- /accessibility-statement is treated as the real (not draft) statement, structured WCAG 2.1 AA aligned, with TODO-VERIFY only on audit-date and scope-of-testing fields per Batch 2 spec
+
+/thank-you specifics:
+- `robots: { index: false, follow: true }` so the page isn't indexed (typical for post-submit confirmation pages)
+- No FAQ, no schema beyond default metadata
+- Two back-routes (home + services) and a phone fallback
+
+Validation:
+- `npm run lint` — passed clean (after fixing 2 unescaped-quote errors on /free-quote and removing an unused ROUTES import on /contact)
+- `npm run type-check` — passed clean
+- `npm run build` — succeeded; 13 routes (`/`, `/_not-found`, plus all 11 new) prerendered as static. Compile 2.0s, TS 2.1s.
+
+TODOs added or carried forward this batch:
+- TODO-VERIFY: business hours (mentioned in /contact, omitted from copy)
+- TODO-VERIFY: license number, insurance carrier, foundingDate, sameAs profiles for Organization JSON-LD (/about, /contact)
+- TODO-VERIFY: Replace placeholder legal copy with owner-approved final copy before launch (/privacy-policy, /terms-of-service, /cookie-policy)
+- TODO-VERIFY: date of last legal review / accessibility audit
+- TODO-VERIFY: specific cookies in use (once analytics is wired)
+- TODO-VERIFY: accessibility audit scope and third-party testing details
+- TODO-BATCH-3: Individual service pages at /services/<slug>
+- TODO-BATCH-4: Individual city location pages at /locations/<city>
+- Pre-existing carry-forwards (Batch 1.x) unchanged: form endpoint wiring, favicon set + OG image, owner-verified trust signals, real service photos.
+
+Next batch: Batch 3 — service pages per docs/site-os/prompts/build/batch-3-service-pages-prompt.md.
