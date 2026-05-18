@@ -12,6 +12,22 @@ The full client-side Site OS prompt catalog for the Final Touch Cleaning Company
 | `batch-5-neighborhood-pages-prompt.md` | Build 10 priority neighborhood pages | After Batch 4 | 10 nested neighborhood pages with city-parent linking, neighborhood-specific local context | Build |
 | `batch-6-service-city-matrix-prompt.md` | Build 35 service+city pages programmatically | After Batch 5 | 35 routes at `/services/<service>/<city>`, with per-page content variation | Build |
 
+### High-Value Page Prompts (synced from Site OS Master `36f9092`)
+
+These prompts replace batch prompts for high-value pages per `reference/prompt-router-and-ai-depth-standard.md`. Two-step workflow (research → implementation) unless the prompt is single-step.
+
+| Prompt | Purpose | AI Depth | Workflow |
+|---|---|---|---|
+| `individual-homepage-research-prompt.md` | Plan a Beyond-Elite homepage rebuild (no file changes) | Level 5 | Research |
+| `individual-homepage-implementation-prompt.md` | Implement the approved homepage plan + run pass/fail gate | Level 5 | Implementation |
+| `conversion-page-research-prompt.md` | Plan /free-quote, /contact, booking, landing rebuilds | Level 4 | Research |
+| `conversion-page-implementation-prompt.md` | Implement the approved conversion plan + run pass/fail gate | Level 4 | Implementation |
+| `seo-aeo-service-page-research-prompt.md` | Plan an individual service page build | Level 3 or 5 | Research |
+| `seo-aeo-service-page-implementation-prompt.md` | Implement the approved service-page plan + run pass/fail gate | Level 3 or 5 | Implementation |
+| `local-seo-location-page-research-prompt.md` | Plan an individual city / location page build | Level 3 | Research |
+| `local-seo-location-page-implementation-prompt.md` | Implement the approved location plan + run pass/fail gate + anti-doorway check | Level 3 | Implementation |
+| `aeo-faq-hub-prompt.md` | Build or rebuild the FAQ hub as a 9-category, 30+ FAQ AEO hub | Level 5 | Single-step build |
+
 ## Content Prompts (`docs/site-os/prompts/content/`)
 
 | Prompt | Purpose | When to Use | Expected Output | Workflow |
@@ -33,6 +49,7 @@ The full client-side Site OS prompt catalog for the Final Touch Cleaning Company
 | `page-qa-prompt.md` | Structural / design / accessibility QA on a built page | After every page build | Per-category checklist, top issues, ready-for-commit verdict | QA |
 | `seo-aeo-qa-prompt.md` | SEO/AEO QA on a built page | After build, paired with `page-qa-prompt.md` | Per-category score, top 3 leverage fixes, recommended next prompt | QA |
 | `pre-commit-qa-prompt.md` | Final safety check before staging and committing | Immediately before `git add` | Validation results, safety checks, scope review, GO/WAIT/STOP | QA |
+| `high-value-page-qa-prompt.md` | Read-only PASS/FAIL gate for high-value page builds (per `reference/pass-fail-page-quality-gates.md`) | After every high-value page build, before commit | Structured PASS/FAIL report across 44 items (required gate, CTA gate, copy cleanup gate, schema quality gate) | QA |
 
 ## Update Prompts (`docs/site-os/prompts/updates/`)
 
@@ -48,6 +65,10 @@ The full client-side Site OS prompt catalog for the Final Touch Cleaning Company
 | `client-build-prompt-index.md` | This file. Catalog of all client-side prompts. |
 | `seo-aeo-content-standards.md` | Client-side SEO/AEO content standards (page-level rules, FAQ standards, no-doorway, no-stuffing). |
 | `service-business-design-standards.md` | Client-side design standards (two-column hero/CTA, service card image placeholder, wide containers, motion). |
+| `prompt-router-and-ai-depth-standard.md` | Page-type prompt routing and 6 AI depth levels. Selects which prompt and depth apply to each page. Required before any page work. |
+| `keyword-research-and-aeo-depth-standard.md` | 10 keyword types and per-page research depth. Required before writing or optimizing high-value pages. |
+| `high-value-page-enforcement-standard.md` | Pre-build deliverables (keyword map, AEO FAQ map, content gap list, implementation plan) and post-build proof required for high-value pages. |
+| `pass-fail-page-quality-gates.md` | 44-item pass/fail gate (required + CTA visibility + copy cleanup + schema quality) run at the end of every high-value page build. |
 
 ## Checklists (`docs/site-os/checklists/`)
 
@@ -77,11 +98,14 @@ The full client-side Site OS prompt catalog for the Final Touch Cleaning Company
 
 ## How to Use This Catalog
 
-1. **Starting a new batch?** Pick the relevant build prompt under `prompts/build/`.
-2. **Drafting copy?** Use `prompts/content/seo-aeo-content-generation-prompt.md`.
-3. **Improving live content?** Run `prompts/seo-aeo/aeo-gap-analysis-prompt.md` first, then `prompts/content/content-strengthening-prompt.md` or `prompts/updates/content-gap-fix-prompt.md`.
-4. **Updating business data (phone, services, etc.)?** Use `prompts/updates/content-update-prompt.md`.
-5. **About to commit?** Run `prompts/qa/page-qa-prompt.md` + `prompts/qa/seo-aeo-qa-prompt.md` + `prompts/qa/pre-commit-qa-prompt.md` in sequence.
+1. **Routing first.** For any page work, classify page type and AI depth per `reference/prompt-router-and-ai-depth-standard.md` before picking a prompt.
+2. **High-value pages?** Use the individual high-value prompts (`prompts/build/individual-homepage-*`, `conversion-page-*`, `seo-aeo-service-page-*`, `local-seo-location-page-*`, or `aeo-faq-hub-prompt.md`). Do not use a batch prompt for these without explicit approval.
+3. **Batch / scaffold / legal / utility pages?** Pick the relevant batch build prompt under `prompts/build/batch-N-...-prompt.md`.
+4. **Drafting copy?** Use `prompts/content/seo-aeo-content-generation-prompt.md`.
+5. **Improving live content?** Run `prompts/seo-aeo/aeo-gap-analysis-prompt.md` first, then `prompts/content/content-strengthening-prompt.md` or `prompts/updates/content-gap-fix-prompt.md`.
+6. **Updating business data (phone, services, etc.)?** Use `prompts/updates/content-update-prompt.md`.
+7. **About to commit a high-value page?** Run `prompts/qa/page-qa-prompt.md` + `prompts/qa/seo-aeo-qa-prompt.md` + `prompts/qa/high-value-page-qa-prompt.md` + `prompts/qa/pre-commit-qa-prompt.md` in sequence. The high-value gate must PASS.
+8. **About to commit a non-high-value page?** Run `prompts/qa/page-qa-prompt.md` + `prompts/qa/pre-commit-qa-prompt.md`.
 
 ## How to Use in Future Client Repos
 

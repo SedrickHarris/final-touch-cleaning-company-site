@@ -98,7 +98,44 @@ Confirm `docs/site-os/implementation-log.md` contains a new entry for this batch
 - Validation results
 - TODOs
 
-### 7. Staged Scope Review
+### 7. High-Value Page Gate
+
+Before committing any of the following page types, run the high-value page QA prompt and the pass/fail gate:
+
+- Homepage (`/`)
+- Free quote page (`/free-quote`)
+- Contact page (`/contact`)
+- Services hub (`/services`)
+- Locations hub (`/locations`)
+- About page (`/about`)
+- FAQ hub (`/faq`)
+- Core service pages (`/services/<service>`)
+- Core location pages (`/locations/<city>`)
+- Service + location pages (`/services/<service>/<city>`)
+- Revenue-critical landing pages
+
+The high-value gate enforces:
+
+- Correct prompt routing and AI depth selection (per `docs/site-os/reference/prompt-router-and-ai-depth-standard.md`)
+- Keyword type research and AEO FAQ research (per `docs/site-os/reference/keyword-research-and-aeo-depth-standard.md`)
+- Pre-build deliverables and post-build proof (per `docs/site-os/reference/high-value-page-enforcement-standard.md`)
+- 44-item pass/fail checklist across required gate, CTA visibility, copy cleanup, and schema quality (per `docs/site-os/reference/pass-fail-page-quality-gates.md`)
+
+Run:
+
+```
+# 1. Read-only high-value page QA prompt against the built output
+docs/site-os/prompts/qa/high-value-page-qa-prompt.md
+```
+
+If the gate returns FAIL, do not stage. Fix the listed items and re-run.
+
+References:
+
+- `docs/site-os/reference/pass-fail-page-quality-gates.md` — the 44-item gate
+- `docs/site-os/prompts/qa/high-value-page-qa-prompt.md` — the read-only QA prompt that runs the gate
+
+### 8. Staged Scope Review
 
 Run:
 
@@ -108,7 +145,7 @@ git diff --cached --name-only
 
 Confirm the staged list matches the batch's expected file scope. No extra files, no missing files. If the scope is wrong, unstage and re-stage explicitly per `docs/site-os/file-scope-and-git-safety-policy.md` §5.
 
-### 8. Commit Message
+### 9. Commit Message
 
 Confirm the commit message follows the repo's conventional-commits style (`feat`, `fix`, `chore`, `docs`, `refactor`, etc.) and has a clear short subject:
 
@@ -165,3 +202,4 @@ GO / WAIT / STOP
 - Any `.env*` / `node_modules/` / `.next/` / secret pattern in the staged diff → STOP, unstage, re-stage explicitly without it.
 - Implementation log not updated → STOP, update, re-run.
 - Staged scope doesn't match expected → STOP, unstage and re-stage with the correct list.
+- **High-value page gate returned FAIL** → STOP, fix the listed items, re-run `prompts/qa/high-value-page-qa-prompt.md` until it returns PASS.

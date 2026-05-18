@@ -712,3 +712,59 @@ Remaining TODOs (unchanged from prior batches):
 - Legal-copy replacement (`/privacy-policy`, `/terms-of-service`, `/cookie-policy` still display the DraftBanner)
 - Business hours on `/contact` (FAQ explicitly says hours will be posted once confirmed)
 - Per-service pages (`TODO-BATCH-3`), per-city pages (`TODO-BATCH-4`), neighborhood pages (`TODO-BATCH-5`), service+city matrix (`TODO-BATCH-6`)
+
+### Site OS Routing and Enforcement Standards Sync
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Synced the routing, AI depth, keyword research, AEO research, high-value page enforcement, and pass/fail gate standards from Site OS Master commit `36f9092a72b864644d95fd3a5e4b6b15a1d096b7` into the Final Touch client repo. Docs-only change. No app code touched, no `node_modules` install, no deploy.
+
+Synced from Site OS Master:
+- Source commit: `36f9092a72b864644d95fd3a5e4b6b15a1d096b7` (Site OS Master `main`)
+- Sync direction: master → client (one-way, opt-in per `docs/site-os/decisions/client-repo-prompt-standard.md` § Maintenance)
+
+Standards copied to `docs/site-os/reference/` (4 files):
+- `prompt-router-and-ai-depth-standard.md` — page-type prompt routing + 6 AI depth levels
+- `keyword-research-and-aeo-depth-standard.md` — 10 keyword types + per-page research depth
+- `high-value-page-enforcement-standard.md` — pre-build deliverables + post-build proof for high-value pages
+- `pass-fail-page-quality-gates.md` — 44-item pass/fail gate (required + CTA + copy + schema)
+
+Prompt templates copied to `docs/site-os/prompts/build/` (9 files):
+- `individual-homepage-research-prompt.md` + `individual-homepage-implementation-prompt.md` (Level 5 Beyond-Elite two-step)
+- `conversion-page-research-prompt.md` + `conversion-page-implementation-prompt.md` (Level 4 Conversion two-step for /free-quote, /contact, booking, landing)
+- `seo-aeo-service-page-research-prompt.md` + `seo-aeo-service-page-implementation-prompt.md` (Level 3 or 5 service page two-step)
+- `local-seo-location-page-research-prompt.md` + `local-seo-location-page-implementation-prompt.md` (Level 3 location page two-step + anti-doorway check)
+- `aeo-faq-hub-prompt.md` (Level 5 FAQ hub single-step, 30+ FAQ minimum across 9 categories)
+
+QA prompt copied to `docs/site-os/prompts/qa/` (1 file):
+- `high-value-page-qa-prompt.md` — read-only pass/fail QA prompt that runs the 44-item gate
+
+Client-side files updated:
+- `docs/site-os/reference/client-build-prompt-index.md` — added a new "High-Value Page Prompts" section listing the 9 build prompts and their AI depth levels; added the high-value QA prompt to the QA Prompts table; added the 4 new standards to the Reference Docs table; updated the "How to Use This Catalog" sequence to put routing first and reference the high-value gate.
+- `docs/site-os/prompts/qa/pre-commit-qa-prompt.md` — inserted a new "High-Value Page Gate" section (step 7) listing the page types that require the gate, the four things the gate enforces, the references to the gate doc and the QA prompt, and a stop condition that FAIL must not commit.
+- `docs/site-os/implementation-log.md` — this entry.
+
+High-value page workflow now requires:
+1. Routing (page type + AI depth selection per `docs/site-os/reference/prompt-router-and-ai-depth-standard.md`)
+2. AI depth selection (Level 1 Utility through Level 6 Competitive Research)
+3. Keyword research (10 keyword types per `docs/site-os/reference/keyword-research-and-aeo-depth-standard.md`)
+4. AEO FAQ research (clustered, answer-first, direct-answer format)
+5. Content analysis (what's there, what's missing, what's thin)
+6. Content gaps (named, prioritized)
+7. Implementation (per the approved plan)
+8. Pass/fail QA (44-item gate per `docs/site-os/reference/pass-fail-page-quality-gates.md`)
+
+Pre-existing standards preserved (no edits to upstream policies):
+- Fast Build Batch (still default for non-high-value work)
+- No-fake-data policy
+- File-scope and Git safety policy
+- Service-business conversion layout standard
+- Service card image placeholder standard
+- Client repo prompt and documentation system standard
+- FAQ schema exact-match rule
+- Customer-facing em dash prohibition
+
+No app code, no constants, no `package.json`, no `next.config.ts`, no `tsconfig.json` touched. No `node_modules` install. No deploy. Build was not run because this batch contains only docs files.
+
+Sync model note: per the Client Repo Prompt Standard, master changes do NOT auto-update existing client repos. This sync is an opt-in `chore(site-os)`-style commit. Future master changes will require another opt-in sync.
