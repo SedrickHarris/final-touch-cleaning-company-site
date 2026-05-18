@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -14,6 +15,10 @@ export const metadata: Metadata = {
 };
 
 const faq = [
+  {
+    q: 'Do you provide both residential and commercial cleaning?',
+    a: 'Yes — both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
+  },
   {
     q: 'How do I choose between move-in cleaning and deep cleaning?',
     a: 'Move-in cleaning prepares a space for someone to settle in — top-to-bottom before the boxes arrive. Deep cleaning is for periodic resets in a space you already live in or operate from. Both reach the corners standard service skips; the difference is timing and intent.',
@@ -57,7 +62,7 @@ export default function ServicesPage() {
       <HeroSection
         eyebrow="Services"
         heading="Seven services. One standard."
-        sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada — from a single deep clean to ongoing janitorial routes. Every job ends with the same finishing checklist.`}
+        sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada — from a single deep clean to ongoing janitorial routes. Every job ends with the same finishing checklist: baseboards, vents, switch plates, edges, and corners.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
@@ -67,7 +72,7 @@ export default function ServicesPage() {
           <SectionHeader
             eyebrow="What we do"
             heading="The seven services we cover."
-            sub="Each service has its own scope and rhythm, but the finishing standard is the same: baseboards, vents, switch plates, edges, and corners. The details that make a space feel done."
+            sub="Each service has its own scope and rhythm, but the finishing standard is the same. Pick a service to see what's included, or jump straight to a free quote."
           />
 
           <ServicesPreview services={SERVICES} />
@@ -95,6 +100,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Choose by need */}
       <section className="bg-light-gray">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
@@ -103,9 +109,9 @@ export default function ServicesPage() {
           />
           <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
             <p>
-              <strong className="font-semibold">Moving in or out?</strong> Move-in
-              and move-out cleaning are built around the timing of new keys and
-              walkthroughs.
+              <strong className="font-semibold">Moving in or out?</strong>{' '}
+              Move-in and move-out cleaning are built around the timing of new
+              keys and deposit walkthroughs.
             </p>
             <p>
               <strong className="font-semibold">Finishing a build?</strong>{' '}
@@ -114,13 +120,41 @@ export default function ServicesPage() {
             </p>
             <p>
               <strong className="font-semibold">Running an office or retail
-              space?</strong> Commercial, janitorial, and retail-space cleaning are
-              scheduled programs that keep the space ready for customers and staff.
+              space?</strong>{' '}
+              Commercial, janitorial, and retail-space cleaning are scheduled
+              programs that keep the space ready for customers and staff.
             </p>
             <p>
-              <strong className="font-semibold">Just need a reset?</strong> Deep
-              cleaning is for the corners standard service skips — a periodic
-              top-to-bottom that takes a space back to baseline.
+              <strong className="font-semibold">Just need a reset?</strong>{' '}
+              Deep cleaning is for the corners standard service skips — a
+              periodic top-to-bottom that takes a space back to baseline.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cleaning by location */}
+      <section className="bg-brand-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <div className="rounded-[14px] border border-border-subtle bg-soft-blue/40 p-6 sm:p-8">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
+              Working in a specific city?
+            </p>
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-brand-black">
+              Cleaning across all of {SITE.serviceArea.county}.
+            </h2>
+            <p className="mt-3 text-base text-brand-black leading-relaxed">
+              Final Touch serves {SITE.serviceArea.cities.join(', ')} — every
+              part of {SITE.serviceArea.county}. Same team, same finishing
+              standard, no matter where the job is.
+            </p>
+            <p className="mt-5 text-sm">
+              <Link
+                href={ROUTES.locations}
+                className="font-semibold text-brand-blue hover:underline"
+              >
+                View service area →
+              </Link>
             </p>
           </div>
         </div>
@@ -130,7 +164,7 @@ export default function ServicesPage() {
 
       <CTASection
         heading="Tell us about your space."
-        sub={`Free quotes across ${SITE.serviceArea.county}.`}
+        sub={`Free quotes across ${SITE.serviceArea.county}. Call ${SITE.phone.display} or send a quote request.`}
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

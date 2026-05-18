@@ -37,6 +37,14 @@ const faq = [
     q: 'What does "small details bring big results" mean?',
     a: 'It means we finish what other crews skip — baseboards, vents, switch plates, edges, and corners. The final ten percent of a clean is what makes a space feel done, and that\'s where we focus.',
   },
+  {
+    q: 'What does "family-owned" mean for the work?',
+    a: `It means ${SITE.owners} are accountable for every job. The same owners who set the standard answer the phone, do walkthroughs, and check the finish.`,
+  },
+  {
+    q: 'Where is Final Touch based?',
+    a: `Final Touch is based in Southern Nevada and operates as a service-area business — we come to you. We don't have a public storefront to visit, but we do serve every part of ${SITE.serviceArea.county}.`,
+  },
 ];
 
 // Organization schema. NOTE: no streetAddress because Final Touch is a
@@ -67,6 +75,29 @@ const faqJsonLd = {
   })),
 };
 
+const detailExamples = [
+  {
+    label: 'Baseboards & door frames',
+    body:
+      'Wiped, not just dusted. The line of grime at the top of a baseboard is one of the first things a buyer or new tenant notices.',
+  },
+  {
+    label: 'Vents & switch plates',
+    body:
+      'HVAC return covers, ceiling vents, light-switch plates, outlet covers — the small surfaces that quietly read as "neglected" when they\'re skipped.',
+  },
+  {
+    label: 'Edges & corners',
+    body:
+      'Behind toilets, under sinks, the corner where the tile meets the wall, the inside of the oven door. The places where dust and residue collect.',
+  },
+  {
+    label: 'Glass, hardware, & finishes',
+    body:
+      'Streak-free glass, polished fixtures, fingerprints off cabinet pulls. The finish that catches light and makes a space feel done.',
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -85,16 +116,17 @@ export default function AboutPage() {
           <SectionHeader eyebrow="Our story" heading="Owner-led, owner-built." />
           <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
             <p>
-              Final Touch is a family operation. {SITE.owners} run it together — not
-              a franchise, not a national chain, not a marketplace of subcontractors.
-              The same people who answer the phone set the standard for every job.
+              Final Touch is a family operation. {SITE.owners} run it together —
+              not a franchise, not a national chain, not a marketplace of
+              subcontractors. The same people who answer the phone set the
+              standard for every job.
             </p>
             <p>
-              We started Final Touch because the average cleaning crew rushes the
-              last ten percent of a job — the baseboards, the vents, the switch
-              plates, the inside of the oven, the corners behind the toilet. That
-              final ten percent is what makes a space feel finished, and that&apos;s
-              where we put our focus.
+              We started Final Touch because the average cleaning crew rushes
+              the last ten percent of a job — the baseboards, the vents, the
+              switch plates, the inside of the oven, the corners behind the
+              toilet. That final ten percent is what makes a space feel
+              finished, and that&apos;s where we put our focus.
             </p>
             <p>
               We serve {SITE.serviceArea.cities.slice(0, 3).join(', ')}, and{' '}
@@ -105,7 +137,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* What "small details" actually means */}
       <section className="bg-light-gray">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <SectionHeader
+            eyebrow="What we mean by details"
+            heading="The finish, in concrete terms."
+            sub={SITE.coreMessage}
+          />
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
+            {detailExamples.map((item) => (
+              <li
+                key={item.label}
+                className="rounded-[14px] border border-border-subtle bg-brand-white p-6"
+              >
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-brand-black tracking-tight">
+                  {item.label}
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-sm text-muted max-w-2xl">
+            None of these are upsells. They&apos;re part of every job — the
+            finishing standard that makes a space feel done, not just wiped.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-brand-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="How we work"
@@ -118,8 +180,8 @@ export default function AboutPage() {
                 Honest pricing
               </h3>
               <p className="mt-2 text-sm text-muted leading-relaxed">
-                Free walkthroughs, real numbers, no surprise add-ons. If a job is
-                going to cost more, you hear it before we start — not after.
+                Free walkthroughs, real numbers, no surprise add-ons. If a job
+                is going to cost more, you hear it before we start — not after.
               </p>
             </div>
             <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">

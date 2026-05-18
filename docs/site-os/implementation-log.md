@@ -403,3 +403,174 @@ Carry-forward:
 - Trailing-slash decision (canonical alignment) deferred — current default canonicals (no trailing slash) match the `out/<slug>.html` output, so Cloudflare Pages will serve consistently.
 - Once Cloudflare Pages renders, verify production URLs against the in-code canonical values.
 - All Batch 1.x / Batch 2 TODOs unchanged.
+
+### Homepage CTA Text and Content Polish
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+After the Cloudflare Pages deploy, CTA buttons rendered as blank blue rectangles on production. Root cause was a CSS cascade-layer issue in `app/globals.css`: the global `a { color: var(--color-brand-blue); }` rule was **unlayered**, while Tailwind v4 puts utility classes like `text-brand-white` in `@layer utilities`. Per CSS spec, unlayered rules beat layered rules **regardless of specificity**, so `text-brand-white` could not override the global anchor color on Link-rendered buttons. Result: brand-blue text on brand-blue background = invisible buttons. Fix: move the base custom rules into `@layer base` so Tailwind utilities can override per the documented cascade. Also took the opportunity to lightly strengthen the homepage with a "Why Final Touch" section, a 3-step "How the quote process works" section, and three more verified FAQs.
+
+CTA text issue found and fixed:
+
+- Cause: in `app/globals.css`, the rule `a { color: var(--color-brand-blue); text-decoration: none; }` was declared outside any `@layer`. CSS cascade order is: origin → importance → cascade layer → specificity → order. Unlayered author rules beat layered author rules at the layer-precedence step, before specificity is consulted. Tailwind v4 utilities live in `@layer utilities`. So `.text-brand-white` (specificity 0,1,0, in `@layer utilities`) lost to `a` (specificity 0,0,1, unlayered) on every `<a>` element.
+- Affected surfaces:
+  - Header primary CTA — `bg-brand-blue text-brand-white` → text was brand-blue on brand-blue ⇒ INVISIBLE
+  - Hero primary CTA — same classes ⇒ INVISIBLE
+  - Bottom CTASection blue-tone secondary CTA — `border-2 border-white/50 text-brand-white` on brand-blue section ⇒ INVISIBLE
+  - Hero secondary CTA (`text-brand-black` on light-gray) — text rendered as brand-blue instead of brand-black, visible but off-brand
+  - All other `<a>` elements with explicit color utilities — similar cascade override (cosmetic only when the utility happened to be brand-blue too)
+  - `<button>` elements (like the form submit) were unaffected — the `a` selector doesn't match `<button>`
+- Fix in `app/globals.css`: wrapped `:root`, `html`, `body`, `h1–h6`, `a`, and `:focus-visible` rules inside `@layer base`. Kept `.skip-link` and the `prefers-reduced-motion` `@media` block unlayered (they don't conflict with utilities — skip link is a unique class, reduced-motion uses `!important`). Also removed the global `a:hover { text-decoration: underline; }` rule because inline text links already have explicit `hover:underline` Tailwind utilities where wanted, and keeping the global rule would underline button text on hover.
+
+Files changed:
+- `app/globals.css` — base styles moved into `@layer base`; removed unneeded `a:hover` underline rule.
+- `app/page.tsx` — added "Why Final Touch" (3-card grid) and "How the quote process works" (3-step numbered list) sections; expanded FAQ from 4 → 7 items.
+
+Homepage content strengthened:
+
+- "Why Final Touch" section (3-card grid on light-gray): Family-owned local team / The details others skip / Free quotes, no pressure. Uses verified positioning only — references `SITE.owners` from constants; mentions Clark County + four cities naturally; no fake credentials, no fake claims.
+- "How the quote process works" section (3-step numbered list on white): "Tell us about your space" → "Short walkthrough" → "Real quote, your call". Step bodies reference phone and email from constants; no response-time claims, no satisfaction guarantee, no pricing.
+- Both sections sit between the existing Services preview and FAQ. Page rhythm is now: Hero (form) → TrustBar → Services → Why → How → FAQ → Final CTA.
+
+FAQ items added (3 new, all from the approved-topics list):
+- "Do you clean homes and businesses?" — Yes, residential + commercial both. Lists service categories.
+- "Do you provide move-in and move-out cleaning?" — Yes. Defines move-in vs move-out without inventing scope details.
+- "Can I request recurring cleaning?" — Yes. Mentions janitorial routes for commercial + recurring residential. No pricing claim.
+
+Total homepage FAQ now: 7 items. Visible text matches `FAQPage` JSON-LD via the existing FAQSection component pattern.
+
+Standards preserved:
+- ✅ Two-column hero/form layout (split with `formSlot`) — unchanged
+- ✅ Wide hero container (`max-w-[1440px]` + progressive padding) — unchanged
+- ✅ Service card image placeholders — unchanged
+- ✅ Framer Motion reduced-motion support (`MotionConfig reducedMotion="user"`) — unchanged
+- ✅ Brand colors and fonts (Fraunces + Manrope via next/font) — unchanged
+- ✅ No-fake-data policy — no reviews, ratings, testimonials, license numbers, insurance details, awards, certifications, years in business, before/after results, customer / team / project photos, pricing guarantees, satisfaction guarantees, same-day / 24/7 / emergency availability, or unsupported trust signals added
+- ✅ Accessibility — heading hierarchy, focus rings, touch targets all unchanged; CTA text is now actually readable
+- ✅ Mobile responsiveness — both new sections use the same responsive grid + container patterns from the rest of the page
+
+Validation:
+- `npm run lint` — passed clean
+- `npm run type-check` — passed clean (`tsc --noEmit`)
+- `npm run build` — succeeded; 13 static routes prerendered. Compile 2.1s, TS 2.3s.
+
+Static export confirmation:
+- `out/index.html` ✓
+- `out/about.html` ✓
+- `out/services.html` ✓
+- `out/contact.html` ✓
+- `out/free-quote.html` ✓
+- Plus 7 other static HTML files for all remaining routes + `out/404.html`
+
+Spot-checked CTA text in `out/index.html`: "Request a Free Quote" appears 4×, "Get My Cleaning Estimate" 2×, "Call Now" 5×. Text is in the HTML; the bug was purely the CSS cascade.
+
+No-fake-data compliance: No business claims, copy, or trust signals were modified or added beyond what was already verified. The two new sections and three new FAQ items use only facts already in `lib/constants/site.ts` (owners, phone, email, service area) and brand-voice positioning that doesn't require external verification (family-owned, local team, detail-focused work, free-quote process). All Batch 1.x / Batch 2 carry-forward TODOs unchanged.
+
+### Batch 2.1 — Core Conversion Page Polish
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Big polish pass across the 6 highest-priority conversion / trust pages. Subsumes the prior "Homepage CTA Text and Content Polish" entry (CTA visibility fix in `app/globals.css` via `@layer base`, plus the earlier homepage Why / How sections and expanded FAQ). On top of that, adds a "Who we help" section to the homepage, a "What to include" section to /free-quote and /contact, a "Cleaning by location" callout to /services, a "One team, county-wide" section to /locations, a "What we mean by details" section to /about, an "Are your online forms active yet?" FAQ on the conversion pages (transparent disclosure about the placeholder form), and several other smaller copy / FAQ improvements. Total FAQ count site-wide grew by ~11 items.
+
+Cause of missing CTA text (recap from prior entry):
+The unlayered `a { color: var(--color-brand-blue); }` rule in `app/globals.css` beat Tailwind v4 utilities like `text-brand-white` because unlayered CSS author rules win over layered ones regardless of specificity. Result: every Link-rendered CTA with `bg-brand-blue text-brand-white` rendered brand-blue text on brand-blue background = invisible. Fix: wrap base rules in `@layer base`. Verified in built HTML — "Request a Free Quote" appears 4×, "Get My Cleaning Estimate" 2×, "Call Now" 5× in `out/index.html` and they render with the correct color.
+
+Files changed in this pass:
+- `app/globals.css` — `@layer base` fix (from the prior turn, still uncommitted)
+- `app/page.tsx` — Added "Who we help" 4-card section between Services preview and Why Final Touch. Added "Are your online forms active yet?" FAQ. Total homepage FAQ now 8 items. Strengthened final-CTA sub copy to include phone + free-quote CTA.
+- `app/free-quote/page.tsx` — Added a "What to include" 5-bullet section between hero and the existing "What you get" section. Added 3 new FAQs: "What if I'm not sure which cleaning service I need?", "Are your online forms active yet?", "Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?". Total FAQ now 7 items.
+- `app/contact/page.tsx` — Added a "What to include" 4-bullet section. Replaced the third ContactTile ("Quote request → Use the form above" was awkward) with a "Service area" tile linking to /locations. Added 2 new FAQs: "Are your online forms active yet?" and "What are your business hours?" (the hours answer routes to phone/email without claiming specific hours — TODO-VERIFY still in place). Total FAQ now 6 items.
+- `app/services/page.tsx` — Strengthened hero sub with finishing-checklist specifics. Strengthened the services-grid section header sub. Added a "Cleaning by location" callout linking to /locations (soft-blue card on white). Added a new FAQ: "Do you provide both residential and commercial cleaning?". Total FAQ now 5 items. Strengthened the final-CTA sub.
+- `app/locations/page.tsx` — Added a "How we cover the county" / "One team. County-wide." prose section after the city grid, explaining that Final Touch isn't a franchise pool or marketplace and is a service-area-only business with no public storefront. Added 2 new FAQs: "Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?" and "Do you have a separate team for each city?". Also added "Where is Final Touch based?". Total FAQ now 6 items. Strengthened the final-CTA sub.
+- `app/about/page.tsx` — Added a "What we mean by details" 4-card section between "Our story" and "How we work", giving concrete examples (baseboards & door frames; vents & switch plates; edges & corners; glass, hardware & finishes). Added 2 new FAQs: "What does 'family-owned' mean for the work?" and "Where is Final Touch based?". Total FAQ now 6 items.
+
+Homepage Beyond-Elite polish summary:
+- Hero unchanged (already strong with split form + italic emphasis on "details")
+- TrustBar unchanged (4 verified items)
+- Services preview unchanged
+- **NEW** "Who we help" — 4-card audience grid (Homeowners / Renters & landlords / Offices & businesses / Contractors & builders)
+- Why Final Touch — 3-card (family-owned local team / details others skip / free quotes, no pressure) — already in place from prior turn
+- How the quote process works — 3-step (already in place from prior turn)
+- FAQ expanded to 8 items
+- Final CTA sub now mentions phone + quote-request explicitly
+
+/free-quote polish summary:
+- Hero unchanged (split with form)
+- **NEW** "What to include" 5-bullet section (Space type, Rough size, City or neighborhood, Timing, Anything specific)
+- "What you get" 4-bullet section retained
+- 3-step process retained
+- FAQ grew 4 → 7 items
+
+/contact polish summary:
+- Hero unchanged (split with form)
+- "Ways to reach us" tiles: third tile now links to /locations (service area) instead of "Use the form above" placeholder
+- **NEW** "What to include" 4-bullet section
+- 4-step "What happens next" retained
+- FAQ grew 4 → 6 items (incl. transparent business-hours disclosure)
+
+/services hub polish summary:
+- Hero sub strengthened with the finishing-checklist line
+- Services grid retained (ServiceCard with image placeholders, links to TODO-BATCH-3 service pages)
+- "Choose by the moment" 4-paragraph guidance retained
+- **NEW** "Cleaning by location" callout linking to /locations
+- FAQ grew 4 → 5 items (added residential + commercial confirmation)
+
+/locations hub polish summary:
+- Hero retained (single-column, county-wide framing)
+- 5-card grid (Las Vegas / Henderson / North Las Vegas / Boulder City / Clark County) retained
+- **NEW** "How we cover the county" / "One team. County-wide." 3-paragraph prose section explaining single team across the county + service-area-only positioning
+- FAQ grew 4 → 6 items
+
+/about polish summary:
+- Hero retained
+- TrustBar retained (4 verified items)
+- "Our story" 3-paragraph retained
+- **NEW** "What we mean by details" 4-card section (baseboards / vents / corners / glass) with concrete examples of "small details bring BIG RESULTS"
+- "How we work" 3-card retained
+- FAQ grew 4 → 6 items
+
+FAQ updates total (visible + JSON-LD updated to match exactly):
+| Page | Before | After |
+|---|---|---|
+| / | 4 | 8 |
+| /free-quote | 4 | 7 |
+| /contact | 4 | 6 |
+| /services | 4 | 5 |
+| /locations | 4 | 6 |
+| /about | 4 | 6 |
+
+Each new FAQ uses verified facts only. The "Are your online forms active yet?" question on /, /free-quote, and /contact is honest disclosure about the placeholder form and routes users to phone/email. The "business hours" answer routes to phone/email without claiming specific hours (TODO-VERIFY still in place).
+
+Validation:
+- `npm run lint` — passed clean
+- `npm run type-check` — passed clean (`tsc --noEmit`)
+- `npm run build` — succeeded; 13 static routes prerendered. Compile 2.2s, TS 2.3s.
+
+Static export confirmation (`out/`):
+- ✅ `out/index.html`
+- ✅ `out/about.html`
+- ✅ `out/services.html`
+- ✅ `out/locations.html`
+- ✅ `out/contact.html`
+- ✅ `out/free-quote.html`
+- Plus 7 other route HTML files + `out/404.html` + `_next/` assets + public SVGs
+
+No-fake-data compliance: No reviews, ratings, testimonials, license numbers, insurance details, awards, certifications, years-in-business, before/after results, customer / team / project photos, pricing guarantees, satisfaction guarantees, same-day / emergency / 24/7 / specific response-time claims were introduced anywhere in this pass. Every new section and FAQ item draws from `lib/constants/site.ts` or from brand-voice positioning already approved in `docs/site-os/final-touch-build-context.md`. Service-area-only positioning explicitly maintained — no street-address claim anywhere; `Organization` / `LocalBusiness` schema continues to omit `streetAddress`. The new business-hours FAQ on /contact explicitly does NOT claim hours; it routes to phone/email and acknowledges the published schedule will be posted once confirmed.
+
+Standards preserved:
+- ✅ Two-column hero/form layout on /contact and /free-quote
+- ✅ Wide conversion containers (`max-w-[1440px]` + progressive padding)
+- ✅ Homepage split hero/form layout
+- ✅ Service card image placeholders (`ServiceCard` + `ServiceImagePlaceholder` on /services and /locations grids)
+- ✅ Framer Motion reduced-motion support
+- ✅ Semantic HTML
+- ✅ One H1 per page (no extra H1s introduced)
+- ✅ Sequential headings
+- ✅ Metadata quality (titles unique, descriptions 140–160 chars, canonical on every page)
+- ✅ FAQPage JSON-LD updated to match expanded visible FAQ text exactly on every page
+- ✅ No-fake-data rules
+- ✅ Static export compatibility (Cloudflare Pages still builds clean)
+
+All carry-forward TODOs unchanged: form endpoint wiring, favicon/OG image, owner-verified trust signals (license, insurance, satisfaction guarantee, years-in-business), real service photos, legal-copy replacement on draft pages.

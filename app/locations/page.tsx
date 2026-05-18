@@ -19,8 +19,16 @@ const faq = [
     a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
   },
   {
-    q: 'Do you serve all of Clark County?',
-    a: `Yes. We work across ${SITE.serviceArea.county}, with the same team and the same finishing standard regardless of which part of the county you're in.`,
+    q: 'Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?',
+    a: `Yes — all of them. Final Touch covers every city in ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of which part of the county you're in.`,
+  },
+  {
+    q: 'Do you have a separate team for each city?',
+    a: 'No — we run one team across the whole county. Crew scheduling is based on location and timing, but the standards, training, and finishing checklist are the same everywhere.',
+  },
+  {
+    q: 'Where is Final Touch based?',
+    a: `Final Touch is based in Southern Nevada and operates as a service-area business — we come to you. We don't have a public storefront to visit, but we do serve every part of ${SITE.serviceArea.county}.`,
   },
   {
     q: 'How do you decide which crew handles a job?',
@@ -98,11 +106,42 @@ export default function LocationsPage() {
         </div>
       </section>
 
+      {/* One team, county-wide */}
+      <section className="bg-light-gray">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <SectionHeader
+            eyebrow="How we cover the county"
+            heading="One team. County-wide."
+          />
+          <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
+            <p>
+              Final Touch isn&apos;t a franchise pool of independent contractors
+              or a marketplace of subcontractors. {SITE.owners} run one team
+              across all of {SITE.serviceArea.county} — the same training, the
+              same finishing checklist, the same owner-checked standards.
+            </p>
+            <p>
+              Crew scheduling shifts based on where the jobs are on a given day.
+              A house in {SITE.serviceArea.cities[0]} in the morning, an office
+              in {SITE.serviceArea.cities[1]} in the afternoon, a
+              post-construction site in {SITE.serviceArea.cities[2]} the next
+              day. What doesn&apos;t shift is what a finished space looks like
+              when we&apos;re done.
+            </p>
+            <p>
+              Final Touch is a service-area business — we come to you. There
+              isn&apos;t a public storefront to visit, but if you&apos;re in{' '}
+              {SITE.serviceArea.county}, we&apos;re in your service area.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <FAQSection items={faq} heading="Questions about our service area" defaultOpenFirst />
 
       <CTASection
         heading={`Ready to bring the details to your part of ${SITE.serviceArea.county}?`}
-        sub={`Free quotes for cleaning across ${SITE.serviceArea.county}.`}
+        sub={`Free quotes for cleaning across ${SITE.serviceArea.county}. Call ${SITE.phone.display} or send a quote request.`}
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

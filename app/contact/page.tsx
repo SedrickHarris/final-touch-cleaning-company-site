@@ -28,6 +28,14 @@ const faq = [
     q: 'Where do you work?',
     a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
   },
+  {
+    q: 'Are your online forms active yet?',
+    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+  },
+  {
+    q: 'What are your business hours?',
+    a: `Call ${SITE.phone.display} or email ${SITE.email.display} and we'll get back to you. Specific business hours will be posted here once we've confirmed our published schedule.`,
+  },
 ];
 
 // Organization schema with contactPoint. Service-area-only — no street address.
@@ -106,11 +114,13 @@ export default function ContactPage() {
         formSlot={<QuoteFormPlaceholder />}
       />
 
+      {/* Ways to reach us */}
       <section className="bg-brand-white">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Ways to reach us"
             heading="Three direct channels."
+            sub={`No call center, no ticket queue. ${SITE.owners} or the team answer.`}
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             <ContactTile
@@ -125,19 +135,50 @@ export default function ContactPage() {
               href={SITE.email.href}
             />
             <ContactTile
-              label="Quote request"
-              value="Use the form above"
-              href="#main-content"
+              label="Service area"
+              value={`${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`}
+              href="/locations"
             />
           </div>
           <p className="mt-6 text-sm text-muted">
-            Service area: {SITE.serviceArea.county}, {SITE.serviceArea.state} —{' '}
-            {SITE.serviceArea.cities.join(', ')}.
+            Cities we serve: {SITE.serviceArea.cities.join(', ')}.
           </p>
         </div>
       </section>
 
+      {/* What to include */}
       <section className="bg-light-gray">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <SectionHeader
+            eyebrow="What to include"
+            heading="A few details help us help you faster."
+          />
+          <ul className="mt-8 space-y-3 text-base text-brand-black">
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>Type of space — home, office, retail, post-construction, vacation rental.</span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>City or neighborhood within {SITE.serviceArea.county}.</span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>Rough size and timing — one-time, recurring, or move-in/move-out tied.</span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>Anything specific — pets, post-construction dust, hard-water buildup, access notes.</span>
+            </li>
+          </ul>
+          <p className="mt-6 text-sm text-muted">
+            None of this is required. We&apos;ll cover what&apos;s missing on the walkthrough.
+          </p>
+        </div>
+      </section>
+
+      {/* What happens next */}
+      <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="What happens next"
@@ -153,12 +194,14 @@ export default function ContactPage() {
               {
                 step: '02',
                 title: 'We schedule a walkthrough',
-                body: 'A short conversation about the space — phone or on-site, whichever fits the job.',
+                body:
+                  'A short conversation about the space — phone or on-site, whichever fits the job.',
               },
               {
                 step: '03',
                 title: 'You get a real quote',
-                body: 'A real number for the work, not a templated rate. No pressure to book.',
+                body:
+                  'A real number for the work, not a templated rate. No pressure to book.',
               },
               {
                 step: '04',

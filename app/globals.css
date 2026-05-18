@@ -18,46 +18,53 @@
   --radius-card: 0.875rem;
 }
 
-:root {
-  color-scheme: light;
+/* All custom defaults sit inside @layer base so Tailwind utility classes
+   (which live in @layer utilities) can override them via the documented
+   cascade. Without this, unlayered rules like `a { color: ... }` would
+   beat utilities like `text-brand-white` and produce invisible CTA text
+   on blue buttons. */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-brand-white);
+    color: var(--color-brand-black);
+    font-family: var(--font-body), system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    color: var(--color-brand-black);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  /* Default link color for inline text links. Buttons-styled-as-links
+     override this with `text-brand-white` etc. via Tailwind utilities. */
+  a {
+    color: var(--color-brand-blue);
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  background: var(--color-brand-white);
-  color: var(--color-brand-black);
-  font-family: var(--font-body), system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  color: var(--color-brand-black);
-  letter-spacing: -0.01em;
-  font-weight: 600;
-}
-
-a {
-  color: var(--color-brand-blue);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-brand-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
+/* Skip link — unlayered so it always wins focus state regardless of
+   inheritance. */
 .skip-link {
   position: absolute;
   left: -10000px;
@@ -79,6 +86,7 @@ a:hover {
   z-index: 9999;
 }
 
+/* Reduced-motion override uses !important so it applies regardless of layer. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

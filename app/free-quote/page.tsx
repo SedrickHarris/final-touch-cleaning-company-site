@@ -21,12 +21,24 @@ const faq = [
     a: 'We start with a short walkthrough — phone or on-site, depending on the job. After the walkthrough you get a real number based on your space, your scope, and your timing.',
   },
   {
+    q: 'What information should I include in the request?',
+    a: 'The type of space (home, office, retail, post-construction), rough square footage, the city or neighborhood, and your timing. If you don\'t know all of it, that\'s fine — we\'ll cover the rest on the walkthrough.',
+  },
+  {
+    q: 'What if I\'m not sure which cleaning service I need?',
+    a: 'That\'s what the walkthrough is for. Tell us what triggered the request — moving in, finishing a build, opening a store, resetting a space — and we\'ll match it to the right service.',
+  },
+  {
     q: 'How fast will I hear back?',
     a: `We answer the phone and respond to email and form requests when our team is available. Call ${SITE.phone.display} if you need to reach someone directly.`,
   },
   {
-    q: 'What information should I include in the request?',
-    a: 'The type of space (home, office, retail, post-construction), rough square footage, the city or neighborhood, and your timing. If you don\'t know all of it, that\'s fine — we\'ll cover the rest on the walkthrough.',
+    q: 'Are your online forms active yet?',
+    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+  },
+  {
+    q: 'Do you serve Henderson, North Las Vegas, Boulder City, and Clark County?',
+    a: `Yes. Final Touch serves all of ${SITE.serviceArea.county}, ${SITE.serviceArea.state} — including ${SITE.serviceArea.cities.join(', ')}.`,
   },
 ];
 
@@ -52,8 +64,58 @@ export default function FreeQuotePage() {
         formSlot={<QuoteFormPlaceholder />}
       />
 
+      {/* What to include */}
       <section className="bg-brand-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <SectionHeader
+            eyebrow="What to include"
+            heading="A few details help us prep a real quote."
+            sub="None of this is required — we'll cover anything missing on the walkthrough — but the more you can share up front, the faster we can get you a number."
+          />
+          <ul className="mt-8 space-y-3.5 text-base sm:text-lg text-brand-black">
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>
+                <strong className="font-semibold">Space type</strong> — home,
+                office, retail, post-construction, vacation rental, or other.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>
+                <strong className="font-semibold">Rough size</strong> — square
+                footage or number of bedrooms/bathrooms is enough.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>
+                <strong className="font-semibold">City or neighborhood</strong>{' '}
+                — anywhere in {SITE.serviceArea.county}: {SITE.serviceArea.cities.join(', ')}.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>
+                <strong className="font-semibold">Timing</strong> — one-time,
+                recurring, or tied to a move-in/move-out date.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-brand-blue mt-1">•</span>
+              <span>
+                <strong className="font-semibold">Anything specific</strong> —
+                pets, post-construction dust, hard-water buildup, the corners you
+                want extra attention on.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* What you get */}
+      <section className="bg-light-gray">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="What you get"
             heading="A real number, not a templated rate."
@@ -96,7 +158,8 @@ export default function FreeQuotePage() {
         </div>
       </section>
 
-      <section className="bg-light-gray">
+      {/* How the quote process works */}
+      <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="How the quote process works"
@@ -107,17 +170,20 @@ export default function FreeQuotePage() {
               {
                 step: '01',
                 title: 'Send the request',
-                body: 'Fill the form, call, or email. Tell us the type of space, the city, and rough timing.',
+                body:
+                  'Fill the form, call, or email. Tell us the type of space, the city, and rough timing.',
               },
               {
                 step: '02',
                 title: 'Walkthrough',
-                body: 'A short conversation about the space — phone or on-site, whichever fits the job.',
+                body:
+                  'A short conversation about the space — phone or on-site, whichever fits the job.',
               },
               {
                 step: '03',
                 title: 'Real quote',
-                body: 'You get a real number for the work. No pressure to book.',
+                body:
+                  'You get a real number for the work. No pressure to book.',
               },
             ].map((item) => (
               <li
