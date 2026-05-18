@@ -10,17 +10,6 @@ import TrustBar from '@/components/shared/TrustBar';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
-// TODO-BATCH-3: Individual service pages (/services/<slug>) are not yet
-// built. Until they ship, service card hrefs fall back to ROUTES.services so
-// cards link to the hub rather than 404. Replace each card href with the
-// real slug once Batch 3 lands. The SERVICES constant already holds the
-// correct per-service hrefs; update ServicesPreview to use them directly
-// after Batch 3 is live.
-const SERVICES_WITH_FALLBACK = SERVICES.map((s) => ({
-  ...s,
-  href: ROUTES.services,
-}));
-
 export const metadata: Metadata = {
   title: 'Cleaning Services in Las Vegas & Clark County, NV | Final Touch',
   description:
@@ -204,7 +193,7 @@ export default function HomePage() {
             sub="From a single deep clean to ongoing janitorial routes, every job ends with the same checklist: the details that make a space feel finished."
           />
 
-          <ServicesPreview services={SERVICES_WITH_FALLBACK} />
+          <ServicesPreview services={SERVICES} />
 
           <p className="mt-10 text-sm">
             <Link

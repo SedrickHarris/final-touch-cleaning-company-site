@@ -1031,3 +1031,100 @@ PASS
 - TODO-BATCH-4: city card hrefs on /locations still link to city pages that 404 until Batch 4
 - TODO-VERIFY: Organization JSON-LD on /about still missing license, insurance, foundingDate, sameAs
 - TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from any of these pages
+
+
+### Batch 3 — Service Pages (7 Tier 2 Service Pages)
+Status: Implemented pending review
+Date: 2026-05-18
+
+Summary:
+Built all 7 Tier 2 service pages per docs/site-build-plan.md Batch 3. Used the high-value two-step workflow (Prompt A research + approval, then Prompt B implementation) per docs/site-os/reference/high-value-page-enforcement-standard.md. All 7 pages are Level 5 Beyond-Elite depth. No service pages existed prior to this batch.
+
+Pages created (7):
+- app/services/commercial-office-cleaning/page.tsx
+- app/services/janitorial-services/page.tsx
+- app/services/post-construction-cleanup/page.tsx
+- app/services/move-in-cleaning/page.tsx
+- app/services/move-out-cleaning/page.tsx
+- app/services/deep-cleaning/page.tsx
+- app/services/retail-space-cleaning/page.tsx
+
+Files updated:
+- app/page.tsx — remove SERVICES_WITH_FALLBACK const and TODO-BATCH-3 comment; revert service card hrefs to use SERVICES directly now that all 7 service pages exist.
+- docs/site-os/implementation-log.md — this entry.
+
+Components reused (no changes to any component):
+- HeroSection — split layout with formSlot={<QuoteFormPlaceholder />} on all 7 pages
+- CTASection — tone="blue", no duplicate form, on all 7 pages
+- FAQSection — 7 items per page, defaultOpenFirst, on all 7 pages
+- SectionHeader — eyebrow + heading + sub throughout all sections
+- ServiceCard + ServiceImagePlaceholder — 6 sibling cards per page via SERVICES.filter(s => s.slug !== '<this-slug>')
+- QuoteFormPlaceholder — hero form slot on all 7 pages
+
+No new components created. No constants changed. No packages installed.
+
+Section structure (10 sections, identical pattern across all 7 pages):
+1. Hero — HeroSection split with QuoteFormPlaceholder
+2. Quick Answer — direct-answer paragraph within first 100 words of body copy
+3. Who This Is For — 4-card grid, audience segments specific to each service
+4. What's Included — checkmark list, generic-but-honest scope per service
+5. Why Final Touch — 3-card grid, verified differentiators only (family-owned, local, detail-focused)
+6. Service Process — 4-step numbered list
+7. Service Areas — city pill links (Las Vegas, Henderson, North Las Vegas, Boulder City, Clark County), all pointing to ROUTES.locations until Batch 4 city pages are built
+8. Related Services — 6 sibling ServiceCard grid with ServiceImagePlaceholder (16:10 aspect)
+9. FAQ — FAQSection, 7 items, defaultOpenFirst
+10. Final CTA — CTASection tone="blue", no duplicate form
+
+Keyword coverage (all 10 types per docs/site-os/reference/keyword-research-and-aeo-depth-standard.md):
+Primary, secondary, long-tail, local modifiers, AEO question targets, transactional, informational, commercial comparison, entity/semantic, internal-link anchor targets — mapped for all 7 pages in Prompt A.
+
+AEO/FAQ coverage:
+- 7 FAQs per page (49 total)
+- All answers follow direct-answer format (answer in sentence 1)
+- All questions are real customer phrasing
+- FAQPage JSON-LD generated from same faq[] array rendered by FAQSection — exact text match enforced by construction
+
+Metadata per page:
+- /services/commercial-office-cleaning — "Commercial Office Cleaning in Las Vegas, NV | Final Touch" / 152-char description / canonical set
+- /services/janitorial-services — "Janitorial Services in Las Vegas, NV | Final Touch Cleaning" / 155-char description / canonical set
+- /services/post-construction-cleanup — "Post-Construction Cleanup in Las Vegas, NV | Final Touch" / 159-char description / canonical set
+- /services/move-in-cleaning — "Move-In Cleaning Service in Las Vegas, NV | Final Touch" / 156-char description / canonical set
+- /services/move-out-cleaning — "Move-Out Cleaning Service in Las Vegas, NV | Final Touch" / 148-char description / canonical set
+- /services/deep-cleaning — "Deep Cleaning Service in Las Vegas, NV | Final Touch" / 149-char description / canonical set
+- /services/retail-space-cleaning — "Retail Space Cleaning in Las Vegas, NV | Final Touch" / 155-char description / canonical set
+All 7 have unique titles, unique descriptions, self-referencing canonicals, and openGraph blocks.
+
+Schema per page (all 7):
+- Service JSON-LD: name, serviceType, provider (Organization with phone + email), areaServed (Clark County + 4 cities)
+- FAQPage JSON-LD: mainEntity from same faq[] array as FAQSection
+- BreadcrumbList JSON-LD: Home > Services > [Service Name]
+- No AggregateRating, no Review, no HowTo, no streetAddress
+
+Internal links per page:
+- All pages link to /services (services hub), /free-quote (primary CTA), /locations (service area pills)
+- Cross-links between related services: commercial <-> janitorial, post-construction <-> move-in, move-in <-> move-out, deep cleaning referenced from 4 pages
+- Minimum 5 internal hrefs per page, up to 6 on pages with two city references
+- TODO-BATCH-4 comments in each service area section for when per-city hrefs replace /locations hub links
+
+No-fake-data compliance:
+- Zero matches on: licensed, insured, award, years in business, certified, satisfaction guarantee, same-day, emergency, 24/7, star rating, testimonial, review
+- Move-out cleaning page explicitly states: "We do not guarantee deposit outcomes" — honest framing, no fabricated promise
+- All trust positioning draws from SITE.owners, SITE.phone, SITE.serviceArea only
+- Service scope uses generic-but-honest descriptions confirmed as accurate for a cleaning business; nothing invented
+- No pricing, response times, or availability windows claimed
+
+Validation:
+- TypeScript type check — PASS (0 errors, confirmed in container against Next.js 16.2.6 + React 19 types)
+- Em dash check — PASS (0 across all 7 pages)
+- Double hyphen check — PASS (0 across all 7 pages)
+- Fake-data grep — PASS (0 matches across all 7 pages)
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+
+Remaining TODOs:
+- TODO-BATCH-3 resolved — remove SERVICES_WITH_FALLBACK from app/page.tsx and update service card hrefs to use SERVICES directly
+- TODO-BATCH-4 × 7 — update city pill hrefs in each service page's service area section from ROUTES.locations to per-city routes once /locations/las-vegas etc. are built
+- TODO-BATCH-2+ (inherited) — replace ServiceImagePlaceholder with owner-supplied photos when assets are approved
+- TODO-BATCH-2+ (inherited) — wire QuoteFormPlaceholder to a real form endpoint
+- All other Batch 1.x and Batch 2 carry-forward TODOs unchanged
