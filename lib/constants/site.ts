@@ -14,6 +14,7 @@ export const SITE = {
   },
   serviceArea: {
     county: 'Clark County',
+    metro: 'the Las Vegas Valley',
     state: 'Nevada',
     stateAbbr: 'NV',
     cities: ['Las Vegas', 'Henderson', 'North Las Vegas', 'Boulder City'] as const,

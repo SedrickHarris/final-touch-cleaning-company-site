@@ -44,10 +44,7 @@ export default function HomePage() {
   const trustItems = [
     { label: 'Family owned', sub: SITE.owners },
     { label: 'Local team', sub: 'Based in Southern Nevada' },
-    {
-      label: 'Serving Clark County',
-      sub: SITE.serviceArea.cities.join(' · '),
-    },
+    { label: `Serving ${SITE.serviceArea.metro}`, sub: SITE.serviceArea.cities.join(' · ') },
     { label: 'Free quotes', sub: 'No-pressure walkthroughs' },
   ];
 
