@@ -18,8 +18,215 @@ Fast Build Batch
 ## Log
 
 ### Batch 1 — Project Foundation
-Status: Not started
+Status: Implemented pending review
+Date: 2026-05-17
 
-Notes:
-- Awaiting repo inspection.
-- No implementation files should be changed before the Batch 1 inspection report is returned.
+Summary:
+- Scaffolded Next.js 16.2.6 App Router project (React 19, TypeScript strict, Tailwind v4, ESLint 9, Turbopack) via `create-next-app@latest` into the repo root, preserving existing `docs/` and `.git/`.
+- Replaced default scaffold home/layout/CSS with Final Touch brand foundation.
+- Configured Fraunces (headlines) + Manrope (body/UI) via `next/font/google`.
+- Tailwind v4 uses CSS-based `@theme` config in `app/globals.css` (no `tailwind.config.ts` file — this is the v4 default).
+- All brand-token utilities generated from `@theme`: `bg-brand-blue`, `text-brand-black`, `bg-soft-blue`, `bg-light-gray`, `border-border-subtle`, `text-muted`, `text-success`, `font-display`, `font-body`.
+- All reusable components are prop-driven — no hardcoded review counts, ratings, license/insurance claims, awards, years-in-business, certifications, or pricing guarantees.
+
+Files created:
+- app/not-found.tsx
+- components/layout/Header.tsx
+- components/layout/Footer.tsx
+- components/shared/HeroSection.tsx
+- components/shared/CTASection.tsx
+- components/shared/TrustBar.tsx
+- components/shared/FAQSection.tsx
+- components/shared/SectionHeader.tsx
+- components/shared/QuoteFormPlaceholder.tsx
+- lib/constants/site.ts
+- lib/constants/routes.ts
+- lib/constants/seo.ts
+
+Files created by `create-next-app` (scaffold defaults retained):
+- package.json (lint/dev/build/start scripts; added `type-check` manually)
+- package-lock.json
+- tsconfig.json
+- next.config.ts
+- postcss.config.mjs
+- eslint.config.mjs
+- next-env.d.ts
+- AGENTS.md
+- CLAUDE.md
+- public/ (next/vercel/file/globe/window SVG defaults)
+
+Files replaced (originally created by scaffold; replaced with Final Touch content):
+- app/layout.tsx
+- app/page.tsx
+- app/globals.css
+- README.md
+
+Files updated:
+- package.json (added `type-check` script)
+- .gitignore (replaced by create-next-app with Next.js-standard set; covers required exclusions)
+
+Validation commands run:
+- `npm run lint` — passed clean (no output)
+- `npm run type-check` — passed clean (tsc --noEmit, no errors)
+- `npm run build` — succeeded; 2 static routes (`/`, `/_not-found`) prerendered
+
+Blockers / TODOs:
+- TODO-BATCH-2: Wire `QuoteFormPlaceholder` to a real form endpoint (vendor TBD — likely GoHighLevel). Until then, all fields are disabled and submit is intercepted.
+- TODO-BATCH-2: Replace `app/favicon.ico` with owner-supplied favicon set, add an OG image, and configure full `icons` metadata.
+- TODO-VERIFY: Owner-verified trust signals (e.g., "Licensed & insured", years in business, insurance carrier, satisfaction guarantee terms) intentionally omitted from the homepage trust bar. Waiting on owner confirmation before they can be added. See docs/site-os/no-fake-data-policy.md.
+- Upstream tracking on local `main` is not yet set (push used `git push origin main` not `-u`). Next push can fix with `-u`.
+
+Next batch: Batch 2 — full homepage content + tier-1 brand pages (About, Contact, FAQ, etc.) per docs/site-build-plan.md "Recommended Build Order" Batch 2.
+
+### Batch 1.1 — UI/UX Polish + Framer Motion Wiring
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Applied the UI/UX skill ruleset (skill §1–§7) to the Batch 1 foundation. Added Framer Motion (12.38) as an approved subtle-motion dependency, wired through a centralized MotionProvider with `reducedMotion="user"` so all animations automatically respect the OS preference. Animations are 180–280ms transform/opacity, in-view-triggered, single-moment (not looping), and exclusively used in Hero/CTA/cards/FAQ/mobile menu per the original brief.
+
+Files created:
+- lib/motion.ts — Shared easing, duration, fadeUp, fadeIn, stagger variants. Single source of motion tokens.
+- components/motion/MotionProvider.tsx — Root `<MotionConfig reducedMotion="user">` wrapper.
+- components/motion/Reveal.tsx — Generic in-view fade-up wrapper for future reuse.
+- components/shared/ServicesPreview.tsx — Extracted homepage services grid into a client component with per-card stagger entrance and hover lift.
+
+Files updated:
+- app/layout.tsx — Wrapped Header/main/Footer in `<MotionProvider>`; loaded Fraunces italic style.
+- app/page.tsx — Now passes `emphasis="details"` to HeroSection for italic Fraunces typesetting of the key word; uses new `<ServicesPreview>`.
+- components/shared/HeroSection.tsx — Converted to client component. Added subtle radial gradient bg, on-mount stagger fade-up for eyebrow/heading/sub/CTAs, optional italic emphasis substring, arrow affordance on primary CTA, larger CTA padding hitting `min-h-[48px]`.
+- components/shared/CTASection.tsx — Converted to client component. In-view stagger fade-up on entry. Larger CTAs (`min-h-[48px]`). Arrow affordance on primary CTA.
+- components/shared/TrustBar.tsx — Visual polish: lg-only vertical dividers between items, refined typography rhythm (item label 17px lg / 16px mobile), tighter `tracking-tight`. No motion.
+- components/shared/FAQSection.tsx — Replaced semantic `<details>` with custom accessible accordion: `<button>` trigger + `aria-expanded` + `aria-controls` + `aria-labelledby` region. Framer Motion handles the height animation cleanly with `AnimatePresence`. `+` icon rotates to `×` on open.
+- components/shared/QuoteFormPlaceholder.tsx — Added "Free quote" eyebrow badge in soft-blue, refined heading + body rhythm, inputs upsized to `min-h-[44px]`, button to `min-h-[48px]`.
+- components/layout/Header.tsx — A11y/touch/motion upgrades:
+  - Hamburger touch target upsized 40px → 48px (skill §2 CRITICAL).
+  - Mobile menu now `<AnimatePresence>` slide-down animation instead of instant toggle.
+  - Body scroll lock when mobile menu is open (skill: focus management on overlay UI).
+  - `aria-current="page"` on active route via `usePathname`.
+  - Active route gets a Framer Motion `layoutId` underline that animates between items as the user navigates.
+  - Phone number uses `tabular-nums` for clean monospaced figures.
+  - Each mobile-menu Link `min-h-[48px]`.
+- components/layout/Footer.tsx — Phone number uses `tabular-nums`; nav headings get `tracking-tight`.
+
+Motion discipline applied (per skill §7):
+- All animations are transform + opacity only (no width/height layout thrash; the FAQ accordion uses height=auto which is acceptable for small bounded reveals).
+- Durations 180ms (micro) / 280ms (short) only; nothing >300ms.
+- Ease-out curve `[0.22, 1, 0.36, 1]` ("out-quint") used everywhere for consistent feel.
+- All entrance animations trigger once on viewport entry (`viewport.once`), not on every scroll.
+- No scroll-jacking, parallax, or decorative loops.
+- `<MotionConfig reducedMotion="user">` at root makes every animation auto-reduce when OS "Reduce motion" is on.
+- Stagger 60ms between siblings (within the 30–50ms guideline for lists).
+
+Conversion polish:
+- Single primary CTA per view (skill: `primary-action`). Phone link treated as secondary in the header.
+- Arrow affordance (`→`) on primary CTAs in Hero, CTASection, and service cards — translates 2px on hover.
+- Service card hover: subtle `-translate-y-0.5` + shadow lift + border-blue tint, all 200ms.
+- TrustBar copy uses only owner-verified facts; no fake claims.
+
+Validation:
+- `npm run lint` — passed clean
+- `npm run type-check` — passed clean
+- `npm run build` — succeeded (compiled 1.8s, TS 1.9s, 2 static routes)
+- One ESLint error caught + fixed during the pass: removed a `setOpen` inside a pathname useEffect (React anti-pattern, `react-hooks/set-state-in-effect`). Per-link onClick handlers already cover the close-on-nav case for normal usage.
+
+Dependencies added this pass:
+- framer-motion ^12.38.0 (already pre-installed last turn; now actually imported across 6 client components)
+
+Still no fake business data introduced. Verified trust signals unchanged from Batch 1. No new TODOs beyond the existing form-endpoint and favicon TODOs.
+
+### Batch 1.2 — Two-Column Hero and CTA Layout Refinement
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Refactored HeroSection and CTASection to support an optional right-column form slot for a conversion-focused two-column layout (content left, form right). Wider container (`max-w-[1440px]` with progressive padding `px-4 sm:px-6 lg:px-10 xl:px-12`) used in split mode so the columns don't feel cramped on mid-size laptops. Mobile stacks content first, form second. The homepage hero now hosts the QuoteFormPlaceholder, and the standalone mid-page "Tell us about your space" form section was removed to eliminate duplicate forms.
+
+Files changed:
+- components/shared/HeroSection.tsx — Added `formSlot`, `layout`, `container` props. Grid `lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.75fr)]` with `gap-10 lg:gap-14 xl:gap-20`. Heading scaled to `text-[2.25rem] sm:text-5xl lg:text-[3.25rem] xl:text-6xl 2xl:text-7xl` in split mode to stay readable in the narrower column. Form column uses `w-full lg:max-w-xl lg:justify-self-end` and gets a subtle 0.2s-delayed fade-up entrance.
+- components/shared/CTASection.tsx — Same `formSlot` / `layout` / `container` API. Split branch renders heading + sub + CTAs in the left column and `formSlot` in the right; standard branch keeps the original side-by-side heading/CTA layout. Arrow affordance preserved on primary CTAs.
+- components/shared/QuoteFormPlaceholder.tsx — Dropped no-op `compact` prop. Form is always `w-full` so parent grid track / max-width controls sizing.
+- app/page.tsx — Hero now passes `formSlot={<QuoteFormPlaceholder />}`. The previous "Tell us about your space" section with the form was removed (it duplicated the hero form). Bullets previously in that section ("Honest pricing", "Detail-focused work", "Local team") were not retained because the TrustBar already covers the same trust beats. Final CTA stays standard (no form) to keep a single dominant conversion moment in the hero. Services section also bumped to `max-w-[1440px]` so its width matches the hero edge.
+- docs/site-os/implementation-log.md — this entry.
+
+Container width changes:
+- Hero (split): `max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12`
+- CTASection (split): same
+- Hero/CTA (standard): unchanged at `max-w-7xl px-4 sm:px-6 lg:px-8`
+- Services section on homepage: bumped to `max-w-[1440px]` for visual consistency with the hero edge
+
+Component API additions:
+- HeroSection: `formSlot?: ReactNode`, `layout?: 'standard' | 'split'`, `container?: 'normal' | 'wide'`. `formSlot` presence implies split unless `layout` overrides; split implies wide unless `container` overrides.
+- CTASection: same three props with the same semantics.
+
+Homepage flow change:
+Old: Hero → TrustBar → Services → "Tell us about your space" (copy+form) → FAQ → Final CTA
+New: Hero (with form) → TrustBar → Services → FAQ → Final CTA (text+buttons, no form)
+Single dominant form on the page. No duplicate quote-form sections.
+
+Accessibility / motion preserved:
+- MotionConfig reducedMotion="user" unchanged at the root.
+- All entrance animations transform/opacity only, 280ms ease-out.
+- Form slot entrance has a small 200ms delay to follow content stagger — does nothing under reduced-motion (MotionConfig kills the delay too).
+- Heading hierarchy unchanged.
+- Form fields stay disabled, button stays disabled, onSubmit intercepted.
+- Touch targets: CTAs `min-h-[48px]`, form inputs `min-h-[44px]`, form submit `min-h-[48px]`.
+- Skip link, focus rings, aria-current="page" on nav all intact.
+
+Validation:
+- `npm run lint` — passed clean
+- `npm run type-check` — passed clean
+- `npm run build` — succeeded; 2 static routes (`/`, `/_not-found`) prerendered
+
+No-fake-data compliance:
+No reviews, ratings, testimonials, license numbers, insurance details, awards, years in business, certifications, pricing guarantees, or unsupported claims added. TrustBar items unchanged. Hero copy and FAQ content unchanged from Batch 1.1 (drawn only from owner-verified facts in lib/constants/site.ts).
+
+Remaining TODOs (unchanged):
+- TODO-BATCH-2 — Wire QuoteFormPlaceholder to a real form endpoint.
+- TODO-BATCH-2 — Owner-supplied favicon set + OG image.
+- TODO-VERIFY — License/insurance/satisfaction-guarantee/years-in-business trust signals still pending owner confirmation.
+
+### Batch 1.3 — Service Card Image Placeholder Standard
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Applied the new universal service-card layout primitive (codified in Site OS Master `docs/service-card-image-placeholder-standard.md`) to the Final Touch homepage. Every service card on the homepage now ships with a visual image placeholder area at the top — clean, brand-aligned, decorative, replaceable by a real owner-supplied photo when one is available. The card markup was extracted into a reusable `ServiceCard` component so future services-hub, related-service, location, and service+city matrix pages can drop in the same card without re-deriving the pattern.
+
+Files changed:
+- components/shared/ServiceImagePlaceholder.tsx (new) — pure visual placeholder. `aspect-[16/10]` with brand-token radial gradient (`soft-blue` → `light-gray`), centered decorative circle/dot accent, `border-b border-border-subtle` separator, `aria-hidden="true"`, no embedded text. Accepts `aspect` prop (`16/10` / `4/3` / `3/2`). Inline TODO comment for future owner-supplied photo replacement.
+- components/shared/ServiceCard.tsx (new) — reusable service card composing the image placeholder + body (H3 title + short description + arrow-affordance CTA) inside a single `<Link>` wrapper. Server component (no client features). Hover state: -translate-y-0.5 + soft shadow + accent border + arrow translate, all 200ms ease-out. Focus ring visible (2px brand-blue + 2px offset). Full card is the tap target.
+- components/shared/ServicesPreview.tsx (updated) — slimmed to a thin orchestration wrapper that handles only the responsive grid + Framer Motion stagger entrance; per-card markup now lives in ServiceCard. Grid gap bumped from `gap-4` → `gap-5 lg:gap-6` to breathe better with the new image-area visual mass. Service type extended with `shortDescription` field.
+- lib/constants/routes.ts (updated) — added `shortDescription` to each entry in the `SERVICES` array. Seven descriptions:
+  - "Routine and detail-led cleans for offices and commercial interiors." (Commercial & Office)
+  - "Scheduled cleaning programs for ongoing facility maintenance." (Janitorial)
+  - "Final-touch detail cleans after new builds and renovations." (Post-Construction)
+  - "Top-to-bottom cleans before you settle into a new space." (Move-In)
+  - "Deposit-ready cleans when you hand back the keys." (Move-Out)
+  - "Periodic deep cleans for the corners standard service skips." (Deep Cleaning)
+  - "Customer-ready cleans for storefronts and retail interiors." (Retail Space)
+  All seven are factual definitions of the services. No claims about pricing, response time, license, insurance, satisfaction, guarantees, or any other unverified business attribute. `FOOTER_NAV.services` is unaffected (still maps over `{ label, href }`).
+- docs/site-os/implementation-log.md (this entry).
+
+Every homepage service card now has an image placeholder. Confirmed by reading ServicesPreview → ServiceCard → ServiceImagePlaceholder composition.
+
+Reusable pattern confirmed:
+- `ServiceCard` accepts `href`, `name`, `description` props. Future pages (services hub at `/services`, related-services blocks on individual service pages, location page service grids, service + city matrix pages) can render `<ServiceCard {...props} />` without duplicating placeholder or card markup.
+- `ServiceImagePlaceholder` accepts an `aspect` prop and can be reused independently of `ServiceCard` (e.g., in case-study sections, gallery slots, future testimonial photo slots).
+
+Standards preserved:
+- Two-column hero/CTA conversion layout from Batch 1.2 — unchanged. No edits to HeroSection, CTASection, QuoteFormPlaceholder, app/layout.tsx, app/page.tsx, app/globals.css, or any other Batch 1.2 file.
+- Brand guide tokens — `bg-soft-blue`, `bg-light-gray`, `border-border-subtle`, `text-brand-blue/15`, `bg-brand-blue/20`, `text-brand-black`, `text-muted` all sourced from `app/globals.css` `@theme`. No new tokens introduced.
+- MotionProvider `reducedMotion="user"` — unchanged. The card hover transitions are CSS, gated by `prefers-reduced-motion` via globals.css. The grid entrance stagger continues to use the existing `stagger(0.06, 0.05)` + `fadeUp` from `lib/motion.ts`.
+- No-fake-data discipline — no reviews, ratings, testimonials, license numbers, insurance details, awards, certifications, years-in-business, before/after results, customer photos, team photos, project photos, pricing guarantees, or unsupported trust signals introduced. Placeholder is `aria-hidden` and carries no claims.
+- Fast Build Batch workflow — used. No Gate 1/2/3. Single validation pass.
+- File-scope discipline — only the four target files were modified; no global file edits, no package install, no config changes.
+
+Validation:
+- `npm run lint` — passed clean (no output)
+- `npm run type-check` — passed clean
+- `npm run build` — succeeded; compiled 2.3s, TS 1.9s, 2 static routes (`/`, `/_not-found`) prerendered
+
+Remaining TODOs:
+- TODO-BATCH-2+ (in ServiceImagePlaceholder) — Replace each card's placeholder with an owner-supplied photo of the relevant service when assets are approved. Use next/image, maintain the 16:10 aspect ratio, apply object-cover. Do not auto-pull from Google Places / GBP / stock libraries.
+- All Batch 1.x carry-forward TODOs unchanged (form endpoint, favicon/OG, owner-verified trust signals).

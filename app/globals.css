@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #1A5FB4;
+  --color-brand-blue-hover: #164F96;
+  --color-soft-blue: #EAF3FF;
+  --color-brand-black: #1A1A1A;
+  --color-brand-white: #FFFFFF;
+  --color-light-gray: #F7F8FA;
+  --color-border-subtle: #E5E7EB;
+  --color-muted: #6B7280;
+  --color-success: #1F8A5B;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-manrope);
+
+  --radius-button: 0.625rem;
+  --radius-card: 0.875rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-brand-white);
+  color: var(--color-brand-black);
+  font-family: var(--font-body), system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  color: var(--color-brand-black);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+a {
+  color: var(--color-brand-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--color-brand-blue);
+  color: var(--color-brand-white);
+  border-radius: var(--radius-button);
+  z-index: 9999;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
