@@ -768,3 +768,105 @@ Pre-existing standards preserved (no edits to upstream policies):
 No app code, no constants, no `package.json`, no `next.config.ts`, no `tsconfig.json` touched. No `node_modules` install. No deploy. Build was not run because this batch contains only docs files.
 
 Sync model note: per the Client Repo Prompt Standard, master changes do NOT auto-update existing client repos. This sync is an opt-in `chore(site-os)`-style commit. Future master changes will require another opt-in sync.
+
+
+### GHL MVP Environment Setup
+Status: Implemented pending review
+Date: 2026-05-17
+
+Created a safe GoHighLevel (GHL) MVP environment variable scaffold. No real keys configured. No `.env.local` created. No app code touched. No packages installed. No deploy.
+
+Files created:
+- `.env.example` (root) — committed template with 7 GHL variables and inline guidance comments explaining private vs public, static export constraints, and acceptable backend layers.
+- `docs/site-os/reference/ghl-mvp-env-setup.md` — full setup reference covering where `.env.local` lives, private vs public variable lists, Cloudflare Pages dashboard configuration, the four acceptable backend patterns for private GHL API calls (Pages Functions, standalone Worker, GHL inbound webhook, external automation tool), and the "do not call private GHL APIs from frontend code" warning with a wrong-vs-right code example.
+
+Files updated:
+- `.gitignore` — replaced the blanket `.env*` rule with explicit `.env`, `.env.local`, `.env.*.local`, `.env.development.local`, `.env.production.local` entries plus a `!.env.example` negation so the template is committable while every other env file stays out of git.
+- `docs/site-os/implementation-log.md` — this entry.
+
+Variables scaffolded:
+- Private (server-side only): `GHL_API_KEY`, `GHL_LOCATION_ID`, `GHL_FORM_ID`, `GHL_CALENDAR_ID`, `GHL_WEBHOOK_URL`
+- Public (`NEXT_PUBLIC_*`): `NEXT_PUBLIC_GHL_FORM_URL`, `NEXT_PUBLIC_GHL_CALENDAR_URL`
+
+Security guardrails documented:
+- Never prefix private keys with `NEXT_PUBLIC_` (would inline the key into the JS bundle).
+- Never call `services.leadconnectorhq.com` or `rest.gohighlevel.com` directly from React components.
+- Static export (`output: "export"` in `next.config.ts`) means no Next.js server runtime in production; any private GHL API call must route through a Cloudflare Pages Function, a standalone Worker, a GHL inbound webhook, or an external automation tool.
+- In Cloudflare Pages, private variables must be stored as encrypted Secrets, not Plaintext.
+
+No app code, no `lib/constants/*`, no `package.json`, no `next.config.ts`, no `tsconfig.json` touched. No `node_modules` install. No real keys present anywhere in the repo. Build was not run because this batch contains only docs and env scaffolding.
+
+TODOs for the actual GHL wiring (out of scope for this batch):
+- Owner to provide real `GHL_API_KEY`, `GHL_LOCATION_ID`, `GHL_FORM_ID`, `GHL_CALENDAR_ID`, `GHL_WEBHOOK_URL` values.
+- Decision needed on backend layer (Pages Function recommended for this repo).
+- Once decided, scaffold `functions/api/quote.ts` (or equivalent) and wire `components/shared/QuoteFormPlaceholder.tsx` to POST to it.
+- Configure encrypted Secrets in Cloudflare Pages production environment.
+
+
+### Batch 2 Rebuild — Homepage (/) — Prompt A + B
+Status: Committed
+Date: 2026-05-18
+
+#### Routing
+- Page type: Homepage
+- Page value: High
+- AI depth selected: Level 5 Beyond-Elite
+- Prompt A used: individual-homepage-research-prompt.md
+- Prompt B used: individual-homepage-implementation-prompt.md
+
+#### Keyword Map Summary
+- Primary: cleaning services Las Vegas NV, cleaning company Las Vegas Nevada, professional cleaning Las Vegas
+- Secondary: cleaning services Clark County NV, Henderson, North Las Vegas, Boulder City; house cleaning; commercial cleaning; move-out cleaning; post-construction cleaning; deep cleaning Las Vegas
+- Local: Las Vegas NV, Henderson NV, North Las Vegas, Boulder City NV, Clark County Nevada, Southern Nevada
+- AEO questions: What cleaning services does Final Touch offer? Who owns Final Touch? What cities do you serve? How do I get a free estimate? Does Final Touch serve Henderson and North Las Vegas?
+- Transactional: free cleaning quote Las Vegas, cleaning estimate, book cleaning service
+- Entity/semantic: Final Touch Cleaning Company, Scott and Nicole Maland, Clark County Nevada
+
+#### AEO FAQ Count and Categories
+12 FAQs total across:
+- Company and ownership (who owns, is it local)
+- Services (what services, homes and businesses, post-construction)
+- Service area (what cities, Henderson and NLV coverage)
+- Quote and contact (how to get estimate, what happens after)
+- Differentiators (what makes Final Touch different)
+- Specific services (move-in/move-out, recurring)
+- Form status (transparent disclosure that form is in setup)
+
+#### Content Gaps Fixed
+1. H1 changed from tagline to search-intent headline: "Professional Cleaning Services in Las Vegas and Clark County, NV."
+2. Direct-answer hero sub added naming Scott and Nicole Maland, all service types, all four cities
+3. Service area section added with city chip links and county framing
+4. FAQ expanded from 8 to 12 items
+5. Who we help card copy strengthened with pain-point specifics and local keywords
+6. Why Final Touch card copy strengthened with named detail examples and owner accountability
+7. Metadata title: "Cleaning Services in Las Vegas & Clark County, NV | Final Touch" (60 chars)
+8. Meta description: 140 chars, primary keyword + phone + differentiator
+9. openGraph block added
+10. LocalBusiness JSON-LD with areaServed and founder fields
+
+#### Internal Link State
+- Live (7): /services, /about, /faq, /locations (x2), /free-quote (x2)
+- Forward (6): city pills + service cards fallback to /locations and /services until Batch 3 and Batch 4 ship
+- Deferred (2): /reviews and /pricing withheld — not in static export; restore in Why Final Touch block once those pages ship
+
+#### Files Changed
+- app/page.tsx — full content rewrite
+- docs/site-os/reference/internal-link-map.md — new file, homepage row seeded
+
+#### Validation Results
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+- CTA grep (out/index.html) — passed
+
+#### Pass/Fail Gate Result
+PASS
+
+#### Remaining TODOs
+- TODO-BATCH-3: service card hrefs fall back to /services; restore individual slugs once Batch 3 ships
+- TODO-BATCH-4: city pill hrefs fall back to /locations; restore city slugs once Batch 4 ships
+- TODO-DEFERRED-TIER1: /reviews and /pricing links withheld; restore in Why Final Touch block once pages ship
+- TODO-BLOG: blog preview section planned above final CTA; add when blog batch ships
+- TODO-VERIFY: foundingDate, license, insurance, sameAs in LocalBusiness JSON-LD pending owner confirmation
+- TODO-BATCH-2: QuoteFormPlaceholder needs real form endpoint wiring
+- TODO-VERIFY: owner-supplied favicon set and OG image still pending

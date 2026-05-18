@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -9,9 +10,34 @@ import TrustBar from '@/components/shared/TrustBar';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
+// TODO-BATCH-3: Individual service pages (/services/<slug>) are not yet
+// built. Until they ship, service card hrefs fall back to ROUTES.services so
+// cards link to the hub rather than 404. Replace each card href with the
+// real slug once Batch 3 lands. The SERVICES constant already holds the
+// correct per-service hrefs; update ServicesPreview to use them directly
+// after Batch 3 is live.
+const SERVICES_WITH_FALLBACK = SERVICES.map((s) => ({
+  ...s,
+  href: ROUTES.services,
+}));
+
+export const metadata: Metadata = {
+  title: 'Cleaning Services in Las Vegas & Clark County, NV | Final Touch',
+  description:
+    'Family-owned cleaning services in Las Vegas, Henderson, and Clark County, NV. Residential and commercial. Free quotes. Call (702) 444-5077.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
+    description:
+      'Scott & Nicole Maland own and run Final Touch, serving Clark County, NV. Homes, offices, post-construction, move-out, and more. Free quotes.',
+    type: 'website',
+    url: SITE.url,
+  },
+};
+
 // Homepage. Conversion flow: split hero with form, trust bar, services
 // preview, who we help, why Final Touch, how the quote process works,
-// service area callout, FAQ, final CTA. No unverified claims. Every fact
+// service area section, FAQ, final CTA. No unverified claims. Every fact
 // maps to lib/constants/site.ts or to brand-voice positioning already in
 // docs/site-os/final-touch-build-context.md.
 export default function HomePage() {
@@ -29,69 +55,103 @@ export default function HomePage() {
     {
       title: 'Homeowners',
       body:
-        'Detail-focused residential cleans across Clark County. Move-in cleans for new keys, deep cleans when a space needs a real reset.',
+        'Move-in cleans for new keys, deep cleans when a space needs a real reset, and recurring residential service across Clark County.',
     },
     {
-      title: 'Renters & landlords',
+      title: 'Renters and landlords',
       body:
-        'Move-out cleans for deposit-ready handoffs. Move-in cleans before tenants settle in. Property managers and real-estate agents welcome.',
+        'Move-out cleans for deposit-ready handoffs. Move-in cleans before a new tenant settles in. Property managers and real-estate agents welcome.',
     },
     {
-      title: 'Offices & businesses',
+      title: 'Offices and businesses',
       body:
-        'Commercial and janitorial routes for offices, retail, and small commercial operations. Scheduled rhythms or one-time deep cleans.',
+        'Commercial cleaning and janitorial routes for offices, retail spaces, and small commercial operations in Las Vegas and across the county.',
     },
     {
-      title: 'Contractors & builders',
+      title: 'Contractors and builders',
       body:
-        'Post-construction cleanup for new builds and renovations. Dust, residue, and the fine grit that lands on every surface after a build.',
+        'Post-construction cleanup for new builds and renovations in Clark County: dust, residue, and the fine grit that settles on every surface after a build.',
     },
+  ];
+
+  const whyItems = [
+    {
+      title: 'Family owned, owner led',
+      body: `${SITE.owners} run every aspect of Final Touch. It is not a franchise or a staffing platform. The owners set the standard and are accountable for every job.`,
+    },
+    {
+      title: 'The details other crews skip',
+      body:
+        'Baseboards, vents, switch plates, corners, and edges. The finishing ten percent that turns a cleaned space into a finished one.',
+    },
+    {
+      title: 'Free walkthroughs, real quotes',
+      body:
+        'Every quote starts with a short walkthrough, phone or on-site. You get a real number for the actual scope, not a templated price. No obligation to book.',
+    },
+  ];
+
+  // TODO-BATCH-4: Per-city location pages at /locations/<city> are not yet
+  // built. These links will 404 until Batch 4 ships. Using ROUTES.locations
+  // as the fallback href until city pages are live.
+  const serviceAreaCities = [
+    { name: 'Las Vegas', href: ROUTES.locations },
+    { name: 'Henderson', href: ROUTES.locations },
+    { name: 'North Las Vegas', href: ROUTES.locations },
+    { name: 'Boulder City', href: ROUTES.locations },
+    { name: 'Clark County', href: ROUTES.locations },
   ];
 
   const faq = [
     {
       q: 'What cleaning services does Final Touch Cleaning Company offer?',
-      a: 'Seven core services: commercial and office cleaning, janitorial routes, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Each is tailored to the space and timeline.',
+      a: 'Final Touch offers seven core services: commercial and office cleaning, janitorial routes, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Each service is scoped to the specific space and timeline.',
     },
     {
-      q: 'What areas do you serve?',
-      a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
+      q: 'What cities and areas does Final Touch serve?',
+      a: `Final Touch serves ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}. If you are in Clark County and unsure whether your location is covered, call ${SITE.phone.display} and we will confirm.`,
     },
     {
-      q: 'Do you clean homes and businesses?',
-      a: 'Yes, both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
-    },
-    {
-      q: 'Do you provide move-in and move-out cleaning?',
-      a: 'Yes. Move-in cleaning preps a space before you settle in. Move-out cleaning is the deposit-ready clean when you hand back the keys. Both are top-to-bottom and finish the corners standard service skips.',
-    },
-    {
-      q: 'Can I request recurring cleaning?',
-      a: 'Yes. We schedule ongoing janitorial routes for offices, retail, and commercial spaces, and recurring cleans for residences. Tell us the space and rhythm you want during the walkthrough and we\'ll suggest a fit.',
-    },
-    {
-      q: 'How do I get a quote?',
-      a: `Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request through the form above. Quotes are free and there's no pressure to book.`,
-    },
-    {
-      q: 'Do you provide pricing online?',
-      a: 'No. Pricing depends on the space, the scope, and the timing. We give you a real number after a short walkthrough rather than a one-size-fits-all rate that changes when we arrive.',
-    },
-    {
-      q: 'What makes Final Touch different from a basic cleaning service?',
-      a: 'We finish what other crews skip: baseboards, vents, switch plates, edges, corners. The final ten percent is what makes a space feel done, and we focus on that across every job.',
+      q: 'Does Final Touch clean homes and businesses?',
+      a: 'Yes, both. Residential services include move-in, move-out, and deep cleaning. Commercial services include office cleaning, janitorial services, and retail space cleaning. Post-construction cleanup covers new builds and renovation sites.',
     },
     {
       q: 'Who owns Final Touch Cleaning Company?',
-      a: `${SITE.owners} own and run Final Touch. It's a family-run operation based in Southern Nevada, not a franchise.`,
+      a: `${SITE.owners} own and operate Final Touch. It is a family-run business based in Southern Nevada, not a franchise. The owners are directly involved in every job.`,
     },
     {
-      q: 'Are your online forms active yet?',
-      a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+      q: 'How do I get a free cleaning estimate?',
+      a: `Call ${SITE.phone.display}, email ${SITE.email.display}, or submit a quote request online. We schedule a short walkthrough, either by phone or on-site. After the walkthrough you receive a specific quote for your space. The walkthrough is free and there is no obligation to book.`,
+    },
+    {
+      q: 'Does Final Touch serve Henderson and North Las Vegas?',
+      a: `Yes. Final Touch serves Henderson, North Las Vegas, Las Vegas, Boulder City, and the broader Clark County area. Coverage extends across the county, not just central Las Vegas.`,
+    },
+    {
+      q: 'What does Final Touch do that other cleaning companies do not?',
+      a: 'Final Touch focuses on the finishing details most crews rush past: baseboards, vents, switch plates, corners, and edges. The same owners who set the standard answer the phone and check the finish. No upsells, no surprise add-ons.',
+    },
+    {
+      q: 'Do you provide move-in and move-out cleaning?',
+      a: 'Yes. Move-in cleaning preps a space before you settle in. Move-out cleaning gets a home or unit deposit-ready for handoff. Both are scoped during the walkthrough so the quote reflects the actual condition of the space.',
+    },
+    {
+      q: 'Can I request recurring cleaning services?',
+      a: 'Yes. Final Touch offers recurring service for both commercial and residential clients. Commercial clients can set up regular janitorial routes. Residential clients can request recurring service at the frequency that works for their space and schedule.',
+    },
+    {
+      q: 'What happens after I request a quote?',
+      a: 'We set up a short walkthrough to understand the space, the scope, and the timing. It is usually a phone call, or a brief on-site visit for larger or more complex jobs. After the walkthrough you get a real quote. No pressure to commit.',
+    },
+    {
+      q: 'Does Final Touch offer post-construction cleanup in Las Vegas?',
+      a: `Yes. Post-construction cleanup is one of Final Touch's core services. We serve contractors, builders, and property owners in Las Vegas, Henderson, North Las Vegas, Boulder City, and across Clark County. Call ${SITE.phone.display} to set up a walkthrough.`,
+    },
+    {
+      q: 'Are your online quote forms active yet?',
+      a: `Our online quote form is being wired to our scheduling system right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We will get back to you to schedule a walkthrough.`,
     },
   ];
-
-  const heroSub = `Family-owned cleaning for homes, offices, and new builds across ${SITE.serviceArea.cities.slice(0, 3).join(', ')}, and ${SITE.serviceArea.cities[3]}. We finish what other crews skip: baseboards, vents, switch plates, and the details that change how a space feels.`;
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -103,12 +163,30 @@ export default function HomePage() {
     })),
   };
 
+  // Organization JSON-LD. No streetAddress: service-area-only business per
+  // docs/site-os/no-fake-data-policy.md sec 2.
+  // TODO-VERIFY: foundingDate, license, insurance, sameAs (social/GBP links).
+  // Add only after owner-supplied verification.
+  const orgJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: SITE.name,
+    url: SITE.url,
+    telephone: SITE.phone.href.replace('tel:', ''),
+    email: SITE.email.display,
+    areaServed: [SITE.serviceArea.county, ...SITE.serviceArea.cities].map(
+      (name) => ({ '@type': 'Place', name: `${name}, ${SITE.serviceArea.stateAbbr}` })
+    ),
+    founder: SITE.owners.split(' & ').map((name) => ({ '@type': 'Person', name })),
+  };
+
+  const heroSub = `Scott and Nicole Maland run Final Touch, a family-owned cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City. We clean homes, offices, post-construction sites, and retail spaces with attention to the finishing details that make a space feel done.`;
+
   return (
     <>
       <HeroSection
-        eyebrow={`Cleaning · ${SITE.serviceArea.county}`}
-        heading={SITE.coreMessage}
-        emphasis="details"
+        eyebrow={`Cleaning services · ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`}
+        heading="Professional Cleaning Services in Las Vegas and Clark County, NV."
         sub={heroSub}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{
@@ -129,14 +207,14 @@ export default function HomePage() {
             sub="From a single deep clean to ongoing janitorial routes, every job ends with the same checklist: the details that make a space feel finished."
           />
 
-          <ServicesPreview services={SERVICES} />
+          <ServicesPreview services={SERVICES_WITH_FALLBACK} />
 
           <p className="mt-10 text-sm">
             <Link
               href={ROUTES.services}
               className="font-semibold text-brand-blue hover:underline"
             >
-              View all services →
+              View all cleaning services →
             </Link>
           </p>
         </div>
@@ -148,15 +226,16 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Who we help"
             heading="Built for homes, offices, and everything in between."
-            sub={`Final Touch works with homeowners, renters, landlords, property managers, contractors, and business owners across ${SITE.serviceArea.county}, ${SITE.serviceArea.state}.`}
+            sub="Final Touch serves homeowners, renters, property managers, business owners, and contractors across Clark County, Nevada."
           />
+
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {audiences.map((a) => (
               <li
                 key={a.title}
                 className="rounded-[14px] border border-border-subtle bg-light-gray p-6"
               >
-                <h3 className="font-display text-lg font-semibold text-brand-black tracking-tight">
+                <h3 className="font-display text-lg font-semibold text-brand-black">
                   {a.title}
                 </h3>
                 <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
@@ -173,71 +252,77 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Local. Family-owned. Detail-focused."
-            sub={`Cleaning across ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. A finishing standard you can see at the walkthrough, not after the invoice.`}
+            heading="Where small details bring big results."
+            sub="Three things that separate a detail-focused cleaning company from a basic cleaning service."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                Family-owned, local team
-              </h3>
-              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
-                {SITE.owners} run Final Touch from Southern Nevada. The same
-                people who answer the phone set the standard for every job. No
-                franchise, no call center, no subcontractor pool.
-              </p>
-            </div>
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                The details others skip
-              </h3>
-              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
-                Baseboards, vents, switch plates, edges, corners, the inside of
-                the oven, the dust on top of the door frames. The final ten
-                percent is what makes a space feel finished, and that&apos;s
-                where we focus.
-              </p>
-            </div>
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                Free quotes, no pressure
-              </h3>
-              <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
-                Real numbers after a short walkthrough, not a templated rate
-                that changes when we arrive. If we&apos;re not a fit for the
-                job, we&apos;ll tell you.
-              </p>
-            </div>
-          </div>
+
+          <ul className="mt-10 grid gap-5 sm:grid-cols-3 lg:gap-6">
+            {whyItems.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-[14px] border border-border-subtle bg-brand-white p-6"
+              >
+                <h3 className="font-display text-lg font-semibold text-brand-black">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-10 text-sm">
+            <Link
+              href={ROUTES.about}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              Learn about our team →
+            </Link>
+          </p>
+
+          {/* TODO-DEFERRED-TIER1: /reviews and /pricing are Tier 1 brand
+              pages listed in site-build-plan.md but explicitly deferred from
+              Batch 2 (batch-2-core-brand-pages-prompt.md) pending owner-
+              supplied data (/reviews needs verified review content;
+              /pricing needs owner-confirmed pricing structure). They have no
+              assigned build batch yet. Do not link here until both pages are
+              built and confirmed in the static export (out/ directory).
+              When they land, restore two links in this block:
+                "Read client reviews"  → ROUTES.reviews
+                "How our pricing works" → ROUTES.pricing
+              Suggested placement: this same paragraph, directly below the
+              "Learn about our team" link. */}
         </div>
       </section>
 
       {/* How the quote process works */}
       <section className="bg-brand-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="How it works"
-            heading="Three steps to a real number."
-            sub="No call-center intake, no waiting for a callback queue. Reach the team and get a walkthrough on the books."
+            heading="Free quote in three steps."
+            sub="No templated pricing, no pressure. We walk through the space first so the quote reflects the actual job."
           />
-          <ol className="mt-8 space-y-5">
+
+          <ol className="mt-10 space-y-4">
             {[
               {
                 step: '01',
                 title: 'Tell us about your space',
-                body: `Send the form, call ${SITE.phone.display}, or email ${SITE.email.display}. Mention the space type, the city, and rough timing.`,
+                body: `Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request. Mention the space type, the city, and rough timing.`,
               },
               {
                 step: '02',
                 title: 'Short walkthrough',
                 body:
-                  'A quick conversation about the space, phone or on-site, whichever fits the job. No commitment, no pressure.',
+                  'A quick conversation about the space, by phone or on-site, whichever fits the job. No commitment, no pressure.',
               },
               {
                 step: '03',
                 title: 'Real quote, your call',
                 body:
-                  'You get a real number based on the actual scope. Book when it works for you, or not. Either way, the walkthrough was free.',
+                  'A real number based on the actual scope of the job. Book when it works for you, or not. The walkthrough is always free.',
               },
             ].map((item) => (
               <li
@@ -264,39 +349,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service area callout */}
+      {/* Service area section */}
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6 sm:p-8">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
-              Service area
-            </p>
-            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-brand-black">
-              {SITE.serviceArea.county}, {SITE.serviceArea.state}.
-            </h2>
-            <p className="mt-3 text-base text-brand-black leading-relaxed">
-              Final Touch serves {SITE.serviceArea.cities.join(', ')}. Same
-              team, same finishing standard, regardless of where you are in the
-              county. Final Touch is a service-area business, so we come to you.
-              There&apos;s no public storefront to visit.
-            </p>
-            <p className="mt-5 text-sm">
-              <Link
-                href={ROUTES.locations}
-                className="font-semibold text-brand-blue hover:underline"
-              >
-                View service area →
-              </Link>
-            </p>
-          </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <SectionHeader
+            eyebrow="Service area"
+            heading={`Serving Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County.`}
+            sub={`Final Touch is a service-area business based in Southern Nevada. We come to you. There is no public storefront, but we serve every part of ${SITE.serviceArea.county}.`}
+          />
+
+          {/* TODO-BATCH-4: City hrefs below point to /locations until individual
+              city pages ship in Batch 4 (/locations/las-vegas, etc.). Update
+              each href to the city slug once that batch is live. */}
+          <ul className="mt-8 flex flex-wrap gap-3">
+            {serviceAreaCities.map((city) => (
+              <li key={city.name}>
+                <Link
+                  href={city.href}
+                  className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue hover:text-brand-blue transition-colors"
+                >
+                  {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-8 text-sm">
+            <Link
+              href={ROUTES.locations}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              View full service area →
+            </Link>
+          </p>
         </div>
       </section>
 
-      <FAQSection items={faq} defaultOpenFirst />
+      <FAQSection
+        items={faq}
+        heading="Common questions about Final Touch Cleaning Company"
+        defaultOpenFirst
+      />
+
+      {/* /faq Tier 1 link - surfaces the full FAQ hub from the homepage */}
+      <div className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 text-center">
+          <p className="text-sm text-muted">
+            More questions?{' '}
+            <Link
+              href={ROUTES.faq}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              Read all frequently asked questions →
+            </Link>
+          </p>
+        </div>
+      </div>
+
+      {/* TODO-BLOG: A blog hub at /blog and category pages are planned per
+          site-build-plan.md. When the blog section launches (likely Batch 7
+          or a dedicated content batch), add a "From the blog" preview section
+          here or above the final CTA, linking to the 2-3 most recent posts. */}
 
       <CTASection
-        heading="Ready to bring the small details to your space?"
-        sub={`Free quotes for cleaning across ${SITE.serviceArea.county}. Call ${SITE.phone.display} or send a quote request.`}
+        heading="Ready to bring the details to your space?"
+        sub={`Free quotes for cleaning across ${SITE.serviceArea.county}. Call ${SITE.phone.display} or request a quote online.`}
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{
           label: `${CTAS.call} · ${SITE.phone.display}`,
@@ -305,6 +422,10 @@ export default function HomePage() {
         tone="blue"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
