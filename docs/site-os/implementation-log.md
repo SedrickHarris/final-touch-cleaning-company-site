@@ -330,3 +330,76 @@ TODOs added or carried forward this batch:
 - Pre-existing carry-forwards (Batch 1.x) unchanged: form endpoint wiring, favicon set + OG image, owner-verified trust signals, real service photos.
 
 Next batch: Batch 3 — service pages per docs/site-os/prompts/build/batch-3-service-pages-prompt.md.
+
+### Cloudflare Pages Static Export Fix
+Status: Implemented pending review
+Date: 2026-05-17
+
+Summary:
+Enabled Next.js static export so the site renders correctly when deployed to Cloudflare Pages. The repo is fully static (no API routes, no middleware, no `next/image`, no server actions, no dynamic server features), so `output: "export"` is the appropriate fix. Build now produces a static `out/` folder Cloudflare Pages can serve directly.
+
+Pre-flight audit (verified before the config change):
+- Working tree clean at HEAD `7ede96f`
+- No `app/api/` routes
+- No `middleware.ts`
+- No imports of `next/image`, `next/headers`, `next/cookies`
+- No `use server`, `generateStaticParams`, `searchParams`, `cookies()`, `headers()`, `revalidate`, or `dynamic = "force-dynamic"` patterns in app code
+- All 13 routes are static (App Router default for the existing pages)
+
+Files updated:
+- `next.config.ts` — added `output: "export"` and `images: { unoptimized: true }`. Previous content was an empty NextConfig object; no existing settings to preserve.
+
+`next.config.ts` final shape:
+```ts
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;
+```
+
+`package.json` was inspected — no changes needed. `next build` already produces the static export when `output: "export"` is set. No separate `next export` script required in Next.js 14+.
+
+Validation results:
+- `npm run lint` — passed clean (no output, exit 0)
+- `npm run type-check` — passed clean (`tsc --noEmit`, no errors)
+- `npm run build` — succeeded. Compiled 2.1s, TS 2.1s. 15 static workers generated all routes in 340ms. 13 static routes prerendered: `/`, `/_not-found`, `/about`, `/accessibility-statement`, `/contact`, `/cookie-policy`, `/faq`, `/free-quote`, `/locations`, `/privacy-policy`, `/services`, `/terms-of-service`, `/thank-you`. `out/` folder generated.
+
+`out/` folder structure confirmed:
+- `out/index.html` ✓ (homepage)
+- `out/about.html` ✓ (Next.js 16 default for App Router static export — emits `<slug>.html` at top level)
+- `out/services.html` ✓
+- `out/locations.html` ✓
+- `out/contact.html` ✓
+- `out/free-quote.html` ✓
+- `out/faq.html` ✓
+- `out/thank-you.html` ✓
+- `out/privacy-policy.html` ✓
+- `out/terms-of-service.html` ✓
+- `out/accessibility-statement.html` ✓
+- `out/cookie-policy.html` ✓
+- `out/404.html` ✓ (custom 404 from `app/not-found.tsx`)
+- `out/_next/` ✓ (build assets — JS chunks, CSS, fonts)
+- Public assets present: `favicon.ico`, `file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg`
+
+Note on file layout: the spec listed `out/about/index.html` style paths, but Next.js 16 App Router with `output: "export"` (no `trailingSlash`) defaults to `out/about.html` at the top level, with a parallel `out/about/` directory holding RSC payload files (`.txt`). Cloudflare Pages serves both URL styles (`/about` and `/about/`) correctly from the `out/about.html` file via its built-in trailing-slash normalization, so this is functionally equivalent. If the directory-style output (`out/about/index.html`) is preferred for any reason, adding `trailingSlash: true` to `next.config.ts` switches the output — but that would also change canonical URLs to include a trailing slash, requiring an update to the `metadata.alternates.canonical` values in the 11 Batch 2 pages. Not done in this batch.
+
+Cloudflare Pages settings to use:
+- Build command: `npm run build`
+- Build output directory: `out`
+- Root directory: `/`
+- Framework preset: `Next.js (Static HTML Export)` (or "None" — both work since the output is plain static HTML)
+- Node version: 20+
+- Environment variables: none required for this static build
+
+No-fake-data compliance: No business claims, copy, or content was modified. This is a build-config change only.
+
+Carry-forward:
+- Trailing-slash decision (canonical alignment) deferred — current default canonicals (no trailing slash) match the `out/<slug>.html` output, so Cloudflare Pages will serve consistently.
+- Once Cloudflare Pages renders, verify production URLs against the in-code canonical values.
+- All Batch 1.x / Batch 2 TODOs unchanged.
