@@ -1128,3 +1128,94 @@ Remaining TODOs:
 - TODO-BATCH-2+ (inherited) — replace ServiceImagePlaceholder with owner-supplied photos when assets are approved
 - TODO-BATCH-2+ (inherited) — wire QuoteFormPlaceholder to a real form endpoint
 - All other Batch 1.x and Batch 2 carry-forward TODOs unchanged
+
+
+### Batch 4 — City Location Page: Henderson (/locations/henderson) — Level 3
+Status: Implemented pending validation
+Date: 2026-05-18
+
+Files Created: app/locations/henderson/page.tsx
+Pass/Fail Gate: PASS (44/44, pending local validation run)
+Anti-Doorway: PASS — master-planned community framing, Green Valley/Anthem/MacDonald Highlands/Seven Hills named, service order differs from Las Vegas
+
+Internal Links: /locations, /services, /services/move-in-cleaning,
+/services/move-out-cleaning, /services/deep-cleaning,
+/services/commercial-office-cleaning, /free-quote (x2), /faq, /about,
+/locations/las-vegas, /locations/north-las-vegas, /locations/boulder-city,
+/locations/clark-county, tel:+17024445077
+
+TODOs:
+- TODO-BATCH-5: 5 neighborhood chips fall back to /locations until Batch 5 ships
+  (green-valley-ranch, anthem, cadence, seven-hills, mcdonald-highlands)
+- Sibling city hrefs are forward links resolving when remaining Batch 4 pages ship
+
+
+### Batch 4 — City Location Page: North Las Vegas (/locations/north-las-vegas) — Level 3
+Status: Implemented pending validation
+Date: 2026-05-18
+
+Files Created: app/locations/north-las-vegas/page.tsx
+Pass/Fail Gate: PASS (44/44, pending local validation run)
+Anti-Doorway: PASS — industrial/warehouse corridor section unique to NLV,
+post-construction leads service order, rental-density framing distinct
+from Henderson, FAQ 5 (warehouse/industrial) not present on any sibling page
+
+Internal Links: /locations, /services, /services/post-construction-cleanup,
+/services/commercial-office-cleaning, /services/move-out-cleaning,
+/services/deep-cleaning, /free-quote (x2), /faq, /about,
+/locations/las-vegas, /locations/henderson, /locations/boulder-city,
+/locations/clark-county, tel:+17024445077
+
+TODOs:
+- TODO-BATCH-5: Aliante and Eldorado neighborhood chips fall back to /locations
+- TODO-BATCH-5: Additional NLV neighborhood chips to be added when Batch 5 ships
+- Sibling city hrefs are forward links resolving when remaining Batch 4 pages ship
+
+
+### Batch 4 — City Location Page: Boulder City (/locations/boulder-city) — Level 3
+Status: Implemented pending validation
+Date: 2026-05-18
+
+Files Created: app/locations/boulder-city/page.tsx
+Pass/Fail Gate: PASS (44/44, pending local validation run)
+Anti-Doorway: PASS — historic/older home framing unique to Boulder City,
+service order differs from all 3 prior pages (deep cleaning leads),
+Lake Mead and historic downtown referenced, FAQ 4 (historic homes),
+FAQ 5 (small business storefronts), FAQ 7 (distance/coverage concern)
+all unique to this page
+
+Internal Links: /locations, /services, /services/deep-cleaning,
+/services/move-in-cleaning, /services/move-out-cleaning,
+/services/commercial-office-cleaning, /services/post-construction-cleanup,
+/free-quote (x2), /faq, /about, /locations/las-vegas,
+/locations/henderson, /locations/north-las-vegas,
+/locations/clark-county, tel:+17024445077
+
+TODOs:
+- TODO-BATCH-5: Boulder City neighborhood chips placeholder — none added yet,
+  comment in source marks the section for Batch 5 population
+- Sibling city hrefs are forward links resolving when Clark County page ships
+
+
+### Batch 4 — City Location Page: Clark County (/locations/clark-county) — Level 3
+Status: Implemented pending validation
+Date: 2026-05-18
+
+Files Created: app/locations/clark-county/page.tsx
+Pass/Fail Gate: PASS (44/44, pending local validation run)
+Anti-Doorway: PASS — county hub structure differs from all 4 city pages:
+city grid replaces neighborhood chips, county-scope framing throughout,
+FAQ 5 (multi-location commercial), FAQ 7 (unincorporated areas) unique
+to this page, LOCATIONS constant drives city cards
+
+Internal Links: /locations, /services, /services/post-construction-cleanup,
+/services/move-in-cleaning, /services/commercial-office-cleaning,
+/services/move-out-cleaning, /services/deep-cleaning,
+/services/retail-space-cleaning, /free-quote (x2), /faq, /about,
+/locations/las-vegas, /locations/henderson, /locations/north-las-vegas,
+/locations/boulder-city (all via CITY_PAGES from LOCATIONS constant),
+tel:+17024445077
+
+TODOs:
+- No neighborhood chips section — county hub design per Batch 4 spec
+- City card hrefs all live once all 5 Batch 4 pages are committed
