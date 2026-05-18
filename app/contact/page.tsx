@@ -138,6 +138,10 @@ export default function ContactPage() {
         primaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         secondaryCta={{ label: 'Email us', href: SITE.email.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/heroes/contact-final-touch-cleaning-company-hero.webp',
+          alt: 'Contact Final Touch Cleaning Company in Las Vegas, NV.',
+        }}
       />
 
       {/* Ways to reach us */}

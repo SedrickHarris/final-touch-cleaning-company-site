@@ -87,6 +87,10 @@ export default function LocationsPage() {
         sub={`${SITE.name} serves every part of ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={{
+          src: '/images/heroes/clark-county-cleaning-service-area-hero.webp',
+          alt: 'Clark County, Nevada service area cleaned by Final Touch.',
+        }}
       />
 
       {/* City grid */}

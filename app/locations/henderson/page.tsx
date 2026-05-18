@@ -126,6 +126,10 @@ export default function HendersonPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/heroes/locations/henderson-commercial-cleaning-hero.webp',
+          alt: 'Commercial cleaning in Henderson, NV by Final Touch.',
+        }}
       />
 
       {/* Quick local answer */}
@@ -272,6 +276,7 @@ export default function HendersonPage() {
                 href={s.href}
                 name={s.name}
                 description={s.shortDescription}
+                image={s.image}
               />
             ))}
           </div>

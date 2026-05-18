@@ -21,6 +21,8 @@ const manrope = Manrope({
   weight: ['400', '500', '600', '700'],
 });
 
+const OG_IMAGE = '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp';
+
 export const metadata: Metadata = {
   metadataBase: new URL(SEO_DEFAULTS.siteUrl),
   title: {
@@ -36,9 +38,23 @@ export const metadata: Metadata = {
     siteName: SEO_DEFAULTS.siteName,
     locale: SEO_DEFAULTS.locale,
     type: 'website',
+    images: [{ url: OG_IMAGE, alt: SEO_DEFAULTS.siteName }],
   },
-  // TODO-BATCH-2: Add owner-supplied favicon set + OG image and wire full
-  // icons metadata. Currently only the Next.js default app/favicon.ico ships.
+  twitter: {
+    card: 'summary_large_image',
+    title: SEO_DEFAULTS.defaultTitle,
+    description: SEO_DEFAULTS.description,
+    images: [OG_IMAGE],
+  },
+  icons: {
+    icon: [
+      {
+        url: '/images/favicons/final-touch-blue-sparkle-navy-icon-favicon.webp',
+        type: 'image/webp',
+      },
+    ],
+    apple: '/images/favicons/final-touch-blue-sparkle-navy-icon-favicon.webp',
+  },
 };
 
 export const viewport: Viewport = {

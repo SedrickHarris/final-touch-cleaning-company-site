@@ -180,6 +180,10 @@ export default function HomePage() {
           href: SITE.phone.href,
         }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
+          alt: 'Polished marble lobby cleaned by Final Touch Cleaning Company in Las Vegas, NV.',
+        }}
       />
 
       <TrustBar items={trustItems} />

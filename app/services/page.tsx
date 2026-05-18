@@ -91,6 +91,10 @@ export default function ServicesPage() {
         sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada. From a single deep clean to ongoing janitorial routes, every job ends with the same finishing checklist: baseboards, vents, switch plates, edges, and corners.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={{
+          src: '/images/heroes/cleaning-services-las-vegas-clark-county-hero.webp',
+          alt: 'Final Touch cleaning services across Las Vegas and Clark County, NV.',
+        }}
       />
 
       {/* Services grid */}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
@@ -129,41 +130,64 @@ export default function AboutPage() {
         sub={`${SITE.owners} run Final Touch from right here in Southern Nevada. We serve ${SITE.serviceArea.metro} with the kind of detail-focused work that makes a space feel finished, not just cleaned.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={{
+          src: '/images/heroes/family-owned-cleaning-company-las-vegas-hero.webp',
+          alt: 'Family-owned cleaning team serving Las Vegas, NV.',
+        }}
       />
 
       <TrustBar items={trustItems} />
 
       {/* Our story */}
       <section className="bg-brand-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <SectionHeader eyebrow="Our story" heading="Owner-led, owner-built." />
-          <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
-            <p>
-              Final Touch is a family operation. {SITE.owners} started it to do
-              the kind of cleaning work that actually holds up to a close look:
-              the edges, corners, and surfaces that most crews skip on the way
-              out the door.
-            </p>
-            <p>
-              We serve {SITE.serviceArea.metro}: Las Vegas, Henderson, North Las
-              Vegas, and Boulder City. Every job runs on the same finishing
-              checklist, the same team, and the same owner-set standard.
-            </p>
-            <p>
-              Final Touch is not a franchise and not a staffing platform. When
-              you call, you reach {SITE.owners} or the team directly. The
-              walkthrough, the quote, and the finish check all run through the
-              same people.
-            </p>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-14 lg:items-center">
+            <figure className="order-1 lg:order-none">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[14px] border border-border-subtle bg-light-gray">
+                <Image
+                  src="/images/owners/team.webp"
+                  alt={`${SITE.owners}, owners of ${SITE.name}.`}
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-muted">
+                {SITE.owners}, owners.
+              </figcaption>
+            </figure>
+
+            <div>
+              <SectionHeader eyebrow="Our story" heading="Owner-led, owner-built." />
+              <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
+                <p>
+                  Final Touch is a family operation. {SITE.owners} started it to do
+                  the kind of cleaning work that actually holds up to a close look:
+                  the edges, corners, and surfaces that most crews skip on the way
+                  out the door.
+                </p>
+                <p>
+                  We serve {SITE.serviceArea.metro}: Las Vegas, Henderson, North Las
+                  Vegas, and Boulder City. Every job runs on the same finishing
+                  checklist, the same team, and the same owner-set standard.
+                </p>
+                <p>
+                  Final Touch is not a franchise and not a staffing platform. When
+                  you call, you reach {SITE.owners} or the team directly. The
+                  walkthrough, the quote, and the finish check all run through the
+                  same people.
+                </p>
+              </div>
+              <p className="mt-8 text-sm">
+                <Link
+                  href={ROUTES.services}
+                  className="font-semibold text-brand-blue hover:underline"
+                >
+                  See our cleaning services →
+                </Link>
+              </p>
+            </div>
           </div>
-          <p className="mt-8 text-sm">
-            <Link
-              href={ROUTES.services}
-              className="font-semibold text-brand-blue hover:underline"
-            >
-              See our cleaning services →
-            </Link>
-          </p>
         </div>
       </section>
 

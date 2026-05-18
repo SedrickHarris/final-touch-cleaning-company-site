@@ -29,53 +29,84 @@ export type ServiceSlug =
   | 'deep-cleaning'
   | 'retail-space-cleaning';
 
+export type ServiceImage = { src: string; alt: string };
+
 export const SERVICES: ReadonlyArray<{
   slug: ServiceSlug;
   name: string;
   href: string;
   shortDescription: string;
+  image: ServiceImage;
 }> = [
   {
     slug: 'commercial-office-cleaning',
     name: 'Commercial & Office Cleaning',
     href: '/services/commercial-office-cleaning',
     shortDescription: 'Routine and detail-led cleans for offices and commercial interiors.',
+    image: {
+      src: '/images/services/commercial-office-cleaning-las-vegas-nv-final-touch.webp',
+      alt: 'Commercial office cleaning by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'janitorial-services',
     name: 'Janitorial Services',
     href: '/services/janitorial-services',
     shortDescription: 'Scheduled cleaning programs for ongoing facility maintenance.',
+    image: {
+      src: '/images/services/janitorial-services-las-vegas-nv-final-touch.webp',
+      alt: 'Janitorial services by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'post-construction-cleanup',
     name: 'Post-Construction Cleanup',
     href: '/services/post-construction-cleanup',
     shortDescription: 'Final-touch detail cleans after new builds and renovations.',
+    image: {
+      src: '/images/services/post-construction-cleanup-las-vegas-nv-final-touch.webp',
+      alt: 'Post-construction cleanup by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'move-in-cleaning',
     name: 'Move-In Cleaning',
     href: '/services/move-in-cleaning',
     shortDescription: 'Top-to-bottom cleans before you settle into a new space.',
+    image: {
+      src: '/images/services/move-in-cleaning-las-vegas-nv-final-touch.webp',
+      alt: 'Move-in cleaning by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'move-out-cleaning',
     name: 'Move-Out Cleaning',
     href: '/services/move-out-cleaning',
     shortDescription: 'Deposit-ready cleans when you hand back the keys.',
+    image: {
+      src: '/images/services/move-out-cleaning-las-vegas-nv-final-touch.webp',
+      alt: 'Move-out cleaning by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'deep-cleaning',
     name: 'Deep Cleaning',
     href: '/services/deep-cleaning',
     shortDescription: 'Periodic deep cleans for the corners standard service skips.',
+    image: {
+      src: '/images/services/deep-cleaning-baseboards-las-vegas-nv-final-touch.webp',
+      alt: 'Deep cleaning of baseboards by Final Touch in Las Vegas, NV.',
+    },
   },
   {
     slug: 'retail-space-cleaning',
     name: 'Retail Space Cleaning',
     href: '/services/retail-space-cleaning',
     shortDescription: 'Customer-ready cleans for storefronts and retail interiors.',
+    image: {
+      src: '/images/services/retail-space-cleaning-las-vegas-nv-final-touch.webp',
+      alt: 'Retail space cleaning by Final Touch in Las Vegas, NV.',
+    },
   },
 ] as const;
 

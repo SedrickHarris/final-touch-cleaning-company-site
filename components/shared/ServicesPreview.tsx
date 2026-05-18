@@ -9,6 +9,7 @@ type Service = {
   name: string;
   href: string;
   shortDescription: string;
+  image?: { src: string; alt: string };
 };
 
 type Props = {
@@ -40,6 +41,7 @@ export default function ServicesPreview({ services }: Props) {
             href={s.href}
             name={s.name}
             description={s.shortDescription}
+            image={s.image}
           />
         </motion.li>
       ))}

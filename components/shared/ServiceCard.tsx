@@ -1,25 +1,29 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import ServiceImagePlaceholder from './ServiceImagePlaceholder';
+
+type ServiceImage = { src: string; alt: string };
 
 type Props = {
   href: string;
   name: string;
   description: string;
+  /** Real photo for the card top. When omitted, falls back to ServiceImagePlaceholder. */
+  image?: ServiceImage;
 };
 
-// Reusable service card. Composes the image placeholder + body + CTA.
-// Used by ServicesPreview today; future services hub, related-service
-// sections, location pages, and service + city matrix pages should reuse
-// this component (or a thin variant of it).
+// Reusable service card. Composes the image (or placeholder) + body + CTA.
+// Used by ServicesPreview, service detail "related services" sections, and
+// per-city service grids on location pages.
 //
 // Per docs/site-os/service-card-image-placeholder-standard.md:
-// - Image placeholder at the top
+// - Image at the top, consistent 16/10 aspect across a grid
 // - Service title (H3)
 // - Short description (1–2 sentences)
 // - CTA link with arrow affordance
 // - Full card is a Link — tap target is the full card height
 // - Hover lift + shadow + accent border + arrow translate (CSS, reduced-motion safe)
-export default function ServiceCard({ href, name, description }: Props) {
+export default function ServiceCard({ href, name, description, image }: Props) {
   return (
     <Link
       href={href}
@@ -32,7 +36,19 @@ export default function ServiceCard({ href, name, description }: Props) {
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2
       "
     >
-      <ServiceImagePlaceholder />
+      {image ? (
+        <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border-subtle bg-light-gray">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+      ) : (
+        <ServiceImagePlaceholder />
+      )}
       <div className="p-6">
         <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight group-hover:text-brand-blue transition-colors">
           {name}

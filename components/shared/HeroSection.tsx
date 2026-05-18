@@ -1,11 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { DURATION, EASE_OUT, fadeUp, stagger } from '@/lib/motion';
 
 type CTA = { label: string; href: string };
+
+type HeroImage = { src: string; alt?: string };
 
 type Props = {
   eyebrow?: string;
@@ -21,6 +24,8 @@ type Props = {
   layout?: 'standard' | 'split';
   /** Container width. Split layout defaults to 'wide'. */
   container?: 'normal' | 'wide';
+  /** Background photo. Renders behind content with a 40% black overlay; text switches to light. */
+  image?: HeroImage;
 };
 
 function renderHeading(heading: string, emphasis?: string) {
@@ -49,9 +54,11 @@ export default function HeroSection({
   formSlot,
   layout,
   container,
+  image,
 }: Props) {
   const isSplit = layout === 'split' || (layout !== 'standard' && !!formSlot);
   const isWide = container === 'wide' || (container !== 'normal' && isSplit);
+  const hasImage = !!image;
 
   const containerClass = isWide
     ? 'max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12'
@@ -61,12 +68,38 @@ export default function HeroSection({
     ? 'text-[2.25rem] sm:text-5xl lg:text-[3.25rem] xl:text-6xl 2xl:text-7xl'
     : 'text-[2.25rem] sm:text-5xl lg:text-6xl xl:text-7xl';
 
+  const sectionBg = hasImage ? 'bg-brand-black' : 'bg-light-gray';
+  const eyebrowColor = hasImage ? 'text-white/90' : 'text-brand-blue';
+  const headingColor = hasImage ? 'text-white' : 'text-brand-black';
+  const subColor = hasImage ? 'text-white/85' : 'text-muted';
+  const secondaryCtaClass = hasImage
+    ? 'border-white text-white hover:bg-white hover:text-brand-black'
+    : 'border-brand-black text-brand-black hover:bg-brand-black hover:text-white';
+
   return (
-    <section className="relative overflow-hidden bg-light-gray">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_55%_at_15%_15%,rgba(26,95,180,0.10)_0%,rgba(26,95,180,0)_60%)]"
-      />
+    <section className={`relative overflow-hidden ${sectionBg}`}>
+      {hasImage ? (
+        <>
+          <Image
+            src={image.src}
+            alt={image.alt ?? ''}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            aria-hidden={image.alt ? undefined : 'true'}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-black/40"
+          />
+        </>
+      ) : (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_55%_at_15%_15%,rgba(26,95,180,0.10)_0%,rgba(26,95,180,0)_60%)]"
+        />
+      )}
       <div
         className={`relative mx-auto ${containerClass} py-16 sm:py-20 lg:py-24 xl:py-28`}
       >
@@ -87,7 +120,7 @@ export default function HeroSection({
               <motion.p
                 variants={fadeUp}
                 transition={{ duration: DURATION.short, ease: EASE_OUT }}
-                className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue"
+                className={`font-body text-xs font-semibold uppercase tracking-[0.18em] ${eyebrowColor}`}
               >
                 {eyebrow}
               </motion.p>
@@ -95,7 +128,7 @@ export default function HeroSection({
             <motion.h1
               variants={fadeUp}
               transition={{ duration: DURATION.short, ease: EASE_OUT }}
-              className={`mt-4 font-display ${headingSize} font-semibold leading-[1.05] tracking-tight text-brand-black`}
+              className={`mt-4 font-display ${headingSize} font-semibold leading-[1.05] tracking-tight ${headingColor}`}
             >
               {renderHeading(heading, emphasis)}
             </motion.h1>
@@ -103,7 +136,7 @@ export default function HeroSection({
               <motion.p
                 variants={fadeUp}
                 transition={{ duration: DURATION.short, ease: EASE_OUT }}
-                className="mt-5 text-base sm:text-lg lg:text-xl text-muted max-w-2xl leading-relaxed"
+                className={`mt-5 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed ${subColor}`}
               >
                 {sub}
               </motion.p>
@@ -128,7 +161,7 @@ export default function HeroSection({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-[10px] border-2 border-brand-black px-6 py-4 text-base font-semibold text-brand-black hover:bg-brand-black hover:text-white transition-colors min-h-[48px] tabular-nums"
+                  className={`inline-flex items-center justify-center rounded-[10px] border-2 px-6 py-4 text-base font-semibold transition-colors min-h-[48px] tabular-nums ${secondaryCtaClass}`}
                 >
                   {secondaryCta.label}
                 </Link>

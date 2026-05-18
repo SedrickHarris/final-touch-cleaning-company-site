@@ -133,6 +133,10 @@ export default function BoulderCityPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/heroes/locations/boulder-city-commercial-cleaning-hero.webp',
+          alt: 'Commercial cleaning in Boulder City, NV by Final Touch.',
+        }}
       />
 
       {/* Quick local answer */}
@@ -285,6 +289,7 @@ export default function BoulderCityPage() {
                 href={s.href}
                 name={s.name}
                 description={s.shortDescription}
+                image={s.image}
               />
             ))}
           </div>

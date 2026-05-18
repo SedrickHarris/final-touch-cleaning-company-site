@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { SITE } from '@/lib/constants/site';
 import { FOOTER_NAV } from '@/lib/constants/routes';
@@ -10,11 +11,23 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="font-display font-semibold text-xl tracking-tight">
-              {SITE.shortName}
-            </div>
-            <div className="font-body text-[11px] uppercase tracking-[0.18em] text-white/70 mt-1">
-              Cleaning Company
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/favicons/final-touch-blue-sparkle-transparent-favicon.webp"
+                alt=""
+                width={1254}
+                height={1254}
+                aria-hidden="true"
+                className="h-10 w-10 shrink-0"
+              />
+              <div>
+                <div className="font-display font-semibold text-xl tracking-tight">
+                  {SITE.shortName}
+                </div>
+                <div className="font-body text-[11px] uppercase tracking-[0.18em] text-white/70 mt-1">
+                  Cleaning Company
+                </div>
+              </div>
             </div>
             <p className="mt-4 text-sm text-white/80 max-w-xs leading-relaxed">
               Family-owned by {SITE.owners}. {SITE.coreMessage}

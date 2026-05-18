@@ -140,6 +140,10 @@ export default function LasVegasPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/heroes/locations/las-vegas-commercial-cleaning-hero.webp',
+          alt: 'Commercial cleaning in Las Vegas, NV by Final Touch.',
+        }}
       />
 
       {/* Quick local answer */}
@@ -272,6 +276,7 @@ export default function LasVegasPage() {
                 href={s.href}
                 name={s.name}
                 description={s.shortDescription}
+                image={s.image}
               />
             ))}
           </div>

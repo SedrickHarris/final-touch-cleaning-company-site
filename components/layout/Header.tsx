@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -33,15 +34,17 @@ export default function Header() {
         <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
           <Link
             href={ROUTES.home}
-            className="flex flex-col leading-tight shrink-0"
+            className="flex items-center shrink-0"
             aria-label={`${SITE.name}, home`}
           >
-            <span className="font-display font-semibold text-lg lg:text-xl text-brand-black tracking-tight">
-              {SITE.shortName}
-            </span>
-            <span className="font-body text-[10px] lg:text-[11px] uppercase tracking-[0.18em] text-muted">
-              Cleaning Company
-            </span>
+            <Image
+              src="/images/logo/final-touch-cleaning-company-logo.webp"
+              alt={SITE.name}
+              width={2000}
+              height={2000}
+              priority
+              className="h-12 lg:h-16 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7" aria-label="Primary">

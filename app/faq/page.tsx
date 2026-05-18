@@ -255,6 +255,10 @@ export default function FAQPage() {
         sub={`${SITE.name} serves ${SITE.serviceArea.county}, Nevada. Browse answers about our cleaning services, service area, quote process, scheduling, and what to expect. Still have a question? Call ${SITE.phone.display}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={{
+          src: '/images/heroes/cleaning-service-faq-las-vegas-hero.webp',
+          alt: 'Final Touch Cleaning Company FAQs for Las Vegas, NV.',
+        }}
       />
 
       {/* Direct-answer intro - entity authority paragraph for AI search citation.

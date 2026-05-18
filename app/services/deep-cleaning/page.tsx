@@ -54,6 +54,7 @@ const faq = [
   },
 ];
 
+const current = SERVICES.find((s) => s.slug === 'deep-cleaning')!;
 const siblings = SERVICES.filter((s) => s.slug !== 'deep-cleaning');
 
 const serviceJsonLd = {
@@ -109,6 +110,7 @@ export default function DeepCleaningPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={current.image}
       />
 
       {/* 2. Quick Answer */}
@@ -328,7 +330,7 @@ export default function DeepCleaningPage() {
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {siblings.map((s) => (
               <li key={s.slug} className="h-full">
-                <ServiceCard href={s.href} name={s.name} description={s.shortDescription} />
+                <ServiceCard href={s.href} name={s.name} description={s.shortDescription} image={s.image} />
               </li>
             ))}
           </ul>
