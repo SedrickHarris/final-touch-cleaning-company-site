@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -8,9 +9,15 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: `Final Touch Cleaning Company is owned and run by ${SITE.owners}. Family-owned cleaning across ${SITE.serviceArea.county}, Nevada. Detail-focused work, local team, free quotes.`,
+  title: 'About Final Touch Cleaning Company | Las Vegas, NV',
+  description: `Final Touch Cleaning Company is owned and run by ${SITE.owners}. Family-owned cleaning across ${SITE.serviceArea.metro}, NV. Detail-focused work, local team, free quotes.`,
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Final Touch Cleaning Company | Clark County, NV',
+    description: `${SITE.owners} own and run Final Touch, a family-owned cleaning company serving Las Vegas, Henderson, and Clark County, NV. Detail-focused work.`,
+    type: 'website',
+    url: `${SITE.url}/about`,
+  },
 };
 
 const trustItems = [
@@ -23,7 +30,7 @@ const trustItems = [
 const faq = [
   {
     q: 'Who owns Final Touch Cleaning Company?',
-    a: `${SITE.owners} own and run Final Touch. It's a family-run cleaning company based in Southern Nevada, not a franchise.`,
+    a: `${SITE.owners} own and run Final Touch. It is a family-run cleaning company based in Southern Nevada, not a franchise.`,
   },
   {
     q: 'What areas does Final Touch serve?',
@@ -35,7 +42,7 @@ const faq = [
   },
   {
     q: 'What does "Where small details bring BIG RESULTS" mean?',
-    a: 'It means we finish what other crews skip: baseboards, vents, switch plates, edges, and corners. The final ten percent of a clean is what makes a space feel done, and that\'s where we focus.',
+    a: "It means we finish what other crews skip: baseboards, vents, switch plates, edges, and corners. The final ten percent of a clean is what makes a space feel done, and that is where we focus.",
   },
   {
     q: 'What does family-owned mean for the work?',
@@ -43,7 +50,7 @@ const faq = [
   },
   {
     q: 'Where is Final Touch based?',
-    a: `Final Touch is based in Southern Nevada and operates as a service-area business. We come to you. There's no public storefront to visit, but we do serve every part of ${SITE.serviceArea.county}.`,
+    a: `Final Touch is based in Southern Nevada and operates as a service-area business. We come to you. There is no public storefront to visit, but we serve every part of ${SITE.serviceArea.county}.`,
   },
   {
     q: 'What makes Final Touch different from a basic cleaning service?',
@@ -51,8 +58,8 @@ const faq = [
   },
 ];
 
-// Organization schema. NOTE: no streetAddress because Final Touch is a
-// service-area-only business per docs/site-os/no-fake-data-policy.md sec 2.
+// Organization schema. No streetAddress: service-area-only business per
+// docs/site-os/no-fake-data-policy.md sec 2.
 // TODO-VERIFY: license number, insurance carrier, foundingDate, social
 // profiles (sameAs). Add only after owner-supplied verification.
 const orgJsonLd = {
@@ -81,24 +88,35 @@ const faqJsonLd = {
 
 const detailExamples = [
   {
-    label: 'Baseboards & door frames',
-    body:
-      'Wiped, not just dusted. The line of grime at the top of a baseboard is one of the first things a buyer or new tenant notices.',
+    label: 'Baseboards and door frames',
+    body: 'Wiped, not just dusted. The line of grime at the top of a baseboard is one of the first things a buyer or new tenant notices.',
   },
   {
-    label: 'Vents & switch plates',
-    body:
-      'HVAC return covers, ceiling vents, light-switch plates, outlet covers. The small surfaces that quietly read as neglected when they\'re skipped.',
+    label: 'Vents and switch plates',
+    body: "HVAC return covers, ceiling vents, light-switch plates, outlet covers. The small surfaces that quietly read as neglected when they are skipped.",
   },
   {
-    label: 'Edges & corners',
-    body:
-      'Behind toilets, under sinks, the corner where the tile meets the wall, the inside of the oven door. The places where dust and residue collect.',
+    label: 'Edges and corners',
+    body: 'Behind toilets, under sinks, the corner where the tile meets the wall, the inside of the oven door. The places where dust and residue collect.',
   },
   {
-    label: 'Glass, hardware, & finishes',
-    body:
-      'Streak-free glass, polished fixtures, fingerprints off cabinet pulls. The finish that catches light and makes a space feel done.',
+    label: 'Glass, hardware, and finishes',
+    body: 'Streak-free glass, polished fixtures, fingerprints off cabinet pulls. The finish that catches light and makes a space feel done.',
+  },
+];
+
+const howWeWorkItems = [
+  {
+    title: 'Same team, every job',
+    body: 'Not a rotating pool of contractors. The same people who did the walkthrough do the work.',
+  },
+  {
+    title: 'Same checklist, every time',
+    body: 'Every job ends with the same finishing pass: the surfaces most crews skip on the way out the door.',
+  },
+  {
+    title: 'No upsells, no surprises',
+    body: 'The quote reflects the actual scope. Nothing gets added at the end that was not discussed at the start.',
   },
 ];
 
@@ -108,55 +126,89 @@ export default function AboutPage() {
       <HeroSection
         eyebrow="About Final Touch"
         heading="A family-owned cleaning company built on the details."
-        sub={`${SITE.owners} run Final Touch from right here in Southern Nevada. We serve ${SITE.serviceArea.county} with the kind of detail-focused work that makes a space feel finished, not just cleaned.`}
+        sub={`${SITE.owners} run Final Touch from right here in Southern Nevada. We serve ${SITE.serviceArea.metro} with the kind of detail-focused work that makes a space feel finished, not just cleaned.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
 
       <TrustBar items={trustItems} />
 
+      {/* Our story */}
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader eyebrow="Our story" heading="Owner-led, owner-built." />
           <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
             <p>
-              Final Touch is a family operation. {SITE.owners} run it together.
-              Not a franchise, not a national chain, not a marketplace of
-              subcontractors. The same people who answer the phone set the
-              standard for every job.
+              Final Touch is a family operation. {SITE.owners} started it to do
+              the kind of cleaning work that actually holds up to a close look:
+              the edges, corners, and surfaces that most crews skip on the way
+              out the door.
             </p>
             <p>
-              We started Final Touch because the average cleaning crew rushes
-              the last ten percent of a job: the baseboards, the vents, the
-              switch plates, the inside of the oven, the corners behind the
-              toilet. That final ten percent is what makes a space feel
-              finished, and that&apos;s where we put our focus.
+              We serve {SITE.serviceArea.metro}: Las Vegas, Henderson, North Las
+              Vegas, and Boulder City. Every job runs on the same finishing
+              checklist, the same team, and the same owner-set standard.
             </p>
             <p>
-              We serve {SITE.serviceArea.cities.slice(0, 3).join(', ')}, and{' '}
-              {SITE.serviceArea.cities[3]}. Every part of {SITE.serviceArea.county},
-              Nevada. We treat every home and every business like our own.
+              Final Touch is not a franchise and not a staffing platform. When
+              you call, you reach {SITE.owners} or the team directly. The
+              walkthrough, the quote, and the finish check all run through the
+              same people.
             </p>
           </div>
+          <p className="mt-8 text-sm">
+            <Link
+              href={ROUTES.services}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              See our cleaning services →
+            </Link>
+          </p>
         </div>
       </section>
 
-      {/* What "small details" actually means */}
+      {/* What we mean by details */}
       <section className="bg-light-gray">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="What we mean by details"
-            heading="The finish, in concrete terms."
-            sub={SITE.coreMessage}
+            heading="The surfaces most crews skip."
+            sub="Every Final Touch job ends with a finishing pass on the surfaces that separate a cleaned space from a finished one."
           />
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {detailExamples.map((item) => (
               <li
                 key={item.label}
                 className="rounded-[14px] border border-border-subtle bg-brand-white p-6"
               >
-                <h3 className="font-display text-lg sm:text-xl font-semibold text-brand-black tracking-tight">
+                <h3 className="font-display text-base font-semibold text-brand-black">
                   {item.label}
+                </h3>
+                <p className="mt-2 text-sm text-muted leading-relaxed">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* How we work */}
+      <section className="bg-brand-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <SectionHeader
+            eyebrow="How we work"
+            heading="The same standard, every time."
+            sub="Three things that stay consistent across every job, every city, every type of space."
+          />
+          <ul className="mt-10 grid gap-5 sm:grid-cols-3 lg:gap-6">
+            {howWeWorkItems.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-[14px] border border-border-subtle bg-light-gray p-6"
+              >
+                <h3 className="font-display text-lg font-semibold text-brand-black">
+                  {item.title}
                 </h3>
                 <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
                   {item.body}
@@ -164,55 +216,6 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm text-muted max-w-2xl">
-            None of these are upsells. They&apos;re part of every job: the
-            finishing standard that makes a space feel done, not just wiped.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-brand-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <SectionHeader
-            eyebrow="How we work"
-            heading="Three things we promise."
-            sub="No theatrics, no upsells, no surprise add-ons. Just the things that make a clean a clean."
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                Honest pricing
-              </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
-                Free walkthroughs, real numbers, no surprise add-ons. If a job
-                is going to cost more, you hear it before we start, not after.
-              </p>
-            </div>
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                Detail-focused work
-              </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
-                Baseboards, vents, switch plates, edges, and corners. The places
-                most crews skip are the places we focus on.
-              </p>
-            </div>
-            <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
-              <h3 className="font-display text-xl font-semibold text-brand-black tracking-tight">
-                Local team
-              </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
-                Owner-led and locally based. Call{' '}
-                <a
-                  href={SITE.phone.href}
-                  className="text-brand-blue font-semibold tabular-nums hover:underline"
-                >
-                  {SITE.phone.display}
-                </a>{' '}
-                and you talk to someone who knows the job, not a call center.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -221,6 +224,18 @@ export default function AboutPage() {
         heading="About our team and approach"
         defaultOpenFirst
       />
+
+      {/* /faq link */}
+      <div className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 text-center">
+          <p className="text-sm text-muted">
+            More questions?{' '}
+            <Link href={ROUTES.faq} className="font-semibold text-brand-blue hover:underline">
+              Read all frequently asked questions →
+            </Link>
+          </p>
+        </div>
+      </div>
 
       <CTASection
         heading="Want to see the difference the details make?"

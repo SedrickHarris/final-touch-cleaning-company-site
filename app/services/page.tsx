@@ -9,9 +9,15 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services',
-  description: `Final Touch offers seven cleaning services across ${SITE.serviceArea.county}, NV: commercial & office, janitorial, post-construction, move-in, move-out, deep cleaning, and retail space cleaning. Free quotes. Call ${SITE.phone.display}.`,
+  title: 'Cleaning Services Las Vegas & Clark County, NV | Final Touch',
+  description: `Final Touch offers 7 cleaning services in Clark County, NV: commercial, janitorial, post-construction, move-in, move-out, deep cleaning, and retail. Free quotes.`,
   alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Cleaning Services | Final Touch Cleaning Company | Las Vegas, NV',
+    description: `Seven core cleaning services for homes, offices, post-construction sites, and retail spaces across Clark County, Nevada. Family-owned, free quotes.`,
+    type: 'website',
+    url: `${SITE.url}/services`,
+  },
 };
 
 const faq = [
@@ -20,16 +26,12 @@ const faq = [
     a: 'Seven core services: commercial and office cleaning, janitorial routes, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning.',
   },
   {
-    q: 'Do you provide both residential and commercial cleaning?',
-    a: 'Yes, both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
-  },
-  {
-    q: 'How do I choose between move-in cleaning and deep cleaning?',
-    a: 'Move-in cleaning prepares a space for someone to settle in: top-to-bottom before the boxes arrive. Deep cleaning is for periodic resets in a space you already live in or operate from. Both reach the corners standard service skips. The difference is timing and intent.',
+    q: 'Does Final Touch clean homes and businesses?',
+    a: 'Yes, both. Residential services include move-in, move-out, and deep cleaning. Commercial services include office cleaning, janitorial routes, and retail space cleaning. Post-construction cleanup covers new builds and renovations.',
   },
   {
     q: 'Does Final Touch offer post-construction cleanup?',
-    a: 'Yes. Post-construction cleanup is one of our seven core services. We handle the dust, residue, and fine grit that lands on every surface after a build or renovation.',
+    a: `Yes. Post-construction cleanup is one of our seven core services. We handle the dust, residue, and fine grit that lands on every surface after a build or renovation across ${SITE.serviceArea.county}.`,
   },
   {
     q: 'Does Final Touch offer commercial office cleaning?',
@@ -37,19 +39,23 @@ const faq = [
   },
   {
     q: 'Does Final Touch offer janitorial services?',
-    a: 'Yes. We schedule ongoing janitorial routes for offices, retail, and commercial operations. The rhythm and scope are tailored to your space during the walkthrough.',
+    a: 'Yes. Scheduled janitorial routes for offices, retail, and commercial operations. The rhythm and scope are tailored to your space during the walkthrough.',
   },
   {
     q: 'Does Final Touch offer retail space cleaning?',
-    a: 'Yes. Retail space cleaning is one of our seven core services. Customer-ready cleans for storefronts, showrooms, and retail interiors.',
+    a: 'Yes. Customer-ready cleans for storefronts, showrooms, and retail interiors are one of our seven core services.',
   },
   {
     q: 'Do you offer one-time cleans or only ongoing service?',
-    a: 'Both. One-time jobs (move-in, move-out, post-construction, deep cleaning) and ongoing janitorial routes for offices, retail, and commercial spaces. Tell us about your space and we\'ll suggest the right fit.',
+    a: "Both. One-time jobs (move-in, move-out, post-construction, deep cleaning) and ongoing janitorial routes for offices, retail, and commercial spaces. Tell us about your space and we will suggest the right fit.",
   },
   {
     q: 'What should I do if I am not sure which service I need?',
-    a: 'Tell us what triggered the request: moving in, finishing a build, opening a store, resetting a space, keeping an office tidy week to week. We\'ll match it to the right service on the walkthrough. No charge for that conversation.',
+    a: "Tell us what triggered the request: moving in, finishing a build, opening a store, resetting a space, keeping an office tidy week to week. We will match it to the right service on the walkthrough. No charge for that conversation.",
+  },
+  {
+    q: 'Do you provide both residential and commercial cleaning?',
+    a: `Yes. Final Touch serves both residential and commercial clients across ${SITE.serviceArea.county}. Residential: move-in, move-out, deep cleaning. Commercial: office cleaning, janitorial routes, retail space cleaning, post-construction cleanup.`,
   },
   {
     q: 'Where do you work?',
@@ -81,18 +87,19 @@ export default function ServicesPage() {
     <>
       <HeroSection
         eyebrow="Services"
-        heading="Seven services. One standard."
+        heading={`Cleaning services in Las Vegas and ${SITE.serviceArea.metro}.`}
         sub={`Final Touch covers seven core cleaning services across ${SITE.serviceArea.county}, Nevada. From a single deep clean to ongoing janitorial routes, every job ends with the same finishing checklist: baseboards, vents, switch plates, edges, and corners.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
 
+      {/* Services grid */}
       <section className="bg-brand-white">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="What we do"
             heading="The seven services we cover."
-            sub="Each service has its own scope and rhythm, but the finishing standard is the same. Pick a service to see what's included, or jump straight to a free quote."
+            sub="Each service has its own scope and rhythm, but the finishing standard is the same. Pick a service to see what is included, or jump straight to a free quote."
           />
 
           <ServicesPreview services={SERVICES} />
@@ -115,7 +122,7 @@ export default function ServicesPage() {
             >
               {SITE.email.display}
             </a>{' '}
-            and we&apos;ll talk you through it.
+            and we will talk you through it.
           </p>
         </div>
       </section>
@@ -139,8 +146,7 @@ export default function ServicesPage() {
               fine grit that lands on every surface after construction.
             </p>
             <p>
-              <strong className="font-semibold">Running an office or retail
-              space?</strong>{' '}
+              <strong className="font-semibold">Running an office or retail space?</strong>{' '}
               Commercial, janitorial, and retail-space cleaning are scheduled
               programs that keep the space ready for customers and staff.
             </p>
@@ -150,6 +156,14 @@ export default function ServicesPage() {
               periodic top-to-bottom that takes a space back to baseline.
             </p>
           </div>
+          <p className="mt-8 text-sm">
+            <Link
+              href={ROUTES.about}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              Learn about our team →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -181,6 +195,18 @@ export default function ServicesPage() {
       </section>
 
       <FAQSection items={faq} heading="Common questions about our services" defaultOpenFirst />
+
+      {/* /faq link */}
+      <div className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 text-center">
+          <p className="text-sm text-muted">
+            More questions?{' '}
+            <Link href={ROUTES.faq} className="font-semibold text-brand-blue hover:underline">
+              Read all frequently asked questions →
+            </Link>
+          </p>
+        </div>
+      </div>
 
       <CTASection
         heading="Tell us about your space."

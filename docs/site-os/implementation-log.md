@@ -972,3 +972,62 @@ PASS
 - TODO-BATCH-2: QuoteFormPlaceholder still needs real form endpoint wiring on both pages
 - TODO-VERIFY: business hours on /contact still pending owner confirmation
 - TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from either page
+
+
+### Batch 2 Rebuild — About + Services Hub + Locations Hub — Level 3
+Status: Committed
+Date: 2026-05-18
+
+#### Routing
+- /about: Level 3 Core Trust, Trust + Brand Story Prompt
+- /services: Level 3 Core SEO/AEO, SEO/AEO Services Hub Prompt
+- /locations: Level 3 Core SEO/AEO, Local SEO/AEO Locations Hub Prompt
+- Prompt A: combined research for all three (shared brand story + service taxonomy)
+- Prompt B: each page implemented separately
+
+#### Content Gaps Fixed — /about
+1. Metadata title: bare "About" -> "About Final Touch Cleaning Company | Las Vegas, NV" (50 chars)
+2. Meta description: updated to include Las Vegas Valley metro reference
+3. openGraph block: absent -> added
+4. Hero sub: no metro reference -> uses SITE.serviceArea.metro (the Las Vegas Valley)
+5. Internal links: 0 body links -> /services (Our story section) + /faq (FAQ footer)
+6. "How we work" 3-card section: reconstructed from existing implementation log notes
+
+#### Content Gaps Fixed — /services
+1. Metadata title: bare "Services" -> "Cleaning Services Las Vegas & Clark County, NV | Final Touch" (60 chars)
+2. Meta description: 150 chars with 7 services + Clark County + free quotes
+3. openGraph block: absent -> added
+4. Hero H1: generic "Seven services. One standard." -> includes Las Vegas + metro keyword
+5. Internal links: /locations already present -> added /about (Choose by moment section) + /faq (FAQ footer)
+
+#### Content Gaps Fixed — /locations
+1. Metadata title: bare "Service Area" -> "Cleaning Across the Las Vegas Valley | Final Touch" (47 chars)
+2. Meta description: 140 chars with all 4 cities + Clark County + phone
+3. openGraph block: absent -> added
+4. Hero sub: no business name -> uses SITE.name for entity clarity
+5. Internal links: 0 body links -> /services + /about (One team section) + /faq (FAQ footer)
+
+#### FAQ Counts (unchanged)
+- /about: 7
+- /services: 10
+- /locations: 9
+
+#### Files Changed
+- app/about/page.tsx
+- app/services/page.tsx
+- app/locations/page.tsx
+
+#### Validation Results
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+- CTA greps — passed
+
+#### Pass/Fail Gate Result
+PASS
+
+#### Remaining TODOs
+- TODO-BATCH-3: service card hrefs on /services still link to individual service pages that 404 until Batch 3
+- TODO-BATCH-4: city card hrefs on /locations still link to city pages that 404 until Batch 4
+- TODO-VERIFY: Organization JSON-LD on /about still missing license, insurance, foundingDate, sameAs
+- TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from any of these pages

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -8,9 +9,15 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Service Area',
-  description: `Final Touch serves all of ${SITE.serviceArea.county}, Nevada, including ${SITE.serviceArea.cities.join(', ')}. Local team, free quotes. Call ${SITE.phone.display}.`,
+  title: `Cleaning Across ${SITE.serviceArea.metro} | Final Touch`,
+  description: `Final Touch serves Las Vegas, Henderson, North Las Vegas, Boulder City, and all of ${SITE.serviceArea.county}, NV. Local team, free quotes. Call ${SITE.phone.display}.`,
   alternates: { canonical: '/locations' },
+  openGraph: {
+    title: `Service Area | Final Touch Cleaning Company | ${SITE.serviceArea.county}, NV`,
+    description: `Final Touch serves every part of ${SITE.serviceArea.county}, Nevada: Las Vegas, Henderson, North Las Vegas, and Boulder City. One team, one finishing standard.`,
+    type: 'website',
+    url: `${SITE.url}/locations`,
+  },
 };
 
 const faq = [
@@ -36,7 +43,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve all of Clark County?',
-    a: `Yes. We work across ${SITE.serviceArea.county}, with the same team and the same finishing standard regardless of which part of the county you're in.`,
+    a: `Yes. We work across ${SITE.serviceArea.county} with the same team and the same finishing standard regardless of which part of the county you are in.`,
   },
   {
     q: 'How does Final Touch handle service areas without a public storefront?',
@@ -48,7 +55,7 @@ const faq = [
   },
   {
     q: 'Do you travel outside Clark County?',
-    a: `${SITE.serviceArea.county} is our verified service area. If you have a job just outside the county and want to ask, call ${SITE.phone.display} and we'll talk through it.`,
+    a: `${SITE.serviceArea.county} is our verified service area. If you have a job just outside the county and want to ask, call ${SITE.phone.display} and we will talk through it.`,
   },
 ];
 
@@ -76,12 +83,13 @@ export default function LocationsPage() {
     <>
       <HeroSection
         eyebrow="Service area"
-        heading={`Cleaning across ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}.`}
-        sub={`Final Touch serves every part of ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
+        heading={`Cleaning across ${SITE.serviceArea.metro}.`}
+        sub={`${SITE.name} serves every part of ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
 
+      {/* City grid */}
       <section className="bg-brand-white">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
@@ -106,14 +114,14 @@ export default function LocationsPage() {
           </ul>
 
           <p className="mt-12 text-sm text-muted">
-            Not sure if you&apos;re in our service area? Call{' '}
+            Not sure if you are in our service area? Call{' '}
             <a
               href={SITE.phone.href}
               className="text-brand-blue font-semibold tabular-nums hover:underline"
             >
               {SITE.phone.display}
             </a>{' '}
-            and we&apos;ll let you know.
+            and we will let you know.
           </p>
         </div>
       </section>
@@ -127,7 +135,7 @@ export default function LocationsPage() {
           />
           <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
             <p>
-              Final Touch isn&apos;t a franchise pool of independent contractors
+              {SITE.name} is not a franchise pool of independent contractors
               or a marketplace of subcontractors. {SITE.owners} run one team
               across all of {SITE.serviceArea.county}: the same training, the
               same finishing checklist, the same owner-checked standards.
@@ -137,19 +145,45 @@ export default function LocationsPage() {
               A house in {SITE.serviceArea.cities[0]} in the morning, an office
               in {SITE.serviceArea.cities[1]} in the afternoon, a
               post-construction site in {SITE.serviceArea.cities[2]} the next
-              day. What doesn&apos;t shift is what a finished space looks like
-              when we&apos;re done.
+              day. What does not shift is what a finished space looks like when
+              we are done.
             </p>
             <p>
               Final Touch is a service-area business, so we come to you. There
-              isn&apos;t a public storefront to visit, but if you&apos;re in{' '}
-              {SITE.serviceArea.county}, we&apos;re in your service area.
+              is no public storefront to visit, but if you are in{' '}
+              {SITE.serviceArea.county}, you are in our service area.
             </p>
           </div>
+          <p className="mt-8 text-sm flex flex-wrap gap-x-5 gap-y-2">
+            <Link
+              href={ROUTES.services}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              See our cleaning services →
+            </Link>
+            <Link
+              href={ROUTES.about}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              Learn about our team →
+            </Link>
+          </p>
         </div>
       </section>
 
       <FAQSection items={faq} heading="Questions about our service area" defaultOpenFirst />
+
+      {/* /faq link */}
+      <div className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 text-center">
+          <p className="text-sm text-muted">
+            More questions?{' '}
+            <Link href={ROUTES.faq} className="font-semibold text-brand-blue hover:underline">
+              Read all frequently asked questions →
+            </Link>
+          </p>
+        </div>
+      </div>
 
       <CTASection
         heading={`Ready to bring the details to your part of ${SITE.serviceArea.county}?`}
