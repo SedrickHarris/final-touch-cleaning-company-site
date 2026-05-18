@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -6,15 +7,23 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'FAQ',
-  description: `Common questions about Final Touch Cleaning Company: services, service area, quotes, scheduling, and what to expect. Family-owned, serving ${SITE.serviceArea.county}, ${SITE.serviceArea.state}.`,
+  title: 'Frequently Asked Questions | Final Touch Cleaning Company',
+  description:
+    'Answers to common questions about Final Touch Cleaning Company: services, service area in Clark County NV, quotes, scheduling, and what to expect. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
+  openGraph: {
+    title: 'FAQ | Final Touch Cleaning Company | Clark County, NV',
+    description:
+      'Browse 40+ answers about our cleaning services, service area, quote process, and what to expect. Family-owned, serving Las Vegas, Henderson, and Clark County.',
+    type: 'website',
+    url: `${SITE.url}/faq`,
+  },
 };
 
 const companyFaq = [
   {
     q: 'Who owns Final Touch Cleaning Company?',
-    a: `${SITE.owners} own and run Final Touch. It's a family-run cleaning company based in Southern Nevada, not a franchise.`,
+    a: `${SITE.owners} own and run Final Touch. It is a family-run cleaning company based in Southern Nevada, not a franchise.`,
   },
   {
     q: 'What does family-owned mean for Final Touch?',
@@ -22,7 +31,7 @@ const companyFaq = [
   },
   {
     q: 'What does "Where small details bring BIG RESULTS" mean?',
-    a: 'It means we finish what other crews skip: baseboards, vents, switch plates, edges, and corners. The final ten percent of a clean is what makes a space feel done, and that\'s where we focus.',
+    a: "It means we finish what other crews skip: baseboards, vents, switch plates, edges, and corners. The final ten percent of a clean is what makes a space feel done, and that's where we focus.",
   },
   {
     q: 'What makes Final Touch different from a basic cleaning service?',
@@ -53,7 +62,7 @@ const serviceAreaFaq = [
   },
   {
     q: 'Does Final Touch serve all of Clark County?',
-    a: `Yes. We work across ${SITE.serviceArea.county} with the same team and the same finishing standard regardless of which part of the county you're in.`,
+    a: `Yes. We work across ${SITE.serviceArea.county} with the same team and the same finishing standard regardless of which part of the county you are in.`,
   },
   {
     q: 'How does Final Touch handle service areas without a public storefront?',
@@ -72,7 +81,7 @@ const quoteContactFaq = [
   },
   {
     q: 'Are the online forms active yet?',
-    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We're wiring the form to our scheduling system shortly.`,
+    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We are wiring the form to our scheduling system shortly.`,
   },
   {
     q: 'Can I call instead of using the form?',
@@ -122,7 +131,7 @@ const moveDeepFaq = [
   },
   {
     q: 'When should I book deep cleaning vs move-in cleaning?',
-    a: 'Move-in cleaning is built around the moment new keys change hands. Deep cleaning is a periodic reset for a space that\'s already in use. Both reach the corners standard service skips. The difference is timing and intent.',
+    a: "Move-in cleaning is built around the moment new keys change hands. Deep cleaning is a periodic reset for a space that is already in use. Both reach the corners standard service skips. The difference is timing and intent.",
   },
 ];
 
@@ -156,14 +165,18 @@ const postConstructionFaq = [
   },
   {
     q: 'Do you work with contractors and builders?',
-    a: 'Yes. Post-construction cleanup is timed around the contractor\'s schedule and the property\'s readiness walkthrough. We coordinate on access and timing during the quote walkthrough.',
+    a: "Yes. Post-construction cleanup is timed around the contractor's schedule and the property's readiness walkthrough. We coordinate on access and timing during the quote walkthrough.",
+  },
+  {
+    q: 'What types of construction projects does Final Touch clean after?',
+    a: `New residential builds, commercial tenant improvements, home renovations, and remodels across ${SITE.serviceArea.county}. If construction has happened and the space needs a finishing clean before occupancy or handoff, that is the job we do. Call ${SITE.phone.display} to walk through the scope.`,
   },
 ];
 
 const schedulingFaq = [
   {
     q: 'Can I request recurring cleaning?',
-    a: 'Yes. We schedule ongoing janitorial routes for offices, retail, and commercial spaces, and recurring cleans for residences. Tell us the space and rhythm you want during the walkthrough and we\'ll suggest a fit.',
+    a: "Yes. We schedule ongoing janitorial routes for offices, retail, and commercial spaces, and recurring cleans for residences. Tell us the space and rhythm you want during the walkthrough and we will suggest a fit.",
   },
   {
     q: 'Do I have to be there during the cleaning?',
@@ -173,6 +186,10 @@ const schedulingFaq = [
     q: 'How does Final Touch schedule visits?',
     a: 'Scheduling is based on location, timing, and the scope of the job. For recurring routes we set a rhythm during the walkthrough; for one-time jobs we book around your move-in, move-out, or build readiness date.',
   },
+  {
+    q: 'How much notice do you need to schedule a cleaning?',
+    a: `Lead time depends on the job type and current availability. Call ${SITE.phone.display} or email ${SITE.email.display} with your timing and we will tell you what is open. For recurring routes we coordinate a start date during the walkthrough.`,
+  },
 ];
 
 const trustExpectFaq = [
@@ -181,16 +198,20 @@ const trustExpectFaq = [
     a: 'Yes. Our team brings cleaning supplies and equipment unless the job calls for something specific you already have on hand.',
   },
   {
+    q: 'What cleaning products does Final Touch use?',
+    a: `We use professional cleaning products appropriate to each surface and job type. If you have specific sensitivities or preferences regarding products, mention them when you request a quote and we will discuss options during the walkthrough. Call ${SITE.phone.display} with any questions.`,
+  },
+  {
     q: 'How long does a job take?',
-    a: 'It depends on the space and the scope. We\'ll give you a realistic time estimate after the walkthrough.',
+    a: 'It depends on the space and the scope. We will give you a realistic time estimate after the walkthrough.',
   },
   {
     q: 'How do you handle property access?',
-    a: 'We confirm the access plan during the walkthrough. Lockboxes, key handoffs, doorman buildings, gate codes: we tailor the plan to the property and the owner\'s preference.',
+    a: "We confirm the access plan during the walkthrough. Lockboxes, key handoffs, doorman buildings, gate codes: we tailor the plan to the property and the owner's preference.",
   },
   {
     q: 'What if I am not happy with the result?',
-    a: `Tell us. Call ${SITE.phone.display} or email ${SITE.email.display} and we'll talk through it. We want every job to end finished. If something missed, we want to know.`,
+    a: `Tell us. Call ${SITE.phone.display} or email ${SITE.email.display} and we will talk through it. We want every job to end finished. If something missed, we want to know.`,
   },
 ];
 
@@ -231,10 +252,47 @@ export default function FAQPage() {
       <HeroSection
         eyebrow="Help center"
         heading="Frequently asked questions."
-        sub={`The questions we hear most about our services, our service area, our quote process, and what to expect on a job. Still have a question? Call ${SITE.phone.display}.`}
+        sub={`${SITE.name} serves ${SITE.serviceArea.county}, Nevada. Browse answers about our cleaning services, service area, quote process, scheduling, and what to expect. Still have a question? Call ${SITE.phone.display}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />
+
+      {/* Direct-answer intro - entity authority paragraph for AI search citation.
+          Names business, owners, all cities, county, and phone in first 100 words. */}
+      <section className="bg-brand-white border-b border-border-subtle">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+          <p className="text-base sm:text-lg text-brand-black leading-relaxed">
+            Final Touch Cleaning Company is a family-owned cleaning service based in Southern
+            Nevada, owned and operated by {SITE.owners}. We serve Las Vegas, Henderson, North
+            Las Vegas, Boulder City, and all of {SITE.serviceArea.county}. This page answers
+            the questions we hear most about our services, our service area, and how to get
+            started. If your question is not here, call{' '}
+            <a href={SITE.phone.href} className="font-semibold text-brand-blue hover:underline tabular-nums">
+              {SITE.phone.display}
+            </a>
+            .
+          </p>
+
+          {/* Internal links - Tier 1 live routes only */}
+          <nav aria-label="FAQ quick links" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <Link href={ROUTES.services} className="font-semibold text-brand-blue hover:underline">
+              Our cleaning services →
+            </Link>
+            <Link href={ROUTES.locations} className="font-semibold text-brand-blue hover:underline">
+              Service area →
+            </Link>
+            <Link href={ROUTES.about} className="font-semibold text-brand-blue hover:underline">
+              About Final Touch →
+            </Link>
+            <Link href={ROUTES.freeQuote} className="font-semibold text-brand-blue hover:underline">
+              Request a free quote →
+            </Link>
+            <Link href={ROUTES.contact} className="font-semibold text-brand-blue hover:underline">
+              Contact us →
+            </Link>
+          </nav>
+        </div>
+      </section>
 
       <FAQSection items={companyFaq} heading="General company questions" defaultOpenFirst />
       <FAQSection items={serviceAreaFaq} heading="Service area questions" />
@@ -248,7 +306,7 @@ export default function FAQPage() {
 
       <CTASection
         heading="Didn't see your question?"
-        sub={`Call ${SITE.phone.display} or email ${SITE.email.display}.`}
+        sub={`Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request and we will get back to you.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

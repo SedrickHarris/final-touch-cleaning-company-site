@@ -870,3 +870,53 @@ PASS
 - TODO-VERIFY: foundingDate, license, insurance, sameAs in LocalBusiness JSON-LD pending owner confirmation
 - TODO-BATCH-2: QuoteFormPlaceholder needs real form endpoint wiring
 - TODO-VERIFY: owner-supplied favicon set and OG image still pending
+
+
+### Batch 2 Rebuild — FAQ Hub (/faq) — AEO Single-Step
+Status: Committed
+Date: 2026-05-18
+
+#### Routing
+- Page type: FAQ Hub
+- Page value: High
+- AI depth selected: Level 5 AEO Hub
+- Prompt used: aeo-faq-hub-prompt.md (single-step)
+
+#### FAQ Count and Categories
+42 FAQs across 9 categories:
+1. General company questions (4)
+2. Service area questions (7)
+3. Quote and contact questions (6)
+4. Cleaning service questions (4)
+5. Move-in, move-out, and deep cleaning (4)
+6. Commercial, office, retail, and janitorial (4)
+7. Post-construction cleanup (4) — +1 from prior
+8. Scheduling and recurring cleaning (4) — +1 from prior
+9. Trust, safety, and service expectations (5) — +1 from prior
+
+#### Content Gaps Fixed
+1. Metadata title: bare "FAQ" -> "Frequently Asked Questions | Final Touch Cleaning Company"
+2. Meta description: missing phone and keyword -> 152 chars with Clark County + phone
+3. openGraph block: absent -> added
+4. Hero sub: no business name or city -> names SITE.name and SITE.serviceArea.county
+5. Direct-answer intro paragraph: absent -> 2-sentence entity block naming owners, all 4 cities, county, phone
+6. Internal links: 0 -> 5 live links (/services, /locations, /about, /free-quote, /contact)
+7. Post-construction FAQ: 3 -> 4 (added project types question)
+8. Scheduling FAQ: 3 -> 4 (added lead time/notice question)
+9. Trust FAQ: 4 -> 5 (added cleaning products question)
+
+#### Files Changed
+- app/faq/page.tsx
+
+#### Validation Results
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+- CTA grep (out/faq.html) — passed
+
+#### Pass/Fail Gate Result
+PASS
+
+#### Remaining TODOs
+- TODO-DEFERRED-TIER1: /reviews and /pricing not yet linked from FAQ hub (same as homepage — restore when pages ship)
+- TODO-BATCH-3/4: service and city page links could be added to relevant FAQ category footers once those pages ship
