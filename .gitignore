@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Generic build output
+dist/
+
+# Environment files (never commit secrets)
+.env
+.env.local
+.env.*.local
