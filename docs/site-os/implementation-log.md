@@ -1379,3 +1379,38 @@ Validation:
 
 No page files changed. No constants changed. lib/motion.ts unchanged.
 Footer, mobile menu, and global config untouched.
+
+
+### Locations Hub -- Neighborhoods Section
+Status: Complete
+Date: 2026-05-18
+
+Files Updated:
+- lib/constants/routes.ts -- added NEIGHBORHOODS grouped constant
+  (Las Vegas: 3 neighborhoods; Henderson: 7 neighborhoods)
+- app/locations/page.tsx -- added Neighborhoods section with
+  city-grouped pill links to all 10 Batch 5 neighborhood pages
+
+Placement: inserted immediately after the city cards section and
+before the existing "One team, county-wide" prose section. The brief
+proposed bg-light-gray for the new section, but the existing "One
+team" section directly following is already bg-light-gray, which
+would have produced two back-to-back gray sections. After surfacing
+the structural finding, user picked Option C: insert Neighborhoods
+with bg-brand-white to preserve visual rhythm across the page (cards
+white -> neighborhoods white -> one-team gray -> FAQ -> CTA).
+
+Content: SectionHeader with eyebrow "Neighborhoods", heading
+"Browse by neighborhood.", and the brief-specified sub copy.
+Each city group renders an h3 (font-display text-xl semibold) with
+the city name above a flex-wrap pill row. Pills use the brand-white
++ brand-blue style specified in the brief.
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No components changed. No metadata changed. No schema changed.
+Hero, city cards, "One team" prose, FAQ, and final CTA sections
+untouched.
