@@ -165,6 +165,7 @@ export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
 
 export const FOOTER_NAV = {
   services: SERVICES.map((s) => ({ label: s.name, href: s.href })),
+  locations: LOCATIONS.map((l) => ({ label: l.name, href: l.href })),
   company: [
     { label: 'About',            href: ROUTES.about },
     { label: 'Our Team',         href: ROUTES.ourTeam },
@@ -174,10 +175,10 @@ export const FOOTER_NAV = {
     { label: 'Contact',          href: ROUTES.contact },
   ],
   legal: [
-    { label: 'Privacy Policy',    href: ROUTES.privacyPolicy },
-    { label: 'Terms of Service',  href: ROUTES.termsOfService },
-    { label: 'Accessibility',     href: ROUTES.accessibility },
-    { label: 'Cookie Policy',     href: ROUTES.cookiePolicy },
-    { label: 'Sitemap',           href: ROUTES.sitemap },
+    { label: 'Privacy Policy',   href: ROUTES.privacyPolicy },
+    { label: 'Terms of Service', href: ROUTES.termsOfService },
+    { label: 'Accessibility',    href: ROUTES.accessibility },
+    { label: 'Cookie Policy',    href: ROUTES.cookiePolicy },
+    { label: 'Sitemap',          href: ROUTES.sitemap },
   ],
 } as const;

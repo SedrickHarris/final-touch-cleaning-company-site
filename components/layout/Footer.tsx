@@ -86,12 +86,13 @@ export default function Footer() {
             <h2 className="font-display text-base font-semibold text-white tracking-tight">
               Service Area
             </h2>
-            <ul className="mt-4 space-y-1 text-sm text-white/80">
-              <li>
-                {SITE.serviceArea.county}, {SITE.serviceArea.stateAbbr}
-              </li>
-              {SITE.serviceArea.cities.map((c) => (
-                <li key={c}>{c}</li>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              {FOOTER_NAV.locations.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-white hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
