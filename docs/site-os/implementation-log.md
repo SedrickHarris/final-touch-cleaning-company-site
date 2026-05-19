@@ -1414,3 +1414,40 @@ Validation:
 No components changed. No metadata changed. No schema changed.
 Hero, city cards, "One team" prose, FAQ, and final CTA sections
 untouched.
+
+
+### Header Mega-Menu -- Neighborhoods Extension
+Status: Complete
+Date: 2026-05-18
+
+Files Updated:
+- components/layout/NavDropdown.tsx
+- components/layout/Header.tsx
+
+Change: Extended NavDropdown with optional `groupedSectionLabel` and
+`groups` props. When the Locations dropdown is rendered, Header now
+passes the NEIGHBORHOODS constant mapped into the groups shape, so
+the Locations panel shows the 5 city links followed by a divider,
+a "Neighborhoods" eyebrow, and two city-grouped sub-lists (Las Vegas:
+3 neighborhoods; Henderson: 7 neighborhoods) — all 10 Batch 5
+neighborhood pages reachable from the header on desktop. The Services
+dropdown is unchanged because it does not pass `groups`.
+
+Panel safety: added `max-h-[80vh] overflow-y-auto` to the panel
+container so the now-taller Locations panel does not exceed the
+viewport on smaller desktop screens. Applied unconditionally — no
+visible effect when content is short.
+
+Keyboard nav: linkRefs now spans both the city links and all
+neighborhood links as a single flat list, so ArrowUp/ArrowDown cycle
+through the entire panel. The Tab-out-closes-panel handler is
+attached only to the last flat index (last Henderson neighborhood
+when groups are present, otherwise the last city link).
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No page files changed. No constants changed. lib/motion.ts, Footer,
+mobile menu, and global config untouched.
