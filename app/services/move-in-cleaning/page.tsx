@@ -308,14 +308,13 @@ export default function MoveInCleaningPage() {
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {[
-              { name: 'Las Vegas, NV', href: ROUTES.locations },
-              { name: 'Henderson, NV', href: ROUTES.locations },
-              { name: 'North Las Vegas, NV', href: ROUTES.locations },
-              { name: 'Boulder City, NV', href: ROUTES.locations },
-              { name: 'Clark County, NV', href: ROUTES.locations },
+              { name: 'Las Vegas, NV', href: '/services/move-in-cleaning/las-vegas' },
+              { name: 'Henderson, NV', href: '/services/move-in-cleaning/henderson' },
+              { name: 'North Las Vegas, NV', href: '/services/move-in-cleaning/north-las-vegas' },
+              { name: 'Boulder City, NV', href: '/services/move-in-cleaning/boulder-city' },
+              { name: 'Clark County, NV', href: '/services/move-in-cleaning/clark-county' },
             ].map((city) => (
               <li key={city.name}>
-                {/* TODO-BATCH-4: Replace ROUTES.locations with per-city href once city pages are built */}
                 <Link
                   href={city.href}
                   className="inline-block rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"

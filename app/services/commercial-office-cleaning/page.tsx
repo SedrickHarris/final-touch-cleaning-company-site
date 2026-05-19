@@ -302,12 +302,11 @@ export default function CommercialOfficeCleaningPage() {
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {[
-              /* TODO-BATCH-4: Replace plain text with Link hrefs once city pages are built */
-              { name: 'Las Vegas, NV', href: ROUTES.locations },
-              { name: 'Henderson, NV', href: ROUTES.locations },
-              { name: 'North Las Vegas, NV', href: ROUTES.locations },
-              { name: 'Boulder City, NV', href: ROUTES.locations },
-              { name: 'Clark County, NV', href: ROUTES.locations },
+              { name: 'Las Vegas, NV', href: '/services/commercial-office-cleaning/las-vegas' },
+              { name: 'Henderson, NV', href: '/services/commercial-office-cleaning/henderson' },
+              { name: 'North Las Vegas, NV', href: '/services/commercial-office-cleaning/north-las-vegas' },
+              { name: 'Boulder City, NV', href: '/services/commercial-office-cleaning/boulder-city' },
+              { name: 'Clark County, NV', href: '/services/commercial-office-cleaning/clark-county' },
             ].map((city) => (
               <li key={city.name}>
                 <Link
