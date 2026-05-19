@@ -1246,3 +1246,34 @@ Validation:
 - npm run build -- passed clean (72 static routes prerendered)
 
 No components changed. No constants changed. No other files touched.
+
+
+### Post-Batch-6 Update -- Popular Services link fix (5 city pages)
+Status: Complete
+Date: 2026-05-18
+
+Files Updated:
+- app/locations/las-vegas/page.tsx
+- app/locations/henderson/page.tsx
+- app/locations/north-las-vegas/page.tsx
+- app/locations/boulder-city/page.tsx
+- app/locations/clark-county/page.tsx
+
+Change: Popular Services section ServiceCard hrefs updated from
+/services/<service> to /services/<service>/<city> in all 5 city pages.
+Implementation note: each city page builds a local <CITY>_SERVICES
+constant by selecting entries from the global SERVICES array, so the
+ServiceCard `href` prop sourced from `s.href` resolved to the Tier 2
+URL. The fix is a one-line inline template-string override per page:
+`href={`${s.href}/<city-slug>`}`. The brief expected literal-string
+hrefs and TODO-BATCH-6 comments in the Popular Services section; the
+literal-string premise did not match the code, and no TODO-BATCH-6
+comments were present in any of the 5 files, so the comment-removal
+step was a no-op. lib/constants/routes.ts was not touched.
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No components changed. No constants changed. No other files touched.
