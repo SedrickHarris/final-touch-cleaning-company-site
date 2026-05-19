@@ -11,11 +11,18 @@ interface NavDropdownItem {
   href: string;
 }
 
+interface NavDropdownGroup {
+  label: string;
+  items: ReadonlyArray<{ name: string; href: string }>;
+}
+
 interface NavDropdownProps {
   label: string;
   href: string;
   items: ReadonlyArray<NavDropdownItem>;
   panelMinWidthClass: string;
+  groupedSectionLabel?: string;
+  groups?: ReadonlyArray<NavDropdownGroup>;
 }
 
 const HOVER_OPEN_DELAY = 100;
@@ -26,6 +33,8 @@ export default function NavDropdown({
   href,
   items,
   panelMinWidthClass,
+  groupedSectionLabel,
+  groups,
 }: NavDropdownProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -152,45 +161,96 @@ export default function NavDropdown({
         )}
       </Link>
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id={panelId}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: DURATION.short, ease: EASE_OUT }}
-            onKeyDown={handlePanelKeyDown}
-            onMouseEnter={openNow}
-            onMouseLeave={scheduleClose}
-            className={`absolute left-0 top-full mt-2 ${panelMinWidthClass} rounded-[14px] border border-border-subtle bg-brand-white p-4 shadow-[0_6px_24px_rgba(26,26,26,0.06)] z-50`}
-          >
-            <ul className="flex flex-col gap-1">
-              {items.map((item, idx) => {
-                const itemActive = isActive(item.href);
-                const isExactMatch = pathname === item.href;
-                const isLast = idx === items.length - 1;
-                return (
-                  <li key={item.href}>
-                    <Link
-                      ref={(el) => {
-                        linkRefs.current[idx] = el;
-                      }}
-                      href={item.href}
-                      aria-current={isExactMatch ? 'page' : undefined}
-                      onClick={closeNow}
-                      onKeyDown={isLast ? handleLastLinkKeyDown : undefined}
-                      className={`flex items-center min-h-[40px] px-3 py-2 rounded-md text-sm font-medium font-body transition-colors hover:bg-soft-blue hover:text-brand-blue ${
-                        itemActive ? 'text-brand-blue' : 'text-brand-black'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </motion.div>
-        )}
+        {isOpen && (() => {
+          const groupItemsCount =
+            groups?.reduce((sum, g) => sum + g.items.length, 0) ?? 0;
+          const totalLinkCount = items.length + groupItemsCount;
+          const lastFlatIdx = totalLinkCount - 1;
+          let runningIdx = 0;
+          return (
+            <motion.div
+              id={panelId}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: DURATION.short, ease: EASE_OUT }}
+              onKeyDown={handlePanelKeyDown}
+              onMouseEnter={openNow}
+              onMouseLeave={scheduleClose}
+              className={`absolute left-0 top-full mt-2 ${panelMinWidthClass} max-h-[80vh] overflow-y-auto rounded-[14px] border border-border-subtle bg-brand-white p-4 shadow-[0_6px_24px_rgba(26,26,26,0.06)] z-50`}
+            >
+              <ul className="flex flex-col gap-1">
+                {items.map((item) => {
+                  const idx = runningIdx++;
+                  const itemActive = isActive(item.href);
+                  const isExactMatch = pathname === item.href;
+                  const isLast = idx === lastFlatIdx;
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        ref={(el) => {
+                          linkRefs.current[idx] = el;
+                        }}
+                        href={item.href}
+                        aria-current={isExactMatch ? 'page' : undefined}
+                        onClick={closeNow}
+                        onKeyDown={isLast ? handleLastLinkKeyDown : undefined}
+                        className={`flex items-center min-h-[40px] px-3 py-2 rounded-md text-sm font-medium font-body transition-colors hover:bg-soft-blue hover:text-brand-blue ${
+                          itemActive ? 'text-brand-blue' : 'text-brand-black'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+              {groups && groups.length > 0 && (
+                <>
+                  <div className="border-t border-border-subtle my-2" aria-hidden="true" />
+                  {groupedSectionLabel && (
+                    <div className="px-3 pt-1 pb-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted">
+                      {groupedSectionLabel}
+                    </div>
+                  )}
+                  {groups.map((group) => (
+                    <div key={group.label}>
+                      <div className="px-3 pt-1 text-xs font-semibold text-muted">
+                        {group.label}
+                      </div>
+                      <ul className="flex flex-col gap-1 mt-1">
+                        {group.items.map((it) => {
+                          const idx = runningIdx++;
+                          const itemActive = isActive(it.href);
+                          const isExactMatch = pathname === it.href;
+                          const isLast = idx === lastFlatIdx;
+                          return (
+                            <li key={it.href}>
+                              <Link
+                                ref={(el) => {
+                                  linkRefs.current[idx] = el;
+                                }}
+                                href={it.href}
+                                aria-current={isExactMatch ? 'page' : undefined}
+                                onClick={closeNow}
+                                onKeyDown={isLast ? handleLastLinkKeyDown : undefined}
+                                className={`flex items-center min-h-[36px] px-3 py-1.5 rounded-md text-sm font-medium font-body transition-colors hover:bg-soft-blue hover:text-brand-blue ${
+                                  itemActive ? 'text-brand-blue' : 'text-brand-black'
+                                }`}
+                              >
+                                {it.name}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  ))}
+                </>
+              )}
+            </motion.div>
+          );
+        })()}
       </AnimatePresence>
     </div>
   );
