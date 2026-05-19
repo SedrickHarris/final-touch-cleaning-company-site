@@ -1277,3 +1277,61 @@ Validation:
 - npm run build -- passed clean (72 static routes prerendered)
 
 No components changed. No constants changed. No other files touched.
+
+
+### Post-Batch-6 Update -- Service+city contextual links (10 neighborhood pages)
+Status: Complete
+Date: 2026-05-18
+
+Files Updated:
+- app/locations/las-vegas/summerlin/page.tsx
+- app/locations/las-vegas/southern-highlands/page.tsx
+- app/locations/las-vegas/downtown-las-vegas/page.tsx
+- app/locations/henderson/anthem/page.tsx
+- app/locations/henderson/green-valley-ranch/page.tsx
+- app/locations/henderson/seven-hills/page.tsx
+- app/locations/henderson/macdonald-highlands/page.tsx
+- app/locations/henderson/inspirada/page.tsx
+- app/locations/henderson/cadence/page.tsx
+- app/locations/henderson/lake-las-vegas/page.tsx
+
+Change: Added 3 contextual service+city pill Link elements per
+neighborhood page at the location of each TODO-BATCH-6 comment, inside
+the Section 6 "related links" container (the `<div className="mt-6
+flex flex-wrap gap-3">` block immediately preceding the FAQ section).
+Links point to the Batch 6 service+city pages for each neighborhood's
+parent city. Pill style matches the existing pill className on each
+page (`bg-light-gray ... text-brand-black hover:text-brand-blue`).
+Anchor text follows the "<Service Name> in <City>, NV" pattern already
+established on the Batch 6 service+city pages. TODO-BATCH-6 comments
+removed after links were added; TODO-BATCH-5 comments left in place
+where they were present (out of scope for this update).
+
+Link targets added:
+- Summerlin: deep-cleaning/las-vegas, move-in-cleaning/las-vegas,
+  move-out-cleaning/las-vegas
+- Southern Highlands: deep-cleaning/las-vegas, move-in-cleaning/las-vegas,
+  move-out-cleaning/las-vegas
+- Downtown Las Vegas: commercial-office-cleaning/las-vegas,
+  janitorial-services/las-vegas, retail-space-cleaning/las-vegas
+- Anthem: deep-cleaning/henderson, move-in-cleaning/henderson,
+  move-out-cleaning/henderson
+- Green Valley Ranch: deep-cleaning/henderson, move-in-cleaning/henderson,
+  commercial-office-cleaning/henderson
+- Seven Hills: deep-cleaning/henderson, move-in-cleaning/henderson,
+  move-out-cleaning/henderson
+- MacDonald Highlands: deep-cleaning/henderson, move-in-cleaning/henderson,
+  commercial-office-cleaning/henderson
+- Inspirada: move-in-cleaning/henderson, post-construction-cleanup/henderson,
+  deep-cleaning/henderson
+- Cadence: post-construction-cleanup/henderson, move-in-cleaning/henderson,
+  deep-cleaning/henderson
+- Lake Las Vegas: deep-cleaning/henderson, move-in-cleaning/henderson,
+  commercial-office-cleaning/henderson
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No components changed. No constants changed. No other files touched.
