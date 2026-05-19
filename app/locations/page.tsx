@@ -6,7 +6,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { LOCATIONS, ROUTES } from '@/lib/constants/routes';
+import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: `Cleaning Across ${SITE.serviceArea.metro} | Final Touch`,
@@ -127,6 +127,38 @@ export default function LocationsPage() {
             </a>{' '}
             and we will let you know.
           </p>
+        </div>
+      </section>
+
+      {/* Neighborhoods grouped by parent city */}
+      <section className="bg-brand-white">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
+          <SectionHeader
+            eyebrow="Neighborhoods"
+            heading="Browse by neighborhood."
+            sub="Final Touch serves communities across Las Vegas and Henderson. Select a neighborhood to see local services and coverage details."
+          />
+          <div className="mt-10 space-y-8">
+            {NEIGHBORHOODS.map((group) => (
+              <div key={group.citySlug}>
+                <h3 className="font-display text-xl font-semibold text-brand-black">
+                  {group.cityName}
+                </h3>
+                <ul className="mt-4 flex flex-wrap gap-3">
+                  {group.neighborhoods.map((nb) => (
+                    <li key={nb.slug}>
+                      <Link
+                        href={nb.href}
+                        className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
+                      >
+                        {nb.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

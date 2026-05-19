@@ -155,6 +155,39 @@ export const LOCATIONS: ReadonlyArray<{
   },
 ] as const;
 
+export const NEIGHBORHOODS: ReadonlyArray<{
+  citySlug: string;
+  cityName: string;
+  neighborhoods: ReadonlyArray<{
+    slug: string;
+    name: string;
+    href: string;
+  }>;
+}> = [
+  {
+    citySlug: 'las-vegas',
+    cityName: 'Las Vegas',
+    neighborhoods: [
+      { slug: 'summerlin',          name: 'Summerlin',          href: '/locations/las-vegas/summerlin' },
+      { slug: 'southern-highlands', name: 'Southern Highlands', href: '/locations/las-vegas/southern-highlands' },
+      { slug: 'downtown-las-vegas', name: 'Downtown Las Vegas', href: '/locations/las-vegas/downtown-las-vegas' },
+    ],
+  },
+  {
+    citySlug: 'henderson',
+    cityName: 'Henderson',
+    neighborhoods: [
+      { slug: 'anthem',              name: 'Anthem',              href: '/locations/henderson/anthem' },
+      { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  href: '/locations/henderson/green-valley-ranch' },
+      { slug: 'seven-hills',         name: 'Seven Hills',         href: '/locations/henderson/seven-hills' },
+      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', href: '/locations/henderson/macdonald-highlands' },
+      { slug: 'inspirada',           name: 'Inspirada',           href: '/locations/henderson/inspirada' },
+      { slug: 'cadence',             name: 'Cadence',             href: '/locations/henderson/cadence' },
+      { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      href: '/locations/henderson/lake-las-vegas' },
+    ],
+  },
+] as const;
+
 export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Services',  href: ROUTES.services },
   { label: 'Locations', href: ROUTES.locations },
