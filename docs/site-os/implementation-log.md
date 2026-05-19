@@ -1335,3 +1335,47 @@ Validation:
 - npm run build -- passed clean (72 static routes prerendered)
 
 No components changed. No constants changed. No other files touched.
+
+
+### Header Mega-Menu Dropdowns
+Status: Complete
+Date: 2026-05-18
+
+Files Created or Updated:
+- components/layout/Header.tsx
+- components/layout/NavDropdown.tsx (new)
+
+Change: Added dropdown panels to the Services and Locations nav items on
+desktop (lg+ only). Services panel links to all 7 Tier 2 service pages
+sourced from SERVICES. Locations panel links to all 5 Tier 3 city pages
+sourced from LOCATIONS. Panels open on hover (100ms intent delay) and
+keyboard (ArrowDown / Enter / Space on the trigger), close on
+mouse-leave (150ms grace), Escape (returns focus to trigger), Tab out
+of the last panel link, and route change. Animated with Framer Motion
+AnimatePresence using DURATION.short and EASE_OUT from lib/motion.ts;
+opacity + y transform only, per brand-guide motion rules. Full keyboard
+navigation (ArrowUp/ArrowDown to cycle panel links, Escape to close).
+ARIA: aria-haspopup, aria-expanded, aria-controls on trigger;
+aria-current="page" on exact-match panel items. Mobile menu unchanged.
+NavDropdown was extracted as its own component because the behavioral
+surface (paired hover-intent timers, keyboard handling, focus
+management, route-change close, AnimatePresence) was too substantial
+to inline twice in Header.tsx. The existing layoutId="primary-nav-
+underline" animated underline still appears on the trigger when a
+child route is active (e.g. /services/deep-cleaning highlights
+Services), since the trigger renders the same motion.span.
+
+Implementation note: React 19's react-hooks/set-state-in-effect and
+react-hooks/refs lint rules forbid setState in useEffect and ref
+access during render respectively. The route-change close uses the
+documented React 19 "previous-prop check" pattern with paired useState
+calls in the render body, so both updates batch into a single render
+without tripping either rule.
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No page files changed. No constants changed. lib/motion.ts unchanged.
+Footer, mobile menu, and global config untouched.
