@@ -1219,3 +1219,30 @@ tel:+17024445077
 TODOs:
 - No neighborhood chips section — county hub design per Batch 4 spec
 - City card hrefs all live once all 5 Batch 4 pages are committed
+
+
+### Post-Batch-6 Update -- Service Areas link fix (7 service pages)
+Status: Complete
+Date: 2026-05-18
+
+Files Updated:
+- app/services/deep-cleaning/page.tsx
+- app/services/move-out-cleaning/page.tsx
+- app/services/move-in-cleaning/page.tsx
+- app/services/post-construction-cleanup/page.tsx
+- app/services/commercial-office-cleaning/page.tsx
+- app/services/janitorial-services/page.tsx
+- app/services/retail-space-cleaning/page.tsx
+
+Change: Service Areas section city pill hrefs updated from ROUTES.locations
+(which resolved to /locations) to /services/<service-slug>/<city> in all 7
+pages, so the pills point directly at the Batch 6 service+city pages
+instead of the Tier 3 city hubs. TODO-BATCH-4 comments removed from
+Service Areas sections.
+
+Validation:
+- npm run lint -- passed clean
+- npm run type-check -- passed clean
+- npm run build -- passed clean (72 static routes prerendered)
+
+No components changed. No constants changed. No other files touched.
