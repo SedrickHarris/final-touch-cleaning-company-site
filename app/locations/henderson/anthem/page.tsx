@@ -301,7 +301,24 @@ export default function AnthemPage() {
             </Link>
             {/* TODO-BATCH-5: Add Green Valley Ranch, Seven Hills, MacDonald Highlands,
                 Inspirada, Cadence, Lake Las Vegas pill links as those pages are built. */}
-            {/* TODO-BATCH-6: Add /services/[service]/henderson matrix links once Batch 6 ships. */}
+            <Link
+              href="/services/deep-cleaning/henderson"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Deep Cleaning in Henderson, NV
+            </Link>
+            <Link
+              href="/services/move-in-cleaning/henderson"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Move-In Cleaning in Henderson, NV
+            </Link>
+            <Link
+              href="/services/move-out-cleaning/henderson"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Move-Out Cleaning in Henderson, NV
+            </Link>
             <Link
               href={ROUTES.freeQuote}
               className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"

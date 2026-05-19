@@ -320,7 +320,24 @@ export default function DowntownLasVegasPage() {
             >
               Green Valley Ranch
             </Link>
-            {/* TODO-BATCH-6: Add /services/[service]/las-vegas matrix links once Batch 6 ships. */}
+            <Link
+              href="/services/commercial-office-cleaning/las-vegas"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Commercial Office Cleaning in Las Vegas, NV
+            </Link>
+            <Link
+              href="/services/janitorial-services/las-vegas"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Janitorial Services in Las Vegas, NV
+            </Link>
+            <Link
+              href="/services/retail-space-cleaning/las-vegas"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
+            >
+              Retail Space Cleaning in Las Vegas, NV
+            </Link>
             <Link
               href={ROUTES.freeQuote}
               className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
