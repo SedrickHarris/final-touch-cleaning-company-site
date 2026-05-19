@@ -6,8 +6,12 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { PRIMARY_NAV, ROUTES } from '@/lib/constants/routes';
+import { LOCATIONS, PRIMARY_NAV, ROUTES, SERVICES } from '@/lib/constants/routes';
 import { DURATION, EASE_OUT } from '@/lib/motion';
+import NavDropdown from './NavDropdown';
+
+const SERVICES_DROPDOWN_ITEMS = SERVICES.map((s) => ({ label: s.name, href: s.href }));
+const LOCATIONS_DROPDOWN_ITEMS = LOCATIONS.map((l) => ({ label: l.name, href: l.href }));
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -49,6 +53,28 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center gap-7" aria-label="Primary">
             {PRIMARY_NAV.map((item) => {
+              if (item.href === ROUTES.services) {
+                return (
+                  <NavDropdown
+                    key={item.href}
+                    label={item.label}
+                    href={item.href}
+                    items={SERVICES_DROPDOWN_ITEMS}
+                    panelMinWidthClass="min-w-[220px]"
+                  />
+                );
+              }
+              if (item.href === ROUTES.locations) {
+                return (
+                  <NavDropdown
+                    key={item.href}
+                    label={item.label}
+                    href={item.href}
+                    items={LOCATIONS_DROPDOWN_ITEMS}
+                    panelMinWidthClass="min-w-[200px]"
+                  />
+                );
+              }
               const active = isActive(item.href);
               return (
                 <Link
