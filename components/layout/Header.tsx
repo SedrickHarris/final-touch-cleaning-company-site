@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-brand-white/95 backdrop-blur supports-[backdrop-filter]:bg-brand-white/80 border-b border-border-subtle">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
+        <div className="flex h-28 lg:h-36 items-center justify-between gap-4">
           <Link
             href={ROUTES.home}
             className="flex items-center shrink-0"
@@ -51,7 +51,7 @@ export default function Header() {
               width={2000}
               height={2000}
               priority
-              className="h-12 lg:h-16 w-auto"
+              className="h-24 lg:h-32 w-auto"
             />
           </Link>
 
