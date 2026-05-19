@@ -273,7 +273,7 @@ export default function HendersonPage() {
             {HENDERSON_SERVICES.map((s) => (
               <ServiceCard
                 key={s.slug}
-                href={s.href}
+                href={`${s.href}/henderson`}
                 name={s.name}
                 description={s.shortDescription}
                 image={s.image}

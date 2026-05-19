@@ -273,7 +273,7 @@ export default function LasVegasPage() {
             {LAS_VEGAS_SERVICES.map((s) => (
               <ServiceCard
                 key={s.slug}
-                href={s.href}
+                href={`${s.href}/las-vegas`}
                 name={s.name}
                 description={s.shortDescription}
                 image={s.image}

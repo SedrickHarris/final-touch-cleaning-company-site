@@ -330,7 +330,7 @@ export default function ClarkCountyPage() {
             {CLARK_COUNTY_SERVICES.map((s) => (
               <ServiceCard
                 key={s.slug}
-                href={s.href}
+                href={`${s.href}/clark-county`}
                 name={s.name}
                 description={s.shortDescription}
                 image={s.image}
