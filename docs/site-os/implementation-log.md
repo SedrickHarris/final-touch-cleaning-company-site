@@ -1495,3 +1495,546 @@ published per owner guidance — general statements only).
 
 Cross-reference: docs/site-os/build-status-reconciliation.md §0 (owner-confirmed
 facts), §4 (content gates), §5 (schema spec).
+
+### Batch 5 — Spring Valley Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Spring Valley neighborhood page (`/locations/las-vegas/spring-valley`),
+the first of the remaining 10 Batch-5 neighborhoods. Mirrors the established LV
+neighborhood pattern (summerlin / downtown-las-vegas / southern-highlands):
+same import set, NEIGHBORHOOD/PARENT_CITY derivation, ordered services array
+with rationale comment, 8-section layout, and the three JSON-LD blocks. No new
+components. Service order is commercial-led to match Spring Valley's dense
+west-valley business corridors.
+
+Files created:
+- app/locations/las-vegas/spring-valley/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the `spring-valley` leaf `built: false` →
+  `built: true` (one boolean; href and shortDescription unchanged). The existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub neighborhoods section, and the Las Vegas city "Nearby
+  neighborhoods" chips. No other wiring touched.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Spring Valley, Las Vegas, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  retail-space-cleaning, deep-cleaning, move-out-cleaning, move-in-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Spring Valley-specific Q/A (serve-area, services, commercial-corridor
+  anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Copy: final self-contained verbatim copy applied (short hero sub + Blue Ribbon
+  line; direct-answer block; 2-paragraph local context under "Cleaning built for
+  Spring Valley"; 3-card why-hire; single-paragraph "Serving Spring Valley and the
+  wider Las Vegas Valley" section linking the parent city + four Tier 2 services,
+  with free-quote/contact chips). Body copy names owners "Scott and Nicole Maland"
+  verbatim; OG uses SITE.owners. TODO-BATCH-6 comment left to swap two Tier 2
+  service anchors for /services/<service>/las-vegas combos once Batch 6 ships.
+- Schema: LocalBusiness (areaServed Spring Valley/Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Las Vegas → Spring Valley). No AggregateRating/Review.
+
+Hero: no-photo pattern (no `image` prop; HeroSection renders its gradient
+background). TODO-PHOTO comment left for wiring a future
+public/images/locations/spring-valley-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, emergency/same-day claims. Licensed & insured stated
+generally; Blue Ribbon Guarantee uses approved wording; 24-hour framed as
+after-hours/overnight. Geo wording: "Las Vegas Valley" / west-valley township;
+no "City of Las Vegas" claim, no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 73 → 74; emitted HTML files 72 → 73 (adds
+/locations/las-vegas/spring-valley). Verified the page renders with the hero
+form, Spring Valley auto-wires into the /locations hub and the Las Vegas
+"Nearby neighborhoods" chips via the built filter, all three JSON-LD blocks
+present with 5 FAQ questions, and no "City of Las Vegas" / "unincorporated"
+wording.
+
+### Batch 5 — Sunrise Manor Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Sunrise Manor neighborhood page (`/locations/las-vegas/sunrise-manor`),
+the second of the remaining Batch-5 LV neighborhoods, mirroring the Spring Valley
+pattern with self-contained final verbatim copy. Service order is commercial/
+janitorial-led, then turnover-driven move-out/deep, reflecting Sunrise Manor's
+established, rental-dense east-valley character.
+
+Files created:
+- app/locations/las-vegas/sunrise-manor/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the `sunrise-manor` leaf `built: false` →
+  `built: true` (one boolean; href and shortDescription unchanged). Existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub, and the Las Vegas city "Nearby neighborhoods" chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Sunrise Manor, Las Vegas, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  move-out-cleaning, deep-cleaning, move-in-cleaning, retail-space-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Sunrise Manor-specific Q/A (serve-area, services, apartment/rental
+  turnover anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Sunrise Manor/Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Las Vegas → Sunrise Manor). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city + four Tier 2 services
+  (commercial-office, janitorial, move-out, deep), with free-quote/contact chips
+  and a TODO-BATCH-6 comment.
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/sunrise-manor-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, emergency/same-day claims. Licensed & insured stated
+generally; Blue Ribbon Guarantee uses approved wording; 24-hour framed as
+after-hours/overnight. Geo wording: "Las Vegas Valley" / east side of the valley;
+no "City of Las Vegas" claim, no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 74 → 75; emitted HTML files 73 → 74 (adds
+/locations/las-vegas/sunrise-manor). Verified the page renders with the hero
+form, Sunrise Manor auto-wires into the /locations hub and the Las Vegas "Nearby
+neighborhoods" chips via the built filter, all three JSON-LD blocks present with
+5 FAQ questions, FAQ visible text matches schema, and no "City of Las Vegas" /
+"unincorporated" wording.
+
+### Batch 5 — Centennial Hills Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Centennial Hills neighborhood page (`/locations/las-vegas/centennial-hills`),
+the third of the remaining Batch-5 LV neighborhoods, mirroring the Spring Valley /
+Sunrise Manor pattern with self-contained final verbatim copy. Service order is
+commercial/janitorial-led, with post-construction + move-in elevated to reflect
+Centennial Hills' newer-growth, active-construction character. Note: unlike Spring
+Valley and Sunrise Manor, Centennial Hills is inside the City of Las Vegas, and the
+approved copy states that explicitly (geographically accurate here).
+
+Files created:
+- app/locations/las-vegas/centennial-hills/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the `centennial-hills` leaf `built: false` →
+  `built: true` (one boolean; href and shortDescription unchanged). Existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub, and the Las Vegas city "Nearby neighborhoods" chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Centennial Hills, Las Vegas, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  post-construction-cleanup, move-in-cleaning, retail-space-cleaning,
+  deep-cleaning, move-out-cleaning.
+- FAQ: 5 Centennial Hills-specific Q/A (serve-area, services, new-construction
+  anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Centennial Hills/Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Las Vegas → Centennial Hills). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city + four Tier 2 services
+  (commercial-office, post-construction, move-in, janitorial), with
+  free-quote/contact chips and a TODO-BATCH-6 comment.
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/centennial-hills-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, emergency/same-day claims. Licensed & insured stated
+generally; Blue Ribbon Guarantee uses approved wording; 24-hour framed as
+after-hours/overnight. Geo wording: northwest Las Vegas Valley, inside the City of
+Las Vegas (accurate for this neighborhood); no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 75 → 76; emitted HTML files 74 → 75 (adds
+/locations/las-vegas/centennial-hills). Verified the page renders with the hero
+form, Centennial Hills auto-wires into the /locations hub and the Las Vegas
+"Nearby neighborhoods" chips via the built filter, all three JSON-LD blocks
+present with 5 FAQ questions, FAQ visible text matches schema, and no
+"unincorporated" wording.
+
+### Batch 5 — Paradise / Strip Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Paradise / Strip neighborhood page (`/locations/las-vegas/paradise-strip`),
+the fourth of the remaining Batch-5 LV neighborhoods, mirroring the established
+sibling pattern with self-contained final verbatim copy. Service order is the most
+commercial/hospitality-led in the batch (commercial, janitorial, retail, then
+post-construction elevated for constant corridor renovation/buildout), reflecting
+the Las Vegas Strip corridor's commercial density.
+
+Files created:
+- app/locations/las-vegas/paradise-strip/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the `paradise-strip` leaf `built: false` →
+  `built: true` (one boolean; href and shortDescription unchanged). Existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub, and the Las Vegas city "Nearby neighborhoods" chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Paradise and the Las Vegas Strip, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  retail-space-cleaning, post-construction-cleanup, deep-cleaning,
+  move-out-cleaning, move-in-cleaning.
+- FAQ: 5 Paradise/Strip-specific Q/A (serve-area, services, corridor
+  offices/retail/restaurants anti-doorway, after-hours/overnight scheduling,
+  how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Paradise/Las Vegas Strip/Las Vegas/Clark
+  County, no street address), FAQPage (verbatim match to the 5 visible FAQs),
+  BreadcrumbList (Locations → Las Vegas → Paradise / Strip). No AggregateRating/
+  Review.
+- Serving section: single paragraph linking the parent city + four Tier 2 services
+  (commercial-office, janitorial, retail, post-construction), with
+  free-quote/contact chips and a TODO-BATCH-6 comment.
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/paradise-strip-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, and crucially no named resorts/casinos (per the doc's
+guardrail). No emergency/same-day claims. Licensed & insured stated generally;
+Blue Ribbon Guarantee uses approved wording; 24-hour framed as after-hours/
+overnight. Geo wording: a community in the Las Vegas Valley, explicitly "rather
+than part of the City of Las Vegas"; no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 76 → 77; emitted HTML files 75 → 76 (adds
+/locations/las-vegas/paradise-strip). Verified the page renders with the hero
+form, Paradise / Strip auto-wires into the /locations hub and the Las Vegas
+"Nearby neighborhoods" chips via the built filter, all three JSON-LD blocks
+present with 5 FAQ questions, FAQ visible text matches schema, and no
+"unincorporated" wording or named resorts.
+
+### Batch 5 — Arts District Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Arts District neighborhood page (`/locations/las-vegas/arts-district`),
+the fifth of the remaining Batch-5 LV neighborhoods, mirroring the established
+sibling pattern with self-contained final verbatim copy. Kept deliberately
+distinct from the adjacent Downtown Las Vegas page: leads on the creative,
+gallery/boutique/adaptive-reuse character (retail elevated to #2) rather than the
+government/office core. This is the last of the six Las Vegas neighborhood leaves;
+the only remaining unbuilt LV/§1a leaves are the two "aliante" entries (LV + NLV).
+
+Files created:
+- app/locations/las-vegas/arts-district/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the `arts-district` leaf `built: false` →
+  `built: true` (one boolean; href and shortDescription unchanged). Existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub, and the Las Vegas city "Nearby neighborhoods" chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in the Las Vegas Arts District, NV"
+- Services linked (in order): commercial-office-cleaning, retail-space-cleaning,
+  janitorial-services, post-construction-cleanup, deep-cleaning,
+  move-out-cleaning, move-in-cleaning.
+- FAQ: 5 Arts District-specific Q/A (serve-area, services, galleries/studios/
+  boutique-storefront anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Arts District/Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Las Vegas → Arts District). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city + four Tier 2 services
+  (commercial-office, retail, janitorial, post-construction), with
+  free-quote/contact chips and a TODO-BATCH-6 comment.
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/arts-district-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, and no named galleries/venues (per the doc's guardrail). No
+emergency/same-day claims. Licensed & insured stated generally; Blue Ribbon
+Guarantee uses approved wording; 24-hour framed as after-hours/overnight. Geo
+wording: within the City of Las Vegas, just south of the downtown core (accurate
+here); no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 77 → 78; emitted HTML files 76 → 77 (adds
+/locations/las-vegas/arts-district). Verified the page renders with the hero
+form, Arts District auto-wires into the /locations hub and the Las Vegas "Nearby
+neighborhoods" chips via the built filter, all three JSON-LD blocks present with
+5 FAQ questions, FAQ visible text matches schema, and no "unincorporated" wording
+or named venues.
+
+### Batch 5 — Aliante (North Las Vegas) Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Aliante neighborhood page under North Las Vegas
+(`/locations/north-las-vegas/aliante`) — the FIRST live North Las Vegas
+neighborhood page — mirroring the established sibling pattern with self-contained
+final verbatim copy. Service order is commercial/janitorial-led, then move-in/deep
+for the master-planned homeowner base, with retail for the Aliante commercial node.
+
+Decision — duplicate "aliante" leaf: NEIGHBORHOODS has two `aliante` leaves, one
+under `las-vegas` and one under `north-las-vegas`. Aliante is physically in North
+Las Vegas, so only the North Las Vegas leaf was flipped to `built: true`. The
+`las-vegas` aliante leaf was INTENTIONALLY left `built: false` to avoid a doorway
+page and geo-inaccuracy; it does not render anywhere (header, hub, or city chips).
+The page derivation disambiguates by `slug === 'aliante' && parentCity ===
+'north-las-vegas'`.
+
+Files created:
+- app/locations/north-las-vegas/aliante/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped ONLY the north-las-vegas `aliante` leaf
+  `built: false` → `built: true` (one boolean; href and shortDescription
+  unchanged). The las-vegas `aliante` leaf is unchanged (`built: false`). Existing
+  `built === true` filters auto-wire the page into the header Locations dropdown,
+  the /locations hub, and the North Las Vegas "Nearby neighborhoods" chips (first
+  NLV neighborhood to appear).
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Aliante, North Las Vegas, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  move-in-cleaning, deep-cleaning, retail-space-cleaning, move-out-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Aliante-specific Q/A (serve-area, services, move-in/deep residential
+  anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Aliante/North Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → North Las Vegas → Aliante). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city (North Las Vegas) +
+  four Tier 2 services (commercial-office, janitorial, move-in, deep), with
+  free-quote/contact chips and a TODO-BATCH-6 comment (north-las-vegas combos).
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/aliante-north-las-vegas-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, or named clients. The Aliante casino-resort, golf course, and Nature
+Discovery Park are referenced ONLY as community landmarks/amenities, never as
+clients. No emergency/same-day claims. Licensed & insured stated generally; Blue
+Ribbon Guarantee uses approved wording; 24-hour framed as after-hours/overnight.
+Geo wording: in North Las Vegas / northern North Las Vegas / the Las Vegas Valley
+(accurate); no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 78 → 79; emitted HTML files 77 → 78 (adds
+/locations/north-las-vegas/aliante). Verified the page renders with the hero
+form, Aliante auto-wires into the /locations hub and the North Las Vegas "Nearby
+neighborhoods" chips via the built filter, all three JSON-LD blocks present with
+5 FAQ questions, FAQ visible text matches schema, no "unincorporated" wording,
+and the las-vegas aliante leaf still does not render anywhere.
+
+Remaining: the las-vegas `aliante` leaf is intentionally left unbuilt (doorway /
+geo decision). All other §1a neighborhoods are now built; this completes the
+Batch-5 neighborhood set under the current plan.
+
+### Batch 5 — Green Valley (Henderson) Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Green Valley neighborhood page under Henderson
+(`/locations/henderson/green-valley`), mirroring the established sibling pattern
+with self-contained final verbatim copy. Service order is commercial/janitorial-led,
+then deep/recurring elevated (deep at #3, ahead of move-out) for the settled
+mature-homeowner base.
+
+Distinction from Green Valley Ranch: Green Valley and the already-built
+`green-valley-ranch` are DIFFERENT communities. This page covers the established,
+original, central-Henderson Green Valley and is kept deliberately distinct: no
+"Ranch," no The District, no resort, and no upscale/resort framing. It leads on the
+established/mature-homeowner character. Both now render side by side in the
+Henderson "Nearby neighborhoods" chips, header dropdown, and hub.
+
+Files created:
+- app/locations/henderson/green-valley/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped ONLY the henderson `green-valley` leaf
+  `built: false` → `built: true` (one boolean; href and shortDescription
+  unchanged). The `green-valley-ranch` leaf is a different slug and was untouched.
+  Existing `built === true` filters auto-wire the page into the header Locations
+  dropdown, the /locations hub, and the Henderson "Nearby neighborhoods" chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Green Valley, Henderson, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  deep-cleaning, move-out-cleaning, move-in-cleaning, retail-space-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Green Valley-specific Q/A (serve-area, services, recurring/deep for
+  established homes anti-doorway, after-hours scheduling, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Green Valley/Henderson/Clark County, no street
+  address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Henderson → Green Valley). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city (Henderson) + four
+  Tier 2 services (commercial-office, janitorial, deep, move-out), with
+  free-quote/contact chips and a TODO-BATCH-6 comment (henderson combos).
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/green-valley-henderson-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, named clients, or specific founding year (used "one of the original/
+earliest"). No emergency/same-day claims. Licensed & insured stated generally;
+Blue Ribbon Guarantee uses approved wording; 24-hour framed as after-hours/
+overnight. Geo wording: in Henderson / central Henderson (accurate); no
+"unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 79 → 80; emitted HTML files 78 → 79 (adds
+/locations/henderson/green-valley). Verified the page renders with the hero form,
+Green Valley auto-wires into the /locations hub and the Henderson "Nearby
+neighborhoods" chips alongside (not replacing) Green Valley Ranch, all three
+JSON-LD blocks present with 5 FAQ questions, FAQ visible text matches schema, no
+"unincorporated" wording, and no "Ranch"/resort framing leaked.
+
+### Batch 5 — Tuscany Village (Henderson) Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Tuscany Village neighborhood page under Henderson
+(`/locations/henderson/tuscany-village`), mirroring the guard-gated residential
+pattern of the built MacDonald Highlands sibling with self-contained final
+verbatim copy.
+
+Character / ordering: Tuscany Village is a guard-gated, primarily residential
+community, so the service order is RESIDENTIAL-led (deep, move-in, move-out
+first), with commercial/janitorial available below for common areas or nearby
+businesses. This is an intentional, anti-doorway-correct deviation from the
+commercial-first lean used on the commercial LV corridor pages, matching the
+neighborhood's character. The why-hire and an FAQ lean into the gated-access
+coordination angle.
+
+Files created:
+- app/locations/henderson/tuscany-village/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the henderson `tuscany-village` leaf
+  `built: false` → `built: true` (one boolean; href and shortDescription
+  unchanged). Existing `built === true` filters auto-wire the page into the header
+  Locations dropdown, the /locations hub, and the Henderson "Nearby neighborhoods"
+  chips.
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in Tuscany Village, Henderson, NV"
+- Services linked (in order): deep-cleaning, move-in-cleaning, move-out-cleaning,
+  commercial-office-cleaning, janitorial-services, retail-space-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Tuscany Village-specific Q/A (serve-area, services, gated-access how-it-
+  works anti-doorway, recurring service, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Tuscany Village/Henderson/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → Henderson → Tuscany Village). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city (Henderson) + four
+  Tier 2 services (deep, move-in, move-out, commercial-office), with
+  free-quote/contact chips and a TODO-BATCH-6 comment (henderson combos).
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/tuscany-village-henderson-*.webp.
+
+No-fake-data: no reviews, ratings, license numbers, carrier names, demographic
+stats, or named clients. The golf club and community amenities are referenced ONLY
+as community features, never as clients. No emergency/same-day claims. Licensed &
+insured stated generally; Blue Ribbon Guarantee uses approved wording; 24-hour
+framed as after-hours/overnight. Geo wording: in Henderson / eastern Henderson /
+guard-gated residential community (accurate); no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 80 → 81; emitted HTML files 79 → 80 (adds
+/locations/henderson/tuscany-village). Verified the page renders with the hero
+form, Tuscany Village auto-wires into the /locations hub and the Henderson "Nearby
+neighborhoods" chips via the built filter, all three JSON-LD blocks present with
+5 FAQ questions, FAQ visible text matches schema, no "unincorporated" wording, and
+the golf club referenced as an amenity only.
+
+Remaining §1a unbuilt leaves after this page: nellis-area (North Las Vegas) and
+the intentionally-skipped las-vegas `aliante`.
+
+### Batch 5 — Nellis Area (North Las Vegas) Neighborhood Page
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Built the Nellis Area neighborhood page under North Las Vegas
+(`/locations/north-las-vegas/nellis-area`), mirroring the established sibling
+pattern with self-contained final verbatim copy. This is the SECOND live North Las
+Vegas neighborhood page (after Aliante) and the LAST §1a neighborhood leaf to
+build (the only remaining unbuilt leaf is the intentionally-skipped las-vegas
+`aliante`).
+
+Character / ordering: real commercial corridors (Nellis Boulevard, Craig Road)
+plus a relocation- and rental-turnover-heavy residential base near the base lead
+to a commercial/janitorial-first order with BOTH move-out (#3) and move-in (#4)
+elevated. This differentiates it from Sunrise Manor (move-out #3 then deep) and
+the NLV Aliante page (move-in #3 then deep).
+
+Files created:
+- app/locations/north-las-vegas/nellis-area/page.tsx
+
+Files changed:
+- lib/constants/routes.ts — flipped the north-las-vegas `nellis-area` leaf
+  `built: false` → `built: true` (one boolean; href and shortDescription
+  unchanged). Existing `built === true` filters auto-wire the page into the header
+  Locations dropdown, the /locations hub, and the North Las Vegas "Nearby
+  neighborhoods" chips (now alongside Aliante).
+- docs/site-os/implementation-log.md — this entry.
+
+Page facts:
+- H1: "Cleaning Services in the Nellis Area, North Las Vegas, NV"
+- Services linked (in order): commercial-office-cleaning, janitorial-services,
+  move-out-cleaning, move-in-cleaning, deep-cleaning, retail-space-cleaning,
+  post-construction-cleanup.
+- FAQ: 5 Nellis area-specific Q/A (serve-area, services, relocation move-out/
+  move-in anti-doorway, rental turnover, how-to-get-a-quote).
+- Schema: LocalBusiness (areaServed Nellis Area/North Las Vegas/Clark County, no
+  street address), FAQPage (verbatim match to the 5 visible FAQs), BreadcrumbList
+  (Locations → North Las Vegas → Nellis Area). No AggregateRating/Review.
+- Serving section: single paragraph linking the parent city (North Las Vegas) +
+  four Tier 2 services (commercial-office, move-out, move-in, janitorial), with
+  free-quote/contact chips and a TODO-BATCH-6 comment (north-las-vegas combos).
+
+Hero: no-photo pattern (no `image` prop). TODO-PHOTO comment left for a future
+public/images/locations/nellis-area-north-las-vegas-*.webp.
+
+No-fake-data: Nellis Air Force Base and the military connection are referenced
+ONLY as a public landmark and to explain the area's relocation-heavy character.
+NO base contracts, on-base service, military/veteran discounts, security
+clearances, government certifications, or official affiliation claims. No reviews,
+ratings, license numbers, carrier names, demographic stats, or named clients. No
+emergency/same-day claims. Licensed & insured stated generally; Blue Ribbon
+Guarantee uses approved wording; 24-hour framed as after-hours/overnight. Geo
+wording: in North Las Vegas / northeast Las Vegas Valley / near Nellis Air Force
+Base (accurate); no "unincorporated Clark County".
+
+Validation: npm run lint, npm run type-check, npm run build all clean. Build
+static pages 81 → 82; emitted HTML files 80 → 81 (adds
+/locations/north-las-vegas/nellis-area). Verified the page renders with the hero
+form, Nellis Area auto-wires into the /locations hub and the North Las Vegas
+"Nearby neighborhoods" chips via the built filter, all three JSON-LD blocks
+present with 5 FAQ questions, FAQ visible text matches schema, no "unincorporated"
+wording, and no military affiliation/discount/clearance/contract claims.
+
+Batch-5 neighborhood set complete: every §1a neighborhood leaf is now built except
+the intentionally-skipped las-vegas `aliante` (doorway / geo decision; remains
+built: false). Across this session, nine new neighborhood pages were created (five
+Las Vegas: spring-valley, sunrise-manor, centennial-hills, paradise-strip,
+arts-district; two North Las Vegas: aliante, nellis-area; two Henderson:
+green-valley, tuscany-village) and their NEIGHBORHOODS `built` flags flipped, all
+auto-wiring into nav, the hub, and city chips with no edits to
+nav/hub/component/config files.
