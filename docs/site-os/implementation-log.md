@@ -2066,3 +2066,40 @@ Files changed:
 Docs-only change. No code, page, routes.ts, schema, config, or package files
 touched; no build required. A re-run of the Mode 2 audit §7 would now PASS for all
 nine Batch-5 routes (and the other built location routes).
+
+### Batch 5 — QA Fixes (meta titles + chip tap targets)
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Follow-up fixes from the Batch-5 page-qa / seo-aeo-qa pass and a live headless-Chrome
+spot check. Two minor issues were found and fixed (already committed; this entry
+backfills the implementation-log record for §6 of the pre-commit QA, which the two
+fix commits had not been logged against).
+
+1. Meta title length (commit 1f73f06): five neighborhood meta titles exceeded the
+   ~60-char target (centennial-hills 64; spring-valley, sunrise-manor, arts-district,
+   aliante 61). Trimmed by dropping "Services" so each is "<Neighborhood> Cleaning |
+   <City>, NV | Final Touch" (≤55 chars), matching the existing tuscany-village /
+   nellis-area / paradise-strip title style. Only metadata.title changed; openGraph.title
+   left in its richer "... Cleaning Services ... Final Touch Cleaning Company" form.
+
+2. Pill-chip tap targets (commits 1f73f06 + fa20a90): the rounded-full secondary link
+   chips (px-4 py-2 text-sm) rendered ~38px tall, under the 44px touch-target guideline.
+   Added min-h-[44px] to the chip class across the whole app — 161 chips in 68 files:
+   all 24 location pages (1f73f06) plus the homepage, the Toll Brothers builder page,
+   the 7 service hubs, and all 35 service+city pages (fa20a90). Live headless-Chrome
+   (CDP) re-measure confirmed the chip is now 44px (was 38px) at 375px and 768px.
+
+Files changed (across the two fix commits):
+- 24 app/locations/**/page.tsx (5 also had title trims) — commit 1f73f06
+- app/page.tsx, app/builders/toll-brothers-post-construction-cleaning/page.tsx,
+  app/services/**/page.tsx (7 hubs + 35 service+city) — commit fa20a90
+- docs/site-os/implementation-log.md — this backfill entry
+
+No content, copy, CTA, or schema changes — title trims are length-only and the chip
+change is a CSS min-height. No new fake data. Validation: npm run lint, npm run
+type-check, npm run build all clean (82 static routes). No-fake-data spot check on the
+batch-5 diff shows only owner-verified claims (Blue Ribbon Guarantee / 100% satisfaction
+/ licensed and insured, logged 2026-05-28); no invented reviews, ratings, years, or
+certifications.
