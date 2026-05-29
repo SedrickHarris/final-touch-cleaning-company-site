@@ -1451,3 +1451,47 @@ Validation:
 
 No page files changed. No constants changed. lib/motion.ts, Footer,
 mobile menu, and global config untouched.
+
+### Owner Confirmations — 2026-05-28
+Status: Recorded
+Date: 2026-05-28
+Source: owner via build manager
+
+Logging owner-verified facts confirmed this session. These resolve several
+long-standing TODO-VERIFY trust-signal items carried since Batch 1. No code
+changed in this entry — this is a documentation record. The trust-signal and
+schema changes these unblock are a separate, scoped task.
+
+Confirmed facts:
+- Licensed in Nevada — confirmed. Usage: general "Licensed & insured"
+  statement only. Do NOT publish a license number.
+- Insured — confirmed. Usage: general statement only. Do NOT publish carrier
+  name or coverage amounts.
+- Google Business Profile — verified: Final Touch Cleaning Company LLC, 5.0★,
+  3 reviews, serves North Las Vegas + nearby, no public address.
+  - `sameAs` = https://www.google.com/maps?cid=5303198646776788086
+  - Display the rating as attributed text only ("5.0 on Google"). Do NOT emit
+    AggregateRating or Review schema (self-serving / not owner-supplied export).
+- 24-hour service — confirmed. Means around-the-clock scheduling so client
+  operations aren't interrupted. Frame as after-hours / overnight availability.
+  Do NOT frame as "emergency" service.
+- Focus — residential + commercial both offered; lead with commercial +
+  post-construction in hero / nav / CTAs / metadata. Residential pages stay.
+- Blue Ribbon Guarantee — APPROVED wording: "100% satisfaction or return
+  within 24 hours." Cleared to ship in copy / TrustBar.
+- Email — info@finaltouchcleaningteam.com (matches live plan).
+
+Now unblocked (to be shipped in a separate task):
+- Licensed & insured trust signal (TrustBar, /about) — general statement, no
+  numbers.
+- Blue Ribbon Guarantee callout — approved wording.
+- LocalBusiness schema + `sameAs` (GBP CID) — service-area only, no address,
+  no rating markup. Schema spec lives in
+  docs/site-os/build-status-reconciliation.md §5.
+
+Still blocked (unchanged): /gallery (needs owner-supplied before/after photos);
+license number / insurance carrier / foundingDate (intentionally never to be
+published per owner guidance — general statements only).
+
+Cross-reference: docs/site-os/build-status-reconciliation.md §0 (owner-confirmed
+facts), §4 (content gates), §5 (schema spec).
