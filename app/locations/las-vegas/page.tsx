@@ -42,7 +42,7 @@ const LAS_VEGAS_SERVICES = [
 // by filtering on parentCity. Single source of truth — new neighborhoods appear
 // here automatically as they are added to lib/constants/routes.ts.
 const LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
-  (n) => n.parentCity === 'las-vegas',
+  (n) => n.parentCity === 'las-vegas' && n.built,
 );
 
 const faq = [

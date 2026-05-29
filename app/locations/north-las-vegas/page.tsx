@@ -45,7 +45,7 @@ const NORTH_LAS_VEGAS_SERVICES = [
 // empty and the chip row is hidden; it populates automatically once North Las
 // Vegas neighborhood pages (e.g. nellis-area, aliante) ship into the constant.
 const NORTH_LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
-  (n) => n.parentCity === 'north-las-vegas',
+  (n) => n.parentCity === 'north-las-vegas' && n.built,
 );
 
 const faq = [

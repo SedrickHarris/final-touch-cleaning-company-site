@@ -43,7 +43,7 @@ const HENDERSON_SERVICES = [
 // by filtering on parentCity. Single source of truth — new neighborhoods appear
 // here automatically as they are added to lib/constants/routes.ts.
 const HENDERSON_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
-  (n) => n.parentCity === 'henderson',
+  (n) => n.parentCity === 'henderson' && n.built,
 );
 
 const faq = [

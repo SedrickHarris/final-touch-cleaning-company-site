@@ -155,12 +155,13 @@ export const LOCATIONS: ReadonlyArray<{
   },
 ] as const;
 
-// Neighborhood pages live under their parent city: /locations/{parentCity}/{slug}.
-// Grouped shape (citySlug/cityName/neighborhoods) is consumed by the header
-// Locations dropdown and the /locations hub; `parentCity` mirrors the group's
-// city on each leaf so consumers can also flat-filter on it. Only built pages
-// are listed here — adding unbuilt slugs would surface broken links in the
-// header/hub. Remaining §1a neighborhoods are added as their pages ship.
+// Complete source of truth for all 20 §1a neighborhoods, grouped by parent city.
+// Each leaf carries a `built` flag: true = the page exists and may render as a
+// link; false = page not built yet (data present so the mapping is complete, but
+// every clickable render of NEIGHBORHOODS MUST filter to built === true so unbuilt
+// slugs never leak 404 links into nav, the hub, or city chips). Flipping a leaf to
+// built: true auto-wires it everywhere. href = /locations/{parentCity}/{slug}.
+// Two "aliante" leaves (Las Vegas + North Las Vegas) are distinct by parentCity/href.
 export const NEIGHBORHOODS: ReadonlyArray<{
   citySlug: LocationSlug;
   cityName: string;
@@ -168,6 +169,7 @@ export const NEIGHBORHOODS: ReadonlyArray<{
     slug: string;
     name: string;
     parentCity: LocationSlug;
+    built: boolean;
     href: string;
     shortDescription: string;
   }>;
@@ -176,22 +178,38 @@ export const NEIGHBORHOODS: ReadonlyArray<{
     citySlug: 'las-vegas',
     cityName: 'Las Vegas',
     neighborhoods: [
-      { slug: 'summerlin',          name: 'Summerlin',          parentCity: 'las-vegas', href: '/locations/las-vegas/summerlin',          shortDescription: 'Master-planned community on the western edge of the Las Vegas Valley.' },
-      { slug: 'southern-highlands', name: 'Southern Highlands', parentCity: 'las-vegas', href: '/locations/las-vegas/southern-highlands', shortDescription: 'Master-planned golf community in the south Las Vegas Valley.' },
-      { slug: 'downtown-las-vegas', name: 'Downtown Las Vegas', parentCity: 'las-vegas', href: '/locations/las-vegas/downtown-las-vegas', shortDescription: 'The urban core and commercial heart of Las Vegas.' },
+      { slug: 'summerlin',          name: 'Summerlin',          parentCity: 'las-vegas', built: true,  href: '/locations/las-vegas/summerlin',          shortDescription: 'Master-planned community on the western edge of the Las Vegas Valley.' },
+      { slug: 'southern-highlands', name: 'Southern Highlands', parentCity: 'las-vegas', built: true,  href: '/locations/las-vegas/southern-highlands', shortDescription: 'Master-planned golf community in the south Las Vegas Valley.' },
+      { slug: 'downtown-las-vegas', name: 'Downtown Las Vegas', parentCity: 'las-vegas', built: true,  href: '/locations/las-vegas/downtown-las-vegas', shortDescription: 'The urban core and commercial heart of Las Vegas.' },
+      { slug: 'spring-valley',      name: 'Spring Valley',      parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/spring-valley',      shortDescription: 'Established residential township on the west side of the Las Vegas Valley.' },
+      { slug: 'centennial-hills',   name: 'Centennial Hills',   parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/centennial-hills',   shortDescription: 'Master-planned community in the northwest Las Vegas Valley.' },
+      { slug: 'sunrise-manor',      name: 'Sunrise Manor',      parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/sunrise-manor',      shortDescription: 'Large residential township on the east side of the Las Vegas Valley.' },
+      { slug: 'paradise-strip',     name: 'Paradise / Strip',   parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/paradise-strip',     shortDescription: 'Resort and commercial corridor along the Las Vegas Strip.' },
+      { slug: 'arts-district',      name: 'Arts District',      parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/arts-district',      shortDescription: 'Walkable arts and commercial district near downtown Las Vegas.' },
+      { slug: 'aliante',            name: 'Aliante',            parentCity: 'las-vegas', built: false, href: '/locations/las-vegas/aliante',            shortDescription: 'Master-planned community in the northern Las Vegas Valley.' },
     ],
   },
   {
     citySlug: 'henderson',
     cityName: 'Henderson',
     neighborhoods: [
-      { slug: 'anthem',              name: 'Anthem',              parentCity: 'henderson', href: '/locations/henderson/anthem',              shortDescription: 'Established master-planned community in the Henderson foothills.' },
-      { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  parentCity: 'henderson', href: '/locations/henderson/green-valley-ranch',  shortDescription: 'Established residential and commercial community in Henderson.' },
-      { slug: 'seven-hills',         name: 'Seven Hills',         parentCity: 'henderson', href: '/locations/henderson/seven-hills',         shortDescription: "Luxury hillside community in Henderson's eastern foothills." },
-      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', parentCity: 'henderson', href: '/locations/henderson/macdonald-highlands', shortDescription: 'Guard-gated luxury hillside enclave in Henderson.' },
-      { slug: 'inspirada',           name: 'Inspirada',           parentCity: 'henderson', href: '/locations/henderson/inspirada',           shortDescription: 'Newer master-planned community in southern Henderson.' },
-      { slug: 'cadence',             name: 'Cadence',             parentCity: 'henderson', href: '/locations/henderson/cadence',             shortDescription: "Henderson's most actively developing master-planned community." },
-      { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      parentCity: 'henderson', href: '/locations/henderson/lake-las-vegas',      shortDescription: 'Resort-adjacent lakefront community in Henderson.' },
+      { slug: 'anthem',              name: 'Anthem',              parentCity: 'henderson', built: true,  href: '/locations/henderson/anthem',              shortDescription: 'Established master-planned community in the Henderson foothills.' },
+      { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  parentCity: 'henderson', built: true,  href: '/locations/henderson/green-valley-ranch',  shortDescription: 'Established residential and commercial community in Henderson.' },
+      { slug: 'seven-hills',         name: 'Seven Hills',         parentCity: 'henderson', built: true,  href: '/locations/henderson/seven-hills',         shortDescription: "Luxury hillside community in Henderson's eastern foothills." },
+      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', parentCity: 'henderson', built: true,  href: '/locations/henderson/macdonald-highlands', shortDescription: 'Guard-gated luxury hillside enclave in Henderson.' },
+      { slug: 'inspirada',           name: 'Inspirada',           parentCity: 'henderson', built: true,  href: '/locations/henderson/inspirada',           shortDescription: 'Newer master-planned community in southern Henderson.' },
+      { slug: 'cadence',             name: 'Cadence',             parentCity: 'henderson', built: true,  href: '/locations/henderson/cadence',             shortDescription: "Henderson's most actively developing master-planned community." },
+      { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      parentCity: 'henderson', built: true,  href: '/locations/henderson/lake-las-vegas',      shortDescription: 'Resort-adjacent lakefront community in Henderson.' },
+      { slug: 'green-valley',        name: 'Green Valley',        parentCity: 'henderson', built: false, href: '/locations/henderson/green-valley',        shortDescription: 'Established master-planned area in central Henderson.' },
+      { slug: 'tuscany-village',     name: 'Tuscany Village',     parentCity: 'henderson', built: false, href: '/locations/henderson/tuscany-village',     shortDescription: 'Guard-gated residential community in eastern Henderson.' },
+    ],
+  },
+  {
+    citySlug: 'north-las-vegas',
+    cityName: 'North Las Vegas',
+    neighborhoods: [
+      { slug: 'nellis-area',         name: 'Nellis Area',         parentCity: 'north-las-vegas', built: false, href: '/locations/north-las-vegas/nellis-area', shortDescription: 'Residential area near Nellis Air Force Base in North Las Vegas.' },
+      { slug: 'aliante',             name: 'Aliante',             parentCity: 'north-las-vegas', built: false, href: '/locations/north-las-vegas/aliante',     shortDescription: 'Master-planned community in northern North Las Vegas.' },
     ],
   },
 ] as const;

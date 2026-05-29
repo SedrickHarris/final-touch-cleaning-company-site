@@ -12,10 +12,12 @@ import NavDropdown from './NavDropdown';
 
 const SERVICES_DROPDOWN_ITEMS = SERVICES.map((s) => ({ label: s.name, href: s.href }));
 const LOCATIONS_DROPDOWN_ITEMS = LOCATIONS.map((l) => ({ label: l.name, href: l.href }));
+// Only built neighborhoods render as links; city groups with zero built are
+// dropped so the dropdown never shows a 404-bound link.
 const LOCATIONS_DROPDOWN_GROUPS = NEIGHBORHOODS.map((g) => ({
   label: g.cityName,
-  items: g.neighborhoods.map((n) => ({ name: n.name, href: n.href })),
-}));
+  items: g.neighborhoods.filter((n) => n.built).map((n) => ({ name: n.name, href: n.href })),
+})).filter((g) => g.items.length > 0);
 
 export default function Header() {
   const [open, setOpen] = useState(false);

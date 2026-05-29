@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   },
 };
 
+// Built-only neighborhood groups: drop unbuilt leaves, then drop any city group
+// left with zero built neighborhoods, so the hub never renders a 404-bound link.
+const BUILT_NEIGHBORHOOD_GROUPS = NEIGHBORHOODS.map((group) => ({
+  ...group,
+  neighborhoods: group.neighborhoods.filter((nb) => nb.built),
+})).filter((group) => group.neighborhoods.length > 0);
+
 const faq = [
   {
     q: 'What areas does Final Touch serve?',
@@ -139,14 +146,14 @@ export default function LocationsPage() {
             sub="Final Touch serves communities across Las Vegas and Henderson. Select a neighborhood to see local services and coverage details."
           />
           <div className="mt-10 space-y-8">
-            {NEIGHBORHOODS.map((group) => (
+            {BUILT_NEIGHBORHOOD_GROUPS.map((group) => (
               <div key={group.citySlug}>
                 <h3 className="font-display text-xl font-semibold text-brand-black">
                   {group.cityName}
                 </h3>
                 <ul className="mt-4 flex flex-wrap gap-3">
                   {group.neighborhoods.map((nb) => (
-                    <li key={nb.slug}>
+                    <li key={nb.href}>
                       <Link
                         href={nb.href}
                         className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
