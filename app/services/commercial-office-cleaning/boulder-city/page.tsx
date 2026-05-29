@@ -292,7 +292,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
                 {/* TODO-BATCH-6: Clark County resolves when that city set is built */}
                 <Link
                   href={href}
-                  className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
+                  className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
                 >
                   {label}
                 </Link>

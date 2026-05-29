@@ -288,7 +288,7 @@ export default function MoveInCleaningClarkCountyPage() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
+                  className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
                 >
                   {label}
                 </Link>
