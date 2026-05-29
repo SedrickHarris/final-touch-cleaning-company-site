@@ -98,6 +98,43 @@ Links present in JSX that will 404 until their target batch ships. Expected; doc
 
 ---
 
+## Locations & Neighborhoods (built routes)
+
+Last audited: 2026-05-29 (Batch 5 Mode 2 internal-link audit). Rows verified read-only against the built page files. Verification notes: many links render via constants/template literals (so they are present even though they are not literal `href="/..."` strings) — city-page service cards link service+city Tier 4 combos (`/services/<slug>/<city>`), neighborhood-page service cards link Tier 2 (`/services/<slug>`), neighborhood children render via `{n.href}` and the Clark County city grid via `{l.href}`. `/contact` is reachable on every page via the global footer (`FOOTER_NAV.company`); the nine Batch-5 neighborhood pages additionally carry a body "Contact us" link.
+
+| Route | Tier | Required Outbound (summary) | Required Inbound (summary) | Status |
+|---|---|---|---|---|
+| /locations/las-vegas | Tier 3 city | /services + 7 service pages; built LV neighborhood children; /free-quote; /contact | /locations hub; header dropdown; footer; LV neighborhood children | Built |
+| /locations/henderson | Tier 3 city | /services + 7 service pages; built Henderson neighborhood children; /free-quote; /contact | /locations hub; header dropdown; footer; Henderson neighborhood children | Built |
+| /locations/north-las-vegas | Tier 3 city | /services + 7 service pages; built NLV neighborhood children; /free-quote; /contact | /locations hub; header dropdown; footer; NLV neighborhood children | Built |
+| /locations/boulder-city | Tier 3 city | /services + 7 service pages; /free-quote; /contact | /locations hub; header dropdown; footer | Built |
+| /locations/clark-county | Tier 3 city | /services + 7 service pages; 4 city pages; /free-quote; /contact | /locations hub; header dropdown; footer | Built |
+| /locations/las-vegas/summerlin | Tier 3 neighborhood | /locations/las-vegas; 4 service pages; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/southern-highlands | Tier 3 neighborhood | /locations/las-vegas; 4 service pages; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/downtown-las-vegas | Tier 3 neighborhood | /locations/las-vegas; 4 service pages; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/spring-valley | Tier 3 neighborhood | /locations/las-vegas; commercial-office, janitorial, retail, deep; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/centennial-hills | Tier 3 neighborhood | /locations/las-vegas; commercial-office, post-construction, move-in, janitorial; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/sunrise-manor | Tier 3 neighborhood | /locations/las-vegas; commercial-office, janitorial, move-out, deep; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/paradise-strip | Tier 3 neighborhood | /locations/las-vegas; commercial-office, janitorial, retail, post-construction; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/las-vegas/arts-district | Tier 3 neighborhood | /locations/las-vegas; commercial-office, retail, janitorial, post-construction; /free-quote; /contact | LV chips; /locations hub; header dropdown | Built |
+| /locations/henderson/anthem | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/green-valley-ranch | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/seven-hills | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/macdonald-highlands | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/inspirada | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/cadence | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/lake-las-vegas | Tier 3 neighborhood | /locations/henderson; 4 service pages; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/green-valley | Tier 3 neighborhood | /locations/henderson; commercial-office, janitorial, deep, move-out; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/henderson/tuscany-village | Tier 3 neighborhood | /locations/henderson; deep, move-in, move-out, commercial-office; /free-quote; /contact | Henderson chips; /locations hub; header dropdown | Built |
+| /locations/north-las-vegas/aliante | Tier 3 neighborhood | /locations/north-las-vegas; commercial-office, janitorial, move-in, deep; /free-quote; /contact | NLV chips; /locations hub; header dropdown | Built |
+| /locations/north-las-vegas/nellis-area | Tier 3 neighborhood | /locations/north-las-vegas; commercial-office, move-out, move-in, janitorial; /free-quote; /contact | NLV chips; /locations hub; header dropdown | Built |
+
+Note: `/locations/las-vegas/aliante` is intentionally retired (`built: false`, doorway/geo decision) and has NO page or row. Aliante is served by `/locations/north-las-vegas/aliante`. Future audits should treat the LV aliante leaf as deliberately unbuilt, not an orphan.
+
+TODO-BATCH-6: when the service + city matrix ships, swap the "4 service pages" Tier-2 anchors in each neighborhood/city row for the corresponding `/services/<service>/<city>` combos.
+
+---
+
 Site OS — Internal Link Map v1.0
 Created: 2026-05-18
 Reason: provide a state file for Mode 2 audit prompts so link integrity checks have a source of truth to read against rather than re-inferring intent from source code and TODO comments.

@@ -2038,3 +2038,31 @@ arts-district; two North Las Vegas: aliante, nellis-area; two Henderson:
 green-valley, tuscany-village) and their NEIGHBORHOODS `built` flags flipped, all
 auto-wiring into nav, the hub, and city chips with no edits to
 nav/hub/component/config files.
+
+### Docs — Internal Link Map Sync (Locations & Neighborhoods)
+Status: Implemented pending review
+Date: 2026-05-29
+
+Summary:
+Cleared the Batch-5 Mode 2 audit §7 (Link map sync) FAIL. The internal link map
+previously had rows only for the homepage. Added a "Locations & Neighborhoods
+(built routes)" section to docs/site-os/reference/internal-link-map.md covering
+all built location routes: the 5 city pages and all 22 built neighborhood pages
+(including the 9 from this Batch-5 session), each marked Built with an
+outbound/inbound summary. Rows were verified read-only against the actual page
+files; a verification note documents that many links render via constants/template
+literals (city service cards link service+city Tier 4 combos, neighborhood service
+cards link Tier 2, neighborhood children and the Clark County city grid render via
+mapped hrefs) and that /contact is reachable site-wide via the global footer with
+an additional body "Contact us" link on the nine Batch-5 neighborhood pages. Added
+the retired-LV-aliante note (no row; intentionally unbuilt, not an orphan) and a
+TODO-BATCH-6 note to swap the Tier-2 service anchors for /services/<service>/<city>
+combos once the matrix ships.
+
+Files changed:
+- docs/site-os/reference/internal-link-map.md — new Locations & Neighborhoods section
+- docs/site-os/implementation-log.md — this entry
+
+Docs-only change. No code, page, routes.ts, schema, config, or package files
+touched; no build required. A re-run of the Mode 2 audit §7 would now PASS for all
+nine Batch-5 routes (and the other built location routes).
