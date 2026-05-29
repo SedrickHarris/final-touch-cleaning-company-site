@@ -7,7 +7,14 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+
+// Parent city derived from this neighborhood's own NEIGHBORHOODS record —
+// single source of truth, no hardcoded parent slug.
+const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
+  (n) => n.slug === 'seven-hills',
+)!;
+const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
   title: 'Seven Hills Cleaning Services | Henderson, NV | Final Touch',
@@ -118,7 +125,7 @@ const breadcrumbJsonLd = {
 export default function SevenHillsPage() {
   return (
     <>
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero over a local Seven Hills photo. */}
       <HeroSection
         eyebrow="Luxury Hillside Residential"
         heading="Seven Hills Cleaning Services | Henderson, NV"
@@ -126,6 +133,10 @@ export default function SevenHillsPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/seven-hills-henderson-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Seven Hills, Henderson, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer */}
@@ -255,10 +266,10 @@ export default function SevenHillsPage() {
             <p>
               Seven Hills is a community within{' '}
               <Link
-                href="/locations/henderson"
+                href={PARENT_CITY.href}
                 className="text-brand-blue font-semibold hover:underline"
               >
-                Henderson, NV
+                {PARENT_CITY.name}, NV
               </Link>
               . Final Touch serves all of Henderson, including Seven Hills and neighboring
               communities across the city.

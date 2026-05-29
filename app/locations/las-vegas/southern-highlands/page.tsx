@@ -7,7 +7,14 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+
+// Parent city derived from this neighborhood's own NEIGHBORHOODS record —
+// single source of truth, no hardcoded parent slug.
+const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
+  (n) => n.slug === 'southern-highlands',
+)!;
+const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
   title: 'Southern Highlands Cleaning Services | Las Vegas, NV | Final Touch',
@@ -118,7 +125,7 @@ const breadcrumbJsonLd = {
 export default function SouthernHighlandsPage() {
   return (
     <>
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero over a local Southern Highlands photo. */}
       <HeroSection
         eyebrow="Master-Planned Golf Community"
         heading="Southern Highlands Cleaning Services | Las Vegas, NV"
@@ -126,6 +133,10 @@ export default function SouthernHighlandsPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/southern-highlands-las-vegas-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Southern Highlands, Las Vegas, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer */}
@@ -253,15 +264,16 @@ export default function SouthernHighlandsPage() {
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>
-              Southern Highlands is a community within{' '}
+              Southern Highlands is a community in the Las Vegas Valley. Final Touch serves it as
+              part of the broader{' '}
               <Link
-                href="/locations/las-vegas"
+                href={PARENT_CITY.href}
                 className="text-brand-blue font-semibold hover:underline"
               >
-                Las Vegas, NV
-              </Link>
-              . Final Touch serves all of Las Vegas, including Southern Highlands and neighboring
-              communities across the city.
+                {PARENT_CITY.name}, NV
+              </Link>{' '}
+              and Clark County service area, covering Southern Highlands and neighboring communities
+              across the valley.
             </p>
             <p>
               The team also serves neighborhoods across{' '}

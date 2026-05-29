@@ -7,7 +7,7 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Cleaning Services in Las Vegas, NV | Final Touch',
@@ -37,6 +37,13 @@ const LAS_VEGAS_SERVICES = [
   SERVICES.find((s) => s.slug === 'janitorial-services')!,
   SERVICES.find((s) => s.slug === 'retail-space-cleaning')!,
 ];
+
+// Built Las Vegas neighborhood pages, derived from the NEIGHBORHOODS constant
+// by filtering on parentCity. Single source of truth — new neighborhoods appear
+// here automatically as they are added to lib/constants/routes.ts.
+const LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
+  (n) => n.parentCity === 'las-vegas',
+);
 
 const faq = [
   {
@@ -344,21 +351,15 @@ export default function LasVegasPage() {
             heading="Neighborhoods we serve in Las Vegas."
           />
           <div className="mt-6 flex flex-wrap gap-3">
-            {/* TODO-BATCH-5: Replace href with /locations/las-vegas/summerlin once Batch 5 neighborhood pages ship */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Summerlin
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/las-vegas/downtown-las-vegas once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Downtown Las Vegas
-            </Link>
-            {/* TODO-BATCH-5: Additional Las Vegas neighborhood pages to be added when Batch 5 ships */}
+            {LAS_VEGAS_NEIGHBORHOODS.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
+              >
+                {n.name}
+              </Link>
+            ))}
           </div>
           <p className="mt-5 text-sm text-muted">
             More Las Vegas neighborhood pages are coming in the next build batch. In the meantime,{' '}

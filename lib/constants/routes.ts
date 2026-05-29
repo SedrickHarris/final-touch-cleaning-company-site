@@ -155,35 +155,43 @@ export const LOCATIONS: ReadonlyArray<{
   },
 ] as const;
 
+// Neighborhood pages live under their parent city: /locations/{parentCity}/{slug}.
+// Grouped shape (citySlug/cityName/neighborhoods) is consumed by the header
+// Locations dropdown and the /locations hub; `parentCity` mirrors the group's
+// city on each leaf so consumers can also flat-filter on it. Only built pages
+// are listed here — adding unbuilt slugs would surface broken links in the
+// header/hub. Remaining §1a neighborhoods are added as their pages ship.
 export const NEIGHBORHOODS: ReadonlyArray<{
-  citySlug: string;
+  citySlug: LocationSlug;
   cityName: string;
   neighborhoods: ReadonlyArray<{
     slug: string;
     name: string;
+    parentCity: LocationSlug;
     href: string;
+    shortDescription: string;
   }>;
 }> = [
   {
     citySlug: 'las-vegas',
     cityName: 'Las Vegas',
     neighborhoods: [
-      { slug: 'summerlin',          name: 'Summerlin',          href: '/locations/las-vegas/summerlin' },
-      { slug: 'southern-highlands', name: 'Southern Highlands', href: '/locations/las-vegas/southern-highlands' },
-      { slug: 'downtown-las-vegas', name: 'Downtown Las Vegas', href: '/locations/las-vegas/downtown-las-vegas' },
+      { slug: 'summerlin',          name: 'Summerlin',          parentCity: 'las-vegas', href: '/locations/las-vegas/summerlin',          shortDescription: 'Master-planned community on the western edge of the Las Vegas Valley.' },
+      { slug: 'southern-highlands', name: 'Southern Highlands', parentCity: 'las-vegas', href: '/locations/las-vegas/southern-highlands', shortDescription: 'Master-planned golf community in the south Las Vegas Valley.' },
+      { slug: 'downtown-las-vegas', name: 'Downtown Las Vegas', parentCity: 'las-vegas', href: '/locations/las-vegas/downtown-las-vegas', shortDescription: 'The urban core and commercial heart of Las Vegas.' },
     ],
   },
   {
     citySlug: 'henderson',
     cityName: 'Henderson',
     neighborhoods: [
-      { slug: 'anthem',              name: 'Anthem',              href: '/locations/henderson/anthem' },
-      { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  href: '/locations/henderson/green-valley-ranch' },
-      { slug: 'seven-hills',         name: 'Seven Hills',         href: '/locations/henderson/seven-hills' },
-      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', href: '/locations/henderson/macdonald-highlands' },
-      { slug: 'inspirada',           name: 'Inspirada',           href: '/locations/henderson/inspirada' },
-      { slug: 'cadence',             name: 'Cadence',             href: '/locations/henderson/cadence' },
-      { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      href: '/locations/henderson/lake-las-vegas' },
+      { slug: 'anthem',              name: 'Anthem',              parentCity: 'henderson', href: '/locations/henderson/anthem',              shortDescription: 'Established master-planned community in the Henderson foothills.' },
+      { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  parentCity: 'henderson', href: '/locations/henderson/green-valley-ranch',  shortDescription: 'Established residential and commercial community in Henderson.' },
+      { slug: 'seven-hills',         name: 'Seven Hills',         parentCity: 'henderson', href: '/locations/henderson/seven-hills',         shortDescription: "Luxury hillside community in Henderson's eastern foothills." },
+      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', parentCity: 'henderson', href: '/locations/henderson/macdonald-highlands', shortDescription: 'Guard-gated luxury hillside enclave in Henderson.' },
+      { slug: 'inspirada',           name: 'Inspirada',           parentCity: 'henderson', href: '/locations/henderson/inspirada',           shortDescription: 'Newer master-planned community in southern Henderson.' },
+      { slug: 'cadence',             name: 'Cadence',             parentCity: 'henderson', href: '/locations/henderson/cadence',             shortDescription: "Henderson's most actively developing master-planned community." },
+      { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      parentCity: 'henderson', href: '/locations/henderson/lake-las-vegas',      shortDescription: 'Resort-adjacent lakefront community in Henderson.' },
     ],
   },
 ] as const;

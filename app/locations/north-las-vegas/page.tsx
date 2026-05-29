@@ -7,7 +7,7 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Cleaning Services in North Las Vegas, NV | Final Touch',
@@ -39,6 +39,14 @@ const NORTH_LAS_VEGAS_SERVICES = [
   SERVICES.find((s) => s.slug === 'janitorial-services')!,
   SERVICES.find((s) => s.slug === 'retail-space-cleaning')!,
 ];
+
+// Built North Las Vegas neighborhood pages, derived from the NEIGHBORHOODS
+// constant by filtering on parentCity. None are built yet, so this is currently
+// empty and the chip row is hidden; it populates automatically once North Las
+// Vegas neighborhood pages (e.g. nellis-area, aliante) ship into the constant.
+const NORTH_LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
+  (n) => n.parentCity === 'north-las-vegas',
+);
 
 const faq = [
   {
@@ -352,23 +360,19 @@ export default function NorthLasVegasPage() {
             eyebrow="North Las Vegas neighborhoods"
             heading="Neighborhoods we serve in North Las Vegas."
           />
-          <div className="mt-6 flex flex-wrap gap-3">
-            {/* TODO-BATCH-5: Replace href with /locations/north-las-vegas/aliante once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Aliante
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/north-las-vegas/eldorado once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Eldorado
-            </Link>
-            {/* TODO-BATCH-5: Additional North Las Vegas neighborhood pages to be added when Batch 5 ships */}
-          </div>
+          {NORTH_LAS_VEGAS_NEIGHBORHOODS.length > 0 && (
+            <div className="mt-6 flex flex-wrap gap-3">
+              {NORTH_LAS_VEGAS_NEIGHBORHOODS.map((n) => (
+                <Link
+                  key={n.href}
+                  href={n.href}
+                  className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
+                >
+                  {n.name}
+                </Link>
+              ))}
+            </div>
+          )}
           <p className="mt-5 text-sm text-muted">
             More North Las Vegas neighborhood pages are coming in the next build batch. In the
             meantime,{' '}

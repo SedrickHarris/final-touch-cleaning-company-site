@@ -7,7 +7,14 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+
+// Parent city derived from this neighborhood's own NEIGHBORHOODS record —
+// single source of truth, no hardcoded parent slug.
+const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
+  (n) => n.slug === 'downtown-las-vegas',
+)!;
+const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
   title: 'Downtown Las Vegas Cleaning Services | Las Vegas, NV | Final Touch',
@@ -123,7 +130,7 @@ const breadcrumbJsonLd = {
 export default function DowntownLasVegasPage() {
   return (
     <>
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero over a local Downtown Las Vegas photo. */}
       <HeroSection
         eyebrow="Urban Commercial and Mixed-Use District"
         heading="Downtown Las Vegas Cleaning Services | Las Vegas, NV"
@@ -131,6 +138,10 @@ export default function DowntownLasVegasPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/downtown-las-vegas-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Downtown Las Vegas, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer */}
@@ -261,10 +272,10 @@ export default function DowntownLasVegasPage() {
             <p>
               Downtown Las Vegas is the urban core of{' '}
               <Link
-                href="/locations/las-vegas"
+                href={PARENT_CITY.href}
                 className="text-brand-blue font-semibold hover:underline"
               >
-                Las Vegas, NV
+                {PARENT_CITY.name}, NV
               </Link>
               . Final Touch serves all of Las Vegas, including Downtown and the surrounding
               neighborhoods across the city.

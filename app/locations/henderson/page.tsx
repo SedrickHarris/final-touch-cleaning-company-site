@@ -7,7 +7,7 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Cleaning Services in Henderson, NV | Final Touch',
@@ -38,6 +38,13 @@ const HENDERSON_SERVICES = [
   SERVICES.find((s) => s.slug === 'janitorial-services')!,
   SERVICES.find((s) => s.slug === 'retail-space-cleaning')!,
 ];
+
+// Built Henderson neighborhood pages, derived from the NEIGHBORHOODS constant
+// by filtering on parentCity. Single source of truth — new neighborhoods appear
+// here automatically as they are added to lib/constants/routes.ts.
+const HENDERSON_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
+  (n) => n.parentCity === 'henderson',
+);
 
 const faq = [
   {
@@ -349,41 +356,15 @@ export default function HendersonPage() {
             heading="Neighborhoods we serve in Henderson."
           />
           <div className="mt-6 flex flex-wrap gap-3">
-            {/* TODO-BATCH-5: Replace href with /locations/henderson/green-valley-ranch once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Green Valley Ranch
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/henderson/anthem once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Anthem
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/henderson/cadence once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Cadence
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/henderson/seven-hills once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Seven Hills
-            </Link>
-            {/* TODO-BATCH-5: Replace href with /locations/henderson/mcdonald-highlands once Batch 5 ships */}
-            <Link
-              href={ROUTES.locations}
-              className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              MacDonald Highlands
-            </Link>
+            {HENDERSON_NEIGHBORHOODS.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
+              >
+                {n.name}
+              </Link>
+            ))}
           </div>
           <p className="mt-5 text-sm text-muted">
             More Henderson neighborhood pages are coming in the next build batch. In the meantime,{' '}

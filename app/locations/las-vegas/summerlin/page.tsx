@@ -7,7 +7,14 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+
+// Parent city derived from this neighborhood's own NEIGHBORHOODS record —
+// single source of truth, no hardcoded parent slug.
+const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
+  (n) => n.slug === 'summerlin',
+)!;
+const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
   title: 'Summerlin Cleaning Services | Las Vegas, NV | Final Touch',
@@ -115,7 +122,7 @@ const breadcrumbJsonLd = {
 export default function SummerlinPage() {
   return (
     <>
-      {/* 1. Hero — split layout with quote form. Hero background photo will be added later. */}
+      {/* 1. Hero — split layout with quote form over a local Summerlin photo. */}
       <HeroSection
         eyebrow="Master-Planned Community"
         heading="Summerlin Cleaning Services | Las Vegas, NV"
@@ -123,6 +130,10 @@ export default function SummerlinPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/summerlin-las-vegas-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Summerlin, Las Vegas, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer — direct-answer paragraph, first 100 words */}
@@ -250,15 +261,16 @@ export default function SummerlinPage() {
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>
-              Summerlin is a community within{' '}
+              Summerlin is a community in the Las Vegas Valley. Final Touch serves it as part of the
+              broader{' '}
               <Link
-                href="/locations/las-vegas"
+                href={PARENT_CITY.href}
                 className="text-brand-blue font-semibold hover:underline"
               >
-                Las Vegas, NV
-              </Link>
-              . Final Touch serves all of Las Vegas, including Summerlin and neighboring areas
-              across the city.
+                {PARENT_CITY.name}, NV
+              </Link>{' '}
+              and Clark County service area, covering Summerlin and neighboring areas across the
+              valley.
             </p>
             <p>
               The team also serves{' '}
