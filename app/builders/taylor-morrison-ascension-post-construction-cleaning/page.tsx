@@ -164,6 +164,10 @@ export default function TaylorMorrisonAscensionPostConstructionPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Taylor Morrison · Ascension · Post-Construction Cleaning"
+        image={{
+          src: '/images/builders/taylor-morrison-ascension-post-construction-cleaning-hero-image.webp',
+          alt: 'Taylor Morrison at Ascension post-construction cleanup — Final Touch Cleaning Company, Henderson NV',
+        }}
         heading="Taylor Morrison at Ascension Post-Construction Cleanup | Henderson, NV"
         sub={`Final Touch provides post-construction cleanup for Taylor Morrison homebuyers at Ascension in Henderson, Nevada. Ascension is a gated community, and we confirm access arrangements before both the walkthrough and the cleaning visit. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to get started.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

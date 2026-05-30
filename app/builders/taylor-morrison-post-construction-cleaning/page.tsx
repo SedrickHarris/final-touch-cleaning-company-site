@@ -164,6 +164,10 @@ export default function TaylorMorrisonPostConstructionPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Taylor Morrison · Post-Construction Cleaning"
+        image={{
+          src: '/images/builders/taylor-morrison-post-construction-cleaning-hero-image.webp',
+          alt: 'Taylor Morrison post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+        }}
         heading="Taylor Morrison Post-Construction Cleanup | Henderson & Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for Taylor Morrison homebuyers and project teams across Clark County, Nevada, including Esplanade active adult communities and Henderson communities like Inspirada. From drywall dust on every surface to adhesive residue around custom finishes, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

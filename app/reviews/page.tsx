@@ -113,6 +113,10 @@ export default function ReviewsPage() {
     <>
       <HeroSection
         eyebrow="Customer Reviews"
+        image={{
+          src: '/images/builders/reviews-commercial-cleaning-hero-image.webp',
+          alt: 'Customer reviewed cleaning service — Final Touch Cleaning Company, Clark County NV',
+        }}
         heading="What Customers Say About Final Touch Cleaning Company"
         sub="Final Touch Cleaning Company receives reviews directly from customers across Clark County, NV. The reviews below come from verified Google users in Las Vegas, Henderson, North Las Vegas, and Boulder City. Read what customers say, then request a free quote or call (702) 444-5077."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

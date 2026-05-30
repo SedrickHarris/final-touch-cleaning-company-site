@@ -6,6 +6,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Our Team | Scott & Nicole Maland | Final Touch Cleaning',
@@ -60,12 +61,26 @@ const faqJsonLd = {
 // When confirmed, shape: [{ '@type': 'Person', name: 'Scott Maland', jobTitle: 'Owner' },
 //                         { '@type': 'Person', name: 'Nicole Maland', jobTitle: 'Owner' }]
 
+const ownerImageSlot = (
+  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[16px] border border-border-subtle shadow-[0_8px_28px_rgba(26,26,26,0.08)]">
+    <Image
+      src="/images/owners/team.webp"
+      alt="Scott and Nicole Maland, owners of Final Touch Cleaning Company, Las Vegas NV"
+      fill
+      sizes="(min-width: 1024px) 45vw, 100vw"
+      className="object-cover object-top"
+      priority
+    />
+  </div>
+);
+
 export default function OurTeamPage() {
   return (
     <>
       <HeroSection
         eyebrow="Our Team"
         heading="Meet Scott & Nicole Maland, Owners of Final Touch Cleaning Company"
+        formSlot={ownerImageSlot}
         sub="Final Touch Cleaning Company is owned and run by Scott & Nicole Maland, a husband-and-wife team based in Southern Nevada. The same owners who set the cleaning standard also answer the phone, walk through the space, and confirm the finish on every job."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

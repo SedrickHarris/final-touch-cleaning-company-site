@@ -166,6 +166,10 @@ export default function PulteHomesPostConstructionPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Pulte Homes · Post-Construction Cleaning"
+        image={{
+          src: '/images/builders/pulte-homes-post-construction-cleaning-hero-image.webp',
+          alt: 'Pulte Homes post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+        }}
         heading="Pulte Homes Post-Construction Cleanup | Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for Pulte homebuyers and project teams across Clark County, Nevada, including homes built under the Pulte and Del Webb brands. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

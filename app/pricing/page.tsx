@@ -80,6 +80,10 @@ export default function PricingPage() {
     <>
       <HeroSection
         eyebrow="Pricing"
+        image={{
+          src: '/images/builders/pricing-commercial-cleaning-hero-image.webp',
+          alt: 'Free cleaning quote and walkthrough — Final Touch Cleaning Company, Las Vegas NV',
+        }}
         heading="How Cleaning Service Pricing Works at Final Touch"
         sub="Final Touch Cleaning Company prices every job based on the confirmed scope of work, the type of service, and the condition of the space. There is no standard rate card because no two jobs are identical. The fastest way to get an accurate price is to request a free quote."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
