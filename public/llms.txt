@@ -1,0 +1,106 @@
+# Final Touch Cleaning Company
+# https://www.finaltouchcleaningteam.com
+# AI crawler priority declaration
+
+## Priority pages (highest value for AI answer engines)
+https://www.finaltouchcleaningteam.com/
+https://www.finaltouchcleaningteam.com/about
+https://www.finaltouchcleaningteam.com/services
+https://www.finaltouchcleaningteam.com/locations
+https://www.finaltouchcleaningteam.com/faq
+https://www.finaltouchcleaningteam.com/contact
+https://www.finaltouchcleaningteam.com/free-quote
+https://www.finaltouchcleaningteam.com/reviews
+https://www.finaltouchcleaningteam.com/pricing
+https://www.finaltouchcleaningteam.com/our-team
+https://www.finaltouchcleaningteam.com/cleaning-process
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning
+https://www.finaltouchcleaningteam.com/services/janitorial-services
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning
+https://www.finaltouchcleaningteam.com/services/deep-cleaning
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning
+
+## Location pages
+https://www.finaltouchcleaningteam.com/locations/las-vegas
+https://www.finaltouchcleaningteam.com/locations/henderson
+https://www.finaltouchcleaningteam.com/locations/north-las-vegas
+https://www.finaltouchcleaningteam.com/locations/boulder-city
+https://www.finaltouchcleaningteam.com/locations/clark-county
+
+## Neighborhood pages
+https://www.finaltouchcleaningteam.com/locations/las-vegas/summerlin
+https://www.finaltouchcleaningteam.com/locations/las-vegas/downtown-las-vegas
+https://www.finaltouchcleaningteam.com/locations/las-vegas/southern-highlands
+https://www.finaltouchcleaningteam.com/locations/las-vegas/spring-valley
+https://www.finaltouchcleaningteam.com/locations/las-vegas/centennial-hills
+https://www.finaltouchcleaningteam.com/locations/las-vegas/sunrise-manor
+https://www.finaltouchcleaningteam.com/locations/las-vegas/paradise-strip
+https://www.finaltouchcleaningteam.com/locations/las-vegas/arts-district
+https://www.finaltouchcleaningteam.com/locations/henderson/cadence
+https://www.finaltouchcleaningteam.com/locations/henderson/inspirada
+https://www.finaltouchcleaningteam.com/locations/henderson/macdonald-highlands
+https://www.finaltouchcleaningteam.com/locations/henderson/seven-hills
+https://www.finaltouchcleaningteam.com/locations/henderson/anthem
+https://www.finaltouchcleaningteam.com/locations/henderson/lake-las-vegas
+https://www.finaltouchcleaningteam.com/locations/henderson/green-valley-ranch
+https://www.finaltouchcleaningteam.com/locations/henderson/green-valley
+https://www.finaltouchcleaningteam.com/locations/henderson/tuscany-village
+https://www.finaltouchcleaningteam.com/locations/north-las-vegas/nellis-area
+https://www.finaltouchcleaningteam.com/locations/north-las-vegas/aliante
+
+## Service + city pages
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning/las-vegas
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning/henderson
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning/boulder-city
+https://www.finaltouchcleaningteam.com/services/commercial-office-cleaning/clark-county
+https://www.finaltouchcleaningteam.com/services/janitorial-services/las-vegas
+https://www.finaltouchcleaningteam.com/services/janitorial-services/henderson
+https://www.finaltouchcleaningteam.com/services/janitorial-services/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/janitorial-services/boulder-city
+https://www.finaltouchcleaningteam.com/services/janitorial-services/clark-county
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup/las-vegas
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup/henderson
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup/boulder-city
+https://www.finaltouchcleaningteam.com/services/post-construction-cleanup/clark-county
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning/las-vegas
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning/henderson
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning/boulder-city
+https://www.finaltouchcleaningteam.com/services/move-in-cleaning/clark-county
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning/las-vegas
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning/henderson
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning/boulder-city
+https://www.finaltouchcleaningteam.com/services/move-out-cleaning/clark-county
+https://www.finaltouchcleaningteam.com/services/deep-cleaning/las-vegas
+https://www.finaltouchcleaningteam.com/services/deep-cleaning/henderson
+https://www.finaltouchcleaningteam.com/services/deep-cleaning/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/deep-cleaning/boulder-city
+https://www.finaltouchcleaningteam.com/services/deep-cleaning/clark-county
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning/las-vegas
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning/henderson
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning/north-las-vegas
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning/boulder-city
+https://www.finaltouchcleaningteam.com/services/retail-space-cleaning/clark-county
+
+## Builder pages
+https://www.finaltouchcleaningteam.com/builders
+https://www.finaltouchcleaningteam.com/builders/dr-horton-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/lennar-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/kb-home-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/pulte-homes-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/toll-brothers-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/shea-homes-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/tri-pointe-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/century-communities-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/taylor-morrison-post-construction-cleaning
+https://www.finaltouchcleaningteam.com/builders/taylor-morrison-ascension-post-construction-cleaning
+
+## Excluded pages (do not index or surface)
+/thank-you
+/gallery
+/404

@@ -1,0 +1,7 @@
+# robots.txt — Final Touch Cleaning Company
+# https://www.finaltouchcleaningteam.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.finaltouchcleaningteam.com/sitemap.xml
