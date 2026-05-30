@@ -2809,3 +2809,20 @@ files changed (our-team owner-photo alt and the hub alt already used commas/
 hyphens). Verified: 0 em dashes remain in any image alt line.
 
 lint / type-check / build all pass. Did not deploy.
+
+### Security — npm audit fix (postcss transitive vuln)
+Status: Done
+Date: 2026-05-29
+
+`npm audit` reported 2 moderate vulns: postcss < 8.5.10 (GHSA-qx2v-qp2m-jg93,
+XSS in CSS stringify output), pulled in transitively as next@16.2.6's nested
+postcss@8.4.31. npm's suggested `audit fix --force` would downgrade next to
+9.3.3 (destructive), so it was NOT used.
+
+Fix: added an npm override `"overrides": { "postcss": "^8.5.14" }` to
+package.json and re-ran npm install. Both postcss instances (Tailwind + next)
+now dedupe to 8.5.15 (>= patched 8.5.10); Next itself unchanged at 16.2.6.
+
+Result: npm audit -> 0 vulnerabilities. lint / type-check / build all pass
+(postcss processes the Tailwind CSS without issue). Files changed: package.json,
+package-lock.json.
