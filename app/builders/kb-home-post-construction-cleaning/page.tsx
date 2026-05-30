@@ -9,61 +9,91 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
-// Licensed in Nevada: confirmed by owners 2026-05-29.
-// General statement only — no license number referenced in copy.
-
-// Fully insured: confirmed by owners 2026-05-29.
-// General statement only — no carrier or policy number referenced in copy.
-
-// TODO-VERIFY: Same-day or rush scheduling for builder handoffs — not confirmed
-// in any source document. Do not claim in copy.
-
-// TODO-VERIFY: Years in business / volume of Toll Brothers homes cleaned — not
-// confirmed in source docs. Do not reference in copy.
-
 export const metadata: Metadata = {
-  title: 'Toll Brothers Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'KB Home Post-Construction Cleaning Las Vegas | Final Touch',
   description:
-    'Post-construction cleanup after your Toll Brothers home handoff in Las Vegas, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
+    'Post-construction cleanup after your KB Home handoff in Las Vegas, NV. Custom finish and tile residue addressed. Clark County local. Call (702) 444-5077.',
   alternates: {
-    canonical: `${SITE.url}/builders/toll-brothers-post-construction-cleaning`,
+    canonical: `${SITE.url}/builders/kb-home-post-construction-cleaning`,
   },
   openGraph: {
-    title: 'Toll Brothers Post-Construction Cleaning Las Vegas | Final Touch',
+    title: 'KB Home Post-Construction Cleaning Las Vegas | Final Touch',
     description:
-      'Post-construction cleanup after your Toll Brothers home handoff in Las Vegas, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
+      'Post-construction cleanup after your KB Home handoff in Las Vegas, NV. Custom finish and tile residue addressed. Clark County local. Call (702) 444-5077.',
     type: 'website',
-    url: `${SITE.url}/builders/toll-brothers-post-construction-cleaning`,
+    url: `${SITE.url}/builders/kb-home-post-construction-cleaning`,
   },
 };
 
 const faq = [
   {
-    q: 'What does post-construction cleaning include after a Toll Brothers home?',
-    a: 'After a Toll Brothers handoff, post-construction cleanup addresses the residue that builder cleaning does not remove: drywall dust on every surface including vents, HVAC returns, and cabinet interiors; adhesive and caulk residue around fixtures and tile; window film on all glass; construction debris from trim and baseboard work; and fine particulate that settles in corners and on sills. Scope is confirmed during a walkthrough before the clean begins.',
+    q: 'What does post-construction cleaning include after a KB Home in Las Vegas?',
+    a: `After a KB Home handoff, post-construction cleanup addresses the residue that builder cleaning does not remove: drywall dust on every surface including vents, HVAC returns, and cabinet interiors; adhesive, caulk, and grout residue around fixtures and tile; window film on all glass; construction debris from trim and baseboard work; and fine particulate that settles in corners and on sills. Scope is confirmed during a walkthrough before the clean begins.`,
   },
   {
-    q: 'Do Toll Brothers homes in Las Vegas need post-construction cleaning before move-in?',
-    a: "Toll Brothers homes are built to a premium standard, but builder cleaning is not the same as a professional post-construction detail clean. Construction dust and adhesive residue are present in every new build regardless of the builder's quality tier. Most buyers schedule a professional post-construction clean between the final walkthrough and move-in day.",
+    q: "Does KB Home's Built to Order customization affect the post-construction cleaning scope?",
+    a: `Yes, in practice. KB Home's Built to Order program allows buyers to select custom tile packages, upgraded flooring, and custom cabinetry through the KB Home Studio. More custom tile and surface work means more adhesive, grout, and caulk residue throughout the home compared to a standard spec build. The walkthrough confirms the actual scope so the estimate reflects the upgrades the buyer selected, not a standard assumption.`,
   },
   {
-    q: 'How do I schedule post-construction cleaning after a Toll Brothers handoff in Las Vegas?',
-    a: `Call ${SITE.phone.display} or request a free quote online. For post-construction jobs, a walkthrough of the property is the best way to scope accurately. Final Touch confirms the debris type, access timeline, and schedule before quoting. The goal is to align the clean with your move-in date.`,
+    q: 'How long after a KB Home handoff should I schedule post-construction cleaning?',
+    a: `Schedule as close to the handoff date as possible, before furnishings or personal items are moved in. An empty home is significantly easier to clean thoroughly, especially around custom tile and upgraded surfaces. If your move-in date is firm, call ${SITE.phone.display} in advance so Final Touch can align the clean with your schedule. Most post-construction cleans on a new KB Home are completed in a single visit.`,
   },
   {
-    q: 'Is post-construction cleaning the same as move-in cleaning for a new Toll Brothers home?',
-    a: 'They address related but different needs. Post-construction cleaning focuses on construction residue: dust, adhesive, compound, window film, and debris from the build process. Move-in cleaning prepares a space that is construction-complete for occupancy. On a new Toll Brothers home, both are often needed in sequence or combined into one scope.',
+    q: 'Does custom tile and fixture work leave more construction residue in a KB Home?',
+    a: `Yes. Custom tile installations produce more grout haze, adhesive residue, and caulk work around edges and fixtures than standard production-grade surfaces. KB Home buyers who selected upgraded tile packages, custom backsplashes, or specialty flooring through the KB Home Studio can expect more residue in those areas. The walkthrough identifies all upgraded surfaces so nothing is missed in the post-construction clean.`,
   },
   {
-    q: 'What Las Vegas Valley communities does Final Touch serve for Toll Brothers post-construction cleaning?',
-    a: `Final Touch serves post-construction cleanup across Clark County, Nevada, including Las Vegas, Henderson, and North Las Vegas. Toll Brothers builds in several master-planned communities throughout the Las Vegas Valley. Call ${SITE.phone.display} to confirm coverage for your specific community and address.`,
+    q: 'What Las Vegas Valley areas does Final Touch serve for KB Home post-construction cleaning?',
+    a: `Final Touch serves post-construction cleanup across ${SITE.serviceArea.county}, Nevada, including Las Vegas, Henderson, and North Las Vegas. KB Home builds throughout the Las Vegas Valley. Call ${SITE.phone.display} to confirm coverage for your specific community and address.`,
+  },
+];
+
+const scopeItems = [
+  {
+    title: 'Construction dust and fine grit',
+    body: 'All surfaces: floors, countertops, windowsills, shelving, door frames, and cabinet interiors. Multiple passes where the build left heavy residue.',
+  },
+  {
+    title: 'HVAC vents and registers',
+    body: 'Drywall dust settles into every register during a build. We address vents and registers throughout the home so the dust does not re-circulate after move-in.',
+  },
+  {
+    title: 'Adhesive, caulk, and grout residue',
+    body: 'Around tile edges, fixture bases, trim, and baseboards. KB Home buyers who upgraded tile or custom surfaces often have more adhesive and grout work throughout the home. Targeted removal, not standard wiping.',
+  },
+  {
+    title: 'Window film and glass cleaning',
+    body: 'Protective film applied during construction is removed and all glass surfaces are cleaned throughout the home.',
+  },
+  {
+    title: 'Paint overspray',
+    body: 'Light paint overspray on fixtures, hardware, and surfaces adjacent to painted areas is addressed during the detail pass.',
+  },
+  {
+    title: 'Floor surfaces',
+    body: 'Hard floors cleaned and scrubbed. Carpet areas vacuumed and spot-checked. Transitions and edges addressed where grit collects.',
+  },
+];
+
+const audienceItems = [
+  {
+    title: 'New KB Home buyers',
+    body: 'Taking possession of a new KB Home and scheduling a professional clean between the final walkthrough and move-in day. Buyers who selected custom tile, upgraded flooring, or custom cabinetry through the KB Home Studio benefit from a post-construction clean that addresses residue from upgraded finishes throughout the home.',
+  },
+  {
+    title: 'Builder project teams',
+    body: 'Superintendents and project coordinators finishing a punch list who need a reliable cleaning vendor before the client walkthrough or occupancy sign-off.',
+  },
+  {
+    title: 'Real estate professionals',
+    body: 'Agents and buyer representatives guiding clients through new KB Home purchases who recommend a professional post-construction clean as part of the closing process.',
   },
 ];
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Toll Brothers Post-Construction Cleanup',
+  name: 'KB Home Post-Construction Cleanup',
   serviceType: 'Post-Construction Cleaning',
   provider: {
     '@type': 'Organization',
@@ -73,7 +103,10 @@ const serviceJsonLd = {
     email: SITE.email.display,
   },
   areaServed: [
-    { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
+    {
+      '@type': 'AdministrativeArea',
+      name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`,
+    },
     ...SITE.serviceArea.cities.map((name) => ({
       '@type': 'City',
       name: `${name}, ${SITE.serviceArea.stateAbbr}`,
@@ -96,17 +129,22 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Builders', item: `${SITE.url}/builders` },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Builders',
+      item: `${SITE.url}/builders`,
+    },
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Toll Brothers Post-Construction Cleaning',
-      item: `${SITE.url}/builders/toll-brothers-post-construction-cleaning`,
+      name: 'KB Home Post-Construction Cleaning',
+      item: `${SITE.url}/builders/kb-home-post-construction-cleaning`,
     },
   ],
 };
 
-export default function TollBrothersPostConstructionPage() {
+export default function KBHomePostConstructionPage() {
   return (
     <>
       {/* JSON-LD */}
@@ -125,9 +163,9 @@ export default function TollBrothersPostConstructionPage() {
 
       {/* 1. Hero */}
       <HeroSection
-        eyebrow="Toll Brothers · Post-Construction Cleaning"
-        heading="Toll Brothers Post-Construction Cleanup | Las Vegas, NV"
-        sub={`Final Touch provides post-construction cleanup for Toll Brothers homebuyers and project teams across Clark County, Nevada. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call ${SITE.phone.display} or request a free quote to schedule around your handoff date.`}
+        eyebrow="KB Home · Post-Construction Cleaning"
+        heading="KB Home Post-Construction Cleanup | Las Vegas, NV"
+        sub={`Final Touch provides post-construction cleanup for KB Home buyers and project teams across Clark County, Nevada. KB Home's Built to Order program means custom tile, upgraded flooring, and custom cabinetry throughout your home, all of which leave adhesive, grout, and caulk residue that builder cleaning is not scoped to remove. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -144,12 +182,13 @@ export default function TollBrothersPostConstructionPage() {
             >
               post-construction cleanup
             </Link>{' '}
-            for Toll Brothers homes across Las Vegas, Henderson, and North Las Vegas. After a
-            builder handoff, every surface holds construction residue that standard cleaning
-            cannot address: drywall dust in vents and cabinet interiors, adhesive and caulk
-            around fixtures, window film on every pane of glass, and fine particulate in every
-            corner. We scope the clean against the actual site before quoting. The goal is a
-            space that is genuinely ready to move into, not just visually checked.
+            for KB Home buyers and project teams across Las Vegas, Henderson, and
+            North Las Vegas. KB Home is known for its Built to Order personalization
+            program, which allows buyers to select custom finishes, tile packages, and
+            fixtures through the KB Home Studio. After a builder handoff, every surface
+            holds construction residue that standard cleaning cannot address, including
+            grout haze and adhesive residue from custom tile work. We scope the clean
+            against the actual site before quoting.
           </p>
         </div>
       </section>
@@ -164,22 +203,25 @@ export default function TollBrothersPostConstructionPage() {
           />
           <div className="mt-10 space-y-6 text-base text-brand-black leading-relaxed">
             <p>
-              Most builders complete a cosmetic clean before the final walkthrough: surface wipe-downs,
-              a vacuum pass on floors, and glass cleaned in common areas. This is standard practice
-              across the industry and prepares the home for the walk without addressing construction
-              residue at the detail level.
+              Most builders complete a cosmetic clean before the final walkthrough: surface
+              wipe-downs, a vacuum pass on floors, and glass cleaned in common areas. This prepares
+              the home for the walk without addressing construction residue at the detail level.
+              KB Home follows the same handoff practice, and the residue left behind is consistent
+              with any new residential build.
             </p>
             <p>
-              What remains after a builder clean is consistent regardless of the builder&apos;s quality tier.
-              Drywall dust is ultrafine and airborne during construction; it settles into HVAC registers,
-              inside cabinet interiors, on top of door frames, and on every horizontal surface. Adhesive
-              and caulk residue collect around tile edges, fixtures, and trim. Window film is applied
-              during construction to protect glass and must be removed before occupancy. Fine grit from
-              cutting and sanding settles on floors and baseboards throughout the home.
+              What remains after a builder clean is predictable. Drywall dust is ultrafine and
+              airborne during construction; it settles into HVAC registers, inside cabinet interiors,
+              on top of door frames, and on every horizontal surface. KB Home buyers who select
+              custom tile packages through the KB Home Studio often have more grout and tile adhesive
+              work throughout the home, which means more adhesive and grout residue around upgraded
+              surfaces. Window film is applied during construction to protect glass and must be
+              removed before occupancy. Fine grit from cutting and sanding settles on floors and
+              baseboards throughout the home.
             </p>
             <p>
               A professional post-construction clean addresses this layer of residue that a cosmetic
-              builder clean is not intended to cover. The scope is confirmed on-site before the clean
+              builder clean is not scoped to cover. The scope is confirmed on-site before the clean
               begins so nothing is assumed.
             </p>
           </div>
@@ -192,35 +234,10 @@ export default function TollBrothersPostConstructionPage() {
           <SectionHeader
             eyebrow="Scope"
             heading="What post-construction cleanup covers."
-            sub="Scope drawn from our post-construction service. Confirmed on-site before the clean begins."
+            sub="Scope drawn from our post-construction service. Confirmed on-site before the clean begins. Custom tile and upgraded surfaces are identified and addressed during the walkthrough."
           />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                title: 'Construction dust and fine grit',
-                body: 'All surfaces: floors, countertops, windowsills, shelving, door frames, and cabinet interiors. Multiple passes where the build left heavy residue.',
-              },
-              {
-                title: 'HVAC vents and registers',
-                body: 'Drywall dust settles into every register during a build. We address vents and registers throughout the home so the dust does not re-circulate after move-in.',
-              },
-              {
-                title: 'Adhesive and caulk residue',
-                body: 'Around tile edges, fixture bases, trim, and baseboards. Residue from construction adhesive and caulk requires targeted removal, not standard wiping.',
-              },
-              {
-                title: 'Window film and glass cleaning',
-                body: 'Protective film applied during construction is removed and all glass surfaces are cleaned throughout the home.',
-              },
-              {
-                title: 'Paint overspray',
-                body: 'Light paint overspray on fixtures, hardware, and surfaces adjacent to painted areas is addressed during the detail pass.',
-              },
-              {
-                title: 'Floor surfaces',
-                body: 'Hard floors cleaned and scrubbed. Carpet areas vacuumed and spot-checked. Transitions and edges addressed where grit collects.',
-              },
-            ].map((item) => (
+            {scopeItems.map((item) => (
               <li
                 key={item.title}
                 className="rounded-[14px] border border-border-subtle bg-light-gray p-6"
@@ -238,23 +255,10 @@ export default function TollBrothersPostConstructionPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Who schedules post-construction cleaning after a Toll Brothers build."
+            heading="Who schedules post-construction cleaning after a KB Home build."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-3">
-            {[
-              {
-                title: 'New homebuyers',
-                body: 'Taking possession of a new Toll Brothers home and scheduling a professional clean between the final walkthrough and move-in day. A genuine detail clean, not a cosmetic touch-up.',
-              },
-              {
-                title: 'Builder project teams',
-                body: 'Superintendents and project coordinators finishing a punch list who need a reliable cleaning vendor before the client walkthrough or occupancy sign-off.',
-              },
-              {
-                title: 'Real estate professionals',
-                body: 'Agents and buyer representatives guiding clients through new home purchases who recommend a professional post-construction clean as part of the closing process.',
-              },
-            ].map((item) => (
+            {audienceItems.map((item) => (
               <li
                 key={item.title}
                 className="rounded-[14px] border border-border-subtle bg-brand-white p-6"
@@ -273,7 +277,7 @@ export default function TollBrothersPostConstructionPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Post-construction cleanup across Clark County."
-            sub="Final Touch serves Toll Brothers communities throughout the Las Vegas Valley."
+            sub="Final Touch serves KB Home communities throughout the Las Vegas Valley."
           />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -306,7 +310,7 @@ export default function TollBrothersPostConstructionPage() {
             >
               Move-In Cleaning
             </Link>
-            {BUILDERS.filter((b) => b.href !== '/builders/toll-brothers-post-construction-cleaning').map((b) => (
+            {BUILDERS.filter((b) => b.href !== '/builders/kb-home-post-construction-cleaning').map((b) => (
               <Link
                 key={b.href}
                 href={b.href}
@@ -330,7 +334,7 @@ export default function TollBrothersPostConstructionPage() {
 
       {/* 8. Final CTA */}
       <CTASection
-        heading="Ready to schedule your Toll Brothers post-construction clean?"
+        heading="Ready to schedule your KB Home post-construction clean?"
         sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve Clark County, Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

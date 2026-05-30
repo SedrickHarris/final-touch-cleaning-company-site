@@ -3,6 +3,7 @@ export const ROUTES = {
   about: '/about',
   services: '/services',
   locations: '/locations',
+  builders: '/builders',
   reviews: '/reviews',
   gallery: '/gallery',
   pricing: '/pricing',
@@ -217,6 +218,7 @@ export const NEIGHBORHOODS: ReadonlyArray<{
 export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Services',  href: ROUTES.services },
   { label: 'Locations', href: ROUTES.locations },
+  { label: 'Builders',  href: ROUTES.builders },
   { label: 'About',     href: ROUTES.about },
   { label: 'Reviews',   href: ROUTES.reviews },
   { label: 'Contact',   href: ROUTES.contact },
@@ -229,6 +231,7 @@ export const FOOTER_NAV = {
     { label: 'About',            href: ROUTES.about },
     { label: 'Our Team',         href: ROUTES.ourTeam },
     { label: 'Cleaning Process', href: ROUTES.cleaningProcess },
+    { label: 'Builders',         href: ROUTES.builders },
     { label: 'Reviews',          href: ROUTES.reviews },
     { label: 'Gallery',          href: ROUTES.gallery },
     { label: 'Contact',          href: ROUTES.contact },
