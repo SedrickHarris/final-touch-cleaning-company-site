@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { SITE } from '@/lib/constants/site';
 
-// TODO-VERIFY: Replace the empty string below with the confirmed GHL
-// webhook URL before going live. Until this is set, the form collects
-// data client-side but does not transmit it. Redirect to /thank-you
-// still fires on submit so the UX flow can be tested end-to-end.
-const WEBHOOK_URL = '';
+// GoHighLevel / LeadConnector inbound webhook. On submit the form payload is
+// POSTed here as JSON; the field keys in FormState below are the mapping GHL
+// receives. Confirmed by owner (2026-05-29).
+const WEBHOOK_URL =
+  'https://services.leadconnectorhq.com/hooks/QcISONQzEqshCjk0dAxF/webhook-trigger/f4gfXNK5XDbBRsh0cGLy';
 
 const SERVICES = [
   'Commercial Office Cleaning',
@@ -107,21 +107,18 @@ export default function QuoteFormPlaceholder() {
     }
     setSubmitting(true);
     try {
-      // TODO-VERIFY: Once WEBHOOK_URL is set, uncomment the fetch block below.
-      // Confirm the payload shape matches the GHL field mappings before going
-      // live. Test with a real submission before removing this comment.
-      //
-      // if (WEBHOOK_URL) {
-      //   await fetch(WEBHOOK_URL, {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify(form),
-      //   });
-      // }
-      router.push('/thank-you');
+      if (WEBHOOK_URL) {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        });
+      }
     } catch {
-      setSubmitting(false);
+      // A network/CORS failure must not trap the visitor: fall through to the
+      // /thank-you redirect regardless so the submit flow always completes.
     }
+    router.push('/thank-you');
   }
 
   return (

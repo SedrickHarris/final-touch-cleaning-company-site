@@ -2826,3 +2826,31 @@ now dedupe to 8.5.15 (>= patched 8.5.10); Next itself unchanged at 16.2.6.
 Result: npm audit -> 0 vulnerabilities. lint / type-check / build all pass
 (postcss processes the Tailwind CSS without issue). Files changed: package.json,
 package-lock.json.
+
+### Quote form — wire GoHighLevel webhook (go-live)
+Status: Done
+Date: 2026-05-29
+
+QuoteFormPlaceholder previously collected the 11-field payload client-side but
+did not transmit (WEBHOOK_URL was an empty stub). Owner supplied the confirmed
+GoHighLevel / LeadConnector inbound webhook URL, so handleSubmit now POSTs the
+payload as JSON before routing to /thank-you.
+
+Hardening: the /thank-you redirect was moved OUTSIDE the try/catch so a
+network/CORS failure can no longer trap the visitor on the form. The submit
+flow always completes. (Side effect: cleared the prior WEBHOOK_URL unused-var
+lint warning.)
+
+Verification:
+- Test POST to the webhook returned HTTP 200 {"status":"Success: test request
+  received"}. Payload keys match FormState exactly (first_name, last_name,
+  phone, email, city, service_requested, property_type, cleaning_frequency,
+  timeline, details, preferred_contact_method).
+- CORS preflight (OPTIONS) returned 204 with Access-Control-Allow-Origin: * and
+  POST in Allow-Methods, so live browser submissions with application/json are
+  not blocked.
+- lint / type-check / build all pass.
+
+Owner follow-up (in GHL, not code): map the 11 fields in the workflow trigger
+(webhook is in capture mode), wire the lead/notification automation, and delete
+the "Webhook Test (Claude Code)" test lead. File changed: QuoteFormPlaceholder.tsx.
