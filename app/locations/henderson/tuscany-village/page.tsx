@@ -130,6 +130,10 @@ export default function TuscanyVillagePage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/tuscany-village-henderson-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Tuscany Village, Henderson, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer — direct-answer paragraph, first 100 words */}

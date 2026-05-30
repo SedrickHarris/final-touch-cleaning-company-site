@@ -131,6 +131,10 @@ export default function ParadiseStripPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/paradise-las-vegas-strip-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in Paradise and the Las Vegas Strip, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer — direct-answer paragraph, first 100 words */}

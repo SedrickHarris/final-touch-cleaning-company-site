@@ -85,7 +85,7 @@ Some "Las Vegas" neighborhoods sit outside the City of Las Vegas, but all are in
 | 3 | 7 service pages | ✅ Done |
 | 4 | 5 city pages | ✅ Done |
 | 5 | 10 priority neighborhoods: Summerlin, Downtown LV, Southern Highlands (LV); Cadence, Inspirada, MacDonald Highlands, Seven Hills, Anthem, Lake Las Vegas, Green Valley Ranch (Henderson) — now have hero photos | ✅ Done |
-| 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district, aliante · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ⏳ Not built (no photos in folder yet) |
+| 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district, aliante · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ✅ Done — 9 built with hero photos wired 2026-05-29 (LV aliante intentionally retired, not built) |
 | 6 | Service + city matrix (35: 7×4 cities + 7 Clark County) | ✅ Done (committed 81e0c2d + 20678de) |
 | 7 | Specialized: builders (10), industries (15), seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7), service×neighborhood (50+) | ⏳ |
 | 8 | Tech SEO + launch (schema, robots/sitemap/llms.txt, GSC/Bing/Clarity/GA4, IndexNow, QA, deploy) | ⏳ |

@@ -130,6 +130,10 @@ export default function NellisAreaPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{
+          src: '/images/locations/nellis-area-north-las-vegas-commercial-cleaning-hero-image.webp',
+          alt: 'Professional cleaning service by Final Touch in the Nellis Area, North Las Vegas, NV.',
+        }}
       />
 
       {/* 2. Quick neighborhood answer — direct-answer paragraph, first 100 words */}
