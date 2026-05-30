@@ -2854,3 +2854,19 @@ Verification:
 Owner follow-up (in GHL, not code): map the 11 fields in the workflow trigger
 (webhook is in capture mode), wire the lead/notification automation, and delete
 the "Webhook Test (Claude Code)" test lead. File changed: QuoteFormPlaceholder.tsx.
+
+### Chat widget — add GoHighLevel / LeadConnector embed site-wide
+Status: Done
+Date: 2026-05-29
+
+Owner supplied the LeadConnector chat-widget embed (data-widget-id
+6a1a6ff79f5b0cd19a9e268f). Added it via next/script in the root layout
+(app/layout.tsx) so it renders on every page. strategy="lazyOnload" per the
+next/script docs, which list chat support plugins under that strategy: the
+widget loads during browser idle, after page content, so it never competes
+with the initial render. The data-resources-url and data-widget-id attributes
+pass through to the rendered script tag unchanged.
+
+Verification: lint / type-check / build all pass; widget id is present in the
+static export output (out/), confirming it ships on every page.
+File changed: app/layout.tsx.

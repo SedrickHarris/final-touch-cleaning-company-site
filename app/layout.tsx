@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Fraunces, Manrope } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -81,6 +82,16 @@ export default function RootLayout({
           </main>
           <Footer />
         </MotionProvider>
+        {/* GoHighLevel / LeadConnector chat widget. lazyOnload per next/script
+            guidance for chat support plugins: loads during browser idle so it
+            never competes with page content. */}
+        <Script
+          id="leadconnector-chat-widget"
+          src="https://beta.leadconnectorhq.com/loader.js"
+          data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a1a6ff79f5b0cd19a9e268f"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
