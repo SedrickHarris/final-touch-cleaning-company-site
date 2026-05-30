@@ -156,6 +156,10 @@ export default function BuildersHubPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Builder Post-Construction Cleaning"
+        image={{
+          src: '/images/builders/builders-post-construction-cleaning-hub-hero-image.webp',
+          alt: 'Post-construction cleaning for new builds - Final Touch Cleaning Company, Las Vegas Valley NV',
+        }}
         heading="Post-Construction Cleaning for New Builds | Las Vegas Valley Builders"
         sub="Final Touch provides post-construction cleanup for homebuyers and project teams across Clark County, Nevada, regardless of builder. Select your builder below for community-specific information, or call (702) 444-5077 to schedule a walkthrough and free quote."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

@@ -112,7 +112,7 @@ export default function CleaningProcessPage() {
         eyebrow="Our Process"
         image={{
           src: '/images/builders/cleaning-process-commercial-cleaning-hero-image.webp',
-          alt: 'Professional cleaning process — Final Touch Cleaning Company, Las Vegas NV',
+          alt: 'Professional cleaning process - Final Touch Cleaning Company, Las Vegas NV',
         }}
         heading="How Final Touch Cleans: A Step-by-Step Process"
         sub="Every Final Touch job follows the same five-step process, from the initial quote request through the final quality review. Owners Scott & Nicole Maland confirm the scope before work begins and back every completed job with a 100% satisfaction guarantee."

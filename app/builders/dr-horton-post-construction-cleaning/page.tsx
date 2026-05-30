@@ -166,7 +166,7 @@ export default function DRHortonPostConstructionPage() {
         eyebrow="D.R. Horton · Post-Construction Cleaning"
         image={{
           src: '/images/builders/dr-horton-post-construction-cleaning-hero-image.webp',
-          alt: 'D.R. Horton post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+          alt: 'D.R. Horton post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="D.R. Horton Post-Construction Cleanup | Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for D.R. Horton homebuyers and project teams across Clark County, Nevada, including homes built under the D.R. Horton and Express Homes brands. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}

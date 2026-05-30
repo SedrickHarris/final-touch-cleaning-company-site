@@ -128,7 +128,7 @@ export default function TollBrothersPostConstructionPage() {
         eyebrow="Toll Brothers · Post-Construction Cleaning"
         image={{
           src: '/images/builders/toll-brothers-post-construction-cleaning-hero-image.webp',
-          alt: 'Toll Brothers post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+          alt: 'Toll Brothers post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Toll Brothers Post-Construction Cleanup | Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for Toll Brothers homebuyers and project teams across Clark County, Nevada. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call ${SITE.phone.display} or request a free quote to schedule around your handoff date.`}

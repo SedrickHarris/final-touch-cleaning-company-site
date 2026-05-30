@@ -166,7 +166,7 @@ export default function KBHomePostConstructionPage() {
         eyebrow="KB Home · Post-Construction Cleaning"
         image={{
           src: '/images/builders/kb-home-post-construction-cleaning-hero-image.webp',
-          alt: 'KB Home post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+          alt: 'KB Home post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="KB Home Post-Construction Cleanup | Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for KB Home buyers and project teams across Clark County, Nevada. KB Home's Built to Order program means custom tile, upgraded flooring, and custom cabinetry throughout your home, all of which leave adhesive, grout, and caulk residue that builder cleaning is not scoped to remove. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}

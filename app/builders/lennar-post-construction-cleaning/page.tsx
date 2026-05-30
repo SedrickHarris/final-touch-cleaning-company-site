@@ -166,7 +166,7 @@ export default function LennarPostConstructionPage() {
         eyebrow="Lennar · Post-Construction Cleaning"
         image={{
           src: '/images/builders/lennar-post-construction-cleaning-hero-image.webp',
-          alt: 'Lennar post-construction cleanup — Final Touch Cleaning Company, Clark County NV',
+          alt: 'Lennar post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Lennar Post-Construction Cleanup | Henderson & Las Vegas, NV"
         sub={`Final Touch provides post-construction cleanup for Lennar homebuyers and project teams across Clark County, Nevada, including NextGen multi-generational homes. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
