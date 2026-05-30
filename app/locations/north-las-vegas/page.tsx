@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: '+17024445077',
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },

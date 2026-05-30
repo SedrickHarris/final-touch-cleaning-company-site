@@ -71,6 +71,8 @@ const localBusinessJsonLd = {
   url: `${SITE.url}/locations/henderson/tuscany-village`,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'Place', name: 'Tuscany Village, Henderson, NV' },
     { '@type': 'Place', name: 'Henderson, NV' },
