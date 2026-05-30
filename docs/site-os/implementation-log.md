@@ -2730,3 +2730,82 @@ Files changed: app/builders/page.tsx (import + formSlot prop).
 lint / type-check / build all pass (the only lint warning is the pre-existing
 WEBHOOK_URL-unused note from QuoteFormPlaceholder, unrelated to this change).
 Did not commit. Did not deploy.
+
+### TrustBar + Hero Form Polish
+Status: Implemented pending review
+Date: 2026-05-29
+
+Dependency: installed lucide-react (^1.17.0) for the trust-bar icons (owner
+approved adding the dependency 2026-05-29). npm audit reports 2 moderate
+transitive vulnerabilities; not auto-fixed (audit fix --force flags breaking
+changes), left for owner review.
+
+TrustBar (components/shared/TrustBar.tsx): replaced grid layout with flex-row
+(lg: flex-nowrap, single horizontal row). Added optional LucideIcon prop to
+TrustItem type. Icons render in text-brand-blue, size 20, strokeWidth 1.75.
+Label font reduced to text-sm. Degrades gracefully on callers without icons.
+
+Homepage (app/page.tsx): added Lucide import (Heart, MapPin, ShieldCheck,
+Globe, Tag) and icons on all 5 trustItems. Licensed & insured item was already
+present from the committed trust-signal/brand work (owner-confirmed 2026-05-29).
+
+About (app/about/page.tsx): added Lucide import (Heart, MapPin, ShieldCheck,
+CheckCircle, Tag) and icons on all 5 trustItems (Licensed & insured already
+present).
+
+HeroSection (components/shared/HeroSection.tsx): widened split grid from
+[1.05fr / 420px 0.75fr] to [1fr / 480px 1fr]. Removed lg:max-w-xl cap from
+formSlot column. Gap reduced from lg:gap-14 xl:gap-20 to lg:gap-12 xl:gap-16.
+
+No other copy, schema, or structural changes.
+Did not commit. Did not deploy.
+
+### Image Integration — hero images across builder, brand, and our-team pages
+Status: Implemented pending review
+Date: 2026-05-29
+
+Resolved image prefix (Step 0): /images/builders/ (all hero images live in
+public/images/builders/).
+
+our-team: owner photo (/images/owners/team.webp) added as formSlot right column
+(light background, aspect-[4/5], object-cover object-top, priority). Note: the
+build doc's `isSplit` prop was omitted because HeroSection has no isSplit prop
+(it is an internal computed value); passing formSlot alone triggers the split
+layout, so the intended result is achieved and type-check passes.
+
+Builder pages (all 10): HeroSection image prop added (dark full-bleed background,
+form card overlays the right column).
+
+Brand pages: /cleaning-process, /pricing, /reviews — HeroSection image prop added
+(dark background).
+
+Builder hub (Task 4): SKIPPED. The hub hero image
+(builders-post-construction-cleaning-hub-hero-image.webp) was not delivered (only
+13 of the 14 listed images exist; doc header itself says "13 images"). Owner chose
+to proceed with the 13 and leave the hub image-less until the file is provided.
+
+Total files changed: 14 (our-team + 3 brand + 10 builders). Image src/alt added
+verbatim. Note: the alt texts contain em dashes ("— Final Touch Cleaning Company")
+as written in the build doc; pasted exactly per the "use exact alt text" mandate
+(flag for owner, since alt text is read by screen readers).
+
+lint / type-check / build all pass (only pre-existing WEBHOOK_URL lint warning).
+No copy, schema, FAQ, or CTA changes. Did not commit. Did not deploy.
+
+### Image Integration — hub image + alt text em-dash fix
+Status: Done
+Date: 2026-05-29
+
+Task 1: added the hub hero image to app/builders/page.tsx. The owner-delivered
+file arrived as "builders-post-construction-cleaning-hub-hero-image (1).webp"
+(accidental download-duplicate suffix); renamed to the doc's expected name
+"builders-post-construction-cleaning-hub-hero-image.webp" and wired the image
+prop (after eyebrow). No conversion needed (already WebP, 94 KB). All 14 hero
+images now active (13 builder/brand pages + hub).
+
+Task 2: replaced em dash (—) with hyphen (-) in all image alt attributes across
+the 14 image-integration pages. Scoped to image={{ alt: '...' lines only; 13
+files changed (our-team owner-photo alt and the hub alt already used commas/
+hyphens). Verified: 0 em dashes remain in any image alt line.
+
+lint / type-check / build all pass. Did not deploy.

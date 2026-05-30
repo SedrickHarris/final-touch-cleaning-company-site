@@ -1,4 +1,10 @@
-type TrustItem = { label: string; sub?: string };
+import type { LucideIcon } from 'lucide-react';
+
+type TrustItem = {
+  label: string;
+  sub?: string;
+  icon?: LucideIcon;
+};
 
 type Props = {
   items: ReadonlyArray<TrustItem>;
@@ -15,21 +21,28 @@ export default function TrustBar({ items }: Props) {
       aria-label="Trust signals"
       className="bg-brand-white border-y border-border-subtle"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-7 lg:py-9">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-6 lg:gap-x-0 lg:divide-x lg:divide-border-subtle">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 lg:py-6">
+        <ul className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap sm:items-center lg:divide-x lg:divide-border-subtle gap-y-4 sm:gap-y-3 sm:gap-x-8 lg:gap-x-0">
           {items.map((it) => (
             <li
               key={it.label}
-              className="flex flex-col sm:items-center sm:text-center lg:px-6 first:lg:pl-0 last:lg:pr-0"
+              className="flex items-center gap-3 lg:px-5 first:lg:pl-0 last:lg:pr-0"
             >
-              <span className="font-display text-base lg:text-[17px] font-semibold text-brand-black tracking-tight">
-                {it.label}
-              </span>
-              {it.sub && (
-                <span className="text-sm text-muted mt-1 leading-snug">
-                  {it.sub}
+              {it.icon && (
+                <span className="shrink-0 text-brand-blue" aria-hidden="true">
+                  <it.icon size={20} strokeWidth={1.75} />
                 </span>
               )}
+              <div>
+                <span className="font-display text-sm font-semibold text-brand-black tracking-tight leading-tight">
+                  {it.label}
+                </span>
+                {it.sub && (
+                  <span className="block text-xs text-muted mt-0.5 leading-snug">
+                    {it.sub}
+                  </span>
+                )}
+              </div>
             </li>
           ))}
         </ul>

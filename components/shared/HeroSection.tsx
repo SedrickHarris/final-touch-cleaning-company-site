@@ -106,7 +106,7 @@ export default function HeroSection({
         <div
           className={
             isSplit
-              ? 'grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.75fr)] gap-10 lg:gap-14 xl:gap-20 items-start'
+              ? 'grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(480px,1fr)] gap-10 lg:gap-12 xl:gap-16 items-start'
               : ''
           }
         >
@@ -174,7 +174,7 @@ export default function HeroSection({
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: DURATION.short, ease: EASE_OUT, delay: 0.2 }}
-              className="w-full lg:max-w-xl lg:justify-self-end"
+              className="w-full lg:justify-self-end"
             >
               {formSlot}
             </motion.div>

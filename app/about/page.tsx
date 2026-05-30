@@ -8,6 +8,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import TrustBar from '@/components/shared/TrustBar';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
+import { Heart, MapPin, ShieldCheck, CheckCircle, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Final Touch Cleaning Company | Las Vegas, NV',
@@ -22,11 +23,11 @@ export const metadata: Metadata = {
 };
 
 const trustItems = [
-  { label: 'Family owned', sub: SITE.owners },
-  { label: 'Local team', sub: 'Based in Southern Nevada' },
-  { label: 'Licensed & insured', sub: 'Nevada licensed and insured' },
-  { label: 'Detail-focused', sub: 'The corners other crews skip' },
-  { label: 'Free quotes', sub: 'No-pressure walkthroughs' },
+  { label: 'Family owned',       sub: SITE.owners,                       icon: Heart       },
+  { label: 'Local team',         sub: 'Based in Southern Nevada',        icon: MapPin      },
+  { label: 'Licensed & insured', sub: 'Nevada licensed and insured',     icon: ShieldCheck },
+  { label: 'Detail-focused',     sub: 'The corners other crews skip',    icon: CheckCircle },
+  { label: 'Free quotes',        sub: 'No-pressure walkthroughs',        icon: Tag         },
 ];
 
 const faq = [

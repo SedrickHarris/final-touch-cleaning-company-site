@@ -9,6 +9,7 @@ import ServicesPreview from '@/components/shared/ServicesPreview';
 import TrustBar from '@/components/shared/TrustBar';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { Heart, MapPin, ShieldCheck, Globe, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Cleaning Services in Las Vegas & Clark County, NV | Final Touch',
@@ -31,11 +32,11 @@ export const metadata: Metadata = {
 // docs/site-os/final-touch-build-context.md.
 export default function HomePage() {
   const trustItems = [
-    { label: 'Family owned', sub: SITE.owners },
-    { label: 'Local team', sub: 'Based in Southern Nevada' },
-    { label: 'Licensed & insured', sub: 'Nevada licensed and insured' },
-    { label: `Serving ${SITE.serviceArea.metro}`, sub: SITE.serviceArea.cities.join(' · ') },
-    { label: 'Free quotes', sub: 'No-pressure walkthroughs' },
+    { label: 'Family owned',            sub: SITE.owners,                                   icon: Heart       },
+    { label: 'Local team',              sub: 'Based in Southern Nevada',                    icon: MapPin      },
+    { label: 'Licensed & insured',      sub: 'Nevada licensed and insured',                 icon: ShieldCheck },
+    { label: `Serving ${SITE.serviceArea.metro}`, sub: SITE.serviceArea.cities.join(' · '), icon: Globe       },
+    { label: 'Free quotes',             sub: 'No-pressure walkthroughs',                    icon: Tag         },
   ];
 
   const audiences = [
