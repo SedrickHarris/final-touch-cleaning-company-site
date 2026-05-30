@@ -151,26 +151,11 @@ export default function HomePage() {
     })),
   };
 
-  // Organization JSON-LD. No streetAddress: service-area-only business per
-  // docs/site-os/no-fake-data-policy.md sec 2.
-  // TODO-VERIFY: foundingDate, license, insurance, sameAs (social/GBP links).
-  // Add only after owner-supplied verification.
-  const orgJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-    image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-    sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-    areaServed: [SITE.serviceArea.county, ...SITE.serviceArea.cities].map(
-      (name) => ({ '@type': 'Place', name: `${name}, ${SITE.serviceArea.stateAbbr}` })
-    ),
-    founder: SITE.owners.split(' & ').map((name) => ({ '@type': 'Person', name })),
-  };
+  // LocalBusiness JSON-LD lives in the global layout (app/layout.tsx) as a
+  // single site-wide node per docs/site-os/build-status-reconciliation.md §5.
+  // Removed from here to avoid a duplicate LocalBusiness node on the homepage.
 
-  const heroSub = `Scott and Nicole Maland run Final Touch, a family-owned cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City. We clean homes, offices, post-construction sites, and retail spaces with attention to the finishing details that make a space feel done.`;
+  const heroSub =`Scott and Nicole Maland run Final Touch, a family-owned cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City. We clean homes, offices, post-construction sites, and retail spaces with attention to the finishing details that make a space feel done.`;
 
   return (
     <>
@@ -418,10 +403,6 @@ export default function HomePage() {
         tone="blue"
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

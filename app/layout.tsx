@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MotionProvider from '@/components/motion/MotionProvider';
 import { SEO_DEFAULTS } from '@/lib/constants/seo';
+import { SITE } from '@/lib/constants/site';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -23,6 +24,44 @@ const manrope = Manrope({
 });
 
 const OG_IMAGE = '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp';
+
+// Global LocalBusiness JSON-LD — single site-wide node per
+// docs/site-os/build-status-reconciliation.md §5. Service-area business:
+// NO streetAddress, NO aggregateRating, NO review (self-serving). 24-hour
+// hours framed as around-the-clock scheduling availability. Owner-confirmed
+// data only. Per-page LocalBusiness nodes on city pages stay (city-scoped
+// areaServed variant); the homepage node was removed to avoid duplication.
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Final Touch Cleaning Company LLC',
+  url: `${SITE.url}/`,
+  telephone: SITE.phone.href.replace('tel:', ''),
+  email: SITE.email.display,
+  image: `${SITE.url}/images/logo/final-touch-cleaning-company-logo.webp`,
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Clark County, NV' },
+    { '@type': 'City', name: 'North Las Vegas' },
+    { '@type': 'City', name: 'Las Vegas' },
+    { '@type': 'City', name: 'Henderson' },
+    { '@type': 'City', name: 'Boulder City' },
+  ],
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '00:00',
+    closes: '23:59',
+  },
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SEO_DEFAULTS.siteUrl),
@@ -71,7 +110,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${manrope.variable}`}>
+      <head>
+        {/* Google Tag Manager — canonical container snippet, loaded in <head>
+            so the dataLayer is available before page interaction. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${SITE.analytics.gtmId}');`,
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
+        {/* Google Tag Manager (noscript) — must be immediately after <body>. */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${SITE.analytics.gtmId}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
@@ -91,6 +152,10 @@ export default function RootLayout({
           data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6a1a6ff79f5b0cd19a9e268f"
           strategy="lazyOnload"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
       </body>
     </html>
