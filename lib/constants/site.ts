@@ -22,6 +22,7 @@ export const SITE = {
   analytics: {
     gtmId: 'GTM-5TXTMJDF',
     ga4MeasurementId: 'G-4KW12S96W7',
+    clarityProjectId: 'wzeyepig9s',
   },
 } as const;
 
