@@ -73,6 +73,8 @@ const orgJsonLd = {
   name: SITE.name,
   url: SITE.url,
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   contactPoint: [
     {
       '@type': 'ContactPoint',

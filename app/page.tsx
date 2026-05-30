@@ -33,6 +33,7 @@ export default function HomePage() {
   const trustItems = [
     { label: 'Family owned', sub: SITE.owners },
     { label: 'Local team', sub: 'Based in Southern Nevada' },
+    { label: 'Licensed & insured', sub: 'Nevada licensed and insured' },
     { label: `Serving ${SITE.serviceArea.metro}`, sub: SITE.serviceArea.cities.join(' · ') },
     { label: 'Free quotes', sub: 'No-pressure walkthroughs' },
   ];
@@ -160,6 +161,8 @@ export default function HomePage() {
     url: SITE.url,
     telephone: SITE.phone.href.replace('tel:', ''),
     email: SITE.email.display,
+    image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+    sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
     areaServed: [SITE.serviceArea.county, ...SITE.serviceArea.cities].map(
       (name) => ({ '@type': 'Place', name: `${name}, ${SITE.serviceArea.stateAbbr}` })
     ),
@@ -271,18 +274,20 @@ export default function HomePage() {
             </Link>
           </p>
 
-          {/* TODO-DEFERRED-TIER1: /reviews and /pricing are Tier 1 brand
-              pages listed in site-build-plan.md but explicitly deferred from
-              Batch 2 (batch-2-core-brand-pages-prompt.md) pending owner-
-              supplied data (/reviews needs verified review content;
-              /pricing needs owner-confirmed pricing structure). They have no
-              assigned build batch yet. Do not link here until both pages are
-              built and confirmed in the static export (out/ directory).
-              When they land, restore two links in this block:
-                "Read client reviews"  → ROUTES.reviews
-                "How our pricing works" → ROUTES.pricing
-              Suggested placement: this same paragraph, directly below the
-              "Learn about our team" link. */}
+          <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link
+              href={ROUTES.reviews}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              Read client reviews →
+            </Link>
+            <Link
+              href={ROUTES.pricing}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              How our pricing works →
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 const trustItems = [
   { label: 'Family owned', sub: SITE.owners },
   { label: 'Local team', sub: 'Based in Southern Nevada' },
+  { label: 'Licensed & insured', sub: 'Nevada licensed and insured' },
   { label: 'Detail-focused', sub: 'The corners other crews skip' },
   { label: 'Free quotes', sub: 'No-pressure walkthroughs' },
 ];
@@ -61,8 +62,10 @@ const faq = [
 
 // Organization schema. No streetAddress: service-area-only business per
 // docs/site-os/no-fake-data-policy.md sec 2.
-// TODO-VERIFY: license number, insurance carrier, foundingDate, social
-// profiles (sameAs). Add only after owner-supplied verification.
+// image: confirmed, logo at /images/logo/final-touch-cleaning-company-logo.webp (2026-05-29)
+// sameAs: confirmed, GBP CID https://www.google.com/maps?cid=5303198646776788086 (2026-05-29)
+// TODO-VERIFY: foundingDate, additional sameAs social profiles (Facebook, Instagram).
+//              License number and insurance carrier remain omitted per no-fake-data policy.
 const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -70,6 +73,8 @@ const orgJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [SITE.serviceArea.county, ...SITE.serviceArea.cities].map((name) => ({
     '@type': 'Place',
     name: `${name}, ${SITE.serviceArea.stateAbbr}`,
@@ -169,7 +174,8 @@ export default function AboutPage() {
                 <p>
                   We serve {SITE.serviceArea.metro}: Las Vegas, Henderson, North Las
                   Vegas, and Boulder City. Every job runs on the same finishing
-                  checklist, the same team, and the same owner-set standard.
+                  checklist, the same team, and the same owner-set standard. Final
+                  Touch is licensed and insured in Nevada.
                 </p>
                 <p>
                   Final Touch is not a franchise and not a staffing platform. When
@@ -240,6 +246,14 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-sm">
+            <Link
+              href={ROUTES.cleaningProcess}
+              className="font-semibold text-brand-blue hover:underline"
+            >
+              How our cleaning process works →
+            </Link>
+          </p>
         </div>
       </section>
 
