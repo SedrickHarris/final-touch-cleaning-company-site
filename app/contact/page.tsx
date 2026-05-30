@@ -43,8 +43,8 @@ const faq = [
     a: `We serve ${SITE.serviceArea.county}, ${SITE.serviceArea.state}, including ${SITE.serviceArea.cities.join(', ')}.`,
   },
   {
-    q: 'Are your online forms active yet?',
-    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We are wiring the form to our scheduling system shortly.`,
+    q: 'Is the online quote form active?',
+    a: `Yes. The quote form is live and you can submit a request directly from this page. Fill in your details and we will follow up to schedule a walkthrough. Prefer to talk? Call ${SITE.phone.display} or email ${SITE.email.display}.`,
   },
   {
     q: 'What should I do if I am not sure which service I need?',

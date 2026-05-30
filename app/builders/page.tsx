@@ -4,6 +4,7 @@ import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
+import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
@@ -159,6 +160,7 @@ export default function BuildersHubPage() {
         sub="Final Touch provides post-construction cleanup for homebuyers and project teams across Clark County, Nevada, regardless of builder. Select your builder below for community-specific information, or call (702) 444-5077 to schedule a walkthrough and free quote."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        formSlot={<QuoteFormPlaceholder />}
       />
 
       {/* 2. Direct answer */}

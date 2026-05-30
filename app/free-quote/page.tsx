@@ -48,15 +48,15 @@ const faq = [
   },
   {
     q: 'How fast will I hear back?',
-    a: `Call ${SITE.phone.display} or email ${SITE.email.display} for the fastest response. Our online quote form is being wired to our scheduling system right now. Once it is live, form submissions will reach us directly. Until then, phone and email are the reliable channels.`,
+    a: `Submit the form above and we will follow up to schedule a walkthrough. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. ${SITE.owners} or the team respond to every inquiry.`,
   },
   {
     q: 'Can I call instead of using the form?',
     a: `Yes. Calling ${SITE.phone.display} is often the fastest way to reach us. The phone is answered by ${SITE.owners} or someone on the team.`,
   },
   {
-    q: 'Are the online forms active yet?',
-    a: `Our online quote form is in setup right now. For the fastest response, call ${SITE.phone.display} or email ${SITE.email.display}. We are wiring the form to our scheduling system shortly.`,
+    q: 'Is the online quote form active?',
+    a: `Yes. Submit the form at the top of this page and we will follow up to schedule a walkthrough. Prefer to talk? Call ${SITE.phone.display} or email ${SITE.email.display}.`,
   },
   {
     q: 'Do you serve Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County?',

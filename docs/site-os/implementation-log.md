@@ -2678,3 +2678,55 @@ Kept 2 still-valid guardrail comments:
 
 No copy, schema, component, or structural changes.
 Did not commit. Did not deploy.
+
+### QuoteFormPlaceholder Global Update
+Status: Implemented pending review
+Date: 2026-05-29
+Scope: Full replacement of QuoteFormPlaceholder with 11-field functional
+form. FAQ cleanup on /contact and /free-quote.
+
+Fields added: First Name (required), Last Name (required), Phone (required),
+Email (required), City, Service Requested (select, 7 services + Other),
+Property Type (radio: Residential / Commercial / Other), Cleaning Frequency
+(select: One-time / Daily / Weekly / Bi-weekly / Monthly / Other), Timeline
+(select: ASAP / Within a week / Within a month / Flexible / Other), What do
+you need cleaned? (textarea), Preferred Contact Method (radio: Phone / Email
+/ Text).
+
+Form behavior: client-side validation on required fields; on valid submit
+redirects to /thank-you via useRouter. WEBHOOK_URL constant is empty string
+with TODO-VERIFY comment — no data transmits until the webhook URL is
+confirmed and wired in a separate gated pass.
+
+FAQ cleanup: updated 2 FAQ items on app/contact/page.tsx and 2 on
+app/free-quote/page.tsx that referenced the form as inactive.
+
+No-fake-data: no invented claims. No em dashes. No new schema.
+All fields active; no disabled props except submit button during submission.
+
+Files changed: 3
+- components/shared/QuoteFormPlaceholder.tsx (full replacement)
+- app/contact/page.tsx (2 FAQ answer str_replace)
+- app/free-quote/page.tsx (2 FAQ answer str_replace)
+
+Lint note: one expected warning (WEBHOOK_URL assigned but never used) until the
+webhook fetch block is uncommented in the gated wiring pass; lint exits 0.
+
+Next step (gated): wire WEBHOOK_URL with confirmed GHL endpoint, test
+real submission, confirm /thank-you receives the data.
+
+Did not commit. Did not deploy.
+
+### Builder Hub — add quote form to hero
+Status: Implemented pending review
+Date: 2026-05-29
+
+Added the standard quote form to the /builders hub hero: imported
+QuoteFormPlaceholder and passed it as HeroSection formSlot, which switches the
+hero to the split layout used by the builder leaf pages. The hub was originally
+built single-column with no form; it now matches the leaf-page hero pattern.
+
+Files changed: app/builders/page.tsx (import + formSlot prop).
+lint / type-check / build all pass (the only lint warning is the pre-existing
+WEBHOOK_URL-unused note from QuoteFormPlaceholder, unrelated to this change).
+Did not commit. Did not deploy.
