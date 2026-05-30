@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Who hires post-construction cleanup in North Las Vegas?',
-    a: "The largest segment is new-home buyers in North Las Vegas's active residential subdivisions — one of the most consistently growing areas in the Las Vegas Valley. A second, North-Las-Vegas-specific segment is industrial and commercial property owners in the warehouse and logistics corridor along the city's major arterials. Facility buildouts and office additions in industrial complexes create construction cleanup demand not found in Las Vegas or Henderson at the same scale.",
+    a: "The largest segment is new-home buyers in North Las Vegas's active residential subdivisions, one of the most consistently growing areas in the Las Vegas Valley. A second, North-Las-Vegas-specific segment is industrial and commercial property owners in the warehouse and logistics corridor along the city's major arterials. Facility buildouts and office additions in industrial complexes create construction cleanup demand not found in Las Vegas or Henderson at the same scale.",
   },
   {
     q: 'Does Final Touch serve North Las Vegas new subdivisions for construction cleanup?',
@@ -40,11 +40,11 @@ const faq = [
   },
   {
     q: 'Does Final Touch do commercial or industrial post-construction cleanup in North Las Vegas?',
-    a: 'Yes. North Las Vegas has a large industrial and logistics corridor. Final Touch serves commercial construction cleanup for facility offices, warehouse common areas, and industrial buildouts in North Las Vegas — a type of post-construction work specifically relevant to this city and less common at the same scale in Henderson or Las Vegas proper.',
+    a: 'Yes. North Las Vegas has a large industrial and logistics corridor. Final Touch serves commercial construction cleanup for facility offices, warehouse common areas, and industrial buildouts in North Las Vegas, a type of post-construction work specifically relevant to this city and less common at the same scale in Henderson or Las Vegas proper.',
   },
   {
     q: 'How much does post-construction cleanup cost in North Las Vegas?',
-    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Cost depends on the size, scope, and condition of the space — a brief walkthrough or site description is the starting point.`,
+    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Cost depends on the size, scope, and condition of the space. A brief walkthrough or site description is the starting point.`,
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -128,7 +130,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-construction cleanup in North Las Vegas is the professional final cleaning pass
-            after builders or renovation crews finish — removing drywall dust, adhesive residue,
+            after builders or renovation crews finish, removing drywall dust, adhesive residue,
             construction debris, and window film from a space that looks done but is not truly
             clean.{' '}
             <Link href="/services/post-construction-cleanup" className="text-brand-blue font-semibold hover:underline">
@@ -150,13 +152,13 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires post-construction cleanup in North Las Vegas"
             heading="New-home buyers, industrial buildout owners, and renovation owners."
-            sub="North Las Vegas has two post-construction streams — residential new builds and industrial/commercial buildouts — that don't both appear at the same scale in any other city in this market."
+            sub="North Las Vegas has two post-construction streams (residential new builds and industrial/commercial buildouts) that don't both appear at the same scale in any other city in this market."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'New-home buyers in active NLV subdivisions',
-                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New-home buyers in NLV's active subdivisions need post-construction cleanup after builder handoff — drywall dust, adhesive residue, window film, and construction particulate in vents are all left behind after the builder's standard site sweep.",
+                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New-home buyers in NLV's active subdivisions need post-construction cleanup after builder handoff. Drywall dust, adhesive residue, window film, and construction particulate in vents are all left behind after the builder's standard site sweep.",
               },
               {
                 title: 'General contractors building NLV residential projects',
@@ -168,7 +170,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
               },
               {
                 title: 'Renovation owners in established neighborhoods',
-                body: 'Older NLV residential areas have homeowners completing remodels and additions. Drywall dust from a kitchen renovation or room addition spreads through the existing home via the HVAC system — a post-renovation cleanup addresses what the contractors leave behind.',
+                body: 'Older NLV residential areas have homeowners completing remodels and additions. Drywall dust from a kitchen renovation or room addition spreads through the existing home via the HVAC system. A post-renovation cleanup addresses what the contractors leave behind.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -209,7 +211,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed per project. Residential new builds and industrial buildouts have
-            different needs — both addressed during the walkthrough.
+            different needs, both addressed during the walkthrough.
           </p>
         </div>
       </section>
@@ -225,7 +227,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
             {[
               {
                 heading: "One of the valley's most active residential growth areas",
-                body: "North Las Vegas has been among the fastest-growing residential areas in the Las Vegas Valley for years. New subdivisions and infill development create a consistent pipeline of new-home post-construction cleanup jobs. Unlike Henderson — where construction is concentrated in specific master-planned communities — NLV's growth is spread more broadly across the city.",
+                body: "North Las Vegas has been among the fastest-growing residential areas in the Las Vegas Valley for years. New subdivisions and infill development create a consistent pipeline of new-home post-construction cleanup jobs. Unlike Henderson (where construction is concentrated in specific master-planned communities) NLV's growth is spread more broadly across the city.",
               },
               {
                 heading: 'Industrial corridor adds commercial construction demand',
@@ -233,7 +235,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
               },
               {
                 heading: 'Desert climate amplifies construction dust',
-                body: "In North Las Vegas's Mojave desert environment, construction dust and fine particulate settle more aggressively on surfaces and infiltrate HVAC systems faster than in wetter climates. For NLV homes near active build zones, this effect extends beyond the direct construction project — neighboring completed homes accumulate particulate from nearby activity.",
+                body: "In North Las Vegas's Mojave desert environment, construction dust and fine particulate settle more aggressively on surfaces and infiltrate HVAC systems faster than in wetter climates. For NLV homes near active build zones, this effect extends beyond the direct construction project. Neighboring completed homes accumulate particulate from nearby activity.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Post-construction cleanup in North Las Vegas — common questions"
+        heading="Post-construction cleanup in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

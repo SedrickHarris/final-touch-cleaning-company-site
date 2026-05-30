@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does deep cleaning include in Clark County, NV?',
-    a: 'A deep clean covers inside appliances (oven, refrigerator, microwave, dishwasher), baseboards, window sills, grout lines and tile, vents and air returns, inside cabinets and shelving, behind and under accessible furniture, light fixtures and ceiling fans, bathroom fixtures and mirrors, all floor surfaces, and high-touch surface sanitizing throughout. Scope is confirmed before the clean begins — the same standard whether the property is in Las Vegas, Henderson, North Las Vegas, or Boulder City.',
+    a: 'A deep clean covers inside appliances (oven, refrigerator, microwave, dishwasher), baseboards, window sills, grout lines and tile, vents and air returns, inside cabinets and shelving, behind and under accessible furniture, light fixtures and ceiling fans, bathroom fixtures and mirrors, all floor surfaces, and high-touch surface sanitizing throughout. Scope is confirmed before the clean begins, the same standard whether the property is in Las Vegas, Henderson, North Las Vegas, or Boulder City.',
   },
   {
     q: 'Does Final Touch serve all of Clark County for deep cleaning?',
@@ -36,11 +36,11 @@ const faq = [
   },
   {
     q: 'What types of properties does Final Touch deep clean in Clark County?',
-    a: "Clark County's housing stock spans every property type in the Las Vegas Valley — luxury custom homes in Henderson's eastern hills, newly built homes in active master-planned communities, older established homes in Boulder City, rental properties across North Las Vegas, and the full range of residential and commercial spaces throughout Las Vegas. Final Touch serves them all. Scope is confirmed per property during booking.",
+    a: "Clark County's housing stock spans every property type in the Las Vegas Valley: luxury custom homes in Henderson's eastern hills, newly built homes in active master-planned communities, older established homes in Boulder City, rental properties across North Las Vegas, and the full range of residential and commercial spaces throughout Las Vegas. Final Touch serves them all. Scope is confirmed per property during booking.",
   },
   {
-    q: 'Does Final Touch deep clean in unincorporated Clark County?',
-    a: `Yes. Final Touch's service area covers the incorporated cities (Las Vegas, Henderson, North Las Vegas, Boulder City) and unincorporated areas of Clark County. Call ${SITE.phone.display} to confirm service availability for your specific address.`,
+    q: 'Does Final Touch deep clean across Clark County, including areas outside the main cities?',
+    a: `Yes. Final Touch's deep cleaning service area covers all of Clark County, including Las Vegas, Henderson, North Las Vegas, and Boulder City along with the communities around them. Call ${SITE.phone.display} to confirm service availability for your specific address.`,
   },
   {
     q: 'How often should Clark County homes be deep cleaned?',
@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: 'How much does deep cleaning cost in Clark County?',
-    a: `Cost depends on the size, condition, and type of property. Clark County's range of property types — from studio apartments in North Las Vegas to large custom homes in Henderson's foothills — means cost varies more widely than in a single-city context. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate.`,
+    a: `Cost depends on the size, condition, and type of property. Clark County's range of property types (from studio apartments in North Las Vegas to large custom homes in Henderson's foothills) means cost varies more widely than in a single-city context. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate.`,
   },
 ];
 
@@ -90,6 +90,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -127,7 +129,7 @@ export default function DeepCleaningClarkCountyPage() {
       <HeroSection
         eyebrow="Deep Cleaning · Clark County, NV"
         heading="Deep Cleaning in Clark County, NV"
-        sub={`Final Touch provides deep cleaning across all of ${SITE.serviceArea.county} — Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas throughout the Las Vegas Valley. One team, one standard, every city in the county.`}
+        sub={`Final Touch provides deep cleaning across all of ${SITE.serviceArea.county}: Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas throughout the Las Vegas Valley. One team, one standard, every city in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -138,7 +140,7 @@ export default function DeepCleaningClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Deep cleaning in Clark County is a thorough reset that goes well beyond routine
-            maintenance — covering inside appliances, grout lines, vents, baseboards, inside
+            maintenance, covering inside appliances, grout lines, vents, baseboards, inside
             cabinets, and every detail surface that accumulates Mojave desert dust and everyday
             buildup.{' '}
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
@@ -166,7 +168,7 @@ export default function DeepCleaningClarkCountyPage() {
             {[
               {
                 title: "Homeowners across the county's varied housing stock",
-                body: "Clark County's residential range spans luxury hillside estates in Henderson, active new-build communities in Henderson and North Las Vegas, established older homes in Boulder City, and dense urban residential in Las Vegas. Final Touch deep cleans all of them — scope confirmed per property.",
+                body: "Clark County's residential range spans luxury hillside estates in Henderson, active new-build communities in Henderson and North Las Vegas, established older homes in Boulder City, and dense urban residential in Las Vegas. Final Touch deep cleans all of them, scope confirmed per property.",
               },
               {
                 title: 'Property managers with county-wide portfolios',
@@ -174,11 +176,11 @@ export default function DeepCleaningClarkCountyPage() {
               },
               {
                 title: 'Vacation and short-term rental owners',
-                body: "Clark County's tourism economy — from Las Vegas Strip-adjacent rentals to Lake Mead-area vacation properties in Boulder City — creates vacation rental demand across the county. Periodic deep cleans between bookings keep properties at a guest-ready standard.",
+                body: "Clark County's tourism economy (from Las Vegas Strip-adjacent rentals to Lake Mead-area vacation properties in Boulder City) creates vacation rental demand across the county. Periodic deep cleans between bookings keep properties at a guest-ready standard.",
               },
               {
                 title: 'Renters doing county-wide seasonal resets',
-                body: 'Clark County has a large renter population spread across all cities. Renters who schedule mid-tenancy deep cleans — addressing Mojave desert dust accumulation between routine cleaning visits — are a consistent segment across every part of the county.',
+                body: 'Clark County has a large renter population spread across all cities. Renters who schedule mid-tenancy deep cleans (addressing Mojave desert dust accumulation between routine cleaning visits) are a consistent segment across every part of the county.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -236,15 +238,15 @@ export default function DeepCleaningClarkCountyPage() {
             {[
               {
                 heading: 'The entire county sits in the Mojave Desert',
-                body: 'Fine-particle desert dust is not a Las Vegas issue or a Henderson issue — it is a Clark County issue. Every property in the Las Vegas Valley, regardless of city, accumulates Mojave dust on indoor surfaces faster than in wetter climates. Periodic deep cleaning is a practical response to that environment for homeowners and renters across every part of the county.',
+                body: 'Fine-particle desert dust is not a Las Vegas issue or a Henderson issue. It is a Clark County issue. Every property in the Las Vegas Valley, regardless of city, accumulates Mojave dust on indoor surfaces faster than in wetter climates. Periodic deep cleaning is a practical response to that environment for homeowners and renters across every part of the county.',
               },
               {
                 heading: 'The most varied housing stock in Nevada',
-                body: "Clark County encompasses more housing diversity than any other part of Nevada — from Henderson's guard-gated luxury communities to Boulder City's older established homes to North Las Vegas's active new-build subdivisions to Las Vegas's dense urban residential. A deep cleaning service that works county-wide needs to accommodate that range. Final Touch does.",
+                body: "Clark County encompasses more housing diversity than any other part of Nevada: from Henderson's guard-gated luxury communities to Boulder City's older established homes to North Las Vegas's active new-build subdivisions to Las Vegas's dense urban residential. A deep cleaning service that works county-wide needs to accommodate that range. Final Touch does.",
               },
               {
                 heading: 'County-wide property management',
-                body: 'Property management companies in Clark County often manage portfolios that span multiple cities. A PM company with properties in Henderson, Las Vegas, and North Las Vegas needs a cleaning partner who can serve every location consistently. Final Touch operates county-wide — the same team, the same standard, across every city.',
+                body: 'Property management companies in Clark County often manage portfolios that span multiple cities. A PM company with properties in Henderson, Las Vegas, and North Las Vegas needs a cleaning partner who can serve every location consistently. Final Touch operates county-wide, the same team, the same standard, across every city.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -311,7 +313,7 @@ export default function DeepCleaningClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Deep cleaning in Clark County — common questions"
+        heading="Deep cleaning in Clark County: common questions"
         defaultOpenFirst
       />
 

@@ -32,15 +32,15 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve retail tenants in North Las Vegas?',
-    a: `Yes. Final Touch serves retail tenants along North Las Vegas commercial corridors — strip retail, standalone storefronts, and shopping centers citywide. Scope and schedule confirmed per location. Call ${SITE.phone.display} to set up a walkthrough.`,
+    a: `Yes. Final Touch serves retail tenants along North Las Vegas commercial corridors: strip retail, standalone storefronts, and shopping centers citywide. Scope and schedule confirmed per location. Call ${SITE.phone.display} to set up a walkthrough.`,
   },
   {
     q: 'Can Final Touch clean North Las Vegas stores after hours?',
-    a: "Yes. After-hours scheduling is available for North Las Vegas retail cleaning. NLV retail operates across a range of hours — some businesses run extended evening hours, others close earlier. Cleaning windows are confirmed around your store's actual hours during the walkthrough.",
+    a: "Yes. After-hours scheduling is available for North Las Vegas retail cleaning. NLV retail operates across a range of hours. Some businesses run extended evening hours, others close earlier. Cleaning windows are confirmed around your store's actual hours during the walkthrough.",
   },
   {
     q: 'Does Final Touch serve restaurants and food service businesses in North Las Vegas?',
-    a: 'Yes. North Las Vegas commercial corridors have a significant restaurant and fast-casual presence. Final Touch serves food service retail cleaning — front-of-house dining areas, customer restrooms, and common areas. Food service scope is confirmed during the walkthrough based on your specific operation.',
+    a: 'Yes. North Las Vegas commercial corridors have a significant restaurant and fast-casual presence. Final Touch serves food service retail cleaning: front-of-house dining areas, customer restrooms, and common areas. Food service scope is confirmed during the walkthrough based on your specific operation.',
   },
   {
     q: 'How much does retail space cleaning cost in North Las Vegas?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -128,7 +130,7 @@ export default function RetailSpaceCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Retail space cleaning in North Las Vegas is a scheduled professional clean for
-            storefronts and retail interiors — covering sales floors, customer restrooms, display
+            storefronts and retail interiors, covering sales floors, customer restrooms, display
             areas, and back-of-house on a program built around your store&apos;s hours.{' '}
             <Link href="/services/retail-space-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch retail cleaning
@@ -149,17 +151,17 @@ export default function RetailSpaceCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires retail cleaning in North Las Vegas"
             heading="Commercial corridor retailers, restaurants, and community-serving businesses."
-            sub="NLV retail is working-class and community-serving — a distinct character from Henderson's neighborhood centers or Las Vegas's strip-mall franchise landscape."
+            sub="NLV retail is working-class and community-serving, a distinct character from Henderson's neighborhood centers or Las Vegas's strip-mall franchise landscape."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Commercial corridor retail',
-                body: "Businesses along Lamb Boulevard, Craig Road, Cheyenne Avenue, and surrounding NLV arterials serve the city's large residential population. These practical, community-serving stores — auto parts, beauty supply, dollar stores, pharmacies — need consistent retail cleaning on a practical schedule.",
+                body: "Businesses along Lamb Boulevard, Craig Road, Cheyenne Avenue, and surrounding NLV arterials serve the city's large residential population. These practical, community-serving stores (auto parts, beauty supply, dollar stores, pharmacies) need consistent retail cleaning on a practical schedule.",
               },
               {
                 title: 'Restaurant and food service operators',
-                body: 'North Las Vegas commercial corridors have a significant restaurant and fast-casual presence. Food service environments have specific cleaning needs for front-of-house dining areas, customer restrooms, and high-touch surfaces — all confirmed during the walkthrough.',
+                body: 'North Las Vegas commercial corridors have a significant restaurant and fast-casual presence. Food service environments have specific cleaning needs for front-of-house dining areas, customer restrooms, and high-touch surfaces, all confirmed during the walkthrough.',
               },
               {
                 title: 'Service-based retailers',
@@ -224,15 +226,15 @@ export default function RetailSpaceCleaningNorthLasVegasPage() {
             {[
               {
                 heading: 'Working-class community retail, not destination retail',
-                body: "North Las Vegas retail is primarily community-serving — businesses that the city's large residential population uses regularly for practical needs. Unlike Las Vegas Strip-adjacent destination retail or Henderson's community-serving neighborhood centers for master-planned communities, NLV retail serves a working-class base with high-frequency, practical shopping patterns. The cleaning standard needed is consistent and professional, not premium-positioned.",
+                body: "North Las Vegas retail is primarily community-serving, businesses that the city's large residential population uses regularly for practical needs. Unlike Las Vegas Strip-adjacent destination retail or Henderson's community-serving neighborhood centers for master-planned communities, NLV retail serves a working-class base with high-frequency, practical shopping patterns. The cleaning standard needed is consistent and professional, not premium-positioned.",
               },
               {
                 heading: 'Restaurant presence along commercial corridors',
-                body: "North Las Vegas commercial corridors have a significant restaurant and fast-casual presence that distinguishes them from Henderson's more professional-services-oriented commercial strips. Restaurants and food service businesses have specific retail cleaning needs — front-of-house dining areas, customer restrooms with high daily use, and prep-adjacent spaces that require consistent maintenance. This food service segment is a notable part of NLV retail cleaning demand.",
+                body: "North Las Vegas commercial corridors have a significant restaurant and fast-casual presence that distinguishes them from Henderson's more professional-services-oriented commercial strips. Restaurants and food service businesses have specific retail cleaning needs: front-of-house dining areas, customer restrooms with high daily use, and prep-adjacent spaces that require consistent maintenance. This food service segment is a notable part of NLV retail cleaning demand.",
               },
               {
                 heading: 'Variable operating hours',
-                body: "NLV retail operates across a wider range of hours than Henderson's standard-hours retail — some businesses run extended evenings, others keep standard hours, and food service often runs later. Retail cleaning schedules in North Las Vegas need to flex around this variety. Final Touch confirms cleaning windows during the walkthrough based on your store's actual schedule.",
+                body: "NLV retail operates across a wider range of hours than Henderson's standard-hours retail. Some businesses run extended evenings, others keep standard hours, and food service often runs later. Retail cleaning schedules in North Las Vegas need to flex around this variety. Final Touch confirms cleaning windows during the walkthrough based on your store's actual schedule.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -304,7 +306,7 @@ export default function RetailSpaceCleaningNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Retail space cleaning in North Las Vegas — common questions"
+        heading="Retail space cleaning in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

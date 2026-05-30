@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch offer janitorial programs for Boulder City small businesses?',
-    a: "Yes. Final Touch provides janitorial programs tailored to smaller-scale operations — the type of small shop, restaurant, or professional office that characterizes Boulder City's historic downtown. Scope and frequency are set for the actual size and traffic of the business, not a metro-scale template built for large commercial corridors.",
+    a: "Yes. Final Touch provides janitorial programs tailored to smaller-scale operations, the type of small shop, restaurant, or professional office that characterizes Boulder City's historic downtown. Scope and frequency are set for the actual size and traffic of the business, not a metro-scale template built for large commercial corridors.",
   },
   {
     q: 'How often do Boulder City businesses typically need janitorial service?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function JanitorialServicesBoulderCityPage() {
       <HeroSection
         eyebrow="Janitorial Services · Boulder City, NV"
         heading="Janitorial Services in Boulder City, NV"
-        sub={`Boulder City's small-business community — centered on a historic downtown with tourism-adjacent businesses near Lake Mead — needs janitorial programs tailored to smaller-scale operations. Final Touch provides recurring janitorial services for businesses across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City's small-business community (centered on a historic downtown with tourism-adjacent businesses near Lake Mead) needs janitorial programs tailored to smaller-scale operations. Final Touch provides recurring janitorial services for businesses across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function JanitorialServicesBoulderCityPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Janitorial services in Boulder City are scheduled recurring cleaning programs for
-            businesses and commercial spaces — covering lobbies, restrooms, common areas, and
+            businesses and commercial spaces, covering lobbies, restrooms, common areas, and
             office suites on a cadence built around your business.{' '}
             <Link href="/services/janitorial-services" className="text-brand-blue font-semibold hover:underline">
               Final Touch janitorial services
@@ -155,7 +157,7 @@ export default function JanitorialServicesBoulderCityPage() {
             {[
               {
                 title: 'Historic downtown small businesses',
-                body: 'Shops, boutiques, and specialty businesses along Nevada Way and the historic downtown corridor. Typically small square footage but consistent cleaning needs — customer-facing spaces that need to be presentable for the community and visitors.',
+                body: 'Shops, boutiques, and specialty businesses along Nevada Way and the historic downtown corridor. Typically small square footage but consistent cleaning needs, customer-facing spaces that need to be presentable for the community and visitors.',
               },
               {
                 title: 'Tourism and Lake Mead-adjacent businesses',
@@ -167,7 +169,7 @@ export default function JanitorialServicesBoulderCityPage() {
               },
               {
                 title: 'Community facilities and organizations',
-                body: "Boulder City's small-town character includes community-serving organizations and facilities that need consistent janitorial maintenance — spaces that serve the local population on a regular schedule.",
+                body: "Boulder City's small-town character includes community-serving organizations and facilities that need consistent janitorial maintenance, spaces that serve the local population on a regular schedule.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -225,15 +227,15 @@ export default function JanitorialServicesBoulderCityPage() {
             {[
               {
                 heading: 'Small-town scale requires a different approach',
-                body: "Boulder City's businesses are small-footprint and relationship-oriented. A janitorial program here is not a large-building contract — it is a recurring relationship with a small shop or office where the owner often knows their service providers personally. Final Touch approaches Boulder City janitorial clients the same way it approaches everything: scope confirmed, schedule confirmed, consistent standard on every visit.",
+                body: "Boulder City's businesses are small-footprint and relationship-oriented. A janitorial program here is not a large-building contract. It is a recurring relationship with a small shop or office where the owner often knows their service providers personally. Final Touch approaches Boulder City janitorial clients the same way it approaches everything: scope confirmed, schedule confirmed, consistent standard on every visit.",
               },
               {
                 heading: 'Tourism seasonality creates flexible program needs',
-                body: 'The spring and fall visitor peaks from Hoover Dam and Lake Mead tourism create seasonal variation in foot traffic for some Boulder City businesses. A janitorial program that can flex — more frequent visits during peak season, standard schedule during off-peak — is a practical fit for these businesses. Final Touch discusses seasonal scheduling during the walkthrough.',
+                body: 'The spring and fall visitor peaks from Hoover Dam and Lake Mead tourism create seasonal variation in foot traffic for some Boulder City businesses. A janitorial program that can flex (more frequent visits during peak season, standard schedule during off-peak) is a practical fit for these businesses. Final Touch discusses seasonal scheduling during the walkthrough.',
               },
               {
                 heading: 'Final Touch serves Boulder City consistently',
-                body: 'Some Boulder City business owners wonder whether a cleaning company based in the Las Vegas Valley will reliably serve a smaller, more distant client. Final Touch serves Boulder City as a regular part of its Clark County service territory — the same reliability and standard applied to every client regardless of city size.',
+                body: 'Some Boulder City business owners wonder whether a cleaning company based in the Las Vegas Valley will reliably serve a smaller, more distant client. Final Touch serves Boulder City as a regular part of its Clark County service territory, the same reliability and standard applied to every client regardless of city size.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function JanitorialServicesBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Janitorial services in Boulder City — common questions"
+        heading="Janitorial services in Boulder City: common questions"
         defaultOpenFirst
       />
 

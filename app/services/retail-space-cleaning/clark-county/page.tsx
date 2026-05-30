@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does retail space cleaning include in Clark County?',
-    a: 'Retail space cleaning covers sales floor surfaces, entry and transition areas, fitting rooms where applicable, customer restrooms, break room and back-of-house areas, display surfaces, and floor care. Scope confirmed during a walkthrough based on your store layout, hours, and specific needs — the same process in every Clark County city.',
+    a: 'Retail space cleaning covers sales floor surfaces, entry and transition areas, fitting rooms where applicable, customer restrooms, break room and back-of-house areas, display surfaces, and floor care. Scope confirmed during a walkthrough based on your store layout, hours, and specific needs, the same process in every Clark County city.',
   },
   {
     q: 'Does Final Touch serve retail tenants across all Clark County cities?',
-    a: `Yes. Final Touch serves retail tenants across all of ${SITE.serviceArea.county} — Las Vegas strip malls and shopping corridors, Henderson neighborhood shopping centers, North Las Vegas commercial corridor retailers, and Boulder City's historic downtown storefronts. Same standard, every city.`,
+    a: `Yes. Final Touch serves retail tenants across all of ${SITE.serviceArea.county}: Las Vegas strip malls and shopping corridors, Henderson neighborhood shopping centers, North Las Vegas commercial corridor retailers, and Boulder City's historic downtown storefronts. Same standard, every city.`,
   },
   {
     q: 'Can Final Touch clean multiple retail locations across Clark County?',
-    a: `Yes. Franchise operators, retail chains, and property managers with multiple retail locations across Clark County can work with Final Touch for all their stores — one cleaning partner, consistent standard, across every city in the county. Call ${SITE.phone.display} to discuss a multi-location arrangement.`,
+    a: `Yes. Franchise operators, retail chains, and property managers with multiple retail locations across Clark County can work with Final Touch for all their stores, one cleaning partner, consistent standard, across every city in the county. Call ${SITE.phone.display} to discuss a multi-location arrangement.`,
   },
   {
     q: 'Does Final Touch serve retail property managers with county-wide portfolios?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does retail space cleaning cost in Clark County?',
-    a: `Pricing depends on store size, frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — same process in every county city.`,
+    a: `Pricing depends on store size, frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting, same process in every county city.`,
   },
 ];
 
@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -134,7 +136,7 @@ export default function RetailSpaceCleaningClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Retail space cleaning in Clark County is a scheduled professional clean for
-            storefronts and retail interiors — covering sales floors, customer restrooms, display
+            storefronts and retail interiors, covering sales floors, customer restrooms, display
             areas, and back-of-house on a program built around your store&apos;s hours.{' '}
             <Link href="/services/retail-space-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch retail cleaning
@@ -155,17 +157,17 @@ export default function RetailSpaceCleaningClarkCountyPage() {
           <SectionHeader
             eyebrow="Who hires retail cleaning in Clark County"
             heading="Franchise operators, retail chains, and property managers across every county city."
-            sub="Clark County's retail landscape is the most varied in Nevada — from Las Vegas's high-density strip malls to Boulder City's historic downtown storefronts."
+            sub="Clark County's retail landscape is the most varied in Nevada, from Las Vegas's high-density strip malls to Boulder City's historic downtown storefronts."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Multi-location franchise operators',
-                body: 'Franchise operators with retail locations across Clark County — multiple cities, multiple formats — need a cleaning partner who applies a consistent standard at every location. Final Touch serves franchise operators county-wide.',
+                body: 'Franchise operators with retail locations across Clark County (multiple cities, multiple formats) need a cleaning partner who applies a consistent standard at every location. Final Touch serves franchise operators county-wide.',
               },
               {
                 title: 'Las Vegas strip mall and corridor tenants',
-                body: "Las Vegas's dense strip mall and shopping corridor retail creates high-volume retail cleaning demand — franchise retailers, independent stores, and mixed-use center tenants all needing customer-ready storefronts.",
+                body: "Las Vegas's dense strip mall and shopping corridor retail creates high-volume retail cleaning demand: franchise retailers, independent stores, and mixed-use center tenants all needing customer-ready storefronts.",
               },
               {
                 title: 'Henderson neighborhood shopping center tenants',
@@ -173,7 +175,7 @@ export default function RetailSpaceCleaningClarkCountyPage() {
               },
               {
                 title: 'Retail property managers with county portfolios',
-                body: 'Property management companies overseeing retail properties or shopping centers across multiple county cities need a single retail cleaning partner for their entire county portfolio — one arrangement, every location.',
+                body: 'Property management companies overseeing retail properties or shopping centers across multiple county cities need a single retail cleaning partner for their entire county portfolio, one arrangement, every location.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -214,7 +216,7 @@ export default function RetailSpaceCleaningClarkCountyPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed during the walkthrough. The same process applies in every Clark County
-            city — store layout, hours, and specific needs addressed per location.
+            city: store layout, hours, and specific needs addressed per location.
           </p>
         </div>
       </section>
@@ -224,7 +226,7 @@ export default function RetailSpaceCleaningClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Retail cleaning across Clark County"
-            heading="The most varied retail landscape in Nevada — all served county-wide."
+            heading="The most varied retail landscape in Nevada, all served county-wide."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
@@ -234,11 +236,11 @@ export default function RetailSpaceCleaningClarkCountyPage() {
               },
               {
                 heading: 'Franchise operators need consistent county-wide coverage',
-                body: "Clark County's size and retail density make it a common market for franchise operators running multiple retail locations. A franchise with stores in Las Vegas, Henderson, and North Las Vegas needs cleaning programs at all locations — same standard, coordinated schedule, one partner. Final Touch provides that county-wide coverage.",
+                body: "Clark County's size and retail density make it a common market for franchise operators running multiple retail locations. A franchise with stores in Las Vegas, Henderson, and North Las Vegas needs cleaning programs at all locations: same standard, coordinated schedule, one partner. Final Touch provides that county-wide coverage.",
               },
               {
                 heading: 'Retail property managers need one partner for every city',
-                body: 'Shopping center and retail property managers in Clark County often oversee properties across multiple cities. Managing separate cleaning vendors for each city adds overhead and creates inconsistency. Final Touch serves retail portfolios county-wide — one contract, one standard, every location.',
+                body: 'Shopping center and retail property managers in Clark County often oversee properties across multiple cities. Managing separate cleaning vendors for each city adds overhead and creates inconsistency. Final Touch serves retail portfolios county-wide: one contract, one standard, every location.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function RetailSpaceCleaningClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Retail space cleaning in Clark County — common questions"
+        heading="Retail space cleaning in Clark County: common questions"
         defaultOpenFirst
       />
 

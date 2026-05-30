@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'How often should Las Vegas homes be deep cleaned?',
-    a: 'Las Vegas sits in the Mojave Desert, which means fine-particle dust accumulates indoors faster than in wetter climates. Many Las Vegas homeowners schedule deep cleans more frequently than they would elsewhere — typically seasonally or two to four times per year. The right frequency depends on your space, how it is used, and your tolerance for buildup. Contact Final Touch for a recommendation based on your home.',
+    a: 'Las Vegas sits in the Mojave Desert, which means fine-particle dust accumulates indoors faster than in wetter climates. Many Las Vegas homeowners schedule deep cleans more frequently than they would elsewhere, typically seasonally or two to four times per year. The right frequency depends on your space, how it is used, and your tolerance for buildup. Contact Final Touch for a recommendation based on your home.',
   },
   {
     q: 'How much does deep cleaning cost in Las Vegas?',
@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: 'Can deep cleaning help with Las Vegas vacation rental properties?',
-    a: 'Yes. Vacation rental and short-term rental owners in Las Vegas use periodic deep cleans to keep properties at a consistent guest-ready standard beyond what standard turnover cleaning achieves. Scope and scheduling — including between extended-stay bookings or at seasonal resets — are confirmed during booking.',
+    a: 'Yes. Vacation rental and short-term rental owners in Las Vegas use periodic deep cleans to keep properties at a consistent guest-ready standard beyond what standard turnover cleaning achieves. Scope and scheduling (including between extended-stay bookings or at seasonal resets) are confirmed during booking.',
   },
 ];
 
@@ -91,6 +91,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -135,7 +137,7 @@ export default function DeepCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Deep Cleaning · Las Vegas, NV"
         heading="Deep Cleaning in Las Vegas, NV"
-        sub={`Las Vegas homes and businesses accumulate dust and buildup faster than most cities. Final Touch provides a thorough deep clean — inside appliances, grout, vents, and every detail surface — for homeowners, renters, and property owners across Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`Las Vegas homes and businesses accumulate dust and buildup faster than most cities. Final Touch provides a thorough deep clean (inside appliances, grout, vents, and every detail surface) for homeowners, renters, and property owners across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -153,7 +155,7 @@ export default function DeepCleaningLasVegasPage() {
               Final Touch deep cleaning
             </Link>{' '}
             covers inside appliances, grout lines, vents and air returns, inside cabinets, behind
-            furniture, baseboards, light fixtures, and all floor surfaces — the areas that collect
+            furniture, baseboards, light fixtures, and all floor surfaces, the areas that collect
             Mojave desert dust and buildup over time. Scope is confirmed before the clean begins.
             To schedule or request a quote, call{' '}
             <a
@@ -187,7 +189,7 @@ export default function DeepCleaningLasVegasPage() {
               },
               {
                 title: 'Renters doing a seasonal reset',
-                body: "Las Vegas's large renter population uses deep cleans not just at move-out but mid-tenancy — a full reset after months of buildup, especially heading into or out of the extreme summer heat season.",
+                body: "Las Vegas's large renter population uses deep cleans not just at move-out but mid-tenancy, a full reset after months of buildup, especially heading into or out of the extreme summer heat season.",
               },
               {
                 title: 'Business owners with commercial spaces',
@@ -235,7 +237,7 @@ export default function DeepCleaningLasVegasPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope is confirmed before the clean begins. If you have specific priorities or areas of
-            concern — including hard-water buildup common in Las Vegas tap water — let us know
+            concern (including hard-water buildup common in Las Vegas tap water) let us know
             during booking.
           </p>
         </div>
@@ -261,7 +263,7 @@ export default function DeepCleaningLasVegasPage() {
               },
               {
                 heading: 'Hard water mineral deposits',
-                body: "Las Vegas has hard water. Mineral deposits build up on faucets, shower tile, glass, and fixture surfaces over time. A deep clean addresses these deposits in bathrooms and kitchens — areas that standard maintenance cleaning doesn't fully reach.",
+                body: "Las Vegas has hard water. Mineral deposits build up on faucets, shower tile, glass, and fixture surfaces over time. A deep clean addresses these deposits in bathrooms and kitchens, areas that standard maintenance cleaning doesn't fully reach.",
               },
             ].map(({ heading, body }) => (
               <div
@@ -336,7 +338,7 @@ export default function DeepCleaningLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Deep cleaning in Las Vegas — common questions"
+        heading="Deep cleaning in Las Vegas: common questions"
         defaultOpenFirst
       />
 

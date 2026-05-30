@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What do janitorial services include in Las Vegas?',
-    a: 'Janitorial services cover recurring cleaning of offices, restrooms, lobbies, break rooms, and common areas on a scheduled basis — nightly, weekly, or a custom frequency. Scope includes trash removal and liner replacement, floor care (vacuuming, mopping, or hard-floor maintenance depending on surface type), surface wiping, restroom cleaning, and high-touch surface maintenance. Program scope and schedule are confirmed per building during the initial walkthrough.',
+    a: 'Janitorial services cover recurring cleaning of offices, restrooms, lobbies, break rooms, and common areas on a scheduled basis: nightly, weekly, or a custom frequency. Scope includes trash removal and liner replacement, floor care (vacuuming, mopping, or hard-floor maintenance depending on surface type), surface wiping, restroom cleaning, and high-touch surface maintenance. Program scope and schedule are confirmed per building during the initial walkthrough.',
   },
   {
     q: 'What is the difference between janitorial services and commercial office cleaning in Las Vegas?',
-    a: 'Commercial office cleaning is typically a thorough clean of a specific office suite — workstations, restrooms, and common areas for one tenant or one floor. Janitorial services cover recurring, building-wide or program-wide maintenance cleaning on a regular schedule, often spanning multiple tenants, common areas, and shared facilities. The distinction is frequency and scope breadth, not cleaning quality. Final Touch offers both; the right fit depends on your building and is confirmed during consultation.',
+    a: 'Commercial office cleaning is typically a thorough clean of a specific office suite: workstations, restrooms, and common areas for one tenant or one floor. Janitorial services cover recurring, building-wide or program-wide maintenance cleaning on a regular schedule, often spanning multiple tenants, common areas, and shared facilities. The distinction is frequency and scope breadth, not cleaning quality. Final Touch offers both; the right fit depends on your building and is confirmed during consultation.',
   },
   {
     q: 'Does Final Touch offer nightly janitorial service in Las Vegas?',
-    a: "Yes. Final Touch offers scheduling options including nightly programs for high-traffic Las Vegas commercial spaces. Las Vegas's tourism economy means many businesses here operate outside standard 9-to-5 hours — cleaning schedules are built around your building's actual hours and access windows.",
+    a: "Yes. Final Touch offers scheduling options including nightly programs for high-traffic Las Vegas commercial spaces. Las Vegas's tourism economy means many businesses here operate outside standard 9-to-5 hours. Cleaning schedules are built around your building's actual hours and access windows.",
   },
   {
     q: 'How much do janitorial services cost in Las Vegas?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -142,7 +144,7 @@ export default function JanitorialServicesLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Janitorial services in Las Vegas are scheduled recurring cleaning programs for commercial
-            buildings and facilities — covering lobbies, restrooms, common areas, and office suites
+            buildings and facilities, covering lobbies, restrooms, common areas, and office suites
             on a set cadence.{' '}
             <Link
               href="/services/janitorial-services"
@@ -232,7 +234,7 @@ export default function JanitorialServicesLasVegasPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Program scope, visit frequency, and access timing are confirmed per building during
-            the initial walkthrough. Custom schedules — including nightly programs — are available.
+            the initial walkthrough. Custom schedules (including nightly programs) are available.
           </p>
         </div>
       </section>
@@ -253,11 +255,11 @@ export default function JanitorialServicesLasVegasPage() {
               },
               {
                 heading: 'Around-the-clock operating schedules',
-                body: "Las Vegas's 24-hour economy extends beyond casinos. Hospitality-adjacent businesses, event companies, healthcare facilities, and service operations often run outside standard business hours. Janitorial programs need to accommodate those schedules — cleaning before opening, after closing, or during low-traffic windows.",
+                body: "Las Vegas's 24-hour economy extends beyond casinos. Hospitality-adjacent businesses, event companies, healthcare facilities, and service operations often run outside standard business hours. Janitorial programs need to accommodate those schedules, cleaning before opening, after closing, or during low-traffic windows.",
               },
               {
                 heading: 'Desert dust load in commercial spaces',
-                body: 'Mojave desert dust settles on horizontal surfaces, vents, and window sills in commercial buildings faster than in wetter markets. Janitorial programs in Las Vegas buildings factor in that dust accumulation — particularly in lobbies with frequent exterior-door traffic — as part of the regular schedule.',
+                body: 'Mojave desert dust settles on horizontal surfaces, vents, and window sills in commercial buildings faster than in wetter markets. Janitorial programs in Las Vegas buildings factor in that dust accumulation (particularly in lobbies with frequent exterior-door traffic) as part of the regular schedule.',
               },
             ].map(({ heading, body }) => (
               <div
@@ -332,7 +334,7 @@ export default function JanitorialServicesLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Janitorial services in Las Vegas — common questions"
+        heading="Janitorial services in Las Vegas: common questions"
         defaultOpenFirst
       />
 

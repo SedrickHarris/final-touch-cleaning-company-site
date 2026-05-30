@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Do I need move-in cleaning for a new North Las Vegas home?',
-    a: "Yes. North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New construction here leaves drywall dust, adhesive residue, and window film after the builder's standard handoff clean. A move-in clean addresses what the site sweep misses — particularly in vents, inside cabinets, and on window surfaces — before furniture and belongings arrive.",
+    a: "Yes. North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New construction here leaves drywall dust, adhesive residue, and window film after the builder's standard handoff clean. A move-in clean addresses what the site sweep misses (particularly in vents, inside cabinets, and on window surfaces) before furniture and belongings arrive.",
   },
   {
     q: 'Does Final Touch serve apartments in North Las Vegas for move-in cleaning?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How soon before my move-in date should I schedule cleaning in North Las Vegas?',
-    a: 'As early as possible once access is confirmed. For new builds in North Las Vegas, coordinate with your builder on when the home is accessible after handoff. Scheduling the clean before furniture arrives makes the work more thorough — every surface is accessible without working around boxes.',
+    a: 'As early as possible once access is confirmed. For new builds in North Las Vegas, coordinate with your builder on when the home is accessible after handoff. Scheduling the clean before furniture arrives makes the work more thorough. Every surface is accessible without working around boxes.',
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
       <HeroSection
         eyebrow="Move-In Cleaning · North Las Vegas, NV"
         heading="Move-In Cleaning in North Las Vegas, NV"
-        sub={`North Las Vegas combines active new residential construction with a large rental market — two distinct move-in cleaning audiences. Final Touch serves new-build buyers, renters moving into apartments, and landlords resetting units across North Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`North Las Vegas combines active new residential construction with a large rental market, two distinct move-in cleaning audiences. Final Touch serves new-build buyers, renters moving into apartments, and landlords resetting units across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -127,7 +129,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Move-in cleaning in North Las Vegas is a professional clean before move-in day —
+            Move-in cleaning in North Las Vegas is a professional clean before move-in day,
             addressing construction residue in new builds, prior-occupant buildup in rental units,
             and detail surfaces throughout that a seller, builder, or previous tenant left behind.{' '}
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
@@ -155,19 +157,19 @@ export default function MoveInCleaningNorthLasVegasPage() {
             {[
               {
                 title: 'Renters moving into apartments and rental homes',
-                body: 'North Las Vegas has one of the higher renter-density profiles in the valley. Renters moving into a new unit want a clean baseline on day one — regardless of what the previous tenant left behind or how thoroughly the landlord cleaned between occupants.',
+                body: 'North Las Vegas has one of the higher renter-density profiles in the valley. Renters moving into a new unit want a clean baseline on day one, regardless of what the previous tenant left behind or how thoroughly the landlord cleaned between occupants.',
               },
               {
                 title: 'New-construction homeowners',
-                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New homeowners closing on recently built homes use a move-in clean to address construction residue that survives the builder's standard sweep — particularly in vents, window tracks, and inside cabinets.",
+                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New homeowners closing on recently built homes use a move-in clean to address construction residue that survives the builder's standard sweep, particularly in vents, window tracks, and inside cabinets.",
               },
               {
                 title: 'Landlords resetting rental units',
-                body: 'North Las Vegas landlords often manage multiple units. A move-in clean ensures the unit is in verified condition for the incoming tenant — distinct from the move-out clean of the prior occupant and a practical step in a high-turnover rental market.',
+                body: 'North Las Vegas landlords often manage multiple units. A move-in clean ensures the unit is in verified condition for the incoming tenant, distinct from the move-out clean of the prior occupant and a practical step in a high-turnover rental market.',
               },
               {
                 title: 'First-time homebuyers',
-                body: 'North Las Vegas offers more affordable home prices than Henderson, making it a common market for first-time buyers. These buyers purchasing established homes want a thorough clean before unpacking — addressing what sellers left behind in detail surfaces and appliances.',
+                body: 'North Las Vegas offers more affordable home prices than Henderson, making it a common market for first-time buyers. These buyers purchasing established homes want a thorough clean before unpacking, addressing what sellers left behind in detail surfaces and appliances.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -208,7 +210,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed before the clean begins. For North Las Vegas new builds, let us know
-            you are moving into a new construction home — we will confirm scope for construction
+            you are moving into a new construction home. We will confirm scope for construction
             residue at booking.
           </p>
         </div>
@@ -224,11 +226,11 @@ export default function MoveInCleaningNorthLasVegasPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
               {
-                heading: 'Active residential construction — new-build move-in demand',
-                body: "North Las Vegas has been among the most active residential growth areas in the Las Vegas Valley for years. New subdivisions and infill development create a consistent pipeline of new-build move-in cleaning jobs. The builder's standard handoff clean is a site sweep — it does not address construction residue in vents, adhesive on floor surfaces, window film on every pane, or fine drywall dust in inside-cabinet surfaces. A professional move-in clean after handoff covers what the builder left behind.",
+                heading: 'Active residential construction: new-build move-in demand',
+                body: "North Las Vegas has been among the most active residential growth areas in the Las Vegas Valley for years. New subdivisions and infill development create a consistent pipeline of new-build move-in cleaning jobs. The builder's standard handoff clean is a site sweep. It does not address construction residue in vents, adhesive on floor surfaces, window film on every pane, or fine drywall dust in inside-cabinet surfaces. A professional move-in clean after handoff covers what the builder left behind.",
               },
               {
-                heading: 'High rental density — incoming tenant move-in demand',
+                heading: 'High rental density: incoming tenant move-in demand',
                 body: "North Las Vegas's large renter population means move-in cleaning is a high-frequency recurring need alongside the new-construction segment. Renters moving into apartments and single-family rentals across the city want assurance that the space is clean before they bring in their belongings. Whether the previous tenant left the unit in good condition or not, a professional move-in clean provides a verified starting point.",
               },
             ].map(({ heading, body }) => (
@@ -301,7 +303,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-in cleaning in North Las Vegas — common questions"
+        heading="Move-in cleaning in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

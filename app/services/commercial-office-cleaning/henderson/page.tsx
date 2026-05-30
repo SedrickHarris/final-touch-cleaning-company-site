@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does commercial office cleaning include in Henderson?',
-    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope — frequency, specific rooms, access timing — is confirmed during a walkthrough before the first clean.',
+    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope (frequency, specific rooms, access timing) is confirmed during a walkthrough before the first clean.',
   },
   {
     q: 'Does Final Touch serve the Green Valley Parkway commercial corridor?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does office cleaning cost in Henderson?',
-    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — no rate is given without reviewing your space.`,
+    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting. No rate is given without reviewing your space.`,
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function CommercialOfficeCleaningHendersonPage() {
       <HeroSection
         eyebrow="Commercial Office Cleaning · Henderson, NV"
         heading="Commercial Office Cleaning in Henderson, NV"
-        sub={`Henderson's commercial sector runs along Green Valley Parkway and the Sunset Road corridor — professional services, medical offices, and retail-adjacent commercial spaces serving the city's large master-planned community base. Final Touch provides recurring commercial office cleaning for businesses across Henderson and ${SITE.serviceArea.county}.`}
+        sub={`Henderson's commercial sector runs along Green Valley Parkway and the Sunset Road corridor: professional services, medical offices, and retail-adjacent commercial spaces serving the city's large master-planned community base. Final Touch provides recurring commercial office cleaning for businesses across Henderson and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function CommercialOfficeCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Commercial office cleaning in Henderson is a recurring professional cleaning program
-            for offices and commercial spaces — covering workstations, common areas, restrooms,
+            for offices and commercial spaces, covering workstations, common areas, restrooms,
             and high-touch surfaces on a schedule that fits the business.{' '}
             <Link href="/services/commercial-office-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch commercial cleaning
@@ -149,13 +151,13 @@ export default function CommercialOfficeCleaningHendersonPage() {
           <SectionHeader
             eyebrow="Who hires office cleaning in Henderson"
             heading="Professional services, healthcare, and community-serving businesses along Henderson's commercial corridors."
-            sub="Henderson's commercial character is suburban and professionally oriented — distinct from Las Vegas's tourism-influenced commercial landscape."
+            sub="Henderson's commercial character is suburban and professionally oriented, distinct from Las Vegas's tourism-influenced commercial landscape."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Green Valley Parkway corridor tenants',
-                body: "Henderson's primary commercial corridor runs along Green Valley Parkway and Sunset Road. Professional services firms — law offices, financial advisors, real estate companies, insurance agencies — make up a significant portion of the tenants, alongside medical offices and mixed-use commercial spaces.",
+                body: "Henderson's primary commercial corridor runs along Green Valley Parkway and Sunset Road. Professional services firms (law offices, financial advisors, real estate companies, insurance agencies) make up a significant portion of the tenants, alongside medical offices and mixed-use commercial spaces.",
               },
               {
                 title: 'Medical and healthcare offices',
@@ -163,7 +165,7 @@ export default function CommercialOfficeCleaningHendersonPage() {
               },
               {
                 title: 'Small professional services firms',
-                body: "Henderson's suburban business base includes a large number of small professional services offices — accounting firms, title companies, staffing agencies, and similar businesses — that need regular cleaning on a schedule and budget that fits their size.",
+                body: "Henderson's suburban business base includes a large number of small professional services offices (accounting firms, title companies, staffing agencies, and similar businesses) that need regular cleaning on a schedule and budget that fits their size.",
               },
               {
                 title: 'Retail-adjacent commercial spaces',
@@ -225,15 +227,15 @@ export default function CommercialOfficeCleaningHendersonPage() {
             {[
               {
                 heading: 'A suburban, professionally-oriented commercial base',
-                body: "Henderson's commercial sector serves a large, established residential base rather than a tourism economy. The businesses along Green Valley Parkway and Sunset Road are predominantly professional services, healthcare, and community-serving businesses — not hospitality-adjacent or entertainment-adjacent. The cleaning standard expected is professional and consistent, not high-volume or after-hours intensive.",
+                body: "Henderson's commercial sector serves a large, established residential base rather than a tourism economy. The businesses along Green Valley Parkway and Sunset Road are predominantly professional services, healthcare, and community-serving businesses, not hospitality-adjacent or entertainment-adjacent. The cleaning standard expected is professional and consistent, not high-volume or after-hours intensive.",
               },
               {
                 heading: 'Medical office concentration',
-                body: "Henderson's proximity to healthcare facilities and its established residential base has created a significant concentration of medical offices, specialist practices, and outpatient services along its commercial corridors. Medical offices have specific cleaning requirements beyond standard office cleaning — Final Touch confirms scope during the walkthrough for any healthcare-environment client.",
+                body: "Henderson's proximity to healthcare facilities and its established residential base has created a significant concentration of medical offices, specialist practices, and outpatient services along its commercial corridors. Medical offices have specific cleaning requirements beyond standard office cleaning. Final Touch confirms scope during the walkthrough for any healthcare-environment client.",
               },
               {
                 heading: 'Mojave dust in Henderson commercial spaces',
-                body: 'The same desert dust load that affects Henderson homes affects commercial offices. Fine-particle Mojave dust settles on horizontal surfaces, vents, and window sills in Henderson offices faster than in wetter markets. Many Henderson offices schedule more frequent cleaning passes than they would elsewhere — a practical response to the local climate, particularly for medical and professional environments where a dusty workspace reflects poorly.',
+                body: 'The same desert dust load that affects Henderson homes affects commercial offices. Fine-particle Mojave dust settles on horizontal surfaces, vents, and window sills in Henderson offices faster than in wetter markets. Many Henderson offices schedule more frequent cleaning passes than they would elsewhere, a practical response to the local climate, particularly for medical and professional environments where a dusty workspace reflects poorly.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function CommercialOfficeCleaningHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Commercial office cleaning in Henderson — common questions"
+        heading="Commercial office cleaning in Henderson: common questions"
         defaultOpenFirst
       />
 

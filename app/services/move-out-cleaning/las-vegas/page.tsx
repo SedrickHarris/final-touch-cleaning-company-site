@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does move-out cleaning help get my deposit back in Las Vegas?',
-    a: 'A professional move-out clean directly addresses the surfaces Las Vegas landlords inspect at lease end — inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard a landlord expects. We cannot guarantee a deposit return, but we clean to the standard that supports it.',
+    a: 'A professional move-out clean directly addresses the surfaces Las Vegas landlords inspect at lease end: inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard a landlord expects. We cannot guarantee a deposit return, but we clean to the standard that supports it.',
   },
   {
     q: 'How far in advance should I book move-out cleaning in Las Vegas?',
-    a: 'Book as early as possible once you have a confirmed move-out date or lease-end deadline. Las Vegas has one of the higher rental turnover rates in the region, and availability around month-end — when most leases end — can be tighter than expected. Calling ahead gives you the best shot at your preferred date.',
+    a: 'Book as early as possible once you have a confirmed move-out date or lease-end deadline. Las Vegas has one of the higher rental turnover rates in the region, and availability around month-end (when most leases end) can be tighter than expected. Calling ahead gives you the best shot at your preferred date.',
   },
   {
     q: 'Does Final Touch clean empty apartments in Las Vegas?',
@@ -91,6 +91,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -135,7 +137,7 @@ export default function MoveOutCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning · Las Vegas, NV"
         heading="Move-Out Cleaning in Las Vegas, NV"
-        sub={`Las Vegas has one of the highest rental turnover rates in the region. Final Touch provides professional move-out cleaning for renters, landlords, and property managers across Las Vegas and ${SITE.serviceArea.county} — cleaning to the standard that supports a deposit return.`}
+        sub={`Las Vegas has one of the highest rental turnover rates in the region. Final Touch provides professional move-out cleaning for renters, landlords, and property managers across Las Vegas and ${SITE.serviceArea.county}, cleaning to the standard that supports a deposit return.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -191,7 +193,7 @@ export default function MoveOutCleaningLasVegasPage() {
               },
               {
                 title: 'Property management companies',
-                body: 'Las Vegas has a substantial property management sector. Move-out cleans are a recurring requirement in managed portfolios — a consistent standard on every unit, every time.',
+                body: 'Las Vegas has a substantial property management sector. Move-out cleans are a recurring requirement in managed portfolios, a consistent standard on every unit, every time.',
               },
               {
                 title: 'Homeowners selling in Las Vegas',
@@ -216,7 +218,7 @@ export default function MoveOutCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="Scope"
             heading="What move-out cleaning covers."
-            sub="A move-out clean goes into the areas that get neglected over time — the surfaces your landlord will check."
+            sub="A move-out clean goes into the areas that get neglected over time, the surfaces your landlord will check."
           />
           <ul className="mt-8 space-y-3">
             {[
@@ -256,11 +258,11 @@ export default function MoveOutCleaningLasVegasPage() {
             {[
               {
                 heading: 'High rental turnover across the metro',
-                body: 'A significant portion of Las Vegas residents rent rather than own. The resulting lease cycle creates consistent turnover demand — renters moving out and in, landlords resetting units, and property managers coordinating cleans across managed portfolios.',
+                body: 'A significant portion of Las Vegas residents rent rather than own. The resulting lease cycle creates consistent turnover demand: renters moving out and in, landlords resetting units, and property managers coordinating cleans across managed portfolios.',
               },
               {
                 heading: 'Month-end booking pressure',
-                body: 'Most Las Vegas leases end at the end of the month. Move-out cleaning availability clusters around those dates. Booking early — as soon as your move-out date is confirmed — gives you the best chance of securing your preferred time.',
+                body: 'Most Las Vegas leases end at the end of the month. Move-out cleaning availability clusters around those dates. Booking early (as soon as your move-out date is confirmed) gives you the best chance of securing your preferred time.',
               },
               {
                 heading: 'Desert dust compounds the standard clean',
@@ -339,7 +341,7 @@ export default function MoveOutCleaningLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-out cleaning in Las Vegas — common questions"
+        heading="Move-out cleaning in Las Vegas: common questions"
         defaultOpenFirst
       />
 

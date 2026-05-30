@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does move-out cleaning help get my deposit back in North Las Vegas?',
-    a: 'A professional move-out clean directly addresses the surfaces North Las Vegas landlords inspect at lease end — inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
+    a: 'A professional move-out clean directly addresses the surfaces North Las Vegas landlords inspect at lease end: inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
   },
   {
     q: 'How far in advance should I book move-out cleaning in North Las Vegas?',
-    a: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley, which means move-out cleaning demand is consistent throughout the month — not concentrated only at month-end the way it is in markets with more synchronized lease cycles. Booking early is still recommended, especially if you have a firm lease-end deadline or same-day access situation.',
+    a: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley, which means move-out cleaning demand is consistent throughout the month, not concentrated only at month-end the way it is in markets with more synchronized lease cycles. Booking early is still recommended, especially if you have a firm lease-end deadline or same-day access situation.',
   },
   {
     q: 'Does Final Touch serve apartments in North Las Vegas for move-out cleaning?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'Can landlords in North Las Vegas book recurring move-out cleans?',
-    a: 'Yes. North Las Vegas landlords managing multiple rental properties — a common profile in this high-density rental market — can arrange recurring turnover cleaning with Final Touch. Contact us to discuss an ongoing arrangement for your portfolio.',
+    a: 'Yes. North Las Vegas landlords managing multiple rental properties (a common profile in this high-density rental market) can arrange recurring turnover cleaning with Final Touch. Contact us to discuss an ongoing arrangement for your portfolio.',
   },
   {
     q: 'How much does move-out cleaning cost in North Las Vegas?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -121,7 +123,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning · North Las Vegas, NV"
         heading="Move-Out Cleaning in North Las Vegas, NV"
-        sub={`North Las Vegas has one of the highest renter-density profiles in the Las Vegas Valley. Final Touch provides professional move-out cleaning for renters, landlords, and property managers across North Las Vegas and ${SITE.serviceArea.county} — cleaning to the standard that supports deposit recovery.`}
+        sub={`North Las Vegas has one of the highest renter-density profiles in the Las Vegas Valley. Final Touch provides professional move-out cleaning for renters, landlords, and property managers across North Las Vegas and ${SITE.serviceArea.county}, cleaning to the standard that supports deposit recovery.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -132,7 +134,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Move-out cleaning in North Las Vegas is a professional end-of-lease clean that
-            addresses the surfaces landlords inspect — inside appliances, bathrooms, baseboards,
+            addresses the surfaces landlords inspect: inside appliances, bathrooms, baseboards,
             floors, and every area that shows extended use.{' '}
             <Link href="/services/move-out-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-out cleaning
@@ -164,7 +166,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
             {[
               {
                 title: 'Renters in high-density rental areas',
-                body: 'North Las Vegas has a large working-class renter population spread across apartment complexes and single-family rental areas. A professional move-out clean is a direct financial decision — the cost of the clean versus the deposit at stake makes it a practical choice.',
+                body: 'North Las Vegas has a large working-class renter population spread across apartment complexes and single-family rental areas. A professional move-out clean is a direct financial decision. The cost of the clean versus the deposit at stake makes it a practical choice.',
               },
               {
                 title: 'Multi-unit landlords',
@@ -172,7 +174,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
               },
               {
                 title: 'Property management companies',
-                body: "North Las Vegas's high rental density supports an active property management sector. Move-out cleans are a recurring, high-frequency need in managed portfolios — a consistent professional standard on every unit.",
+                body: "North Las Vegas's high rental density supports an active property management sector. Move-out cleans are a recurring, high-frequency need in managed portfolios, a consistent professional standard on every unit.",
               },
               {
                 title: 'Homeowners selling in North Las Vegas',
@@ -233,7 +235,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
             {[
               {
                 heading: "One of the valley's highest renter-density markets",
-                body: "North Las Vegas consistently has one of the higher renter-density profiles in the Las Vegas Valley. A larger share of its housing stock is rental compared to Henderson, and the rental population is spread across both apartment complexes and single-family rentals. This concentration means move-out cleaning demand is high and consistent — one of the city's core residential cleaning needs.",
+                body: "North Las Vegas consistently has one of the higher renter-density profiles in the Las Vegas Valley. A larger share of its housing stock is rental compared to Henderson, and the rental population is spread across both apartment complexes and single-family rentals. This concentration means move-out cleaning demand is high and consistent, one of the city's core residential cleaning needs.",
               },
               {
                 heading: 'Demand is steady throughout the month',
@@ -241,7 +243,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
               },
               {
                 heading: 'Practical economics drive the decision',
-                body: "In North Las Vegas's working-class rental market, the decision to hire a professional move-out cleaner is typically a direct deposit-recovery calculation. Renters weigh the cleaning cost against the deposit at risk. Final Touch provides a thorough, professional clean at a standard that supports that outcome — scope confirmed before the job, no surprises.",
+                body: "In North Las Vegas's working-class rental market, the decision to hire a professional move-out cleaner is typically a direct deposit-recovery calculation. Renters weigh the cleaning cost against the deposit at risk. Final Touch provides a thorough, professional clean at a standard that supports that outcome: scope confirmed before the job, no surprises.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -313,7 +315,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-out cleaning in North Las Vegas — common questions"
+        heading="Move-out cleaning in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

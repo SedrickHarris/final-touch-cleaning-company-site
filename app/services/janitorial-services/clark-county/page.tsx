@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What do janitorial services include in Clark County?',
-    a: 'Janitorial services cover recurring cleaning of offices, restrooms, lobbies, break rooms, and common areas on a scheduled basis. Scope includes trash removal and liner replacement, floor care, surface wiping, and restroom maintenance. For industrial facilities, scope extends to facility-specific common areas. Program scope and schedule confirmed per building or facility — the same process in every Clark County city.',
+    a: 'Janitorial services cover recurring cleaning of offices, restrooms, lobbies, break rooms, and common areas on a scheduled basis. Scope includes trash removal and liner replacement, floor care, surface wiping, and restroom maintenance. For industrial facilities, scope extends to facility-specific common areas. Program scope and schedule confirmed per building or facility, the same process in every Clark County city.',
   },
   {
     q: 'Does Final Touch provide janitorial programs for businesses with multiple Clark County locations?',
-    a: `Yes. Businesses and property management companies with commercial buildings or facilities across multiple Clark County cities can work with Final Touch for all their locations — one janitorial partner, one consistent standard, across the entire county. Call ${SITE.phone.display} to discuss a county-wide arrangement.`,
+    a: `Yes. Businesses and property management companies with commercial buildings or facilities across multiple Clark County cities can work with Final Touch for all their locations: one janitorial partner, one consistent standard, across the entire county. Call ${SITE.phone.display} to discuss a county-wide arrangement.`,
   },
   {
     q: 'What types of buildings does Final Touch serve for janitorial services in Clark County?',
-    a: "Clark County's janitorial client base spans every commercial building type in the Las Vegas Valley: Las Vegas's large commercial office buildings and high-traffic commercial spaces; Henderson's suburban office parks and medical buildings along Green Valley Parkway; North Las Vegas's industrial and warehouse facility common areas; and Boulder City's small historic-downtown businesses. Final Touch serves them all — scope confirmed per building during the walkthrough.",
+    a: "Clark County's janitorial client base spans every commercial building type in the Las Vegas Valley: Las Vegas's large commercial office buildings and high-traffic commercial spaces; Henderson's suburban office parks and medical buildings along Green Valley Parkway; North Las Vegas's industrial and warehouse facility common areas; and Boulder City's small historic-downtown businesses. Final Touch serves them all: scope confirmed per building during the walkthrough.",
   },
   {
     q: 'Does Final Touch serve county-wide property managers for janitorial programs?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much do janitorial services cost in Clark County?',
-    a: `Pricing depends on building or facility size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — same process regardless of which county city the building is in.`,
+    a: `Pricing depends on building or facility size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting, same process regardless of which county city the building is in.`,
   },
 ];
 
@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -123,7 +125,7 @@ export default function JanitorialServicesClarkCountyPage() {
       <HeroSection
         eyebrow="Janitorial Services · Clark County, NV"
         heading="Janitorial Services in Clark County, NV"
-        sub={`Clark County's commercial buildings range from Las Vegas's large office corridors to Henderson's suburban medical parks to North Las Vegas's industrial facilities to Boulder City's small historic-downtown businesses. Final Touch provides recurring janitorial programs for all of them — county-wide, one standard.`}
+        sub={`Clark County's commercial buildings range from Las Vegas's large office corridors to Henderson's suburban medical parks to North Las Vegas's industrial facilities to Boulder City's small historic-downtown businesses. Final Touch provides recurring janitorial programs for all of them, county-wide, one standard.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -134,7 +136,7 @@ export default function JanitorialServicesClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Janitorial services in Clark County are scheduled recurring cleaning programs for
-            commercial buildings and facilities — covering lobbies, restrooms, common areas, and
+            commercial buildings and facilities, covering lobbies, restrooms, common areas, and
             office suites on a cadence built around your operation.{' '}
             <Link href="/services/janitorial-services" className="text-brand-blue font-semibold hover:underline">
               Final Touch janitorial services
@@ -154,7 +156,7 @@ export default function JanitorialServicesClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires janitorial services in Clark County"
-            heading="Every commercial building type in the Las Vegas Valley — county-wide."
+            heading="Every commercial building type in the Las Vegas Valley, county-wide."
             sub="Clark County's janitorial market spans more commercial facility types than any other county in Nevada."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
@@ -165,7 +167,7 @@ export default function JanitorialServicesClarkCountyPage() {
               },
               {
                 title: 'Las Vegas commercial office buildings',
-                body: "Las Vegas's large commercial corridors — professional services, healthcare, hospitality-adjacent businesses — generate demand for building-wide janitorial programs with high-frequency cleaning requirements.",
+                body: "Las Vegas's large commercial corridors (professional services, healthcare, hospitality-adjacent businesses) generate demand for building-wide janitorial programs with high-frequency cleaning requirements.",
               },
               {
                 title: 'Henderson suburban office parks and medical buildings',
@@ -173,7 +175,7 @@ export default function JanitorialServicesClarkCountyPage() {
               },
               {
                 title: 'North Las Vegas industrial and warehouse facilities',
-                body: "North Las Vegas's logistics corridor creates industrial-facility janitorial demand — facility offices, break rooms, and common areas within warehouse and distribution complexes operating on multi-shift schedules.",
+                body: "North Las Vegas's logistics corridor creates industrial-facility janitorial demand: facility offices, break rooms, and common areas within warehouse and distribution complexes operating on multi-shift schedules.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -230,7 +232,7 @@ export default function JanitorialServicesClarkCountyPage() {
             {[
               {
                 heading: 'The most varied commercial building types in Nevada',
-                body: "Clark County's commercial landscape spans Las Vegas's 24-hour high-traffic commercial environments, Henderson's standard-hours suburban professional offices, North Las Vegas's multi-shift industrial facilities, and Boulder City's small-scale historic downtown businesses. A janitorial partner who serves county-wide can accommodate this full range — different schedules, different building types, different operational requirements.",
+                body: "Clark County's commercial landscape spans Las Vegas's 24-hour high-traffic commercial environments, Henderson's standard-hours suburban professional offices, North Las Vegas's multi-shift industrial facilities, and Boulder City's small-scale historic downtown businesses. A janitorial partner who serves county-wide can accommodate this full range: different schedules, different building types, different operational requirements.",
               },
               {
                 heading: 'County-spanning property management needs one partner',
@@ -305,7 +307,7 @@ export default function JanitorialServicesClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Janitorial services in Clark County — common questions"
+        heading="Janitorial services in Clark County: common questions"
         defaultOpenFirst
       />
 

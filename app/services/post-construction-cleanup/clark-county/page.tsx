@@ -28,19 +28,19 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does post-construction cleanup include in Clark County?',
-    a: 'Post-construction cleanup covers removal of construction debris, drywall dust from all surfaces including vents and HVAC returns, adhesive and caulk residue, window film and glass cleaning, fixture cleaning, floor surfaces, and detail cleaning throughout. Scope confirmed per project before the clean begins — the same standard across every Clark County city.',
+    a: 'Post-construction cleanup covers removal of construction debris, drywall dust from all surfaces including vents and HVAC returns, adhesive and caulk residue, window film and glass cleaning, fixture cleaning, floor surfaces, and detail cleaning throughout. Scope confirmed per project before the clean begins, the same standard across every Clark County city.',
   },
   {
     q: 'Who hires post-construction cleanup across Clark County?',
     a: "Clark County's post-construction cleanup client base spans every construction type in the Las Vegas Valley simultaneously: new-home buyers in Henderson's active master-planned communities (Cadence, Inspirada), new-home buyers in North Las Vegas's residential subdivisions, commercial property owners in the industrial corridor, small commercial renovation owners in Boulder City's historic downtown, and homeowners renovating established properties across every city. No single-city page covers this full range.",
   },
   {
-    q: 'Does Final Touch serve construction cleanup in unincorporated Clark County?',
-    a: `Yes. Final Touch's service area covers the incorporated cities and unincorporated areas of Clark County. Construction cleanup in unincorporated areas of the county is served the same way as any incorporated city. Call ${SITE.phone.display} to confirm coverage for your specific address.`,
+    q: 'Does Final Touch serve construction cleanup across Clark County, including areas outside the main cities?',
+    a: `Yes. Final Touch serves construction cleanup throughout Clark County, covering Las Vegas, Henderson, North Las Vegas, and Boulder City along with the communities between and around them. Service is the same countywide. Call ${SITE.phone.display} to confirm coverage for your specific address.`,
   },
   {
     q: 'Does Final Touch serve both residential and commercial post-construction cleanup across Clark County?',
-    a: `Yes. Final Touch serves residential new builds and renovation projects across all county cities, and commercial construction cleanup including office buildouts, retail renovations, and industrial facility work — particularly in North Las Vegas's logistics corridor. Call ${SITE.phone.display} to discuss your project.`,
+    a: `Yes. Final Touch serves residential new builds and renovation projects across all county cities, and commercial construction cleanup including office buildouts, retail renovations, and industrial facility work, particularly in North Las Vegas's logistics corridor. Call ${SITE.phone.display} to discuss your project.`,
   },
   {
     q: 'How much does post-construction cleanup cost in Clark County?',
@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -123,7 +125,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
       <HeroSection
         eyebrow="Post-Construction Cleanup · Clark County, NV"
         heading="Post-Construction Cleanup in Clark County, NV"
-        sub={`Clark County is one of the fastest-growing regions in the United States, with active residential construction, commercial buildout, and ongoing renovations across every city. Final Touch provides post-construction cleanup county-wide — new builds, industrial buildouts, and renovation projects across all of ${SITE.serviceArea.county}.`}
+        sub={`Clark County is one of the fastest-growing regions in the United States, with active residential construction, commercial buildout, and ongoing renovations across every city. Final Touch provides post-construction cleanup county-wide: new builds, industrial buildouts, and renovation projects across all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -134,7 +136,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-construction cleanup in Clark County is the professional final cleaning pass
-            after builders or renovation crews finish — removing drywall dust, adhesive residue,
+            after builders or renovation crews finish, removing drywall dust, adhesive residue,
             construction debris, and window film across every construction type in the valley.{' '}
             <Link href="/services/post-construction-cleanup" className="text-brand-blue font-semibold hover:underline">
               Final Touch post-construction cleanup
@@ -155,8 +157,8 @@ export default function PostConstructionCleanupClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires post-construction cleanup in Clark County"
-            heading="Every construction type in the Las Vegas Valley — all served county-wide."
-            sub="Clark County's post-construction cleanup client base is the most varied in the state — spanning new builds, industrial work, commercial buildouts, and renovations simultaneously."
+            heading="Every construction type in the Las Vegas Valley, all served county-wide."
+            sub="Clark County's post-construction cleanup client base is the most varied in the state, spanning new builds, industrial work, commercial buildouts, and renovations simultaneously."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -166,15 +168,15 @@ export default function PostConstructionCleanupClarkCountyPage() {
               },
               {
                 title: 'Industrial and commercial property owners in NLV',
-                body: "North Las Vegas's industrial and logistics corridor generates commercial construction cleanup demand — warehouse buildouts, facility office additions, and industrial complex expansions — unique to that city within the county.",
+                body: "North Las Vegas's industrial and logistics corridor generates commercial construction cleanup demand (warehouse buildouts, facility office additions, and industrial complex expansions) unique to that city within the county.",
               },
               {
                 title: 'Commercial property owners and developers',
-                body: 'Commercial buildouts across the county — retail spaces, office suites, mixed-use developments in Las Vegas and Henderson — require thorough post-construction cleanup before tenant occupancy or business launch.',
+                body: 'Commercial buildouts across the county (retail spaces, office suites, mixed-use developments in Las Vegas and Henderson) require thorough post-construction cleanup before tenant occupancy or business launch.',
               },
               {
                 title: 'Renovation owners across every county city',
-                body: "Homeowners and commercial owners renovating established properties across every Clark County city — from Boulder City's older homes to Las Vegas's urban commercial to Henderson's established communities — create renovation cleanup demand county-wide.",
+                body: "Homeowners and commercial owners renovating established properties across every Clark County city (from Boulder City's older homes to Las Vegas's urban commercial to Henderson's established communities) create renovation cleanup demand county-wide.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -192,7 +194,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
           <SectionHeader
             eyebrow="Scope"
             heading="What post-construction cleanup covers."
-            sub="Construction residue goes further than visible debris — same scope across every Clark County project."
+            sub="Construction residue goes further than visible debris, same scope across every Clark County project."
           />
           <ul className="mt-8 space-y-3">
             {[
@@ -215,7 +217,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed per project. Residential new builds and commercial buildouts have
-            different scope needs — both addressed during the initial conversation.
+            different scope needs, both addressed during the initial conversation.
           </p>
         </div>
       </section>
@@ -231,7 +233,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
             {[
               {
                 heading: 'One of the fastest-growing counties in the US',
-                body: "Clark County has been among the fastest-growing counties in the United States for years. That growth drives residential construction across Henderson, North Las Vegas, and Las Vegas simultaneously — creating a post-construction cleanup pipeline that spans the entire county. A searcher looking for 'post-construction cleanup Clark County' is often asking about a project that doesn't fit neatly into a single city.",
+                body: "Clark County has been among the fastest-growing counties in the United States for years. That growth drives residential construction across Henderson, North Las Vegas, and Las Vegas simultaneously, creating a post-construction cleanup pipeline that spans the entire county. A searcher looking for 'post-construction cleanup Clark County' is often asking about a project that doesn't fit neatly into a single city.",
               },
               {
                 heading: 'Every construction type in one county',
@@ -239,7 +241,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
               },
               {
                 heading: 'Mojave desert amplifies construction dust county-wide',
-                body: 'The Mojave desert environment means construction dust and fine particulate settle more aggressively and penetrate further into HVAC systems across the entire county — not just in one city. Post-construction cleanup that addresses vents, HVAC returns, and dust-accumulation surfaces is more thorough in this climate than in wetter regions.',
+                body: 'The Mojave desert environment means construction dust and fine particulate settle more aggressively and penetrate further into HVAC systems across the entire county, not just in one city. Post-construction cleanup that addresses vents, HVAC returns, and dust-accumulation surfaces is more thorough in this climate than in wetter regions.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -306,7 +308,7 @@ export default function PostConstructionCleanupClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Post-construction cleanup in Clark County — common questions"
+        heading="Post-construction cleanup in Clark County: common questions"
         defaultOpenFirst
       />
 

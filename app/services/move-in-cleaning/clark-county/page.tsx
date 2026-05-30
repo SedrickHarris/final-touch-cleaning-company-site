@@ -32,19 +32,19 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve all Clark County cities for move-in cleaning?',
-    a: `Yes. Final Touch serves move-in cleaning clients across all of ${SITE.serviceArea.county} — Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas. One team, one standard, every city in the county. Call ${SITE.phone.display} to schedule.`,
+    a: `Yes. Final Touch serves move-in cleaning clients across all of ${SITE.serviceArea.county}: Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas. One team, one standard, every city in the county. Call ${SITE.phone.display} to schedule.`,
   },
   {
     q: 'Does Final Touch handle move-in cleaning for new construction across Clark County?',
-    a: 'Yes. Clark County is one of the fastest-growing regions in the United States, with active new residential construction across Henderson (Cadence, Inspirada), North Las Vegas (new subdivisions), and Las Vegas. Builder handoffs across all these communities leave construction residue that a move-in clean addresses. Final Touch serves new-construction move-in cleaning county-wide — the same scope for builder residue regardless of which city the new home is in.',
+    a: 'Yes. Clark County is one of the fastest-growing regions in the United States, with active new residential construction across Henderson (Cadence, Inspirada), North Las Vegas (new subdivisions), and Las Vegas. Builder handoffs across all these communities leave construction residue that a move-in clean addresses. Final Touch serves new-construction move-in cleaning county-wide, the same scope for builder residue regardless of which city the new home is in.',
   },
   {
     q: 'Can property managers book move-in cleaning across multiple Clark County cities?',
-    a: `Yes. Property management companies with portfolios across Clark County can work with Final Touch for all their move-in cleaning needs. One partner for every city — consistent standard, consistent process. Call ${SITE.phone.display} to discuss a county-wide arrangement.`,
+    a: `Yes. Property management companies with portfolios across Clark County can work with Final Touch for all their move-in cleaning needs. One partner for every city, consistent standard, consistent process. Call ${SITE.phone.display} to discuss a county-wide arrangement.`,
   },
   {
     q: 'How much does move-in cleaning cost in Clark County?',
-    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote. No rate is given without reviewing the property — the same process applies in every county city.`,
+    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote. No rate is given without reviewing the property. The same process applies in every county city.`,
   },
 ];
 
@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -133,7 +135,7 @@ export default function MoveInCleaningClarkCountyPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Move-in cleaning in Clark County is a professional clean before move-in day —
+            Move-in cleaning in Clark County is a professional clean before move-in day,
             addressing construction residue in new builds, prior-occupant buildup in rental units
             and resale homes, and detail surfaces throughout.{' '}
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
@@ -154,25 +156,25 @@ export default function MoveInCleaningClarkCountyPage() {
           <SectionHeader
             eyebrow="Who hires move-in cleaning in Clark County"
             heading="New-build buyers, renters, property managers, and relocating homebuyers across the valley."
-            sub="Clark County's growth means move-in cleaning demand comes from every direction simultaneously — new construction, rental turnover, and resale buyers."
+            sub="Clark County's growth means move-in cleaning demand comes from every direction simultaneously: new construction, rental turnover, and resale buyers."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'New-build buyers across county growth areas',
-                body: 'Clark County is one of the fastest-growing regions in the US. Active new residential construction in Henderson (Cadence, Inspirada), North Las Vegas, and Las Vegas creates consistent demand for move-in cleaning after builder handoff — the same construction residue issue in every growing part of the county.',
+                body: 'Clark County is one of the fastest-growing regions in the US. Active new residential construction in Henderson (Cadence, Inspirada), North Las Vegas, and Las Vegas creates consistent demand for move-in cleaning after builder handoff, the same construction residue issue in every growing part of the county.',
               },
               {
                 title: 'Renters moving into county-wide rental properties',
-                body: "Clark County's large renter population moves between cities and neighborhoods regularly. Incoming tenants across every county city want a clean baseline on move-in day — regardless of city or property type.",
+                body: "Clark County's large renter population moves between cities and neighborhoods regularly. Incoming tenants across every county city want a clean baseline on move-in day, regardless of city or property type.",
               },
               {
                 title: 'County-spanning property managers',
-                body: 'PM companies managing portfolios across multiple county cities need a move-in cleaning partner who applies the same standard everywhere. Final Touch serves property managers county-wide — one arrangement, every city.',
+                body: 'PM companies managing portfolios across multiple county cities need a move-in cleaning partner who applies the same standard everywhere. Final Touch serves property managers county-wide, one arrangement, every city.',
               },
               {
                 title: 'Homebuyers across the resale market',
-                body: "Buyers purchasing established homes anywhere in Clark County — Henderson's master-planned communities, Boulder City's older properties, Las Vegas resale — want a thorough clean before the first box is unpacked.",
+                body: "Buyers purchasing established homes anywhere in Clark County (Henderson's master-planned communities, Boulder City's older properties, Las Vegas resale) want a thorough clean before the first box is unpacked.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -230,11 +232,11 @@ export default function MoveInCleaningClarkCountyPage() {
             {[
               {
                 heading: 'County-wide residential growth creates new-build demand across multiple cities',
-                body: "Clark County is consistently among the fastest-growing counties in the United States. That growth is not concentrated in a single city — it spans Henderson's master-planned communities, North Las Vegas's active subdivisions, and Las Vegas's infill and new development. Buyers closing on new homes anywhere in the county face the same post-builder-handoff cleaning need: drywall dust, adhesive residue, and window film that the standard builder sweep leaves behind. Final Touch serves that need across every county city.",
+                body: "Clark County is consistently among the fastest-growing counties in the United States. That growth is not concentrated in a single city. It spans Henderson's master-planned communities, North Las Vegas's active subdivisions, and Las Vegas's infill and new development. Buyers closing on new homes anywhere in the county face the same post-builder-handoff cleaning need: drywall dust, adhesive residue, and window film that the standard builder sweep leaves behind. Final Touch serves that need across every county city.",
               },
               {
                 heading: 'Large county-wide renter population drives turnover demand',
-                body: "Clark County has a large renter population spread across all cities and housing types. The resulting lease-cycle turnover means move-in cleaning demand is consistent throughout the county — incoming tenants in Henderson's rental properties, North Las Vegas's apartments, Las Vegas's urban units, and Boulder City's smaller rental pool all need the same thing: a verified clean before they unpack.",
+                body: "Clark County has a large renter population spread across all cities and housing types. The resulting lease-cycle turnover means move-in cleaning demand is consistent throughout the county: incoming tenants in Henderson's rental properties, North Las Vegas's apartments, Las Vegas's urban units, and Boulder City's smaller rental pool all need the same thing: a verified clean before they unpack.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -301,7 +303,7 @@ export default function MoveInCleaningClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-in cleaning in Clark County — common questions"
+        heading="Move-in cleaning in Clark County: common questions"
         defaultOpenFirst
       />
 

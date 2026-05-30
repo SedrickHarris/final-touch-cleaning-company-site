@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Cadence and Inspirada for post-construction cleanup?',
-    a: `Yes. Cadence is Henderson's largest actively developing master-planned community, with multiple builders operating simultaneously. Inspirada is in active build phases in southwest Henderson. Final Touch serves post-construction cleanup clients in both communities — new-home buyers whose builder handoff left construction residue. Call ${SITE.phone.display} to schedule.`,
+    a: `Yes. Cadence is Henderson's largest actively developing master-planned community, with multiple builders operating simultaneously. Inspirada is in active build phases in southwest Henderson. Final Touch serves post-construction cleanup clients in both communities, new-home buyers whose builder handoff left construction residue. Call ${SITE.phone.display} to schedule.`,
   },
   {
     q: 'Who typically needs post-construction cleanup in Henderson?',
-    a: "Henderson's post-construction cleanup client base is primarily residential: new-home buyers in Cadence and Inspirada are the largest segment. Renovation and remodel owners in established Henderson communities — Green Valley, Anthem — are a second segment. Commercial property owners completing buildouts along Henderson business corridors are a third.",
+    a: "Henderson's post-construction cleanup client base is primarily residential: new-home buyers in Cadence and Inspirada are the largest segment. Renovation and remodel owners in established Henderson communities (Green Valley, Anthem) are a second segment. Commercial property owners completing buildouts along Henderson business corridors are a third.",
   },
   {
     q: 'Does Final Touch handle commercial post-construction cleanup in Henderson?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does post-construction cleanup cost in Henderson?',
-    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Cost depends on the size, scope, and condition of the space. No rate is given without reviewing the project — a brief walkthrough or site description is the starting point.`,
+    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Cost depends on the size, scope, and condition of the space. No rate is given without reviewing the project. A brief walkthrough or site description is the starting point.`,
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -128,7 +130,7 @@ export default function PostConstructionCleanupHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-construction cleanup in Henderson is the professional final cleaning pass after
-            builders or renovation crews finish — removing drywall dust, adhesive residue,
+            builders or renovation crews finish, removing drywall dust, adhesive residue,
             construction debris, and window film from a space that looks done but is not truly
             clean.{' '}
             <Link href="/services/post-construction-cleanup" className="text-brand-blue font-semibold hover:underline">
@@ -150,7 +152,7 @@ export default function PostConstructionCleanupHendersonPage() {
           <SectionHeader
             eyebrow="Who hires post-construction cleanup in Henderson"
             heading="New-home buyers, renovation owners, and commercial clients across Henderson."
-            sub="Henderson's post-construction demand is primarily residential — driven by Cadence and Inspirada — with a secondary commercial stream along Henderson's business corridors."
+            sub="Henderson's post-construction demand is primarily residential (driven by Cadence and Inspirada) with a secondary commercial stream along Henderson's business corridors."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -160,15 +162,15 @@ export default function PostConstructionCleanupHendersonPage() {
               },
               {
                 title: 'New-home buyers in Inspirada',
-                body: 'Inspirada in southwest Henderson is in active build phases. New-home buyers here face the same post-construction residue issues as Cadence buyers — builder handoffs leave the home looking finished while construction particulate remains throughout.',
+                body: 'Inspirada in southwest Henderson is in active build phases. New-home buyers here face the same post-construction residue issues as Cadence buyers. Builder handoffs leave the home looking finished while construction particulate remains throughout.',
               },
               {
                 title: 'Renovation owners in established communities',
-                body: "Green Valley and Anthem homeowners renovating established homes are a steady source of post-construction cleanup demand. A kitchen remodel, bathroom renovation, or addition in an older Henderson home spreads drywall dust through the entire house — through the HVAC system and into every room that wasn't under construction.",
+                body: "Green Valley and Anthem homeowners renovating established homes are a steady source of post-construction cleanup demand. A kitchen remodel, bathroom renovation, or addition in an older Henderson home spreads drywall dust through the entire house, through the HVAC system and into every room that wasn't under construction.",
               },
               {
                 title: 'Commercial property owners in Henderson',
-                body: 'Commercial buildouts along Green Valley Parkway and Henderson business corridors — retail spaces, office suites, medical office conversions — require thorough post-construction cleanup before tenant occupancy or business launch.',
+                body: 'Commercial buildouts along Green Valley Parkway and Henderson business corridors (retail spaces, office suites, medical office conversions) require thorough post-construction cleanup before tenant occupancy or business launch.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -209,7 +211,7 @@ export default function PostConstructionCleanupHendersonPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed per project. Henderson new builds in Cadence and Inspirada and
-            renovation jobs in established communities have different scope needs — both are
+            renovation jobs in established communities have different scope needs. Both are
             addressed during the walkthrough.
           </p>
         </div>
@@ -225,16 +227,16 @@ export default function PostConstructionCleanupHendersonPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
               {
-                heading: "Cadence — the valley's largest active development",
+                heading: "Cadence, the valley's largest active development",
                 body: "Cadence is the largest master-planned community currently under development in Henderson. Multiple home builders operate on-site simultaneously, making it one of the most consistently active new-construction environments in the Las Vegas Valley. New-home buyers in Cadence are among the most frequent post-construction cleanup clients Final Touch serves in Henderson.",
               },
               {
                 heading: 'Renovation demand in established neighborhoods',
-                body: "Green Valley and Anthem are mature communities with homes that have been owned and occupied for decades. Owners renovating these homes — kitchen updates, bathroom remodels, room additions — create renovation-cleanup demand that differs from new construction: the dust spreads into an occupied home's existing systems and surfaces rather than into a newly framed shell.",
+                body: "Green Valley and Anthem are mature communities with homes that have been owned and occupied for decades. Owners renovating these homes (kitchen updates, bathroom remodels, room additions) create renovation-cleanup demand that differs from new construction: the dust spreads into an occupied home's existing systems and surfaces rather than into a newly framed shell.",
               },
               {
                 heading: 'Desert climate amplifies construction dust',
-                body: "Henderson's Mojave desert environment means construction dust and fine particulate settle more aggressively on surfaces and penetrate further into HVAC systems than in wetter climates. For homes in Cadence adjacent to active build zones, this effect extends beyond the construction project itself — neighboring completed homes accumulate particulate from nearby activity.",
+                body: "Henderson's Mojave desert environment means construction dust and fine particulate settle more aggressively on surfaces and penetrate further into HVAC systems than in wetter climates. For homes in Cadence adjacent to active build zones, this effect extends beyond the construction project itself. Neighboring completed homes accumulate particulate from nearby activity.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -306,7 +308,7 @@ export default function PostConstructionCleanupHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Post-construction cleanup in Henderson — common questions"
+        heading="Post-construction cleanup in Henderson: common questions"
         defaultOpenFirst
       />
 

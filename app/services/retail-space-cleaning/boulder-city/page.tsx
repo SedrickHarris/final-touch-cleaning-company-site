@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Boulder City historic downtown storefronts?',
-    a: "Yes. Final Touch serves retail tenants in Boulder City's historic downtown area, including storefronts along Nevada Way and surrounding blocks. These are smaller-scale operations than a Las Vegas strip mall or Henderson shopping center — scope and schedule are tailored to the size and character of the business.",
+    a: "Yes. Final Touch serves retail tenants in Boulder City's historic downtown area, including storefronts along Nevada Way and surrounding blocks. These are smaller-scale operations than a Las Vegas strip mall or Henderson shopping center. Scope and schedule are tailored to the size and character of the business.",
   },
   {
     q: 'Does the tourism season affect retail cleaning needs in Boulder City?',
@@ -40,7 +40,7 @@ const faq = [
   },
   {
     q: 'Can Final Touch clean Boulder City stores after hours?',
-    a: 'Yes. After-hours scheduling is available for Boulder City retail cleaning. Boulder City retail operates on standard, predictable hours — most stores close in the early evening, making after-hours cleaning windows consistent and easy to work around. Hours and access confirmed during the walkthrough.',
+    a: 'Yes. After-hours scheduling is available for Boulder City retail cleaning. Boulder City retail operates on standard, predictable hours. Most stores close in the early evening, making after-hours cleaning windows consistent and easy to work around. Hours and access confirmed during the walkthrough.',
   },
   {
     q: 'How much does retail space cleaning cost in Boulder City?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -128,7 +130,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Retail space cleaning in Boulder City is a scheduled professional clean for storefronts
-            and retail interiors — covering sales floors, customer restrooms, display areas, and
+            and retail interiors, covering sales floors, customer restrooms, display areas, and
             back-of-house on a program designed around your store&apos;s hours and seasonal patterns.{' '}
             <Link href="/services/retail-space-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch retail cleaning
@@ -149,7 +151,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires retail cleaning in Boulder City"
             heading="Historic downtown storefronts, tourism retail, restaurants, and community retailers."
-            sub="Boulder City retail is historic, small-scale, and tourism-adjacent — distinct from every other retail market in Clark County."
+            sub="Boulder City retail is historic, small-scale, and tourism-adjacent, distinct from every other retail market in Clark County."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -163,7 +165,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
               },
               {
                 title: 'Restaurant and dining establishments',
-                body: "Boulder City's dining scene includes restaurants and cafes along the historic downtown corridor. Front-of-house dining areas, customer restrooms, and entryways all need consistent cleaning — particularly during peak visitor seasons.",
+                body: "Boulder City's dining scene includes restaurants and cafes along the historic downtown corridor. Front-of-house dining areas, customer restrooms, and entryways all need consistent cleaning, particularly during peak visitor seasons.",
               },
               {
                 title: 'Community-serving small retailers',
@@ -224,7 +226,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
             {[
               {
                 heading: 'Historic downtown retail, not strip mall retail',
-                body: "Boulder City's retail is concentrated in a historic downtown district, not a suburban strip mall or a power center. The storefronts along Nevada Way and surrounding blocks are smaller-footprint businesses in historic buildings with character. The cleaning approach is tailored to these spaces — smaller scale, personal relationships, and attention to the details that matter in a historic commercial district.",
+                body: "Boulder City's retail is concentrated in a historic downtown district, not a suburban strip mall or a power center. The storefronts along Nevada Way and surrounding blocks are smaller-footprint businesses in historic buildings with character. The cleaning approach is tailored to these spaces: smaller scale, personal relationships, and attention to the details that matter in a historic commercial district.",
               },
               {
                 heading: 'Tourism seasonality creates peak demand',
@@ -232,7 +234,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
               },
               {
                 heading: 'Standard, predictable operating hours',
-                body: 'Boulder City retail operates on standard hours — most stores close in the early evening without the extended late-night operations common in Las Vegas retail or the variable schedules of NLV commercial corridors. After-hours cleaning windows are consistent and easy to work around, making scheduling straightforward for Boulder City retailers.',
+                body: 'Boulder City retail operates on standard hours. Most stores close in the early evening without the extended late-night operations common in Las Vegas retail or the variable schedules of NLV commercial corridors. After-hours cleaning windows are consistent and easy to work around, making scheduling straightforward for Boulder City retailers.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -304,7 +306,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Retail space cleaning in Boulder City — common questions"
+        heading="Retail space cleaning in Boulder City: common questions"
         defaultOpenFirst
       />
 

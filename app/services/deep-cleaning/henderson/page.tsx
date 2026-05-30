@@ -36,7 +36,7 @@ const faq = [
   },
   {
     q: 'How often should Henderson homes be deep cleaned?',
-    a: "Henderson shares the Mojave Desert climate of the broader Las Vegas Valley, which means dust accumulates faster indoors than in wetter climates — particularly near windows, HVAC returns, and in Henderson's master-planned communities with active landscaping. Most Henderson homeowners schedule deep cleans seasonally or two to four times per year. Contact Final Touch for a recommendation based on your home.",
+    a: "Henderson shares the Mojave Desert climate of the broader Las Vegas Valley, which means dust accumulates faster indoors than in wetter climates, particularly near windows, HVAC returns, and in Henderson's master-planned communities with active landscaping. Most Henderson homeowners schedule deep cleans seasonally or two to four times per year. Contact Final Touch for a recommendation based on your home.",
   },
   {
     q: 'Does Final Touch serve all Henderson neighborhoods for deep cleaning?',
@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: 'Can deep cleaning help with construction dust in new Henderson homes?',
-    a: "Yes. Active construction phases in Henderson communities like Cadence and Inspirada mean even completed homes can accumulate construction-related dust from nearby build activity. Desert wind carries fine particulate from adjacent framing and grading work into settled homes through HVAC systems and door frames. A periodic deep clean addresses this buildup — particularly in vents, air returns, and window sills — for Henderson residents living near active development.",
+    a: "Yes. Active construction phases in Henderson communities like Cadence and Inspirada mean even completed homes can accumulate construction-related dust from nearby build activity. Desert wind carries fine particulate from adjacent framing and grading work into settled homes through HVAC systems and door frames. A periodic deep clean addresses this buildup (particularly in vents, air returns, and window sills) for Henderson residents living near active development.",
   },
 ];
 
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -121,7 +123,7 @@ export default function DeepCleaningHendersonPage() {
       <HeroSection
         eyebrow="Deep Cleaning · Henderson, NV"
         heading="Deep Cleaning in Henderson, NV"
-        sub={`Henderson's master-planned communities, luxury hillside homes, and active new-construction neighborhoods all create specific deep cleaning needs. Final Touch provides thorough deep cleaning across all Henderson neighborhoods — from Green Valley to MacDonald Highlands to Cadence — and all of ${SITE.serviceArea.county}.`}
+        sub={`Henderson's master-planned communities, luxury hillside homes, and active new-construction neighborhoods all create specific deep cleaning needs. Final Touch provides thorough deep cleaning across all Henderson neighborhoods (from Green Valley to MacDonald Highlands to Cadence) and all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -132,7 +134,7 @@ export default function DeepCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Deep cleaning in Henderson is a thorough reset that goes well beyond routine
-            maintenance — covering inside appliances, grout lines, vents, baseboards, inside
+            maintenance, covering inside appliances, grout lines, vents, baseboards, inside
             cabinets, and every detail surface that accumulates over time.{' '}
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch deep cleaning
@@ -154,17 +156,17 @@ export default function DeepCleaningHendersonPage() {
           <SectionHeader
             eyebrow="Who hires deep cleaning in Henderson"
             heading="Henderson homeowners and property owners with higher standards."
-            sub="Henderson's housing character — from luxury hillside estates to active new-build communities — creates deep cleaning demand that differs from a typical suburban market."
+            sub="Henderson's housing character (from luxury hillside estates to active new-build communities) creates deep cleaning demand that differs from a typical suburban market."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Luxury and custom home owners',
-                body: 'MacDonald Highlands, Seven Hills, and comparable Henderson communities feature larger homes with premium finish materials — natural stone, marble, polished concrete, custom millwork. A deep clean here requires surface-appropriate methods and more time than a standard residential job.',
+                body: 'MacDonald Highlands, Seven Hills, and comparable Henderson communities feature larger homes with premium finish materials: natural stone, marble, polished concrete, custom millwork. A deep clean here requires surface-appropriate methods and more time than a standard residential job.',
               },
               {
                 title: 'Master-planned community homeowners',
-                body: 'Residents of Green Valley, Anthem, Green Valley Ranch, and similar communities maintain presentation standards that match the surrounding environment. Periodic deep cleans are a standard part of upkeep for these homeowners — not an occasional extra.',
+                body: 'Residents of Green Valley, Anthem, Green Valley Ranch, and similar communities maintain presentation standards that match the surrounding environment. Periodic deep cleans are a standard part of upkeep for these homeowners, not an occasional extra.',
               },
               {
                 title: 'New-construction buyers in Cadence and Inspirada',
@@ -172,7 +174,7 @@ export default function DeepCleaningHendersonPage() {
               },
               {
                 title: 'Rental property owners resetting between tenants',
-                body: 'Green Valley and Anthem have a mix of owner-occupied and rental properties. A deep clean between long-term tenants goes beyond move-out scope — resetting grout, inside appliances, and accumulated buildup from an extended tenancy.',
+                body: 'Green Valley and Anthem have a mix of owner-occupied and rental properties. A deep clean between long-term tenants goes beyond move-out scope, resetting grout, inside appliances, and accumulated buildup from an extended tenancy.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -231,7 +233,7 @@ export default function DeepCleaningHendersonPage() {
             {[
               {
                 heading: 'Premium finish materials in luxury homes',
-                body: "Henderson's eastern hillside communities — MacDonald Highlands, Seven Hills — have a concentration of custom and semi-custom homes with premium interior finishes. Natural stone countertops, marble tile, polished concrete floors, and custom cabinetry are common. These surfaces need specific care: the wrong cleaning product on natural stone causes etching; polished concrete needs different treatment than ceramic tile. A deep clean in Henderson luxury homes accounts for what the surfaces are made of.",
+                body: "Henderson's eastern hillside communities (MacDonald Highlands, Seven Hills) have a concentration of custom and semi-custom homes with premium interior finishes. Natural stone countertops, marble tile, polished concrete floors, and custom cabinetry are common. These surfaces need specific care: the wrong cleaning product on natural stone causes etching; polished concrete needs different treatment than ceramic tile. A deep clean in Henderson luxury homes accounts for what the surfaces are made of.",
               },
               {
                 heading: 'Construction activity in active communities',
@@ -239,7 +241,7 @@ export default function DeepCleaningHendersonPage() {
               },
               {
                 heading: 'Master-planned community standards',
-                body: "Henderson's established master-planned communities — Green Valley, Green Valley Ranch, Anthem — maintain high standards for property presentation. Homeowners in these communities tend to prioritize maintenance that matches the surrounding environment. A periodic deep clean is a natural part of that maintenance cycle, addressing the buildup that accumulates between routine service visits.",
+                body: "Henderson's established master-planned communities (Green Valley, Green Valley Ranch, Anthem) maintain high standards for property presentation. Homeowners in these communities tend to prioritize maintenance that matches the surrounding environment. A periodic deep clean is a natural part of that maintenance cycle, addressing the buildup that accumulates between routine service visits.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -311,7 +313,7 @@ export default function DeepCleaningHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Deep cleaning in Henderson — common questions"
+        heading="Deep cleaning in Henderson: common questions"
         defaultOpenFirst
       />
 

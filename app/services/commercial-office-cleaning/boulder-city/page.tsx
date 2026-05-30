@@ -28,23 +28,23 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does commercial office cleaning include in Boulder City?',
-    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope — frequency, specific rooms, access timing — is confirmed during a walkthrough before the first clean.',
+    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope (frequency, specific rooms, access timing) is confirmed during a walkthrough before the first clean.',
   },
   {
     q: "Does Final Touch serve small businesses in Boulder City's historic downtown?",
-    a: "Yes. Final Touch serves the small-business community in Boulder City's historic downtown area, including shops, restaurants, and professional services offices. These are smaller-scale operations than a Las Vegas or Henderson commercial corridor — scope and frequency are tailored to the actual size and character of the business, not a metro-scale template.",
+    a: "Yes. Final Touch serves the small-business community in Boulder City's historic downtown area, including shops, restaurants, and professional services offices. These are smaller-scale operations than a Las Vegas or Henderson commercial corridor. Scope and frequency are tailored to the actual size and character of the business, not a metro-scale template.",
   },
   {
     q: 'Does Final Touch travel to Boulder City for commercial cleaning?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory — not a special case or an extra trip. Call ${SITE.phone.display} to discuss your business.`,
+    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory, not a special case or an extra trip. Call ${SITE.phone.display} to discuss your business.`,
   },
   {
     q: 'Does tourism traffic affect cleaning needs for Boulder City businesses?',
-    a: "Yes. Boulder City's proximity to Hoover Dam and Lake Mead National Recreation Area creates visitor traffic that peaks in spring and fall. Tourism-adjacent businesses — gift shops, outfitters, restaurants near the historic downtown — may see higher foot traffic during peak visitor periods and need more frequent cleaning during those seasons. Cleaning programs can be designed around your business's traffic patterns.",
+    a: "Yes. Boulder City's proximity to Hoover Dam and Lake Mead National Recreation Area creates visitor traffic that peaks in spring and fall. Tourism-adjacent businesses (gift shops, outfitters, restaurants near the historic downtown) may see higher foot traffic during peak visitor periods and need more frequent cleaning during those seasons. Cleaning programs can be designed around your business's traffic patterns.",
   },
   {
     q: 'How much does office cleaning cost in Boulder City?',
-    a: `Pricing depends on office size, frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — no rate is given without reviewing your space.`,
+    a: `Pricing depends on office size, frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting. No rate is given without reviewing your space.`,
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
       <HeroSection
         eyebrow="Commercial Office Cleaning · Boulder City, NV"
         heading="Commercial Office Cleaning in Boulder City, NV"
-        sub={`Boulder City's commercial community is centered on a historic downtown of shops, restaurants, and professional services — businesses with a smaller-scale, community character distinct from the metro corridors in Las Vegas and Henderson. Final Touch provides commercial office cleaning for businesses across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City's commercial community is centered on a historic downtown of shops, restaurants, and professional services, businesses with a smaller-scale, community character distinct from the metro corridors in Las Vegas and Henderson. Final Touch provides commercial office cleaning for businesses across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Commercial office cleaning in Boulder City is a recurring professional cleaning
-            program for offices and businesses — covering workstations, common areas, restrooms,
+            program for offices and businesses, covering workstations, common areas, restrooms,
             and high-touch surfaces on a schedule suited to the business.{' '}
             <Link href="/services/commercial-office-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch commercial cleaning
@@ -149,7 +151,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires office cleaning in Boulder City"
             heading="Historic downtown shops, tourism-adjacent businesses, and small professional offices."
-            sub="Boulder City's commercial character is small-town and relationship-oriented — the most distinct commercial profile in Clark County."
+            sub="Boulder City's commercial character is small-town and relationship-oriented, the most distinct commercial profile in Clark County."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -225,15 +227,15 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
             {[
               {
                 heading: 'Small-town historic downtown character',
-                body: "Boulder City's commercial core is a historic downtown district, not a suburban office park or a strip mall corridor. The businesses here are typically small-footprint — a single storefront, a one- or two-room office — operating in buildings with character and history. The cleaning programs appropriate for this environment are tailored to smaller scale and personal relationships, not metro-scale contracts.",
+                body: "Boulder City's commercial core is a historic downtown district, not a suburban office park or a strip mall corridor. The businesses here are typically small-footprint (a single storefront, a one- or two-room office) operating in buildings with character and history. The cleaning programs appropriate for this environment are tailored to smaller scale and personal relationships, not metro-scale contracts.",
               },
               {
                 heading: 'Tourism creates seasonal variation',
-                body: "Boulder City's proximity to Hoover Dam and Lake Mead creates visitor-driven business activity that peaks in spring and fall and slows in summer and winter. Tourism-adjacent businesses — shops, restaurants, outfitters — experience this seasonal pattern in foot traffic. A cleaning program that can flex with the season is a practical fit for these businesses.",
+                body: "Boulder City's proximity to Hoover Dam and Lake Mead creates visitor-driven business activity that peaks in spring and fall and slows in summer and winter. Tourism-adjacent businesses (shops, restaurants, outfitters) experience this seasonal pattern in foot traffic. A cleaning program that can flex with the season is a practical fit for these businesses.",
               },
               {
                 heading: 'Final Touch serves Boulder City as a regular client city',
-                body: 'A common question from Boulder City business owners is whether a cleaning company based in the Las Vegas Valley will consistently show up for a smaller, more distant client. Final Touch serves Boulder City as a regular part of its Clark County service territory — same standard, same reliability, regardless of city size.',
+                body: 'A common question from Boulder City business owners is whether a cleaning company based in the Las Vegas Valley will consistently show up for a smaller, more distant client. Final Touch serves Boulder City as a regular part of its Clark County service territory, same standard, same reliability, regardless of city size.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Commercial office cleaning in Boulder City — common questions"
+        heading="Commercial office cleaning in Boulder City: common questions"
         defaultOpenFirst
       />
 

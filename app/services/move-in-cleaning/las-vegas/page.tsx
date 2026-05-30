@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Do I need move-in cleaning for a new construction home in Las Vegas?',
-    a: 'Yes. New construction in Las Vegas leaves drywall dust, adhesive residue, window film, and construction debris even after the builder completes their site sweep. A move-in clean — which may overlap with post-construction cleanup — ensures the home is genuinely ready before your furniture arrives. Las Vegas has an active new construction pipeline, and this is one of the most common move-in scenarios we handle.',
+    a: 'Yes. New construction in Las Vegas leaves drywall dust, adhesive residue, window film, and construction debris even after the builder completes their site sweep. A move-in clean (which may overlap with post-construction cleanup) ensures the home is genuinely ready before your furniture arrives. Las Vegas has an active new construction pipeline, and this is one of the most common move-in scenarios we handle.',
   },
   {
     q: 'How soon before my move-in date should I schedule cleaning in Las Vegas?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -131,7 +133,7 @@ export default function MoveInCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Move-In Cleaning · Las Vegas, NV"
         heading="Move-In Cleaning in Las Vegas, NV"
-        sub={`Las Vegas has an active new construction pipeline and a large rental market — both of which create demand for a professional clean before move-in day. Final Touch provides thorough move-in cleaning for new builds, resale homes, and rental units across Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`Las Vegas has an active new construction pipeline and a large rental market, both of which create demand for a professional clean before move-in day. Final Touch provides thorough move-in cleaning for new builds, resale homes, and rental units across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -141,7 +143,7 @@ export default function MoveInCleaningLasVegasPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Move-in cleaning in Las Vegas is a professional clean performed before you move in —
+            Move-in cleaning in Las Vegas is a professional clean performed before you move in,
             addressing construction residue in new builds, prior-tenant buildup in rental units,
             and detail surfaces throughout that a seller or previous occupant left behind.{' '}
             <Link
@@ -169,7 +171,7 @@ export default function MoveInCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires move-in cleaning in Las Vegas"
             heading="New construction buyers, renters, and property managers across the metro."
-            sub="Las Vegas's construction activity and rental market create two distinct move-in cleaning audiences — new-build buyers and rental market participants."
+            sub="Las Vegas's construction activity and rental market create two distinct move-in cleaning audiences: new-build buyers and rental market participants."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -187,7 +189,7 @@ export default function MoveInCleaningLasVegasPage() {
               },
               {
                 title: 'Homebuyers in the Las Vegas resale market',
-                body: 'Buyers of previously owned homes want a clean baseline before unpacking — addressing seller-side residue, buildup in kitchens and bathrooms, and detail surfaces that the listing photos did not show.',
+                body: 'Buyers of previously owned homes want a clean baseline before unpacking, addressing seller-side residue, buildup in kitchens and bathrooms, and detail surfaces that the listing photos did not show.',
               },
             ].map((item) => (
               <li
@@ -230,8 +232,8 @@ export default function MoveInCleaningLasVegasPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted">
-            Scope is confirmed before we begin. If your space has specific requirements — such as
-            construction residue from a Las Vegas new build — let us know during booking and we
+            Scope is confirmed before we begin. If your space has specific requirements (such as
+            construction residue from a Las Vegas new build) let us know during booking and we
             will account for them.
           </p>
         </div>
@@ -249,11 +251,11 @@ export default function MoveInCleaningLasVegasPage() {
             {[
               {
                 heading: 'Active new construction across the valley',
-                body: 'Las Vegas has had a sustained residential construction pipeline for years. New subdivisions, infill development, and master-planned community buildouts mean new-build move-in cleans are a regular part of the local market. Drywall dust, construction adhesive, paint overspray, and window film survive the builder handoff — a move-in clean in a new Las Vegas home is as much about construction residue as it is about surface cleaning.',
+                body: 'Las Vegas has had a sustained residential construction pipeline for years. New subdivisions, infill development, and master-planned community buildouts mean new-build move-in cleans are a regular part of the local market. Drywall dust, construction adhesive, paint overspray, and window film survive the builder handoff. A move-in clean in a new Las Vegas home is as much about construction residue as it is about surface cleaning.',
               },
               {
                 heading: 'Rental turnover and desert dust',
-                body: "Las Vegas's large renter population means units turn over regularly. At move-in, a rental that looked clean at walkthrough may have accumulated Mojave desert dust — particularly on baseboards, vents, and window sills — that was not visible at inspection. A professional move-in clean addresses what the walkthrough missed and gives you a verified clean start.",
+                body: "Las Vegas's large renter population means units turn over regularly. At move-in, a rental that looked clean at walkthrough may have accumulated Mojave desert dust (particularly on baseboards, vents, and window sills) that was not visible at inspection. A professional move-in clean addresses what the walkthrough missed and gives you a verified clean start.",
               },
             ].map(({ heading, body }) => (
               <div
@@ -328,7 +330,7 @@ export default function MoveInCleaningLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-in cleaning in Las Vegas — common questions"
+        heading="Move-in cleaning in Las Vegas: common questions"
         defaultOpenFirst
       />
 

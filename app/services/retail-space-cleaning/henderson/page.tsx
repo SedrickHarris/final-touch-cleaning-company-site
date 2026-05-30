@@ -36,7 +36,7 @@ const faq = [
   },
   {
     q: 'Can Final Touch clean Henderson stores after hours?',
-    a: 'Yes. After-hours scheduling is available for Henderson retail cleaning. Henderson retail generally operates on standard hours — unlike Las Vegas retail, which often runs into the evening and overnight. Most Henderson stores are cleanable in after-closing windows that are predictable and consistent week to week. Hours and access are confirmed during the initial walkthrough.',
+    a: 'Yes. After-hours scheduling is available for Henderson retail cleaning. Henderson retail generally operates on standard hours, unlike Las Vegas retail, which often runs into the evening and overnight. Most Henderson stores are cleanable in after-closing windows that are predictable and consistent week to week. Hours and access are confirmed during the initial walkthrough.',
   },
   {
     q: 'Does Final Touch serve Green Valley Ranch retail?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function RetailSpaceCleaningHendersonPage() {
       <HeroSection
         eyebrow="Retail Space Cleaning · Henderson, NV"
         heading="Retail Space Cleaning in Henderson, NV"
-        sub={`Henderson's retail is community-serving and neighborhood-scale — shopping centers along Green Valley Parkway and Sunset Road, neighborhood strip centers adjacent to master-planned communities, and specialty retail throughout the city. Final Touch provides scheduled retail space cleaning across Henderson and ${SITE.serviceArea.county}.`}
+        sub={`Henderson's retail is community-serving and neighborhood-scale: shopping centers along Green Valley Parkway and Sunset Road, neighborhood strip centers adjacent to master-planned communities, and specialty retail throughout the city. Final Touch provides scheduled retail space cleaning across Henderson and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function RetailSpaceCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Retail space cleaning in Henderson is a scheduled professional clean for storefronts
-            and retail interiors — covering sales floors, customer restrooms, display areas, and
+            and retail interiors, covering sales floors, customer restrooms, display areas, and
             back-of-house on a program designed around your store&apos;s hours.{' '}
             <Link href="/services/retail-space-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch retail cleaning
@@ -149,13 +151,13 @@ export default function RetailSpaceCleaningHendersonPage() {
           <SectionHeader
             eyebrow="Who hires retail cleaning in Henderson"
             heading="Community-serving retailers, Green Valley Ranch corridor tenants, and specialty stores."
-            sub="Henderson retail is neighborhood-scale and community-serving — a different character from Las Vegas's strip-mall-heavy commercial landscape."
+            sub="Henderson retail is neighborhood-scale and community-serving, a different character from Las Vegas's strip-mall-heavy commercial landscape."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Green Valley Ranch corridor tenants',
-                body: "Green Valley Parkway and Sunset Road have a concentration of retail tenants serving Henderson's master-planned community base — services, specialty food, fitness, medical-adjacent retail, and similar community-serving businesses with consistent cleaning needs.",
+                body: "Green Valley Parkway and Sunset Road have a concentration of retail tenants serving Henderson's master-planned community base: services, specialty food, fitness, medical-adjacent retail, and similar community-serving businesses with consistent cleaning needs.",
               },
               {
                 title: 'Neighborhood shopping center tenants',
@@ -163,7 +165,7 @@ export default function RetailSpaceCleaningHendersonPage() {
               },
               {
                 title: 'Healthcare-adjacent retail',
-                body: "Henderson's medical corridor creates demand for retail spaces — optical, pharmacy, medical supply, and health-focused retail — that meet a cleanliness standard above typical consumer retail. These stores serve patients and healthcare consumers who have higher cleanliness expectations.",
+                body: "Henderson's medical corridor creates demand for retail spaces (optical, pharmacy, medical supply, and health-focused retail) that meet a cleanliness standard above typical consumer retail. These stores serve patients and healthcare consumers who have higher cleanliness expectations.",
               },
               {
                 title: 'Independent boutique and specialty retailers',
@@ -208,7 +210,7 @@ export default function RetailSpaceCleaningHendersonPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed during the initial walkthrough. Henderson retail store layouts,
-            floor types, and hours vary by location — all confirmed at that stage.
+            floor types, and hours vary by location, all confirmed at that stage.
           </p>
         </div>
       </section>
@@ -224,15 +226,15 @@ export default function RetailSpaceCleaningHendersonPage() {
             {[
               {
                 heading: 'Community-serving retail, not destination retail',
-                body: "Henderson's retail is primarily community-serving — stores that residents of Green Valley, Anthem, Inspirada, and surrounding neighborhoods use regularly. Unlike Las Vegas Strip-adjacent retail that caters to tourists and visitors, Henderson retail serves a consistent local customer base with high familiarity with the store and high standards for the environment.",
+                body: "Henderson's retail is primarily community-serving, stores that residents of Green Valley, Anthem, Inspirada, and surrounding neighborhoods use regularly. Unlike Las Vegas Strip-adjacent retail that caters to tourists and visitors, Henderson retail serves a consistent local customer base with high familiarity with the store and high standards for the environment.",
               },
               {
-                heading: 'Standard hours — predictable cleaning windows',
-                body: "Henderson retail operates on standard hours compared to Las Vegas retail, which often runs evenings and late nights. After-hours cleaning windows in Henderson are consistent and predictable — stores close at a regular time, and the cleaning program fits into that window reliably. This makes scheduling and access simpler than in Las Vegas's more variable retail environment.",
+                heading: 'Standard hours: predictable cleaning windows',
+                body: "Henderson retail operates on standard hours compared to Las Vegas retail, which often runs evenings and late nights. After-hours cleaning windows in Henderson are consistent and predictable. Stores close at a regular time, and the cleaning program fits into that window reliably. This makes scheduling and access simpler than in Las Vegas's more variable retail environment.",
               },
               {
                 heading: 'Neighborhood shopping center format',
-                body: 'The dominant retail format in Henderson is the neighborhood shopping center — smaller centers positioned at key intersections to serve the surrounding master-planned communities. These centers have shared parking lots, adjacent tenants, and building management considerations that differ from large power centers or standalone stores. Final Touch has experience with this format.',
+                body: 'The dominant retail format in Henderson is the neighborhood shopping center, smaller centers positioned at key intersections to serve the surrounding master-planned communities. These centers have shared parking lots, adjacent tenants, and building management considerations that differ from large power centers or standalone stores. Final Touch has experience with this format.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -304,7 +306,7 @@ export default function RetailSpaceCleaningHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Retail space cleaning in Henderson — common questions"
+        heading="Retail space cleaning in Henderson: common questions"
         defaultOpenFirst
       />
 

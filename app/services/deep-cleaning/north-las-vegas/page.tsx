@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'How often should North Las Vegas homes be deep cleaned?',
-    a: "North Las Vegas sits in the Mojave Desert and shares the valley's fast-accumulating dust conditions. Homes near active construction sites — a common situation in North Las Vegas's growth areas — accumulate construction particulate in addition to ordinary desert dust. Most North Las Vegas homeowners schedule deep cleans seasonally or two to four times per year. Those living adjacent to active build zones may find more frequent cleans practical, particularly for vents, HVAC returns, and surfaces near exterior openings.",
+    a: "North Las Vegas sits in the Mojave Desert and shares the valley's fast-accumulating dust conditions. Homes near active construction sites (a common situation in North Las Vegas's growth areas) accumulate construction particulate in addition to ordinary desert dust. Most North Las Vegas homeowners schedule deep cleans seasonally or two to four times per year. Those living adjacent to active build zones may find more frequent cleans practical, particularly for vents, HVAC returns, and surfaces near exterior openings.",
   },
   {
     q: 'Who typically hires deep cleaning in North Las Vegas?',
@@ -40,7 +40,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve all of North Las Vegas for deep cleaning?',
-    a: `Yes. Final Touch serves North Las Vegas citywide — established neighborhoods, newer residential growth areas, and properties along the city's major corridors — as part of its ${SITE.serviceArea.county} service area. Call ${SITE.phone.display} to confirm coverage for your address.`,
+    a: `Yes. Final Touch serves North Las Vegas citywide (established neighborhoods, newer residential growth areas, and properties along the city's major corridors) as part of its ${SITE.serviceArea.county} service area. Call ${SITE.phone.display} to confirm coverage for your address.`,
   },
   {
     q: 'How much does deep cleaning cost in North Las Vegas?',
@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: 'Does construction dust near North Las Vegas new builds require special deep cleaning?',
-    a: 'Yes. Active residential construction in North Las Vegas means completed homes near build sites can accumulate fine construction particulate in HVAC systems, vents, window sills, and on surfaces — even without direct construction work in the home. A deep clean that specifically addresses vents, air returns, and dust-accumulation surfaces is practical for North Las Vegas residents in or near active residential growth areas.',
+    a: 'Yes. Active residential construction in North Las Vegas means completed homes near build sites can accumulate fine construction particulate in HVAC systems, vents, window sills, and on surfaces, even without direct construction work in the home. A deep clean that specifically addresses vents, air returns, and dust-accumulation surfaces is practical for North Las Vegas residents in or near active residential growth areas.',
   },
 ];
 
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -132,7 +134,7 @@ export default function DeepCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Deep cleaning in North Las Vegas is a thorough reset that goes beyond routine
-            maintenance — covering inside appliances, grout lines, vents, baseboards, inside
+            maintenance, covering inside appliances, grout lines, vents, baseboards, inside
             cabinets, and every detail surface that accumulates desert dust and everyday wear.{' '}
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch deep cleaning
@@ -154,17 +156,17 @@ export default function DeepCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires deep cleaning in North Las Vegas"
             heading="Rental property owners, renters, and homeowners across a growing city."
-            sub="North Las Vegas deep cleaning demand is shaped by the city's rental density and active construction — a different profile from Henderson's luxury homes or Las Vegas's vacation rentals."
+            sub="North Las Vegas deep cleaning demand is shaped by the city's rental density and active construction, a different profile from Henderson's luxury homes or Las Vegas's vacation rentals."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Renters doing mid-tenancy resets',
-                body: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley. Many renters schedule a deep clean not just at move-out but mid-tenancy — a full reset to address Mojave desert dust buildup between regular cleaning visits.',
+                body: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley. Many renters schedule a deep clean not just at move-out but mid-tenancy, a full reset to address Mojave desert dust buildup between regular cleaning visits.',
               },
               {
                 title: 'Landlords resetting between long-term tenants',
-                body: "Beyond a standard move-out clean, North Las Vegas landlords use a deep clean to fully reset properties between extended tenancies — addressing inside appliances, grout, and accumulated buildup that a move-out scope doesn't fully cover.",
+                body: "Beyond a standard move-out clean, North Las Vegas landlords use a deep clean to fully reset properties between extended tenancies, addressing inside appliances, grout, and accumulated buildup that a move-out scope doesn't fully cover.",
               },
               {
                 title: 'New-construction homeowners',
@@ -172,7 +174,7 @@ export default function DeepCleaningNorthLasVegasPage() {
               },
               {
                 title: 'Established neighborhood homeowners',
-                body: 'Older North Las Vegas residential areas have homeowners who do periodic deep cleans as seasonal resets — addressing the buildup that accumulates between routine service visits in a Mojave desert climate.',
+                body: 'Older North Las Vegas residential areas have homeowners who do periodic deep cleans as seasonal resets, addressing the buildup that accumulates between routine service visits in a Mojave desert climate.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -230,15 +232,15 @@ export default function DeepCleaningNorthLasVegasPage() {
             {[
               {
                 heading: 'High rental density creates recurring demand',
-                body: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley. The rental market here is working-class and practical — renters use deep cleans as resets, landlords use them between tenants, and the high turnover in the rental stock means deep cleaning demand is consistent throughout the year, not concentrated at one season or lease-cycle peak.',
+                body: 'North Las Vegas has one of the higher renter-density profiles in the Las Vegas Valley. The rental market here is working-class and practical. Renters use deep cleans as resets, landlords use them between tenants, and the high turnover in the rental stock means deep cleaning demand is consistent throughout the year, not concentrated at one season or lease-cycle peak.',
               },
               {
                 heading: 'Active residential growth adds construction dust',
-                body: 'North Las Vegas has been one of the most active residential growth areas in the valley for years. New subdivisions and infill development mean many homes are adjacent to active construction. Fine particulate from grading, framing, and finishing work carries through the air and settles in completed homes nearby — particularly in HVAC systems, vents, and on surfaces near exterior openings.',
+                body: 'North Las Vegas has been one of the most active residential growth areas in the valley for years. New subdivisions and infill development mean many homes are adjacent to active construction. Fine particulate from grading, framing, and finishing work carries through the air and settles in completed homes nearby, particularly in HVAC systems, vents, and on surfaces near exterior openings.',
               },
               {
                 heading: 'Desert climate accelerates dust buildup',
-                body: 'Like all of the Las Vegas Valley, North Las Vegas sits in the Mojave Desert. Fine-particle dust accumulates on surfaces faster indoors than in wetter climates. For North Las Vegas renters and homeowners alike, a periodic deep clean is a practical response to the local environment — not just an aesthetic preference.',
+                body: 'Like all of the Las Vegas Valley, North Las Vegas sits in the Mojave Desert. Fine-particle dust accumulates on surfaces faster indoors than in wetter climates. For North Las Vegas renters and homeowners alike, a periodic deep clean is a practical response to the local environment, not just an aesthetic preference.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -310,7 +312,7 @@ export default function DeepCleaningNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Deep cleaning in North Las Vegas — common questions"
+        heading="Deep cleaning in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

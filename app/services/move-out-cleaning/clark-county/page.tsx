@@ -32,19 +32,19 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve all of Clark County for move-out cleaning?',
-    a: `Yes. Final Touch serves move-out cleaning clients across all of ${SITE.serviceArea.county} — Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas. The same professional standard and same scope applies in every city. Call ${SITE.phone.display} to schedule.`,
+    a: `Yes. Final Touch serves move-out cleaning clients across all of ${SITE.serviceArea.county}: Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas. The same professional standard and same scope applies in every city. Call ${SITE.phone.display} to schedule.`,
   },
   {
     q: 'Can Clark County property managers book move-out cleaning county-wide?',
-    a: `Yes. Property management companies overseeing portfolios across multiple Clark County cities can work with Final Touch for all their locations — one cleaning partner, one consistent standard, across every city in the county. Contact ${SITE.phone.display} to discuss a recurring county-wide arrangement.`,
+    a: `Yes. Property management companies overseeing portfolios across multiple Clark County cities can work with Final Touch for all their locations: one cleaning partner, one consistent standard, across every city in the county. Contact ${SITE.phone.display} to discuss a recurring county-wide arrangement.`,
   },
   {
     q: 'Does move-out cleaning help get my deposit back in Clark County?',
     a: 'A professional move-out clean addresses the surfaces landlords inspect at lease end anywhere in Clark County. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
   },
   {
-    q: 'Does Final Touch serve unincorporated Clark County for move-out cleaning?',
-    a: `Yes. Final Touch's service area includes unincorporated areas of Clark County in addition to Las Vegas, Henderson, North Las Vegas, and Boulder City. Call ${SITE.phone.display} to confirm coverage for your specific address.`,
+    q: 'Does Final Touch serve move-out cleaning across Clark County, including areas outside the main cities?',
+    a: `Yes. Final Touch's move-out cleaning service area covers all of Clark County, including Las Vegas, Henderson, North Las Vegas, and Boulder City along with the communities around them. Call ${SITE.phone.display} to confirm coverage for your specific address.`,
   },
   {
     q: 'How much does move-out cleaning cost in Clark County?',
@@ -90,6 +90,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -127,7 +129,7 @@ export default function MoveOutCleaningClarkCountyPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning · Clark County, NV"
         heading="Move-Out Cleaning in Clark County, NV"
-        sub={`Clark County has a large and varied rental market — high-density apartments in North Las Vegas, master-planned community rentals in Henderson, urban rentals in Las Vegas, and established homes in Boulder City. Final Touch serves move-out cleaning clients across every part of ${SITE.serviceArea.county}.`}
+        sub={`Clark County has a large and varied rental market: high-density apartments in North Las Vegas, master-planned community rentals in Henderson, urban rentals in Las Vegas, and established homes in Boulder City. Final Touch serves move-out cleaning clients across every part of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -138,7 +140,7 @@ export default function MoveOutCleaningClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Move-out cleaning in Clark County is a professional end-of-lease clean that addresses
-            every surface a landlord inspects — inside appliances, bathrooms, baseboards, and floors.{' '}
+            every surface a landlord inspects: inside appliances, bathrooms, baseboards, and floors.{' '}
             <Link href="/services/move-out-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-out cleaning
             </Link>{' '}
@@ -159,17 +161,17 @@ export default function MoveOutCleaningClarkCountyPage() {
           <SectionHeader
             eyebrow="Who hires move-out cleaning in Clark County"
             heading="Renters, property managers, landlords, and homeowners across the Las Vegas Valley."
-            sub="Clark County's rental market spans every housing type and city character in the valley — and Final Touch serves them all."
+            sub="Clark County's rental market spans every housing type and city character in the valley. And Final Touch serves them all."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Renters across all county cities',
-                body: 'Clark County has a large renter population spanning every city — from high-density North Las Vegas apartments to Henderson master-planned community rentals to urban Las Vegas units. All share the same move-out motivation: deposit recovery and a clean handoff.',
+                body: 'Clark County has a large renter population spanning every city: from high-density North Las Vegas apartments to Henderson master-planned community rentals to urban Las Vegas units. All share the same move-out motivation: deposit recovery and a clean handoff.',
               },
               {
                 title: 'County-spanning property managers',
-                body: 'Property management companies in Clark County often manage portfolios across multiple cities. Final Touch provides a consistent move-out cleaning standard across the entire portfolio — one partner for every city.',
+                body: 'Property management companies in Clark County often manage portfolios across multiple cities. Final Touch provides a consistent move-out cleaning standard across the entire portfolio, one partner for every city.',
               },
               {
                 title: 'Multi-city landlords',
@@ -218,7 +220,7 @@ export default function MoveOutCleaningClarkCountyPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed during booking. If your landlord has a specific checklist, share it
-            when you schedule — same process regardless of which city in Clark County the
+            when you schedule, same process regardless of which city in Clark County the
             property is in.
           </p>
         </div>
@@ -229,7 +231,7 @@ export default function MoveOutCleaningClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Move-out cleaning across Clark County"
-            heading="The county's rental market diversity — and one consistent standard."
+            heading="The county's rental market diversity, and one consistent standard."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
@@ -239,7 +241,7 @@ export default function MoveOutCleaningClarkCountyPage() {
               },
               {
                 heading: 'County-spanning property management',
-                body: 'Many Clark County property management companies manage portfolios that cross city boundaries — properties in Henderson and Las Vegas, or North Las Vegas and Henderson, or across all four cities. Final Touch provides county-wide move-out cleaning coverage so PM companies have one reliable partner for their entire portfolio rather than managing multiple cleaning vendors across cities.',
+                body: 'Many Clark County property management companies manage portfolios that cross city boundaries: properties in Henderson and Las Vegas, or North Las Vegas and Henderson, or across all four cities. Final Touch provides county-wide move-out cleaning coverage so PM companies have one reliable partner for their entire portfolio rather than managing multiple cleaning vendors across cities.',
               },
               {
                 heading: 'Consistent deposit-ready standard county-wide',
@@ -310,7 +312,7 @@ export default function MoveOutCleaningClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-out cleaning in Clark County — common questions"
+        heading="Move-out cleaning in Clark County: common questions"
         defaultOpenFirst
       />
 

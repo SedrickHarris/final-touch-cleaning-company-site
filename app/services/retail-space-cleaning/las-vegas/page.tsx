@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Can Final Touch clean my Las Vegas store after hours?',
-    a: "Yes. After-hours scheduling is standard for retail cleaning in Las Vegas — it keeps the clean from disrupting customers and staff. Las Vegas retail operates across extended hours, and cleaning schedules are built around your store's actual operating window. After-hours availability is confirmed during the walkthrough.",
+    a: "Yes. After-hours scheduling is standard for retail cleaning in Las Vegas. It keeps the clean from disrupting customers and staff. Las Vegas retail operates across extended hours, and cleaning schedules are built around your store's actual operating window. After-hours availability is confirmed during the walkthrough.",
   },
   {
     q: 'Does Final Touch serve retail tenants in Las Vegas strip malls?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -131,7 +133,7 @@ export default function RetailSpaceCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Retail Space Cleaning · Las Vegas, NV"
         heading="Retail Space Cleaning in Las Vegas, NV"
-        sub={`Las Vegas has a high concentration of strip malls, shopping corridors, and mixed-use retail. Final Touch provides scheduled retail space cleaning for storefronts, strip mall tenants, and retail interiors across Las Vegas and ${SITE.serviceArea.county} — including after-hours scheduling.`}
+        sub={`Las Vegas has a high concentration of strip malls, shopping corridors, and mixed-use retail. Final Touch provides scheduled retail space cleaning for storefronts, strip mall tenants, and retail interiors across Las Vegas and ${SITE.serviceArea.county}, including after-hours scheduling.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -142,7 +144,7 @@ export default function RetailSpaceCleaningLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Retail space cleaning in Las Vegas is a scheduled professional clean for storefronts
-            and retail interiors — covering sales floors, customer restrooms, display areas, and
+            and retail interiors, covering sales floors, customer restrooms, display areas, and
             back-of-house on a program designed around your store&apos;s hours.{' '}
             <Link
               href="/services/retail-space-cleaning"
@@ -179,7 +181,7 @@ export default function RetailSpaceCleaningLasVegasPage() {
               },
               {
                 title: 'Mixed-use center retailers',
-                body: 'Retail tenants in Las Vegas mixed-use developments — combining retail, office, and residential — have specific cleaning needs for customer-facing floors, display areas, and shared entry points.',
+                body: 'Retail tenants in Las Vegas mixed-use developments (combining retail, office, and residential) have specific cleaning needs for customer-facing floors, display areas, and shared entry points.',
               },
               {
                 title: 'Franchise operators',
@@ -248,15 +250,15 @@ export default function RetailSpaceCleaningLasVegasPage() {
             {[
               {
                 heading: 'Strip mall concentration across the city',
-                body: 'Las Vegas has a strip-mall-heavy commercial landscape. Neighborhood shopping centers and strip malls are the dominant retail format outside the resort corridor. Tenants in these centers need a cleaning partner who understands the format — shared parking lot entry, adjacent tenant noise during cleaning, and access windows before the center opens.',
+                body: 'Las Vegas has a strip-mall-heavy commercial landscape. Neighborhood shopping centers and strip malls are the dominant retail format outside the resort corridor. Tenants in these centers need a cleaning partner who understands the format: shared parking lot entry, adjacent tenant noise during cleaning, and access windows before the center opens.',
               },
               {
                 heading: 'After-hours scheduling is the norm',
-                body: "Las Vegas retail operates on extended hours, and many stores prefer cleaning after closing to avoid customer disruption. After-hours scheduling is not a special request here — it is the standard approach for Las Vegas retail cleaning, and Final Touch builds programs around your store's actual hours of operation.",
+                body: "Las Vegas retail operates on extended hours, and many stores prefer cleaning after closing to avoid customer disruption. After-hours scheduling is not a special request here. It is the standard approach for Las Vegas retail cleaning, and Final Touch builds programs around your store's actual hours of operation.",
               },
               {
                 heading: 'Franchise and multi-location operators',
-                body: "Las Vegas's size and retail density make it a common market for franchise operators running multiple locations. A cleaning program that covers multiple stores in the metro — same standard, coordinated schedule — is a practical need for franchise owners and regional operators.",
+                body: "Las Vegas's size and retail density make it a common market for franchise operators running multiple locations. A cleaning program that covers multiple stores in the metro (same standard, coordinated schedule) is a practical need for franchise owners and regional operators.",
               },
             ].map(({ heading, body }) => (
               <div
@@ -331,7 +333,7 @@ export default function RetailSpaceCleaningLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Retail space cleaning in Las Vegas — common questions"
+        heading="Retail space cleaning in Las Vegas: common questions"
         defaultOpenFirst
       />
 

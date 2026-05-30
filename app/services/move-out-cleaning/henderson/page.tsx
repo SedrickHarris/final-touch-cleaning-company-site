@@ -36,7 +36,7 @@ const faq = [
   },
   {
     q: 'Does move-out cleaning help get my deposit back in Henderson?',
-    a: 'A professional move-out clean addresses the surfaces Henderson landlords inspect at lease end — inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
+    a: 'A professional move-out clean addresses the surfaces Henderson landlords inspect at lease end: inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
   },
   {
     q: 'Can Henderson landlords book recurring move-out cleans?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How far in advance should I book move-out cleaning in Henderson?',
-    a: 'Book as early as possible once your move-out date is confirmed. Henderson move-out availability is generally more flexible than peak month-end periods in Las Vegas, but early booking is still recommended — especially if you have a firm lease-end deadline.',
+    a: 'Book as early as possible once your move-out date is confirmed. Henderson move-out availability is generally more flexible than peak month-end periods in Las Vegas, but early booking is still recommended, especially if you have a firm lease-end deadline.',
   },
   {
     q: 'How much does move-out cleaning cost in Henderson?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -121,7 +123,7 @@ export default function MoveOutCleaningHendersonPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning · Henderson, NV"
         heading="Move-Out Cleaning in Henderson, NV"
-        sub={`Henderson's established master-planned communities — Green Valley, Anthem, Green Valley Ranch — have a mix of owner-occupied and rental properties where landlords expect a higher finishing standard at lease-end. Final Touch provides professional move-out cleaning across all Henderson neighborhoods and ${SITE.serviceArea.county}.`}
+        sub={`Henderson's established master-planned communities (Green Valley, Anthem, Green Valley Ranch) have a mix of owner-occupied and rental properties where landlords expect a higher finishing standard at lease-end. Final Touch provides professional move-out cleaning across all Henderson neighborhoods and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -132,7 +134,7 @@ export default function MoveOutCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Move-out cleaning in Henderson is a professional end-of-lease clean that addresses
-            every surface a landlord inspects — inside appliances, bathrooms, baseboards, floors,
+            every surface a landlord inspects: inside appliances, bathrooms, baseboards, floors,
             and all the areas that show an extended tenancy.{' '}
             <Link href="/services/move-out-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-out cleaning
@@ -167,7 +169,7 @@ export default function MoveOutCleaningHendersonPage() {
               },
               {
                 title: 'Landlords in master-planned communities',
-                body: 'Henderson landlords managing rental properties in Green Valley, Anthem, and comparable neighborhoods expect a higher finishing standard at turnover than a budget clean delivers. The surrounding community sets the bar — and the clean needs to match it.',
+                body: 'Henderson landlords managing rental properties in Green Valley, Anthem, and comparable neighborhoods expect a higher finishing standard at turnover than a budget clean delivers. The surrounding community sets the bar. And the clean needs to match it.',
               },
               {
                 title: 'Property management companies',
@@ -237,11 +239,11 @@ export default function MoveOutCleaningHendersonPage() {
               },
               {
                 heading: 'Higher landlord finish expectations',
-                body: 'Henderson landlords managing properties in established communities tend to expect a more thorough finish at move-out than landlords in purely rental-density markets. Inside appliances, grout lines, baseboards, and vents are areas Henderson landlords commonly inspect — and where a professional clean makes the difference between a full deposit return and a deduction.',
+                body: 'Henderson landlords managing properties in established communities tend to expect a more thorough finish at move-out than landlords in purely rental-density markets. Inside appliances, grout lines, baseboards, and vents are areas Henderson landlords commonly inspect, and where a professional clean makes the difference between a full deposit return and a deduction.',
               },
               {
                 heading: 'Recurring landlord relationships',
-                body: "Because Henderson's rental inventory is spread across established neighborhoods rather than a few large apartment complexes, individual landlords often manage one to three properties. Final Touch works with Henderson landlords on an ongoing basis — same standard at every turnover, no need to find and vet a new cleaner for each vacancy.",
+                body: "Because Henderson's rental inventory is spread across established neighborhoods rather than a few large apartment complexes, individual landlords often manage one to three properties. Final Touch works with Henderson landlords on an ongoing basis: same standard at every turnover, no need to find and vet a new cleaner for each vacancy.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -313,7 +315,7 @@ export default function MoveOutCleaningHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-out cleaning in Henderson — common questions"
+        heading="Move-out cleaning in Henderson: common questions"
         defaultOpenFirst
       />
 

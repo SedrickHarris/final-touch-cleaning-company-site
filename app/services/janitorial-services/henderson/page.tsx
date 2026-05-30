@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'What is the difference between janitorial services and office cleaning in Henderson?',
-    a: "In Henderson's smaller commercial buildings and suburban office parks, the distinction is typically building-wide versus suite-specific scope. Office cleaning serves one tenant's suite. Janitorial programs serve the full building — lobbies, stairwells, shared restrooms, common areas, and the exterior entry in addition to individual tenant spaces. Final Touch offers both; the right fit depends on your building and is confirmed during the initial consultation.",
+    a: "In Henderson's smaller commercial buildings and suburban office parks, the distinction is typically building-wide versus suite-specific scope. Office cleaning serves one tenant's suite. Janitorial programs serve the full building: lobbies, stairwells, shared restrooms, common areas, and the exterior entry in addition to individual tenant spaces. Final Touch offers both; the right fit depends on your building and is confirmed during the initial consultation.",
   },
   {
     q: 'Does Final Touch offer recurring janitorial programs in Henderson?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function JanitorialServicesHendersonPage() {
       <HeroSection
         eyebrow="Janitorial Services · Henderson, NV"
         heading="Janitorial Services in Henderson, NV"
-        sub={`Henderson's commercial buildings serve an established, professionally-oriented community — office parks along Green Valley Parkway, medical buildings, and smaller commercial properties adjacent to master-planned neighborhoods. Final Touch provides recurring janitorial programs across Henderson and ${SITE.serviceArea.county}.`}
+        sub={`Henderson's commercial buildings serve an established, professionally-oriented community: office parks along Green Valley Parkway, medical buildings, and smaller commercial properties adjacent to master-planned neighborhoods. Final Touch provides recurring janitorial programs across Henderson and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function JanitorialServicesHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Janitorial services in Henderson are scheduled recurring cleaning programs for
-            commercial buildings — covering lobbies, restrooms, common areas, and office suites
+            commercial buildings, covering lobbies, restrooms, common areas, and office suites
             on a set cadence.{' '}
             <Link href="/services/janitorial-services" className="text-brand-blue font-semibold hover:underline">
               Final Touch janitorial services
@@ -209,7 +211,7 @@ export default function JanitorialServicesHendersonPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Program scope, visit frequency, and access timing confirmed per building. Henderson
-            commercial buildings typically operate on standard business hours — scheduling is
+            commercial buildings typically operate on standard business hours. Scheduling is
             confirmed around your building&apos;s actual hours and access requirements.
           </p>
         </div>
@@ -225,8 +227,8 @@ export default function JanitorialServicesHendersonPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
               {
-                heading: 'Standard operating hours — predictable scheduling',
-                body: "Unlike Las Vegas's 24-hour commercial environment, Henderson's businesses overwhelmingly operate on standard hours. Office parks along Green Valley Parkway open and close on predictable schedules. Janitorial programs here are typically scheduled during after-hours windows that are consistent week to week — which makes access coordination and cleaning consistency more straightforward than in more variable commercial environments.",
+                heading: 'Standard operating hours, predictable scheduling',
+                body: "Unlike Las Vegas's 24-hour commercial environment, Henderson's businesses overwhelmingly operate on standard hours. Office parks along Green Valley Parkway open and close on predictable schedules. Janitorial programs here are typically scheduled during after-hours windows that are consistent week to week, which makes access coordination and cleaning consistency more straightforward than in more variable commercial environments.",
               },
               {
                 heading: 'Smaller building scale',
@@ -234,7 +236,7 @@ export default function JanitorialServicesHendersonPage() {
               },
               {
                 heading: 'Medical corridor requirements',
-                body: "Henderson's concentration of medical offices and healthcare-adjacent businesses means janitorial programs here sometimes involve environments with higher cleanliness expectations — waiting rooms, clinical hallways, and shared restrooms that patients use. Final Touch confirms scope and any specific requirements for healthcare environments during the walkthrough.",
+                body: "Henderson's concentration of medical offices and healthcare-adjacent businesses means janitorial programs here sometimes involve environments with higher cleanliness expectations: waiting rooms, clinical hallways, and shared restrooms that patients use. Final Touch confirms scope and any specific requirements for healthcare environments during the walkthrough.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -306,7 +308,7 @@ export default function JanitorialServicesHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Janitorial services in Henderson — common questions"
+        heading="Janitorial services in Henderson: common questions"
         defaultOpenFirst
       />
 

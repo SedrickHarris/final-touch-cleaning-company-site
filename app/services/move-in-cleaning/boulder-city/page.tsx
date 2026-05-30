@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Is move-in cleaning different for older Boulder City homes?',
-    a: 'Yes. Boulder City has a housing stock that includes many older properties with original fixtures, built-in cabinetry, and surfaces that have been in place for decades. A move-in clean in an older Boulder City home addresses what previous occupants left behind in original cabinetry, around period fixtures, and in surfaces that have accumulated years of buildup. The approach requires care with what the surfaces are — not the same as cleaning a new Henderson or Las Vegas build.',
+    a: 'Yes. Boulder City has a housing stock that includes many older properties with original fixtures, built-in cabinetry, and surfaces that have been in place for decades. A move-in clean in an older Boulder City home addresses what previous occupants left behind in original cabinetry, around period fixtures, and in surfaces that have accumulated years of buildup. The approach requires care with what the surfaces are, not the same as cleaning a new Henderson or Las Vegas build.',
   },
   {
     q: 'Does Final Touch serve Boulder City for move-in cleaning?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How soon before move-in should I schedule cleaning in Boulder City?',
-    a: 'As early as possible once access is confirmed. For Boulder City homes that have been vacant during a sale or sat unoccupied between owners, scheduling as soon as access is available after closing gives the team a clear space to work before furniture arrives — particularly important when the home has original cabinetry and built-in features that need attention.',
+    a: 'As early as possible once access is confirmed. For Boulder City homes that have been vacant during a sale or sat unoccupied between owners, scheduling as soon as access is available after closing gives the team a clear space to work before furniture arrives, particularly important when the home has original cabinetry and built-in features that need attention.',
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function MoveInCleaningBoulderCityPage() {
       <HeroSection
         eyebrow="Move-In Cleaning · Boulder City, NV"
         heading="Move-In Cleaning in Boulder City, NV"
-        sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting — often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City homebuyers, renters, and property owners across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting, often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City homebuyers, renters, and property owners across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -127,7 +129,7 @@ export default function MoveInCleaningBoulderCityPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Move-in cleaning in Boulder City is a professional clean before move-in day —
+            Move-in cleaning in Boulder City is a professional clean before move-in day,
             addressing years of prior-occupant buildup in original cabinetry and fixtures,
             surfaces that sat vacant during the sale process, and every detail area that a
             previous owner or seller left behind.{' '}
@@ -160,15 +162,15 @@ export default function MoveInCleaningBoulderCityPage() {
               },
               {
                 title: 'Buyers of older established Boulder City homes',
-                body: "Boulder City's housing stock includes properties that have been occupied for decades. A move-in clean for these buyers addresses seller-side buildup in original fixtures and cabinetry — surfaces a staging or listing clean does not typically reach.",
+                body: "Boulder City's housing stock includes properties that have been occupied for decades. A move-in clean for these buyers addresses seller-side buildup in original fixtures and cabinetry, surfaces a staging or listing clean does not typically reach.",
               },
               {
                 title: 'Rental property managers resetting units',
-                body: "Boulder City's small rental pool still generates turnover. Property managers and landlords want incoming tenants to start in a verified, clean space — distinct from the move-out clean of the prior occupant.",
+                body: "Boulder City's small rental pool still generates turnover. Property managers and landlords want incoming tenants to start in a verified, clean space, distinct from the move-out clean of the prior occupant.",
               },
               {
                 title: 'Lake Mead vacation rental owners',
-                body: 'Owners setting up a vacation or short-term rental near Lake Mead use a move-in clean to establish a baseline before their first guests arrive — a foundation the property can be maintained from going forward.',
+                body: 'Owners setting up a vacation or short-term rental near Lake Mead use a move-in clean to establish a baseline before their first guests arrive, a foundation the property can be maintained from going forward.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -186,7 +188,7 @@ export default function MoveInCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Scope"
             heading="What move-in cleaning covers."
-            sub="A move-in clean goes deeper than routine maintenance — addressing what the previous occupant left behind."
+            sub="A move-in clean goes deeper than routine maintenance, addressing what the previous occupant left behind."
           />
           <ul className="mt-8 space-y-3">
             {[
@@ -226,10 +228,10 @@ export default function MoveInCleaningBoulderCityPage() {
             {[
               {
                 heading: 'Established homes with years of prior occupancy',
-                body: 'Boulder City is not a new-construction market. Almost all move-in cleaning here is for established homes — properties that have had one or more prior owners and may have been on the market for weeks or months before closing. The buildup in original cabinetry, behind period fixtures, and in surfaces that were cleaned for listing but not deeply cleaned is what a move-in clean addresses. This is a fundamentally different job from cleaning a new Henderson build where the issue is construction residue.',
+                body: 'Boulder City is not a new-construction market. Almost all move-in cleaning here is for established homes, properties that have had one or more prior owners and may have been on the market for weeks or months before closing. The buildup in original cabinetry, behind period fixtures, and in surfaces that were cleaned for listing but not deeply cleaned is what a move-in clean addresses. This is a fundamentally different job from cleaning a new Henderson build where the issue is construction residue.',
               },
               {
-                heading: 'A destination purchase — buyers arrive with expectations',
+                heading: 'A destination purchase: buyers arrive with expectations',
                 body: 'People who buy in Boulder City are typically making an intentional choice to leave the Las Vegas metro for a quieter, smaller community. They arrive with high expectations for their new home and want to start in a space that reflects that choice. A move-in clean before the first box is unpacked ensures the home meets those expectations from day one.',
               },
             ].map(({ heading, body }) => (
@@ -302,7 +304,7 @@ export default function MoveInCleaningBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-in cleaning in Boulder City — common questions"
+        heading="Move-in cleaning in Boulder City: common questions"
         defaultOpenFirst
       />
 

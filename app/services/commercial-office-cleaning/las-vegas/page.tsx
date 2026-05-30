@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does commercial office cleaning include in Las Vegas?',
-    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope — frequency, specific rooms, access timing — is confirmed during a walkthrough before the first clean.',
+    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope (frequency, specific rooms, access timing) is confirmed during a walkthrough before the first clean.',
   },
   {
     q: 'How often should offices be cleaned in Las Vegas?',
@@ -36,7 +36,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve small businesses in Las Vegas?',
-    a: `Yes. Final Touch serves offices and commercial spaces of all sizes across Las Vegas and ${SITE.serviceArea.county} — from single-suite operations to multi-tenant floors and standalone commercial buildings. Call ${SITE.phone.display} to discuss your space.`,
+    a: `Yes. Final Touch serves offices and commercial spaces of all sizes across Las Vegas and ${SITE.serviceArea.county}, from single-suite operations to multi-tenant floors and standalone commercial buildings. Call ${SITE.phone.display} to discuss your space.`,
   },
   {
     q: 'Can Final Touch clean healthcare or medical offices in Las Vegas?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does office cleaning cost in Las Vegas?',
-    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote online. A walkthrough is scheduled before quoting — no rate is given without reviewing your space.`,
+    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote online. A walkthrough is scheduled before quoting. No rate is given without reviewing your space.`,
   },
 ];
 
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -142,7 +144,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Commercial office cleaning in Las Vegas is a recurring professional cleaning program
-            for offices and commercial interiors — covering workstations, common areas, restrooms,
+            for offices and commercial interiors, covering workstations, common areas, restrooms,
             and high-touch surfaces on a schedule suited to the space and its foot traffic.{' '}
             <Link
               href="/services/commercial-office-cleaning"
@@ -169,7 +171,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires office cleaning in Las Vegas"
             heading="Las Vegas businesses across professional services, healthcare, and more."
-            sub="The Las Vegas commercial sector is more diverse than the city's tourism identity suggests — a wide range of professional businesses need reliable office cleaning."
+            sub="The Las Vegas commercial sector is more diverse than the city's tourism identity suggests. A wide range of professional businesses need reliable office cleaning."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -183,7 +185,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
               },
               {
                 title: 'Hospitality-adjacent businesses',
-                body: "Las Vegas's tourism economy creates a large category of businesses — event companies, staffing agencies, media production, consulting — that maintain office environments connected to the hospitality industry. Many have high-traffic reception and meeting areas that require frequent cleaning.",
+                body: "Las Vegas's tourism economy creates a large category of businesses (event companies, staffing agencies, media production, consulting) that maintain office environments connected to the hospitality industry. Many have high-traffic reception and meeting areas that require frequent cleaning.",
               },
               {
                 title: 'Small and mid-size businesses',
@@ -257,7 +259,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
               },
               {
                 heading: 'Tourism-driven business activity',
-                body: "Businesses adjacent to Las Vegas's hospitality and events economy — event production companies, talent agencies, marketing firms, catering operations — often have irregular schedules and high-traffic meeting areas. Cleaning programs need to be flexible to match those hours.",
+                body: "Businesses adjacent to Las Vegas's hospitality and events economy (event production companies, talent agencies, marketing firms, catering operations) often have irregular schedules and high-traffic meeting areas. Cleaning programs need to be flexible to match those hours.",
               },
             ].map(({ heading, body }) => (
               <div
@@ -332,7 +334,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Commercial office cleaning in Las Vegas — common questions"
+        heading="Commercial office cleaning in Las Vegas: common questions"
         defaultOpenFirst
       />
 

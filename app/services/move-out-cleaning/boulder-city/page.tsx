@@ -36,15 +36,15 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Boulder City for move-out cleaning?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City is a regular part of the service territory — not a special case or an extra trip. Call ${SITE.phone.display} to schedule.`,
+    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City is a regular part of the service territory, not a special case or an extra trip. Call ${SITE.phone.display} to schedule.`,
   },
   {
     q: 'Does move-out cleaning help get my deposit back in Boulder City?',
-    a: 'A professional move-out clean addresses the surfaces Boulder City landlords inspect at lease end — inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
+    a: 'A professional move-out clean addresses the surfaces Boulder City landlords inspect at lease end: inside appliances, bathrooms, baseboards, and floor surfaces. Final Touch cleans to the standard that supports deposit recovery. We cannot guarantee a return, but we clean to the standard that supports it.',
   },
   {
     q: 'Can landlords in Boulder City book recurring move-out cleans?',
-    a: 'Yes. Boulder City landlords managing rental properties can arrange recurring turnover cleaning with Final Touch. Given the smaller rental pool, this is often a longer-term relationship — the same professional standard applied every time a property turns over. Contact us to discuss an arrangement.',
+    a: 'Yes. Boulder City landlords managing rental properties can arrange recurring turnover cleaning with Final Touch. Given the smaller rental pool, this is often a longer-term relationship, the same professional standard applied every time a property turns over. Contact us to discuss an arrangement.',
   },
   {
     q: 'How much does move-out cleaning cost in Boulder City?',
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -121,7 +123,7 @@ export default function MoveOutCleaningBoulderCityPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning · Boulder City, NV"
         heading="Move-Out Cleaning in Boulder City, NV"
-        sub={`Boulder City has a small, tight rental market where property condition carries community reputational weight. Final Touch provides professional move-out cleaning for Boulder City renters, landlords, and homeowners selling — cleaning to the standard a close-knit community expects.`}
+        sub={`Boulder City has a small, tight rental market where property condition carries community reputational weight. Final Touch provides professional move-out cleaning for Boulder City renters, landlords, and homeowners selling, cleaning to the standard a close-knit community expects.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -132,7 +134,7 @@ export default function MoveOutCleaningBoulderCityPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Move-out cleaning in Boulder City is a professional end-of-lease clean addressing
-            every surface a landlord inspects — inside appliances, bathrooms, baseboards, and
+            every surface a landlord inspects: inside appliances, bathrooms, baseboards, and
             floors.{' '}
             <Link href="/services/move-out-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-out cleaning
@@ -228,15 +230,15 @@ export default function MoveOutCleaningBoulderCityPage() {
             {[
               {
                 heading: 'A small, tight rental market',
-                body: "Boulder City's rental inventory is a fraction of what Las Vegas or North Las Vegas has. There are no large apartment complexes, no high-density rental corridors, and few absentee landlords managing dozens of units. The rental market is mostly individual landlords managing one or two properties — people who are part of the community and care about how their properties are maintained.",
+                body: "Boulder City's rental inventory is a fraction of what Las Vegas or North Las Vegas has. There are no large apartment complexes, no high-density rental corridors, and few absentee landlords managing dozens of units. The rental market is mostly individual landlords managing one or two properties, people who are part of the community and care about how their properties are maintained.",
               },
               {
                 heading: 'Community reputation matters',
-                body: 'In a small city like Boulder City, word of mouth carries more weight than it does in anonymous metro rental markets. A landlord whose property is consistently well-maintained — and who returns deposits fairly — develops a reputation in the community. A professional move-out clean is part of maintaining that reputation, for both landlords and departing tenants.',
+                body: 'In a small city like Boulder City, word of mouth carries more weight than it does in anonymous metro rental markets. A landlord whose property is consistently well-maintained (and who returns deposits fairly) develops a reputation in the community. A professional move-out clean is part of maintaining that reputation, for both landlords and departing tenants.',
               },
               {
                 heading: 'Older homes may show extended occupancy',
-                body: "Boulder City's housing stock includes many older properties. A tenant who has occupied an older Boulder City home for several years leaves behind a level of buildup — in original cabinetry, in grout lines, in surfaces that routine cleaning passes over — that requires a thorough professional clean to fully address at move-out.",
+                body: "Boulder City's housing stock includes many older properties. A tenant who has occupied an older Boulder City home for several years leaves behind a level of buildup (in original cabinetry, in grout lines, in surfaces that routine cleaning passes over) that requires a thorough professional clean to fully address at move-out.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -308,7 +310,7 @@ export default function MoveOutCleaningBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-out cleaning in Boulder City — common questions"
+        heading="Move-out cleaning in Boulder City: common questions"
         defaultOpenFirst
       />
 

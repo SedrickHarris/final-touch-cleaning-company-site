@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does post-construction cleanup include in Las Vegas?',
-    a: 'Post-construction cleanup covers removal of construction debris, drywall dust from all surfaces including vents and HVAC returns, adhesive and caulk residue, window film and glass cleaning, fixture cleaning, floor surfaces, and detail cleaning throughout the space. Scope is confirmed based on the specific project — a residential new build differs from a commercial buildout in what needs to be addressed.',
+    a: 'Post-construction cleanup covers removal of construction debris, drywall dust from all surfaces including vents and HVAC returns, adhesive and caulk residue, window film and glass cleaning, fixture cleaning, floor surfaces, and detail cleaning throughout the space. Scope is confirmed based on the specific project. A residential new build differs from a commercial buildout in what needs to be addressed.',
   },
   {
     q: 'Who hires post-construction cleanup in Las Vegas?',
-    a: 'Las Vegas has a mix of active residential subdivisions, commercial buildouts, and ongoing renovation projects across the metro. The client base is both residential — new homeowners, remodel owners — and commercial — developers, general contractors, and business owners preparing to open. Both segments create demand for a professional final clean that the construction crew does not provide.',
+    a: 'Las Vegas has a mix of active residential subdivisions, commercial buildouts, and ongoing renovation projects across the metro. The client base is both residential (new homeowners, remodel owners) and commercial: developers, general contractors, and business owners preparing to open. Both segments create demand for a professional final clean that the construction crew does not provide.',
   },
   {
     q: 'How long does post-construction cleanup take in Las Vegas?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does post-construction cleanup cost in Las Vegas?',
-    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Post-construction pricing depends on the size, scope, and condition of the space. No templated rate is applied without reviewing the project — a brief walkthrough or site description is the starting point.`,
+    a: `Contact Final Touch at ${SITE.phone.display} or request a free quote. Post-construction pricing depends on the size, scope, and condition of the space. No templated rate is applied without reviewing the project. A brief walkthrough or site description is the starting point.`,
   },
 ];
 
@@ -87,6 +87,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -131,7 +133,7 @@ export default function PostConstructionCleanupLasVegasPage() {
       <HeroSection
         eyebrow="Post-Construction Cleanup · Las Vegas, NV"
         heading="Post-Construction Cleanup in Las Vegas, NV"
-        sub={`Las Vegas has one of the most active construction markets in the region — residential subdivisions, commercial buildouts, and ongoing renovations throughout the metro. Final Touch provides thorough post-construction cleanup for new builds and renovations across Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`Las Vegas has one of the most active construction markets in the region: residential subdivisions, commercial buildouts, and ongoing renovations throughout the metro. Final Touch provides thorough post-construction cleanup for new builds and renovations across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -142,7 +144,7 @@ export default function PostConstructionCleanupLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-construction cleanup in Las Vegas is the final professional cleaning pass after
-            builders finish — removing drywall dust, adhesive residue, construction debris, and
+            builders finish, removing drywall dust, adhesive residue, construction debris, and
             window film from a space that looks done but is not truly clean.{' '}
             <Link
               href="/services/post-construction-cleanup"
@@ -186,7 +188,7 @@ export default function PostConstructionCleanupLasVegasPage() {
               },
               {
                 title: 'Commercial property owners and developers',
-                body: 'Las Vegas commercial buildout — retail spaces, offices, mixed-use — requires thorough post-construction cleanup before tenant occupancy or business launch. The same dust and residue issues that affect residential new builds apply in commercial spaces.',
+                body: 'Las Vegas commercial buildout (retail spaces, offices, mixed-use) requires thorough post-construction cleanup before tenant occupancy or business launch. The same dust and residue issues that affect residential new builds apply in commercial spaces.',
               },
               {
                 title: 'Renovation and remodel owners',
@@ -234,7 +236,7 @@ export default function PostConstructionCleanupLasVegasPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope is confirmed based on the project before the clean begins. Commercial buildouts
-            and residential new builds have different scope needs — we confirm both during the
+            and residential new builds have different scope needs. We confirm both during the
             walkthrough.
           </p>
         </div>
@@ -252,15 +254,15 @@ export default function PostConstructionCleanupLasVegasPage() {
             {[
               {
                 heading: 'Sustained residential construction pipeline',
-                body: 'Las Vegas has maintained active residential development for years. New subdivisions, master-planned community phases, and infill projects across the valley create a consistent pipeline of new-build post-construction cleanup jobs — residential homeowners who need the final clean before move-in.',
+                body: 'Las Vegas has maintained active residential development for years. New subdivisions, master-planned community phases, and infill projects across the valley create a consistent pipeline of new-build post-construction cleanup jobs, residential homeowners who need the final clean before move-in.',
               },
               {
                 heading: 'Active commercial buildout',
-                body: 'Commercial construction — retail spaces, office suites, restaurant buildouts, medical office conversions — adds a second demand stream. Business owners and developers need a thorough post-construction clean before their first day of operations or tenant move-in.',
+                body: 'Commercial construction (retail spaces, office suites, restaurant buildouts, medical office conversions) adds a second demand stream. Business owners and developers need a thorough post-construction clean before their first day of operations or tenant move-in.',
               },
               {
                 heading: 'Mojave desert compounds construction dust',
-                body: 'Construction dust is heavy in any climate. In Las Vegas, the Mojave desert environment means airborne particulate from a construction site settles more aggressively and penetrates further into surfaces than in wetter climates. A thorough cleanup is not optional — it is the difference between a finished space and a livable one.',
+                body: 'Construction dust is heavy in any climate. In Las Vegas, the Mojave desert environment means airborne particulate from a construction site settles more aggressively and penetrates further into surfaces than in wetter climates. A thorough cleanup is not optional. It is the difference between a finished space and a livable one.',
               },
             ].map(({ heading, body }) => (
               <div
@@ -335,7 +337,7 @@ export default function PostConstructionCleanupLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Post-construction cleanup in Las Vegas — common questions"
+        heading="Post-construction cleanup in Las Vegas: common questions"
         defaultOpenFirst
       />
 

@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does Final Touch clean facility offices in North Las Vegas warehouses?',
-    a: "Yes. North Las Vegas has a large industrial and logistics corridor. Final Touch serves the office, break room, and common-area cleaning needs of warehouse and distribution facilities in North Las Vegas — facility offices attached to warehouse operations, employee break rooms, and shared spaces within industrial complexes. This is a service type specifically relevant to North Las Vegas's industrial base and less common at the same scale in Henderson or Las Vegas proper.",
+    a: "Yes. North Las Vegas has a large industrial and logistics corridor. Final Touch serves the office, break room, and common-area cleaning needs of warehouse and distribution facilities in North Las Vegas: facility offices attached to warehouse operations, employee break rooms, and shared spaces within industrial complexes. This is a service type specifically relevant to North Las Vegas's industrial base and less common at the same scale in Henderson or Las Vegas proper.",
   },
   {
     q: 'How often should North Las Vegas offices be cleaned?',
-    a: 'Depends on foot traffic, type of business, and working conditions. Warehouse facility offices and industrial break rooms in North Las Vegas often require more frequent cleaning than a standard professional services office because of the working environment — more foot traffic, heavier use, and higher dust load from adjacent operations. Contact Final Touch to discuss what frequency fits your facility.',
+    a: 'Depends on foot traffic, type of business, and working conditions. Warehouse facility offices and industrial break rooms in North Las Vegas often require more frequent cleaning than a standard professional services office because of the working environment: more foot traffic, heavier use, and higher dust load from adjacent operations. Contact Final Touch to discuss what frequency fits your facility.',
   },
   {
     q: 'Does Final Touch serve small businesses in North Las Vegas?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does office cleaning cost in North Las Vegas?',
-    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — no rate is given without reviewing your space.`,
+    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting. No rate is given without reviewing your space.`,
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -127,7 +129,7 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Commercial office cleaning in North Las Vegas covers offices of all types —
+            Commercial office cleaning in North Las Vegas covers offices of all types:
             professional services suites, facility offices attached to warehouse operations,
             and small businesses along the city&apos;s commercial corridors.{' '}
             <Link href="/services/commercial-office-cleaning" className="text-brand-blue font-semibold hover:underline">
@@ -149,7 +151,7 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires office cleaning in North Las Vegas"
             heading="Warehouse facility offices, small businesses, and industrial complex operators."
-            sub="North Las Vegas commercial cleaning is uniquely shaped by its industrial corridor — a segment that creates cleaning demand not found in Henderson or Las Vegas proper at the same scale."
+            sub="North Las Vegas commercial cleaning is uniquely shaped by its industrial corridor, a segment that creates cleaning demand not found in Henderson or Las Vegas proper at the same scale."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -225,11 +227,11 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
             {[
               {
                 heading: 'Industrial corridor creates a unique office type',
-                body: 'North Las Vegas has a large industrial and logistics corridor that creates a type of office cleaning demand not found at the same scale in Henderson or Las Vegas proper. Facility offices attached to warehouses and distribution centers are functional working spaces — not professional services suites — and they have different cleaning requirements: heavier use, more foot traffic, and closer proximity to industrial operations that increase dust load.',
+                body: 'North Las Vegas has a large industrial and logistics corridor that creates a type of office cleaning demand not found at the same scale in Henderson or Las Vegas proper. Facility offices attached to warehouses and distribution centers are functional working spaces (not professional services suites) and they have different cleaning requirements: heavier use, more foot traffic, and closer proximity to industrial operations that increase dust load.',
               },
               {
                 heading: 'Working-class commercial corridors',
-                body: "NLV's commercial corridors along Lamb Boulevard, Craig Road, and Cheyenne Avenue serve a working-class residential population with a mix of auto services, food, insurance offices, and similar businesses. The cleaning standard expected here is practical and consistent — businesses need to be presentable for customers without the premium-positioning expectations of Henderson's professional corridors.",
+                body: "NLV's commercial corridors along Lamb Boulevard, Craig Road, and Cheyenne Avenue serve a working-class residential population with a mix of auto services, food, insurance offices, and similar businesses. The cleaning standard expected here is practical and consistent. Businesses need to be presentable for customers without the premium-positioning expectations of Henderson's professional corridors.",
               },
               {
                 heading: 'Mojave dust in commercial spaces',
@@ -305,7 +307,7 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Commercial office cleaning in North Las Vegas — common questions"
+        heading="Commercial office cleaning in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

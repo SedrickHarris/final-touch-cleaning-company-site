@@ -12,14 +12,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: 'Commercial Cleaning in Clark County, NV | Final Touch',
   description:
-    'Commercial office cleaning across Clark County, NV. Final Touch serves businesses in every city — Las Vegas, Henderson, North Las Vegas, and Boulder City. Call (702) 444-5077.',
+    'Commercial office cleaning across Clark County, NV. Final Touch serves businesses in every city: Las Vegas, Henderson, North Las Vegas, and Boulder City. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/commercial-office-cleaning/clark-county`,
   },
   openGraph: {
     title: 'Commercial Cleaning in Clark County, NV | Final Touch',
     description:
-      'Commercial office cleaning across Clark County, NV. Final Touch serves businesses in every city — Las Vegas, Henderson, North Las Vegas, and Boulder City. Call (702) 444-5077.',
+      'Commercial office cleaning across Clark County, NV. Final Touch serves businesses in every city: Las Vegas, Henderson, North Las Vegas, and Boulder City. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/commercial-office-cleaning/clark-county`,
   },
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does commercial office cleaning include in Clark County?',
-    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope, frequency, and access timing are confirmed during a walkthrough — the same process in every Clark County city.',
+    a: 'Commercial office cleaning covers workstation surfaces, lobbies and reception areas, break rooms and kitchen areas, conference rooms, restrooms, high-touch surfaces, floor vacuuming and mopping, and trash removal. Recurring program scope, frequency, and access timing are confirmed during a walkthrough, the same process in every Clark County city.',
   },
   {
     q: 'Does Final Touch serve businesses across multiple Clark County cities?',
-    a: `Yes. Businesses with offices or commercial spaces in more than one Clark County city can work with Final Touch for all their locations — one cleaning partner, consistent standard, across every city in the county. Call ${SITE.phone.display} to discuss a multi-location arrangement.`,
+    a: `Yes. Businesses with offices or commercial spaces in more than one Clark County city can work with Final Touch for all their locations, one cleaning partner, consistent standard, across every city in the county. Call ${SITE.phone.display} to discuss a multi-location arrangement.`,
   },
   {
     q: 'What types of offices does Final Touch clean across Clark County?',
-    a: "Clark County's commercial landscape spans every office type in the Las Vegas Valley simultaneously: Las Vegas's tourism-adjacent businesses and large professional services firms; Henderson's suburban medical offices and Green Valley Parkway corridor; North Las Vegas's warehouse facility offices and industrial complex management offices; Boulder City's small historic downtown professional services. Final Touch serves all of them — scope confirmed per business during the walkthrough.",
+    a: "Clark County's commercial landscape spans every office type in the Las Vegas Valley simultaneously: Las Vegas's tourism-adjacent businesses and large professional services firms; Henderson's suburban medical offices and Green Valley Parkway corridor; North Las Vegas's warehouse facility offices and industrial complex management offices; Boulder City's small historic downtown professional services. Final Touch serves all of them, scope confirmed per business during the walkthrough.",
   },
   {
     q: 'How often should Clark County offices be cleaned?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How much does office cleaning cost in Clark County?',
-    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting — the same process regardless of which county city the office is in.`,
+    a: `Pricing depends on office size, cleaning frequency, and scope. Contact Final Touch at ${SITE.phone.display} or request a free quote. A walkthrough is scheduled before quoting, the same process regardless of which county city the office is in.`,
   },
 ];
 
@@ -86,6 +86,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((city) => ({
@@ -134,12 +136,12 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Commercial office cleaning in Clark County is a recurring professional cleaning program
-            for offices and commercial spaces — covering workstations, common areas, restrooms, and
+            for offices and commercial spaces, covering workstations, common areas, restrooms, and
             high-touch surfaces on a schedule that fits the business.{' '}
             <Link href="/services/commercial-office-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch commercial cleaning
             </Link>{' '}
-            serves businesses across every city in the county — from Las Vegas&apos;s large commercial
+            serves businesses across every city in the county, from Las Vegas&apos;s large commercial
             corridors to Boulder City&apos;s small downtown offices. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -154,14 +156,14 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires office cleaning in Clark County"
-            heading="Every commercial office type in the Las Vegas Valley — county-wide."
+            heading="Every commercial office type in the Las Vegas Valley, county-wide."
             sub="Clark County's commercial diversity means office cleaning clients span every industry, size, and city character simultaneously."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'Multi-location businesses across county cities',
-                body: 'Businesses with offices in more than one Clark County city — a professional services firm with Las Vegas and Henderson locations, a healthcare practice across multiple cities — need a cleaning partner who serves every location at the same standard.',
+                body: 'Businesses with offices in more than one Clark County city (a professional services firm with Las Vegas and Henderson locations, a healthcare practice across multiple cities) need a cleaning partner who serves every location at the same standard.',
               },
               {
                 title: 'Las Vegas professional and hospitality-adjacent offices',
@@ -169,11 +171,11 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
               },
               {
                 title: 'Henderson suburban professional and medical offices',
-                body: "Henderson's commercial corridor — Green Valley Parkway, Sunset Road — concentrates medical offices, professional services, and suburban business tenants who need reliable recurring cleaning programs.",
+                body: "Henderson's commercial corridor (Green Valley Parkway, Sunset Road) concentrates medical offices, professional services, and suburban business tenants who need reliable recurring cleaning programs.",
               },
               {
                 title: 'North Las Vegas facility and industrial offices',
-                body: "North Las Vegas's industrial and logistics corridor generates facility office and break room cleaning demand unique in the county — heavier-use environments attached to warehouse and distribution operations.",
+                body: "North Las Vegas's industrial and logistics corridor generates facility office and break room cleaning demand unique in the county, heavier-use environments attached to warehouse and distribution operations.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -213,8 +215,8 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted">
-            Recurring program scope, frequency, and access timing confirmed during the walkthrough
-            — the same process for every county city.
+            Recurring program scope, frequency, and access timing confirmed during the walkthrough,
+            the same process for every county city.
           </p>
         </div>
       </section>
@@ -234,11 +236,11 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
               },
               {
                 heading: 'Multi-location businesses need county-wide coverage',
-                body: 'Many Clark County businesses operate across more than one city — a professional services firm with Las Vegas and Henderson offices, a healthcare group with multiple locations, a franchise with units in different cities. Final Touch provides county-wide commercial cleaning coverage so multi-location businesses have one partner, one standard, one contact across their entire county footprint.',
+                body: 'Many Clark County businesses operate across more than one city: a professional services firm with Las Vegas and Henderson offices, a healthcare group with multiple locations, a franchise with units in different cities. Final Touch provides county-wide commercial cleaning coverage so multi-location businesses have one partner, one standard, one contact across their entire county footprint.',
               },
               {
                 heading: 'Mojave dust affects every county office',
-                body: 'Fine-particle Mojave desert dust accumulates on office surfaces across every Clark County city — not just in Las Vegas. Henderson offices, North Las Vegas facility spaces, and Boulder City storefronts all deal with the same desert dust load. A county-wide cleaning partner who understands this environment applies appropriate cleaning frequency and scope regardless of which city the office is in.',
+                body: 'Fine-particle Mojave desert dust accumulates on office surfaces across every Clark County city, not just in Las Vegas. Henderson offices, North Las Vegas facility spaces, and Boulder City storefronts all deal with the same desert dust load. A county-wide cleaning partner who understands this environment applies appropriate cleaning frequency and scope regardless of which city the office is in.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -305,7 +307,7 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Commercial office cleaning in Clark County — common questions"
+        heading="Commercial office cleaning in Clark County: common questions"
         defaultOpenFirst
       />
 

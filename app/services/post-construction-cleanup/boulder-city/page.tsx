@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Who typically needs post-construction cleanup in Boulder City?',
-    a: "Unlike Las Vegas or North Las Vegas, Boulder City's post-construction cleanup demand is almost entirely renovation and remodel-driven rather than new-build driven. The city has little large-scale new residential development. The clients are homeowners renovating established properties — kitchens, bathrooms, room additions — and small commercial owners updating historic downtown storefronts. New-build post-construction cleanup is rare here; renovation cleanup is the norm.",
+    a: "Unlike Las Vegas or North Las Vegas, Boulder City's post-construction cleanup demand is almost entirely renovation and remodel-driven rather than new-build driven. The city has little large-scale new residential development. The clients are homeowners renovating established properties (kitchens, bathrooms, room additions) and small commercial owners updating historic downtown storefronts. New-build post-construction cleanup is rare here; renovation cleanup is the norm.",
   },
   {
     q: 'Is post-construction cleanup different for older Boulder City homes?',
-    a: "Yes. Renovating an older Boulder City home means working around and through existing systems — original HVAC ductwork, older plumbing chases, period cabinetry that may be retained around the renovation area. Drywall dust from a kitchen or bathroom renovation spreads through an older home's existing systems in ways it wouldn't in a newer sealed build. A thorough post-renovation cleanup is especially important in an older home where dust settles in original ductwork, inside original cabinetry, and on surfaces that have been in place for decades.",
+    a: "Yes. Renovating an older Boulder City home means working around and through existing systems: original HVAC ductwork, older plumbing chases, period cabinetry that may be retained around the renovation area. Drywall dust from a kitchen or bathroom renovation spreads through an older home's existing systems in ways it wouldn't in a newer sealed build. A thorough post-renovation cleanup is especially important in an older home where dust settles in original ductwork, inside original cabinetry, and on surfaces that have been in place for decades.",
   },
   {
     q: 'Does Final Touch serve Boulder City for post-construction cleanup?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Boulder City, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -117,7 +119,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
       <HeroSection
         eyebrow="Post-Construction Cleanup · Boulder City, NV"
         heading="Post-Construction Cleanup in Boulder City, NV"
-        sub={`Boulder City is an established community with little large-scale new development — post-construction cleanup here is driven by homeowners renovating older properties and small commercial owners updating historic downtown storefronts. Final Touch serves renovation cleanup across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City is an established community with little large-scale new development. Post-construction cleanup here is driven by homeowners renovating older properties and small commercial owners updating historic downtown storefronts. Final Touch serves renovation cleanup across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -128,7 +130,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-construction cleanup in Boulder City is the professional cleaning pass after
-            a renovation or remodel — removing drywall dust, adhesive residue, debris, and
+            a renovation or remodel, removing drywall dust, adhesive residue, debris, and
             construction particulate from a space that looks finished but is not truly clean.{' '}
             <Link href="/services/post-construction-cleanup" className="text-brand-blue font-semibold hover:underline">
               Final Touch post-construction cleanup
@@ -149,7 +151,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires post-construction cleanup in Boulder City"
             heading="Renovation owners and small commercial remodelers in an established community."
-            sub="Boulder City's post-construction demand is almost entirely renovation-driven — the city has little new residential development to create new-build cleanup demand."
+            sub="Boulder City's post-construction demand is almost entirely renovation-driven. The city has little new residential development to create new-build cleanup demand."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -159,11 +161,11 @@ export default function PostConstructionCleanupBoulderCityPage() {
               },
               {
                 title: 'Character home restoration projects',
-                body: 'Owners restoring or carefully updating older Boulder City homes with original materials — updating while preserving period character. Post-renovation cleanup after this type of careful work requires attention to what the surfaces are and how to clean them safely.',
+                body: 'Owners restoring or carefully updating older Boulder City homes with original materials, updating while preserving period character. Post-renovation cleanup after this type of careful work requires attention to what the surfaces are and how to clean them safely.',
               },
               {
                 title: 'Small commercial renovation owners',
-                body: 'Historic downtown shops and storefronts that renovate or update their spaces — new interiors, updated storefronts, kitchen renovations in restaurants. These are smaller-scale commercial projects than metro commercial buildouts.',
+                body: 'Historic downtown shops and storefronts that renovate or update their spaces: new interiors, updated storefronts, kitchen renovations in restaurants. These are smaller-scale commercial projects than metro commercial buildouts.',
               },
               {
                 title: 'New buyers who renovate before moving in',
@@ -223,8 +225,8 @@ export default function PostConstructionCleanupBoulderCityPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
               {
-                heading: 'Renovation-only demand — no large new development',
-                body: "Boulder City has not seen the large-scale residential development that drives post-construction cleanup volume in North Las Vegas or Henderson. The city's established character and development restrictions mean there are no new subdivisions and limited new commercial construction. Post-construction cleanup here is almost entirely renovation-driven — homeowners updating established properties, not buyers moving into new builds.",
+                heading: 'Renovation-only demand, no large new development',
+                body: "Boulder City has not seen the large-scale residential development that drives post-construction cleanup volume in North Las Vegas or Henderson. The city's established character and development restrictions mean there are no new subdivisions and limited new commercial construction. Post-construction cleanup here is almost entirely renovation-driven, homeowners updating established properties, not buyers moving into new builds.",
               },
               {
                 heading: 'Older homes and existing systems complicate dust control',
@@ -232,7 +234,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
               },
               {
                 heading: 'Historic downtown commercial renovation',
-                body: "Boulder City's historic downtown along Nevada Way has small commercial properties that periodically update or renovate their spaces. These are smaller-footprint jobs than metro commercial renovations, but they create the same post-construction cleanup needs — particularly in storefronts with original surfaces and materials that need careful cleaning after construction work.",
+                body: "Boulder City's historic downtown along Nevada Way has small commercial properties that periodically update or renovate their spaces. These are smaller-footprint jobs than metro commercial renovations, but they create the same post-construction cleanup needs, particularly in storefronts with original surfaces and materials that need careful cleaning after construction work.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -304,7 +306,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Post-construction cleanup in Boulder City — common questions"
+        heading="Post-construction cleanup in Boulder City: common questions"
         defaultOpenFirst
       />
 

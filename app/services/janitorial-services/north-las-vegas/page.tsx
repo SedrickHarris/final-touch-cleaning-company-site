@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does Final Touch offer janitorial programs for industrial facilities in North Las Vegas?',
-    a: "Yes. North Las Vegas has a large industrial and warehouse corridor — one of the defining characteristics of the city's commercial landscape. Final Touch provides janitorial programs for warehouse facility offices, employee break rooms, restrooms, and common areas within industrial complexes in North Las Vegas. This is a service type specifically relevant to NLV's industrial base.",
+    a: "Yes. North Las Vegas has a large industrial and warehouse corridor, one of the defining characteristics of the city's commercial landscape. Final Touch provides janitorial programs for warehouse facility offices, employee break rooms, restrooms, and common areas within industrial complexes in North Las Vegas. This is a service type specifically relevant to NLV's industrial base.",
   },
   {
     q: 'What is the difference between janitorial services and commercial cleaning in North Las Vegas?',
-    a: "In North Las Vegas, the distinction matters differently than in suburban office markets. Commercial office cleaning serves a professional services office suite on a scheduled basis. Janitorial programs in NLV more often serve industrial facility common areas, multi-tenant commercial buildings, and operations that run multiple shifts — requiring cleaning schedules built around operational hours rather than standard 9-to-5 windows. Final Touch offers both; the right fit depends on your facility and is confirmed during consultation.",
+    a: "In North Las Vegas, the distinction matters differently than in suburban office markets. Commercial office cleaning serves a professional services office suite on a scheduled basis. Janitorial programs in NLV more often serve industrial facility common areas, multi-tenant commercial buildings, and operations that run multiple shifts, requiring cleaning schedules built around operational hours rather than standard 9-to-5 windows. Final Touch offers both; the right fit depends on your facility and is confirmed during consultation.",
   },
   {
     q: 'How much do janitorial services cost in North Las Vegas?',
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `North Las Vegas, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -128,7 +130,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Janitorial services in North Las Vegas are scheduled recurring cleaning programs for
-            commercial buildings and industrial facilities — covering lobbies, restrooms, common
+            commercial buildings and industrial facilities, covering lobbies, restrooms, common
             areas, office suites, and facility-specific spaces on a cadence built around
             your operation.{' '}
             <Link href="/services/janitorial-services" className="text-brand-blue font-semibold hover:underline">
@@ -150,7 +152,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires janitorial services in North Las Vegas"
             heading="Warehouse operators, industrial complex managers, and commercial building owners."
-            sub="NLV's janitorial market is the most industrially focused in Clark County — a profile unique to this city."
+            sub="NLV's janitorial market is the most industrially focused in Clark County, a profile unique to this city."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -160,7 +162,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
               },
               {
                 title: 'Industrial complex property managers',
-                body: 'Multi-tenant industrial parks in North Las Vegas need building-wide janitorial programs for shared spaces — lobbies, stairwells, restrooms, and common areas used by multiple tenants across the complex.',
+                body: 'Multi-tenant industrial parks in North Las Vegas need building-wide janitorial programs for shared spaces: lobbies, stairwells, restrooms, and common areas used by multiple tenants across the complex.',
               },
               {
                 title: 'Commercial building owners along NLV corridors',
@@ -226,7 +228,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
             {[
               {
                 heading: 'Industrial facilities require operational-hour flexibility',
-                body: "North Las Vegas warehouse and distribution operations often run multiple shifts — 16-hour and 24-hour operations are common in the logistics corridor. Janitorial programs here need to fit around those windows, cleaning between shifts or during designated low-activity periods. This is a fundamentally different scheduling requirement than Henderson's standard-hours suburban office parks.",
+                body: "North Las Vegas warehouse and distribution operations often run multiple shifts. 16-hour and 24-hour operations are common in the logistics corridor. Janitorial programs here need to fit around those windows, cleaning between shifts or during designated low-activity periods. This is a fundamentally different scheduling requirement than Henderson's standard-hours suburban office parks.",
               },
               {
                 heading: 'Higher-use environments need more frequent service',
@@ -234,7 +236,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
               },
               {
                 heading: 'Commercial corridor variety',
-                body: "Beyond the industrial corridor, North Las Vegas has commercial corridors serving a large residential population. Restaurants, auto services, and retail-adjacent commercial spaces create a varied janitorial client base with different needs by business type — all served by Final Touch's standard walkthrough-and-scope approach.",
+                body: "Beyond the industrial corridor, North Las Vegas has commercial corridors serving a large residential population. Restaurants, auto services, and retail-adjacent commercial spaces create a varied janitorial client base with different needs by business type, all served by Final Touch's standard walkthrough-and-scope approach.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -306,7 +308,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Janitorial services in North Las Vegas — common questions"
+        heading="Janitorial services in North Las Vegas: common questions"
         defaultOpenFirst
       />
 

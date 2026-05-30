@@ -32,11 +32,11 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Cadence and Inspirada for move-in cleaning?',
-    a: `Yes. Cadence is Henderson's largest actively developing master-planned community; Inspirada is in active build phases in southwest Henderson. Final Touch serves move-in cleaning clients in both communities — particularly new-construction buyers whose builder handoff left construction residue behind. Call ${SITE.phone.display} to schedule.`,
+    a: `Yes. Cadence is Henderson's largest actively developing master-planned community; Inspirada is in active build phases in southwest Henderson. Final Touch serves move-in cleaning clients in both communities, particularly new-construction buyers whose builder handoff left construction residue behind. Call ${SITE.phone.display} to schedule.`,
   },
   {
     q: 'Do I need move-in cleaning for a new Henderson home?',
-    a: "Yes. New homes in Henderson's active communities — Cadence and Inspirada especially — leave drywall dust, adhesive residue, and window film even after the builder's standard handoff clean. An independent move-in clean ensures your home is genuinely clean before furniture and belongings arrive. In communities still in active build phases, ongoing construction nearby can also deposit particulate in completed homes.",
+    a: "Yes. New homes in Henderson's active communities (Cadence and Inspirada especially) leave drywall dust, adhesive residue, and window film even after the builder's standard handoff clean. An independent move-in clean ensures your home is genuinely clean before furniture and belongings arrive. In communities still in active build phases, ongoing construction nearby can also deposit particulate in completed homes.",
   },
   {
     q: 'How much does move-in cleaning cost in Henderson?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'How soon before my move-in date should I schedule cleaning in Henderson?',
-    a: 'As early as possible once access is confirmed. For Cadence and Inspirada new builds, coordinate with your builder on when the home is accessible after handoff. Scheduling the clean before furniture arrives makes the work more thorough — every surface is accessible without moving around boxes.',
+    a: 'As early as possible once access is confirmed. For Cadence and Inspirada new builds, coordinate with your builder on when the home is accessible after handoff. Scheduling the clean before furniture arrives makes the work more thorough. Every surface is accessible without moving around boxes.',
   },
 ];
 
@@ -83,6 +83,8 @@ const localBusinessJsonLd = {
   url: SITE.url,
   telephone: SITE.phone.href.replace('tel:', ''),
   email: SITE.email.display,
+  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
+  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
   areaServed: [
     { '@type': 'City', name: `Henderson, ${SITE.serviceArea.stateAbbr}` },
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
@@ -127,7 +129,7 @@ export default function MoveInCleaningHendersonPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Move-in cleaning in Henderson is a professional clean before move-in day — addressing
+            Move-in cleaning in Henderson is a professional clean before move-in day, addressing
             construction residue in new builds, prior-occupant buildup in resale homes and rentals,
             and detail surfaces throughout that a seller or builder left behind.{' '}
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
@@ -149,7 +151,7 @@ export default function MoveInCleaningHendersonPage() {
           <SectionHeader
             eyebrow="Who hires move-in cleaning in Henderson"
             heading="New-build buyers, established community movers, and luxury home buyers."
-            sub="Henderson's two distinct audiences — active new-construction buyers and established master-planned community movers — create different move-in cleaning needs."
+            sub="Henderson's two distinct audiences (active new-construction buyers and established master-planned community movers) create different move-in cleaning needs."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -159,11 +161,11 @@ export default function MoveInCleaningHendersonPage() {
               },
               {
                 title: 'Buyers in established master-planned communities',
-                body: 'Green Valley, Anthem, Green Valley Ranch, and Seven Hills buyers — whether new to the community or moving within it — want a clean baseline before settling in. These communities set high presentation standards, and buyers want the home to reflect those standards from day one.',
+                body: 'Green Valley, Anthem, Green Valley Ranch, and Seven Hills buyers (whether new to the community or moving within it) want a clean baseline before settling in. These communities set high presentation standards, and buyers want the home to reflect those standards from day one.',
               },
               {
                 title: 'Luxury home buyers',
-                body: 'Buyers of MacDonald Highlands, Lake Las Vegas, and comparable Henderson luxury properties often schedule thorough move-in cleans before occupying. The investment in the home warrants the standard — particularly for properties with premium finish materials that need surface-appropriate cleaning.',
+                body: 'Buyers of MacDonald Highlands, Lake Las Vegas, and comparable Henderson luxury properties often schedule thorough move-in cleans before occupying. The investment in the home warrants the standard, particularly for properties with premium finish materials that need surface-appropriate cleaning.',
               },
               {
                 title: 'Property managers resetting rental units',
@@ -208,7 +210,7 @@ export default function MoveInCleaningHendersonPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Scope confirmed before the clean begins. For Henderson new builds in Cadence or
-            Inspirada, let us know you are moving into a new construction home — we will confirm
+            Inspirada, let us know you are moving into a new construction home. We will confirm
             the right scope for construction residue at booking.
           </p>
         </div>
@@ -229,7 +231,7 @@ export default function MoveInCleaningHendersonPage() {
               },
               {
                 heading: 'Established community standards in Green Valley and Anthem',
-                body: 'Resale buyers moving into Green Valley, Anthem, Green Valley Ranch, and comparable Henderson communities are buying into neighborhoods with consistently maintained homes and high curb-appeal standards. A move-in clean before unpacking ensures the new home meets those standards from the first day — addressing seller-side residue, years of buildup in detail surfaces, and anything the listing photos did not show.',
+                body: 'Resale buyers moving into Green Valley, Anthem, Green Valley Ranch, and comparable Henderson communities are buying into neighborhoods with consistently maintained homes and high curb-appeal standards. A move-in clean before unpacking ensures the new home meets those standards from the first day, addressing seller-side residue, years of buildup in detail surfaces, and anything the listing photos did not show.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
@@ -301,7 +303,7 @@ export default function MoveInCleaningHendersonPage() {
       {/* 8. FAQ */}
       <FAQSection
         items={faq}
-        heading="Move-in cleaning in Henderson — common questions"
+        heading="Move-in cleaning in Henderson: common questions"
         defaultOpenFirst
       />
 
