@@ -86,7 +86,7 @@ Some "Las Vegas" neighborhoods sit outside the City of Las Vegas, but all are in
 | 4 | 5 city pages | ✅ Done |
 | 5 | 10 priority neighborhoods: Summerlin, Downtown LV, Southern Highlands (LV); Cadence, Inspirada, MacDonald Highlands, Seven Hills, Anthem, Lake Las Vegas, Green Valley Ranch (Henderson) — now have hero photos | ✅ Done |
 | 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district, aliante · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ⏳ Not built (no photos in folder yet) |
-| 6 | Service + city matrix (35: 7×4 cities + 7 Clark County) | ⏳ Next |
+| 6 | Service + city matrix (35: 7×4 cities + 7 Clark County) | ✅ Done (committed 81e0c2d + 20678de) |
 | 7 | Specialized: builders (10), industries (15), seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7), service×neighborhood (50+) | ⏳ |
 | 8 | Tech SEO + launch (schema, robots/sitemap/llms.txt, GSC/Bing/Clarity/GA4, IndexNow, QA, deploy) | ⏳ |
 
@@ -106,13 +106,14 @@ Some "Las Vegas" neighborhoods sit outside the City of Las Vegas, but all are in
 
 | Page / element | Status now | Guidance |
 |----------------|-----------|----------|
-| Licensed & insured (TrustBar, /about, schema) | **UNBLOCKED** | General statement; no numbers. Log first. |
-| GBP `sameAs` | **READY** | Add CID URL to `LocalBusiness` schema. |
-| `/reviews` | **UNBLOCKED (display only)** | Show 3 real Google reviews via live source; "5.0 on Google" as attributed text; **no** AggregateRating/Review schema (self-serving). |
-| `/our-team` | **UNBLOCKED** | Scott & Nicole only. |
-| `/cleaning-process` | **UNBLOCKED** | Process description; no fake data. |
+| Licensed & insured (TrustBar, /about, schema) | **Done (copy + TrustBar 2026-05-29)** | General statement; no numbers. Log first. |
+| GBP `sameAs` | **Done (schema 2026-05-29)** | Add CID URL to `LocalBusiness` schema. |
+| Logo `image` | **Done (schema 2026-05-29)** | Logo URL added to `LocalBusiness`/`Organization` schema site-wide. |
+| `/reviews` | **Built (TODO-VERIFY: owner-supplied review content)** | Show 3 real Google reviews via live source; "5.0 on Google" as attributed text; **no** AggregateRating/Review schema (self-serving). |
+| `/our-team` | **Built (pending review)** | Scott & Nicole only. |
+| `/cleaning-process` | **Built (pending review)** | Process description; no fake data. |
 | `/certifications` | **Partial** | Can state licensed & insured; no certs/awards/numbers. Consider folding into /about unless real certs exist. |
-| `/pricing` | **Buildable, no numbers** | "How pricing works → request a quote." Matches live FAQ stance. |
+| `/pricing` | **Built (pending review)** | "How pricing works → request a quote." Matches live FAQ stance. |
 | `/gallery` | **STILL BLOCKED** | Needs owner-supplied before/after photos; cannot invent. Keep deferred. |
 | `/sitemap` | Utility | Build in Batch 8. |
 | Blue Ribbon Guarantee | **APPROVED** | Ship: "100% satisfaction or return within 24 hours." |

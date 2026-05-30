@@ -133,6 +133,15 @@ Note: `/locations/las-vegas/aliante` is intentionally retired (`built: false`, d
 
 TODO-BATCH-6: when the service + city matrix ships, swap the "4 service pages" Tier-2 anchors in each neighborhood/city row for the corresponding `/services/<service>/<city>` combos.
 
+## Service + City Matrix (built routes)
+
+All 35 `/services/<service>/<city>` pages are built (commits 81e0c2d + 20678de).
+
+Pattern (applies to every matrix page):
+- Outbound (Required): Tier 2 service parent `/services/<service>`, Tier 3 city parent `/locations/<city>`, sibling service+city combos, `/free-quote`, `/contact`.
+- Inbound: each service hub `/services/<service>` links to its 5 city combos; each city page links to its 7 service combos (via `${s.href}/<city>` template literals); 10 neighborhood pages link to relevant service+city combos.
+- Verified 2026-05-29: 0 unresolved internal hrefs; 0 orphans.
+
 ---
 
 Site OS — Internal Link Map v1.0
