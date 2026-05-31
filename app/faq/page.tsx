@@ -7,9 +7,9 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Final Touch Cleaning Company',
+  title: 'Frequently Asked Questions',
   description:
-    'Answers to common questions about Final Touch Cleaning Company: services, service area in Clark County NV, quotes, scheduling, and what to expect. Call (702) 444-5077.',
+    'Answers to questions about Final Touch Cleaning: services, service area in Clark County, NV, quotes, scheduling, and what to expect. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'FAQ | Final Touch Cleaning Company | Clark County, NV',

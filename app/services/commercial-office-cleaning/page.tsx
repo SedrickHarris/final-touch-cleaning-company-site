@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch',
+  title: 'Commercial & Office Cleaning | Clark County, NV',
   description:
     'Professional commercial office cleaning across Las Vegas, Henderson, and Clark County, NV. Family-owned. Free walkthrough quotes. Call (702) 444-5077.',
   alternates: { canonical: '/services/commercial-office-cleaning' },
@@ -84,24 +85,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Commercial & Office Cleaning',
-      item: `${SITE.url}/services/commercial-office-cleaning`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Commercial & Office Cleaning' },
+];
 
 export default function CommercialOfficeCleaningPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Commercial Cleaning"
@@ -374,10 +367,6 @@ export default function CommercialOfficeCleaningPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

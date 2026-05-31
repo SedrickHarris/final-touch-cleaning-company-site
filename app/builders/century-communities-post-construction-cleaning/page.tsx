@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Century Communities Post-Construction Cleaning | Final Touch',
+  title: 'Century Communities Post-Construction Cleaning',
   description:
     'Post-construction cleanup after your Century Communities or Century Complete home handoff in Las Vegas, NV. Clark County local. Call (702) 444-5077.',
   alternates: {

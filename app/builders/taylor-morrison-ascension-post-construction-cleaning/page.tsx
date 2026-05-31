@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Taylor Morrison Ascension Post-Construction Cleaning | Final Touch',
+  title: 'Taylor Morrison Ascension Post-Construction Cleaning',
   description:
     'Post-construction cleanup after your Taylor Morrison Ascension home handoff in Henderson, NV. Gated community scheduling available. Call (702) 444-5077.',
   alternates: {

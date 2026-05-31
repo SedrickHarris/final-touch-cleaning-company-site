@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Janitorial Services in Henderson, NV | Final Touch',
+  title: 'Janitorial Services in Henderson, NV',
   description:
     'Janitorial services in Henderson, NV. Recurring programs for Green Valley Pkwy offices, medical buildings, and commercial spaces. Call (702) 444-5077.',
   alternates: {
@@ -101,20 +102,17 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    { '@type': 'ListItem', position: 3, name: 'Janitorial Services', item: `${SITE.url}/services/janitorial-services` },
-    { '@type': 'ListItem', position: 4, name: 'Henderson', item: `${SITE.url}/services/janitorial-services/henderson` },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Janitorial Services', href: '/services/janitorial-services' },
+  { label: 'Henderson' },
+];
 
 export default function JanitorialServicesHendersonPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Janitorial Services · Henderson, NV"
@@ -336,10 +334,18 @@ export default function JanitorialServicesHendersonPage() {
         tone="blue"
       />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </>
   );
 }

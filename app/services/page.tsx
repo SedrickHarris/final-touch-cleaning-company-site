@@ -9,8 +9,8 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services Las Vegas & Clark County, NV | Final Touch',
-  description: `Final Touch offers 7 cleaning services in Clark County, NV: commercial, janitorial, post-construction, move-in, move-out, deep cleaning, and retail. Free quotes.`,
+  title: 'Cleaning Services Las Vegas & Clark County, NV',
+  description: `Final Touch offers 7 cleaning services in Clark County, NV: commercial, janitorial, post-construction, move-in, move-out, deep, and retail. Free quotes.`,
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Cleaning Services | Final Touch Cleaning Company | Las Vegas, NV',

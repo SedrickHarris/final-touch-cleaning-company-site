@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Taylor Morrison Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Taylor Morrison Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Taylor Morrison home handoff in Henderson or Las Vegas, NV. Including Esplanade communities. Call (702) 444-5077.',
   alternates: {

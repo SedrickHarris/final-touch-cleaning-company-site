@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Commercial Office Cleaning in Boulder City, NV | Final Touch',
+  title: 'Commercial Office Cleaning in Boulder City, NV',
   description:
     'Commercial office cleaning in Boulder City, NV. Final Touch serves historic downtown businesses and offices across Boulder City. Call (702) 444-5077.',
   alternates: {
@@ -101,20 +102,17 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    { '@type': 'ListItem', position: 3, name: 'Commercial & Office Cleaning', item: `${SITE.url}/services/commercial-office-cleaning` },
-    { '@type': 'ListItem', position: 4, name: 'Boulder City', item: `${SITE.url}/services/commercial-office-cleaning/boulder-city` },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Commercial & Office Cleaning', href: '/services/commercial-office-cleaning' },
+  { label: 'Boulder City' },
+];
 
 export default function CommercialOfficeCleaningBoulderCityPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Commercial Office Cleaning · Boulder City, NV"
@@ -335,10 +333,18 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
         tone="blue"
       />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </>
   );
 }

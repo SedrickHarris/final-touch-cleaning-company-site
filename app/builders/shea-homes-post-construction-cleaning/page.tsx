@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Shea Homes Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Shea Homes Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Shea Homes handoff in Las Vegas or Summerlin, NV. Including Active Lifestyle communities. Call (702) 444-5077.',
   alternates: {

@@ -8,7 +8,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Service Pricing | Final Touch | Las Vegas, NV',
+  title: 'Cleaning Service Pricing | Las Vegas, NV',
   description:
     'Final Touch provides custom quotes for every cleaning job. No published rate card. Request a free, no-obligation estimate for your space. Call (702) 444-5077.',
   alternates: { canonical: '/pricing' },

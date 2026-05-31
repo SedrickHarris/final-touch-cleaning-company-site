@@ -22,7 +22,7 @@ import { BUILDERS } from '@/lib/constants/builders';
 // confirmed in source docs. Do not reference in copy.
 
 export const metadata: Metadata = {
-  title: 'Toll Brothers Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Toll Brothers Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Toll Brothers home handoff in Las Vegas, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
   alternates: {

@@ -8,7 +8,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews | Final Touch Cleaning | Clark County, NV',
+  title: 'Customer Reviews | Clark County, NV',
   description:
     'Customer reviews for Final Touch Cleaning Company, serving Clark County, NV. Family-owned, owner-led, detail-focused. Call (702) 444-5077.',
   alternates: { canonical: '/reviews' },

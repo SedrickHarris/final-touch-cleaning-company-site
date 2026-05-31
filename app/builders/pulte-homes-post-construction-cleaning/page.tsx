@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Pulte Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Pulte Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Pulte or Del Webb home handoff in Las Vegas, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
   alternates: {

@@ -11,8 +11,8 @@ import { ROUTES } from '@/lib/constants/routes';
 import { Heart, MapPin, ShieldCheck, CheckCircle, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Final Touch Cleaning Company | Las Vegas, NV',
-  description: `Final Touch Cleaning Company is owned and run by ${SITE.owners}. Family-owned cleaning across ${SITE.serviceArea.metro}, NV. Detail-focused work, local team, free quotes.`,
+  title: { absolute: 'About Final Touch Cleaning Company | Las Vegas, NV' },
+  description: `Final Touch Cleaning Company is owned and run by ${SITE.owners}. Family-owned cleaning across ${SITE.serviceArea.metro}, NV. Free quotes, local team.`,
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Final Touch Cleaning Company | Clark County, NV',
@@ -80,7 +80,12 @@ const orgJsonLd = {
     '@type': 'Place',
     name: `${name}, ${SITE.serviceArea.stateAbbr}`,
   })),
-  founder: SITE.owners.split(' & ').map((name) => ({ '@type': 'Person', name })),
+  founder: SITE.owners.split(' & ').map((name) => ({
+    '@type': 'Person',
+    name,
+    jobTitle: 'Owner',
+    worksFor: { '@type': 'Organization', name: SITE.name },
+  })),
 };
 
 const faqJsonLd = {

@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning Service in Las Vegas, NV | Final Touch',
+  title: 'Move-In Cleaning | Clark County, NV',
   description:
     'Move-in cleaning for new homes and apartments in Las Vegas, Henderson, and Clark County, NV. Top-to-bottom clean before you settle in. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-in-cleaning' },
@@ -84,24 +85,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Move-In Cleaning',
-      item: `${SITE.url}/services/move-in-cleaning`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Move-In Cleaning' },
+];
 
 export default function MoveInCleaningPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Move-In Cleaning"
@@ -372,10 +365,6 @@ export default function MoveInCleaningPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

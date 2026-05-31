@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Retail Space Cleaning in Las Vegas, NV | Final Touch',
+  title: 'Retail Space Cleaning | Clark County, NV',
   description:
     'Retail cleaning for storefronts and commercial spaces in Las Vegas, Henderson, and Clark County, NV. Consistent standard every visit. Call (702) 444-5077.',
   alternates: { canonical: '/services/retail-space-cleaning' },
@@ -84,24 +85,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Retail Space Cleaning',
-      item: `${SITE.url}/services/retail-space-cleaning`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Retail Space Cleaning' },
+];
 
 export default function RetailSpaceCleaningPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Retail Cleaning"
@@ -371,10 +364,6 @@ export default function RetailSpaceCleaningPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

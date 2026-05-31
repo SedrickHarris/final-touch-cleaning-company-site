@@ -8,6 +8,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 // Parent city derived from this neighborhood's own NEIGHBORHOODS record —
 // single source of truth, no hardcoded parent slug.
@@ -17,7 +18,7 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Sunrise Manor Cleaning | Las Vegas, NV | Final Touch',
+  title: 'Sunrise Manor Cleaning | Las Vegas, NV',
   description:
     'Family-owned commercial, office, and home cleaning in Sunrise Manor, Las Vegas, NV. Janitorial, deep, and move-out cleaning. Free quotes. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/sunrise-manor' },
@@ -92,34 +93,17 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Locations',
-      item: `${SITE.url}${ROUTES.locations}`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Las Vegas',
-      item: `${SITE.url}/locations/las-vegas`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Sunrise Manor',
-      item: `${SITE.url}/locations/las-vegas/sunrise-manor`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Las Vegas', href: '/locations/las-vegas' },
+  { label: 'Sunrise Manor' },
+];
 
 export default function SunriseManorPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
           renders its gradient background when no image prop is passed. */}
       {/* TODO-PHOTO: wire hero image when public/images/locations/sunrise-manor-*.webp exists */}
@@ -336,10 +320,6 @@ export default function SunriseManorPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

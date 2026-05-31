@@ -8,7 +8,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Our Cleaning Process | Final Touch Cleaning | Las Vegas, NV',
+  title: 'Our Cleaning Process | Las Vegas, NV',
   description:
     'See how Final Touch Cleaning works: quote, walkthrough, scope, cleaning visit, and the Blue Ribbon Guarantee. Serving Clark County, NV. (702) 444-5077.',
   alternates: { canonical: '/cleaning-process' },

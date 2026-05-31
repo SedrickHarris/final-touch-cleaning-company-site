@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Lennar Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Lennar Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Lennar home handoff in Henderson or Las Vegas, NV. Including NextGen homes. Clark County local. Call (702) 444-5077.',
   alternates: {

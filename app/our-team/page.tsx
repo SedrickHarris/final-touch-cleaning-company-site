@@ -9,7 +9,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Scott & Nicole Maland | Final Touch Cleaning',
+  title: 'Our Team | Scott & Nicole Maland',
   description:
     'Final Touch Cleaning Company is owned and run by Scott & Nicole Maland in Southern Nevada. Family-owned, owner-led on every job. Call (702) 444-5077.',
   alternates: { canonical: '/our-team' },

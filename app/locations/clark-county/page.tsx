@@ -8,9 +8,10 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES, LOCATIONS } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Clark County, NV | Final Touch',
+  title: 'Cleaning Services in Clark County, NV',
   description:
     'Family-owned cleaning services across Clark County, NV. Las Vegas, Henderson, North Las Vegas, Boulder City, and beyond. Call (702) 444-5077.',
   alternates: { canonical: '/locations/clark-county' },
@@ -112,24 +113,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE.url}/locations` },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Clark County',
-      item: `${SITE.url}/locations/clark-county`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Clark County' },
+];
 
 export default function ClarkCountyPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="County-wide service area"
         heading="Cleaning Services in Clark County, NV"
@@ -434,10 +427,6 @@ export default function ClarkCountyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

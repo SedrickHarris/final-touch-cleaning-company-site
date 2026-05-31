@@ -8,7 +8,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Contact Final Touch Cleaning Company | Las Vegas, NV',
+  title: { absolute: 'Contact Final Touch Cleaning Company | Las Vegas, NV' },
   description:
     'Call (702) 444-5077, email info@finaltouchcleaningteam.com, or send a quote request. Final Touch serves Las Vegas, Henderson, and Clark County, NV.',
   alternates: { canonical: '/contact' },

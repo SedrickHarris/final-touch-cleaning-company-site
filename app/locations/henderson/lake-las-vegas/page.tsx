@@ -8,6 +8,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 // Parent city derived from this neighborhood's own NEIGHBORHOODS record —
 // single source of truth, no hardcoded parent slug.
@@ -17,7 +18,7 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Lake Las Vegas Cleaning Services | Henderson, NV | Final Touch',
+  title: 'Lake Las Vegas Cleaning Services | Henderson, NV',
   description:
     'Family-owned cleaning services in Lake Las Vegas, Henderson, NV. Deep cleaning, move-in, move-out, and more for resort-adjacent homes. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/lake-las-vegas' },
@@ -101,34 +102,17 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Locations',
-      item: `${SITE.url}${ROUTES.locations}`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Henderson',
-      item: `${SITE.url}/locations/henderson`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Lake Las Vegas',
-      item: `${SITE.url}/locations/henderson/lake-las-vegas`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Henderson', href: '/locations/henderson' },
+  { label: 'Lake Las Vegas' },
+];
 
 export default function LakeLasVegasPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero over a local Lake Las Vegas photo. */}
       <HeroSection
         eyebrow="Resort-Adjacent Lakefront Community"
@@ -404,10 +388,6 @@ export default function LakeLasVegasPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

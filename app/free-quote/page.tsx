@@ -8,7 +8,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Request a Free Cleaning Quote | Final Touch | Las Vegas, NV',
+  title: 'Request a Free Cleaning Quote | Las Vegas, NV',
   description:
     'Get a free cleaning estimate from Final Touch Cleaning Company. Serving Las Vegas, Henderson, and Clark County, NV. No pressure. Call (702) 444-5077.',
   alternates: { canonical: '/free-quote' },

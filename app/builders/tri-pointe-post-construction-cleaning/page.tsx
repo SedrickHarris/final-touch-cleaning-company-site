@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'Tri Pointe Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Tri Pointe Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your Tri Pointe home handoff in Las Vegas or Summerlin, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
   alternates: {

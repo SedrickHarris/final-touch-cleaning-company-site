@@ -8,6 +8,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 // Parent city derived from this neighborhood's own NEIGHBORHOODS record —
 // single source of truth, no hardcoded parent slug.
@@ -17,7 +18,7 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Inspirada Cleaning Services | Henderson, NV | Final Touch',
+  title: 'Inspirada Cleaning Services | Henderson, NV',
   description:
     'Family-owned cleaning services in Inspirada, Henderson, NV. Move-in, post-construction, deep cleaning, and more. Call (702) 444-5077 for a free quote.',
   alternates: { canonical: '/locations/henderson/inspirada' },
@@ -98,34 +99,17 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Locations',
-      item: `${SITE.url}${ROUTES.locations}`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Henderson',
-      item: `${SITE.url}/locations/henderson`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Inspirada',
-      item: `${SITE.url}/locations/henderson/inspirada`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Henderson', href: '/locations/henderson' },
+  { label: 'Inspirada' },
+];
 
 export default function InspiradaPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero over a local Inspirada photo. */}
       <HeroSection
         eyebrow="Newer Master-Planned Community"
@@ -402,10 +386,6 @@ export default function InspiradaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

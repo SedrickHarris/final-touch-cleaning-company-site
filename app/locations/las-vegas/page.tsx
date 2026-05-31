@@ -8,9 +8,10 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Las Vegas, NV | Final Touch',
+  title: 'Cleaning Services in Las Vegas, NV',
   description:
     'Family-owned cleaning services in Las Vegas, NV. Residential and commercial. Move-out, deep cleaning, post-construction, and more. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas' },
@@ -114,34 +115,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: SITE.url,
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Locations',
-      item: `${SITE.url}/locations`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Las Vegas',
-      item: `${SITE.url}/locations/las-vegas`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Las Vegas' },
+];
 
 export default function LasVegasPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in Las Vegas, NV"
@@ -438,10 +421,6 @@ export default function LasVegasPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

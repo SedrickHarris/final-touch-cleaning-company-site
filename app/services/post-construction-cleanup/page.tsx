@@ -8,9 +8,10 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch',
+  title: 'Post-Construction Cleanup | Clark County, NV',
   description:
     'Post-construction cleaning for new builds and renovations across Las Vegas and Clark County, NV. Detail-focused. Free walkthrough quotes. Call (702) 444-5077.',
   alternates: { canonical: '/services/post-construction-cleanup' },
@@ -84,24 +85,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Post-Construction Cleanup',
-      item: `${SITE.url}/services/post-construction-cleanup`,
-    },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Post-Construction Cleanup' },
+];
 
 export default function PostConstructionCleanupPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Post-Construction Cleanup"
@@ -366,10 +359,6 @@ export default function PostConstructionCleanupPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

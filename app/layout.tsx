@@ -27,40 +27,28 @@ const OG_IMAGE = '/images/heroes/final-touch-cleaning-services-las-vegas-hero.we
 
 // Global LocalBusiness JSON-LD — single site-wide node per
 // docs/site-os/build-status-reconciliation.md §5. Service-area business:
-// NO streetAddress, NO aggregateRating, NO review (self-serving). 24-hour
-// hours framed as around-the-clock scheduling availability. Owner-confirmed
-// data only. Per-page LocalBusiness nodes on city pages stay (city-scoped
-// areaServed variant); the homepage node was removed to avoid duplication.
+// NO streetAddress, NO aggregateRating, NO review (self-serving). Owner-
+// confirmed data only. Per-page LocalBusiness nodes on city pages stay
+// (city-scoped areaServed variant); the homepage node was removed earlier
+// to avoid duplication.
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Final Touch Cleaning Company LLC',
-  url: `${SITE.url}/`,
-  telephone: SITE.phone.href.replace('tel:', ''),
+  url: SITE.url,
+  telephone: '+17024445077',
   email: SITE.email.display,
   image: `${SITE.url}/images/logo/final-touch-cleaning-company-logo.webp`,
+  description:
+    'Family-owned commercial and residential cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City in Clark County, NV.',
   areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Clark County, NV' },
-    { '@type': 'City', name: 'North Las Vegas' },
     { '@type': 'City', name: 'Las Vegas' },
     { '@type': 'City', name: 'Henderson' },
+    { '@type': 'City', name: 'North Las Vegas' },
     { '@type': 'City', name: 'Boulder City' },
+    { '@type': 'AdministrativeArea', name: 'Clark County' },
   ],
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ],
-    opens: '00:00',
-    closes: '23:59',
-  },
 };
 
 export const metadata: Metadata = {

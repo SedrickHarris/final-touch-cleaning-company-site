@@ -9,7 +9,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Builder Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'Builder Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup for new builds across Clark County, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: `${SITE.url}/builders` },

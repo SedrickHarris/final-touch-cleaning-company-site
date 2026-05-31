@@ -10,7 +10,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
 export const metadata: Metadata = {
-  title: 'KB Home Post-Construction Cleaning Las Vegas | Final Touch',
+  title: 'KB Home Post-Construction Cleaning Las Vegas',
   description:
     'Post-construction cleanup after your KB Home handoff in Las Vegas, NV. Custom finish and tile residue addressed. Clark County local. Call (702) 444-5077.',
   alternates: {

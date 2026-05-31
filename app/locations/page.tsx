@@ -9,7 +9,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: `Cleaning Across ${SITE.serviceArea.metro} | Final Touch`,
+  title: `Cleaning Across ${SITE.serviceArea.metro}`,
   description: `Final Touch serves Las Vegas, Henderson, North Las Vegas, Boulder City, and all of ${SITE.serviceArea.county}, NV. Local team, free quotes. Call ${SITE.phone.display}.`,
   alternates: { canonical: '/locations' },
   openGraph: {

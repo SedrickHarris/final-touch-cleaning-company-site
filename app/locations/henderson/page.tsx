@@ -8,9 +8,10 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Henderson, NV | Final Touch',
+  title: 'Cleaning Services in Henderson, NV',
   description:
     'Detail-focused cleaning services in Henderson, NV. Move-in, deep cleaning, commercial, and more for homes and businesses. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson' },
@@ -115,19 +116,16 @@ const faqJsonLd = {
   })),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE.url}/locations` },
-    { '@type': 'ListItem', position: 3, name: 'Henderson', item: `${SITE.url}/locations/henderson` },
-  ],
-};
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Henderson' },
+];
 
 export default function HendersonPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in Henderson, NV"
@@ -448,10 +446,6 @@ export default function HendersonPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );
