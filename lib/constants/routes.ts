@@ -240,5 +240,6 @@ export const FOOTER_NAV = {
     { label: 'Terms of Service', href: ROUTES.termsOfService },
     { label: 'Accessibility',    href: ROUTES.accessibility },
     { label: 'Cookie Policy',    href: ROUTES.cookiePolicy },
+    { label: 'Sitemap',          href: ROUTES.sitemap },
   ],
 } as const;
