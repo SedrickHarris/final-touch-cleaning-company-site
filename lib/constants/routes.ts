@@ -233,7 +233,6 @@ export const FOOTER_NAV = {
     { label: 'Cleaning Process', href: ROUTES.cleaningProcess },
     { label: 'Builders',         href: ROUTES.builders },
     { label: 'Reviews',          href: ROUTES.reviews },
-    { label: 'Gallery',          href: ROUTES.gallery },
     { label: 'Contact',          href: ROUTES.contact },
   ],
   legal: [
@@ -241,6 +240,5 @@ export const FOOTER_NAV = {
     { label: 'Terms of Service', href: ROUTES.termsOfService },
     { label: 'Accessibility',    href: ROUTES.accessibility },
     { label: 'Cookie Policy',    href: ROUTES.cookiePolicy },
-    { label: 'Sitemap',          href: ROUTES.sitemap },
   ],
 } as const;
