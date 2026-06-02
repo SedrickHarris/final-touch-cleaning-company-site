@@ -2977,3 +2977,31 @@ Files changed:
 - docs/site-os/implementation-log.md (this entry)
 
 Did not commit. Did not deploy.
+
+### About Page — /certifications content folded in
+Status: Implemented pending review
+Date: 2026-06-02
+
+Decision: No standalone /certifications page. Licensed & insured trust
+content folded into /about as a dedicated section.
+
+Content added:
+- "Licensed and insured in Nevada." section on app/about/page.tsx
+- General statement only; no license numbers, no insurance details,
+  no certifications, no awards
+- Blue Ribbon Guarantee referenced (approved trust signal)
+- Internal link to /cleaning-process added if not already present
+  (already present in the "How we work" section, so no duplicate link added)
+
+Placement: between the "How we work" section (bg-brand-white) and the FAQ,
+on bg-light-gray to alternate with adjacent sections. Reuses the existing
+SectionHeader component and SITE constant; no new components, no new imports,
+no schema changes (existing Organization JSON-LD already states the business
+is licensed and insured in copy).
+
+Files changed:
+- app/about/page.tsx
+- docs/site-os/build-status-reconciliation.md (§4 /certifications row)
+- docs/site-os/implementation-log.md (this entry)
+
+Did not commit. Did not deploy.

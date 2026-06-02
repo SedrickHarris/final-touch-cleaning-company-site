@@ -114,7 +114,7 @@ _Last reconciled against repo by the Repo Audit — Status Sync entry (implement
 | `/reviews` | **Built (TODO-VERIFY: owner-supplied review content)** | Show 3 real Google reviews via live source; "5.0 on Google" as attributed text; **no** AggregateRating/Review schema (self-serving). |
 | `/our-team` | **Built (pending review)** | Scott & Nicole only. |
 | `/cleaning-process` | **Built (pending review)** | Process description; no fake data. |
-| `/certifications` | **Partial** | Can state licensed & insured; no certs/awards/numbers. Consider folding into /about unless real certs exist. |
+| `/certifications` | **Decision: folded into /about** | Content added to /about as "Licensed and insured" section. No standalone page will be built. |
 | `/pricing` | **Built (pending review)** | "How pricing works → request a quote." Matches live FAQ stance. |
 | `/gallery` | **STILL BLOCKED** | Needs owner-supplied before/after photos; cannot invent. Keep deferred. |
 | `/sitemap` | Utility | Build in Batch 8. |

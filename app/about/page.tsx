@@ -263,6 +263,29 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Licensed and insured */}
+      <section className="bg-light-gray">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <SectionHeader
+            eyebrow="Credentials"
+            heading="Licensed and insured in Nevada."
+          />
+          <div className="mt-8 space-y-5 text-base sm:text-lg text-brand-black leading-relaxed">
+            <p>
+              {SITE.name} LLC is licensed to operate in Nevada and is fully
+              insured. Every job we take on is covered, so you can book with
+              confidence whether it is a home, an office, or a post-construction
+              site.
+            </p>
+            <p>
+              We back every clean with our Blue Ribbon Guarantee: 100%
+              satisfaction or return within 24 hours. If something is not
+              finished to standard, we come back and make it right.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <FAQSection
         items={faq}
         heading="About our team and approach"
