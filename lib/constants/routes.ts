@@ -240,7 +240,6 @@ export const NEIGHBORHOODS: ReadonlyArray<{
 export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Services',  href: ROUTES.services },
   { label: 'Locations', href: ROUTES.locations },
-  { label: 'Builders',  href: ROUTES.builders },
   { label: 'About',     href: ROUTES.about },
   { label: 'Reviews',   href: ROUTES.reviews },
   { label: 'Contact',   href: ROUTES.contact },
@@ -254,6 +253,7 @@ export const FOOTER_NAV = {
     { label: 'Our Team',         href: ROUTES.ourTeam },
     { label: 'Cleaning Process', href: ROUTES.cleaningProcess },
     { label: 'Builders',         href: ROUTES.builders },
+    { label: 'Industries',       href: ROUTES.industries },
     { label: 'Reviews',          href: ROUTES.reviews },
     { label: 'Contact',          href: ROUTES.contact },
   ],

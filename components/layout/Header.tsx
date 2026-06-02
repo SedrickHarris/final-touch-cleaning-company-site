@@ -11,6 +11,15 @@ import { DURATION, EASE_OUT } from '@/lib/motion';
 import NavDropdown from './NavDropdown';
 
 const SERVICES_DROPDOWN_ITEMS = SERVICES.map((s) => ({ label: s.name, href: s.href }));
+const SERVICES_DROPDOWN_GROUPS = [
+  {
+    label: 'Specialty',
+    items: [
+      { name: 'Builders', href: ROUTES.builders },
+      { name: 'Industries', href: ROUTES.industries },
+    ],
+  },
+];
 const LOCATIONS_DROPDOWN_ITEMS = LOCATIONS.map((l) => ({ label: l.name, href: l.href }));
 // Only built neighborhoods render as links; city groups with zero built are
 // dropped so the dropdown never shows a 404-bound link.
@@ -66,7 +75,8 @@ export default function Header() {
                     label={item.label}
                     href={item.href}
                     items={SERVICES_DROPDOWN_ITEMS}
-                    panelMinWidthClass="min-w-[220px]"
+                    panelMinWidthClass="min-w-[240px]"
+                    groups={SERVICES_DROPDOWN_GROUPS}
                   />
                 );
               }

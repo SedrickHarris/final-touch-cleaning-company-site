@@ -4221,3 +4221,56 @@ the PM city pages shipped; not a breadcrumb comment and out of this task's file
 scope, so left in place).
 
 Did not commit. Did not deploy.
+
+### Nav Restructure — Builders + Industries hierarchy correction
+Status: Implemented pending review
+Date: 2026-06-02
+Workflow: Fast Build Batch (gated, constants + component change)
+
+Rationale: Builders and Industries are audience-specific subsets of Services.
+Placing Builders as a PRIMARY_NAV top-level item signals incorrect peer-level
+hierarchy to crawlers. Both hubs belong in the Services dropdown (correct topical
+hierarchy) and the footer (consistent site-wide crawl presence).
+
+Changes:
+1. lib/constants/routes.ts
+   - PRIMARY_NAV: removed Builders (was position 3 of 6; nav now 5 items:
+     Services, Locations, About, Reviews, Contact)
+   - FOOTER_NAV.company: added Industries after Builders
+2. components/layout/Header.tsx
+   - Added SERVICES_DROPDOWN_GROUPS const (1 group: "Specialty" with Builders +
+     Industries), using the existing NavDropdown groups pattern (same as the
+     Locations neighborhoods dropdown; ROUTES already imported as the full object)
+   - Services NavDropdown: added groupedSectionLabel="Specialty" and
+     groups={SERVICES_DROPDOWN_GROUPS}; widened panelMinWidthClass min-w-[220px]
+     to min-w-[240px]
+
+Result:
+- PRIMARY_NAV: Services | Locations | About | Reviews | Contact (verified in built
+  HTML: 5 top-level nav links; Builders absent from primary and mobile nav)
+- Services dropdown: 7 service links + Specialty divider + Builders + Industries
+  (client-rendered panel; verified via source wiring + type-check, not static HTML)
+- FOOTER_NAV.company: About | Our Team | Cleaning Process | Builders | Industries |
+  Reviews | Contact (footer /builders and /industries confirmed in built HTML)
+- Mobile menu: Builders removed (follows PRIMARY_NAV; mobile renders only the flat
+  PRIMARY_NAV list, no service sub-items, so no separate mobile change was needed)
+
+Flag for review (cosmetic, not a blocker): the prompt specified BOTH
+groupedSectionLabel="Specialty" AND a group whose label is also "Specialty".
+NavDropdown renders the section eyebrow AND each group label, so the open dropdown
+shows "Specialty" twice (uppercase eyebrow + group sub-label). The decision diagram
+showed a single "Specialty" divider. Implemented exactly as specified; deduping is a
+one-line change (drop groupedSectionLabel, or set the group label to '') if a single
+label is preferred. Left as-specified pending review.
+
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass). Route count: 113, unchanged.
+Builders in footer: confirmed in built HTML. Industries in footer: confirmed.
+Builders/Industries in Services dropdown: wired in source (client-rendered panel).
+
+Files changed:
+- lib/constants/routes.ts
+- components/layout/Header.tsx
+- docs/site-os/implementation-log.md (this entry)
+
+Did not commit. Did not deploy.
