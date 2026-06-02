@@ -119,6 +119,7 @@ export default function LocationsPage() {
                   href={loc.href}
                   name={loc.name}
                   description={loc.shortDescription}
+                  image={loc.image}
                 />
               </li>
             ))}

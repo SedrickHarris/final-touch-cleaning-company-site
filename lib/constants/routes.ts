@@ -123,36 +123,57 @@ export const LOCATIONS: ReadonlyArray<{
   name: string;
   href: string;
   shortDescription: string;
+  image?: ServiceImage;
 }> = [
   {
     slug: 'las-vegas',
     name: 'Las Vegas',
     href: '/locations/las-vegas',
     shortDescription: 'Cleaning services for homes and businesses across Las Vegas.',
+    image: {
+      src: '/images/locations/las-vegas-commercial-cleaning-location-card-image.webp',
+      alt: 'Commercial cleaning services in Las Vegas, NV by Final Touch.',
+    },
   },
   {
     slug: 'henderson',
     name: 'Henderson',
     href: '/locations/henderson',
     shortDescription: 'Detail-focused cleaning across Henderson neighborhoods and corridors.',
+    image: {
+      src: '/images/locations/henderson-commercial-cleaning-location-card-image.webp',
+      alt: 'Commercial cleaning services in Henderson, NV by Final Touch.',
+    },
   },
   {
     slug: 'north-las-vegas',
     name: 'North Las Vegas',
     href: '/locations/north-las-vegas',
     shortDescription: 'Cleaning services for North Las Vegas residents and businesses.',
+    image: {
+      src: '/images/locations/north-las-vegas-commercial-cleaning-location-card-image.webp',
+      alt: 'Commercial cleaning services in North Las Vegas, NV by Final Touch.',
+    },
   },
   {
     slug: 'boulder-city',
     name: 'Boulder City',
     href: '/locations/boulder-city',
     shortDescription: 'Local cleaning for Boulder City homes and storefronts.',
+    image: {
+      src: '/images/locations/boulder-city-commercial-cleaning-location-card-image.webp',
+      alt: 'Commercial cleaning in Boulder City, NV by Final Touch.',
+    },
   },
   {
     slug: 'clark-county',
     name: 'Clark County',
     href: '/locations/clark-county',
     shortDescription: 'County-wide service for Clark County, Nevada. One team, one standard.',
+    image: {
+      src: '/images/locations/clark-county-commercial-cleaning-location-card-image.webp',
+      alt: 'County-wide cleaning across Clark County, NV by Final Touch.',
+    },
   },
 ] as const;
 

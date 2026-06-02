@@ -104,9 +104,6 @@ export default function CentennialHillsPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/centennial-hills-*.webp exists */}
       <HeroSection
         eyebrow="Northwest Las Vegas Valley"
         heading="Cleaning Services in Centennial Hills, Las Vegas, NV"

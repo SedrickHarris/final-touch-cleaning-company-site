@@ -104,9 +104,6 @@ export default function NellisAreaPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/nellis-area-north-las-vegas-*.webp exists */}
       <HeroSection
         eyebrow="Near Nellis Air Force Base"
         heading="Cleaning Services in the Nellis Area, North Las Vegas, NV"

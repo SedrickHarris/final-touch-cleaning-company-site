@@ -105,9 +105,6 @@ export default function AlianteNorthLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/aliante-north-las-vegas-*.webp exists */}
       <HeroSection
         eyebrow="Northern North Las Vegas"
         heading="Cleaning Services in Aliante, North Las Vegas, NV"

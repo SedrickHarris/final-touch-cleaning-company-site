@@ -104,9 +104,6 @@ export default function TuscanyVillagePage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/tuscany-village-henderson-*.webp exists */}
       <HeroSection
         eyebrow="Guard-Gated Community"
         heading="Cleaning Services in Tuscany Village, Henderson, NV"

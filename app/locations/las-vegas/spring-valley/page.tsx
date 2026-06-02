@@ -104,9 +104,6 @@ export default function SpringValleyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/spring-valley-*.webp exists */}
       <HeroSection
         eyebrow="West Las Vegas Valley"
         heading="Cleaning Services in Spring Valley, Las Vegas, NV"

@@ -105,9 +105,6 @@ export default function ParadiseStripPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/paradise-strip-*.webp exists */}
       <HeroSection
         eyebrow="Las Vegas Strip Corridor"
         heading="Cleaning Services in Paradise and the Las Vegas Strip, NV"

@@ -105,9 +105,6 @@ export default function GreenValleyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/green-valley-henderson-*.webp exists */}
       <HeroSection
         eyebrow="Central Henderson"
         heading="Cleaning Services in Green Valley, Henderson, NV"

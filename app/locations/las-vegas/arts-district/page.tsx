@@ -104,9 +104,6 @@ export default function ArtsDistrictPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero — split layout with quote form. No-photo pattern: HeroSection
-          renders its gradient background when no image prop is passed. */}
-      {/* TODO-PHOTO: wire hero image when public/images/locations/arts-district-*.webp exists */}
       <HeroSection
         eyebrow="Las Vegas Arts District"
         heading="Cleaning Services in the Las Vegas Arts District, NV"

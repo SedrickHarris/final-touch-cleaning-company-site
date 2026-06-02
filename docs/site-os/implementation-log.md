@@ -17,6 +17,73 @@ Fast Build Batch
 
 ## Log
 
+### Image Wiring — Neighborhood Hero Images + Locations Hub City Cards
+Status: Done
+Commit: 50ebdab
+Date: 2026-06-02
+
+Summary:
+Wired all outstanding owner-supplied hero images into neighborhood pages and
+the locations hub city grid. All lint / type-check / build checks passed
+before commit. 97 static routes, unchanged.
+
+Files changed (11 code files):
+- app/locations/las-vegas/spring-valley/page.tsx
+- app/locations/las-vegas/centennial-hills/page.tsx
+- app/locations/las-vegas/sunrise-manor/page.tsx
+- app/locations/las-vegas/arts-district/page.tsx
+- app/locations/las-vegas/paradise-strip/page.tsx
+- app/locations/henderson/green-valley/page.tsx
+- app/locations/henderson/tuscany-village/page.tsx
+- app/locations/north-las-vegas/nellis-area/page.tsx
+- app/locations/north-las-vegas/aliante/page.tsx
+- app/locations/page.tsx
+- lib/constants/routes.ts
+
+Assets changed (public/images/locations/ — 5 modified, 5 added):
+Modified (Group A — files already tracked; replaced with owner-supplied copies):
+- spring-valley-las-vegas-commercial-cleaning-hero-image.webp
+- centennial-hills-las-vegas-commercial-cleaning-hero-image.webp
+- sunrise-manor-las-vegas-commercial-cleaning-hero-image.webp
+- arts-district-las-vegas-commercial-cleaning-hero-image.webp
+- nellis-area-north-las-vegas-commercial-cleaning-hero-image.webp
+
+Added (Group C — new city card images for the locations hub grid):
+- las-vegas-commercial-cleaning-location-card-image.webp
+- henderson-commercial-cleaning-location-card-image.webp
+- north-las-vegas-commercial-cleaning-location-card-image.webp
+- boulder-city-commercial-cleaning-location-card-image.webp
+- clark-county-commercial-cleaning-location-card-image.webp
+
+Group B (free-quote hero): public/images/heroes/free-cleaning-quote-las-vegas-hero.webp
+was confirmed present on disk and is wired in app/free-quote/page.tsx. It was not
+part of this commit (already tracked in a prior session).
+
+Also deleted: public/images/locations/free-quote-commercial-cleaning-hero-image.webp
+(stray untracked duplicate; deleted before commit, required no git action).
+
+Changes by type:
+
+Neighborhood pages (9): image prop already wired in a prior pass on all 9.
+Session work was comment cleanup only — removed TODO-PHOTO comment and the
+stale "No-photo pattern: HeroSection renders its gradient background when no
+image prop is passed" comment block from each. Repo-wide grep confirms zero
+TODO-PHOTO and zero "No-photo pattern" strings remain in any page.tsx.
+
+lib/constants/routes.ts: added optional `image?: ServiceImage` field to the
+LOCATIONS type; added image src + alt to all 5 LOCATIONS entries. City card
+images follow the established ServiceImage type (src + alt, no em dashes).
+Image paths: /images/locations/<city>-commercial-cleaning-location-card-image.webp
+for all 5 cities (las-vegas, henderson, north-las-vegas, boulder-city,
+clark-county). No other changes to routes.ts.
+
+app/locations/page.tsx: added `image={loc.image}` to the ServiceCard in the
+city grid map. Single-prop addition; no other sections touched.
+
+Note: commit body referenced "(locations/, heroes/)" in error. Only
+public/images/locations/ assets were added or modified in this commit.
+No files in public/images/heroes/ were changed.
+
 ### Batch 1 — Project Foundation
 Status: Implemented pending review
 Date: 2026-05-17
