@@ -2937,3 +2937,43 @@ pass through to the rendered script tag unchanged.
 Verification: lint / type-check / build all pass; widget id is present in the
 static export output (out/), confirming it ships on every page.
 File changed: app/layout.tsx.
+
+### Repo Audit — Status Sync
+Status: Docs-only update
+Date: 2026-06-02
+
+Summary:
+Audited full app/ directory against docs/site-build-plan.md and the implementation
+log. Updated docs/site-os/build-status-reconciliation.md §2 Build Status table to
+reflect actual repo state. No page files, components, constants, config, or package
+files were modified.
+
+Built route count: 94 page.tsx routes (HEAD 25a17b7, working tree clean).
+By category: Tier 1 brand/utility 15; Tier 2 service hubs 8 (/services + 7);
+Tier 3 city 6 (/locations + 5); Tier 3 neighborhood 19; Tier 4 service+city
+matrix 35 (7 services × 5 cities); builders 11 (/builders + 10 leaf). (next build
+emits 97 static entries = 94 pages + /_not-found + metadata routes.)
+
+Discrepancies found: 2.
+1. /certifications — companion §4 lists it as "Partial", but no app/certifications/
+   page.tsx exists on disk. It is Not Built. (Flagged; §4 not edited — out of scope.)
+2. Recent SEO/analytics/footer/sitemap commits (7f972c6, 8390d38, f1e2cc7,
+   47cbd7d, ecde2ae, 02c55bc) shipped without their own ### implementation-log
+   entries; app/sitemap/page.tsx (the HTML sitemap, commit ecde2ae) is the one
+   built page.tsx with no dedicated batch log entry. All other 93 page.tsx files
+   map cleanly to a batch entry. (Flagged for record; no log backfill performed.)
+No routes exist in the repo that are absent from the plan. No planned route was
+found claimed-built-but-missing in the log.
+
+Open TODOs carried forward: /gallery still blocked (owner before/after photos);
+/certifications not built; QuoteFormPlaceholder note — quote form was wired live to
+GoHighLevel (commit 0810ec9), superseding the old Batch-2 endpoint TODO;
+ServiceImagePlaceholder still the fallback where owner photos are absent; Batch 7
+(industries/seasonal/urgency/problem-based/community/Spanish/service×neighborhood)
+and Batch 8 launch tail (IndexNow, GSC/Bing verification, final QA + deploy) not started.
+
+Files changed:
+- docs/site-os/build-status-reconciliation.md (§2 table update)
+- docs/site-os/implementation-log.md (this entry)
+
+Did not commit. Did not deploy.

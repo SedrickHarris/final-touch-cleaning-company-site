@@ -77,18 +77,20 @@ Some "Las Vegas" neighborhoods sit outside the City of Las Vegas, but all are in
 
 ## 2. Build Status (current)
 
+_Last reconciled against repo by the Repo Audit — Status Sync entry (implementation-log.md), 2026-06-02, at HEAD `25a17b7`. 94 built `page.tsx` routes on disk._
+
 | Batch | Scope | Status |
 |-------|-------|--------|
 | 1 + 1.1 | Foundation, components, motion | ✅ Done |
-| 2 | Core brand — 12 routes built: `/`, /about, /services, /locations, /contact, /faq, /free-quote, /thank-you, /privacy-policy, /terms-of-service, /accessibility-statement, /cookie-policy + /404 | ✅ Mostly done |
-| 2 (deferred) | /reviews, /gallery, /pricing, /our-team, /cleaning-process, /certifications, /sitemap | ⏳ Held pending owner data — several now unblocked (see §4) |
+| 2 | Core brand — 12 routes built: `/`, /about, /services, /locations, /contact, /faq, /free-quote, /thank-you, /privacy-policy, /terms-of-service, /accessibility-statement, /cookie-policy + /404 | ✅ Done |
+| 2 (deferred) | Held-pending brand pages: /reviews, /our-team, /cleaning-process, /pricing, /sitemap now built; /gallery + /certifications still outstanding | ✅ Done (partial — /gallery ❌ Blocked on owner-supplied before/after photos; /certifications not built, no `page.tsx` on disk) |
 | 3 | 7 service pages | ✅ Done |
 | 4 | 5 city pages | ✅ Done |
-| 5 | 10 priority neighborhoods: Summerlin, Downtown LV, Southern Highlands (LV); Cadence, Inspirada, MacDonald Highlands, Seven Hills, Anthem, Lake Las Vegas, Green Valley Ranch (Henderson) — now have hero photos | ✅ Done |
-| 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district, aliante · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ✅ Done — 9 built with hero photos wired 2026-05-29 (LV aliante intentionally retired, not built) |
-| 6 | Service + city matrix (35: 7×4 cities + 7 Clark County) | ✅ Done (committed 81e0c2d + 20678de) |
-| 7 | Specialized: builders (10), industries (15), seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7), service×neighborhood (50+) | ⏳ |
-| 8 | Tech SEO + launch (schema, robots/sitemap/llms.txt, GSC/Bing/Clarity/GA4, IndexNow, QA, deploy) | ⏳ |
+| 5 | 10 priority neighborhoods: Summerlin, Downtown LV, Southern Highlands (LV); Cadence, Inspirada, MacDonald Highlands, Seven Hills, Anthem, Lake Las Vegas, Green Valley Ranch (Henderson) | ✅ Done |
+| 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ✅ Done — 9 built (LV aliante intentionally retired, not built); 19 neighborhood pages total on disk |
+| 6 | Service + city matrix (35: 7 services × 5 cities incl. Clark County) | ✅ Done (committed 81e0c2d + 20678de) |
+| 7 | Specialized: builders (10) + /builders hub built; industries (15), seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7), service×neighborhood (50+) not built | ✅ Done (partial — only builders + hub complete; all other Batch 7 categories ⏳ not started) |
+| 8 | Tech SEO + launch: global LocalBusiness schema + visible breadcrumbs, GTM/GA4, Microsoft Clarity, sitemap.xml/robots.txt/llms.txt, /sitemap HTML page all shipped | ✅ Done (partial — schema + analytics + crawl files shipped; IndexNow, GSC/Bing verification, final QA + deploy ⏳ not started) |
 
 **Image convention (from this batch):** `public/images/locations/` = neighborhood hero photos; `public/images/heroes/locations/` = city hero photos. Shared `HeroSection` takes `image={{ src, alt }}`.
 
