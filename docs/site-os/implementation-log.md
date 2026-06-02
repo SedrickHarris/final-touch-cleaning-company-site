@@ -3883,3 +3883,341 @@ Pending in Batch 7:
 - Seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7) — not yet started
 
 Did not deploy.
+
+### Industries Hub — /industries
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-hub-implementation → pass-fail gate
+
+Files created: app/industries/page.tsx
+Files updated: docs/site-os/implementation-log.md
+
+Net-new pillar/collection page mirroring the builder hub pattern (JSON-LD first,
+then HeroSection with formSlot, then sections). 10 sections: hero, direct-answer
+paragraph, 5-vertical industry card grid (each with 3 city chips), why-it-matters
+(6), who-we-serve (4), how-it-works (4 narrative steps), service-area chips,
+related-services chips, FAQ (8), final CTA.
+
+Content gaps fixed:
+1. Hub page created — no /industries page existed
+2. Breadcrumb parent surface now exists for the 12 industry leaf pages
+3. B2B pillar landing surface for commercial industry intent
+4. Cross-vertical FAQ coverage (8 hub-level Q/A)
+5. Multi-location / portfolio program framing (Section 5 + FAQ Q4)
+6. Industry comparison navigation surface (Section 3 card grid)
+7. Entity-level commercial authority signal for Final Touch
+
+FAQs: 8 (4 clusters: what Final Touch serves, coverage, process/conversion,
+trust/differentiators)
+Schema: CollectionPage + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No streetAddress (provider omits it). No HowTo (process
+steps are narrative). No Offer.
+
+Internal links: 40+ outbound in built HTML — 5 verticals × {LV/Henderson/NLV}
+(15 industry leaf links incl. property-management forward-links), 7 related
+services, 6 service-area locations, /free-quote, /faq, tel. All required targets
+present.
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7). Built-HTML checks: em dash 0, double hyphen 0, exactly one
+H1, AggregateRating/Review/HowTo/streetAddress all 0, CTA visible (Request a Free
+Quote x6, Call Now x5).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass, +1 route -> 110 static routes).
+
+Property management: the 5th industry card and its 3 city chips link to
+/industries/property-management-cleaning/{city}, which 404 until those pages ship
+(TODO-BATCH-7 comment in the industries array). Same forward-link pattern used on
+the leaf-page chips. No constants changes (ROUTES.industries already existed).
+
+TODO: update BreadcrumbList on all 12 existing industry leaf pages from their
+JSON-LD-only placeholder parent (Commercial & Office / Retail Space) to /industries
+as the confirmed parent — those pages carry TODO-BATCH-7 comments for this update.
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/property-management-cleaning/las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+First page of the property management cleaning cluster (the 5th and final industry
+vertical). Mirrors the medical LV structural pattern.
+
+Content gaps fixed:
+1. Page created — no coverage of "property management cleaning Las Vegas" existed
+2. Unit turn framing for B2B property manager audience (Section 2 + FAQ Q2)
+3. HOA / common area cleaning section (Section 5 pmScopeExpansion, 3 positive cards)
+4. Portfolio / multi-property program framing (Audience Card 2 + FAQ Q6)
+5. Las Vegas rental volume context (Section 6 Card 1 + FAQ Q4)
+6. "What to look for" FAQ (FAQ Q7, PAA/AEO target)
+7. Sibling city chips with TODO-BATCH-7 forward links for Henderson and NLV
+
+Section 5 is a positive scope-expansion section (common areas, HOA programs,
+portfolio scale), not an exclusions list — correct for this vertical (no
+clinical/regulatory restrictions).
+
+FAQs: 8 (4 clusters: scope/inclusions, Las Vegas market context, portfolio
+programs, conversion/process)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+BreadcrumbList parent is /industries (hub built this session, no TODO needed).
+No AggregateRating/Review. No streetAddress. No HowTo. No Offer.
+
+Internal links: required targets confirmed in built HTML
+(/services/move-out-cleaning, /services/move-in-cleaning, /services/janitorial-services,
+/services/move-out-cleaning/las-vegas inline link in Section 6 card 0, /industries,
+/free-quote, tel). Section 8 renders 3 ServiceCards (move-out, move-in, janitorial)
+via SERVICES.find.
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7). Built-HTML checks: em dash 0, double hyphen 0, exactly one H1,
+AggregateRating/Review/HowTo/streetAddress all 0, CTA visible (Request a Free
+Quote x6, Call Now x5).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass, +1 route -> 111 static routes).
+
+Minor notes:
+- FAQ Section 9 uses FAQSection with the heading prop (its own bg-brand-white
+  section), mirroring the 12 existing industry pages; the prompt's separate
+  SectionHeader/eyebrow and bg-light-gray could not both apply since FAQSection
+  renders its own section + h2. "More questions?" paragraph added below it.
+- distinctionCards[0] copy uses `${SITE.owners}'` which renders "Scott & Nicole
+  Maland'" (possessive without trailing s) — rendered verbatim per the prompt copy.
+
+Files created: app/industries/property-management-cleaning/las-vegas/page.tsx
+Files updated: docs/site-os/implementation-log.md
+
+TODO-BATCH-7: activate Henderson PM chip when
+  /industries/property-management-cleaning/henderson ships
+TODO-BATCH-7: activate NLV PM chip when
+  /industries/property-management-cleaning/north-las-vegas ships
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/property-management-cleaning/henderson
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+Second page of the property management cleaning cluster. Mirrors the LV PM
+structure; content is Henderson-specific per the anti-doorway requirement.
+
+Henderson differentiators vs Las Vegas sibling (anti-doorway):
+- Master-planned community finish standard as the defining market character
+  (Section 3 Card 1, Section 5 Para 2, Section 6 Card 2, FAQ Q2, FAQ Q4)
+- One-to-three-property landlord profile vs large apartment portfolios
+  (Section 3 Card 2, FAQ Q4)
+- New-construction first-occupancy demand in Cadence and Inspirada
+  (Section 3 Card 4, Section 5 Para 3, Section 6 Card 3, FAQ Q5)
+- HOA-governed common areas as a Henderson-specific program dimension
+  (Section 3 Card 3, Section 5 Para 1, FAQ Q3)
+- Related services: move-out, move-in, deep-cleaning (vs LV: janitorial),
+  an intentional anti-doorway content difference
+Anti-doorway verified in built HTML: Green Valley x28, Cadence x27, Inspirada
+x27, Anthem x18 (well over the >=4 community-name minimum). Sections 3, 5, 6
+and FAQ Q4/Q5 are Henderson-specific, not a city-swap.
+
+Content gaps fixed:
+1. Page created (no "property management cleaning Henderson NV" coverage existed)
+2. Higher finish standard framing for master-planned communities
+3. New-construction turnover angle for Cadence and Inspirada
+4. HOA common area section for Henderson's governed communities
+5. One-to-three-property landlord profile (Section 3 + FAQ Q4)
+6. "What Henderson property managers look for" FAQ (FAQ Q7)
+7. Sibling cross-links: LV PM chip live, NLV PM chip TODO-BATCH-7
+
+Sibling updated: app/industries/property-management-cleaning/las-vegas/page.tsx,
+Henderson PM chip TODO-BATCH-7 comment removed; chip now links live to this page
+(verified in built HTML; Henderson TODO count on the LV page now 0).
+
+FAQs: 8 (4 clusters: scope/Henderson standard, Henderson market context,
+portfolio programs, conversion/process)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+BreadcrumbList parent is /industries (hub built this session). No AggregateRating/
+Review. No streetAddress. No HowTo. No Offer.
+
+Internal links: required targets confirmed in built HTML
+(/services/move-out-cleaning, /services/move-in-cleaning, /services/deep-cleaning,
+/services/move-out-cleaning/henderson inline link in Section 6 card 2,
+/industries/property-management-cleaning/las-vegas, /industries, /free-quote, tel).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7, Anti-doorway 5/5). Built-HTML checks: em dash 0, double hyphen
+0, exactly one H1, AggregateRating/Review/HowTo/streetAddress all 0, CTA visible
+(Request a Free Quote x6, Call Now x5).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass, +1 route -> 112 static routes).
+
+Files created: app/industries/property-management-cleaning/henderson/page.tsx
+Files updated:
+- app/industries/property-management-cleaning/las-vegas/page.tsx (Henderson chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO-BATCH-7: activate NLV PM chip when
+  /industries/property-management-cleaning/north-las-vegas ships
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/property-management-cleaning/north-las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs, 3 clusters) →
+single-step build → pass-fail gate
+
+Property management cluster COMPLETE: all 3 city pages built (Las Vegas L5,
+Henderson L5, North Las Vegas L3). All sibling chip sets fully activated across
+the cluster; every page links to the other two (verified in built HTML), and zero
+TODO-BATCH-7 chip comments remain in the cluster.
+
+NLV differentiators vs sibling pages (anti-doorway):
+- High renter-density / high-frequency volume framing vs Henderson's per-unit
+  finish refinement and the larger-apartment-complex LV market (Section 2,
+  Section 3 Cards 2-3, Section 5 Card 1, Section 6 Card 1, FAQ Q2)
+- Multi-unit landlord volume profile vs Henderson one-to-three-property
+  (Section 3 Card 2, FAQ Q3)
+- Lamb Boulevard / Craig Road / Cheyenne Avenue corridor anchor, NLV-only
+  (Section 5 Card 2, FAQ Q4)
+- Multi-unit building common areas framing vs Henderson scattered inventory
+  (Section 3 Card 3, Section 5 Card 3, Section 6 Card 2)
+- No master-planned community / HOA governance framing for NLV (the single
+  "master-planned" mention in built HTML is a deliberate Henderson contrast in
+  Section 6 Card 2, not NLV framing)
+- Related services: move-out, move-in, janitorial (vs Henderson: deep-cleaning),
+  an intentional anti-doorway difference (Section 8 cards use janitorial; the lone
+  /services/deep-cleaning link in built HTML is the global footer, not a card)
+Anti-doorway verified: Lamb x8, Craig x8, Cheyenne x8, Aliante x3, Nellis x3.
+
+Sibling updates:
+- app/industries/property-management-cleaning/las-vegas/page.tsx
+  NLV PM chip TODO-BATCH-7 comment removed; chip now live.
+- app/industries/property-management-cleaning/henderson/page.tsx
+  NLV PM chip TODO-BATCH-7 comment removed; chip now live.
+
+FAQs: 5 (3 clusters: scope/NLV context, portfolio/volume, conversion)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+BreadcrumbList parent is /industries. No AggregateRating/Review. No streetAddress.
+No HowTo. No Offer.
+
+Internal links: required targets confirmed in built HTML
+(/services/move-out-cleaning, /services/move-in-cleaning, /services/janitorial-services,
+/industries/property-management-cleaning/las-vegas,
+/industries/property-management-cleaning/henderson, /industries, /free-quote, tel).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7, Anti-doorway 5/5). Built-HTML checks: em dash 0, double hyphen
+0, exactly one H1, AggregateRating/Review/HowTo/streetAddress all 0, CTA visible
+(Request a Free Quote x6, Call Now x5).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass, +1 route -> 113 static routes).
+
+INDUSTRIES BUILD COMPLETE: 15 industry leaf pages (5 verticals x 3 cities) + the
+/industries hub. All 5 clusters complete and mutually cross-linked. Remaining
+industries-related items are Phase 4 candidates only (neighborhood+industry combos,
+e.g. /industries/property-management-cleaning/summerlin), deferred per the
+2026-06-02 decision log entry.
+
+Files created: app/industries/property-management-cleaning/north-las-vegas/page.tsx
+Files updated:
+- app/industries/property-management-cleaning/las-vegas/page.tsx (NLV chip activated)
+- app/industries/property-management-cleaning/henderson/page.tsx (NLV chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+Property management cluster status: COMPLETE
+Phase 4 candidate: /industries/property-management-cleaning/summerlin
+(deferred per 2026-06-02 decision log entry)
+
+Did not commit. Did not deploy.
+
+### Image Wiring — Industries Hub + Property Management Cluster Hero Images
+Status: Implemented pending review
+Date: 2026-06-02
+Workflow: Fast Build Batch
+
+Wired 4 owner-supplied hero images into the HeroSection image prop on the
+industries hub and all 3 property management city pages.
+
+Files changed (4):
+- app/industries/page.tsx
+- app/industries/property-management-cleaning/las-vegas/page.tsx
+- app/industries/property-management-cleaning/henderson/page.tsx
+- app/industries/property-management-cleaning/north-las-vegas/page.tsx
+
+Assets confirmed on disk (actual filenames):
+Hub image: public/images/heroes/commercial-cleaning-industries-hub-hero-image.webp
+  (the hub image lives in heroes/, not industries/; filename differs from the
+  prompt's example name, so the actual on-disk name was used)
+PM images (public/images/industries/):
+- property-management-cleaning-las-vegas-nv-hero-image.webp
+- property-management-cleaning-henderson-nv-hero-image.webp
+- property-management-cleaning-north-las-vegas-nv-hero-image.webp
+
+src paths wired:
+- /images/heroes/commercial-cleaning-industries-hub-hero-image.webp (hub)
+- /images/industries/property-management-cleaning-las-vegas-nv-hero-image.webp
+- /images/industries/property-management-cleaning-henderson-nv-hero-image.webp
+- /images/industries/property-management-cleaning-north-las-vegas-nv-hero-image.webp
+
+Change: image prop added to HeroSection on each page (after formSlot). No copy,
+schema, structural, or component changes. Each wired src verified against a real
+file on disk; all 4 srcs present in built HTML.
+
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass). Route count: unchanged (113 static routes).
+Em dash in alt text: 0.
+
+Note: an earlier run of this task stopped at Step 0 because the hub image was not
+in industries/ (it is in heroes/). Corrected prompt supplied the heroes/ location;
+no code was changed in the stopped run.
+
+Did not commit. Did not deploy.
+
+### Breadcrumb Repoint — /industries parent live on all 15 leaf pages
+Status: Implemented pending review
+Date: 2026-06-02
+Workflow: Fast Build Batch
+
+Updated BreadcrumbList JSON-LD on all 12 prior industry leaf pages to parent under
+/industries. The prior breadcrumb was a 4-item list (Home > Services > service hub
+[Commercial & Office Cleaning or Retail Space Cleaning] > page), with a TODO-BATCH-7
+comment between positions 3 and 4. Replaced with a 3-item list
+(Home > Industries > [page name]) and removed the TODO-BATCH-7 breadcrumb comment
+from each file.
+
+Files changed (12):
+- app/industries/medical-office-cleaning/las-vegas/page.tsx
+- app/industries/medical-office-cleaning/henderson/page.tsx
+- app/industries/medical-office-cleaning/north-las-vegas/page.tsx
+- app/industries/law-firm-cleaning/las-vegas/page.tsx
+- app/industries/law-firm-cleaning/henderson/page.tsx
+- app/industries/law-firm-cleaning/north-las-vegas/page.tsx
+- app/industries/retail-store-cleaning/las-vegas/page.tsx
+- app/industries/retail-store-cleaning/henderson/page.tsx
+- app/industries/retail-store-cleaning/north-las-vegas/page.tsx
+- app/industries/restaurant-cleaning/las-vegas/page.tsx
+- app/industries/restaurant-cleaning/henderson/page.tsx
+- app/industries/restaurant-cleaning/north-las-vegas/page.tsx
+
+Change: BreadcrumbList itemListElement updated to the 3-item list; only that block
+and the associated TODO-BATCH-7 breadcrumb comment changed per file. No copy, other
+schema, FAQ, section, import, component, or constants changes.
+
+Combined with the 3 PM pages (whose breadcrumbs already point to /industries) and
+the hub itself, all 15 industry leaf pages now breadcrumb correctly under
+/industries. Verified in built HTML: all 16 industry pages (15 leaves + hub) show
+"Industries" at breadcrumb position 2; the 12 repointed leaves all carry the
+Home > Industries > page hierarchy.
+
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check (pass)
+/ build (pass). Route count: 113, unchanged.
+Breadcrumb TODO-BATCH-7 remaining: 0. One non-breadcrumb TODO-BATCH-7 remains in
+app/industries/page.tsx (the hub's property-management chip comment, now stale since
+the PM city pages shipped; not a breadcrumb comment and out of this task's file
+scope, so left in place).
+
+Did not commit. Did not deploy.

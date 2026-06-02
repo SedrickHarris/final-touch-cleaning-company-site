@@ -77,15 +77,13 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
+    { '@type': 'ListItem', position: 2, name: 'Industries', item: `${SITE.url}/industries` },
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Commercial & Office Cleaning',
-      item: `${SITE.url}/services/commercial-office-cleaning`,
+      name: 'Restaurant Cleaning in North Las Vegas',
+      item: `${SITE.url}/industries/restaurant-cleaning/north-las-vegas`,
     },
-    // TODO-BATCH-7: update breadcrumb parent to /industries hub when built
-    { '@type': 'ListItem', position: 4, name: 'Restaurant Cleaning in North Las Vegas' },
   ],
 };
 
