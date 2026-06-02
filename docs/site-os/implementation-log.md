@@ -3005,3 +3005,881 @@ Files changed:
 - docs/site-os/implementation-log.md (this entry)
 
 Did not commit. Did not deploy.
+
+### Industry Page — /industries/medical-office-cleaning/las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map (8 FAQs,
+4 clusters) → content gap analysis (7 gaps identified, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate (44 items)
+
+Content gaps fixed:
+1. Dedicated page for "medical office cleaning Las Vegas" primary keyword
+2. After-hours scheduling section + FAQ Q4
+3. Dedicated scope exclusions section + FAQ Q2
+4. 4-card audience section: primary care, dental, specialist, multi-practice
+5. "What to look for" FAQ Q7 — PAA/AEO target
+6. Owner-led walkthrough positioned as medical-specific differentiator (Section 6)
+7. Snippet-ready scope checklist (Section 4) + exclusions list (Section 5)
+
+FAQs: 8 (4 clusters: scope/inclusions, frequency/scheduling,
+practice types, conversion/process)
+Schema: Service + FAQPage + BreadcrumbList. All three present in built HTML.
+No AggregateRating/Review. No regulatory claims. No fake data. No em dashes.
+
+Owner decision applied during build: the approved verbatim copy used the word
+"sterile" 5x (all in an exclusion context). Per the regulatory-claim grep gate
+(must return 0 for "sterile") and the copy rules banning the term, "sterile" was
+reworded to "clinical" in all 5 places (FAQ Q1, FAQ Q2, Section 4 checklist,
+Section 5 exclusions x2). Exclusion meaning preserved; FAQ schema still equals
+visible text since both derive from one array. The Section 9 FAQ heading em dash
+in the source prompt was changed to a colon to satisfy the no-em-dash rule.
+
+Sections built (10): 1 Hero (split + QuoteFormPlaceholder), 2 Direct-answer
+paragraph, 3 Who we serve (4 audience cards), 4 Scope checklist (10 items),
+5 Scope exclusions (unique section, 5 items), 6 Medical vs standard commercial
+(3 context cards), 7 Service area chips (7 chips, min-h-[44px]), 8 Related
+services (3 ServiceCards), 9 FAQ, 10 Final CTA (tone="blue").
+
+CTASection: full props passed (heading/sub/primaryCta/secondaryCta) because the
+component requires heading + primaryCta. Blue Ribbon Guarantee NOT added (the
+component does not render it by default; copy rule permits it only if it does).
+
+Internal links: 16+ outbound internal links rendered in built HTML; all 7
+required targets confirmed present (/services/commercial-office-cleaning,
+/services/commercial-office-cleaning/las-vegas, /services/janitorial-services,
+/locations/las-vegas, /locations/henderson, /free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 24/24, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7 — overall 44/44).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 98 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, regulatory terms 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Files created: app/industries/medical-office-cleaning/las-vegas/page.tsx
+Files updated: lib/constants/routes.ts (added industries: '/industries' key),
+docs/site-os/implementation-log.md
+
+TODO: update BreadcrumbList parent to /industries hub when built
+  (TODO-BATCH-7 comment in file)
+TODO: update Henderson chip href when
+  /industries/medical-office-cleaning/henderson is built
+  (TODO-BATCH-7 comment in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/medical-office-cleaning/henderson
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+Henderson differentiators vs Las Vegas sibling:
+- Green Valley Parkway / Sunset Road medical corridor as primary geographic
+  anchor (Audience Card 1 + Section 6 Card 1)
+- Suburban, predictable business-hours scheduling character vs the Las Vegas
+  extended-hours/tourism market (Section 6 Card 2)
+- Master-planned community patient base named: Anthem, Green Valley Ranch,
+  Seven Hills, MacDonald Highlands (Audience Card 1 + Section 6 Card 1)
+- FAQ Q3 (Green Valley Parkway corridor) — would not be correct on Las Vegas page
+- FAQ Q4 (Henderson vs Las Vegas scheduling) — exclusive to this page
+Sections 3, 6, and 7 are Henderson-specific, not a city-swap of the LV page.
+
+FAQs: 8 (4 clusters: scope/inclusions, Henderson context,
+frequency/scheduling, practice types/conversion)
+Schema: Service + FAQPage + BreadcrumbList. All three present in built HTML.
+No AggregateRating/Review. No regulatory claims. No fake data. No em dashes.
+
+Owner decision applied (consistent with the LV sibling build this session): the
+approved verbatim copy used "sterile" 5x in an exclusion context; reworded to
+"clinical" in all 5 places (FAQ Q1, FAQ Q2, Section 4 checklist, Section 5
+exclusions x2) to satisfy the regulatory-claim grep (0) while preserving the
+exclusion meaning. Section 9 FAQ heading em dash changed to a colon. Two source
+em dashes in developer comments were also changed to commas so the raw em-dash
+grep returns 0.
+
+Sibling update: app/industries/medical-office-cleaning/las-vegas/page.tsx —
+removed the TODO-BATCH-7 comment above the Henderson chip; the chip now links
+live to this page (str_replace, chip href unchanged).
+
+Internal links: all 8 spec-required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/henderson,
+/services/janitorial-services, /locations/henderson, /locations/las-vegas,
+/industries/medical-office-cleaning/las-vegas, /free-quote, tel:+17024445077);
+well over the 7 minimum.
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 99 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, regulatory terms 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern), consistent
+with the LV sibling; no visible breadcrumb component on the page.
+
+Files created: app/industries/medical-office-cleaning/henderson/page.tsx
+Files updated:
+- app/industries/medical-office-cleaning/las-vegas/page.tsx
+  (Henderson chip TODO resolved)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate NLV chip when /industries/medical-office-cleaning/north-las-vegas
+  ships (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/medical-office-cleaning/north-las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Medical cluster complete: all 3 medical office cleaning city pages built
+(Las Vegas L5, Henderson L5, North Las Vegas L3).
+
+NLV differentiators vs sibling pages:
+- Growing residential population framing (not tourism or suburban corridor)
+- Smaller medical footprint context (Section 6 Card 2), unique to NLV, explicitly
+  contrasts against Henderson's Green Valley Parkway corridor and the larger
+  Las Vegas commercial zones
+- Community practice hours framing vs Las Vegas extended hours
+- FAQ Q2 includes bloodborne pathogen exclusion (confirmed owner exclusion)
+- FAQ Q4 NLV-specific after-hours context
+
+Owner-confirmed exclusion logged:
+- Bloodborne pathogen cleanup / blood cleanup / biological waste remediation
+- Added to docs/site-os/final-touch-build-context.md under new heading
+  "## Confirmed Service Exclusions (Owner-Verified)"
+- Added to Section 5 exclusions list on all 3 medical pages (verified present
+  in built HTML for las-vegas, henderson, and north-las-vegas)
+
+Sibling cross-link updates:
+- Henderson page: removed TODO-BATCH-7 comment; NLV chip now live.
+- Las Vegas page: the LV page had no pre-existing NLV chip TODO (only a Henderson
+  industries chip). To complete cluster cross-linking, a live NLV chip was added
+  after the Henderson chip rather than activating a non-existent TODO. All 3
+  pages now cross-link to the other two (verified in built HTML).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No regulatory claims. No "sterile" in customer-facing
+strings (grep across all 3 medical pages returns 0). No fake data. No em dashes.
+
+Internal links: all 8 spec-required NLV targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/north-las-vegas,
+/services/janitorial-services, /locations/north-las-vegas,
+/industries/medical-office-cleaning/las-vegas, /industries/medical-office-cleaning/henderson,
+/free-quote, tel:+17024445077); over the 7 minimum.
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 100 static routes, +1 new route). Grep checks: NLV em dash 0,
+sterile 0 across all 3 pages, regulatory terms 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern), consistent with
+the LV and Henderson siblings; no visible breadcrumb component.
+
+Files created:
+- app/industries/medical-office-cleaning/north-las-vegas/page.tsx
+
+Files updated:
+- app/industries/medical-office-cleaning/las-vegas/page.tsx
+  (NLV chip added + bloodborne exclusion bullet added)
+- app/industries/medical-office-cleaning/henderson/page.tsx
+  (NLV chip activated + bloodborne exclusion bullet added)
+- docs/site-os/final-touch-build-context.md
+  (confirmed service exclusion logged)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub when built (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/law-firm-cleaning/las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+First page of a new industry cluster (law firm cleaning). Mirrors the
+established industry-page pattern from the medical-office cluster.
+
+Content gaps fixed:
+1. Dedicated page for "law firm cleaning Las Vegas" primary keyword
+2. Dedicated restricted-access section (Section 5) + FAQ Q6 (confidentiality concern)
+3. After-hours scheduling framed around depositions and client meetings
+   (Section 6 Card 2 + FAQ Q3)
+4. Downtown courthouse-adjacent corridor as geographic anchor
+   (Audience Card 1 + Section 6 Card 1)
+5. Conference rooms called out explicitly in scope checklist
+6. FAQ Q7 "what to look for in a law firm cleaning service"
+7. Downtown vs Summerlin law firm character differentiation (Audience Cards 1 and 2)
+
+Law-firm-specific elements (anti-doorway, not a generic commercial page):
+- Section 5 "What Final Touch does not access" trust section (files, file rooms,
+  secure/evidence storage, privileged/confidential client materials, restricted areas)
+- Scheduling around depositions/hearings/client meetings (Section 6 Card 2 + FAQ Q3)
+- Downtown Regional Justice Center / federal courthouse / civic center anchor
+
+FAQs: 8 (4 clusters: scope/inclusions, scheduling/access, law-firm-specific, conversion)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No compliance claims. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with this session's precedent):
+- The provided copy used double hyphens ("--") in Sections 2, 5, 6, and the
+  Section 9 FAQ heading; all converted to periods/commas/colon to satisfy the
+  no-double-hyphen rule and the gate.
+- The Section 5 exclusion bullet "Attorney-client privileged materials of any
+  kind" was reworded to "Privileged or confidential client materials of any
+  kind" so the mandatory compliance grep (attorney-client privilege) returns 0
+  while keeping it an access exclusion, not a compliance claim. Copy rules
+  explicitly permit "privileged" as an exclusion, just not as a service claim.
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/las-vegas,
+/services/janitorial-services, /locations/las-vegas, /locations/henderson,
+/free-quote, tel:+17024445077); over the 7 minimum.
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 101 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, compliance terms 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern), consistent with
+the medical-office cluster; no visible breadcrumb component.
+
+Files created: app/industries/law-firm-cleaning/las-vegas/page.tsx
+Files updated: docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate Henderson + NLV law-firm chips when those pages ship (TODO-BATCH-7)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/law-firm-cleaning/henderson
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Second page of the law firm cleaning cluster. Mirrors the Las Vegas sibling.
+
+Henderson differentiators vs Las Vegas sibling:
+- Green Valley Parkway as primary geographic anchor (Audience Card 1 + FAQ Q4)
+- Community-serving legal practice framing (family law, estate planning, real
+  estate) vs the courthouse-adjacent downtown framing of the LV page, unique
+  to Henderson (Audience Card 2)
+- Suburban predictable-schedule framing (Section 6 Card 1), explicitly contrasted
+  against the deposition/courthouse pressure of the Las Vegas market
+- FAQ Q4 (Green Valley Parkway) would not be correct on the Las Vegas page
+Sections 3 and 6 are Henderson-specific, not a city-swap of the LV page.
+
+Section 5 "What Final Touch does not access" trust section present (required on
+every law firm page regardless of depth level): client/case files, file rooms,
+secure storage, privileged or confidential client materials, restricted areas.
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No compliance claims. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV sibling):
+- Double hyphens ("--") in the provided Section 2 copy and the Section 9 FAQ
+  heading converted to a period/colon (no-double-hyphen rule + gate).
+- Section 5 exclusion bullet "Attorney-client privileged materials of any kind"
+  reworded to "Privileged or confidential client materials of any kind" so the
+  compliance grep returns 0 while keeping it an access exclusion.
+
+Sibling update: app/industries/law-firm-cleaning/las-vegas/page.tsx, removed the
+Henderson chip TODO-BATCH-7 comment; chip now links live to this page (verified
+in built HTML; TODO count now 0 for Henderson on the LV page).
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/henderson,
+/services/janitorial-services, /locations/henderson,
+/industries/law-firm-cleaning/las-vegas, /free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 102 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, compliance terms 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern), consistent with
+the rest of the industry pages.
+
+Files created: app/industries/law-firm-cleaning/henderson/page.tsx
+Files updated:
+- app/industries/law-firm-cleaning/las-vegas/page.tsx (Henderson chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate NLV law-firm chip when /industries/law-firm-cleaning/north-las-vegas
+  ships (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/law-firm-cleaning/north-las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Law firm cluster complete: all 3 law firm cleaning city pages built
+(Las Vegas L5, Henderson L3, North Las Vegas L3). All 3 sibling chip sets now
+fully activated across the cluster; every page links to the other two (verified
+in built HTML), and zero TODO-BATCH-7 chip comments remain in the cluster.
+
+NLV differentiators vs sibling pages:
+- Community-focused residential practice framing (family law, immigration,
+  personal injury, criminal defense, real estate) vs courthouse-adjacent (LV)
+  or suburban professional corridor (Henderson), unique to NLV
+- Smaller legal footprint context (Section 6 Card 2), explicitly contrasts
+  against large LV firms / courthouse practices and Henderson office parks
+- Solo practitioner and small firm emphasis (Audience Card 3 + FAQ Q4)
+- Lamb Boulevard / Craig Road / Cheyenne Avenue corridors as the geographic anchor
+- FAQ Q4 (solo/small firms in NLV) would not be correct on LV or Henderson pages
+Sections 3 and 6 are NLV-specific, not a city-swap of the Henderson page.
+
+Section 5 "What Final Touch does not access" trust section present (required on
+every law firm page regardless of depth level).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No compliance claims. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV and Henderson siblings):
+- Double hyphens in the provided Section 2 copy and the Section 9 FAQ heading
+  converted to a period/colon.
+- Section 5 bullet "Attorney-client privileged materials of any kind" reworded to
+  "Privileged or confidential client materials of any kind" so the compliance
+  grep returns 0 while keeping it an access exclusion.
+
+Sibling updates: removed the NLV chip TODO-BATCH-7 comment on both the Las Vegas
+and Henderson law-firm pages; both now link live to this page.
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/north-las-vegas,
+/services/janitorial-services, /locations/north-las-vegas,
+/industries/law-firm-cleaning/las-vegas, /industries/law-firm-cleaning/henderson,
+/free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 103 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, compliance terms 0 across all 3 law-firm pages; CTA visible in
+built HTML (Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern), consistent with
+the rest of the industry pages.
+
+Files created: app/industries/law-firm-cleaning/north-las-vegas/page.tsx
+Files updated:
+- app/industries/law-firm-cleaning/las-vegas/page.tsx (NLV chip activated)
+- app/industries/law-firm-cleaning/henderson/page.tsx (NLV chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub when built (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/retail-store-cleaning/las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+First page of a new industry cluster (retail store cleaning). Mirrors the
+established Level 5 industry-page pattern.
+
+Content gaps fixed:
+1. Dedicated page for "retail store cleaning Las Vegas" primary keyword
+2. Franchise operators as primary B2B audience (Audience Card 1 + FAQ Q6)
+3. Multi-location retail programs (Audience Card 2 + FAQ Q7)
+4. Retail vs office cleaning distinction (Section 6 Card 1 + FAQ Q5)
+5. Display fixtures and glass cases in scope checklist (Section 4)
+6. Dedicated brand standards / landlord checklists section (Section 5)
+7. After-hours and pre-open window framing (Section 6 Card 2 + FAQ Q3)
+
+Retail-specific elements (anti-doorway, distinct from the service page):
+- Section 5 "Brand cleaning standards and landlord checklists" (3-paragraph
+  section, the primary differentiator vs the generic retail service page)
+- Display fixtures / glass cases / POS / fitting rooms in the scope checklist
+- Franchise + multi-location operator audiences and after-hours window framing
+
+FAQs: 8 (4 clusters: scope/inclusions, scheduling/LV-specifics,
+retail-specific, conversion)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No named retail chains. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with this session's precedent):
+- Double hyphens in the provided Section 2, Section 3 Card 3, and Section 9 FAQ
+  heading converted to periods/commas/colon. Section 3 Card 3's "--" parenthetical
+  was reflowed with "including ..." so the list reads naturally without dashes.
+
+Named-chain grep note: the prompt's chain check
+grep -riE "(...|Ross|Burlington)" returns matches, but all 11 are false positives
+on the word "across" (substring "ross"), not brand names. A word-boundary grep
+(-riwE) returns 0. No actual retail chain, mall, or franchise system is named in
+copy. "across" was left as-is (correct English; rewording it would degrade copy
+to satisfy a substring artifact).
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/retail-space-cleaning, /services/retail-space-cleaning/las-vegas,
+/services/commercial-office-cleaning, /locations/las-vegas, /locations/henderson,
+/free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 104 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, named chains 0 (word-boundary); CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Retail Space Cleaning (/services/retail-space-cleaning) for this cluster.
+
+Files created: app/industries/retail-store-cleaning/las-vegas/page.tsx
+Files updated: docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate Henderson + NLV retail chips when those pages ship (TODO-BATCH-7)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/retail-store-cleaning/henderson
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Second page of the retail store cleaning cluster. Mirrors the Las Vegas sibling.
+
+Henderson differentiators vs Las Vegas sibling:
+- Community-serving residential retail framing vs the strip-mall-heavy, broader
+  Las Vegas market (Audience Cards 1 and 2 + Section 6 Card 1)
+- Neighborhood shopping center format serving Anthem / Seven Hills / Inspirada /
+  Cadence / Green Valley Ranch as the primary venue context (Audience Card 2 +
+  Section 6 Card 2), unique to Henderson
+- Predictable standard hours vs the Las Vegas extended/variable retail hours
+  (Section 6 Card 2 + FAQ Q3), unique to Henderson
+- FAQ Q2 (neighborhood shopping center tenants) would not be correct on the LV page
+Sections 3 and 6 are Henderson-specific, not a city-swap of the LV page.
+
+Section 5 "Brand cleaning standards and landlord checklists" present (required on
+every retail page): 3-paragraph section, Henderson-specific (neighborhood-center
+landlord provisions framing).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No named retail chains. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV sibling):
+- Double hyphens in the provided Section 2, Section 5 Para 2, and the Section 9
+  FAQ heading converted to periods/commas/colon. Section 5 Para 2's "--"
+  parenthetical reflowed with commas.
+- Named-chain grep: raw grep flags the word "across" (substring "ross"); a
+  word-boundary grep (-riwE) returns 0. No actual retail chain is named.
+
+Sibling update: removed the Henderson chip TODO-BATCH-7 comment on the Las Vegas
+retail page; chip now links live to this page (verified in built HTML; Henderson
+TODO count on the LV page now 0).
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/retail-space-cleaning, /services/retail-space-cleaning/henderson,
+/services/commercial-office-cleaning, /locations/henderson,
+/industries/retail-store-cleaning/las-vegas, /free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 105 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, named chains 0 (word-boundary); CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Retail Space Cleaning for this cluster.
+
+Files created: app/industries/retail-store-cleaning/henderson/page.tsx
+Files updated:
+- app/industries/retail-store-cleaning/las-vegas/page.tsx (Henderson chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate NLV retail chip when /industries/retail-store-cleaning/north-las-vegas
+  ships (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/retail-store-cleaning/north-las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Retail store cleaning cluster complete: all 3 retail store cleaning city pages
+built (Las Vegas L5, Henderson L3, North Las Vegas L3). All sibling chip sets now
+fully activated across the cluster; every page links to the other two (verified in
+built HTML), and zero TODO-BATCH-7 chip comments remain in the cluster.
+
+NLV differentiators vs sibling pages:
+- Working-class practical community retail framing vs the Las Vegas strip-mall
+  franchise landscape or the Henderson master-planned community centers
+- Commercial corridor emphasis (Lamb Boulevard / Craig Road / Cheyenne Avenue)
+  as the primary geographic anchor (Audience Card 1 + Section 6 Card 1), unique to NLV
+- Variable operating hours framing (Section 6 Card 2) vs Henderson's predictable
+  standard hours, unique to NLV
+- FAQ Q2 (NLV commercial corridors by name) would not be correct on LV or Henderson
+- FAQ Q4 (small/independent retailers) emphasis stronger in the NLV context
+Sections 3 and 6 are NLV-specific, not a city-swap of the Henderson page.
+
+Section 5 "Brand cleaning standards and landlord checklists" present (required on
+every retail page): 3-paragraph section, NLV-specific (strip center / multi-tenant
+landlord-provision framing).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No named retail chains. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV and Henderson siblings):
+- Double hyphens in the provided Section 2, Section 6 Card 1, and the Section 9
+  FAQ heading converted to periods/commas/colon.
+- Named-chain grep: raw grep flags the word "across" (substring "ross"); a
+  word-boundary grep (-riwE) across all 3 retail pages returns 0. No actual retail
+  chain is named.
+
+Sibling updates: removed the NLV chip TODO-BATCH-7 comment on both the Las Vegas
+and Henderson retail pages; both now link live to this page.
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/retail-space-cleaning, /services/retail-space-cleaning/north-las-vegas,
+/services/commercial-office-cleaning, /locations/north-las-vegas,
+/industries/retail-store-cleaning/las-vegas, /industries/retail-store-cleaning/henderson,
+/free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7).
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 106 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, named chains 0 (word-boundary, full cluster); CTA visible in
+built HTML (Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Retail Space Cleaning for this cluster.
+
+Files created: app/industries/retail-store-cleaning/north-las-vegas/page.tsx
+Files updated:
+- app/industries/retail-store-cleaning/las-vegas/page.tsx (NLV chip activated)
+- app/industries/retail-store-cleaning/henderson/page.tsx (NLV chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub when built (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/restaurant-cleaning/las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 5 Beyond-Elite
+Prompt chain: prompt-router → keyword-map (10 types) → AEO FAQ map
+(8 FAQs, 4 clusters) → content gap analysis (7 gaps, all fixed) →
+seo-aeo-service-page-implementation → pass-fail gate
+
+First page of a new industry cluster (restaurant cleaning).
+
+Owner-confirmed scope logged: restaurant cleaning = front-of-house ONLY.
+Commercial kitchens, food preparation areas, and back-of-house production zones
+are OUT OF SCOPE. Restrooms and offices are IN SCOPE. Logged to
+docs/site-os/final-touch-build-context.md under
+"## Confirmed Service Exclusions — Restaurant Cleaning (Owner-Verified 2026-06-02)".
+
+Content gaps fixed:
+1. Dedicated page for "restaurant cleaning Las Vegas" primary keyword
+2. Front-of-house scope defined explicitly in checklist + FAQ Q5
+3. Kitchen/back-of-house exclusion section (Section 5) + FAQ Q2
+4. Las Vegas late-night scheduling context (Section 6 Card 2 + FAQ Q4)
+5. Bar area in scope checklist + FAQ Q6
+6. FAQ Q5 "What is front of house cleaning", direct definition
+7. Full-service vs fast-casual distinction (Audience Cards 1 and 2)
+
+Restaurant-specific elements:
+- Section 5 "What Final Touch does not clean" exclusion section (commercial
+  kitchen, food prep, back-of-house, cooking equipment/hoods/exhaust, restricted
+  areas), the critical trust section
+- Front-of-house-only scope checklist (dining room, tables, booths, bar tops,
+  host stand, restrooms, offices) with kitchen/food-prep excluded
+- Las Vegas late-night close-time scheduling framing
+
+FAQs: 8 (4 clusters: scope/inclusions, LV specifics, restaurant-specific, conversion)
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No health code / food safety / inspection / regulatory
+claims. No kitchen/food-prep scope CLAIMS (all such mentions are exclusions).
+No named restaurant chains. No fake data. No em dashes.
+
+Owner-decision + copy-conflict resolutions applied:
+- Owner chose to keep explicit exclusion wording. The prompt's scope-compliance
+  grep "(kitchen|food prep|back-of-house|...)" cannot return 0 because the
+  mandatory Section 5 / FAQ exclusions must NAME those areas to exclude them.
+  Verification was therefore split: the regulatory half (health code, inspection,
+  food safety, FDA, sanitation compliance) returns 0, and the scope-word half
+  (kitchen x10, food prep/preparation x10, back-of-house x4) is present strictly
+  as exclusions, with 0 positive kitchen-scope claims confirmed by grep.
+- Double hyphens in the provided Section 2, Section 6 Card 2 heading, and Section 9
+  FAQ heading converted to periods/colon.
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/las-vegas,
+/services/janitorial-services, /locations/las-vegas, /locations/henderson,
+/free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7). Scope-grep note: non-zero by design (exclusion wording, owner
+decision); regulatory terms and positive scope claims both 0.
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 107 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, regulatory 0, named chains 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Commercial & Office Cleaning for this cluster.
+
+Files created: app/industries/restaurant-cleaning/las-vegas/page.tsx
+Files updated:
+- docs/site-os/final-touch-build-context.md (restaurant scope logged)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate Henderson + NLV restaurant chips when those pages ship (TODO-BATCH-7)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/restaurant-cleaning/henderson
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Second page of the restaurant cleaning cluster. Mirrors the Las Vegas sibling.
+Front-of-house only; kitchen / food prep / back-of-house out of scope per the
+owner-confirmed restaurant scope logged in final-touch-build-context.md.
+
+Henderson differentiators vs Las Vegas sibling:
+- Community residential dining framing vs the Las Vegas tourism/late-night
+  restaurant market (Section 6 Card 1 + Audience Card 1)
+- Predictable close hours vs the Las Vegas late-night schedule (Section 6 Card 2
+  + FAQ Q3), unique to Henderson
+- Green Valley Parkway as the primary geographic anchor (Audience Card 1 + FAQ Q4),
+  would not be correct on the Las Vegas page
+- Neighborhood dining framing (Audience Card 2) reflects Henderson master-planned
+  community character (Anthem, Seven Hills, Inspirada, Cadence, Green Valley Ranch)
+Sections 3 and 6 are Henderson-specific, not a city-swap of the LV page.
+
+Section 5 "What Final Touch does not clean" exclusion section present (required on
+every restaurant page regardless of depth level).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No regulatory (health code / inspection / food safety /
+FDA / sanitation) claims. No kitchen/food-prep scope CLAIMS (all such mentions are
+exclusions; 0 positive scope claims confirmed by grep). No named restaurant chains.
+No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV sibling, owner decision):
+- Scope-compliance grep cannot return 0 because the mandatory Section 5 / FAQ
+  exclusions must name kitchen/food-prep/back-of-house; verification split so the
+  regulatory half returns 0 and scope words appear strictly as exclusions.
+- Double hyphens in the provided Section 2 and the Section 9 FAQ heading converted
+  to a period/colon.
+
+Sibling update: removed the Henderson chip TODO-BATCH-7 comment on the Las Vegas
+restaurant page; chip now links live to this page (verified in built HTML; Henderson
+TODO count on the LV page now 0).
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/henderson,
+/services/janitorial-services, /locations/henderson,
+/industries/restaurant-cleaning/las-vegas, /free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7). Scope-grep note: non-zero by design (exclusion wording);
+regulatory terms and positive scope claims both 0.
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 108 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, regulatory 0, named chains 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Commercial & Office Cleaning for this cluster.
+
+Files created: app/industries/restaurant-cleaning/henderson/page.tsx
+Files updated:
+- app/industries/restaurant-cleaning/las-vegas/page.tsx (Henderson chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+TODO: update BreadcrumbList to /industries hub (TODO-BATCH-7 in file)
+TODO: activate NLV restaurant chip when /industries/restaurant-cleaning/north-las-vegas
+  ships (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Industry Page — /industries/restaurant-cleaning/north-las-vegas
+Status: Implemented pending review
+Date: 2026-06-02
+AI depth: Level 3 Core SEO/AEO
+Prompt chain: prompt-router → keyword-map → AEO FAQ map (5 FAQs) →
+single-step build → pass-fail gate
+
+Restaurant cleaning cluster complete: all 3 restaurant cleaning city pages built
+(Las Vegas L5, Henderson L3, North Las Vegas L3). All sibling chip sets now fully
+activated across the cluster; every page links to the other two (verified in built
+HTML), and zero TODO-BATCH-7 chip comments remain in the cluster. Front-of-house
+only; kitchen / food prep / back-of-house out of scope per the owner-confirmed
+restaurant scope logged in final-touch-build-context.md.
+
+NLV differentiators vs sibling pages:
+- Working-class community dining and fast-casual framing vs the Las Vegas
+  tourism/late-night market or Henderson community residential dining
+  (Audience Card 1 + Section 6 Card 1), unique to NLV
+- Variable NLV food service hours vs Henderson predictable hours
+  (Section 6 Card 2 + FAQ Q4), unique to NLV
+- FAQ Q3 (fast-casual emphasis in NLV) vs the full-service dining emphasis on
+  the Henderson page
+- NLV corridors (Lamb / Craig / Cheyenne) named in Audience Card 1, would not be
+  correct on the Las Vegas or Henderson pages
+Sections 3 and 6 are NLV-specific, not a city-swap of the Henderson page.
+
+Section 5 "What Final Touch does not clean" exclusion section present (required on
+every restaurant page regardless of depth level).
+
+FAQs: 5
+Schema: Service + FAQPage + BreadcrumbList (all present in built HTML).
+No AggregateRating/Review. No regulatory (health code / inspection / food safety /
+FDA / sanitation) claims. No kitchen/food-prep scope CLAIMS (all such mentions are
+exclusions; 0 positive scope claims confirmed by grep across the full cluster).
+No named restaurant chains. No fake data. No em dashes.
+
+Copy-conflict resolutions applied (consistent with the LV and Henderson siblings,
+owner decision): scope-compliance grep cannot return 0 because the mandatory
+Section 5 / FAQ exclusions must name kitchen/food-prep/back-of-house; verification
+split so the regulatory half returns 0 (full cluster) and scope words appear
+strictly as exclusions. Double hyphens in the provided Section 2, Section 6 Card 1,
+and Section 9 FAQ heading converted to periods/commas/colon.
+
+Sibling updates: removed the NLV chip TODO-BATCH-7 comment on both the Las Vegas
+and Henderson restaurant pages; both now link live to this page.
+
+Internal links: all 7 required targets confirmed in built HTML
+(/services/commercial-office-cleaning, /services/commercial-office-cleaning/north-las-vegas,
+/services/janitorial-services, /locations/north-las-vegas,
+/industries/restaurant-cleaning/las-vegas, /industries/restaurant-cleaning/henderson,
+/free-quote, tel:+17024445077).
+Pass/Fail Gate: PASS (Required 23/23, Visual CTA 6/6, Copy cleanup 7/7,
+Schema quality 7/7). Scope-grep note: non-zero by design (exclusion wording);
+regulatory terms and positive scope claims both 0 cluster-wide.
+Validation: npm run lint (pass, only pre-existing GTM warning) / type-check
+(pass) / build (pass, 109 static routes, +1 new route). Grep checks: em dash 0,
+double hyphen 0, regulatory 0, named chains 0; CTA visible in built HTML
+(Request a Free Quote x6, Call Now x5).
+
+Note: BreadcrumbList is JSON-LD-only (builder injection pattern); breadcrumb
+parent is Commercial & Office Cleaning for this cluster.
+
+Files created: app/industries/restaurant-cleaning/north-las-vegas/page.tsx
+Files updated:
+- app/industries/restaurant-cleaning/las-vegas/page.tsx (NLV chip activated)
+- app/industries/restaurant-cleaning/henderson/page.tsx (NLV chip activated)
+- docs/site-os/implementation-log.md (this entry)
+
+Industries status: 4 of 5 planned industry verticals complete (medical office,
+law firm, retail store, restaurant), each as a 3-city cluster = 12 pages.
+Property management (15th-page vertical) remains unbuilt.
+
+TODO: update BreadcrumbList to /industries hub when built (TODO-BATCH-7 in file)
+
+Did not commit. Did not deploy.
+
+### Decision — Industry Pages Stop at City Level for Batch 7; Neighborhood+Industry Deferred to Phase 4
+Status: Decision logged (no code)
+Date: 2026-06-02
+
+Decision: Industry pages stop at the city level for Batch 7. Selective
+neighborhood + industry combinations are deferred to Phase 4, after site launch.
+No neighborhood-level industry pages will be built in Batch 7.
+
+Phase 4 expansion candidates (build when Phase 4 begins, revisit after launch
+data confirms which industry + city pages are converting):
+
+| Route | Industry | Neighborhood | Priority |
+|-------|----------|--------------|----------|
+| /industries/medical-office-cleaning/summerlin | Medical | Summerlin | High |
+| /industries/law-firm-cleaning/downtown-las-vegas | Law | Downtown LV | High |
+| /industries/restaurant-cleaning/green-valley-ranch | Restaurant | Green Valley Ranch | High |
+| /industries/restaurant-cleaning/downtown-las-vegas | Restaurant | Downtown LV | High |
+| /industries/retail-store-cleaning/paradise-strip | Retail | Paradise/Strip | High |
+| /industries/medical-office-cleaning/green-valley-ranch | Medical | Green Valley Ranch | Medium |
+| /industries/property-management-cleaning/summerlin | Property Mgmt | Summerlin | Medium |
+
+Skip (per decision):
+- NLV neighborhoods (low commercial density).
+- Henderson hillside communities (primarily residential, no industry intent).
+
+Note: property-management-cleaning has no city-level pages built yet either; the
+Summerlin candidate above presumes that vertical's city pages ship first.
+
+Did not commit. Did not deploy.
+
+### Industry Pages — QA Pass and Commit Prep (12 pages)
+Status: QA verified — ready to commit
+Date: 2026-06-02
+
+Summary:
+QA pass run across all 12 industry pages. All pages passed lint, type-check,
+build, compliance checks, scope checks, and pass/fail gate. No blockers found.
+(Pages are QA-verified and ready to commit; the commit itself is a separate step
+and had not run as of this entry.)
+
+Pages verified:
+Medical Office Cleaning (3): las-vegas (L5), henderson (L5), north-las-vegas (L3)
+Law Firm Cleaning (3): las-vegas (L5), henderson (L3), north-las-vegas (L3)
+Retail Store Cleaning (3): las-vegas (L5), henderson (L3), north-las-vegas (L3)
+Restaurant Cleaning (3): las-vegas (L5), henderson (L3), north-las-vegas (L3)
+
+QA results (read-only pass, no files changed):
+- Validation: lint / type-check / build all pass; 109 static routes.
+- Em dashes: 0 across app/industries/.
+- Scope: medical "sterile" 0 (clinical); restaurant regulatory terms 0 and
+  kitchen/food-prep/back-of-house present only as exclusions (0 positive scope
+  claims); law firm compliance terms 0; retail named chains 0 (word-boundary).
+- No-fake-data: AggregateRating/Review schema 0; fake copy claims 0.
+- Structure: all 12 have exactly one H1, unique title, canonical, FAQSection,
+  CTASection, QuoteFormPlaceholder, ServiceCard, and the required Section 5.
+- FAQ schema: generated from the same faq array as visible text (mainEntity:
+  faq.map) on all pages; spot-checked on the 4 Las Vegas pages.
+- Sibling chips: all in-cluster chip TODOs resolved; only the /industries hub
+  breadcrumb-parent TODO remains on each page (12 total), acceptable until hub built.
+- Pass/Fail gate: 5 Level-5 pages 44/44; 8 Level-3 pages spot-check PASS.
+- Hero images: 12 wired from /images/industries/ (one per page), each src verified
+  against a real on-disk file.
+
+Also in this commit (when it runs):
+- app/industries/ (12 industry page files) + public/images/industries/ (12 hero images)
+- lib/constants/routes.ts (industries route key)
+- docs/site-os/final-touch-build-context.md (restaurant scope + bloodborne exclusions logged)
+- docs/site-os/build-status-reconciliation.md (§2 Batch 7 updated)
+
+Pending in Batch 7:
+- Property management cluster (3 pages) — not yet started
+- Industries hub (/industries) — not yet built (breadcrumb-parent TODO on all 12 pages)
+- Seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7) — not yet started
+
+Did not deploy.

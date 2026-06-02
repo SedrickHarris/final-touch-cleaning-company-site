@@ -95,3 +95,21 @@ Do not invent:
 - pricing guarantees
 - team member details beyond Scott and Nicole
 - emergency availability unless confirmed
+
+## Confirmed Service Exclusions (Owner-Verified)
+
+Bloodborne pathogen cleanup, blood cleanup, and biological waste remediation are confirmed owner exclusions. Final Touch does not offer these services. Do not claim or imply this scope on any page.
+
+## Confirmed Service Exclusions — Restaurant Cleaning (Owner-Verified 2026-06-02)
+
+Restaurant Cleaning Scope:
+IN SCOPE: dining room, tables and chairs, booth surfaces, host stand,
+entry area, waiting area, bar tops and bar-facing surfaces, restrooms,
+offices, customer-facing high-touch surfaces.
+
+OUT OF SCOPE: commercial kitchens, food preparation areas, back-of-house
+production zones.
+
+Do not claim kitchen, food prep, or back-of-house scope on any restaurant
+cleaning page. Do not add health code compliance, food safety certification,
+inspection pass rate, or regulatory compliance claims.
