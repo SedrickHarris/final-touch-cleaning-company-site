@@ -4274,3 +4274,47 @@ Files changed:
 - docs/site-os/implementation-log.md (this entry)
 
 Did not commit. Did not deploy.
+
+### Nav Restructure — Specialty duplicate fix + final state
+Status: Done
+Date: 2026-06-02
+Workflow: Fast Build Batch
+
+Resolved the Specialty label duplicate flagged in the prior nav restructure log
+entry. Removed groupedSectionLabel="Specialty" from the Services NavDropdown call
+in components/layout/Header.tsx. The group label 'Specialty' in
+SERVICES_DROPDOWN_GROUPS now renders as the single divider label in the open
+dropdown panel.
+
+type-check + build both pass (113 routes, unchanged). Change committed alongside
+the nav restructure (same commit, 2b64313).
+
+Final nav state as committed:
+- PRIMARY_NAV: Services | Locations | About | Reviews | Contact
+- Services dropdown: 7 service links + Specialty divider + Builders + Industries
+  (client-rendered panel)
+- FOOTER_NAV.company: About | Our Team | Cleaning Process | Builders | Industries |
+  Reviews | Contact
+- Mobile menu: Builders absent (auto-follows PRIMARY_NAV)
+
+### Docs Update — Pre-seasonal-cluster state sync
+Status: Done
+Date: 2026-06-02
+Workflow: Fast Build Batch (docs-only)
+
+Updated 3 docs to reflect completed session work before starting the seasonal
+cluster:
+- docs/site-os/build-status-reconciliation.md: Batch 7 row updated to reflect 27
+  completed specialized pages (builders + industries clusters), nav restructure, and
+  remaining Batch 7 scope. HEAD and route count updated (HEAD 2b64313, 113 routes).
+- docs/site-os/final-touch-build-context.md: Nav hierarchy decision and seasonal
+  cluster decisions appended.
+- docs/site-os/implementation-log.md: Nav specialty fix entry + this entry appended.
+
+Accuracy note: the builders cluster (11 pages) was completed in earlier sessions,
+not this one; commits b2882c5 + aca8bc5 are industries-only. The Batch 7 status was
+worded to reflect that (builders earlier; industries + nav this session). All 27
+specialized pages are committed and pushed regardless of which session built them.
+
+No code changes. No constants changes. No page files.
+Did not commit. Did not deploy.

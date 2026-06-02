@@ -77,7 +77,7 @@ Some "Las Vegas" neighborhoods sit outside the City of Las Vegas, but all are in
 
 ## 2. Build Status (current)
 
-_Last reconciled against repo by the Repo Audit — Status Sync entry (implementation-log.md), 2026-06-02, at HEAD `25a17b7`. 94 built `page.tsx` routes on disk._
+_Last reconciled 2026-06-02 at HEAD `2b64313` (nav refactor commit). 113 static routes (npm run build); see the Batch 7 row and implementation-log for session detail._
 
 | Batch | Scope | Status |
 |-------|-------|--------|
@@ -89,7 +89,7 @@ _Last reconciled against repo by the Repo Audit — Status Sync entry (implement
 | 5 | 10 priority neighborhoods: Summerlin, Downtown LV, Southern Highlands (LV); Cadence, Inspirada, MacDonald Highlands, Seven Hills, Anthem, Lake Las Vegas, Green Valley Ranch (Henderson) | ✅ Done |
 | 5 (remaining 10) | LV: spring-valley, centennial-hills, sunrise-manor, paradise-strip, arts-district · Henderson: green-valley, tuscany-village · NLV: nellis-area, aliante | ✅ Done — 9 built (LV aliante intentionally retired, not built); 19 neighborhood pages total on disk |
 | 6 | Service + city matrix (35: 7 services × 5 cities incl. Clark County) | ✅ Done (committed 81e0c2d + 20678de) |
-| 7 | Specialized: builders (10) + /builders hub built; industries (15) = 12 industry pages built (medical ×3, law firm ×3, retail store ×3, restaurant ×3); property management ×3, /industries hub, seasonal (7), urgency (4), problem-based (5), community (3), Spanish (7), service×neighborhood (50+) not built | ✅ Done (partial — builders + hub complete; 12 industry pages built and QA-verified (commit pending); remaining: property management ×3, /industries hub, seasonal ×7, urgency ×4, problem-based ×5, community ×3, Spanish ×7) |
+| 7 | Specialized: builders, industries, seasonal, urgency, problem-based, community, Spanish, service×neighborhood | ✅ Done (partial)<br><br>Completed and committed (industries + nav this session via commits b2882c5 + aca8bc5 + nav refactor 2b64313; builders cluster from earlier sessions):<br>- Builders cluster: 10 leaf pages + /builders hub (11 pages)<br>- Industries cluster: 15 leaf pages across 5 verticals (medical ×3, law firm ×3, retail store ×3, restaurant ×3, property management ×3) + /industries hub (16 pages)<br>- All 27 specialized pages committed and pushed<br>- All TODO-BATCH-7 comments resolved in app/industries/<br>- BreadcrumbList /industries parent live on all 15 industry leaf pages<br>- Nav restructure: Builders removed from PRIMARY_NAV; Builders + Industries added to Services dropdown (Specialty section) and FOOTER_NAV.company<br><br>HEAD: 2b64313 (nav refactor). Static routes: 113.<br><br>Remaining Batch 7:<br>- /seasonal hub + 7 seasonal leaf pages<br>- /urgent-cleaning: 4 pages<br>- /cleaning-solutions: 5 pages<br>- /communities: 3 pages<br>- /es: 7 Spanish pages<br>- Service × neighborhood (50+): deferred to Phase 4 |
 | 8 | Tech SEO + launch: global LocalBusiness schema + visible breadcrumbs, GTM/GA4, Microsoft Clarity, sitemap.xml/robots.txt/llms.txt, /sitemap HTML page all shipped | ✅ Done (partial — schema + analytics + crawl files shipped; IndexNow, GSC/Bing verification, final QA + deploy ⏳ not started) |
 
 **Image convention (from this batch):** `public/images/locations/` = neighborhood hero photos; `public/images/heroes/locations/` = city hero photos. Shared `HeroSection` takes `image={{ src, alt }}`.

@@ -113,3 +113,45 @@ production zones.
 Do not claim kitchen, food prep, or back-of-house scope on any restaurant
 cleaning page. Do not add health code compliance, food safety certification,
 inspection pass rate, or regulatory compliance claims.
+
+## Nav Hierarchy Decision (2026-06-02)
+
+Builders and Industries are audience-specific subsets of Services. Neither
+belongs as a PRIMARY_NAV top-level item.
+
+Approved nav placement:
+- PRIMARY_NAV (header): Services, Locations, About, Reviews, Contact (5 items;
+  Builders removed)
+- Services dropdown panel: Builders + Industries rendered under a "Specialty"
+  group section using the NavDropdown existing groups prop (same pattern as the
+  Locations neighborhoods dropdown)
+- FOOTER_NAV.company: Builders + Industries both present (Industries added this
+  session)
+
+Do not add Builders or Industries back to PRIMARY_NAV in future sessions without
+explicit owner approval.
+
+## Seasonal Cluster Decisions (2026-06-02)
+
+Hub page: /seasonal hub confirmed. Build before leaf pages. Mirrors the /builders
+and /industries hub pattern. File: app/seasonal/page.tsx
+
+Footer placement: /seasonal link folds into FOOTER_NAV.services via spread append
+after the 7 core service links:
+
+```ts
+services: [
+  ...SERVICES.map((s) => ({ label: s.name, href: s.href })),
+  { label: 'Seasonal Cleaning', href: ROUTES.seasonal },
+],
+```
+
+The SERVICES constant itself is NOT modified. It drives ServiceCard grids,
+dropdowns, and related-service blocks site-wide and must contain only the 7 core
+service types.
+
+ROUTES.seasonal must be added to lib/constants/routes.ts before the hub page is
+built. This is a gated constants change requiring explicit approval.
+
+Same spread-append footer pattern applies when the urgency (/urgent-cleaning) and
+problem-based (/cleaning-solutions) clusters are built.
