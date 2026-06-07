@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Las Vegas?',
-    a: 'Yes. Las Vegas is one of our primary service cities. Homes, offices, retail, post-construction sites, and ongoing janitorial routes across the city.',
+    a: 'Yes. Las Vegas is one of our primary service cities. Offices, retail spaces, post-construction sites, and ongoing janitorial routes across the city. Move-in and move-out cleaning for property managers, landlords, and renters.',
   },
   {
     q: 'Does Final Touch serve Henderson?',
@@ -42,7 +42,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve North Las Vegas?',
-    a: 'Yes. North Las Vegas is in our primary service area. Residential and commercial cleaning, on the same schedule and finishing checklist as the rest of the county.',
+    a: 'Yes. North Las Vegas is in our primary service area. Commercial, post-construction, and property management cleaning on the same schedule and finishing checklist as the rest of the county.',
   },
   {
     q: 'Does Final Touch serve Boulder City?',

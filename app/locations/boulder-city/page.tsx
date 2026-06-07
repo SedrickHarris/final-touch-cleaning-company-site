@@ -13,7 +13,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Cleaning Services in Boulder City, NV',
   description:
-    'Local cleaning services in Boulder City, NV. Deep cleaning, move-in, move-out, and commercial for homes and businesses. Call (702) 444-5077.',
+    'Commercial, renovation, and post-construction cleaning in Boulder City, NV. Historic downtown storefronts, small businesses, and rental property cleaning across Clark County. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/boulder-city' },
   openGraph: {
     title: 'Cleaning Services in Boulder City, NV | Final Touch Cleaning Company',
@@ -45,7 +45,7 @@ const BOULDER_CITY_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch Cleaning Company serve Boulder City, NV?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, and their team serves residential and commercial properties throughout Boulder City.`,
+    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, serving small businesses, historic downtown storefronts, renovation and post-construction projects, and rental properties throughout Boulder City, with move-in and move-out cleans for landlords and renters.`,
   },
   {
     q: 'What areas of Boulder City does Final Touch cover?',
@@ -53,7 +53,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Boulder City?',
-    a: 'Final Touch offers seven services in Boulder City: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both residential and commercial properties are served.',
+    a: 'Final Touch offers seven services in Boulder City: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both commercial and residential properties are served.',
   },
   {
     q: 'Does Final Touch clean older and historic homes in Boulder City?',
@@ -91,13 +91,14 @@ const localBusinessJsonLd = {
     { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
   ],
   serviceType: [
-    'Residential Cleaning',
     'Commercial Cleaning',
     'Post-Construction Cleanup',
+    'Janitorial Services',
     'Move-In Cleaning',
     'Move-Out Cleaning',
     'Deep Cleaning',
     'Retail Space Cleaning',
+    'Residential Cleaning',
   ],
 };
 
@@ -124,7 +125,7 @@ export default function BoulderCityPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in Boulder City, NV"
-        sub={`Final Touch provides residential and commercial cleaning throughout Boulder City, Nevada's only city without gambling and one of the valley's most distinct communities. From deep cleans in established homes to commercial programs for local businesses, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in Clark County.`}
+        sub={`Final Touch provides commercial, renovation, and post-construction cleaning throughout Boulder City, Nevada's only city without gambling and one of the valley's most distinct communities. From historic downtown storefronts and small-business offices to post-construction cleanup on renovated older properties and move-in/move-out cleans for landlords, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in Clark County.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}

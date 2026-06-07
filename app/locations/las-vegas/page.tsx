@@ -13,7 +13,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Cleaning Services in Las Vegas, NV',
   description:
-    'Family-owned cleaning services in Las Vegas, NV. Residential and commercial. Move-out, deep cleaning, post-construction, and more. Call (702) 444-5077.',
+    'Commercial and post-construction cleaning in Las Vegas, NV. Office cleaning, janitorial, move-in/move-out, and retail for businesses and property managers. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas' },
   openGraph: {
     title: 'Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
@@ -49,7 +49,7 @@ const LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).fi
 const faq = [
   {
     q: 'Does Final Touch Cleaning Company serve Las Vegas, NV?',
-    a: `Yes. Final Touch serves Las Vegas and the surrounding Las Vegas Valley as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, and their team serves residential and commercial properties throughout the city.`,
+    a: `Yes. Final Touch serves Las Vegas and the surrounding Las Vegas Valley as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, serving commercial, post-construction, and property-managed properties throughout the city, along with move-in and move-out cleans for landlords and renters.`,
   },
   {
     q: 'What areas of Las Vegas does Final Touch cover?',
@@ -57,7 +57,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Las Vegas?',
-    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both residential and commercial properties are served.`,
+    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Commercial and post-construction work is the primary focus, with move-in and move-out cleaning available for property managers, landlords, and renters.`,
   },
   {
     q: 'Does Final Touch handle post-construction cleaning for Las Vegas new builds and renovations?',
@@ -95,13 +95,14 @@ const localBusinessJsonLd = {
     { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
   ],
   serviceType: [
-    'Residential Cleaning',
     'Commercial Cleaning',
     'Post-Construction Cleanup',
+    'Janitorial Services',
     'Move-In Cleaning',
     'Move-Out Cleaning',
     'Deep Cleaning',
     'Retail Space Cleaning',
+    'Residential Cleaning',
   ],
 };
 
@@ -128,7 +129,7 @@ export default function LasVegasPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in Las Vegas, NV"
-        sub={`Final Touch provides residential and commercial cleaning services across Las Vegas. From move-out cleans for rental handoffs to post-construction detail work and recurring office programs, ${SITE.owners} and the team serve Las Vegas properties with the same standard every time.`}
+        sub={`Final Touch provides commercial and post-construction cleaning services across Las Vegas. From recurring office and janitorial programs to post-construction detail work and move-in/move-out cleans for property managers, ${SITE.owners} and the team serve Las Vegas properties with the same standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -180,7 +181,7 @@ export default function LasVegasPage() {
             <div className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
               <h3 className="font-display text-xl font-semibold text-brand-black">Active construction pipeline</h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">
-                Residential and commercial construction activity has remained consistent across the
+                Commercial and residential construction activity has remained consistent across the
                 Las Vegas Valley for years. New builds and renovations create demand for post-construction
                 cleanup: clearing drywall dust, construction debris, adhesive residue, and window film
                 so a finished space is actually ready for occupancy. Final Touch provides that final

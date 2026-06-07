@@ -13,7 +13,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Cleaning Services in Henderson, NV',
   description:
-    'Detail-focused cleaning services in Henderson, NV. Move-in, deep cleaning, commercial, and more for homes and businesses. Call (702) 444-5077.',
+    'Commercial and post-construction cleaning in Henderson, NV. Office cleaning, janitorial, move-in/move-out, and retail for businesses and property managers in Clark County. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson' },
   openGraph: {
     title: 'Cleaning Services in Henderson, NV | Final Touch Cleaning Company',
@@ -50,7 +50,7 @@ const HENDERSON_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).fi
 const faq = [
   {
     q: 'Does Final Touch Cleaning Company serve Henderson, NV?',
-    a: `Yes. Final Touch serves Henderson as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, and their team serves homes and businesses throughout Henderson's neighborhoods and business corridors.`,
+    a: `Yes. Final Touch serves Henderson as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, serving commercial, post-construction, and property-managed properties throughout Henderson's neighborhoods and business corridors, with move-in and move-out cleans available for landlords and renters.`,
   },
   {
     q: 'What areas of Henderson does Final Touch cover?',
@@ -58,7 +58,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Henderson?',
-    a: 'Final Touch offers seven services in Henderson: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both residential and commercial properties are served.',
+    a: 'Final Touch offers seven services in Henderson: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Commercial and post-construction work is the primary focus, with move-in and move-out cleaning available for property managers, landlords, and renters.',
   },
   {
     q: "Can Final Touch clean homes in Henderson's master-planned communities?",
@@ -96,13 +96,14 @@ const localBusinessJsonLd = {
     { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
   ],
   serviceType: [
-    'Residential Cleaning',
     'Commercial Cleaning',
     'Post-Construction Cleanup',
+    'Janitorial Services',
     'Move-In Cleaning',
     'Move-Out Cleaning',
     'Deep Cleaning',
     'Retail Space Cleaning',
+    'Residential Cleaning',
   ],
 };
 
@@ -129,7 +130,7 @@ export default function HendersonPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in Henderson, NV"
-        sub={`Final Touch provides residential and commercial cleaning across Henderson's master-planned communities, established neighborhoods, and business corridors. ${SITE.owners} own and run the company locally, serving Henderson properties with a detail-focused standard every time.`}
+        sub={`Final Touch provides commercial and post-construction cleaning across Henderson's master-planned communities, established neighborhoods, and business corridors. ${SITE.owners} own and run the company locally, serving Henderson properties with a detail-focused standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -320,7 +321,7 @@ export default function HendersonPage() {
                 Detail-focused approach
               </h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">
-                Henderson homeowners and property managers expect a high standard. Final Touch
+                Henderson property managers and business owners expect a high standard. Final Touch
                 focuses on the edges, corners, fixtures, and surfaces that get skipped during
                 routine maintenance. The goal is a finished result that matches the standard of
                 the space.

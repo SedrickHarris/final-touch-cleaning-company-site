@@ -13,7 +13,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Cleaning Services in North Las Vegas, NV',
   description:
-    'Cleaning services in North Las Vegas, NV. Post-construction, commercial, move-out, and more for homes and businesses. Call (702) 444-5077.',
+    'Commercial, post-construction, and property management cleaning in North Las Vegas, NV. Janitorial, office cleaning, and move-in/move-out for businesses and landlords across Clark County. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/north-las-vegas' },
   openGraph: {
     title: 'Cleaning Services in North Las Vegas, NV | Final Touch Cleaning Company',
@@ -52,7 +52,7 @@ const NORTH_LAS_VEGAS_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoo
 const faq = [
   {
     q: 'Does Final Touch Cleaning Company serve North Las Vegas, NV?',
-    a: `Yes. Final Touch serves North Las Vegas as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, and their team serves residential and commercial properties throughout the city.`,
+    a: `Yes. Final Touch serves North Las Vegas as part of its ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company, serving commercial, industrial, post-construction, and property-managed properties throughout the city, with move-in and move-out cleans available for landlords and renters.`,
   },
   {
     q: 'What areas of North Las Vegas does Final Touch cover?',
@@ -60,11 +60,11 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in North Las Vegas?',
-    a: 'Final Touch offers seven services in North Las Vegas: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both residential and commercial properties are served.',
+    a: 'Final Touch offers seven services in North Las Vegas: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Commercial, industrial, and post-construction work is the primary focus, with move-in and move-out cleaning available for property managers, landlords, and renters.',
   },
   {
     q: 'Does Final Touch provide post-construction cleaning for North Las Vegas new builds?',
-    a: 'Yes. Post-construction cleanup is one of the most in-demand services in North Las Vegas, where residential and commercial construction activity has been significant. The service covers drywall dust, construction debris, adhesive residue, and surface detail work to prepare a finished space for occupancy.',
+    a: 'Yes. Post-construction cleanup is one of the most in-demand services in North Las Vegas, where commercial, industrial, and residential construction activity has been significant. The service covers drywall dust, construction debris, adhesive residue, and surface detail work to prepare a finished space for occupancy.',
   },
   {
     q: 'Does Final Touch clean warehouses and industrial facilities in North Las Vegas?',
@@ -98,13 +98,14 @@ const localBusinessJsonLd = {
     { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
   ],
   serviceType: [
-    'Residential Cleaning',
     'Commercial Cleaning',
     'Post-Construction Cleanup',
+    'Janitorial Services',
     'Move-In Cleaning',
     'Move-Out Cleaning',
     'Deep Cleaning',
     'Retail Space Cleaning',
+    'Residential Cleaning',
   ],
 };
 
@@ -131,7 +132,7 @@ export default function NorthLasVegasPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Cleaning Services in North Las Vegas, NV"
-        sub={`Final Touch provides residential and commercial cleaning across North Las Vegas, one of the fastest-growing cities in the Las Vegas Valley. From post-construction detail work on new builds to commercial programs along the industrial corridors, ${SITE.owners} and the team serve North Las Vegas properties with the same standard every time.`}
+        sub={`Final Touch provides commercial and post-construction cleaning across North Las Vegas, one of the fastest-growing cities in the Las Vegas Valley. From post-construction detail work on new builds to commercial programs along the industrial corridors, ${SITE.owners} and the team serve North Las Vegas properties with the same standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -231,14 +232,14 @@ export default function NorthLasVegasPage() {
               </h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">
                 Alongside newer growth areas, North Las Vegas includes established residential
-                neighborhoods where homeowners rely on periodic{' '}
+                neighborhoods where periodic{' '}
                 <Link
                   href="/services/deep-cleaning"
                   className="text-brand-blue font-semibold hover:underline"
                 >
                   deep cleaning
                 </Link>{' '}
-                to reset spaces that accumulate desert dust and everyday wear between routine
+                resets spaces that accumulate desert dust and everyday wear between routine
                 maintenance visits.
               </p>
             </div>
