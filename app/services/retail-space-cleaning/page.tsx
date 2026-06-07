@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Retail Space Cleaning | Clark County, NV',
+  title: { absolute: 'Retail Space Cleaning in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Retail cleaning for storefronts and commercial spaces in Las Vegas, Henderson, and Clark County, NV. Consistent standard every visit. Call (702) 444-5077.',
+    'Retail space cleaning for storefronts across Las Vegas & Clark County, NV. After-hours scheduling available. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/retail-space-cleaning' },
   openGraph: {
     title: 'Retail Space Cleaning in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Customer-ready cleans for storefronts and retail interiors across Clark County, NV. Scheduled around your store hours. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides retail space cleaning for storefronts and shopping center tenants across Las Vegas and Clark County, NV. After-hours and after-close scheduling available. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/retail-space-cleaning`,
   },
@@ -52,6 +52,10 @@ const faq = [
   {
     q: 'How do I get a retail cleaning quote in Las Vegas?',
     a: `Call ${SITE.phone.display} or request a free quote online. For retail spaces, we schedule a walkthrough to confirm your floor plan, scope, and schedule before quoting. No templated rates applied without seeing your space.`,
+  },
+  {
+    q: 'Are your retail cleaners licensed and insured in Nevada?',
+    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Shopping center landlords, property managers, and franchise operators who need to verify vendor credentials before adding us to a retail program can confirm our general licensing and insurance status. Every retail cleaning program is also backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -99,7 +103,7 @@ export default function RetailSpaceCleaningPage() {
       <HeroSection
         eyebrow="Retail Cleaning"
         heading="Retail Space Cleaning in Las Vegas, NV"
-        sub={`Customer-ready cleans for storefronts and retail interiors across ${SITE.serviceArea.county}. Consistent standard, scheduled around your store hours.`}
+        sub={`Professional retail space cleaning for storefronts and shopping center tenants across ${SITE.serviceArea.county}. After-hours and after-close scheduling available. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -120,7 +124,9 @@ export default function RetailSpaceCleaningPage() {
             interiors across {SITE.serviceArea.county}, Nevada. Retail cleaning is scoped to
             customer-facing spaces: sales floors, display areas, fitting rooms, glass, entrances,
             and restrooms. We schedule around your store hours so cleaning does not interrupt
-            your business. The scope and frequency are confirmed during a free walkthrough. Call{' '}
+            your business. The scope and frequency are confirmed during a free walkthrough. Final
+            Touch is licensed and insured in Nevada, and every retail cleaning program is backed by
+            the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -230,8 +236,8 @@ export default function RetailSpaceCleaningPage() {
                 body: 'After-hours and pre-opening scheduling keeps cleaning out of your customers way. We work your schedule, not ours.',
               },
               {
-                title: 'Family-owned and local',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. When something needs to change about your service, you reach the owners directly, not a regional coordinator.`,
+                title: 'Blue Ribbon Guarantee',
+                body: `Every retail cleaning program is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. If the clean falls short before your store opens, call ${SITE.owners} directly and we fix it.`,
               },
             ].map((item) => (
               <li

@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Deep Cleaning | Clark County, NV',
+  title: { absolute: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Professional deep cleaning for homes and businesses in Las Vegas, Henderson, and Clark County, NV. One-time or periodic resets. Call (702) 444-5077.',
+    'Deep cleaning for homes and offices across Las Vegas & Clark County, NV. Licensed and insured, backed by the Blue Ribbon Guarantee. Call (702) 444-5077.',
   alternates: { canonical: '/services/deep-cleaning' },
   openGraph: {
     title: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Periodic deep cleans for the corners standard service skips. Serving Clark County, NV. Family-owned team. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides deep cleaning for homes and offices across Las Vegas and Clark County, NV. Licensed and insured, backed by the Blue Ribbon Guarantee. Free quotes. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning`,
   },
@@ -52,6 +52,10 @@ const faq = [
   {
     q: 'How do I get a deep cleaning quote in Las Vegas?',
     a: `Call ${SITE.phone.display} or request a free quote online. For deep cleaning, we ask about the size of the space and when it last had a thorough clean. That gives us what we need to scope the job accurately before quoting.`,
+  },
+  {
+    q: "What if my deep clean doesn't meet my expectations?",
+    a: `Every deep clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to finish what fell short. You reach ${SITE.owners} directly, not a call center or support queue. If a surface was missed or a scope item was skipped, we come back and make it right.`,
   },
 ];
 
@@ -120,7 +124,9 @@ export default function DeepCleaningPage() {
             {SITE.serviceArea.county}, Nevada. A deep clean goes beyond the surface maintenance of
             a routine clean to address the buildup that accumulates in the areas most crews skip:
             inside appliances, behind furniture, vents, baseboards, grout, and cabinet interiors.
-            It is a thorough reset for spaces that need more than weekly upkeep can deliver. Call{' '}
+            It is a thorough reset for spaces that need more than weekly upkeep can deliver. Final
+            Touch is licensed and insured in Nevada, and every deep clean is backed by the Blue
+            Ribbon Guarantee: 100% satisfaction or we return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -219,8 +225,8 @@ export default function DeepCleaningPage() {
                 body: 'A deep clean from Final Touch covers appliance interiors, cabinet interiors, vents, and grout, not just counters and floors. We work through the checklist until it is done.',
               },
               {
-                title: 'Family-owned and local',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. Your space is treated with the same care the owners apply to every job they oversee.`,
+                title: 'Blue Ribbon Guarantee',
+                body: `Every deep clean is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. If the reset falls short of what was scoped, call ${SITE.owners} directly and we come back to finish it.`,
               },
               {
                 title: 'One-time or recurring',

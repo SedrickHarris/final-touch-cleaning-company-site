@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Commercial & Office Cleaning | Clark County, NV',
+  title: { absolute: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Professional commercial office cleaning across Las Vegas, Henderson, and Clark County, NV. Family-owned. Free walkthrough quotes. Call (702) 444-5077.',
+    'Final Touch provides commercial office cleaning across Las Vegas & Clark County, NV. Licensed, insured, scheduled around your business. Call (702) 444-5077.',
   alternates: { canonical: '/services/commercial-office-cleaning' },
   openGraph: {
     title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Office and commercial cleaning across Clark County, NV. Recurring service, detail-focused work, family-owned team. Free quotes. Call (702) 444-5077.',
+      'Commercial office cleaning across Las Vegas and Clark County, NV. Licensed and insured, scheduled around your business hours. Free walkthrough. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/commercial-office-cleaning`,
   },
@@ -51,7 +51,11 @@ const faq = [
   },
   {
     q: 'Is commercial cleaning handled differently than residential cleaning?',
-    a: 'Yes. Commercial spaces have different compliance needs, higher foot traffic, shared-facility considerations, and scheduling requirements, often after-hours or early morning. Our commercial work is scoped and scheduled around your business operations.',
+    a: 'Yes. Commercial spaces have different compliance considerations, higher foot traffic, and operational requirements that residential cleaning does not. We schedule commercial work around your business hours, including after-hours and overnight, so your space is clean before your team arrives. We are also licensed and insured in Nevada, which matters for property managers and commercial landlords who need to confirm vendor credentials.',
+  },
+  {
+    q: 'Are your commercial cleaners licensed and insured in Nevada?',
+    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. For commercial clients, office managers, and property managers who need to confirm vendor credentials, we can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -99,7 +103,7 @@ export default function CommercialOfficeCleaningPage() {
       <HeroSection
         eyebrow="Commercial Cleaning"
         heading="Commercial &amp; Office Cleaning in Las Vegas, NV"
-        sub={`Professional commercial cleaning for offices and commercial interiors across ${SITE.serviceArea.county}. Scoped to your space, scheduled around your business.`}
+        sub={`Professional office and commercial interior cleaning across ${SITE.serviceArea.county}. Scheduled around your business hours. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -121,7 +125,9 @@ export default function CommercialOfficeCleaningPage() {
             and Boulder City. We clean offices, suites, and commercial interiors on a schedule
             that fits your operations, covering the surfaces and spaces a professional business
             environment requires. The scope is confirmed during a free walkthrough before any
-            work begins. Call{' '}
+            work begins. Final Touch is licensed and insured in Nevada, and every commercial job
+            is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24
+            hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -217,16 +223,16 @@ export default function CommercialOfficeCleaningPage() {
           <ul className="mt-10 grid gap-5 sm:grid-cols-3 lg:gap-6">
             {[
               {
-                title: 'Family-owned and local',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. When you call, you reach the owners or the team directly, not a call center or a staffing platform.`,
+                title: 'Owner-led accountability',
+                body: 'Scott and Nicole Maland are involved in every account. You work with the owners, not a dispatcher. If something is missed, it gets fixed fast.',
               },
               {
-                title: 'The details others skip',
-                body: 'Baseboards, vents, switch plates, and edges are on our finishing checklist for every job. The final pass is where the standard shows.',
+                title: 'Scheduled around your operations',
+                body: 'After-hours, overnight, and early-morning scheduling is available so your staff and clients never see the clean in progress. We work on your schedule.',
               },
               {
-                title: 'Scoped to your space',
-                body: 'No templated rates applied before we see your office. Every clean starts with a walkthrough to confirm what the job actually requires.',
+                title: 'Blue Ribbon Guarantee',
+                body: '100% satisfaction or we return within 24 hours. Every commercial clean is covered. No pushback, no excuses.',
               },
             ].map((item) => (
               <li

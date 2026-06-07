@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-Out Cleaning | Clark County, NV',
+  title: { absolute: 'Move-Out Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Move-out cleaning for apartments and homes in Las Vegas, Henderson, and Clark County, NV. Deposit-ready standard. Free quotes. Call (702) 444-5077.',
+    'Move-out cleaning for apartments and homes across Las Vegas & Clark County, NV. Licensed and insured. Deposit-ready standard. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-out-cleaning' },
   openGraph: {
     title: 'Move-Out Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Professional move-out cleaning across Clark County, NV. Return your space to the standard your landlord expects. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides move-out cleaning for apartments and homes across Las Vegas and Clark County, NV. Licensed and insured, cleaned to the deposit-ready standard your landlord expects. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-out-cleaning`,
   },
@@ -52,6 +52,10 @@ const faq = [
   {
     q: 'How do I book move-out cleaning in Las Vegas?',
     a: `Call ${SITE.phone.display} or request a free quote online. We recommend booking as early as possible, especially if you have a specific move-out date or lease-end deadline to meet.`,
+  },
+  {
+    q: "What if my move-out clean doesn't meet my expectations?",
+    a: `Every move-out clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
   },
 ];
 
@@ -121,7 +125,9 @@ export default function MoveOutCleaningPage() {
             space: inside cabinets, appliances, bathrooms, baseboards, vents, window sills, and
             all flooring. The goal is to hand the space back in the condition your landlord or
             next occupant expects, with cleaning removed as a point of dispute. We serve Las
-            Vegas, Henderson, North Las Vegas, and Boulder City. Call{' '}
+            Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch is licensed and
+            insured in Nevada, and every move-out clean is backed by the Blue Ribbon Guarantee:
+            100% satisfaction or we return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -227,8 +233,8 @@ export default function MoveOutCleaningPage() {
                 body: 'Inside appliances, baseboards, vents, and cabinet interiors are the surfaces that trigger deposit deductions. Those are on our standard checklist.',
               },
               {
-                title: 'Family-owned and local',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. When you need a move-out clean on a tight timeline, you are calling the owners, not navigating a support queue.`,
+                title: 'Blue Ribbon Guarantee',
+                body: `Every move-out clean is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. ${SITE.owners} are the owners and the accountability. If anything falls short, you call them directly.`,
               },
               {
                 title: 'Works around your move-out schedule',

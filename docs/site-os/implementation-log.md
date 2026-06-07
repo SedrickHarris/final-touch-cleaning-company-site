@@ -17,6 +17,78 @@ Fast Build Batch
 
 ## Log
 
+### Commercial Reframe Audit — Service Pages Pass
+Status: Implemented pending review
+Date: 2026-06-07
+
+Summary:
+Trust signal + commercial reframe content audit applied to all 7 core Tier 2
+service pages. Targeted content updates only — no structural changes, no component
+changes, no constants changes, no routing changes.
+
+Pages updated (7):
+- app/services/commercial-office-cleaning/page.tsx
+- app/services/janitorial-services/page.tsx
+- app/services/post-construction-cleanup/page.tsx
+- app/services/move-in-cleaning/page.tsx
+- app/services/move-out-cleaning/page.tsx
+- app/services/deep-cleaning/page.tsx
+- app/services/retail-space-cleaning/page.tsx
+
+Changes applied to all 7 pages:
+1. Metadata title — updated to include full brand name "Final Touch Cleaning"
+   and primary keyword + NV format
+2. Meta description — updated to include licensed/insured, scheduling differentiator,
+   and phone in 140-160 char range
+3. openGraph — title and description updated to match
+4. Quick Answer paragraph — appended licensed & insured + Blue Ribbon Guarantee
+   sentence before call/quote links
+5. Why Final Touch — "Family-owned and local" card replaced with
+   "Blue Ribbon Guarantee" card on all 7 pages
+6. FAQ #8 — added to all 7 pages:
+   - Residential pages (move-in, move-out, deep): satisfaction guarantee + owner
+     accountability recourse angle
+   - Commercial pages (commercial-office, janitorial, post-construction, retail):
+     licensed & insured vendor credential angle
+7. FAQPage JSON-LD — auto-synced via shared faq[] array; no manual schema edits
+
+Additional changes on commercial-primary pages:
+- Hero sub rewritten with after-hours scheduling + licensed angle
+  (commercial-office-cleaning, janitorial-services, retail-space-cleaning)
+- B2B differentiator card framing added to Why Final Touch
+  (commercial-office-cleaning, janitorial-services)
+- /builders hub link added to service areas section
+  (post-construction-cleanup)
+
+Owner-confirmed facts used:
+- Licensed in Nevada — general statement only, no license number
+- Insured — general statement only, no carrier or coverage amounts
+- Blue Ribbon Guarantee — "100% satisfaction or return within 24 hours"
+- After-hours scheduling — available; not always included or free
+
+No fake data. No AggregateRating/Review schema. No em dashes introduced.
+No components, constants, config, or routing files changed.
+
+#### Validation Results
+- npm run lint — passed clean
+- npm run type-check — passed clean
+- npm run build — passed clean
+
+#### Files Changed
+- app/services/commercial-office-cleaning/page.tsx
+- app/services/janitorial-services/page.tsx
+- app/services/post-construction-cleanup/page.tsx
+- app/services/move-in-cleaning/page.tsx
+- app/services/move-out-cleaning/page.tsx
+- app/services/deep-cleaning/page.tsx
+- app/services/retail-space-cleaning/page.tsx
+- docs/site-os/implementation-log.md
+
+#### TODOs
+- None blocking. All 7 service pages complete.
+- Next: location page trust signal pass (same sweep for 5 core city pages)
+  or next phase of commercial reframe audit per session plan.
+
 ### Image Wiring — Neighborhood Hero Images + Locations Hub City Cards
 Status: Done
 Commit: 50ebdab
@@ -4317,4 +4389,227 @@ worded to reflect that (builders earlier; industries + nav this session). All 27
 specialized pages are committed and pushed regardless of which session built them.
 
 No code changes. No constants changes. No page files.
+Did not commit. Did not deploy.
+
+### Homepage — Commercial Reframe + AEO/SEO Update
+Status: Implemented pending review
+Date: 2026-06-07
+Prompt: individual-homepage-implementation-prompt.md
+AI depth: Level 5 Beyond-Elite
+
+Keyword map summary:
+  Primary: commercial cleaning company Las Vegas
+  Secondary: office cleaning LV, janitorial LV, post-construction LV, Clark County
+  AEO clusters: company identity, services, service area, conversion, trust
+
+Content gaps fixed:
+  1. Title + H1: added 'commercial cleaning company' as primary keyword
+  2. Metadata description: removed 'residential and commercial', commercial-first
+     (trimmed to 159 chars, <= 160)
+  3. Trust bar: first item now 'Commercial cleaning company'
+  4. Who We Serve: replaced residential audience cards with commercial audiences
+  5. Section header: updated to commercial framing
+  6. Added: direct-answer entity paragraph (AEO/featured snippet target)
+  7. Added: service area section with named city chips (local SERP/Map Pack signal)
+  8. Added: industries section with 6 vertical chips (topical authority)
+  9. LocalBusiness JSON-LD: OMITTED from homepage per owner decision (2026-06-07).
+     The site-wide LocalBusiness node in app/layout.tsx already covers the homepage;
+     adding a second node here would duplicate the entity. Only FAQPage JSON-LD is
+     emitted on the homepage. (Plan called for a homepage LocalBusiness node; this is
+     the one approved deviation, to prevent duplicate structured data.)
+  10. FAQ: 9 commercial-intent questions, all direct-answer format
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing warning in layout.tsx (GTM script,
+                         unrelated to this change)
+  npm run type-check  -> clean (tsc --noEmit, no errors)
+  npm run build       -> success, homepage prerendered static to out/index.html
+  grep -c "—" out/index.html                                    -> 0   (pass, must be 0)
+  grep -c "Commercial Cleaning Company" out/index.html          -> 2   (pass, >= 1)
+  grep -o "Request a Free Quote\|Call Now" out/index.html | wc  -> 11  (pass, >= 2)
+
+Pass/fail gate result: PASS
+
+Notes:
+  - All city chips (/locations/<city>) and industry chips
+    (/industries/<industry>-cleaning/las-vegas) verified to resolve to real built
+    pages; the stale TODO-BATCH-4 fallback to ROUTES.locations was removed.
+  - Dropped the unused lucide-react import (trust bar no longer uses icons).
+  - No new imports added; all constants sourced from lib/constants/site.ts and
+    lib/constants/routes.ts. No invented claims, reviews, ratings, or pricing.
+
+Files changed: app/page.tsx, docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
+### Services Hub — Commercial Reframe + AEO/SEO Update
+Status: Implemented pending review
+Date: 2026-06-07
+Prompt: individual-homepage-implementation-prompt.md (adapted for hub)
+AI depth: Level 5 Beyond-Elite
+
+Keyword map summary:
+  Primary: commercial cleaning services Las Vegas
+  Secondary: office cleaning LV, janitorial LV, post-construction LV,
+             retail cleaning LV, Clark County
+  AEO clusters: service inventory, specific service confirmation,
+                scope and audience, service area, conversion
+
+Content gaps fixed:
+  1. Title + H1: added 'Commercial Cleaning Services' as primary keyword
+  2. Hero: upgraded from standard to split layout with form
+  3. Hero sub: commercial-first entity statement replacing residential flavor
+  4. Added direct-answer entity paragraph (AEO/featured snippet target)
+  5. 'Choose by the moment' replaced with 'Who This Serves' (commercial audiences)
+  6. Location callout: updated copy to commercial framing + city chips added
+  7. Added industries callout section (topical authority to /industries)
+  8. FAQ: 10 commercial-intent questions replacing prior mix
+  9. Added ItemList JSON-LD for 7 services (rich result)
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing warning in layout.tsx (GTM script,
+                         unrelated to this change)
+  npm run type-check  -> clean (tsc --noEmit, no errors)
+  npm run build       -> success, services hub prerendered static to out/services.html
+  grep -c "—" out/services.html                                  -> 0   (pass, must be 0)
+  grep -c "Commercial Cleaning Services" out/services.html       -> 2   (pass, >= 1)
+  grep -o "Request a Free Quote\|Call Now" out/services.html|wc  -> 11  (pass, >= 2)
+
+Pass/fail gate result: PASS
+
+Notes:
+  - Added one import the plan's hero instruction requires: QuoteFormPlaceholder
+    (for the split-layout formSlot). It was not previously imported in this file;
+    it is the same existing shared component used on the homepage, no new dependency.
+    SERVICES was already imported. No other imports added.
+  - Removed the stale TODO-BATCH-3 note and the "Need help choosing?" helper
+    paragraph (not in the approved plan); per-service pages now exist and the grid
+    links resolve to real built routes.
+  - Three JSON-LD nodes on the page: BreadcrumbList, FAQPage, and the new ItemList.
+    ItemList is built from the verified SERVICES constant (names + urls) and mirrors
+    the visible 7-card grid, so schema matches visible content per no-fake-data
+    policy. No invented claims, reviews, ratings, or pricing.
+  - All city chips and industry chips verified to resolve to real built pages.
+
+Files changed: app/services/page.tsx, docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
+### About Page — Commercial Reframe + Mission/Values/Eco-Friendly Update
+Status: Implemented pending review
+Date: 2026-06-07
+AI depth: Level 4 Conversion/Trust
+
+Content added:
+  1. H1 + hero sub: 'commercial cleaning company' entity phrase added
+  2. Direct-answer entity paragraph (AEO/LLM citation target)
+  3. Our Mission section (new)
+  4. Our Values section (new, 3 cards: Integrity / Reliability / Excellence)
+  5. Why Choose Final Touch section (new, 6-attribute grid)
+  6. TrustBar: 'Eco-friendly products' item added (TODO-VERIFY-ECO, inactive)
+  7. FAQ: 8 questions replacing prior 7, covering entity, mission, eco,
+     differentiators, services, conversion
+  8. Organization JSON-LD: knowsAbout array added
+
+TODO-VERIFY-ECO items (commented out / inactive until owner confirms eco product use):
+  - TrustBar item 6: 'Eco-friendly products'
+  - Why Choose card 2: eco-friendly solutions copy
+  - FAQ Q4: eco-friendly products answer
+  - knowsAbout: 'Eco-friendly cleaning'
+  Eco content is written into the file but wrapped in comments per the prompt's
+  ECO flag AND the no-fake-data policy (unverified product claim must not render on
+  a production surface). Verified by grep: 0 occurrences of the eco phrases in
+  out/about.html. Owner activates by uncommenting after confirming product use.
+
+Caveat (self-resolving on eco activation): the Why Choose sub reads 'Six reasons'
+(plan verbatim) while only 5 cards render until the eco card is uncommented.
+Kept the plan's exact copy rather than deviating; becomes accurate once eco is
+activated.
+
+Deviations from plan (surfaced and approved):
+  - Hero image: plan said 'No image (retain existing no-image pattern)', but the
+    page already had a hero image. Owner chose to KEEP the existing image
+    (2026-06-07). Hero otherwise standard single-column, no form.
+  - Removed the standalone 'Licensed and insured / Blue Ribbon Guarantee' section
+    (not in the plan's section list; full replacement). Licensed/insured is covered
+    by TrustBar item 3 and Why Choose card 5.
+  - Dropped the unused lucide-react import (trust bar has no icons in the plan).
+  - title uses { absolute: ... } so the root layout titleTemplate ('%s | Final
+    Touch') does not append a duplicate brand suffix on this child segment.
+
+Bug fix bundled this batch:
+  - app/services/page.tsx title was rendering doubled
+    ('... | Final Touch | Final Touch') because the prior plain-string title got the
+    root titleTemplate appended on the /services child segment. Wrapped it in
+    { absolute: ... }. Verified: out/services.html now renders a single suffix.
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing warning in layout.tsx (GTM script)
+  npm run type-check  -> clean (tsc --noEmit, no errors)
+  npm run build       -> success, about prerendered static to out/about.html
+  grep -c "—" out/about.html                                      -> 0  (pass, must be 0)
+  grep -c "commercial cleaning company" out/about.html            -> 2  (pass, >= 1)
+  grep -o "Request a Free Quote\|Get My Cleaning Estimate\|Call Now" out/about.html|wc -> 11 (pass, >= 2)
+  eco-phrase leakage in out/about.html                            -> 0  (pass, none rendered)
+
+Pass/fail gate result: PASS
+
+Files changed: app/about/page.tsx, app/services/page.tsx, docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
+### FAQ Hub — Commercial Reframe + Company Identity Category + AEO Update
+Status: Implemented pending review
+Date: 2026-06-07
+AI depth: Level 5 AEO Hub
+
+Changes:
+  1. Metadata: title updated to commercial-first + location keyword (title.absolute
+     so the root titleTemplate does not double the brand suffix); description
+     trimmed to 158 chars
+  2. Hero heading: 'Commercial cleaning questions, answered.' (existing hero image
+     retained — plan was silent on the image, no contradiction)
+  3. Direct-answer intro updated with commercial entity statement
+  4. Added 'Related pages' chip row (8 chips) for internal link equity
+  5. New Category 1: 'About Final Touch Cleaning Company' (4 questions)
+  6. Category 6 Q3: move-in/move-out reframed to property-manager-first
+  7. Category 7: replaced 4 questions with 5 commercial-first questions
+  8. Category 8 Q3-Q4: post-construction updated to GC/TI primary audience
+  9. Category 10 Q2: cleaning products answer (eco sentence withheld, see below)
+  10. Category 10: new Q6 eco-friendly question added but inactive (TODO-VERIFY-ECO)
+  Categories retained exactly: 2 (general), 3 (service area), 4 (quote/contact),
+  5 (cleaning services), 9 (scheduling); plus retained items within 6, 8, 10.
+
+FAQ counts:
+  Plan target was 42 -> 48. With eco content withheld from production, 47 questions
+  ship (48 once the eco Q6 is activated). Verified: 47 visible questions and 47
+  FAQPage JSON-LD Question entries (exact match, schema = visible content).
+
+TODO-VERIFY-ECO items (present in file, NOT shipped to production):
+  - Category 10 Q2: the sentence 'Eco-friendly and green cleaning options are
+    available.' is stripped from the shipping answer and preserved in a flagged
+    comment with reinsertion instructions. The rest of Q2 ships normally.
+  - Category 10 Q6: the eco-friendly products question is fully commented out.
+  Verified by grep: 0 occurrences of eco-friendly / green cleaning in out/faq.html.
+
+Internal-links note (surfaced, not a gate failure):
+  The intro paragraph + 8-chip Related pages row cover /services, /locations,
+  /about, /our-team, /industries, /cleaning-process, /reviews, /pricing,
+  /free-quote, phone, and email. The broader INTERNAL LINKS wishlist also asked
+  for the 7 per-service deep links, /contact, and a /faq self footer link. Those
+  were NOT added: FAQSection renders answers as plain-text strings (not JSX, so no
+  in-answer links without editing the component, which is out of scope), and the
+  plan forbids adding sections not listed. The chip row contents are the exact 8
+  specified by the plan, so they were not expanded.
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing warning in layout.tsx (GTM script)
+  npm run type-check  -> clean (tsc --noEmit, no errors)
+  npm run build       -> success, faq prerendered static to out/faq.html
+  grep -c "—" out/faq.html                                  -> 0  (pass, must be 0)
+  grep -c "commercial cleaning company" out/faq.html        -> 2  (pass, >= 1)
+  grep -o "Request a Free Quote\|Call Now" out/faq.html|wc  -> 11 (pass, >= 2)
+  eco-phrase leakage in out/faq.html                        -> 0  (pass, none rendered)
+  FAQPage JSON-LD Question entries                          -> 47 (= 47 visible Qs)
+
+Pass/fail gate result: PASS
+
+Files changed: app/faq/page.tsx, docs/site-os/implementation-log.md
 Did not commit. Did not deploy.

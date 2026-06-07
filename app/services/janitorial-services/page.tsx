@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Janitorial Services | Clark County, NV',
+  title: { absolute: 'Janitorial Services in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Scheduled janitorial services for offices and commercial facilities across Las Vegas, Henderson, and Clark County, NV. Family-owned. Call (702) 444-5077.',
+    'Final Touch provides scheduled janitorial programs for commercial facilities across Las Vegas and Clark County, NV. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/janitorial-services' },
   openGraph: {
-    title: 'Janitorial Services in Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Janitorial Services in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Reliable scheduled janitorial programs for offices, retail, and commercial facilities across Clark County, NV. Family-owned team. Call (702) 444-5077.',
+      'Final Touch provides scheduled janitorial programs for offices and commercial facilities across Las Vegas and Clark County, NV. Licensed and insured, with after-hours scheduling available. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/janitorial-services`,
   },
@@ -43,7 +43,7 @@ const faq = [
   },
   {
     q: 'Do you offer daily janitorial services?',
-    a: 'Frequency is determined during the walkthrough based on your facility needs. We can accommodate daily, three-times-per-week, weekly, and other recurring schedules. The right rhythm depends on foot traffic, restroom count, and how your facility is used.',
+    a: 'Yes. We can accommodate daily, three-times-per-week, weekly, and custom recurring schedules. We also offer after-hours and overnight scheduling so cleaning happens outside your operating hours. Your staff and clients never see the work in progress. The right frequency and timing are confirmed during the free facility walkthrough.',
   },
   {
     q: 'Does Final Touch provide janitorial services for small businesses?',
@@ -51,7 +51,11 @@ const faq = [
   },
   {
     q: 'Do you bring your own supplies and equipment for janitorial work?',
-    a: 'Confirmed supply and equipment policy is detailed during your walkthrough. We encourage you to ask about this specifically during the scoping conversation to confirm what is included in your service program.',
+    a: `Supply and equipment details are confirmed during your walkthrough based on your facility type and program scope. We encourage you to raise this specifically during the scoping conversation so your program is set up correctly from the first visit. Call ${SITE.phone.display} to schedule a walkthrough.`,
+  },
+  {
+    q: 'Are your janitorial cleaners licensed and insured in Nevada?',
+    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Commercial clients, property managers, and facility managers who need to verify vendor credentials can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -99,7 +103,7 @@ export default function JanitorialServicesPage() {
       <HeroSection
         eyebrow="Janitorial Services"
         heading="Janitorial Services in Las Vegas, NV"
-        sub={`Scheduled janitorial programs for offices, retail operations, and commercial facilities across ${SITE.serviceArea.county}. Reliable, recurring, scoped to your space.`}
+        sub={`Scheduled janitorial programs for offices and commercial facilities across ${SITE.serviceArea.county}. After-hours scheduling available. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -121,7 +125,9 @@ export default function JanitorialServicesPage() {
             arrangement: your facility is cleaned on a set schedule, with a defined scope built
             around your size, traffic, and operational hours. We serve Las Vegas, Henderson,
             North Las Vegas, and Boulder City. The scope and schedule are confirmed during a free
-            walkthrough before any work begins. Call{' '}
+            walkthrough before any work begins. Final Touch is licensed and insured in Nevada, and
+            every janitorial program is backed by the Blue Ribbon Guarantee: 100% satisfaction or
+            we return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -224,8 +230,8 @@ export default function JanitorialServicesPage() {
                 body: `${SITE.owners} run Final Touch from Southern Nevada. When something is off, you call the owners directly, not a regional manager.`,
               },
               {
-                title: 'Same standard every visit',
-                body: 'Same finishing checklist on every job. The details that create a consistently clean facility do not get skipped between visits.',
+                title: 'Blue Ribbon Guarantee',
+                body: 'Every janitorial program is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. If a visit falls short, you call us directly and we fix it. No runaround.',
               },
             ].map((item) => (
               <li

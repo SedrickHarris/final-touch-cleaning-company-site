@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning | Clark County, NV',
+  title: { absolute: 'Move-In Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Move-in cleaning for new homes and apartments in Las Vegas, Henderson, and Clark County, NV. Top-to-bottom clean before you settle in. Call (702) 444-5077.',
+    'Move-in cleaning for homes and apartments across Las Vegas & Clark County, NV. Licensed and insured. Scheduled around your move-in date. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-in-cleaning' },
   openGraph: {
     title: 'Move-In Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Top-to-bottom move-in cleaning before you settle into your new space. Serving Clark County, NV. Family-owned. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides move-in cleaning for new homes and apartments across Las Vegas and Clark County, NV. Licensed and insured, scheduled around your move-in date. Free quotes. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning`,
   },
@@ -52,6 +52,10 @@ const faq = [
   {
     q: 'How do I get a move-in cleaning quote in Las Vegas?',
     a: `Call ${SITE.phone.display} or request a free quote online. We confirm the size and condition of the space during a brief phone consultation or walkthrough before giving you a quote.`,
+  },
+  {
+    q: "What if my move-in clean doesn't meet my expectations?",
+    a: `Every move-in clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
   },
 ];
 
@@ -121,7 +125,9 @@ export default function MoveInCleaningPage() {
             of your new space before your furniture and belongings arrive: inside cabinets,
             appliance interiors, bathrooms, baseboards, vents, and all floor surfaces. Whether
             you are moving into a previously occupied home or a new build, we clean to a standard
-            that gives you a genuinely fresh start. Call{' '}
+            that gives you a genuinely fresh start. Final Touch is licensed and insured in Nevada,
+            and every move-in clean is backed by the Blue Ribbon Guarantee: 100% satisfaction or we
+            return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -227,8 +233,8 @@ export default function MoveInCleaningPage() {
                 body: 'Move-in cleaning covers the surfaces and spaces that get skipped in a recurring maintenance clean: inside appliances, vents, baseboards, and cabinet interiors.',
               },
               {
-                title: 'Family-owned and local',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. You are working directly with the owners, not booking through a national platform.`,
+                title: 'Blue Ribbon Guarantee',
+                body: `Every move-in clean is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. ${SITE.owners} are the owners and the accountability. If anything falls short, you call them directly.`,
               },
               {
                 title: 'Scheduled around your move',

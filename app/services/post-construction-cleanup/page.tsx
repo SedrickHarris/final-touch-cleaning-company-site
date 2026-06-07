@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Post-Construction Cleanup | Clark County, NV',
+  title: { absolute: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Post-construction cleaning for new builds and renovations across Las Vegas and Clark County, NV. Detail-focused. Free walkthrough quotes. Call (702) 444-5077.',
+    'Final Touch post-construction cleanup across Las Vegas & Clark County, NV. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
   alternates: { canonical: '/services/post-construction-cleanup' },
   openGraph: {
     title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Final-touch detail cleans after new builds and renovations across Clark County, NV. Residential and commercial. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides post-construction cleanup for new builds and renovations across Las Vegas and Clark County, NV. Licensed and insured. Scheduled around your handoff or occupancy date. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/post-construction-cleanup`,
   },
@@ -43,7 +43,7 @@ const faq = [
   },
   {
     q: 'Do you handle post-construction cleanup for commercial builds?',
-    a: 'Yes. We handle post-construction cleanup for both residential and commercial construction sites across Clark County, Nevada, including Las Vegas, Henderson, North Las Vegas, and Boulder City.',
+    a: 'Yes. We handle post-construction cleanup for both residential and commercial construction sites across Clark County, Nevada, including Las Vegas, Henderson, North Las Vegas, and Boulder City. We are licensed and insured in Nevada, which satisfies most commercial property and GC vendor credential requirements.',
   },
   {
     q: 'What is the difference between post-construction cleanup and move-in cleaning?',
@@ -52,6 +52,10 @@ const faq = [
   {
     q: 'How do I get a post-construction cleaning quote in Las Vegas?',
     a: `Call ${SITE.phone.display} or request a free quote online. For post-construction jobs, a site walkthrough is the best way to scope accurately. We confirm scope, debris type, and timeline before quoting.`,
+  },
+  {
+    q: 'Are your post-construction cleaners licensed and insured in Nevada?',
+    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Contractors, property managers, and commercial clients who need to verify vendor credentials before adding us to a project can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -99,7 +103,7 @@ export default function PostConstructionCleanupPage() {
       <HeroSection
         eyebrow="Post-Construction Cleanup"
         heading="Post-Construction Cleanup in Las Vegas, NV"
-        sub={`Detail cleans for new builds and renovations across ${SITE.serviceArea.county}. We handle the dust, residue, and fine debris that construction leaves behind.`}
+        sub={`Final-touch detail cleans after new builds and renovations across ${SITE.serviceArea.county}. Residential and commercial. Licensed and insured in Nevada. Scheduled around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -121,7 +125,9 @@ export default function PostConstructionCleanupPage() {
             compound residue, adhesive, and debris on every surface, including areas that look
             clean until you look closely. Our post-construction clean addresses what a standard
             crew is not scoped to handle, so your space is ready for occupancy, handoff, or
-            client walkthrough. Call{' '}
+            client walkthrough. Final Touch is licensed and insured in Nevada, and every
+            post-construction clean is backed by the Blue Ribbon Guarantee: 100% satisfaction or
+            we return within 24 hours. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
             </a>{' '}
@@ -224,8 +230,8 @@ export default function PostConstructionCleanupPage() {
                 body: 'Vents, glass edges, cabinet interiors, and baseboards are on our checklist, not afterthoughts. The final ten percent of a clean is what makes a space feel done.',
               },
               {
-                title: 'Local and family-owned',
-                body: `${SITE.owners} run Final Touch from Southern Nevada. We serve contractors and homeowners across Clark County and are available to discuss your project directly.`,
+                title: 'Blue Ribbon Guarantee',
+                body: `Every post-construction clean is backed by our Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. If the finishing pass falls short of what was scoped, you call ${SITE.owners} directly and we fix it.`,
               },
             ].map((item) => (
               <li
@@ -310,6 +316,14 @@ export default function PostConstructionCleanupPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm text-muted leading-relaxed">
+            Final Touch has dedicated post-construction cleanup pages for major Las Vegas Valley
+            builders. If you are buying or finishing a new build with a specific builder,{' '}
+            <Link href="/builders" className="text-brand-blue font-semibold hover:underline">
+              see our builder-specific post-construction pages
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
