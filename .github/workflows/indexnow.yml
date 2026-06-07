@@ -1,0 +1,74 @@
+name: IndexNow URL Submission
+
+on:
+  push:
+    branches:
+      - main
+  # Allow manual trigger from the Actions tab for re-submission
+  workflow_dispatch:
+
+jobs:
+  submit-urls:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate URL list
+        run: |
+          node scripts/generate-indexnow-urls.mjs > /tmp/indexnow-urls.json
+          echo "Generated $(node -e "console.log(JSON.parse(require('fs').readFileSync('/tmp/indexnow-urls.json','utf8')).length)") URLs"
+
+      - name: Submit URLs to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          if [ -z "$INDEXNOW_KEY" ]; then
+            echo "⚠️  INDEXNOW_KEY secret is not set — skipping submission."
+            exit 0
+          fi
+
+          COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('/tmp/indexnow-urls.json','utf8')).length)")
+
+          # Build the payload in Node so the URL list is read straight from the
+          # file — no shell interpolation of the (large) JSON array.
+          # The key file is hosted at the site root (public/<key>.txt).
+          node -e "
+            const key = process.env.INDEXNOW_KEY;
+            const urls = JSON.parse(require('fs').readFileSync('/tmp/indexnow-urls.json','utf8'));
+            const payload = {
+              host: 'www.finaltouchcleaningteam.com',
+              key,
+              keyLocation: 'https://www.finaltouchcleaningteam.com/' + key + '.txt',
+              urlList: urls,
+            };
+            require('fs').writeFileSync('/tmp/indexnow-payload.json', JSON.stringify(payload));
+          "
+
+          echo "Submitting $COUNT URLs to IndexNow..."
+
+          RESPONSE=$(curl -s -o /tmp/indexnow-response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @/tmp/indexnow-payload.json)
+
+          echo "HTTP Status: $RESPONSE"
+          echo "Response body:"
+          cat /tmp/indexnow-response.txt
+          echo
+
+          # 200 = accepted, 202 = queued (both are success)
+          if [ "$RESPONSE" = "200" ] || [ "$RESPONSE" = "202" ]; then
+            echo "✅ IndexNow submission successful (HTTP $RESPONSE)"
+          else
+            echo "⚠️  IndexNow returned HTTP $RESPONSE — check response body above"
+            # Exit 0 intentionally: a failed IndexNow ping should not block a deploy
+            exit 0
+          fi
