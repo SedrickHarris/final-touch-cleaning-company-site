@@ -7,19 +7,40 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: { absolute: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV' },
   description:
-    'Answers to questions about Final Touch Cleaning: services, service area in Clark County, NV, quotes, scheduling, and what to expect. Call (702) 444-5077.',
+    'Answers about Final Touch Cleaning Company, a commercial cleaning company in Las Vegas & Clark County, NV: services, scheduling & quotes. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
   openGraph: {
-    title: 'FAQ | Final Touch Cleaning Company | Clark County, NV',
+    title: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV',
     description:
-      'Browse 40+ answers about our cleaning services, service area, quote process, and what to expect. Family-owned, serving Las Vegas, Henderson, and Clark County.',
+      'Answers to questions about Final Touch Cleaning Company, a commercial cleaning company serving Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County, NV. Services, scheduling, quotes, and more. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/faq`,
   },
 };
 
+// ─── Category 1 — About Final Touch Cleaning Company (new) ───────────────────
+const companyIdentityFaq = [
+  {
+    q: 'Who owns Final Touch Cleaning Company?',
+    a: 'Final Touch Cleaning Company is owned and operated by Scott and Nicole Maland, a husband-and-wife team based in Southern Nevada. They personally oversee every commercial account across Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County.',
+  },
+  {
+    q: 'Is Final Touch a franchise or locally owned?',
+    a: 'Final Touch is a locally owned, family-operated business, not a franchise. Scott and Nicole Maland run the company directly. Every account is owner-led, not passed to a subcontractor rotation or managed through a staffing platform.',
+  },
+  {
+    q: 'What is Final Touch Cleaning Company?',
+    a: `Final Touch Cleaning Company is a commercial cleaning company serving offices, retail spaces, post-construction sites, and commercial properties across ${SITE.serviceArea.county}, Nevada. The company provides seven services: commercial and office cleaning, janitorial services, post-construction cleanup, retail space cleaning, move-in cleaning, move-out cleaning, and deep cleaning.`,
+  },
+  {
+    q: "What is Final Touch Cleaning Company's mission?",
+    a: 'Final Touch exists to provide commercial cleaning that business owners and property managers can rely on without supervising every visit. Every job ends with a finishing pass on the surfaces most crews skip: baseboards, vents, edges, glass, and hardware. That finishing standard is what the company name means.',
+  },
+];
+
+// ─── Category 2 — General questions (retained exactly) ───────────────────────
 const companyFaq = [
   {
     q: 'Who owns Final Touch Cleaning Company?',
@@ -39,6 +60,7 @@ const companyFaq = [
   },
 ];
 
+// ─── Category 3 — Service area (retained exactly) ────────────────────────────
 const serviceAreaFaq = [
   {
     q: 'What areas does Final Touch serve?',
@@ -70,6 +92,7 @@ const serviceAreaFaq = [
   },
 ];
 
+// ─── Category 4 — Getting a quote and contacting us (retained exactly) ───────
 const quoteContactFaq = [
   {
     q: 'How do I request a cleaning quote?',
@@ -97,6 +120,7 @@ const quoteContactFaq = [
   },
 ];
 
+// ─── Category 5 — Cleaning services (retained exactly) ───────────────────────
 const cleaningServiceFaq = [
   {
     q: 'What cleaning services does Final Touch Cleaning Company offer?',
@@ -116,6 +140,8 @@ const cleaningServiceFaq = [
   },
 ];
 
+// ─── Category 6 — Move-in, move-out, and deep cleaning ───────────────────────
+// Q1, Q2, Q4 retained exactly; Q3 replaced (property-manager-first).
 const moveDeepFaq = [
   {
     q: 'Does Final Touch offer move-in cleaning?',
@@ -126,8 +152,8 @@ const moveDeepFaq = [
     a: 'Yes. Move-out cleaning is the deposit-ready clean when you hand back the keys. Top-to-bottom and aligned with your move-out walkthrough timing.',
   },
   {
-    q: 'Does Final Touch offer deep cleaning?',
-    a: 'Yes. Deep cleaning is a periodic reset for a space you already live in or operate from. It reaches the corners standard service skips and takes the space back to baseline.',
+    q: 'Who hires move-in and move-out cleaning?',
+    a: `Property managers and landlords are the most common clients for move-in and move-out cleaning across ${SITE.serviceArea.county}. Unit turns between tenants, first-occupancy cleans for new rentals, and end-of-lease handoffs all benefit from a professional clean. Individual renters and homeowners also use both services. Call ${SITE.phone.display} to discuss your situation.`,
   },
   {
     q: 'When should I book deep cleaning vs move-in cleaning?',
@@ -135,25 +161,32 @@ const moveDeepFaq = [
   },
 ];
 
+// ─── Category 7 — Commercial, office, retail, and janitorial (replaced) ──────
 const commercialFaq = [
   {
-    q: 'Does Final Touch offer commercial office cleaning?',
-    a: 'Yes. We clean offices and commercial interiors across Clark County, both as one-time jobs and as ongoing janitorial routes.',
+    q: 'Is Final Touch primarily a commercial cleaning company?',
+    a: `Yes. Final Touch is a commercial cleaning company. The primary focus is offices, retail spaces, post-construction sites, and commercial properties across ${SITE.serviceArea.county}. Move-in, move-out, and deep cleaning are also available for property managers and residential transitions.`,
+  },
+  {
+    q: 'Does Final Touch clean offices in Las Vegas?',
+    a: `Yes. Final Touch provides commercial office cleaning and janitorial services for offices, professional services firms, and commercial buildings across Las Vegas and ${SITE.serviceArea.county}. Recurring programs and one-time cleans are both available. ${SITE.owners} oversee every commercial account personally.`,
   },
   {
     q: 'Does Final Touch offer janitorial services?',
-    a: 'Yes. We schedule ongoing janitorial routes for offices, retail, and commercial operations. The rhythm and scope are tailored to your space during the walkthrough.',
+    a: 'Yes. Final Touch schedules ongoing janitorial routes for offices, retail, and commercial operations. Scope, rhythm, and access are confirmed during the walkthrough and tailored to your facility.',
   },
   {
     q: 'Does Final Touch offer retail space cleaning?',
-    a: 'Yes. Customer-ready cleans for storefronts, showrooms, and retail interiors are one of our seven core services.',
+    a: `Yes. Final Touch provides before-open and after-close cleaning for retail shops, showrooms, and strip center tenants across Las Vegas, Henderson, and ${SITE.serviceArea.county}. Scope is confirmed per space at the initial walkthrough.`,
   },
   {
-    q: 'What kinds of businesses hire Final Touch?',
-    a: 'Offices, retail stores, post-construction sites, property managers, and small commercial operations. We tailor the scope and schedule to each space.',
+    q: 'What kinds of businesses hire Final Touch for commercial cleaning?',
+    a: `Final Touch works with business owners, office managers, general contractors, property managers, landlords, and retail operators across ${SITE.serviceArea.county}. Both one-time cleans and recurring programs are available depending on the type of space and the job.`,
   },
 ];
 
+// ─── Category 8 — Post-construction cleanup ──────────────────────────────────
+// Q1, Q2 retained exactly; Q3, Q4 replaced (GC / TI primary audience).
 const postConstructionFaq = [
   {
     q: 'Does Final Touch offer post-construction cleanup?',
@@ -164,15 +197,16 @@ const postConstructionFaq = [
     a: 'Final-touch detail cleaning for spaces just finishing construction: fine dust on every horizontal surface, residue around fixtures and trim, paint flecks on baseboards, glass and hardware finish work. Scope is tailored to the build at the walkthrough.',
   },
   {
-    q: 'Do you work with contractors and builders?',
-    a: "Yes. Post-construction cleanup is timed around the contractor's schedule and the property's readiness walkthrough. We coordinate on access and timing during the quote walkthrough.",
+    q: 'Do you work with general contractors and tenant improvement contractors?',
+    a: `Yes. Final Touch works directly with general contractors and tenant improvement contractors to schedule post-construction cleanup around project handoff and occupancy dates across ${SITE.serviceArea.county}. We coordinate on access and timing during the quote walkthrough. Call ${SITE.phone.display} to discuss your project.`,
   },
   {
     q: 'What types of construction projects does Final Touch clean after?',
-    a: `New residential builds, commercial tenant improvements, home renovations, and remodels across ${SITE.serviceArea.county}. If construction has happened and the space needs a finishing clean before occupancy or handoff, that is the job we do. Call ${SITE.phone.display} to walk through the scope.`,
+    a: `Commercial buildouts, tenant improvement projects, office renovations, retail fit-outs, new residential builds, and home renovations across ${SITE.serviceArea.county}. If construction has happened and the space needs a finishing clean before occupancy or handoff, that is the job. Call ${SITE.phone.display} to walk through the scope.`,
   },
 ];
 
+// ─── Category 9 — Scheduling and recurring cleaning (retained exactly) ───────
 const schedulingFaq = [
   {
     q: 'Can I request recurring cleaning?',
@@ -192,6 +226,10 @@ const schedulingFaq = [
   },
 ];
 
+// ─── Category 10 — Trust, safety, and service expectations ───────────────────
+// Q1, Q3, Q4, Q5 retained exactly; Q2 replaced (eco claim withheld from
+// production per no-fake-data policy); Q6 added but commented out until eco
+// product use is owner-confirmed.
 const trustExpectFaq = [
   {
     q: 'Do you bring your own cleaning supplies?',
@@ -199,7 +237,10 @@ const trustExpectFaq = [
   },
   {
     q: 'What cleaning products does Final Touch use?',
-    a: `We use professional cleaning products appropriate to each surface and job type. If you have specific sensitivities or preferences regarding products, mention them when you request a quote and we will discuss options during the walkthrough. Call ${SITE.phone.display} with any questions.`,
+    a: `Final Touch uses professional cleaning products appropriate to each surface and job type. If you have specific sensitivities or product preferences, mention them when you request a quote and we will discuss options during the walkthrough. Call ${SITE.phone.display} with any questions.`,
+    // TODO-VERIFY-ECO: When the owner confirms eco-friendly product use, insert the
+    // sentence "Eco-friendly and green cleaning options are available." after the
+    // first sentence of the answer above. The eco claim must not ship until confirmed.
   },
   {
     q: 'How long does a job take?',
@@ -213,9 +254,18 @@ const trustExpectFaq = [
     q: 'What if I am not happy with the result?',
     a: `Tell us. Call ${SITE.phone.display} or email ${SITE.email.display} and we will talk through it. We want every job to end finished. If something missed, we want to know.`,
   },
+  // TODO-VERIFY-ECO: activate after owner confirms eco-friendly product use.
+  // Uncomment the eco question below once eco claims are owner-confirmed.
+  // {
+  //   q: 'Does Final Touch use eco-friendly cleaning products?',
+  //   a: 'Yes. Final Touch uses professional-grade, eco-friendly cleaning products. Green cleaning solutions protect the health of your employees and customers. Clients with specific product sensitivities or preferences can discuss requirements at the initial walkthrough.',
+  // },
 ];
 
+// allFaq combines every VISIBLE FAQ array (commented eco Q6 excluded), so the
+// FAQPage JSON-LD matches the rendered answers exactly. No schema-only questions.
 const allFaq = [
+  ...companyIdentityFaq,
   ...companyFaq,
   ...serviceAreaFaq,
   ...quoteContactFaq,
@@ -249,10 +299,11 @@ const faqJsonLd = {
 export default function FAQPage() {
   return (
     <>
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <HeroSection
         eyebrow="Help center"
-        heading="Frequently asked questions."
-        sub={`${SITE.name} serves ${SITE.serviceArea.county}, Nevada. Browse answers about our cleaning services, service area, quote process, scheduling, and what to expect. Still have a question? Call ${SITE.phone.display}.`}
+        heading="Commercial cleaning questions, answered."
+        sub={`${SITE.name} is a commercial cleaning company serving ${SITE.serviceArea.county}, Nevada. ${SITE.owners} own and operate the business. Call ${SITE.phone.display} or browse the answers below.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         image={{
@@ -261,61 +312,82 @@ export default function FAQPage() {
         }}
       />
 
-      {/* Direct-answer intro - entity authority paragraph for AI search citation.
-          Names business, owners, all cities, county, and phone in first 100 words. */}
+      {/* ── Direct-answer intro ───────────────────────────────────────────── */}
+      {/* Entity authority paragraph for AI search citation. Names business,
+          owners, all cities, county, and contact in the first 100 words. */}
       <section className="bg-brand-white border-b border-border-subtle">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-          <p className="text-base sm:text-lg text-brand-black leading-relaxed">
-            Final Touch Cleaning Company is a family-owned cleaning service based in Southern
-            Nevada, owned and operated by {SITE.owners}. We serve Las Vegas, Henderson, North
-            Las Vegas, Boulder City, and all of {SITE.serviceArea.county}. This page answers
-            the questions we hear most about our services, our service area, and how to get
-            started. If your question is not here, call{' '}
+          <p className="text-lg text-brand-black leading-relaxed">
+            Final Touch Cleaning Company is a commercial cleaning company owned and operated by{' '}
+            <Link href={ROUTES.ourTeam} className="font-semibold text-brand-blue hover:underline">
+              {SITE.owners}
+            </Link>{' '}
+            in Southern Nevada. We serve{' '}
+            <Link href={ROUTES.locations} className="font-semibold text-brand-blue hover:underline">
+              Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County
+            </Link>{' '}
+            with seven commercial cleaning services. Call{' '}
             <a href={SITE.phone.href} className="font-semibold text-brand-blue hover:underline tabular-nums">
               {SITE.phone.display}
             </a>
-            .
+            , email{' '}
+            <a href={SITE.email.href} className="font-semibold text-brand-blue hover:underline break-all">
+              {SITE.email.display}
+            </a>
+            , or{' '}
+            <Link href={ROUTES.freeQuote} className="font-semibold text-brand-blue hover:underline">
+              request a free quote
+            </Link>{' '}
+            to get started.
           </p>
 
-          {/* Internal links - Tier 1 live routes only */}
-          <nav aria-label="FAQ quick links" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <Link href={ROUTES.services} className="font-semibold text-brand-blue hover:underline">
-              Our cleaning services →
-            </Link>
-            <Link href={ROUTES.locations} className="font-semibold text-brand-blue hover:underline">
-              Service area →
-            </Link>
-            <Link href={ROUTES.about} className="font-semibold text-brand-blue hover:underline">
-              About Final Touch →
-            </Link>
-            <Link href={ROUTES.freeQuote} className="font-semibold text-brand-blue hover:underline">
-              Request a free quote →
-            </Link>
-            <Link href={ROUTES.contact} className="font-semibold text-brand-blue hover:underline">
-              Contact us →
-            </Link>
-          </nav>
+          {/* Related pages chip row - internal link equity */}
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {[
+              { label: 'All cleaning services', href: ROUTES.services },
+              { label: 'Our service area',      href: ROUTES.locations },
+              { label: 'About our company',     href: ROUTES.about },
+              { label: 'Industries we serve',   href: ROUTES.industries },
+              { label: 'Our cleaning process',  href: ROUTES.cleaningProcess },
+              { label: 'Client reviews',        href: ROUTES.reviews },
+              { label: 'Pricing',               href: ROUTES.pricing },
+              { label: 'Request a free quote',  href: ROUTES.freeQuote },
+            ].map((chip) => (
+              <li key={chip.label}>
+                <Link
+                  href={chip.href}
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-light-gray border border-border-subtle px-5 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue hover:text-brand-blue transition-colors"
+                >
+                  {chip.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <FAQSection items={companyFaq} heading="General company questions" defaultOpenFirst />
-      <FAQSection items={serviceAreaFaq} heading="Service area questions" />
-      <FAQSection items={quoteContactFaq} heading="Quote and contact questions" />
-      <FAQSection items={cleaningServiceFaq} heading="Cleaning service questions" />
+      {/* ── FAQ categories ────────────────────────────────────────────────── */}
+      <FAQSection items={companyIdentityFaq} heading="About Final Touch Cleaning Company" defaultOpenFirst />
+      <FAQSection items={companyFaq} heading="General questions" />
+      <FAQSection items={serviceAreaFaq} heading="Service area" />
+      <FAQSection items={quoteContactFaq} heading="Getting a quote and contacting us" />
+      <FAQSection items={cleaningServiceFaq} heading="Cleaning services" />
       <FAQSection items={moveDeepFaq} heading="Move-in, move-out, and deep cleaning" />
       <FAQSection items={commercialFaq} heading="Commercial, office, retail, and janitorial" />
       <FAQSection items={postConstructionFaq} heading="Post-construction cleanup" />
       <FAQSection items={schedulingFaq} heading="Scheduling and recurring cleaning" />
       <FAQSection items={trustExpectFaq} heading="Trust, safety, and service expectations" />
 
+      {/* ── Final CTA ─────────────────────────────────────────────────────── */}
       <CTASection
-        heading="Didn't see your question?"
-        sub={`Call ${SITE.phone.display}, email ${SITE.email.display}, or send a quote request and we will get back to you.`}
+        heading="Still have questions? Let us walk you through it."
+        sub={`Call ${SITE.phone.display} or request a free walkthrough. Serving commercial properties across ${SITE.serviceArea.county}, Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"
       />
 
+      {/* ── JSON-LD ───────────────────────────────────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
