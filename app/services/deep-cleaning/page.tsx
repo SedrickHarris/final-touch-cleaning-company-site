@@ -13,12 +13,12 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: { absolute: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
   description:
-    'Deep cleaning for homes and offices across Las Vegas & Clark County, NV. Licensed and insured, backed by the Blue Ribbon Guarantee. Call (702) 444-5077.',
+    'Deep cleaning for commercial spaces, rental properties, and managed units across Las Vegas and Clark County, NV. Periodic resets beyond standard janitorial. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/deep-cleaning' },
   openGraph: {
     title: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Final Touch provides deep cleaning for homes and offices across Las Vegas and Clark County, NV. Licensed and insured, backed by the Blue Ribbon Guarantee. Free quotes. Call (702) 444-5077.',
+      'Final Touch provides deep cleaning for commercial spaces, rental properties, and managed units across Las Vegas and Clark County, NV. Periodic resets beyond standard janitorial. Licensed and insured. Free quotes. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning`,
   },
@@ -35,15 +35,15 @@ const faq = [
   },
   {
     q: 'How often should I schedule a deep clean?',
-    a: 'Most households benefit from a deep clean once or twice a year, in addition to regular maintenance cleaning. The right frequency depends on how heavily the space is used, whether you have pets or children, and how long it has been since the last deep clean. We can advise on timing during the quote walkthrough.',
+    a: 'Most commercial spaces and rental properties benefit from a deep clean once or twice a year, in addition to a regular janitorial or maintenance program. The right frequency depends on how heavily the space is used, foot traffic, and how long it has been since the last deep clean. We can advise on timing during the walkthrough.',
   },
   {
     q: 'Who hires deep cleaning services in Las Vegas?',
-    a: 'Homeowners preparing for guests or seasonal resets, landlords turning over a property between long-term tenants, property managers maintaining premium rentals, and businesses resetting shared spaces. We serve deep cleaning clients across Las Vegas, Henderson, North Las Vegas, and Boulder City.',
+    a: `Property managers and landlords resetting rental units between long-term tenancies, commercial tenants and office managers scheduling periodic resets beyond routine janitorial, vacation rental operators maintaining a guest-ready standard, and facility managers handling shared spaces across ${SITE.serviceArea.county}.`,
   },
   {
-    q: 'Can a deep clean be done while I am at home?',
-    a: 'Yes. Most deep cleans are done while the homeowner is present or steps out briefly. The crew works room by room and does not need the home to be empty. If you prefer the space cleared of people, that can be accommodated during scheduling.',
+    q: 'Can deep cleaning be done after hours or around our business schedule?',
+    a: 'Yes. After-hours and early-morning scheduling is available for commercial spaces and rental properties. For commercial clients, we schedule around your operations so the clean does not interrupt your business day. Access and timing are confirmed during the walkthrough.',
   },
   {
     q: 'Is deep cleaning a one-time service or can it become recurring?',
@@ -103,7 +103,7 @@ export default function DeepCleaningPage() {
       <HeroSection
         eyebrow="Deep Cleaning"
         heading="Deep Cleaning Service in Las Vegas, NV"
-        sub={`Periodic deep cleans for the corners standard service skips. We reset homes and commercial spaces across ${SITE.serviceArea.county} to a standard a routine clean cannot reach.`}
+        sub={`Periodic deep cleans for the corners standard service skips. We reset commercial spaces and rental properties across ${SITE.serviceArea.county} to a standard a routine clean cannot reach.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -120,7 +120,7 @@ export default function DeepCleaningPage() {
             Deep cleaning in Las Vegas, NV
           </h2>
           <p className="mt-5 text-base sm:text-lg text-brand-black leading-relaxed">
-            Final Touch provides deep cleaning for homes and commercial spaces across{' '}
+            Final Touch provides deep cleaning for commercial spaces and rental properties across{' '}
             {SITE.serviceArea.county}, Nevada. A deep clean goes beyond the surface maintenance of
             a routine clean to address the buildup that accumulates in the areas most crews skip:
             inside appliances, behind furniture, vents, baseboards, grout, and cabinet interiors.
@@ -144,25 +144,25 @@ export default function DeepCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Homeowners, landlords, and businesses across Clark County."
+            heading="Property managers, commercial tenants, and rental operators across Clark County."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
-                title: 'Homeowners',
-                body: 'Preparing for guests, doing a seasonal reset, or catching up on the buildup that routine cleaning misses. A deep clean restores the standard.',
+                title: 'Property managers and landlords',
+                body: 'Rental units that have had long-term tenants need a deeper reset than a standard move-out clean delivers. Property managers and landlords schedule a deep clean between tenancies to address buildup in vents, inside appliances, grout, and the surfaces that accumulate over months of occupancy.',
               },
               {
-                title: 'Landlords and property managers',
-                body: 'Between long-term tenants, a deep clean addresses what normal upkeep skips and resets the property for the next occupant.',
+                title: 'Commercial tenants and office managers',
+                body: 'Offices, retail spaces, and commercial interiors benefit from a periodic deep clean alongside regular janitorial service. A deep clean reaches the buildup in breakrooms, restrooms, vents, and high-traffic surfaces that weekly maintenance does not fully address.',
               },
               {
-                title: 'Vacation rental owners',
-                body: 'Periodic deep cleans keep your rental in the condition guests expect, beyond what a standard turnover clean achieves.',
+                title: 'Vacation and short-term rental operators',
+                body: 'Periodic deep cleans keep rental properties at the guest-ready standard that standard turnover cleaning alone does not achieve. Scope and scheduling confirmed around your booking calendar.',
               },
               {
-                title: 'Business owners',
-                body: 'Shared spaces, breakrooms, and commercial interiors benefit from a periodic deep clean alongside regular janitorial service.',
+                title: 'Facility and building managers',
+                body: 'Building managers responsible for common areas, shared restrooms, and multi-tenant spaces schedule periodic deep cleans as a reset on top of recurring maintenance programs. Final Touch handles the scope a janitorial route is not designed to reach.',
               },
             ].map((item) => (
               <li

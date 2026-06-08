@@ -103,7 +103,7 @@ export default function MoveOutCleaningPage() {
       <HeroSection
         eyebrow="Move-Out Cleaning"
         heading="Move-Out Cleaning in Las Vegas, NV"
-        sub={`Professional move-out cleaning for renters and homeowners across ${SITE.serviceArea.county}. Return your space to the standard your landlord expects.`}
+        sub={`Professional move-out cleaning for property managers, landlords, and renters across ${SITE.serviceArea.county}. Unit turns, portfolio resets, and end-of-lease cleans to the standard your next occupant expects.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -145,25 +145,25 @@ export default function MoveOutCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Renters, landlords, and property managers across Clark County."
+            heading="Property managers, landlords, and renters across Clark County."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
-                title: 'Renters',
-                body: 'Moving out at the end of a lease? A professional clean addresses the surfaces and areas your landlord inspects without you spending your last weekend with a mop.',
-              },
-              {
-                title: 'Homeowners selling',
-                body: 'A clean home before listing or handoff creates the right impression. We clean to the standard a buyer or agent expects.',
+                title: 'Property managers',
+                body: 'Turn units over efficiently with a thorough move-out clean between tenants. Same standard on every property, every turn.',
               },
               {
                 title: 'Landlords',
                 body: 'Tenant moved out and left the place in rough shape? We reset it to the condition needed for the next occupant.',
               },
               {
-                title: 'Property managers',
-                body: 'Turn units over efficiently with a thorough move-out clean between tenants. Same standard on every property.',
+                title: 'Renters',
+                body: 'Moving out at the end of a lease? A professional clean addresses the surfaces and areas your landlord inspects without you spending your last weekend with a mop.',
+              },
+              {
+                title: 'Home sellers and real estate agents',
+                body: 'A clean property before listing, showings, or final handoff creates the right impression. We clean to the standard a buyer or agent expects.',
               },
             ].map((item) => (
               <li
