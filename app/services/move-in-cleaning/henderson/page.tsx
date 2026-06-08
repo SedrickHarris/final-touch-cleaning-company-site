@@ -133,7 +133,7 @@ export default function MoveInCleaningHendersonPage() {
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-in cleaning
             </Link>{' '}
-            gives Henderson homeowners and renters a verified clean baseline before the first box
+            gives Henderson property managers, landlords, and renters a verified clean baseline before the first box
             is unpacked. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -148,22 +148,22 @@ export default function MoveInCleaningHendersonPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires move-in cleaning in Henderson"
-            heading="New-build buyers, established community movers, and luxury home buyers."
-            sub="Henderson's two distinct audiences (active new-construction buyers and established master-planned community movers) create different move-in cleaning needs."
+            heading="New-build buyers, property managers, and luxury property owners."
+            sub="Henderson's move-in cleaning demand comes from new-construction buyers, property managers resetting rental units, and luxury property owners across the city's established communities."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
                 title: 'New-build buyers in Cadence and Inspirada',
-                body: 'Both communities are in active build phases in Henderson. Builder handoffs leave drywall dust, adhesive residue, and construction particulate. An independent move-in clean after the builder finishes ensures the home is genuinely ready before a family moves in.',
+                body: 'Both communities are in active build phases in Henderson. Builder handoffs leave drywall dust, adhesive residue, and construction particulate. An independent move-in clean after the builder finishes ensures the property is genuinely ready before the first occupant arrives.',
               },
               {
                 title: 'Buyers in established master-planned communities',
                 body: 'Green Valley, Anthem, Green Valley Ranch, and Seven Hills buyers (whether new to the community or moving within it) want a clean baseline before settling in. These communities set high presentation standards, and buyers want the home to reflect those standards from day one.',
               },
               {
-                title: 'Luxury home buyers',
-                body: 'Buyers of MacDonald Highlands, Lake Las Vegas, and comparable Henderson luxury properties often schedule thorough move-in cleans before occupying. The investment in the home warrants the standard, particularly for properties with premium finish materials that need surface-appropriate cleaning.',
+                title: 'Luxury property owners and managers',
+                body: 'Owners and managers of MacDonald Highlands, Lake Las Vegas, and comparable Henderson luxury properties schedule thorough move-in cleans before first occupancy. The investment in the property warrants the standard, particularly for spaces with premium finish materials that need surface-appropriate cleaning.',
               },
               {
                 title: 'Property managers resetting rental units',
@@ -229,7 +229,7 @@ export default function MoveInCleaningHendersonPage() {
               },
               {
                 heading: 'Established community standards in Green Valley and Anthem',
-                body: 'Resale buyers moving into Green Valley, Anthem, Green Valley Ranch, and comparable Henderson communities are buying into neighborhoods with consistently maintained homes and high curb-appeal standards. A move-in clean before unpacking ensures the new home meets those standards from the first day, addressing seller-side residue, years of buildup in detail surfaces, and anything the listing photos did not show.',
+                body: 'Landlords and property managers resetting units in Green Valley, Anthem, Green Valley Ranch, and comparable Henderson communities are operating in neighborhoods with consistently maintained properties and high presentation standards. A move-in clean ensures the unit meets those standards before keys are handed to an incoming tenant, addressing prior-occupant residue, years of buildup in detail surfaces, and anything the walkthrough did not surface.',
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">

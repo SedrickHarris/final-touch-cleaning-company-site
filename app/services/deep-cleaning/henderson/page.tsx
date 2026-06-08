@@ -32,12 +32,12 @@ const faq = [
     a: 'A deep clean covers inside appliances (oven, refrigerator, microwave, dishwasher), baseboards, window sills, grout lines and tile, vents and air returns, inside cabinets and shelving, behind and under accessible furniture, light fixtures and ceiling fans, bathroom fixtures and mirrors, all floor surfaces, and high-touch surface sanitizing throughout. Specific scope is confirmed before the clean begins.',
   },
   {
-    q: 'Is deep cleaning different for luxury homes in Henderson?',
+    q: 'Is deep cleaning different for luxury properties in Henderson?',
     a: 'Yes. Homes in Henderson communities like MacDonald Highlands, Seven Hills, and comparable neighborhoods often feature natural stone, marble, polished concrete, and custom cabinetry that require surface-appropriate cleaning methods. A deep clean in a Henderson luxury home involves more square footage, more detail surfaces, and material-specific care that differs from a standard residential job. Final Touch accounts for finish materials during the scope confirmation.',
   },
   {
-    q: 'How often should Henderson homes be deep cleaned?',
-    a: "Henderson shares the Mojave Desert climate of the broader Las Vegas Valley, which means dust accumulates faster indoors than in wetter climates, particularly near windows, HVAC returns, and in Henderson's master-planned communities with active landscaping. Most Henderson homeowners schedule deep cleans seasonally or two to four times per year. Contact Final Touch for a recommendation based on your home.",
+    q: 'How often should Henderson properties and commercial spaces be deep cleaned?',
+    a: "Henderson shares the Mojave Desert climate of the broader Las Vegas Valley, which means dust accumulates faster indoors than in wetter climates, particularly near windows, HVAC returns, and in Henderson's master-planned communities with active landscaping. Property managers, rental owners, and commercial operators in Henderson typically schedule deep cleans seasonally or two to four times per year. Contact Final Touch for a recommendation based on your property or commercial space.",
   },
   {
     q: 'Does Final Touch serve all Henderson neighborhoods for deep cleaning?',
@@ -45,11 +45,11 @@ const faq = [
   },
   {
     q: 'How much does deep cleaning cost in Henderson?',
-    a: `Cost depends on the size, condition, and specific scope of the space. Henderson luxury homes with larger floor plans and premium finish materials typically require more time than a standard residential deep clean. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your home.`,
+    a: `Cost depends on the size, condition, and specific scope of the space. Henderson luxury properties with larger floor plans and premium finish materials typically require more time than a standard deep clean. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your property or commercial space.`,
   },
   {
     q: 'Can deep cleaning help with construction dust in new Henderson homes?',
-    a: "Yes. Active construction phases in Henderson communities like Cadence and Inspirada mean even completed homes can accumulate construction-related dust from nearby build activity. Desert wind carries fine particulate from adjacent framing and grading work into settled homes through HVAC systems and door frames. A periodic deep clean addresses this buildup (particularly in vents, air returns, and window sills) for Henderson residents living near active development.",
+    a: "Yes. Active construction phases in Henderson communities like Cadence and Inspirada mean even completed properties can accumulate construction-related dust from nearby build activity. Desert wind carries fine particulate from adjacent framing and grading work into settled properties through HVAC systems and door frames. A periodic deep clean addresses this buildup (particularly in vents, air returns, and window sills) for Henderson property owners and tenants near active development.",
   },
 ];
 
@@ -137,8 +137,7 @@ export default function DeepCleaningHendersonPage() {
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch deep cleaning
             </Link>{' '}
-            serves Henderson homeowners in master-planned communities, luxury properties in the
-            eastern foothills, and new-construction buyers in active-development neighborhoods.
+            serves Henderson property managers, rental owners in master-planned communities, luxury property clients in the eastern foothills, and new-construction buyers in active-development neighborhoods.
             Scope is confirmed before the clean begins. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -153,14 +152,14 @@ export default function DeepCleaningHendersonPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires deep cleaning in Henderson"
-            heading="Henderson homeowners and property owners with higher standards."
-            sub="Henderson's housing character (from luxury hillside estates to active new-build communities) creates deep cleaning demand that differs from a typical suburban market."
+            heading="Henderson property managers, rental owners, and commercial clients with higher standards."
+            sub="Henderson's property character (from luxury hillside estates to active new-build communities) creates deep cleaning demand that differs from a typical suburban cleaning market."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
-                title: 'Luxury and custom home owners',
-                body: 'MacDonald Highlands, Seven Hills, and comparable Henderson communities feature larger homes with premium finish materials: natural stone, marble, polished concrete, custom millwork. A deep clean here requires surface-appropriate methods and more time than a standard residential job.',
+                title: 'Luxury and custom property managers',
+                body: 'MacDonald Highlands, Seven Hills, and comparable Henderson communities feature larger properties with premium finish materials: natural stone, marble, polished concrete, custom millwork. A deep clean here requires surface-appropriate methods and more time than a standard scope.',
               },
               {
                 title: 'Master-planned community homeowners',
@@ -239,7 +238,7 @@ export default function DeepCleaningHendersonPage() {
               },
               {
                 heading: 'Master-planned community standards',
-                body: "Henderson's established master-planned communities (Green Valley, Green Valley Ranch, Anthem) maintain high standards for property presentation. Homeowners in these communities tend to prioritize maintenance that matches the surrounding environment. A periodic deep clean is a natural part of that maintenance cycle, addressing the buildup that accumulates between routine service visits.",
+                body: "Henderson's established master-planned communities (Green Valley, Green Valley Ranch, Anthem) maintain high standards for property presentation. Property managers and landlords in these communities prioritize maintenance that matches the surrounding environment. A periodic deep clean is a natural part of that maintenance cycle, addressing the buildup that accumulates between routine service visits.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">

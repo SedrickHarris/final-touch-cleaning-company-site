@@ -176,8 +176,8 @@ export default function MoveInCleaningLasVegasPage() {
                 body: 'Property managers want units in clean condition for incoming tenants. A move-in clean is distinct from the move-out clean of the prior tenant and ensures the space meets a consistent standard at the start of every new lease.',
               },
               {
-                title: 'Homebuyers in the Las Vegas resale market',
-                body: 'Buyers of previously owned homes want a clean baseline before unpacking, addressing seller-side residue, buildup in kitchens and bathrooms, and detail surfaces that the listing photos did not show.',
+                title: 'Landlords and investors acquiring Las Vegas properties',
+                body: 'Landlords and rental investors taking on a previously occupied Las Vegas property want it cleaned to a consistent standard before the first new tenant moves in, regardless of how the prior occupant left it.',
               },
             ].map((item) => (
               <li

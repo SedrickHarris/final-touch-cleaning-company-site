@@ -32,12 +32,12 @@ const faq = [
     a: 'A deep clean covers inside appliances (oven, refrigerator, microwave, dishwasher), baseboards, window sills, grout lines and tile, vents and air returns, inside cabinets and shelving, behind and under accessible furniture, light fixtures and ceiling fans, bathroom fixtures and mirrors, all floor surfaces, and high-touch surface sanitizing throughout. Specific scope is confirmed before the clean begins.',
   },
   {
-    q: 'How often should North Las Vegas homes be deep cleaned?',
-    a: "North Las Vegas sits in the Mojave Desert and shares the valley's fast-accumulating dust conditions. Homes near active construction sites (a common situation in North Las Vegas's growth areas) accumulate construction particulate in addition to ordinary desert dust. Most North Las Vegas homeowners schedule deep cleans seasonally or two to four times per year. Those living adjacent to active build zones may find more frequent cleans practical, particularly for vents, HVAC returns, and surfaces near exterior openings.",
+    q: 'How often should North Las Vegas properties and commercial spaces be deep cleaned?',
+    a: "North Las Vegas sits in the Mojave Desert and shares the valley's fast-accumulating dust conditions. Properties near active construction sites (a common situation in North Las Vegas's growth areas) accumulate construction particulate in addition to ordinary desert dust. Property managers, rental owners, and commercial operators in North Las Vegas typically schedule deep cleans seasonally or two to four times per year. Properties adjacent to active build zones may require more frequent cleans, particularly for vents, HVAC returns, and surfaces near exterior openings.",
   },
   {
     q: 'Who typically hires deep cleaning in North Las Vegas?',
-    a: "The most common deep cleaning clients in North Las Vegas are rental property owners resetting between long-term tenants, renters doing mid-tenancy resets to address desert dust accumulation, and homeowners in both newer growth areas and established neighborhoods managing everyday buildup. This is a broader, more rental-market-driven demand profile than Las Vegas's vacation-rental demand or Henderson's luxury-home demand.",
+    a: "The most common deep cleaning clients in North Las Vegas are rental property owners resetting between long-term tenants, renters doing mid-tenancy resets to address desert dust accumulation, and commercial tenants and property managers across newer growth areas and established neighborhoods managing everyday buildup. This is a broader, more rental-market-driven demand profile than Las Vegas's vacation-rental demand or Henderson's luxury-property demand.",
   },
   {
     q: 'Does Final Touch serve all of North Las Vegas for deep cleaning?',
@@ -45,11 +45,11 @@ const faq = [
   },
   {
     q: 'How much does deep cleaning cost in North Las Vegas?',
-    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your home.`,
+    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your property or commercial space.`,
   },
   {
     q: 'Does construction dust near North Las Vegas new builds require special deep cleaning?',
-    a: 'Yes. Active residential construction in North Las Vegas means completed homes near build sites can accumulate fine construction particulate in HVAC systems, vents, window sills, and on surfaces, even without direct construction work in the home. A deep clean that specifically addresses vents, air returns, and dust-accumulation surfaces is practical for North Las Vegas residents in or near active residential growth areas.',
+    a: 'Yes. Active residential construction in North Las Vegas means completed properties near build sites can accumulate fine construction particulate in HVAC systems, vents, window sills, and on surfaces, even without direct construction work on the property. A deep clean that specifically addresses vents, air returns, and dust-accumulation surfaces is practical for North Las Vegas property owners and tenants in or near active residential growth areas.',
   },
 ];
 
@@ -138,7 +138,7 @@ export default function DeepCleaningNorthLasVegasPage() {
               Final Touch deep cleaning
             </Link>{' '}
             serves rental property owners resetting between tenants, renters doing seasonal resets,
-            and homeowners in both newer growth areas and established North Las Vegas neighborhoods.
+            and commercial tenants and property managers across newer growth areas and established North Las Vegas corridors.
             Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -153,7 +153,7 @@ export default function DeepCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires deep cleaning in North Las Vegas"
-            heading="Rental property owners, renters, and homeowners across a growing city."
+            heading="Rental property owners, renters, and commercial operators across a growing city."
             sub="North Las Vegas deep cleaning demand is shaped by the city's rental density and active construction, a different profile from Henderson's luxury homes or Las Vegas's vacation rentals."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
@@ -167,12 +167,12 @@ export default function DeepCleaningNorthLasVegasPage() {
                 body: "Beyond a standard move-out clean, North Las Vegas landlords use a deep clean to fully reset properties between extended tenancies, addressing inside appliances, grout, and accumulated buildup that a move-out scope doesn't fully cover.",
               },
               {
-                title: 'New-construction homeowners',
-                body: 'North Las Vegas is one of the most active residential growth areas in the valley. New homeowners settling into recently built homes use a deep clean to address construction residue that survives builder handoff, particularly in vents, cabinets, and window tracks.',
+                title: 'New-construction buyers and landlords',
+                body: 'North Las Vegas is one of the most active residential growth areas in the valley. New buyers taking possession of recently built homes and landlords preparing new-build rentals use a deep clean to address construction residue that survives builder handoff, particularly in vents, cabinets, and window tracks.',
               },
               {
-                title: 'Established neighborhood homeowners',
-                body: 'Older North Las Vegas residential areas have homeowners who do periodic deep cleans as seasonal resets, addressing the buildup that accumulates between routine service visits in a Mojave desert climate.',
+                title: 'Property managers in established neighborhoods',
+                body: 'Older North Las Vegas residential areas have property managers and rental owners who schedule periodic deep cleans as seasonal resets, addressing the buildup that accumulates between routine service visits in a Mojave desert climate.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">

@@ -353,7 +353,7 @@ export default function HomePage() {
               { label: 'Restaurants',                       href: '/industries/restaurant-cleaning/las-vegas'          },
               { label: 'Retail stores',                     href: '/industries/retail-store-cleaning/las-vegas'        },
               { label: 'Property management',               href: '/industries/property-management-cleaning/las-vegas' },
-              { label: 'Chiropractic and physical therapy', href: '/industries'                                        },
+              { label: 'Chiropractic and physical therapy', href: '/industries/chiropractic-cleaning/las-vegas'           },
             ].map((ind) => (
               <li key={ind.label}>
                 <Link

@@ -133,7 +133,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-in cleaning
             </Link>{' '}
-            gives North Las Vegas homeowners and renters a clean baseline before the first box is
+            gives North Las Vegas property managers, landlords, and renters a clean baseline before the first box is
             unpacked. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -158,16 +158,16 @@ export default function MoveInCleaningNorthLasVegasPage() {
                 body: 'North Las Vegas has one of the higher renter-density profiles in the valley. Renters moving into a new unit want a clean baseline on day one, regardless of what the previous tenant left behind or how thoroughly the landlord cleaned between occupants.',
               },
               {
-                title: 'New-construction homeowners',
-                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New homeowners closing on recently built homes use a move-in clean to address construction residue that survives the builder's standard sweep, particularly in vents, window tracks, and inside cabinets.",
+                title: 'New-construction buyers and landlords',
+                body: "North Las Vegas is one of the most active residential growth areas in the Las Vegas Valley. New buyers taking possession and landlords preparing recently built rental units use a move-in clean to address construction residue that survives the builder's standard sweep, particularly in vents, window tracks, and inside cabinets.",
               },
               {
                 title: 'Landlords resetting rental units',
                 body: 'North Las Vegas landlords often manage multiple units. A move-in clean ensures the unit is in verified condition for the incoming tenant, distinct from the move-out clean of the prior occupant and a practical step in a high-turnover rental market.',
               },
               {
-                title: 'First-time homebuyers',
-                body: 'North Las Vegas offers more affordable home prices than Henderson, making it a common market for first-time buyers. These buyers purchasing established homes want a thorough clean before unpacking, addressing what sellers left behind in detail surfaces and appliances.',
+                title: 'Landlords acquiring resale properties',
+                body: 'North Las Vegas offers more affordable property prices than Henderson, making it an active market for rental investors acquiring established homes. Landlords taking on a previously occupied property want a thorough clean before the first new tenant moves in, addressing what the prior occupant left behind in detail surfaces and appliances.',
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">

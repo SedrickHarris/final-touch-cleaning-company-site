@@ -44,8 +44,8 @@ const faq = [
     a: `Yes. Final Touch's deep cleaning service area covers all of Clark County, including Las Vegas, Henderson, North Las Vegas, and Boulder City along with the communities around them. Call ${SITE.phone.display} to confirm service availability for your specific address.`,
   },
   {
-    q: 'How often should Clark County homes be deep cleaned?',
-    a: 'The entire county sits in the Mojave Desert, where fine-particle dust accumulates on indoor surfaces faster than in wetter climates. Most Clark County homeowners schedule deep cleans seasonally or two to four times per year. Frequency varies by property type, location within the county, and proximity to construction activity. Contact Final Touch for a recommendation based on your home.',
+    q: 'How often should Clark County properties and commercial spaces be deep cleaned?',
+    a: 'The entire county sits in the Mojave Desert, where fine-particle dust accumulates on indoor surfaces faster than in wetter climates. Property managers, commercial operators, and rental owners in Clark County typically schedule deep cleans seasonally or two to four times per year. Frequency varies by property type, location within the county, and proximity to construction activity. Contact Final Touch for a recommendation based on your property or commercial space.',
   },
   {
     q: 'How much does deep cleaning cost in Clark County?',
@@ -144,7 +144,7 @@ export default function DeepCleaningClarkCountyPage() {
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch deep cleaning
             </Link>{' '}
-            serves Clark County homeowners, rental property owners, and vacation rental operators
+            serves Clark County property managers, commercial operators, rental property owners, and vacation rental operators
             across all cities in the county. Scope confirmed before the clean begins. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -165,8 +165,8 @@ export default function DeepCleaningClarkCountyPage() {
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
-                title: "Homeowners across the county's varied housing stock",
-                body: "Clark County's residential range spans luxury hillside estates in Henderson, active new-build communities in Henderson and North Las Vegas, established older homes in Boulder City, and dense urban residential in Las Vegas. Final Touch deep cleans all of them, scope confirmed per property.",
+                title: "Property managers across the county's varied housing stock",
+                body: "Clark County's property range spans luxury hillside estates in Henderson, active new-build communities in Henderson and North Las Vegas, established older properties in Boulder City, and dense urban commercial and residential in Las Vegas. Final Touch serves property managers and commercial operators across all of them, scope confirmed per property.",
               },
               {
                 title: 'Property managers with county-wide portfolios',
@@ -236,7 +236,7 @@ export default function DeepCleaningClarkCountyPage() {
             {[
               {
                 heading: 'The entire county sits in the Mojave Desert',
-                body: 'Fine-particle desert dust is not a Las Vegas issue or a Henderson issue. It is a Clark County issue. Every property in the Las Vegas Valley, regardless of city, accumulates Mojave dust on indoor surfaces faster than in wetter climates. Periodic deep cleaning is a practical response to that environment for homeowners and renters across every part of the county.',
+                body: 'Fine-particle desert dust is not a Las Vegas issue or a Henderson issue. It is a Clark County issue. Every property in the Las Vegas Valley, regardless of city, accumulates Mojave dust on indoor surfaces faster than in wetter climates. Periodic deep cleaning is a practical response to that environment for property managers, commercial operators, and renters across every part of the county.',
               },
               {
                 heading: 'The most varied housing stock in Nevada',

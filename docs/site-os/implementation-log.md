@@ -17,6 +17,198 @@ Fast Build Batch
 
 ## Log
 
+### Industry Leaf — Chiropractic and PT Office Cleaning (North Las Vegas) — CLUSTER COMPLETE
+Status: Implemented pending review
+Date: 2026-06-07
+AI depth: Level 5 Beyond-Elite
+Prompt chain: Combined Prompt A (research, pre-completed and embedded) + Prompt B (build).
+Page: /industries/chiropractic-cleaning/north-las-vegas
+
+NLV differentiators vs Las Vegas and Henderson siblings (anti-doorway anchors):
+  - Construction trades + logistics/warehouse workforce drives above-average
+    occupational musculoskeletal injury demand (vs Henderson's active-adult orthopedic
+    profile and Las Vegas's hospitality/service-worker injury pattern).
+  - Affordable commercial rent (Lamb Blvd, Craig Rd, Cheyenne Ave corridors) supports a
+    higher concentration of solo practitioners than either sibling city.
+  Section 6 Card 1 and Card 2, plus FAQ Q4 and Q5, are NLV-specific and would be
+  factually wrong on the Las Vegas or Henderson page.
+
+Content gaps fixed: third and final city leaf for the chiropractic-cleaning vertical;
+  commercial/B2B framing only, no homeowner/residential framing.
+
+Sections built (10): Hero (image omitted, asset missing, TODO-PHOTO left) · direct-
+  answer · who-we-serve (4 cards) · scope checklist (10) · scheduling (3) · NLV city
+  context (3) · service-area chips (both sibling chips live; no TODO-BATCH-7) · related
+  services (commercial-office, janitorial, deep-cleaning) · FAQ + more-questions block ·
+  final CTA.
+
+FAQ count: 8 (FAQPage JSON-LD from same array; 8 Question entries in output).
+Schema blocks (3): Service, FAQPage, BreadcrumbList. No AggregateRating/Review.
+  No streetAddress.
+
+Build-spec corrections (required to pass type-check/build, same as siblings):
+  - FAQSection used items={faq} ({q,a}) per component API; the prompt's
+    items={faq.map(... {question, answer})} would fail type-check.
+  - Hero image asset missing -> image prop omitted, TODO-PHOTO above <HeroSection>.
+
+Sibling chip activations + homepage update:
+  - app/industries/chiropractic-cleaning/las-vegas/page.tsx: removed NLV TODO-BATCH-7
+    comment (chip now live).
+  - app/industries/chiropractic-cleaning/henderson/page.tsx: removed NLV TODO-BATCH-7
+    comment (chip now live).
+  - app/page.tsx: homepage 'Chiropractic and physical therapy' chip href changed from
+    /industries to /industries/chiropractic-cleaning/las-vegas.
+  Zero TODO-BATCH-7 chip comments remain across the cluster.
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing layout.tsx GTM warning (unrelated)
+  npm run type-check  -> clean
+  npm run build       -> success; static export at out/industries/chiropractic-cleaning/north-las-vegas.html
+  grep "—" -> 0   grep " -- " -> 0   AggregateRating/Review -> 0   streetAddress -> 0   sterile -> 0
+  CTA labels -> "Request a Free Quote" x6, "Call Now" x5
+
+Pass/fail gate result: PASS (same site-wide caveat as the siblings: rendered <title>
+  carries the doubled "... | Final Touch | Final Touch" brand suffix from the root
+  titleTemplate; recommend one coordinated title.absolute fix across all industry leaf
+  pages).
+
+Route count: 111 -> 112 (HEAD 109 + the 3 uncommitted chiropractic pages).
+
+Cluster status: chiropractic-cleaning COMPLETE — all 3 cities built (Las Vegas,
+  Henderson, North Las Vegas), all sibling chips live, homepage chip updated.
+
+Files created: app/industries/chiropractic-cleaning/north-las-vegas/page.tsx
+Files changed: app/industries/chiropractic-cleaning/las-vegas/page.tsx (chip),
+  app/industries/chiropractic-cleaning/henderson/page.tsx (chip),
+  app/page.tsx (homepage chip href), docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
+### Industry Leaf — Chiropractic and PT Office Cleaning (Henderson)
+Status: Implemented pending review
+Date: 2026-06-07
+AI depth: Level 5 Beyond-Elite
+Prompt chain: Combined Prompt A (research, pre-completed and embedded) + Prompt B (build).
+Page: /industries/chiropractic-cleaning/henderson
+
+Henderson differentiators vs Las Vegas sibling (anti-doorway anchors):
+  - Active-adult community density (Sun City Anthem, Anthem Country Club, MacDonald
+    Highlands) drives chiropractic maintenance + PT demand, vs Las Vegas's
+    occupational-injury / hospitality-workforce volume.
+  - Predictable suburban scheduling (8-9 AM open, early-evening close) vs Las Vegas's
+    extended-hours commercial environment, making before-open/after-close windows
+    more reliably available.
+  - Green Valley Parkway / Sunset Road professional-office-corridor character.
+  Section 6 Card 1 and Card 2, plus FAQ Q4 and Q5, are Henderson-specific and would
+  be factually wrong on the Las Vegas or North Las Vegas page.
+
+Content gaps fixed:
+  - Second city leaf for the chiropractic-cleaning vertical; commercial/B2B framing
+    only, no homeowner/residential framing.
+
+Sections built (10): Hero (image omitted, asset missing, TODO-PHOTO left) · direct-
+  answer · who-we-serve (4 cards) · scope checklist (10) · scheduling (3) · Henderson
+  city context (3) · service-area chips (1 TODO-BATCH-7 forward link to NLV) ·
+  related services (commercial-office, janitorial, deep-cleaning) · FAQ + more-questions
+  block · final CTA.
+
+FAQ count: 8 (FAQPage JSON-LD from same array; 8 Question entries in output).
+Schema blocks (3): Service, FAQPage, BreadcrumbList. No AggregateRating/Review.
+  No streetAddress.
+
+Build-spec corrections (required to pass type-check/build, same as LV sibling):
+  - FAQSection used items={faq} ({q,a}) per component API; the prompt's
+    items={faq.map(... {question, answer})} would fail type-check.
+  - Hero image asset missing -> image prop omitted, TODO-PHOTO placed on its own line
+    above <HeroSection> (in-tag JSX comment would be a syntax error).
+
+Sibling activation: removed the TODO-BATCH-7 comment above the Henderson chip in
+  app/industries/chiropractic-cleaning/las-vegas/page.tsx (href already correct). The
+  North Las Vegas chip's TODO-BATCH-7 remains until that leaf ships.
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing layout.tsx GTM warning (unrelated)
+  npm run type-check  -> clean
+  npm run build       -> success; static export at out/industries/chiropractic-cleaning/henderson.html
+  grep "—" -> 0   grep " -- " -> 0   AggregateRating/Review -> 0   streetAddress -> 0   sterile -> 0
+  CTA labels -> "Request a Free Quote" x6, "Call Now" x5
+
+Pass/fail gate result: PASS (same caveat as the LV sibling: rendered <title> carries
+  the doubled "... | Final Touch | Final Touch" brand suffix, a site-wide pattern on
+  every industry leaf page from the root titleTemplate; recommend one coordinated
+  title.absolute fix across the section).
+
+Route count: 110 -> 111 (HEAD 109 + LV uncommitted + Henderson).
+
+Files created: app/industries/chiropractic-cleaning/henderson/page.tsx
+Files changed: app/industries/chiropractic-cleaning/las-vegas/page.tsx (chip activation),
+  docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
+### Industry Leaf — Chiropractic and PT Office Cleaning (Las Vegas)
+Status: Implemented pending review
+Date: 2026-06-07
+AI depth: Level 5 Beyond-Elite
+Prompt chain: Combined Prompt A (research, pre-completed and embedded) + Prompt B (build).
+Page: /industries/chiropractic-cleaning/las-vegas
+
+Content gaps fixed:
+  - New industry vertical leaf page for chiropractic + physical therapy offices in
+    Las Vegas (6th industry, added to the /industries hub in a prior task).
+  - Las Vegas-specific market context (strip-mall practice density; hospitality/
+    service-workforce injury volume driving PT demand) differentiates the page from
+    a Henderson or North Las Vegas variant (anti-doorway content).
+  - Commercial/B2B audience framing only (office managers, solo/group practitioners,
+    sports-rehab clinics). No homeowner/residential framing.
+
+Sections built (10):
+  1. Hero (split, quote form; image omitted, asset missing, TODO-PHOTO left)
+  2. Direct-answer paragraph
+  3. Who we serve (4 audience cards)
+  4. Scope checklist (10 items, positive scope only)
+  5. Scheduling (3 cards)
+  6. Las Vegas city context (3 cards)
+  7. Service area chips (incl. 2 TODO-BATCH-7 forward links)
+  8. Related services (commercial-office, janitorial, deep-cleaning via SERVICES.find)
+  9. FAQ + "more questions" block
+  10. Final CTA (blue)
+
+FAQ count: 8 (FAQPage JSON-LD generated from the same array; 8 Question entries in output).
+
+Schema blocks (3): Service, FAQPage, BreadcrumbList. No AggregateRating/Review.
+  No streetAddress. Service areaServed = Las Vegas (in Nevada) + Clark County.
+
+Build-spec corrections (required to pass type-check/build):
+  - FAQSection items: used items={faq} ({q,a} shape) per the component API and the
+    medical-office template. The prompt's items={faq.map(... {question, answer})}
+    would fail type-check (FAQSection expects { q, a }).
+  - Hero TODO-PHOTO: image asset does not exist on disk, so the image prop was
+    omitted (per STEP 1) and the TODO-PHOTO comment placed on its own line above
+    <HeroSection> rather than inside the tag (a JSX comment between attributes is a
+    syntax error).
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing layout.tsx GTM warning (unrelated)
+  npm run type-check  -> clean
+  npm run build       -> success; static export at out/industries/chiropractic-cleaning/las-vegas.html
+  grep "—"            -> 0   grep " -- " -> 0
+  CTA labels          -> "Request a Free Quote" x6, "Call Now" x5
+  AggregateRating/Review -> 0   streetAddress -> 0   sterile -> 0
+
+Pass/fail gate result: PASS (one flagged caveat, below).
+  Caveat: rendered <title> is doubled ("... | Final Touch | Final Touch") because the
+  root titleTemplate appends to a plain-string title that already ends in the brand.
+  This is a pre-existing SITE-WIDE pattern: every existing industry leaf page
+  (medical-office, property-management, law-firm) has the same doubled title. Built
+  per the prompt's explicit metadata + "mirror the template exactly", so this page is
+  consistent with its siblings. Recommend a single coordinated fix (title.absolute)
+  across all industry leaf pages rather than a one-off here.
+
+Route count: 109 -> 110.
+
+Files created: app/industries/chiropractic-cleaning/las-vegas/page.tsx
+Files changed: docs/site-os/implementation-log.md
+Did not commit. Did not deploy.
+
 ### Commercial Reframe Audit — Service Pages Pass
 Status: Implemented pending review
 Date: 2026-06-07

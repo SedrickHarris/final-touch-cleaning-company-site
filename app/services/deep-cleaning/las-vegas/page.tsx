@@ -32,12 +32,12 @@ const faq = [
     a: 'A deep clean covers inside appliances (oven, refrigerator, microwave, dishwasher), baseboards, window sills, grout lines and tile, vents and air returns, inside cabinets and shelving, behind and under accessible furniture, light fixtures and ceiling fans, all floor surfaces, and high-touch surface sanitizing throughout. Specific scope is confirmed before the clean begins.',
   },
   {
-    q: 'How often should Las Vegas homes be deep cleaned?',
-    a: 'Las Vegas sits in the Mojave Desert, which means fine-particle dust accumulates indoors faster than in wetter climates. Many Las Vegas homeowners schedule deep cleans more frequently than they would elsewhere, typically seasonally or two to four times per year. The right frequency depends on your space, how it is used, and your tolerance for buildup. Contact Final Touch for a recommendation based on your home.',
+    q: 'How often should Las Vegas properties and commercial spaces be deep cleaned?',
+    a: 'Las Vegas sits in the Mojave Desert, which means fine-particle dust accumulates indoors faster than in wetter climates. Property managers, commercial operators, and rental property owners in Las Vegas typically schedule deep cleans seasonally or two to four times per year. The right frequency depends on the space, how it is used, and the standard required. Contact Final Touch for a recommendation based on your property or commercial space.',
   },
   {
     q: 'How much does deep cleaning cost in Las Vegas?',
-    a: `Price depends on the size, condition, and specific scope of your space. Contact Final Touch at ${SITE.phone.display} or request a free quote online for a real estimate based on your home or commercial space.`,
+    a: `Price depends on the size, condition, and specific scope of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote online for a real estimate based on your commercial space or rental property.`,
   },
   {
     q: 'Does Final Touch serve all parts of Las Vegas?',
@@ -45,7 +45,7 @@ const faq = [
   },
   {
     q: 'What is the difference between deep cleaning and regular cleaning in Las Vegas?',
-    a: 'Regular maintenance cleaning covers routine surfaces on a set schedule. A deep clean adds inside appliances, grout lines, behind furniture, vents, inside cabinets, and detail surfaces that standard cleaning does not reach. Many Las Vegas residents use a deep clean as a periodic reset on top of routine service.',
+    a: 'Regular maintenance cleaning covers routine surfaces on a set schedule. A deep clean adds inside appliances, grout lines, behind furniture, vents, inside cabinets, and detail surfaces that standard cleaning does not reach. Property managers, commercial operators, and rental owners in Las Vegas use a deep clean as a periodic reset on top of routine service.',
   },
   {
     q: 'Can deep cleaning help with Las Vegas vacation rental properties?',
@@ -125,7 +125,7 @@ export default function DeepCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Deep Cleaning · Las Vegas, NV"
         heading="Deep Cleaning in Las Vegas, NV"
-        sub={`Las Vegas homes and businesses accumulate dust and buildup faster than most cities. Final Touch provides a thorough deep clean (inside appliances, grout, vents, and every detail surface) for homeowners, renters, and property owners across Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`Las Vegas commercial spaces, rental properties, and businesses accumulate dust and buildup faster than most cities. Final Touch provides a thorough deep clean (inside appliances, grout, vents, and every detail surface) for property managers, commercial tenants, vacation rental operators, and renters across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -162,8 +162,8 @@ export default function DeepCleaningLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires deep cleaning in Las Vegas"
-            heading="Las Vegas residents and property owners who need a real reset."
-            sub="The city's desert climate, active rental market, and vacation rental economy create specific reasons to schedule a deep clean beyond what routine maintenance covers."
+            heading="Property managers, commercial tenants, and rental operators who need a real reset."
+            sub="The city's desert climate, active rental market, and vacation rental economy create specific reasons for property managers, commercial operators, and rental owners to schedule a deep clean beyond what routine maintenance covers."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -172,8 +172,8 @@ export default function DeepCleaningLasVegasPage() {
                 body: 'Las Vegas has a significant vacation rental market. Periodic deep cleans between short-term or extended-stay bookings keep properties at a guest-ready standard that standard turnover cleaning alone does not achieve.',
               },
               {
-                title: 'Homeowners managing desert dust',
-                body: 'The Mojave Desert location means fine-particle dust accumulates on surfaces faster than in wetter climates. A periodic deep clean addresses the buildup that collects near windows, HVAC returns, and on horizontal surfaces between regular service visits.',
+                title: 'Property managers and landlords managing desert dust',
+                body: 'The Mojave Desert location means fine-particle dust accumulates on surfaces faster than in wetter climates. A periodic deep clean addresses the buildup that collects near windows, HVAC returns, and on horizontal surfaces between regular service visits, whether in a rental unit, a commercial suite, or a managed property.',
               },
               {
                 title: 'Renters doing a seasonal reset',

@@ -117,7 +117,7 @@ export default function MoveInCleaningBoulderCityPage() {
       <HeroSection
         eyebrow="Move-In Cleaning · Boulder City, NV"
         heading="Move-In Cleaning in Boulder City, NV"
-        sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting, often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City homebuyers, renters, and property owners across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting, often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City property owners, landlords, renters, and buyers across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -134,7 +134,7 @@ export default function MoveInCleaningBoulderCityPage() {
             <Link href="/services/move-in-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch move-in cleaning
             </Link>{' '}
-            gives Boulder City homebuyers and renters a clean baseline before the first box is
+            gives Boulder City property owners, landlords, and renters a clean baseline before the first box is
             unpacked. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}

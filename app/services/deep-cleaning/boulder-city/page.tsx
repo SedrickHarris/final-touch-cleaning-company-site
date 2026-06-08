@@ -36,8 +36,8 @@ const faq = [
     a: 'Yes. Boulder City has a housing stock that includes many older, well-maintained properties with original fixtures, built-in cabinetry, and surfaces that have been in place for decades. A deep clean in an older Boulder City home addresses what accumulates over years of occupancy: inside original cabinetry, around period fixtures, in grout lines and tile surfaces that have been in place for decades. The approach requires care and attention to detail rather than speed. Scope is confirmed before the clean begins.',
   },
   {
-    q: 'How often should Boulder City homes be deep cleaned?',
-    a: "Boulder City's Mojave Desert location means dust accumulates faster indoors than in wetter climates. In an owner-occupied community with older housing stock, most Boulder City homeowners schedule deep cleans seasonally or once to twice per year as a maintenance practice, not driven by rental turnover or construction activity, but by the desert climate and the care they take in their established homes. Contact Final Touch for a recommendation based on your home.",
+    q: 'How often should Boulder City properties be deep cleaned?',
+    a: "Boulder City's Mojave Desert location means dust accumulates faster indoors than in wetter climates. In an owner-occupied community with older housing stock, most Boulder City property owners schedule deep cleans seasonally or once to twice per year as a maintenance practice, not driven by rental turnover or construction activity, but by the desert climate and the care they take in their established properties. Contact Final Touch for a recommendation based on your property.",
   },
   {
     q: 'Does Final Touch serve Boulder City for deep cleaning?',
@@ -45,7 +45,7 @@ const faq = [
   },
   {
     q: 'How much does deep cleaning cost in Boulder City?',
-    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your home.`,
+    a: `Cost depends on the size and condition of the space. Contact Final Touch at ${SITE.phone.display} or request a free quote for a real estimate based on your property.`,
   },
   {
     q: 'Can deep cleaning help with Lake Mead-area vacation rental properties in Boulder City?',
@@ -121,7 +121,7 @@ export default function DeepCleaningBoulderCityPage() {
       <HeroSection
         eyebrow="Deep Cleaning · Boulder City, NV"
         heading="Deep Cleaning in Boulder City, NV"
-        sub={`Boulder City is a small, owner-occupied community with an established housing stock, older homes with character that benefit from a detail-focused deep clean. Final Touch serves Boulder City homeowners, metro relocators, and vacation rental owners across Boulder City and ${SITE.serviceArea.county}.`}
+        sub={`Boulder City is a small, owner-occupied community with an established housing stock, older properties with character that benefit from a detail-focused deep clean. Final Touch serves Boulder City property owners, metro relocators, and vacation rental owners across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -137,7 +137,7 @@ export default function DeepCleaningBoulderCityPage() {
             <Link href="/services/deep-cleaning" className="text-brand-blue font-semibold hover:underline">
               Final Touch deep cleaning
             </Link>{' '}
-            serves Boulder City&apos;s homeowners in older established properties, buyers relocating
+            serves Boulder City&apos;s property owners in older established properties, buyers relocating
             from the Las Vegas metro, and vacation rental owners near Lake Mead. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline tabular-nums">
               {SITE.phone.display}
@@ -152,14 +152,14 @@ export default function DeepCleaningBoulderCityPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who hires deep cleaning in Boulder City"
-            heading="Established homeowners, relocating buyers, and Lake Mead property owners."
+            heading="Established property owners, relocating buyers, and Lake Mead vacation rental owners."
             sub="Boulder City deep cleaning demand is driven by an older housing stock and an owner-occupied community character distinct from every other city in Clark County."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
               {
-                title: 'Established homeowners in older properties',
-                body: 'Boulder City has many older, well-maintained homes with distinctive architectural character: original fixtures, built-in cabinetry, and surfaces that have been in place for decades. These homeowners take pride in their properties and schedule periodic deep cleans as part of that care.',
+                title: 'Established property owners in older buildings',
+                body: 'Boulder City has many older, well-maintained properties with distinctive architectural character: original fixtures, built-in cabinetry, and surfaces that have been in place for decades. These property owners take pride in their buildings and schedule periodic deep cleans as part of that care.',
               },
               {
                 title: 'Metro relocators settling in',
@@ -170,8 +170,8 @@ export default function DeepCleaningBoulderCityPage() {
                 body: "Boulder City's proximity to Lake Mead National Recreation Area supports a small vacation rental market. Periodic deep cleans between seasonal bookings keep properties at a consistent guest-ready standard.",
               },
               {
-                title: 'Long-term homeowners doing seasonal resets',
-                body: "Boulder City's largely owner-occupied community means many deep clean clients are long-term residents doing a seasonal reset, a thorough clean that addresses the buildup from months of desert dust and daily living.",
+                title: 'Long-term property owners doing seasonal resets',
+                body: "Boulder City's largely owner-occupied community means many deep clean clients are long-term property owners doing a seasonal reset, a thorough clean that addresses the buildup from months of desert dust and daily use.",
               },
             ].map((item) => (
               <li key={item.title} className="rounded-[14px] border border-border-subtle bg-brand-white p-6">
