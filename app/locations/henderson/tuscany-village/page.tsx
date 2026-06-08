@@ -149,7 +149,7 @@ export default function TuscanyVillagePage() {
               we coordinate entry with residents and the HOA or guard gate when scheduling service.
             </p>
             <p>
-              That residential, gated character shapes the cleaning we do here. Homeowners across
+              That residential, gated character shapes the cleaning we do here. Residents across
               Tuscany Village book deep cleaning and recurring service to keep their homes in top
               condition, with move-in and move-out cleans as residents transition in and out of the
               community. When common areas or nearby businesses need professional attention, our
@@ -189,7 +189,7 @@ export default function TuscanyVillagePage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Tuscany Village homeowners choose Final Touch."
+            heading="Why Tuscany Village residents choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[

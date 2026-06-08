@@ -149,7 +149,7 @@ export default function GreenValleyPage() {
             <p>
               That established, family-oriented character shapes the cleaning we do here. Settled
               households across Green Valley book deep cleaning and recurring service to keep mature
-              homes in top condition, with move-in and move-out cleans as families transition. The
+              homes in top condition, with move-in and move-out cleans as residents transition. The
               area&apos;s established commercial corridors, offices, and retail rely on routine
               commercial and janitorial programs to stay presentation-ready. Whether you own a
               long-time family home or run a business along one of Green Valley&apos;s commercial
@@ -187,7 +187,7 @@ export default function GreenValleyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Green Valley families and businesses choose Final Touch."
+            heading="Why Green Valley residents and businesses choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[

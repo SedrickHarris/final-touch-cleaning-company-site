@@ -183,7 +183,7 @@ export default function SouthernHighlandsPage() {
           <SectionHeader
             eyebrow="Our services"
             heading="Popular cleaning services in Southern Highlands."
-            sub="Deep cleaning leads because Southern Highlands homeowners maintain a higher standard than the typical Las Vegas valley neighborhood. Every service is available across the community."
+            sub="Deep cleaning leads because Southern Highlands properties are maintained to a higher standard: larger homes, premium finishes, and a golf community setting where presentation matters. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {SH_SERVICES.map((s) => (
@@ -205,7 +205,7 @@ export default function SouthernHighlandsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Southern Highlands families and businesses choose Final Touch."
+            heading="Why Southern Highlands property owners and businesses choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[

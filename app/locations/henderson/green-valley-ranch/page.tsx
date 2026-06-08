@@ -224,7 +224,7 @@ export default function GreenValleyRanchPage() {
               },
               {
                 heading: 'Residential and commercial',
-                body: 'Final Touch serves both homeowners and businesses in Green Valley Ranch. One team across every type of space -- from single-family homes to multi-tenant office buildings.',
+                body: 'Final Touch serves both residential properties and businesses in Green Valley Ranch. One team across every type of space -- from single-family homes to multi-tenant office buildings.',
               },
             ].map(({ heading, body }) => (
               <div

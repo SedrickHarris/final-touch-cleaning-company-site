@@ -202,7 +202,7 @@ export default function SummerlinPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Summerlin families and businesses choose Final Touch."
+            heading="Why Summerlin property owners and businesses choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -219,8 +219,8 @@ export default function SummerlinPage() {
                 body: 'Every clean is thorough. Spring Mountains dust, post-construction residue, and routine buildup all get addressed, not skipped over.',
               },
               {
-                heading: 'Residential and commercial',
-                body: 'Final Touch serves both homeowners and businesses in Summerlin. One team, one standard, across every type of space.',
+                heading: 'Homes and businesses',
+                body: 'Final Touch serves both residential properties and businesses in Summerlin. One team, one standard, across every type of space.',
               },
             ].map(({ heading, body }) => (
               <div

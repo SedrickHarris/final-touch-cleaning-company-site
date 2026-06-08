@@ -183,7 +183,7 @@ export default function SevenHillsPage() {
           <SectionHeader
             eyebrow="Our services"
             heading="Popular cleaning services in Seven Hills."
-            sub="Deep cleaning leads because Seven Hills homeowners prioritize thorough periodic resets that match the standard of their homes. Every service is available across the community."
+            sub="Deep cleaning leads because Seven Hills properties are maintained to a higher standard -- larger homes, elevated finishes, and long-term owners who expect thorough periodic resets. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {SEVEN_HILLS_SERVICES.map((s) => (
@@ -205,7 +205,7 @@ export default function SevenHillsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Seven Hills homeowners choose Final Touch."
+            heading="Why Seven Hills property owners choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[

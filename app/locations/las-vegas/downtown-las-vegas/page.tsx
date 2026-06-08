@@ -160,7 +160,7 @@ export default function DowntownLasVegasPage() {
             {[
               {
                 heading: 'A dense commercial and office core',
-                body: "Downtown Las Vegas is the city's original urban center, anchored by government offices, law firms, financial services, and professional services concentrated in multi-story buildings near the courthouse and civic center. The Fremont Street corridor adds hospitality, retail, and entertainment density. Unlike every other area in this batch, the primary cleaning demand here comes from businesses and commercial tenants rather than residential homeowners.",
+                body: "Downtown Las Vegas is the city's original urban center, anchored by government offices, law firms, financial services, and professional services concentrated in multi-story buildings near the courthouse and civic center. The Fremont Street corridor adds hospitality, retail, and entertainment density. Unlike the suburban and master-planned neighborhoods in this batch, the primary cleaning demand here comes from businesses, commercial tenants, and office occupants rather than residential properties.",
               },
               {
                 heading: 'The Arts District and renovation activity',

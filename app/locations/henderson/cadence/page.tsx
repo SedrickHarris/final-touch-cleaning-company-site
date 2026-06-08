@@ -132,7 +132,7 @@ export default function CadencePage() {
             Final Touch Cleaning Company serves Cadence, Henderson as part of its{' '}
             {SITE.serviceArea.county} service area. {SITE.owners} own and run the business. Their
             team provides post-construction cleanup, move-in cleaning, and deep cleaning for
-            homeowners across Cadence&apos;s completed and active phases in northeast Henderson. Call{' '}
+            properties across Cadence&apos;s completed and active phases in northeast Henderson. Call{' '}
             <a href={SITE.phone.href} className="text-brand-blue font-semibold hover:underline">
               {SITE.phone.display}
             </a>{' '}
@@ -182,7 +182,7 @@ export default function CadencePage() {
           <SectionHeader
             eyebrow="Our services"
             heading="Popular cleaning services in Cadence."
-            sub="Post-construction cleanup and move-in cleaning lead because that is what Cadence homeowners need most. Every service is available across the full community."
+            sub="Post-construction cleanup and move-in cleaning lead because that is what Cadence properties need most -- new builds and recently completed homes require the detail work that builder cleans leave unfinished. Every service is available across the full community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {CADENCE_SERVICES.map((s) => (
@@ -204,7 +204,7 @@ export default function CadencePage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Why Final Touch"
-            heading="Why Cadence homeowners choose Final Touch."
+            heading="Why Cadence property owners choose Final Touch."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
