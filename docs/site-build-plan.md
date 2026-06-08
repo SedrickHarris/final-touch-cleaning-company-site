@@ -346,11 +346,11 @@ These pages capture contractors and new homeowners searching by builder name. No
 | Shea Homes | `/builders/shea-homes-post-construction-cleaning` |
 | Taylor Morrison at Ascension | `/builders/taylor-morrison-ascension-post-construction-cleaning` |
 
-### Industry-Specific Commercial Pages (15 pages)
+### Industry-Specific Commercial Pages (18 pages)
 
 Pattern: `/industries/[industry]-cleaning/[city]`
 
-Commercial decision-makers search by industry, not by the word "commercial." Targeting 5 industries across 3 cities.
+Commercial decision-makers search by industry, not by the word "commercial." Targeting 6 industries across 3 cities.
 
 | Industry | Las Vegas | Henderson | N. Las Vegas |
 |----------|-----------|-----------|--------------|
@@ -359,6 +359,7 @@ Commercial decision-makers search by industry, not by the word "commercial." Tar
 | Restaurants | `/industries/restaurant-cleaning/las-vegas` | `/industries/restaurant-cleaning/henderson` | `/industries/restaurant-cleaning/north-las-vegas` |
 | Retail Stores | `/industries/retail-store-cleaning/las-vegas` | `/industries/retail-store-cleaning/henderson` | `/industries/retail-store-cleaning/north-las-vegas` |
 | Property Management | `/industries/property-management-cleaning/las-vegas` | `/industries/property-management-cleaning/henderson` | `/industries/property-management-cleaning/north-las-vegas` |
+| Chiropractic & PT | `/industries/chiropractic-cleaning/las-vegas` | `/industries/chiropractic-cleaning/henderson` | `/industries/chiropractic-cleaning/north-las-vegas` |
 
 ### Seasonal Pages (7 pages)
 

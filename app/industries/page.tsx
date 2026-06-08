@@ -73,6 +73,17 @@ const industries = [
       { city: 'North Las Vegas', href: '/industries/property-management-cleaning/north-las-vegas' },
     ],
   },
+  {
+    slug: 'chiropractic-cleaning',
+    name: 'Chiropractic and Physical Therapy Cleaning',
+    description:
+      'Scheduled cleaning for chiropractic offices and physical therapy clinics across Clark County. Treatment tables, therapy equipment, waiting rooms, and patient-facing areas cleaned before open or between sessions.',
+    cities: [
+      { city: 'Las Vegas',       href: '/industries/chiropractic-cleaning/las-vegas' },
+      { city: 'Henderson',       href: '/industries/chiropractic-cleaning/henderson' },
+      { city: 'North Las Vegas', href: '/industries/chiropractic-cleaning/north-las-vegas' },
+    ],
+  },
 ];
 
 const whyItems = [
@@ -149,7 +160,7 @@ const processSteps = [
 const faq = [
   {
     q: 'What industries does Final Touch Cleaning Company serve?',
-    a: 'Final Touch serves five commercial industries across Clark County, Nevada: medical and dental offices, law firms, restaurants (front-of-house only), retail stores, and property-managed residential and commercial buildings. Each industry has its own scope, scheduling requirements, and access standards. Select your industry above for city-specific details, or call (702) 444-5077.',
+    a: 'Final Touch serves six commercial industries across the Las Vegas Valley: medical and dental offices, law firms, restaurants (front-of-house only), retail stores, property-managed residential and commercial buildings, and chiropractic and physical therapy offices. Each industry has its own scope, scheduling requirements, and access standards. Select your industry above for city-specific details, or call (702) 444-5077.',
   },
   {
     q: 'What is the difference between general commercial cleaning and industry-specific cleaning?',
@@ -270,7 +281,7 @@ export default function IndustriesHubPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Final Touch Cleaning Company provides commercial cleaning across five industries in{' '}
+            Final Touch Cleaning Company provides commercial cleaning across six industries in{' '}
             {SITE.serviceArea.county}, Nevada:{' '}
             <Link
               href="/industries/medical-office-cleaning/las-vegas"
@@ -299,12 +310,19 @@ export default function IndustriesHubPage() {
             >
               retail stores
             </Link>
-            , and{' '}
+            ,{' '}
             <Link
               href="/industries/property-management-cleaning/las-vegas"
               className="text-brand-blue font-semibold hover:underline"
             >
               property-managed buildings
+            </Link>
+            , and{' '}
+            <Link
+              href="/industries/chiropractic-cleaning/las-vegas"
+              className="text-brand-blue font-semibold hover:underline"
+            >
+              chiropractic and physical therapy offices
             </Link>
             . Commercial decision-makers search for cleaning by industry, not by the word
             commercial. Each vertical has its own scope, scheduling requirements, and access

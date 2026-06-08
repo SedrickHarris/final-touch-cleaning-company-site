@@ -61,8 +61,8 @@ const faq = [
     a: 'Final Touch offers seven services in Henderson: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Commercial and post-construction work is the primary focus, with move-in and move-out cleaning available for property managers, landlords, and renters.',
   },
   {
-    q: "Can Final Touch clean homes in Henderson's master-planned communities?",
-    a: "Yes. Final Touch cleans homes throughout Henderson's master-planned communities, including established neighborhoods and newer developments. Whether the trigger is a periodic deep clean, a new-home move-in, or a rental turnover, the team brings the same standard regardless of the specific community.",
+    q: "Does Final Touch serve Henderson's master-planned communities?",
+    a: "Yes. Final Touch serves properties throughout Henderson's master-planned communities, including established neighborhoods and newer developments. Property managers, landlords, and new-home buyers in communities like Anthem, Cadence, and Inspirada book move-in cleaning, unit turn cleaning, and deep cleaning through Final Touch.",
   },
   {
     q: 'Does Final Touch provide move-in cleaning for new Henderson homes?',
