@@ -44,7 +44,7 @@ export default function Footer() {
               <div>
                 <a
                   href={SITE.email.href}
-                  className="text-white/90 hover:underline break-all"
+                  className="text-white/90 hover:underline whitespace-nowrap"
                 >
                   {SITE.email.display}
                 </a>
