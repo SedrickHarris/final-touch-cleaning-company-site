@@ -45,7 +45,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve commercial buildings across all of North Las Vegas?',
-    a: `Yes. Final Touch serves commercial buildings and industrial facilities across North Las Vegas as part of its ${SITE.serviceArea.county} service area. Call ${SITE.phone.display} to discuss your building or facility.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving commercial buildings and industrial facilities across North Las Vegas as part of its ${SITE.serviceArea.county} service area. Call ${SITE.phone.display} to discuss your building or facility.`,
   },
 ];
 
@@ -117,7 +117,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
       <HeroSection
         eyebrow="Janitorial Services · North Las Vegas, NV"
         heading="Janitorial Services in North Las Vegas, NV"
-        sub={`North Las Vegas's large industrial and logistics corridor creates janitorial demand that is distinct from any other city in Clark County. Final Touch provides recurring janitorial programs for industrial facilities, commercial buildings, and businesses across North Las Vegas and ${SITE.serviceArea.county}.`}
+        sub={`North Las Vegas's large industrial and logistics corridor creates janitorial demand that is distinct from any other city in the Las Vegas Valley. Final Touch provides recurring janitorial programs for industrial facilities, commercial buildings, and businesses across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -150,7 +150,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
           <SectionHeader
             eyebrow="Who hires janitorial services in North Las Vegas"
             heading="Warehouse operators, industrial complex managers, and commercial building owners."
-            sub="NLV's janitorial market is the most industrially focused in Clark County, a profile unique to this city."
+            sub="NLV's janitorial market is the most industrially focused in the Las Vegas Valley, a profile unique to this city."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -252,7 +252,7 @@ export default function JanitorialServicesNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

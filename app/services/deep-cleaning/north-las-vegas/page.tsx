@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Deep Cleaning in North Las Vegas, NV',
+  title: 'Commercial Deep Cleaning in North Las Vegas, NV',
   description:
-    'Deep cleaning service in North Las Vegas, NV. Final Touch serves rental properties, new builds, and established neighborhoods. Call (702) 444-5077.',
+    'Commercial deep cleaning for rental properties in North Las Vegas, NV. Serving property managers, commercial operators, and landlords. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/deep-cleaning/north-las-vegas`,
   },
   openGraph: {
-    title: 'Deep Cleaning in North Las Vegas, NV | Final Touch',
+    title: 'Commercial Deep Cleaning in North Las Vegas, NV | Final Touch',
     description:
-      'Deep cleaning service in North Las Vegas, NV. Final Touch serves rental properties, new builds, and established neighborhoods. Call (702) 444-5077.',
+      'Commercial deep cleaning for rental properties in North Las Vegas, NV. Serving property managers, commercial operators, and landlords. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning/north-las-vegas`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Deep Cleaning',
-  serviceType: 'Deep Cleaning',
+  name: 'Commercial Deep Cleaning',
+  serviceType: 'Commercial Deep Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -120,7 +120,7 @@ export default function DeepCleaningNorthLasVegasPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Deep Cleaning · North Las Vegas, NV"
-        heading="Deep Cleaning in North Las Vegas, NV"
+        heading="Commercial Deep Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas is one of the most actively growing residential areas in the Las Vegas Valley, with a large rental population and ongoing construction activity. Final Touch provides thorough deep cleaning for rental properties, new builds, and established neighborhoods across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -256,7 +256,7 @@ export default function DeepCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

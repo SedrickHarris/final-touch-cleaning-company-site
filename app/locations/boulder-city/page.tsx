@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Boulder City, NV',
+  title: 'Commercial Cleaning Services in Boulder City, NV',
   description:
-    'Commercial, renovation, and post-construction cleaning in Boulder City, NV. Historic downtown storefronts, small businesses, and rental property cleaning across Clark County. Licensed and insured. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Boulder City, NV. Office, janitorial, post-construction, and retail. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/boulder-city' },
   openGraph: {
-    title: 'Cleaning Services in Boulder City, NV | Final Touch Cleaning Company',
+    title: 'Family-Owned Commercial Cleaning in Boulder City, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Boulder City and Clark County, NV. Deep cleaning, move-in, move-out, commercial, and more. Free quotes.',
+      'Family-owned commercial cleaning in Boulder City, NV. Office, janitorial, post-construction, and retail. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/boulder-city`,
   },
@@ -71,6 +71,10 @@ const faq = [
     q: 'Is Final Touch a local cleaning company or does it serve Boulder City from Las Vegas?',
     a: `Final Touch is based in Southern Nevada and serves all of ${SITE.serviceArea.county}, including Boulder City. ${SITE.owners} own and operate it. The team travels to Boulder City as part of its regular service area, not as an exception.`,
   },
+  {
+    q: 'Does Final Touch clean small businesses and commercial spaces in Boulder City?',
+    a: `Yes. Final Touch provides commercial cleaning for small businesses, storefronts, and office spaces in Boulder City. Both one-time and recurring programs are available, and each job is scoped through a free walkthrough before quoting. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to discuss your space.`,
+  },
 ];
 
 const localBusinessJsonLd = {
@@ -82,6 +86,8 @@ const localBusinessJsonLd = {
   email: SITE.email.display,
   image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  description:
+    'Family-owned commercial cleaning company serving Boulder City, NV. Post-construction, retail, office, and property management cleaning.',
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },
@@ -124,8 +130,8 @@ export default function BoulderCityPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
-        heading="Cleaning Services in Boulder City, NV"
-        sub={`Final Touch provides commercial, renovation, and post-construction cleaning throughout Boulder City, Nevada's only city without gambling and one of the valley's most distinct communities. From historic downtown storefronts and small-business offices to post-construction cleanup on renovated older properties and move-in/move-out cleans for landlords, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in Clark County.`}
+        heading="Commercial Cleaning Services in Boulder City, NV"
+        sub={`Final Touch provides commercial, renovation, and post-construction cleaning throughout Boulder City, Nevada's only city without gambling and one of the valley's most distinct communities. From historic downtown storefronts and small-business offices to post-construction cleanup on renovated older properties and move-in/move-out cleans for landlords, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -275,7 +281,7 @@ export default function BoulderCityPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Services in Boulder City"
-            heading="Cleaning services for Boulder City homes and businesses."
+            heading="Commercial cleaning services for Boulder City businesses and property owners."
             sub="All seven services available across the city. Cards ordered by local demand."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

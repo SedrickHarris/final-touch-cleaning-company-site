@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Downtown Las Vegas Cleaning Services | Las Vegas, NV',
+  title: 'Commercial Cleaning in Downtown Las Vegas, NV',
   description:
-    'Family-owned commercial and office cleaning in Downtown Las Vegas, NV. Janitorial, retail, move-in, and more for businesses and residents. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Downtown Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/downtown-las-vegas' },
   openGraph: {
-    title: 'Downtown Las Vegas Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Downtown Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Scott & Nicole Maland serve Downtown Las Vegas, NV. Commercial, janitorial, retail, and residential cleaning for the urban core. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Downtown Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/downtown-las-vegas`,
   },
@@ -69,7 +69,7 @@ const faq = [
   },
   {
     q: 'Do you clean residential lofts and apartments in Downtown Las Vegas?',
-    a: `Yes. Downtown Las Vegas includes a growing residential segment -- converted lofts, apartment communities, and mixed-use buildings with residential units above street-level commercial. Final Touch provides move-in cleaning, move-out cleaning, and deep cleaning for residents in these spaces. Call ${SITE.phone.display} to discuss your unit or building.`,
+    a: `Yes. Property managers, landlords, and residents in Downtown Las Vegas rely on Final Touch for move-in cleaning, move-out cleaning, and deep cleaning across the area's growing residential segment -- converted lofts, apartment communities, and mixed-use buildings with residential units above street-level commercial. Call ${SITE.phone.display} to discuss your unit or building.`,
   },
   {
     q: 'Can Final Touch handle post-construction cleanup for a renovation or adaptive reuse project downtown?',
@@ -92,7 +92,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Downtown Las Vegas, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Downtown Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -119,7 +119,7 @@ export default function DowntownLasVegasPage() {
       {/* 1. Hero over a local Downtown Las Vegas photo. */}
       <HeroSection
         eyebrow="Urban Commercial and Mixed-Use District"
-        heading="Downtown Las Vegas Cleaning Services | Las Vegas, NV"
+        heading="Commercial Cleaning Services in Downtown Las Vegas, NV"
         sub={`Final Touch serves offices, retail spaces, and residential properties throughout Downtown Las Vegas. Commercial cleaning, janitorial programs, and retail space cleaning for the urban core. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -188,7 +188,7 @@ export default function DowntownLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Downtown Las Vegas."
+            heading="Commercial cleaning services in Downtown Las Vegas."
             sub="Commercial and janitorial services lead because most Downtown Las Vegas customers are businesses, not homeowners. Every service is available across the area."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -252,7 +252,7 @@ export default function DowntownLasVegasPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Downtown Las Vegas and the greater Las Vegas area."
-            sub="Final Touch serves Downtown Las Vegas as part of a broader Las Vegas and Clark County service area."
+            sub="Final Touch serves Downtown Las Vegas as part of a broader Las Vegas and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

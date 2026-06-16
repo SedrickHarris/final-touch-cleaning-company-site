@@ -20,12 +20,12 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Company in Las Vegas, NV | Final Touch',
   description:
-    'Commercial and post-construction cleaning in Las Vegas and Clark County, NV. Office cleaning, janitorial, move-in/move-out, and retail. Licensed and insured. Call (702) 444-5077.',
+    'Family-owned commercial cleaning services in Las Vegas, NV. Office cleaning, janitorial, post-construction, move-in/move-out, and retail. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Commercial Cleaning Company in Las Vegas, NV | Final Touch Cleaning Company',
     description:
-      'Scott & Nicole Maland own and run Final Touch, a commercial cleaning company serving offices, retailers, contractors, and property managers across Clark County, NV. Free quotes.',
+      'Family-owned commercial cleaning in Las Vegas, NV. Scott & Nicole Maland serve offices, retailers, and property managers. Free quotes. Call (702) 444-5077.',
     type: 'website',
     url: SITE.url,
   },
@@ -109,7 +109,7 @@ export default function HomePage() {
   const faq = [
     {
       q: 'Is Final Touch a commercial cleaning company?',
-      a: `Yes. Final Touch Cleaning Company is a commercial cleaning company serving offices, retail spaces, post-construction sites, and commercial properties across Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County, Nevada. The company is family-owned and operated by Scott and Nicole Maland. Call ${SITE.phone.display} to request a free walkthrough.`,
+      a: `Yes. Final Touch Cleaning Company is a family-owned commercial cleaning company serving offices, retail spaces, post-construction sites, and commercial properties across Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County, Nevada. The company is owned and operated by Scott and Nicole Maland. Call ${SITE.phone.display} to request a free walkthrough.`,
     },
     {
       q: 'What commercial cleaning services does Final Touch offer?',
@@ -168,7 +168,7 @@ export default function HomePage() {
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <HeroSection
         eyebrow={`Commercial cleaning · ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`}
-        heading="Commercial Cleaning Company in Las Vegas and Clark County, NV."
+        heading="Commercial Cleaning Company in Las Vegas, NV."
         emphasis="Commercial Cleaning Company"
         sub={heroSub}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
@@ -209,7 +209,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Who we serve"
             heading="Built for commercial, post-construction, and property-management work."
-            sub="Final Touch serves offices, retail businesses, contractors, property managers, and landlords across Clark County, Nevada."
+            sub="Final Touch serves offices, retail businesses, contractors, property managers, and landlords across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {audiences.map((a) => (

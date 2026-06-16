@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Retail Space Cleaning in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Retail Space Cleaning in Las Vegas, NV | Final Touch' },
   description:
-    'Retail space cleaning for storefronts across Las Vegas & Clark County, NV. After-hours scheduling available. Licensed and insured. Call (702) 444-5077.',
+    'Retail space cleaning for storefronts across Las Vegas, Henderson, and the Las Vegas Valley. After-hours scheduling. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/retail-space-cleaning' },
   openGraph: {
-    title: 'Retail Space Cleaning in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Retail Space Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides retail space cleaning for storefronts and shopping center tenants across Las Vegas and Clark County, NV. After-hours and after-close scheduling available. Licensed and insured. Call (702) 444-5077.',
+      'Retail space cleaning in Las Vegas, Henderson, and the Las Vegas Valley. After-hours and after-close scheduling. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/retail-space-cleaning`,
   },
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: 'Are your retail cleaners licensed and insured in Nevada?',
-    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Shopping center landlords, property managers, and franchise operators who need to verify vendor credentials before adding us to a retail program can confirm our general licensing and insurance status. Every retail cleaning program is also backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
+    a: `Yes. Final Touch Cleaning Company is a family-owned commercial cleaning company licensed and insured in Nevada. Shopping center landlords, property managers, and franchise operators who need to verify vendor credentials before adding us to a retail program can confirm our general licensing and insurance status. Every retail cleaning program is also backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -66,7 +66,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Retail Space Cleaning',
-  serviceType: 'Retail Cleaning',
+  serviceType: 'Commercial Retail Space Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -144,7 +144,7 @@ export default function RetailSpaceCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Retail operations across Clark County."
+            heading="Retail operations across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -301,7 +301,7 @@ export default function RetailSpaceCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Retail cleaning across Clark County."
+            heading="Retail cleaning across the Las Vegas Valley."
             sub={`We serve retail cleaning clients throughout ${SITE.serviceArea.county}, Nevada, including major retail corridors in Las Vegas and Henderson.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

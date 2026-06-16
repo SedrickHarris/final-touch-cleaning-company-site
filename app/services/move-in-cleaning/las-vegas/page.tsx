@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning in Las Vegas, NV',
+  title: 'Commercial Move-In Cleaning in Las Vegas, NV',
   description:
-    'Move-in cleaning in Las Vegas, NV by Final Touch. New construction, rental turnover, detail surfaces. Start fresh. Call (702) 444-5077.',
+    'Commercial move-in cleaning for rental turnovers, new construction, and managed units in Las Vegas, NV. Detail surfaces covered. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-in-cleaning/las-vegas`,
   },
   openGraph: {
-    title: 'Move-In Cleaning in Las Vegas, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Move-in cleaning in Las Vegas, NV by Final Touch. New construction, rental turnover, detail surfaces. Start fresh. Call (702) 444-5077.',
+      'Commercial move-in cleaning for rental turnovers, new construction, and managed units in Las Vegas, NV. Detail surfaces covered. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning/las-vegas`,
   },
@@ -66,8 +66,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
-  serviceType: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
+  serviceType: 'Commercial Move-In Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -120,7 +120,7 @@ export default function MoveInCleaningLasVegasPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Las Vegas, NV"
-        heading="Move-In Cleaning in Las Vegas, NV"
+        heading="Commercial Move-In Cleaning in Las Vegas, NV"
         sub={`Las Vegas has an active new construction pipeline and a large rental market, both of which create demand for a professional clean before move-in day. Final Touch provides thorough move-in cleaning for new builds, resale homes, and rental units across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -264,7 +264,7 @@ export default function MoveInCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="More services in Las Vegas"
             heading="Other cleaning services available in Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

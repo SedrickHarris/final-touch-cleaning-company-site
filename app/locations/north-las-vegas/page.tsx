@@ -11,14 +11,14 @@ import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in North Las Vegas, NV',
+  title: 'Commercial Cleaning Services in North Las Vegas, NV',
   description:
-    'Commercial, post-construction, and property management cleaning in North Las Vegas, NV. Janitorial, office cleaning, and move-in/move-out for businesses and landlords across Clark County. Licensed and insured. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in North Las Vegas, NV. Office, janitorial, post-construction, and property management. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/north-las-vegas' },
   openGraph: {
-    title: 'Cleaning Services in North Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Family-Owned Commercial Cleaning in North Las Vegas, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve North Las Vegas and Clark County, NV. Post-construction, commercial, move-out, deep cleaning, and more. Free quotes.',
+      'Family-owned commercial cleaning in North Las Vegas, NV. Office, janitorial, post-construction, and property management. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/north-las-vegas`,
   },
@@ -76,7 +76,11 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local North Las Vegas cleaning company?',
-    a: `Final Touch is a locally owned, family-run cleaning company based in Southern Nevada, serving North Las Vegas and all of ${SITE.serviceArea.county}. ${SITE.owners} own and operate it. It is not a franchise or a staffing platform.`,
+    a: `Final Touch is a locally owned, family-run commercial cleaning company based in Southern Nevada, serving North Las Vegas and all of ${SITE.serviceArea.county}. ${SITE.owners} own and operate it. It is not a franchise or a staffing platform.`,
+  },
+  {
+    q: 'Does Final Touch clean warehouses and commercial facilities in North Las Vegas?',
+    a: `Final Touch provides commercial cleaning for offices, janitorial programs, and post-construction cleanup throughout North Las Vegas. Warehouse common-area and facility office cleaning falls within scope. For specific commercial or warehouse facility questions, a free walkthrough — by phone or on-site — scopes the right program. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to discuss your facility.`,
   },
 ];
 
@@ -89,6 +93,8 @@ const localBusinessJsonLd = {
   email: SITE.email.display,
   image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  description:
+    'Family-owned commercial cleaning company serving North Las Vegas, NV. Office, janitorial, post-construction, and property management cleaning.',
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },
@@ -131,7 +137,7 @@ export default function NorthLasVegasPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
-        heading="Cleaning Services in North Las Vegas, NV"
+        heading="Commercial Cleaning Services in North Las Vegas, NV"
         sub={`Final Touch provides commercial and post-construction cleaning across North Las Vegas, one of the fastest-growing cities in the Las Vegas Valley. From post-construction detail work on new builds to commercial programs along the industrial corridors, ${SITE.owners} and the team serve North Las Vegas properties with the same standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -274,7 +280,7 @@ export default function NorthLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Services in North Las Vegas"
-            heading="Cleaning services for North Las Vegas homes and businesses."
+            heading="Commercial cleaning services for North Las Vegas businesses and property managers."
             sub="All seven services available across the city. Cards ordered by local demand."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Lake Las Vegas Cleaning Services | Henderson, NV',
+  title: 'Commercial Cleaning in Lake Las Vegas, Henderson, NV',
   description:
-    'Family-owned cleaning services in Lake Las Vegas, Henderson, NV. Deep cleaning, move-in, move-out, and more for resort-adjacent homes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Lake Las Vegas, Henderson, NV. Deep cleaning, move-in/move-out for resort homes. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/lake-las-vegas' },
   openGraph: {
-    title: 'Lake Las Vegas Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Lake Las Vegas, Henderson, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Lake Las Vegas and all of Henderson, NV. Deep cleaning, move-in, move-out for resort-adjacent homes. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Lake Las Vegas, Henderson, NV. Deep cleaning, move-in/move-out for resort homes. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/lake-las-vegas`,
   },
@@ -54,7 +54,7 @@ const LLV_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve Lake Las Vegas, Henderson, NV?',
-    a: `Yes. Final Touch serves Lake Las Vegas as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves residential properties throughout the Lake Las Vegas community, including lakefront homes, resort-adjacent residences, and properties within the gated sections of this Henderson enclave.`,
+    a: `Yes. Final Touch serves Lake Las Vegas as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves residential and commercial properties throughout the Lake Las Vegas community, including lakefront homes, resort-adjacent residences, and properties within the gated sections of this Henderson enclave.`,
   },
   {
     q: 'How does the lake environment at Lake Las Vegas affect cleaning needs?',
@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Lake Las Vegas?',
-    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout Lake Las Vegas. Call ${SITE.phone.display} to discuss the right service for your home.`,
+    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout Lake Las Vegas. Call ${SITE.phone.display} to discuss the right service for your home or business.`,
   },
   {
     q: 'Do you clean vacation homes and second homes at Lake Las Vegas?',
@@ -70,7 +70,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -89,7 +89,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Lake Las Vegas, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Lake Las Vegas, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -116,7 +116,7 @@ export default function LakeLasVegasPage() {
       {/* 1. Hero over a local Lake Las Vegas photo. */}
       <HeroSection
         eyebrow="Resort-Adjacent Lakefront Community"
-        heading="Lake Las Vegas Cleaning Services | Henderson, NV"
+        heading="Commercial Cleaning Services in Lake Las Vegas, Henderson, NV"
         sub={`Final Touch serves homes throughout Lake Las Vegas, Henderson. Deep cleaning, move-in, and move-out cleaning for resort-adjacent and lakefront residences in this distinct Henderson enclave. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -184,7 +184,7 @@ export default function LakeLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Lake Las Vegas."
+            heading="Commercial cleaning services in Lake Las Vegas."
             sub="Deep cleaning leads because the lake environment and resort standard mean ongoing maintenance needs that go beyond what routine cleaning addresses. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -248,7 +248,7 @@ export default function LakeLasVegasPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Lake Las Vegas and the greater Henderson area."
-            sub="Final Touch serves Lake Las Vegas as part of a broader Henderson and Clark County service area."
+            sub="Final Touch serves Lake Las Vegas as part of a broader Henderson and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-Out Cleaning in North Las Vegas, NV',
+  title: 'Commercial Move-Out Cleaning in North Las Vegas, NV',
   description:
-    'Move-out cleaning in North Las Vegas, NV. High renter density, deposit-ready results. Final Touch serves apartments and rentals citywide. Call (702) 444-5077.',
+    'Commercial move-out cleaning for property managers and rental turnovers in North Las Vegas, NV. Serving apartments and rentals citywide. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-out-cleaning/north-las-vegas`,
   },
   openGraph: {
-    title: 'Move-Out Cleaning in North Las Vegas, NV | Final Touch',
+    title: 'Commercial Move-Out Cleaning in North Las Vegas, NV | Final Touch',
     description:
-      'Move-out cleaning in North Las Vegas, NV. High renter density, deposit-ready results. Final Touch serves apartments and rentals citywide. Call (702) 444-5077.',
+      'Commercial move-out cleaning for property managers and rental turnovers in North Las Vegas, NV. Serving apartments and rentals citywide. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-out-cleaning/north-las-vegas`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-Out Cleaning',
-  serviceType: 'Move-Out Cleaning',
+  name: 'Commercial Move-Out Cleaning',
+  serviceType: 'Commercial Move-Out Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -120,7 +120,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-Out Cleaning · North Las Vegas, NV"
-        heading="Move-Out Cleaning in North Las Vegas, NV"
+        heading="Commercial Move-Out Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas has one of the highest renter-density profiles in the Las Vegas Valley. Final Touch provides professional move-out cleaning for renters, landlords, and property managers across North Las Vegas and ${SITE.serviceArea.county}, cleaning to the standard that supports deposit recovery.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -259,7 +259,7 @@ export default function MoveOutCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

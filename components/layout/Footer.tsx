@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-black text-brand-white mt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-3">
               <Image
@@ -73,6 +73,21 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               {FOOTER_NAV.company.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-white hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-display text-base font-semibold text-white tracking-tight">
+              Specialty
+            </h2>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              {FOOTER_NAV.specialty.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="hover:text-white hover:underline">
                     {item.label}

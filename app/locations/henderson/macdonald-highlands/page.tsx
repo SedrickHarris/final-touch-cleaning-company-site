@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'MacDonald Highlands Cleaning Services | Henderson, NV',
+  title: 'Commercial Cleaning in MacDonald Highlands, NV',
   description:
-    'Family-owned cleaning services in MacDonald Highlands, Henderson, NV. Deep cleaning and move-in for luxury custom homes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in MacDonald Highlands, NV. Deep cleaning and move-in for luxury custom homes. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/macdonald-highlands' },
   openGraph: {
-    title: 'MacDonald Highlands Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in MacDonald Highlands, NV | Final Touch Cleaning',
     description:
-      'Scott & Nicole Maland serve MacDonald Highlands and all of Henderson, NV. Detail-focused deep cleaning and move-in for luxury hillside homes. Free quotes.',
+      'Family-owned commercial cleaning in MacDonald Highlands, NV. Deep cleaning and move-in for luxury custom homes. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/macdonald-highlands`,
   },
@@ -52,7 +52,7 @@ const MH_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve MacDonald Highlands, Henderson, NV?',
-    a: `Yes. Final Touch serves MacDonald Highlands as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves homes throughout MacDonald Highlands, including custom and semi-custom residences in this guard-gated luxury community in Henderson's elevated eastern terrain.`,
+    a: `Yes. Final Touch serves MacDonald Highlands as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves homes and commercial properties throughout MacDonald Highlands, including custom and semi-custom residences in this guard-gated luxury community in Henderson's elevated eastern terrain.`,
   },
   {
     q: 'How does Final Touch approach cleaning in a luxury custom home like those in MacDonald Highlands?',
@@ -60,7 +60,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in MacDonald Highlands?',
-    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout MacDonald Highlands. Call ${SITE.phone.display} to discuss the right service for your home.`,
+    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout MacDonald Highlands. Call ${SITE.phone.display} to discuss the right service for your home or business.`,
   },
   {
     q: 'Can Final Touch handle post-construction cleanup for a custom build in MacDonald Highlands?',
@@ -68,7 +68,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -87,7 +87,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving MacDonald Highlands, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving MacDonald Highlands, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -114,7 +114,7 @@ export default function MacdonaldHighlandsPage() {
       {/* 1. Hero over a local MacDonald Highlands photo. */}
       <HeroSection
         eyebrow="Guard-Gated Luxury Enclave"
-        heading="MacDonald Highlands Cleaning Services | Henderson, NV"
+        heading="Commercial Cleaning Services in MacDonald Highlands, Henderson, NV"
         sub={`Final Touch serves custom and semi-custom homes throughout MacDonald Highlands, Henderson. Detail-focused deep cleaning and move-in cleaning for luxury residences in Henderson's premier hillside enclave. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -182,7 +182,7 @@ export default function MacdonaldHighlandsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in MacDonald Highlands."
+            heading="Commercial cleaning services in MacDonald Highlands."
             sub="Deep cleaning leads because MacDonald Highlands properties hold the highest detail standard in Henderson -- custom homes, luxury finishes, and owners who expect cleaning to match the quality of the space. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -246,7 +246,7 @@ export default function MacdonaldHighlandsPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="MacDonald Highlands and the greater Henderson area."
-            sub="Final Touch serves MacDonald Highlands as part of a broader Henderson and Clark County service area."
+            sub="Final Touch serves MacDonald Highlands as part of a broader Henderson and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

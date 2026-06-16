@@ -19,14 +19,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Aliante Cleaning | North Las Vegas, NV',
+  title: 'Commercial Cleaning in Aliante, North Las Vegas, NV',
   description:
-    'Family-owned home and commercial cleaning in Aliante, North Las Vegas, NV. Deep, move-in, and janitorial cleaning. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Aliante, North Las Vegas, NV. Move-in/move-out, deep cleaning, and janitorial. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/north-las-vegas/aliante' },
   openGraph: {
-    title: 'Aliante Cleaning Services | North Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Aliante, North Las Vegas, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Aliante and all of North Las Vegas. Home, deep, move-in, commercial, and janitorial cleaning. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Aliante, North Las Vegas, NV. Move-in/move-out, deep cleaning, and janitorial. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/north-las-vegas/aliante`,
   },
@@ -54,7 +54,7 @@ const faq = [
   },
   {
     q: 'Do you provide move-in and deep cleaning for homes in Aliante?',
-    a: 'Yes. Aliante is a master-planned residential community, and we regularly provide move-in cleaning and deep cleaning for its single-family homes and newer builds. We clean kitchens, bathrooms, floors, baseboards, and fixtures top to bottom so a home is ready before you move in or refreshed between deep cleans. Ask about recurring service to keep it that way.',
+    a: 'Yes. Aliante is a master-planned community, and we regularly provide move-in cleaning and deep cleaning for property managers, landlords, and homeowners across its single-family homes and newer builds. We clean kitchens, bathrooms, floors, baseboards, and fixtures top to bottom so a home is ready before a new resident moves in or refreshed between deep cleans. Ask about recurring service to keep it that way.',
   },
   {
     q: 'Can you clean our Aliante business after hours?',
@@ -81,7 +81,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Aliante, North Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Aliante, North Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -107,7 +107,7 @@ export default function AlianteNorthLasVegasPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Northern North Las Vegas"
-        heading="Cleaning Services in Aliante, North Las Vegas, NV"
+        heading="Commercial Cleaning Services in Aliante, North Las Vegas, NV"
         sub="Family-owned home, deep, and commercial cleaning for Aliante and North Las Vegas. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -166,7 +166,7 @@ export default function AlianteNorthLasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Aliante."
+            heading="Commercial cleaning services in Aliante."
             sub="Every service is available to Aliante homes and businesses. Reordered by what Aliante customers request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -305,7 +305,7 @@ export default function AlianteNorthLasVegasPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Aliante home or business?"
-        sub="Request a free quote or call our team today. We serve Aliante and all of Clark County."
+        sub="Request a free quote or call our team today. We serve Aliante and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

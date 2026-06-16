@@ -45,7 +45,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve commercial buildings across all of Las Vegas?',
-    a: `Yes. Final Touch serves commercial buildings across Las Vegas and all of ${SITE.serviceArea.county}. The same team and finishing standard applies regardless of which part of the city your building is in. Call ${SITE.phone.display} to discuss your building.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving commercial buildings across Las Vegas and all of ${SITE.serviceArea.county}. The same team and standard applies regardless of which part of the city your building is in. Call ${SITE.phone.display} to discuss your building.`,
   },
 ];
 
@@ -268,7 +268,7 @@ export default function JanitorialServicesLasVegasPage() {
           <SectionHeader
             eyebrow="More services in Las Vegas"
             heading="Other cleaning services available in Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

@@ -10,16 +10,16 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Restaurant Cleaning in North Las Vegas, NV | Final Touch',
+  title: { absolute: 'Restaurant Cleaning in North Las Vegas, NV | Final Touch' },
   description:
-    'Front-of-house cleaning for North Las Vegas restaurants: dining rooms, bar areas, restrooms, and offices. After-hours scheduling across Clark County. Call (702) 444-5077.',
+    'Front-of-house cleaning for North Las Vegas restaurants: dining rooms, bar areas, restrooms, and offices. After-hours scheduling. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries/restaurant-cleaning/north-las-vegas`,
   },
   openGraph: {
     title: 'Restaurant Cleaning in North Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Front-of-house cleaning for North Las Vegas restaurants: dining rooms, bar areas, restrooms, and offices. After-hours scheduling across Clark County. Call (702) 444-5077.',
+      'Front-of-house cleaning for North Las Vegas restaurants: dining rooms, bar areas, restrooms, and offices. After-hours scheduling. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/industries/restaurant-cleaning/north-las-vegas`,
   },
@@ -350,7 +350,7 @@ export default function RestaurantCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Restaurant cleaning across North Las Vegas and Clark County."
+            heading="Restaurant cleaning across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

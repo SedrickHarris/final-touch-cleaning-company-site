@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Spring Valley Cleaning | Las Vegas, NV',
+  title: 'Commercial Cleaning in Spring Valley, Las Vegas, NV',
   description:
-    'Family-owned commercial, office, and home cleaning in Spring Valley, Las Vegas, NV. Janitorial, retail, and deep cleaning. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Spring Valley, Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/spring-valley' },
   openGraph: {
-    title: 'Spring Valley Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Spring Valley, Las Vegas, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Spring Valley and the west Las Vegas Valley. Commercial, janitorial, retail, and home cleaning. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Spring Valley, Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/spring-valley`,
   },
@@ -45,7 +45,7 @@ const SPRING_VALLEY_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve Spring Valley in Las Vegas?',
-    a: `Yes, Final Touch Cleaning Company serves Spring Valley as part of our Las Vegas and Clark County service area. We are a family-owned, owner-led company run by Scott and Nicole Maland, cleaning both homes and businesses across the west side of the Las Vegas Valley. Request a free quote or call ${SITE.phone.display} to get started.`,
+    a: `Yes, Final Touch Cleaning Company serves Spring Valley as part of our Las Vegas and Las Vegas Valley service area. We are a family-owned, owner-led commercial cleaning company run by Scott and Nicole Maland, cleaning both homes and businesses across the west side of the Las Vegas Valley. Request a free quote or call ${SITE.phone.display} to get started.`,
   },
   {
     q: 'What cleaning services do you offer in Spring Valley?',
@@ -80,7 +80,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Spring Valley, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Spring Valley, Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -106,7 +106,7 @@ export default function SpringValleyPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="West Las Vegas Valley"
-        heading="Cleaning Services in Spring Valley, Las Vegas, NV"
+        heading="Commercial Cleaning Services in Spring Valley, Las Vegas, NV"
         sub="Family-owned commercial, janitorial, and home cleaning for the west Las Vegas Valley. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -164,7 +164,7 @@ export default function SpringValleyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Spring Valley."
+            heading="Commercial cleaning services in Spring Valley."
             sub="Every service is available to Spring Valley homes and businesses. Reordered by what Spring Valley customers request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -303,7 +303,7 @@ export default function SpringValleyPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Spring Valley home or business?"
-        sub="Request a free quote or call our team today. We serve Spring Valley and all of Clark County."
+        sub="Request a free quote or call our team today. We serve Spring Valley and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

@@ -10,11 +10,18 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Property Management Cleaning in Henderson, NV | Final Touch',
+  title: { absolute: 'Property Management Cleaning in Henderson, NV | Final Touch' },
   description:
-    'Final Touch provides unit turn cleaning, HOA common area programs, and portfolio cleaning for property managers in Henderson and Clark County, NV. Call (702) 444-5077.',
+    'Final Touch provides unit turn cleaning, HOA common areas, and portfolio cleaning for property managers in Henderson and the Las Vegas Valley. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries/property-management-cleaning/henderson`,
+  },
+  openGraph: {
+    title: 'Property Management Cleaning in Henderson, NV | Final Touch Cleaning',
+    description:
+      'Final Touch provides unit turn cleaning, HOA common areas, and portfolio cleaning for property managers in Henderson and the Las Vegas Valley. Call (702) 444-5077.',
+    type: 'website',
+    url: `${SITE.url}/industries/property-management-cleaning/henderson`,
   },
 };
 
@@ -384,7 +391,7 @@ export default function PropertyManagementCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Property management cleaning across Henderson and Clark County."
+            heading="Property management cleaning across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

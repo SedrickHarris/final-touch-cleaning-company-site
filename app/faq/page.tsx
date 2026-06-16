@@ -9,12 +9,12 @@ import { ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: { absolute: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV' },
   description:
-    'Answers about Final Touch Cleaning Company, a commercial cleaning company in Las Vegas & Clark County, NV: services, scheduling & quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning company in Las Vegas, NV — answers about services, scheduling & quotes. Final Touch Cleaning Company. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV',
     description:
-      'Answers to questions about Final Touch Cleaning Company, a commercial cleaning company serving Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County, NV. Services, scheduling, quotes, and more. Call (702) 444-5077.',
+      'Family-owned commercial cleaning company in Las Vegas, NV. Answers about services, scheduling, and quotes — Final Touch Cleaning Company. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/faq`,
   },
@@ -28,7 +28,7 @@ const companyIdentityFaq = [
   },
   {
     q: 'Is Final Touch a franchise or locally owned?',
-    a: 'Final Touch is a locally owned, family-operated business, not a franchise. Scott and Nicole Maland run the company directly. Every account is owner-led, not passed to a subcontractor rotation or managed through a staffing platform.',
+    a: 'Final Touch is a family-owned commercial cleaning company, not a franchise. Scott and Nicole Maland run the company directly. Every account is owner-led, not passed to a subcontractor rotation or managed through a staffing platform.',
   },
   {
     q: 'What is Final Touch Cleaning Company?',
@@ -44,7 +44,7 @@ const companyIdentityFaq = [
 const companyFaq = [
   {
     q: 'Who owns Final Touch Cleaning Company?',
-    a: `${SITE.owners} own and run Final Touch. It is a family-run cleaning company based in Southern Nevada, not a franchise.`,
+    a: `${SITE.owners} own and run Final Touch. It is a family-owned commercial cleaning company based in Southern Nevada, not a franchise.`,
   },
   {
     q: 'What does family-owned mean for Final Touch?',
@@ -128,7 +128,7 @@ const cleaningServiceFaq = [
   },
   {
     q: 'Does Final Touch clean homes and businesses?',
-    a: 'Yes, both. Homes, offices, retail, post-construction sites, and ongoing janitorial routes are all part of our seven core services.',
+    a: 'Yes, both. Offices and commercial spaces are the primary focus, with homes, retail, post-construction sites, and ongoing janitorial routes all part of our seven core services.',
   },
   {
     q: 'Do you clean rental properties, offices, retail spaces, and construction sites?',

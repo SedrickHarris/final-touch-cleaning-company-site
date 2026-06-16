@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve small businesses in Las Vegas?',
-    a: `Yes. Final Touch serves offices and commercial spaces of all sizes across Las Vegas and ${SITE.serviceArea.county}, from single-suite operations to multi-tenant floors and standalone commercial buildings. Call ${SITE.phone.display} to discuss your space.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving offices and commercial spaces of all sizes across Las Vegas and ${SITE.serviceArea.county}, from single-suite operations to multi-tenant floors and standalone commercial buildings. Call ${SITE.phone.display} to discuss your space.`,
   },
   {
     q: 'Can Final Touch clean healthcare or medical offices in Las Vegas?',
@@ -268,7 +268,7 @@ export default function CommercialOfficeCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="More services in Las Vegas"
             heading="Other cleaning services available in Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

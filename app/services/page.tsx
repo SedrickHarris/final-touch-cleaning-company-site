@@ -19,12 +19,12 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: { absolute: 'Commercial Cleaning Services in Las Vegas, NV | Final Touch' },
   description:
-    'Final Touch offers seven commercial cleaning services in Las Vegas, Henderson & Clark County, NV: office, janitorial & post-construction. Call (702) 444-5077.',
+    'Final Touch offers seven commercial cleaning services in Las Vegas, Henderson & the Las Vegas Valley: office, janitorial & post-construction. (702) 444-5077.',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Commercial Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
     description:
-      'Final Touch offers seven commercial cleaning services across Las Vegas, Henderson, North Las Vegas, Boulder City, and Clark County, NV: office cleaning, janitorial, post-construction, retail, and more. Free quotes.',
+      'Seven commercial cleaning services across Las Vegas, Henderson, and the Las Vegas Valley: office cleaning, janitorial, post-construction, retail. Free quotes.',
     type: 'website',
     url: `${SITE.url}/services`,
   },
@@ -117,7 +117,7 @@ export default function ServicesPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Commercial Cleaning Services by Final Touch',
-    description: 'Seven commercial cleaning services available across Clark County, Nevada.',
+    description: 'Seven commercial cleaning services across Las Vegas, Henderson, and the Las Vegas Valley.',
     itemListElement: SERVICES.map((s, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -133,7 +133,7 @@ export default function ServicesPage() {
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <HeroSection
         eyebrow={`Commercial cleaning services · ${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`}
-        heading="Commercial Cleaning Services in Las Vegas and Clark County, NV."
+        heading="Commercial Cleaning Services in Las Vegas, NV."
         sub={heroSub}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

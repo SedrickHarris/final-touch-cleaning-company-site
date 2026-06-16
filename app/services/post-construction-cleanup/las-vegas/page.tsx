@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch handle commercial post-construction cleanup in Las Vegas?',
-    a: `Yes. Final Touch serves both residential and commercial construction cleanup clients across Las Vegas and ${SITE.serviceArea.county}. Commercial buildouts, retail space renovations, and office build-outs all create the same post-construction residue that requires a thorough professional clean before occupancy.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving both residential and commercial construction cleanup clients across Las Vegas and ${SITE.serviceArea.county}. Commercial buildouts, retail space renovations, and office build-outs all create the same post-construction residue that requires a thorough professional clean before occupancy.`,
   },
   {
     q: 'How much does post-construction cleanup cost in Las Vegas?',
@@ -271,7 +271,7 @@ export default function PostConstructionCleanupLasVegasPage() {
           <SectionHeader
             eyebrow="More services in Las Vegas"
             heading="Other cleaning services available in Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

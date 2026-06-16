@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning in Clark County, NV',
+  title: 'Commercial Move-In Cleaning in Clark County, NV',
   description:
-    'Move-in cleaning across Clark County, NV. Final Touch serves new builds, rental turnovers, and established homes in every city. Call (702) 444-5077.',
+    'Commercial move-in cleaning for property management, rental turnovers, and new builds across Clark County, NV. Every city county-wide. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-in-cleaning/clark-county`,
   },
   openGraph: {
-    title: 'Move-In Cleaning in Clark County, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning in Clark County, NV | Final Touch',
     description:
-      'Move-in cleaning across Clark County, NV. Final Touch serves new builds, rental turnovers, and established homes in every city. Call (702) 444-5077.',
+      'Commercial move-in cleaning for property management, rental turnovers, and new builds across Clark County, NV. Every city county-wide. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning/clark-county`,
   },
@@ -65,8 +65,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
-  serviceType: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
+  serviceType: 'Commercial Move-In Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -122,7 +122,7 @@ export default function MoveInCleaningClarkCountyPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Clark County, NV"
-        heading="Move-In Cleaning in Clark County, NV"
+        heading="Commercial Move-In Cleaning in Clark County, NV"
         sub={`Clark County combines active new residential construction across Henderson and North Las Vegas with a large rental market and a steady stream of buyers relocating within and to the valley. Final Touch provides professional move-in cleaning for every property type across all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

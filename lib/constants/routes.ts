@@ -5,6 +5,10 @@ export const ROUTES = {
   locations: '/locations',
   builders: '/builders',
   industries: '/industries',
+  seasonal: '/seasonal',
+  urgentCleaning: '/urgent-cleaning',
+  cleaningSolutions: '/cleaning-solutions',
+  communities: '/communities',
   reviews: '/reviews',
   gallery: '/gallery',
   pricing: '/pricing',
@@ -247,6 +251,12 @@ export const PRIMARY_NAV: ReadonlyArray<{ label: string; href: string }> = [
 
 export const FOOTER_NAV = {
   services: SERVICES.map((s) => ({ label: s.name, href: s.href })),
+  specialty: [
+    { label: 'Seasonal Cleaning',        href: ROUTES.seasonal },
+    { label: 'Emergency & Same-Day',     href: ROUTES.urgentCleaning },
+    { label: 'Cleaning Solutions',       href: ROUTES.cleaningSolutions },
+    { label: 'Active Adult Communities', href: ROUTES.communities },
+  ],
   locations: LOCATIONS.map((l) => ({ label: l.name, href: l.href })),
   company: [
     { label: 'About',            href: ROUTES.about },

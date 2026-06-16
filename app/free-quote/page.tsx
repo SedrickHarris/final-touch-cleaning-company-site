@@ -8,14 +8,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Request a Free Cleaning Quote | Las Vegas, NV',
+  title: 'Request a Free Commercial Cleaning Quote',
   description:
-    'Get a free cleaning estimate from Final Touch Cleaning Company. Serving Las Vegas, Henderson, and Clark County, NV. No pressure. Call (702) 444-5077.',
+    'Get a free commercial cleaning estimate from Final Touch Cleaning Company. Las Vegas, Henderson, and the Las Vegas Valley. No obligation. Call (702) 444-5077.',
   alternates: { canonical: '/free-quote' },
   openGraph: {
-    title: 'Free Cleaning Quote | Final Touch Cleaning Company',
+    title: 'Free Commercial Cleaning Quote | Final Touch Cleaning Company',
     description:
-      'Family-owned cleaning company serving Clark County, NV. Tell us about your space and get a real quote after a short walkthrough. No templated rates.',
+      'Commercial cleaning company serving the Las Vegas Valley. Tell us about your space and get a real quote after a short walkthrough. No templated rates.',
     type: 'website',
     url: `${SITE.url}/free-quote`,
   },
@@ -79,7 +79,7 @@ export default function FreeQuotePage() {
     <>
       <HeroSection
         eyebrow="Free cleaning estimate"
-        heading="Request a free quote for cleaning services in Las Vegas and Clark County."
+        heading="Request a Free Quote for Commercial Cleaning in Las Vegas, NV"
         sub={`Tell us about your space and we will set up a short walkthrough. You get a real number based on the actual job, not a templated rate. Free, no pressure. Or call ${SITE.phone.display} to talk now.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

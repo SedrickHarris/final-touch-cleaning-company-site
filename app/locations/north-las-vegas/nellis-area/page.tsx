@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Nellis Area Cleaning | North Las Vegas, NV',
+  title: 'Commercial Cleaning in Nellis Area, North Las Vegas, NV',
   description:
-    'Family-owned home and commercial cleaning near Nellis AFB in North Las Vegas, NV. Move-in, move-out, and deep cleaning. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in the Nellis area, North Las Vegas, NV. Move-out, move-in, and janitorial cleaning. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/north-las-vegas/nellis-area' },
   openGraph: {
-    title: 'Nellis Area Cleaning Services | North Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in the Nellis Area, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve the Nellis area near Nellis Air Force Base in North Las Vegas. Move-in, move-out, home, and commercial cleaning. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in the Nellis area, North Las Vegas, NV. Move-out, move-in, and janitorial cleaning. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/north-las-vegas/nellis-area`,
   },
@@ -80,7 +80,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving the Nellis area, North Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving the Nellis area, North Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -106,7 +106,7 @@ export default function NellisAreaPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Near Nellis Air Force Base"
-        heading="Cleaning Services in the Nellis Area, North Las Vegas, NV"
+        heading="Commercial Cleaning Services in the Nellis Area, North Las Vegas, NV"
         sub="Family-owned move-in, move-out, and home cleaning near Nellis Air Force Base. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -164,7 +164,7 @@ export default function NellisAreaPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in the Nellis area."
+            heading="Commercial cleaning services in the Nellis area."
             sub="Every service is available to Nellis area homes and businesses. Reordered by what customers near the base request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -301,7 +301,7 @@ export default function NellisAreaPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Nellis area home or business?"
-        sub="Request a free quote or call our team today. We serve the Nellis area and all of Clark County."
+        sub="Request a free quote or call our team today. We serve the Nellis area and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

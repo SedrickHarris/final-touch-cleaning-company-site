@@ -10,11 +10,18 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Chiropractic and PT Office Cleaning in North Las Vegas, NV | Final Touch',
+  title: { absolute: 'Chiropractic Office Cleaning in North Las Vegas | Final Touch' },
   description:
     'Final Touch provides scheduled cleaning for chiropractic offices and physical therapy clinics in North Las Vegas, NV. Treatment rooms, therapy surfaces, waiting areas, and restrooms. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries/chiropractic-cleaning/north-las-vegas`,
+  },
+  openGraph: {
+    title: 'Chiropractic Office Cleaning in North Las Vegas, NV | Final Touch Cleaning',
+    description:
+      'Final Touch provides scheduled cleaning for chiropractic offices and physical therapy clinics in North Las Vegas, NV. Treatment rooms, therapy surfaces, waiting areas, and restrooms. Call (702) 444-5077.',
+    type: 'website',
+    url: `${SITE.url}/industries/chiropractic-cleaning/north-las-vegas`,
   },
 };
 
@@ -156,7 +163,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch licensed and insured?',
-    a: 'Yes. Final Touch Cleaning Company is licensed in Nevada and fully insured. Scott and Nicole Maland own and operate the company directly. The Blue Ribbon Guarantee applies to every program: 100% satisfaction or Final Touch returns within 24 hours.',
+    a: 'Yes. Final Touch is a family-owned commercial cleaning company, licensed in Nevada and fully insured. The Blue Ribbon Guarantee applies to every program: 100% satisfaction or Final Touch returns within 24 hours.',
   },
   {
     q: 'What makes Final Touch different from a general commercial cleaning company for a North Las Vegas chiropractic practice?',
@@ -336,7 +343,7 @@ export default function ChiropracticCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Chiropractic and PT office cleaning across North Las Vegas and Clark County."
+            heading="Chiropractic and PT office cleaning across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map((chip) => (

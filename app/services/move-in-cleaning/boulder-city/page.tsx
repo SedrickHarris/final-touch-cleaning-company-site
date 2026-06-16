@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning in Boulder City, NV',
+  title: 'Commercial Move-In Cleaning in Boulder City, NV',
   description:
-    'Move-in cleaning in Boulder City, NV. Final Touch serves established homes, relocating buyers, and rental properties in Boulder City. Call (702) 444-5077.',
+    'Commercial move-in cleaning for rental properties and property management in Boulder City, NV. Serving landlords and relocating buyers. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-in-cleaning/boulder-city`,
   },
   openGraph: {
-    title: 'Move-In Cleaning in Boulder City, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning in Boulder City, NV | Final Touch',
     description:
-      'Move-in cleaning in Boulder City, NV. Final Touch serves established homes, relocating buyers, and rental properties in Boulder City. Call (702) 444-5077.',
+      'Commercial move-in cleaning for rental properties and property management in Boulder City, NV. Serving landlords and relocating buyers. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning/boulder-city`,
   },
@@ -65,8 +65,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
-  serviceType: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
+  serviceType: 'Commercial Move-In Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -116,7 +116,7 @@ export default function MoveInCleaningBoulderCityPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Boulder City, NV"
-        heading="Move-In Cleaning in Boulder City, NV"
+        heading="Commercial Move-In Cleaning in Boulder City, NV"
         sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting, often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City property owners, landlords, renters, and buyers across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -248,7 +248,7 @@ export default function MoveInCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

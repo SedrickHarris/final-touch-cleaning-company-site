@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Summerlin Cleaning Services | Las Vegas, NV',
+  title: 'Commercial Cleaning in Summerlin, Las Vegas, NV',
   description:
-    'Family-owned cleaning services in Summerlin, Las Vegas, NV. Deep cleaning, move-in, move-out, and more. Call (702) 444-5077 for a free quote.',
+    'Family-owned commercial cleaning in Summerlin, Las Vegas, NV. Move-in, move-out, deep cleaning, and office cleaning. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/summerlin' },
   openGraph: {
-    title: 'Summerlin Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Summerlin, Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Scott & Nicole Maland serve Summerlin and all of Las Vegas, NV. Deep cleaning, move-in, move-out, post-construction, and more. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Summerlin, Las Vegas, NV. Move-in, move-out, deep cleaning, and office cleaning. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/summerlin`,
   },
@@ -52,8 +52,8 @@ const faq = [
     a: `Yes. Final Touch serves Summerlin as part of its Las Vegas and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves homes and businesses throughout Summerlin's villages, from established neighborhoods near the I-215 corridor to newer phases along the community's western edge.`,
   },
   {
-    q: 'Why do Summerlin homes need more frequent deep cleaning than other parts of Las Vegas?',
-    a: "Summerlin sits at the base of the Spring Mountains, putting homes closer to desert dust sources and seasonal wind events. Fine particulate from the surrounding terrain settles on surfaces throughout the home, especially in window tracks, vents, baseboards, and high ledges. A periodic deep clean addresses the buildup that regular maintenance misses.",
+    q: 'Why do Summerlin properties need more frequent deep cleaning than other parts of Las Vegas?',
+    a: "Summerlin sits at the base of the Spring Mountains, putting businesses and homes closer to desert dust sources and seasonal wind events. Fine particulate from the surrounding terrain settles on surfaces throughout offices, retail spaces, and residences — especially on window tracks, vents, baseboards, and high ledges. A periodic deep clean addresses the buildup that regular maintenance misses.",
   },
   {
     q: 'What cleaning services does Final Touch offer in Summerlin?',
@@ -65,7 +65,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned, owner-operated commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -84,7 +84,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Summerlin, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Summerlin, Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -111,7 +111,7 @@ export default function SummerlinPage() {
       {/* 1. Hero — split layout with quote form over a local Summerlin photo. */}
       <HeroSection
         eyebrow="Master-Planned Community"
-        heading="Summerlin Cleaning Services | Las Vegas, NV"
+        heading="Commercial Cleaning Services in Summerlin, Las Vegas, NV"
         sub={`Final Touch serves homes and businesses throughout Summerlin, Las Vegas. Deep cleaning, move-in, move-out, post-construction, and commercial cleaning across every village. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -179,7 +179,7 @@ export default function SummerlinPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Summerlin."
+            heading="Commercial cleaning services in Summerlin."
             sub="Every service is available to Summerlin homes and businesses. Reordered by what Summerlin customers request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -243,7 +243,7 @@ export default function SummerlinPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Summerlin and the greater Las Vegas area."
-            sub="Final Touch serves Summerlin as part of a broader Las Vegas and Clark County service area."
+            sub="Final Touch serves Summerlin as part of a broader Las Vegas and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

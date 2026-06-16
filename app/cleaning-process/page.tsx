@@ -8,14 +8,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Our Cleaning Process | Las Vegas, NV',
+  title: 'Our Commercial Cleaning Process | Las Vegas, NV',
   description:
-    'See how Final Touch Cleaning works: quote, walkthrough, scope, cleaning visit, and the Blue Ribbon Guarantee. Serving Clark County, NV. (702) 444-5077.',
+    'How Final Touch Commercial Cleaning works: quote, walkthrough, scope, cleaning visit, and the Blue Ribbon Guarantee. Las Vegas Valley, NV. (702) 444-5077.',
   alternates: { canonical: '/cleaning-process' },
   openGraph: {
-    title: 'Our Cleaning Process | Final Touch Cleaning | Las Vegas, NV',
+    title: 'Our Commercial Cleaning Process | Final Touch | Las Vegas, NV',
     description:
-      'Every Final Touch job follows the same five-step process. Free quote, owner walkthrough, confirmed scope, cleaning visit, and a 100% satisfaction guarantee.',
+      'Every Final Touch commercial cleaning job follows the same five-step process. Free quote, owner walkthrough, confirmed scope, cleaning visit, and a 100% satisfaction guarantee.',
     type: 'website',
     url: `${SITE.url}/cleaning-process`,
   },
@@ -114,7 +114,7 @@ export default function CleaningProcessPage() {
           src: '/images/builders/cleaning-process-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning process - Final Touch Cleaning Company, Las Vegas NV',
         }}
-        heading="How Final Touch Cleans: A Step-by-Step Process"
+        heading="How Final Touch's Commercial Cleaning Process Works"
         sub="Every Final Touch job follows the same five-step process, from the initial quote request through the final quality review. Owners Scott & Nicole Maland confirm the scope before work begins and back every completed job with a 100% satisfaction guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

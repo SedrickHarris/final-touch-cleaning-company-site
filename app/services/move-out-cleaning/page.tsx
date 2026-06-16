@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Move-Out Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Commercial Move-Out Cleaning in Las Vegas, NV | Final Touch' },
   description:
-    'Move-out cleaning for apartments and homes across Las Vegas & Clark County, NV. Licensed and insured. Deposit-ready standard. Call (702) 444-5077.',
+    'Move-out cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Deposit-ready unit turns and end-of-lease cleans. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/services/move-out-cleaning' },
   openGraph: {
-    title: 'Move-Out Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Commercial Move-Out Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides move-out cleaning for apartments and homes across Las Vegas and Clark County, NV. Licensed and insured, cleaned to the deposit-ready standard your landlord expects. Call (702) 444-5077.',
+      'Move-out cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Deposit-ready standard on every unit turn. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-out-cleaning`,
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What does move-out cleaning include?',
-    a: 'Move-out cleaning covers the full interior of your space: inside cabinets, appliances, bathrooms, baseboards, light fixtures, vents, window sills, and all flooring. The goal is to return the space to the standard the landlord or next occupant expects. Scope is confirmed during your booking.',
+    a: 'Move-out cleaning covers the full interior of your space: inside cabinets, appliances, bathrooms, baseboards, light fixtures, vents, window sills, and all flooring. Property managers and landlords rely on this service to reset units to the standard the next occupant expects. Scope is confirmed during your booking.',
   },
   {
     q: 'Will a move-out clean help me get my deposit back?',
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: "What if my move-out clean doesn't meet my expectations?",
-    a: `Every move-out clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
+    a: `Every move-out clean from Final Touch — a family-owned commercial cleaning company — is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
   },
 ];
 
@@ -65,7 +65,7 @@ const siblings = SERVICES.filter((s) => s.slug !== 'move-out-cleaning');
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-Out Cleaning',
+  name: 'Commercial Move-Out Cleaning',
   serviceType: 'Move-Out Cleaning',
   provider: {
     '@type': 'Organization',
@@ -102,7 +102,7 @@ export default function MoveOutCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Move-Out Cleaning"
-        heading="Move-Out Cleaning in Las Vegas, NV"
+        heading="Commercial Move-Out Cleaning Services in Las Vegas, NV"
         sub={`Professional move-out cleaning for property managers, landlords, and renters across ${SITE.serviceArea.county}. Unit turns, portfolio resets, and end-of-lease cleans to the standard your next occupant expects.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -145,7 +145,7 @@ export default function MoveOutCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Property managers, landlords, and renters across Clark County."
+            heading="Property managers, landlords, and renters across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -302,7 +302,7 @@ export default function MoveOutCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Move-out cleaning across Clark County."
+            heading="Move-out cleaning across the Las Vegas Valley."
             sub={`We serve move-out cleans throughout ${SITE.serviceArea.county}, Nevada.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

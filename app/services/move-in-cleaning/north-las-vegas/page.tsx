@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning in North Las Vegas, NV',
+  title: 'Commercial Move-In Cleaning in North Las Vegas, NV',
   description:
-    'Move-in cleaning in North Las Vegas, NV. Final Touch serves new builds, rentals, and apartments across North Las Vegas. Call (702) 444-5077.',
+    'Commercial move-in cleaning for rental turnovers and property management in North Las Vegas, NV. Serving landlords and managers. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-in-cleaning/north-las-vegas`,
   },
   openGraph: {
-    title: 'Move-In Cleaning in North Las Vegas, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning in North Las Vegas, NV | Final Touch',
     description:
-      'Move-in cleaning in North Las Vegas, NV. Final Touch serves new builds, rentals, and apartments across North Las Vegas. Call (702) 444-5077.',
+      'Commercial move-in cleaning for rental turnovers and property management in North Las Vegas, NV. Serving landlords and managers. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning/north-las-vegas`,
   },
@@ -65,8 +65,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
-  serviceType: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
+  serviceType: 'Commercial Move-In Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -116,7 +116,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-In Cleaning · North Las Vegas, NV"
-        heading="Move-In Cleaning in North Las Vegas, NV"
+        heading="Commercial Move-In Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas combines active new residential construction with a large rental market, two distinct move-in cleaning audiences. Final Touch serves new-build buyers, renters moving into apartments, and landlords resetting units across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -247,7 +247,7 @@ export default function MoveInCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

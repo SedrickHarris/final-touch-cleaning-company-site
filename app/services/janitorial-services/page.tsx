@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Janitorial Services in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Janitorial Services in Las Vegas, NV | Final Touch' },
   description:
-    'Final Touch provides scheduled janitorial programs for commercial facilities across Las Vegas and Clark County, NV. Licensed and insured. Call (702) 444-5077.',
+    'Scheduled janitorial programs for commercial facilities across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/janitorial-services' },
   openGraph: {
-    title: 'Janitorial Services in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Janitorial Services in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides scheduled janitorial programs for offices and commercial facilities across Las Vegas and Clark County, NV. Licensed and insured, with after-hours scheduling available. Call (702) 444-5077.',
+      'Commercial janitorial programs in Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. After-hours scheduling available. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/janitorial-services`,
   },
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 
 const faq = [
   {
-    q: 'What does a janitorial service include?',
-    a: 'Janitorial services from Final Touch include scheduled cleaning of shared facilities: restrooms, lobbies, breakrooms, corridors, and high-touch surfaces. The exact program depends on your facility size, traffic, and schedule. Common deliverables include trash management, floor care, surface sanitizing, and restroom maintenance.',
+    q: 'What does a commercial janitorial program include?',
+    a: 'A commercial janitorial program from Final Touch includes scheduled cleaning of shared facilities: restrooms, lobbies, breakrooms, corridors, and high-touch surfaces. The exact program depends on your facility size, traffic, and schedule. Common deliverables include trash management, floor care, surface sanitizing, and restroom maintenance.',
   },
   {
     q: 'How is janitorial service different from commercial office cleaning?',
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: 'Are your janitorial cleaners licensed and insured in Nevada?',
-    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Commercial clients, property managers, and facility managers who need to verify vendor credentials can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
+    a: `Yes. Final Touch Cleaning Company is a family-owned commercial cleaning company licensed and insured in Nevada. Commercial clients, property managers, and facility managers who need to verify vendor credentials can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -66,7 +66,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Janitorial Services',
-  serviceType: 'Janitorial Services',
+  serviceType: 'Commercial Janitorial Services',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -145,7 +145,7 @@ export default function JanitorialServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Commercial facilities of all types across Clark County."
+            heading="Commercial facilities of all types across the Las Vegas Valley."
             sub="Any facility that requires regular cleaning on a scheduled basis."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
@@ -295,7 +295,7 @@ export default function JanitorialServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Janitorial services across Clark County."
+            heading="Janitorial services across the Las Vegas Valley."
             sub={`Commercial janitorial programs for facilities throughout ${SITE.serviceArea.county}, Nevada.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

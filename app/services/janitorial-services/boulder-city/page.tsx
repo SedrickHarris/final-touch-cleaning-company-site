@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch travel to Boulder City for janitorial programs?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory. Call ${SITE.phone.display} to discuss your building.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory. Call ${SITE.phone.display} to discuss your building.`,
   },
   {
     q: 'How much do janitorial services cost in Boulder City?',
@@ -149,7 +149,7 @@ export default function JanitorialServicesBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires janitorial services in Boulder City"
             heading="Small shops, tourism businesses, professional offices, and community facilities."
-            sub="Boulder City's janitorial market is the smallest and most relationship-oriented in Clark County."
+            sub="Boulder City's janitorial market is the smallest and most relationship-oriented in the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -251,7 +251,7 @@ export default function JanitorialServicesBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

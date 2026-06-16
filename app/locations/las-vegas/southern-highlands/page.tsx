@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Southern Highlands Cleaning Services | Las Vegas, NV',
+  title: 'Commercial Cleaning in Southern Highlands, NV',
   description:
-    'Family-owned cleaning services in Southern Highlands, Las Vegas, NV. Deep cleaning, move-in, move-out, and more for golf community homes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Southern Highlands, Las Vegas, NV. Deep cleaning, move-out, and post-construction. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/southern-highlands' },
   openGraph: {
-    title: 'Southern Highlands Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Southern Highlands, NV | Final Touch Cleaning',
     description:
-      'Scott & Nicole Maland serve Southern Highlands and all of Las Vegas, NV. Deep cleaning, move-in, move-out for master-planned golf community homes. Free quotes.',
+      'Family-owned commercial cleaning in Southern Highlands, Las Vegas, NV. Deep cleaning, move-out, and post-construction. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/southern-highlands`,
   },
@@ -56,19 +56,19 @@ const faq = [
   },
   {
     q: 'What makes Southern Highlands different from other Las Vegas neighborhoods for cleaning?',
-    a: "Southern Highlands is a master-planned community in the far south of Las Vegas built around a private golf course, with a mix of production homes, custom builds, and guard-gated sections at varying price points. Homes here tend to be larger than the Las Vegas average and are maintained to a higher standard than typical valley neighborhoods. The golf course environment also means finer grass and landscaping particulate enters homes near the course, adding to the standard desert-climate dust accumulation that affects all Las Vegas properties.",
+    a: "Southern Highlands is a master-planned community in the far south of Las Vegas built around a private golf course, with a mix of production homes, custom builds, and guard-gated sections at varying price points. Businesses and properties here tend to be larger than the Las Vegas average and are maintained to a higher standard than typical valley neighborhoods. The golf course environment also means finer grass and landscaping particulate enters offices and residences near the course, adding to the standard desert-climate dust accumulation that affects all Las Vegas properties.",
   },
   {
     q: 'What cleaning services does Final Touch offer in Southern Highlands?',
     a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, post-construction cleanup, commercial and office cleaning, janitorial services, and retail space cleaning throughout Southern Highlands. Call ${SITE.phone.display} to discuss the right service for your home or business.`,
   },
   {
-    q: 'Do you clean homes near the Southern Highlands Golf Club?',
-    a: `Yes. Final Touch serves homes throughout Southern Highlands, including properties adjacent to and near the golf course. Homes near the course deal with a combination of desert dust and landscaping particulate that benefits from periodic deep cleaning beyond routine maintenance. Call ${SITE.phone.display} to schedule a visit.`,
+    q: 'Do you clean properties near the Southern Highlands Golf Club?',
+    a: `Yes. Final Touch serves businesses and properties throughout Southern Highlands, including those adjacent to and near the golf course. Properties near the course deal with a combination of desert dust and landscaping particulate that benefits from periodic deep cleaning beyond routine maintenance. Call ${SITE.phone.display} to schedule a visit.`,
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned, owner-operated commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -87,7 +87,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Southern Highlands, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Southern Highlands, Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -114,7 +114,7 @@ export default function SouthernHighlandsPage() {
       {/* 1. Hero over a local Southern Highlands photo. */}
       <HeroSection
         eyebrow="Master-Planned Golf Community"
-        heading="Southern Highlands Cleaning Services | Las Vegas, NV"
+        heading="Commercial Cleaning Services in Southern Highlands, Las Vegas, NV"
         sub={`Final Touch serves homes and businesses throughout Southern Highlands, Las Vegas. Deep cleaning, move-in, move-out, and post-construction cleaning for one of south Las Vegas's most established master-planned communities. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -182,7 +182,7 @@ export default function SouthernHighlandsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Southern Highlands."
+            heading="Commercial cleaning services in Southern Highlands."
             sub="Deep cleaning leads because Southern Highlands properties are maintained to a higher standard: larger homes, premium finishes, and a golf community setting where presentation matters. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -246,7 +246,7 @@ export default function SouthernHighlandsPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Southern Highlands and the greater Las Vegas area."
-            sub="Final Touch serves Southern Highlands as part of a broader Las Vegas and Clark County service area."
+            sub="Final Touch serves Southern Highlands as part of a broader Las Vegas and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

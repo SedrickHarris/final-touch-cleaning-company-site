@@ -251,7 +251,7 @@ export default function PostConstructionCleanupNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

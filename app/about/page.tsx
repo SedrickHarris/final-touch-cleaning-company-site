@@ -12,12 +12,12 @@ import { ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: { absolute: 'About Final Touch Cleaning Company | Las Vegas, NV' },
   description:
-    'Family-owned commercial cleaning company in Las Vegas, NV, serving offices, contractors & property managers across Clark County. Call (702) 444-5077.',
+    'Family-owned commercial cleaning company in Las Vegas, NV, serving offices, contractors & property managers in Southern Nevada. Call (702) 444-5077.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Final Touch Cleaning Company | Las Vegas, NV',
     description:
-      'Final Touch is a family-owned commercial cleaning company. Scott and Nicole Maland serve offices, contractors, and property managers across Las Vegas, Henderson, and Clark County, NV. Licensed and insured. Free quotes.',
+      'Family-owned commercial cleaning in Las Vegas, NV. Scott & Nicole Maland. Offices, contractors, property managers. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/about`,
   },
@@ -125,7 +125,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a franchise or locally owned?',
-    a: 'Final Touch is a locally owned, family-operated business, not a franchise. Scott and Nicole Maland run the company directly. Every account is owner-led, not passed to a subcontractor rotation or managed through a staffing platform.',
+    a: 'Final Touch is a family-owned commercial cleaning company, not a franchise. Scott and Nicole Maland run the company directly. Every account is owner-led, not passed to a subcontractor rotation or managed through a staffing platform.',
   },
   {
     q: "What is Final Touch Cleaning Company's mission?",
@@ -371,7 +371,7 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="Why Final Touch"
             heading="What sets a detail-focused commercial cleaning company apart."
-            sub="Six reasons commercial clients across Clark County choose Final Touch over a franchise or a general service."
+            sub="Six reasons commercial clients across the Las Vegas Valley choose Final Touch over a franchise or a general service."
           />
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseItems.map((item) => (

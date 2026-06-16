@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Commercial Deep Cleaning in Las Vegas, NV | Final Touch' },
   description:
-    'Deep cleaning for commercial spaces, rental properties, and managed units across Las Vegas and Clark County, NV. Periodic resets beyond standard janitorial. Licensed and insured. Call (702) 444-5077.',
+    'Deep cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Periodic resets beyond standard janitorial. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/deep-cleaning' },
   openGraph: {
-    title: 'Deep Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Commercial Deep Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides deep cleaning for commercial spaces, rental properties, and managed units across Las Vegas and Clark County, NV. Periodic resets beyond standard janitorial. Licensed and insured. Free quotes. Call (702) 444-5077.',
+      'Deep cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Periodic resets beyond janitorial for commercial spaces and rentals. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning`,
   },
@@ -57,6 +57,10 @@ const faq = [
     q: "What if my deep clean doesn't meet my expectations?",
     a: `Every deep clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to finish what fell short. You reach ${SITE.owners} directly, not a call center or support queue. If a surface was missed or a scope item was skipped, we come back and make it right.`,
   },
+  {
+    q: 'Do you provide commercial deep cleaning for offices and businesses?',
+    a: `Yes. Final Touch is a family-owned commercial cleaning company that provides commercial deep cleaning for offices, retail spaces, and commercial interiors that need a periodic reset beyond routine janitorial service. Common contexts include office breakroom and restroom resets, retail spaces preparing for a new season or reset, and post-construction move-in cleans for commercial tenants. Scope is confirmed during a walkthrough of the space. Call ${SITE.phone.display} to schedule.`,
+  },
 ];
 
 const current = SERVICES.find((s) => s.slug === 'deep-cleaning')!;
@@ -65,7 +69,7 @@ const siblings = SERVICES.filter((s) => s.slug !== 'deep-cleaning');
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Deep Cleaning',
+  name: 'Commercial Deep Cleaning',
   serviceType: 'Deep Cleaning',
   provider: {
     '@type': 'Organization',
@@ -102,7 +106,7 @@ export default function DeepCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Deep Cleaning"
-        heading="Deep Cleaning Service in Las Vegas, NV"
+        heading="Commercial Deep Cleaning Service in Las Vegas, NV"
         sub={`Periodic deep cleans for the corners standard service skips. We reset commercial spaces and rental properties across ${SITE.serviceArea.county} to a standard a routine clean cannot reach.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -144,7 +148,7 @@ export default function DeepCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Property managers, commercial tenants, and rental operators across Clark County."
+            heading="Commercial spaces, rental properties, and managed units across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -294,7 +298,7 @@ export default function DeepCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Deep cleaning across Clark County."
+            heading="Deep cleaning across the Las Vegas Valley."
             sub={`We serve deep cleaning clients throughout ${SITE.serviceArea.county}, Nevada, including Las Vegas, Henderson, North Las Vegas, and Boulder City.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Move-In Cleaning Service in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch' },
   description:
-    'Move-in cleaning for homes and apartments across Las Vegas & Clark County, NV. Licensed and insured. Scheduled around your move-in date. Call (702) 444-5077.',
+    'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, home preps, and apartment cleans. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-in-cleaning' },
   openGraph: {
-    title: 'Move-In Cleaning Service in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides move-in cleaning for new homes and apartments across Las Vegas and Clark County, NV. Licensed and insured, scheduled around your move-in date. Free quotes. Call (702) 444-5077.',
+      'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, apartment preps, and home cleans. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning`,
   },
@@ -43,7 +43,7 @@ const faq = [
   },
   {
     q: 'Who hires move-in cleaning in Las Vegas?',
-    a: 'Homebuyers, renters moving into a new apartment or house, property managers turning over a unit, and families relocating to the Las Vegas area. We serve move-in cleans across Las Vegas, Henderson, North Las Vegas, and Boulder City.',
+    a: 'Property managers and landlords turning over units hire move-in cleaning to prepare a space for the next resident. Individual renters, homebuyers, and families relocating to the Las Vegas area also schedule move-in cleans before they settle in. We serve move-in cleans across Las Vegas, Henderson, North Las Vegas, and Boulder City.',
   },
   {
     q: 'When should I schedule my move-in clean?',
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: "What if my move-in clean doesn't meet my expectations?",
-    a: `Every move-in clean from Final Touch is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
+    a: `Every move-in clean from Final Touch — a family-owned commercial cleaning company — is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
   },
 ];
 
@@ -65,7 +65,7 @@ const siblings = SERVICES.filter((s) => s.slug !== 'move-in-cleaning');
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
   serviceType: 'Move-In Cleaning',
   provider: {
     '@type': 'Organization',
@@ -102,7 +102,7 @@ export default function MoveInCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Move-In Cleaning"
-        heading="Move-In Cleaning in Las Vegas, NV"
+        heading="Commercial Move-In Cleaning Services in Las Vegas, NV"
         sub={`Top-to-bottom cleaning before you settle into your new space. We serve homebuyers, renters, and property managers across ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -145,7 +145,7 @@ export default function MoveInCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Homebuyers, renters, and property managers across Clark County."
+            heading="Property managers, landlords, and renters across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -302,7 +302,7 @@ export default function MoveInCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Move-in cleaning across Clark County."
+            heading="Move-in cleaning across the Las Vegas Valley."
             sub={`We serve move-in cleans throughout ${SITE.serviceArea.county}, Nevada, including Las Vegas, Henderson, North Las Vegas, and Boulder City.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

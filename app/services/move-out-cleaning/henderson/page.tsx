@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-Out Cleaning in Henderson, NV',
+  title: 'Commercial Move-Out Cleaning in Henderson, NV',
   description:
-    'Move-out cleaning in Henderson, NV. Final Touch cleans to the standard Henderson landlords expect. Green Valley, Anthem, and beyond. Call (702) 444-5077.',
+    'Commercial move-out cleaning for property management and rental turnovers in Henderson, NV. Cleans to the standard landlords expect. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-out-cleaning/henderson`,
   },
   openGraph: {
-    title: 'Move-Out Cleaning in Henderson, NV | Final Touch',
+    title: 'Commercial Move-Out Cleaning in Henderson, NV | Final Touch',
     description:
-      'Move-out cleaning in Henderson, NV. Final Touch cleans to the standard Henderson landlords expect. Green Valley, Anthem, and beyond. Call (702) 444-5077.',
+      'Commercial move-out cleaning for property management and rental turnovers in Henderson, NV. Cleans to the standard landlords expect. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-out-cleaning/henderson`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-Out Cleaning',
-  serviceType: 'Move-Out Cleaning',
+  name: 'Commercial Move-Out Cleaning',
+  serviceType: 'Commercial Move-Out Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -120,7 +120,7 @@ export default function MoveOutCleaningHendersonPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-Out Cleaning · Henderson, NV"
-        heading="Move-Out Cleaning in Henderson, NV"
+        heading="Commercial Move-Out Cleaning in Henderson, NV"
         sub={`Henderson's established master-planned communities (Green Valley, Anthem, Green Valley Ranch) have a mix of owner-occupied and rental properties where landlords expect a higher finishing standard at lease-end. Final Touch provides professional move-out cleaning across all Henderson neighborhoods and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -259,7 +259,7 @@ export default function MoveOutCleaningHendersonPage() {
           <SectionHeader
             eyebrow="More services in Henderson"
             heading="Other cleaning services available in Henderson, NV."
-            sub="Final Touch provides seven cleaning services across Henderson and Clark County."
+            sub="Final Touch provides seven cleaning services across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

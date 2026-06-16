@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Tuscany Village Cleaning | Henderson, NV',
+  title: 'Commercial Cleaning in Tuscany Village, Henderson, NV',
   description:
-    'Family-owned home, deep, and move-in cleaning in Tuscany Village, a guard-gated community in Henderson, NV. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Tuscany Village, Henderson, NV. Deep cleaning, move-in, and move-out. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/tuscany-village' },
   openGraph: {
-    title: 'Tuscany Village Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Tuscany Village, Henderson, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Tuscany Village and all of Henderson. Home, deep, move-in, and move-out cleaning for this guard-gated community. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Tuscany Village, Henderson, NV. Deep cleaning, move-in, and move-out. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/tuscany-village`,
   },
@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: 'How do I get a cleaning quote for Tuscany Village?',
-    a: `Request a free quote through our online form or call ${SITE.phone.display}. Tell us your home type, square footage, and what you need cleaned, and we will provide a free estimate for your Tuscany Village home. There is no obligation, and every clean is backed by our Blue Ribbon Guarantee.`,
+    a: `Request a free quote through our online form or call ${SITE.phone.display}. Tell us your property type, square footage, and what you need cleaned, and we will provide a free estimate for your Tuscany Village home or business. There is no obligation, and every clean is backed by our Blue Ribbon Guarantee.`,
   },
 ];
 
@@ -80,7 +80,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Tuscany Village, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Tuscany Village, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -106,7 +106,7 @@ export default function TuscanyVillagePage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Guard-Gated Community"
-        heading="Cleaning Services in Tuscany Village, Henderson, NV"
+        heading="Commercial Cleaning Services in Tuscany Village, Henderson, NV"
         sub="Family-owned home, deep, and move-in cleaning for Tuscany Village and Henderson. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -166,7 +166,7 @@ export default function TuscanyVillagePage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Tuscany Village."
+            heading="Commercial cleaning services in Tuscany Village."
             sub="Every service is available to Tuscany Village homes. Reordered by what residents in this guard-gated community request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -306,7 +306,7 @@ export default function TuscanyVillagePage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Tuscany Village home?"
-        sub="Request a free quote or call our team today. We serve Tuscany Village and all of Clark County."
+        sub="Request a free quote or call our team today. We serve Tuscany Village and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

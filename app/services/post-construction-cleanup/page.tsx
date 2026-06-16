@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch' },
   description:
-    'Final Touch post-construction cleanup across Las Vegas & Clark County, NV. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
+    'Post-construction cleanup across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
   alternates: { canonical: '/services/post-construction-cleanup' },
   openGraph: {
-    title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch',
     description:
-      'Final Touch provides post-construction cleanup for new builds and renovations across Las Vegas and Clark County, NV. Licensed and insured. Scheduled around your handoff or occupancy date. Call (702) 444-5077.',
+      'Post-construction cleanup in Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/post-construction-cleanup`,
   },
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: 'Are your post-construction cleaners licensed and insured in Nevada?',
-    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. Contractors, property managers, and commercial clients who need to verify vendor credentials before adding us to a project can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
+    a: `Yes. Final Touch Cleaning Company is a family-owned commercial cleaning company licensed and insured in Nevada. Contractors, property managers, and commercial clients who need to verify vendor credentials before adding us to a project can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -66,7 +66,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Post-Construction Cleanup',
-  serviceType: 'Post-Construction Cleaning',
+  serviceType: 'Commercial Post-Construction Cleanup',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -145,7 +145,7 @@ export default function PostConstructionCleanupPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Who we serve"
-            heading="Contractors, builders, and property owners across Clark County."
+            heading="Contractors, builders, and property owners across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -295,7 +295,7 @@ export default function PostConstructionCleanupPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Post-construction cleanup across Clark County."
+            heading="Post-construction cleanup across the Las Vegas Valley."
             sub={`We serve construction sites throughout ${SITE.serviceArea.county}, Nevada, including active development areas across Las Vegas, Henderson, and North Las Vegas.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

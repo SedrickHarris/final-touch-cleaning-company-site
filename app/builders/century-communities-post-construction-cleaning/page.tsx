@@ -12,14 +12,14 @@ import { BUILDERS } from '@/lib/constants/builders';
 export const metadata: Metadata = {
   title: 'Century Communities Post-Construction Cleaning',
   description:
-    'Post-construction cleanup after your Century Communities or Century Complete home handoff in Las Vegas, NV. Clark County local. Call (702) 444-5077.',
+    'Post-construction cleanup after your Century Communities or Century Complete home handoff in Las Vegas, NV. Las Vegas Valley local. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/builders/century-communities-post-construction-cleaning`,
   },
   openGraph: {
     title: 'Century Communities Post-Construction Cleaning | Final Touch',
     description:
-      'Post-construction cleanup after your Century Communities or Century Complete home handoff in Las Vegas, NV. Clark County local. Call (702) 444-5077.',
+      'Post-construction cleanup after your Century Communities or Century Complete home handoff in Las Vegas, NV. Las Vegas Valley local. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/builders/century-communities-post-construction-cleaning`,
   },
@@ -169,7 +169,7 @@ export default function CenturyCommunitiesPostConstructionPage() {
           alt: 'Century Communities post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Century Communities Post-Construction Cleanup | Las Vegas, NV"
-        sub={`Final Touch provides post-construction cleanup for Century Communities and Century Complete homebuyers and project teams across Clark County, Nevada. Whether you purchased through the Century Complete online process or through a traditional sale, every new home requires a professional post-construction clean before move-in. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
+        sub={`Final Touch provides post-construction cleanup for Century Communities and Century Complete homebuyers and project teams across the Las Vegas Valley. Whether you purchased through the Century Complete online process or through a traditional sale, every new home requires a professional post-construction clean before move-in. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -279,7 +279,7 @@ export default function CenturyCommunitiesPostConstructionPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Service area"
-            heading="Post-construction cleanup across Clark County."
+            heading="Post-construction cleanup across the Las Vegas Valley."
             sub="Final Touch serves Century Communities and Century Complete buyers throughout the Las Vegas Valley, including North Las Vegas and Henderson."
           />
           <div className="mt-6 flex flex-wrap gap-3">
@@ -338,7 +338,7 @@ export default function CenturyCommunitiesPostConstructionPage() {
       {/* 8. Final CTA */}
       <CTASection
         heading="Ready to schedule your Century Communities post-construction clean?"
-        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve Clark County, Nevada.`}
+        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

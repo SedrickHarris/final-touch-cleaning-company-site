@@ -10,7 +10,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Retail Store Cleaning in Las Vegas, NV | Final Touch',
+  title: { absolute: 'Retail Store Cleaning in Las Vegas, NV | Final Touch' },
   description:
     'Professional cleaning for retail stores, boutiques, and franchise locations in Las Vegas, NV. After-hours scheduling. Call (702) 444-5077.',
   alternates: {
@@ -366,7 +366,7 @@ export default function RetailStoreCleaningLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Retail store cleaning across Las Vegas and Clark County."
+            heading="Retail store cleaning across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

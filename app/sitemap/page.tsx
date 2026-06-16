@@ -6,7 +6,7 @@ import { ROUTES, SERVICES, LOCATIONS, NEIGHBORHOODS } from '@/lib/constants/rout
 export const metadata: Metadata = {
   title: 'Sitemap',
   description:
-    'Full sitemap for Final Touch Cleaning Company. Browse all pages including services, locations, and neighborhood pages across Clark County, NV.',
+    'Full sitemap for Final Touch Cleaning Company. Browse all pages including services, locations, and neighborhood pages across Las Vegas, Henderson, and the Las Vegas Valley.',
   alternates: { canonical: '/sitemap' },
   // Utility page. No search value of its own; exclude from indexing but let
   // crawlers follow the links to the real pages.

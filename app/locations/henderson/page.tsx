@@ -11,14 +11,14 @@ import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Henderson, NV',
+  title: 'Commercial Cleaning Services in Henderson, NV',
   description:
-    'Commercial and post-construction cleaning in Henderson, NV. Office cleaning, janitorial, move-in/move-out, and retail for businesses and property managers in Clark County. Licensed and insured. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Henderson, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson' },
   openGraph: {
-    title: 'Cleaning Services in Henderson, NV | Final Touch Cleaning Company',
+    title: 'Family-Owned Commercial Cleaning in Henderson, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Henderson and Clark County, NV. Move-in, deep cleaning, commercial, post-construction, and more. Free quotes.',
+      'Family-owned commercial cleaning in Henderson, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson`,
   },
@@ -74,7 +74,11 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local Henderson cleaning company?',
-    a: `Final Touch is a locally owned, family-run cleaning company based in Southern Nevada, serving Henderson and all of ${SITE.serviceArea.county}. ${SITE.owners} own and operate it. It is not a franchise.`,
+    a: `Final Touch is a locally owned, family-run commercial cleaning company based in Southern Nevada, serving Henderson and all of ${SITE.serviceArea.county}. ${SITE.owners} own and operate it. It is not a franchise.`,
+  },
+  {
+    q: 'Can Final Touch set up a recurring commercial cleaning program for my Henderson office or facility?',
+    a: `Yes. Final Touch offers recurring commercial cleaning programs for Henderson offices and facilities. Each program is scoped through a free walkthrough — by phone or a brief on-site visit — so the schedule and scope reflect the actual space. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to get started.`,
   },
 ];
 
@@ -87,6 +91,8 @@ const localBusinessJsonLd = {
   email: SITE.email.display,
   image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  description:
+    'Family-owned commercial cleaning company serving Henderson, NV. Office cleaning, janitorial, post-construction, and property management cleaning.',
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },
@@ -129,7 +135,7 @@ export default function HendersonPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
-        heading="Cleaning Services in Henderson, NV"
+        heading="Commercial Cleaning Services in Henderson, NV"
         sub={`Final Touch provides commercial and post-construction cleaning across Henderson's master-planned communities, established neighborhoods, and business corridors. ${SITE.owners} own and run the company locally, serving Henderson properties with a detail-focused standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -274,7 +280,7 @@ export default function HendersonPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Services in Henderson"
-            heading="Cleaning services for Henderson homes and businesses."
+            heading="Commercial cleaning services for Henderson businesses and property managers."
             sub="All seven services available across the city. Cards ordered by local demand."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve retail tenants in Las Vegas strip malls?',
-    a: `Yes. Final Touch serves retail tenants in strip malls, neighborhood shopping centers, and standalone storefronts across Las Vegas and ${SITE.serviceArea.county}. Las Vegas has a high concentration of strip mall retail, and this is one of the most common retail formats we clean. Scope and schedule are confirmed per location.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving retail tenants in strip malls, neighborhood shopping centers, and standalone storefronts across Las Vegas and ${SITE.serviceArea.county}. Las Vegas has a high concentration of strip mall retail, and this is one of the most common retail formats we clean. Scope and schedule are confirmed per location.`,
   },
   {
     q: 'Does Final Touch clean multiple retail locations in Las Vegas?',
@@ -267,7 +267,7 @@ export default function RetailSpaceCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="More services in Las Vegas"
             heading="Other cleaning services available in Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

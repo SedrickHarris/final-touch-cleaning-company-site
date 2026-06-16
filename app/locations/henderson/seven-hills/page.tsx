@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Seven Hills Cleaning Services | Henderson, NV',
+  title: 'Commercial Cleaning in Seven Hills, Henderson, NV',
   description:
-    'Family-owned cleaning services in Seven Hills, Henderson, NV. Deep cleaning, move-in, move-out, and more for luxury hillside homes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Seven Hills, Henderson, NV. Deep cleaning, move-in/move-out for luxury hillside homes. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/seven-hills' },
   openGraph: {
-    title: 'Seven Hills Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Seven Hills, Henderson, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Seven Hills and all of Henderson, NV. Deep cleaning, move-in, move-out, and more for hillside homes. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Seven Hills, Henderson, NV. Deep cleaning, move-in/move-out for luxury hillside homes. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/seven-hills`,
   },
@@ -52,7 +52,7 @@ const SEVEN_HILLS_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve Seven Hills, Henderson, NV?',
-    a: `Yes. Final Touch serves Seven Hills as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves homes throughout Seven Hills, including the hillside residential neighborhoods and guard-gated sections in Henderson's eastern foothills.`,
+    a: `Yes. Final Touch serves Seven Hills as part of its Henderson and ${SITE.serviceArea.county} service area. ${SITE.owners} own and run the company. Their team serves homes and businesses throughout Seven Hills, including the hillside residential neighborhoods and guard-gated sections in Henderson's eastern foothills.`,
   },
   {
     q: 'What makes cleaning larger hillside homes in Seven Hills different from standard residential cleaning?',
@@ -60,7 +60,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Seven Hills?',
-    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout Seven Hills. Call ${SITE.phone.display} to discuss which service fits your home.`,
+    a: `Final Touch offers deep cleaning, move-in cleaning, move-out cleaning, commercial and office cleaning, post-construction cleanup, janitorial services, and retail space cleaning throughout Seven Hills. Call ${SITE.phone.display} to discuss which service fits your home or business.`,
   },
   {
     q: 'Do you clean homes in the guard-gated sections of Seven Hills?',
@@ -68,7 +68,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -87,7 +87,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Seven Hills, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Seven Hills, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -114,7 +114,7 @@ export default function SevenHillsPage() {
       {/* 1. Hero over a local Seven Hills photo. */}
       <HeroSection
         eyebrow="Luxury Hillside Residential"
-        heading="Seven Hills Cleaning Services | Henderson, NV"
+        heading="Commercial Cleaning Services in Seven Hills, Henderson, NV"
         sub={`Final Touch serves homes throughout Seven Hills, Henderson. Detail-focused deep cleaning, move-in, and move-out cleaning for larger hillside homes in Henderson's eastern foothills. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -182,7 +182,7 @@ export default function SevenHillsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Seven Hills."
+            heading="Commercial cleaning services in Seven Hills."
             sub="Deep cleaning leads because Seven Hills properties are maintained to a higher standard -- larger homes, elevated finishes, and long-term owners who expect thorough periodic resets. Every service is available across the community."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -246,7 +246,7 @@ export default function SevenHillsPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Seven Hills and the greater Henderson area."
-            sub="Final Touch serves Seven Hills as part of a broader Henderson and Clark County service area."
+            sub="Final Touch serves Seven Hills as part of a broader Henderson and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

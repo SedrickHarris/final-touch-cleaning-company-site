@@ -10,7 +10,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Medical Office Cleaning in Las Vegas, NV | Final Touch',
+  title: { absolute: 'Medical Office Cleaning in Las Vegas, NV | Final Touch' },
   description:
     'Professional cleaning for medical offices, dental practices, and clinics in Las Vegas, NV. Owner-led walkthroughs, after-hours scheduling. Call (702) 444-5077.',
   alternates: {

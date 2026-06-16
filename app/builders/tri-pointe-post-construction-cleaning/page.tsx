@@ -12,14 +12,14 @@ import { BUILDERS } from '@/lib/constants/builders';
 export const metadata: Metadata = {
   title: 'Tri Pointe Post-Construction Cleaning Las Vegas',
   description:
-    'Post-construction cleanup after your Tri Pointe home handoff in Las Vegas or Summerlin, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
+    'Post-construction cleanup after your Tri Pointe home handoff in Las Vegas or Summerlin, NV. Detail-focused, Las Vegas Valley local. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/builders/tri-pointe-post-construction-cleaning`,
   },
   openGraph: {
     title: 'Tri Pointe Post-Construction Cleaning Las Vegas | Final Touch',
     description:
-      'Post-construction cleanup after your Tri Pointe home handoff in Las Vegas or Summerlin, NV. Detail-focused, Clark County local. Call (702) 444-5077.',
+      'Post-construction cleanup after your Tri Pointe home handoff in Las Vegas or Summerlin, NV. Detail-focused, Las Vegas Valley local. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/builders/tri-pointe-post-construction-cleaning`,
   },
@@ -169,7 +169,7 @@ export default function TriPointePostConstructionPage() {
           alt: 'Tri Pointe Homes post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Tri Pointe Homes Post-Construction Cleanup | Las Vegas & Summerlin, NV"
-        sub={`Final Touch provides post-construction cleanup for Tri Pointe homebuyers and project teams across Clark County, Nevada, including Summerlin communities. Tri Pointe homes often feature large glass panels and premium interior finishes that require thorough window film removal and detail cleaning before move-in. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
+        sub={`Final Touch provides post-construction cleanup for Tri Pointe homebuyers and project teams across the Las Vegas Valley, including Summerlin communities. Tri Pointe homes often feature large glass panels and premium interior finishes that require thorough window film removal and detail cleaning before move-in. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -286,7 +286,7 @@ export default function TriPointePostConstructionPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Service area"
-            heading="Post-construction cleanup across Clark County."
+            heading="Post-construction cleanup across the Las Vegas Valley."
             sub="Final Touch serves Tri Pointe communities throughout the Las Vegas Valley, including Summerlin."
           />
           <div className="mt-6 flex flex-wrap gap-3">
@@ -351,7 +351,7 @@ export default function TriPointePostConstructionPage() {
       {/* 8. Final CTA */}
       <CTASection
         heading="Ready to schedule your Tri Pointe post-construction clean?"
-        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve Clark County, Nevada.`}
+        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

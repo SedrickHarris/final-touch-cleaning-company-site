@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Green Valley Ranch Cleaning Services | Henderson, NV',
+  title: 'Commercial Cleaning in Green Valley Ranch, NV',
   description:
-    'Family-owned cleaning services in Green Valley Ranch, Henderson, NV. Residential and commercial cleaning, move-in, move-out, and more. Call (702) 444-5077.',
+    'Family-owned commercial and office cleaning in Green Valley Ranch, NV. Move-out, deep cleaning, and janitorial for property managers. (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/green-valley-ranch' },
   openGraph: {
-    title: 'Green Valley Ranch Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Green Valley Ranch, NV | Final Touch Cleaning',
     description:
-      'Scott & Nicole Maland serve Green Valley Ranch and all of Henderson, NV. Residential, commercial, move-in, move-out, and more. Free quotes across Clark County.',
+      'Family-owned commercial and office cleaning in Green Valley Ranch, NV. Move-out, deep cleaning, and janitorial for property managers. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/green-valley-ranch`,
   },
@@ -69,7 +69,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local company or a national franchise?',
-    a: `Final Touch is a family-owned, owner-operated cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
+    a: `Final Touch is a family-owned commercial cleaning company based in Southern Nevada, not a franchise or national chain. ${SITE.owners} own and run the business. When you call ${SITE.phone.display}, you reach the owners or the team directly.`,
   },
 ];
 
@@ -88,7 +88,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Green Valley Ranch, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Green Valley Ranch, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -115,7 +115,7 @@ export default function GreenValleyRanchPage() {
       {/* 1. Hero over a local Green Valley Ranch photo. */}
       <HeroSection
         eyebrow="Established Residential and Commercial Area"
-        heading="Green Valley Ranch Cleaning Services | Henderson, NV"
+        heading="Commercial Cleaning Services in Green Valley Ranch, Henderson, NV"
         sub={`Final Touch serves homes and businesses throughout Green Valley Ranch, Henderson. Residential deep cleaning, move-in, move-out, and commercial office cleaning across one of Henderson's most active mixed-use communities. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -183,7 +183,7 @@ export default function GreenValleyRanchPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Green Valley Ranch."
+            heading="Commercial cleaning services in Green Valley Ranch."
             sub="Every service is available to Green Valley Ranch homes and businesses. Ordered to reflect the area's mix of commercial activity and residential turnover."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -247,7 +247,7 @@ export default function GreenValleyRanchPage() {
           <SectionHeader
             eyebrow="Service area"
             heading="Green Valley Ranch and the greater Henderson area."
-            sub="Final Touch serves Green Valley Ranch as part of a broader Henderson and Clark County service area."
+            sub="Final Touch serves Green Valley Ranch as part of a broader Henderson and Las Vegas Valley service area."
           />
           <div className="mt-8 space-y-3 text-base text-brand-black">
             <p>

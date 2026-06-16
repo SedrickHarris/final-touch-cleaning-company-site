@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-Out Cleaning in Clark County, NV',
+  title: 'Commercial Move-Out Cleaning in Clark County, NV',
   description:
-    'Move-out cleaning service across Clark County, NV. Final Touch serves all cities and property managers county-wide. Deposit-ready results. Call (702) 444-5077.',
+    'Commercial move-out cleaning for property managers and rental turnovers across Clark County, NV. Final Touch serves all cities county-wide. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-out-cleaning/clark-county`,
   },
   openGraph: {
-    title: 'Move-Out Cleaning in Clark County, NV | Final Touch',
+    title: 'Commercial Move-Out Cleaning in Clark County, NV | Final Touch',
     description:
-      'Move-out cleaning service across Clark County, NV. Final Touch serves all cities and property managers county-wide. Deposit-ready results. Call (702) 444-5077.',
+      'Commercial move-out cleaning for property managers and rental turnovers across Clark County, NV. Final Touch serves all cities county-wide. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-out-cleaning/clark-county`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-Out Cleaning',
-  serviceType: 'Move-Out Cleaning',
+  name: 'Commercial Move-Out Cleaning',
+  serviceType: 'Commercial Move-Out Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -126,7 +126,7 @@ export default function MoveOutCleaningClarkCountyPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-Out Cleaning · Clark County, NV"
-        heading="Move-Out Cleaning in Clark County, NV"
+        heading="Commercial Move-Out Cleaning in Clark County, NV"
         sub={`Clark County has a large and varied rental market: high-density apartments in North Las Vegas, master-planned community rentals in Henderson, urban rentals in Las Vegas, and established homes in Boulder City. Final Touch serves move-out cleaning clients across every part of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

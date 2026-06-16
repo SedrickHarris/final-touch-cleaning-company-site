@@ -10,7 +10,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Law Firm Cleaning in Henderson, NV | Final Touch',
+  title: { absolute: 'Law Firm Cleaning in Henderson, NV | Final Touch' },
   description:
     'Professional cleaning for law firms and legal offices in Henderson, NV. Green Valley Parkway corridor and citywide. Owner-led walkthroughs. Call (702) 444-5077.',
   alternates: {
@@ -352,7 +352,7 @@ export default function LawFirmCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Law firm cleaning across Henderson and Clark County."
+            heading="Law firm cleaning across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

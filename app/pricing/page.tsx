@@ -8,14 +8,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Service Pricing | Las Vegas, NV',
+  title: 'Commercial Cleaning Pricing | Las Vegas, NV',
   description:
-    'Final Touch provides custom quotes for every cleaning job. No published rate card. Request a free, no-obligation estimate for your space. Call (702) 444-5077.',
+    'Final Touch provides custom quotes for every commercial cleaning job. No published rate card. Request a free, no-obligation estimate for your space. Call (702) 444-5077.',
   alternates: { canonical: '/pricing' },
   openGraph: {
-    title: 'Cleaning Service Pricing | Final Touch | Las Vegas, NV',
+    title: 'Commercial Cleaning Pricing | Final Touch | Las Vegas, NV',
     description:
-      'Final Touch prices every cleaning job by confirmed scope. No flat rates, no hourly guesses. Request a free estimate for your space across Clark County, NV.',
+      'Final Touch prices every job by confirmed scope. No flat rates, no hourly guesses. Free estimate for your space across the Las Vegas Valley. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/pricing`,
   },
@@ -84,7 +84,7 @@ export default function PricingPage() {
           src: '/images/builders/pricing-commercial-cleaning-hero-image.webp',
           alt: 'Free cleaning quote and walkthrough - Final Touch Cleaning Company, Las Vegas NV',
         }}
-        heading="How Cleaning Service Pricing Works at Final Touch"
+        heading="How Commercial Cleaning Pricing Works at Final Touch"
         sub="Final Touch Cleaning Company prices every job based on the confirmed scope of work, the type of service, and the condition of the space. There is no standard rate card because no two jobs are identical. The fastest way to get an accurate price is to request a free quote."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

@@ -8,14 +8,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews | Clark County, NV',
+  title: { absolute: 'Commercial Cleaning Reviews | Las Vegas, NV' },
   description:
-    'Customer reviews for Final Touch Cleaning Company, serving Clark County, NV. Family-owned, owner-led, detail-focused. Call (702) 444-5077.',
+    'Family-owned commercial cleaning reviews for Final Touch Cleaning Company, serving Las Vegas and the Las Vegas Valley, NV. Call (702) 444-5077.',
   alternates: { canonical: '/reviews' },
   openGraph: {
-    title: 'Customer Reviews | Final Touch Cleaning | Clark County, NV',
+    title: 'Commercial Cleaning Reviews | Final Touch | Las Vegas, NV',
     description:
-      'Read verified Google reviews for Final Touch Cleaning Company serving Las Vegas, Henderson, North Las Vegas, and Boulder City, NV.',
+      'Family-owned commercial cleaning reviews for Final Touch Cleaning Company, serving Las Vegas and the Las Vegas Valley, NV. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/reviews`,
   },
@@ -117,8 +117,8 @@ export default function ReviewsPage() {
           src: '/images/builders/reviews-commercial-cleaning-hero-image.webp',
           alt: 'Customer reviewed cleaning service - Final Touch Cleaning Company, Clark County NV',
         }}
-        heading="What Customers Say About Final Touch Cleaning Company"
-        sub="Final Touch Cleaning Company receives reviews directly from customers across Clark County, NV. The reviews below come from verified Google users in Las Vegas, Henderson, North Las Vegas, and Boulder City. Read what customers say, then request a free quote or call (702) 444-5077."
+        heading="What Commercial Cleaning Clients Say About Final Touch"
+        sub="Final Touch Cleaning Company receives reviews directly from customers across the Las Vegas Valley. The reviews below come from verified Google users in Las Vegas, Henderson, North Las Vegas, and Boulder City. Read what customers say, then request a free quote or call (702) 444-5077."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
       />

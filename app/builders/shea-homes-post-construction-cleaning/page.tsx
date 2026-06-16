@@ -169,7 +169,7 @@ export default function SheaHomesPostConstructionPage() {
           alt: 'Shea Homes post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Shea Homes Post-Construction Cleanup | Las Vegas & Summerlin, NV"
-        sub={`Final Touch provides post-construction cleanup for Shea Homes buyers and project teams across Clark County, Nevada, including Active Lifestyle communities in Summerlin and Henderson. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
+        sub={`Final Touch provides post-construction cleanup for Shea Homes buyers and project teams across the Las Vegas Valley, including Active Lifestyle communities in Summerlin and Henderson. From drywall dust on every surface to adhesive residue around fixtures, we handle the detail work your builder's cleaning crew is not scoped to do. Call (702) 444-5077 or request a free quote to schedule around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -284,7 +284,7 @@ export default function SheaHomesPostConstructionPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Service area"
-            heading="Post-construction cleanup across Clark County."
+            heading="Post-construction cleanup across the Las Vegas Valley."
             sub="Final Touch serves Shea Homes communities throughout the Las Vegas Valley, including Summerlin and Henderson."
           />
           <div className="mt-6 flex flex-wrap gap-3">
@@ -349,7 +349,7 @@ export default function SheaHomesPostConstructionPage() {
       {/* 8. Final CTA */}
       <CTASection
         heading="Ready to schedule your Shea Homes post-construction clean?"
-        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve Clark County, Nevada.`}
+        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through the job before quoting so the estimate reflects the actual scope. ${SITE.owners} and the team serve the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

@@ -149,7 +149,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires retail cleaning in Boulder City"
             heading="Historic downtown storefronts, tourism retail, restaurants, and community retailers."
-            sub="Boulder City retail is historic, small-scale, and tourism-adjacent, distinct from every other retail market in Clark County."
+            sub="Boulder City retail is historic, small-scale, and tourism-adjacent, distinct from every other retail market in the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -250,7 +250,7 @@ export default function RetailSpaceCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

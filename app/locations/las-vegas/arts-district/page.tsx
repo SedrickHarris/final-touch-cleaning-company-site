@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Arts District Cleaning | Las Vegas, NV',
+  title: 'Commercial Cleaning in the Las Vegas Arts District, NV',
   description:
-    'Family-owned commercial, retail, and home cleaning in the Las Vegas Arts District, NV. Janitorial and post-construction. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in the Arts District, Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/arts-district' },
   openGraph: {
-    title: 'Arts District Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in the Las Vegas Arts District, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve the Las Vegas Arts District and downtown core. Commercial, retail, janitorial, and post-construction cleaning. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in the Arts District, Las Vegas, NV. Move-in, move-out, deep cleaning, and janitorial. Licensed and insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/arts-district`,
   },
@@ -45,7 +45,7 @@ const ARTS_DISTRICT_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve the Las Vegas Arts District?',
-    a: `Yes, Final Touch Cleaning Company serves the Las Vegas Arts District as part of our Las Vegas and Clark County service area. We are a family-owned, owner-led company run by Scott and Nicole Maland, cleaning businesses and homes throughout the district and the surrounding downtown Las Vegas area. Request a free quote or call ${SITE.phone.display} to get started.`,
+    a: `Yes, Final Touch Cleaning Company serves the Las Vegas Arts District as part of our Las Vegas and Las Vegas Valley service area. We are a family-owned, owner-led commercial cleaning company run by Scott and Nicole Maland, cleaning businesses and homes throughout the district and the surrounding downtown Las Vegas area. Request a free quote or call ${SITE.phone.display} to get started.`,
   },
   {
     q: 'What cleaning services do you offer in the Arts District?',
@@ -80,7 +80,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving the Las Vegas Arts District, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving the Arts District, Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -106,7 +106,7 @@ export default function ArtsDistrictPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Las Vegas Arts District"
-        heading="Cleaning Services in the Las Vegas Arts District, NV"
+        heading="Commercial Cleaning Services in the Las Vegas Arts District, NV"
         sub="Family-owned commercial, retail, and home cleaning for the Las Vegas Arts District. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -168,7 +168,7 @@ export default function ArtsDistrictPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in the Arts District."
+            heading="Commercial cleaning services in the Arts District."
             sub="Every service is available to Arts District businesses and residents. Reordered by what customers in this creative district request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -308,7 +308,7 @@ export default function ArtsDistrictPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Arts District space?"
-        sub="Request a free quote or call our team today. We serve the Arts District and all of Clark County."
+        sub="Request a free quote or call our team today. We serve the Arts District and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

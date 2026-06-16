@@ -9,14 +9,14 @@ import { ROUTES } from '@/lib/constants/routes';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Scott & Nicole Maland',
+  title: 'Our Team | Commercial Cleaning Company',
   description:
-    'Final Touch Cleaning Company is owned and run by Scott & Nicole Maland in Southern Nevada. Family-owned, owner-led on every job. Call (702) 444-5077.',
+    'Final Touch Commercial Cleaning is owned and run by Scott & Nicole Maland in Southern Nevada. Owner-led on every commercial job. Call (702) 444-5077.',
   alternates: { canonical: '/our-team' },
   openGraph: {
-    title: 'Our Team | Scott & Nicole Maland | Final Touch Cleaning',
+    title: 'Our Team | Commercial Cleaning Company | Final Touch',
     description:
-      'Final Touch Cleaning Company is owned and run by Scott & Nicole Maland in Southern Nevada. Family-owned, owner-led on every job. Call (702) 444-5077.',
+      'Final Touch Commercial Cleaning is owned and run by Scott & Nicole Maland in Southern Nevada. Owner-led on every commercial job. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/our-team`,
   },
@@ -79,7 +79,7 @@ export default function OurTeamPage() {
     <>
       <HeroSection
         eyebrow="Our Team"
-        heading="Meet Scott & Nicole Maland, Owners of Final Touch Cleaning Company"
+        heading="Meet Scott & Nicole Maland — Owners of Final Touch Cleaning Company"
         formSlot={ownerImageSlot}
         sub="Final Touch Cleaning Company is owned and run by Scott & Nicole Maland, a husband-and-wife team based in Southern Nevada. The same owners who set the cleaning standard also answer the phone, walk through the space, and confirm the finish on every job."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

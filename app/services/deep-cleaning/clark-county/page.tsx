@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Deep Cleaning in Clark County, NV',
+  title: 'Commercial Deep Cleaning in Clark County, NV',
   description:
-    'Deep cleaning service in Clark County, NV. Final Touch serves all cities and unincorporated areas across the Las Vegas Valley. Call (702) 444-5077.',
+    'Commercial deep cleaning for property management, offices, and rentals across Clark County, NV. Final Touch serves all cities county-wide. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/deep-cleaning/clark-county`,
   },
   openGraph: {
-    title: 'Deep Cleaning in Clark County, NV | Final Touch Cleaning',
+    title: 'Commercial Deep Cleaning in Clark County, NV | Final Touch Cleaning',
     description:
-      'Deep cleaning service in Clark County, NV. Final Touch serves all cities and unincorporated areas across the Las Vegas Valley. Call (702) 444-5077.',
+      'Commercial deep cleaning for property management, offices, and rentals across Clark County, NV. Final Touch serves all cities county-wide. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning/clark-county`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Deep Cleaning',
-  serviceType: 'Deep Cleaning',
+  name: 'Commercial Deep Cleaning',
+  serviceType: 'Commercial Deep Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -126,7 +126,7 @@ export default function DeepCleaningClarkCountyPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Deep Cleaning · Clark County, NV"
-        heading="Deep Cleaning in Clark County, NV"
+        heading="Commercial Deep Cleaning in Clark County, NV"
         sub={`Final Touch provides deep cleaning across all of ${SITE.serviceArea.county}: Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas throughout the Las Vegas Valley. One team, one standard, every city in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

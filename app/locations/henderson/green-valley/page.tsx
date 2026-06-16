@@ -19,14 +19,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Green Valley Cleaning Services | Henderson, NV',
+  title: 'Commercial Cleaning in Green Valley, Henderson, NV',
   description:
-    'Family-owned home and commercial cleaning in Green Valley, Henderson, NV. Deep, recurring, and janitorial cleaning. Free quotes. Call (702) 444-5077.',
+    'Family-owned commercial and office cleaning in Green Valley, Henderson, NV. Janitorial, deep cleaning, and move-out. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/green-valley' },
   openGraph: {
-    title: 'Green Valley Cleaning Services | Henderson, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Green Valley, Henderson, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Green Valley and all of Henderson. Home, deep, recurring, commercial, and janitorial cleaning. Free quotes across Clark County.',
+      'Family-owned commercial and office cleaning in Green Valley, Henderson, NV. Janitorial, deep cleaning, and move-out. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/henderson/green-valley`,
   },
@@ -81,7 +81,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Green Valley, Henderson, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Green Valley, Henderson, NV.',
 };
 
 const faqJsonLd = {
@@ -107,7 +107,7 @@ export default function GreenValleyPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Central Henderson"
-        heading="Cleaning Services in Green Valley, Henderson, NV"
+        heading="Commercial Cleaning Services in Green Valley, Henderson, NV"
         sub="Family-owned home, deep, and commercial cleaning for Green Valley and Henderson. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -164,7 +164,7 @@ export default function GreenValleyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Green Valley."
+            heading="Commercial cleaning services in Green Valley."
             sub="Every service is available to Green Valley homes and businesses. Reordered by what Green Valley customers request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -303,7 +303,7 @@ export default function GreenValleyPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Green Valley home or business?"
-        sub="Request a free quote or call our team today. We serve Green Valley and all of Clark County."
+        sub="Request a free quote or call our team today. We serve Green Valley and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

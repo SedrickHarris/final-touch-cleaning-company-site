@@ -10,7 +10,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Medical Office Cleaning in Henderson, NV | Final Touch',
+  title: { absolute: 'Medical Office Cleaning in Henderson, NV | Final Touch' },
   description:
     'Professional cleaning for medical offices and clinics along Green Valley Parkway and across Henderson, NV. Owner-led walkthroughs. Call (702) 444-5077.',
   alternates: {
@@ -361,7 +361,7 @@ export default function MedicalOfficeCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Medical office cleaning across Henderson and Clark County."
+            heading="Medical office cleaning across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

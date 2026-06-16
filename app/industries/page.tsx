@@ -9,11 +9,18 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Industry Cleaning Services in Las Vegas, NV | Final Touch',
+  title: { absolute: 'Industry Cleaning Services in Las Vegas, NV | Final Touch' },
   description:
-    'Final Touch provides commercial cleaning tailored to your industry across Clark County, NV: medical offices, law firms, restaurants, retail stores, and property management. Call (702) 444-5077.',
+    'Industry cleaning across the Las Vegas Valley: medical offices, law firms, restaurants, retail stores, and property management. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries`,
+  },
+  openGraph: {
+    title: 'Commercial Industry Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
+    description:
+      'Industry cleaning across the Las Vegas Valley: medical offices, law firms, restaurants, retail stores, and property management. Call (702) 444-5077.',
+    type: 'website',
+    url: `${SITE.url}/industries`,
   },
 };
 
@@ -184,7 +191,7 @@ const faq = [
   },
   {
     q: 'Why hire an industry-specific cleaning company instead of a general cleaner?',
-    a: 'A general cleaner applies the same routine regardless of what your business does. An industry-specific approach means your space is cleaned the way your operation requires, with the right scope, timing, and awareness of the access, privacy, or presentation standards your industry demands. Final Touch is owner-led by Scott and Nicole Maland, family-owned, and licensed and insured in Nevada.',
+    a: 'A general cleaner applies the same routine regardless of what your business does. An industry-specific approach means your space is cleaned the way your operation requires, with the right scope, timing, and awareness of the access, privacy, or presentation standards your industry demands. Final Touch is a family-owned commercial cleaning company, licensed and insured in Nevada.',
   },
   {
     q: 'Is Final Touch licensed and insured for commercial cleaning in Nevada?',
@@ -400,7 +407,7 @@ export default function IndustriesHubPage() {
           <SectionHeader
             eyebrow="Who We Serve"
             heading="Built for business owners, managers, and portfolio operators."
-            sub="Final Touch works with individual business owners, multi-location operators, and portfolio managers across Clark County."
+            sub="Final Touch works with individual business owners, multi-location operators, and portfolio managers across the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {audiences.map((item) => (
@@ -507,7 +514,7 @@ export default function IndustriesHubPage() {
       {/* 10. Final CTA */}
       <CTASection
         heading="Ready for cleaning built around your industry?"
-        sub="Request a free walkthrough and estimate. Final Touch serves businesses across Clark County, Nevada."
+        sub="Request a free walkthrough and estimate. Final Touch serves businesses across the Las Vegas Valley."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

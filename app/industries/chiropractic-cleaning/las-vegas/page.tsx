@@ -10,11 +10,18 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Chiropractic and PT Office Cleaning in Las Vegas, NV | Final Touch',
+  title: { absolute: 'Chiropractic Office Cleaning in Las Vegas, NV | Final Touch' },
   description:
     'Final Touch provides scheduled cleaning for chiropractic offices and physical therapy clinics in Las Vegas, NV. Treatment rooms, waiting areas, therapy surfaces, and restrooms. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries/chiropractic-cleaning/las-vegas`,
+  },
+  openGraph: {
+    title: 'Chiropractic Office Cleaning in Las Vegas, NV | Final Touch Cleaning',
+    description:
+      'Final Touch provides scheduled cleaning for chiropractic offices and physical therapy clinics in Las Vegas, NV. Treatment rooms, waiting areas, therapy surfaces, and restrooms. Call (702) 444-5077.',
+    type: 'website',
+    url: `${SITE.url}/industries/chiropractic-cleaning/las-vegas`,
   },
 };
 
@@ -156,7 +163,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch licensed and insured?',
-    a: 'Yes. Final Touch Cleaning Company is licensed in Nevada and fully insured. Scott and Nicole Maland own and operate the company directly. The Blue Ribbon Guarantee applies to every program: 100% satisfaction or Final Touch returns within 24 hours.',
+    a: 'Yes. Final Touch is a family-owned commercial cleaning company, licensed in Nevada and fully insured. The Blue Ribbon Guarantee applies to every program: 100% satisfaction or Final Touch returns within 24 hours.',
   },
   {
     q: 'What makes Final Touch different from a general commercial cleaning company for a chiropractic office?',

@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch travel to Boulder City for commercial cleaning?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory, not a special case or an extra trip. Call ${SITE.phone.display} to discuss your business.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City businesses are a regular part of the service territory, not a special case or an extra trip. Call ${SITE.phone.display} to discuss your business.`,
   },
   {
     q: 'Does tourism traffic affect cleaning needs for Boulder City businesses?',
@@ -149,7 +149,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires office cleaning in Boulder City"
             heading="Historic downtown shops, tourism-adjacent businesses, and small professional offices."
-            sub="Boulder City's commercial character is small-town and relationship-oriented, the most distinct commercial profile in Clark County."
+            sub="Boulder City's commercial character is small-town and relationship-oriented, the most distinct commercial profile in the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -251,7 +251,7 @@ export default function CommercialOfficeCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

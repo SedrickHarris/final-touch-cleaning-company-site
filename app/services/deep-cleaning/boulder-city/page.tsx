@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Deep Cleaning in Boulder City, NV',
+  title: 'Commercial Deep Cleaning in Boulder City, NV',
   description:
-    'Deep cleaning service in Boulder City, NV. Final Touch serves established homes, older properties, and vacation rentals near Lake Mead. Call (702) 444-5077.',
+    'Commercial deep cleaning for rental properties and vacation rentals in Boulder City, NV. Property managers and landlords near Lake Mead. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/deep-cleaning/boulder-city`,
   },
   openGraph: {
-    title: 'Deep Cleaning in Boulder City, NV | Final Touch Cleaning',
+    title: 'Commercial Deep Cleaning in Boulder City, NV | Final Touch Cleaning',
     description:
-      'Deep cleaning service in Boulder City, NV. Final Touch serves established homes, older properties, and vacation rentals near Lake Mead. Call (702) 444-5077.',
+      'Commercial deep cleaning for rental properties and vacation rentals in Boulder City, NV. Property managers and landlords near Lake Mead. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/deep-cleaning/boulder-city`,
   },
@@ -69,8 +69,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Deep Cleaning',
-  serviceType: 'Deep Cleaning',
+  name: 'Commercial Deep Cleaning',
+  serviceType: 'Commercial Deep Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -120,7 +120,7 @@ export default function DeepCleaningBoulderCityPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Deep Cleaning · Boulder City, NV"
-        heading="Deep Cleaning in Boulder City, NV"
+        heading="Commercial Deep Cleaning in Boulder City, NV"
         sub={`Boulder City is a small, owner-occupied community with an established housing stock, older properties with character that benefit from a detail-focused deep clean. Final Touch serves Boulder City property owners, metro relocators, and vacation rental owners across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -153,7 +153,7 @@ export default function DeepCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="Who hires deep cleaning in Boulder City"
             heading="Established property owners, relocating buyers, and Lake Mead vacation rental owners."
-            sub="Boulder City deep cleaning demand is driven by an older housing stock and an owner-occupied community character distinct from every other city in Clark County."
+            sub="Boulder City deep cleaning demand is driven by an older housing stock and an owner-occupied community character distinct from every other city in the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -255,7 +255,7 @@ export default function DeepCleaningBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

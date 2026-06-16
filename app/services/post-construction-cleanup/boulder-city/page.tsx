@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve Boulder City for post-construction cleanup?',
-    a: `Yes. Final Touch serves Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City is a regular part of the service territory. Call ${SITE.phone.display} to discuss your project.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving Boulder City as part of its ${SITE.serviceArea.county} service area. Boulder City is a regular part of the service territory. Call ${SITE.phone.display} to discuss your project.`,
   },
   {
     q: 'How much does post-construction cleanup cost in Boulder City?',
@@ -250,7 +250,7 @@ export default function PostConstructionCleanupBoulderCityPage() {
           <SectionHeader
             eyebrow="More services in Boulder City"
             heading="Other cleaning services available in Boulder City, NV."
-            sub="Final Touch provides seven cleaning services across Boulder City and Clark County."
+            sub="Final Touch provides seven cleaning services across Boulder City and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

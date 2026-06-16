@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch serve small businesses in North Las Vegas?',
-    a: `Yes. Final Touch serves commercial spaces of all sizes across North Las Vegas, including small offices, single-suite businesses, and commercial units along the city's main corridors. Call ${SITE.phone.display} to discuss your space.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company serving spaces of all sizes across North Las Vegas, including small offices, single-suite businesses, and commercial units along the city's main corridors. Call ${SITE.phone.display} to discuss your space.`,
   },
   {
     q: 'How much does office cleaning cost in North Las Vegas?',
@@ -251,7 +251,7 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
           <SectionHeader
             eyebrow="More services in North Las Vegas"
             heading="Other cleaning services available in North Las Vegas, NV."
-            sub="Final Touch provides seven cleaning services across North Las Vegas and Clark County."
+            sub="Final Touch provides seven cleaning services across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

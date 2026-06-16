@@ -11,16 +11,16 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Move-In Cleaning in Henderson, NV',
+  title: 'Commercial Move-In Cleaning in Henderson, NV',
   description:
-    'Move-in cleaning in Henderson, NV. Final Touch serves Cadence, Inspirada, Green Valley, and all Henderson neighborhoods. Call (702) 444-5077.',
+    'Commercial move-in cleaning for property management and rental turnovers in Henderson, NV. Cadence, Inspirada, Green Valley, and beyond. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/services/move-in-cleaning/henderson`,
   },
   openGraph: {
-    title: 'Move-In Cleaning in Henderson, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning in Henderson, NV | Final Touch',
     description:
-      'Move-in cleaning in Henderson, NV. Final Touch serves Cadence, Inspirada, Green Valley, and all Henderson neighborhoods. Call (702) 444-5077.',
+      'Commercial move-in cleaning for property management and rental turnovers in Henderson, NV. Cadence, Inspirada, Green Valley, and beyond. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/move-in-cleaning/henderson`,
   },
@@ -65,8 +65,8 @@ const relatedServiceCards = relatedServices
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Move-In Cleaning',
-  serviceType: 'Move-In Cleaning',
+  name: 'Commercial Move-In Cleaning',
+  serviceType: 'Commercial Move-In Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -116,7 +116,7 @@ export default function MoveInCleaningHendersonPage() {
       {/* 1. Hero. Hero background photo will be added later. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Henderson, NV"
-        heading="Move-In Cleaning in Henderson, NV"
+        heading="Commercial Move-In Cleaning in Henderson, NV"
         sub={`Whether you are moving into a new build in Cadence or Inspirada, a resale home in Green Valley or Anthem, or a luxury property in the eastern foothills, Final Touch provides thorough move-in cleaning across all Henderson neighborhoods and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -247,7 +247,7 @@ export default function MoveInCleaningHendersonPage() {
           <SectionHeader
             eyebrow="More services in Henderson"
             heading="Other cleaning services available in Henderson, NV."
-            sub="Final Touch provides seven cleaning services across Henderson and Clark County."
+            sub="Final Touch provides seven cleaning services across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {relatedServiceCards.map((service) => (

@@ -4805,3 +4805,252 @@ Pass/fail gate result: PASS
 
 Files changed: app/faq/page.tsx, docs/site-os/implementation-log.md
 Did not commit. Did not deploy.
+
+### Commercial Focus Pass + Batch 7 Remaining
+Status: Implemented pending review
+Date: 2026-06-15
+AI depth: Fast Build Batch (no Gate ceremony)
+
+PART A — Commercial focus fixes (19 existing files):
+  A1 — Service hub absolute meta titles (7 files): changed the suffix
+     `| Final Touch Cleaning` -> `| Final Touch` in BOTH the `title.absolute`
+     and `openGraph.title` on each hub. Files: commercial-office-cleaning,
+     janitorial-services, post-construction-cleanup, deep-cleaning,
+     move-in-cleaning, move-out-cleaning, retail-space-cleaning. All resulting
+     absolute titles measured 50-58 chars (50-57). City sub-pages under these
+     hubs were intentionally left untouched (out of A1 scope).
+  A2 — Neighborhood H1 pipe characters (10 files): replaced the `heading=`
+     prop value only (HeroSection H1) with human-readable
+     `Cleaning Services in [Neighborhood], [City], NV`. Meta titles, meta
+     descriptions, and OG fields were NOT changed. Files: henderson/{anthem,
+     cadence, green-valley-ranch, inspirada, lake-las-vegas, macdonald-highlands,
+     seven-hills}, las-vegas/{downtown-las-vegas, southern-highlands, summerlin}.
+  A3 — Move-in & move-out meta descriptions (2 files): reframed `description`
+     and `openGraph.description` on move-in-cleaning and move-out-cleaning from
+     residential "homes and apartments" lead to commercial-first
+     "property managers, landlords, and renters" + unit-turn language.
+  A4 — Validation after Part A: lint clean (1 pre-existing GTM warning),
+     type-check clean, build succeeded at 116 generated pages (unchanged route
+     count — Part A was string-only edits).
+
+PART B — Batch 7 remaining clusters (4 hubs + 19 leaves = 23 new pages):
+  Route count: 116 -> 139 generated pages (+23). Built by 4 parallel sub-agents,
+  one per cluster; each created files ONLY under its own directory.
+  B1 Seasonal (8): app/seasonal/page.tsx + spring-cleaning-las-vegas,
+     holiday-cleaning-services, post-holiday-cleanup, summer-deep-cleaning,
+     back-to-school-home-reset, move-out-cleaning-for-college-students,
+     new-years-clean-start.
+  B2 Urgent (5): app/urgent-cleaning/page.tsx + same-day-cleaning-las-vegas,
+     emergency-cleaning-services, last-minute-move-out-cleaning,
+     weekend-cleaning-services.
+  B3 Cleaning Solutions (6): app/cleaning-solutions/page.tsx +
+     pet-hair-removal-cleaning, allergy-dust-mitigation-cleaning,
+     hard-water-stain-removal, smoke-odor-removal,
+     post-illness-deep-sanitation-cleaning.
+  B4 Communities (4): app/communities/page.tsx +
+     sun-city-anthem-cleaning-services, sun-city-summerlin-cleaning-services,
+     heritage-at-cadence-cleaning-services.
+  Pattern: server components; HeroSection split + QuoteFormPlaceholder with NO
+  `image` prop (no hero images exist for these clusters -> avoids 404s, renders
+  the light-gray split hero); Breadcrumb component emits the single BreadcrumbList
+  JSON-LD (no hand-rolled duplicate); hand-rolled Service + FAQPage JSON-LD with
+  mainEntity derived from the same `faq` array rendered by FAQSection (schema =
+  visible content). Hub titles use `title.absolute` (spec titles already carry
+  `| Final Touch`); leaf titles are plain strings (root titleTemplate appends
+  the suffix). canonical + openGraph populated on all 23.
+
+  No-fake-data compliance verified post-build against out/*.html:
+  - Urgency guardrail: NO affirmative 24/7 or guaranteed-same-day promises. The
+    only "24/7" strings are an honest FAQ Q whose answer states Final Touch is
+    "not a 24/7 emergency dispatch service." All availability framed as
+    "call to check availability" / "subject to crew scheduling."
+  - No pricing leaks ($/hour/flat-rate/starting-at): 0.
+  - No invented HOA/partnership/amenity claims on community pages.
+  - Only owner-confirmed facts used (Scott & Nicole Maland, licensed & insured
+    in Nevada, Blue Ribbon Guarantee 100%-satisfaction-or-return-within-24h,
+    free quotes, owner-led walkthroughs, 4-city + Clark County service area).
+
+PART C — Navigation & routes:
+  lib/constants/routes.ts: added 4 ROUTES keys (seasonal, urgentCleaning,
+  cleaningSolutions, communities) and a new FOOTER_NAV.specialty group (4 hub
+  links). components/layout/Footer.tsx: added a "Specialty" column rendering
+  FOOTER_NAV.specialty and widened the footer grid lg:grid-cols-4 -> lg:grid-cols-5.
+  PRIMARY_NAV and the Services dropdown were deliberately NOT changed (per prompt).
+
+Validation results (final):
+  npm run lint        -> 0 errors, 1 pre-existing warning (layout.tsx GTM script).
+                         Fixed one new error en route: unescaped apostrophe in
+                         seasonal/new-years-clean-start (New Year&rsquo;s).
+  npm run type-check  -> clean (tsc --noEmit).
+  npm run build       -> success, 139/139 static pages generated.
+  Post-build QA on out/*.html: 23/23 canonical tags, 23/23 FAQPage JSON-LD,
+  0 double "| Final Touch | Final Touch" suffixes, hub/leaf titles correct.
+
+Route count: 116 -> 139 (target was 136 minimum). Batch 7 is now complete.
+
+Blocked / flagged items: none. No schema requiring real business data
+(AggregateRating, license numbers, etc.) was introduced.
+
+Files changed: 7 service hubs (A1), 10 neighborhood pages (A2), 2 service pages
+(A3), 23 new cluster pages (B), lib/constants/routes.ts + components/layout/Footer.tsx
+(C), docs/site-os/implementation-log.md (D).
+Did not commit. Did not deploy.
+
+### Site-Wide Commercial Focus Pass
+Status: Implemented pending review
+Date: 2026-06-15
+AI depth: Fast Build Batch (content/copy pass, no new routes)
+
+Scope note: the source prompt was written against an earlier (pre-Batch-7, "113
+route") snapshot. The repo was already at 139 routes. This pass adds/removes no
+routes (confirmed: 139 before and after). The prompt's closing "proceed to Batch 7
+remaining pages?" is moot — Batch 7 was completed in the prior entry above.
+
+Objective: tighten commercial-first positioning across titles, descriptions, H1s,
+H2s, FAQs, and schema on 52 EXISTING pages. Executed by 6 parallel sub-agents over
+disjoint directories (no shared-file conflicts). One agent (Las Vegas neighborhoods)
+died mid-run on an API socket error and was re-dispatched fresh; no partial-edit
+corruption resulted (verified by build + grep).
+
+Fields updated per group:
+  Group 1 — City pages (5: las-vegas, henderson, north-las-vegas, boulder-city,
+    clark-county): title -> "Commercial Cleaning Services in [City], NV"; OG title;
+    description (commercial-lead, trimmed to ≤160 — see contradiction note);
+    H1; the generic "Cleaning services for [City] homes and businesses." H2 ->
+    "Commercial cleaning services for [City] businesses and property managers.";
+    one commercial FAQ added per city; LocalBusiness.description ADDED (the blocks
+    had none) as "Commercial cleaning company serving [Area]…"; serviceType already
+    led with 'Commercial Cleaning' on most (clark-county reordered from
+    'Residential Cleaning' first).
+  Group 2 — Neighborhood pages (19): title -> "Commercial Cleaning in [Nbhd],
+    [City], NV" (parent city dropped where the plain title exceeded 55 chars:
+    Green Valley Ranch, MacDonald Highlands, Southern Highlands, Arts District);
+    H1 -> "Commercial Cleaning Services in [Nbhd], [City], NV"; OG title; tailored
+    ≤160 description; "Popular cleaning services in [Nbhd]." H2 -> "Commercial
+    cleaning services in [Nbhd]."; residential-only FAQ answers reframed
+    commercial-first where present; LocalBusiness.description -> "Commercial
+    cleaning company serving [Nbhd], [City], and Clark County, NV."
+  Group 3 — Locations hub: title.absolute "Commercial Cleaning Across the Las
+    Vegas Valley | Final Touch" (60 chars); H1 matches; H2 "Five service areas.
+    One standard." -> "Five cities. One commercial cleaning standard."
+  Group 4 — Service hubs (7): commercial-office (schema name/serviceType ->
+    'Commercial Office Cleaning'); janitorial (first FAQ -> "commercial janitorial
+    program"; serviceType 'Commercial Janitorial Services'); post-construction
+    (serviceType 'Commercial Post-Construction Cleanup'); retail (serviceType
+    'Commercial Retail Space Cleaning'); deep/move-in/move-out (title.absolute +
+    OG + H1 prefixed "Commercial", trimming the word "Service" to keep titles
+    ≤60; H2 reframes; Service.name prefixed "Commercial"; move-in/move-out FAQ
+    leads with property managers/landlords; meta descriptions left as-is — already
+    property-manager-first from the prior pass).
+  Group 5 — Service×city matrix (15: deep/move-in/move-out × 5 cities): H1 + title
+    + OG title prefixed "Commercial [Service] in [City], NV"; descriptions given a
+    commercial qualifier and trimmed to 140–160; Service.name + serviceType
+    prefixed "Commercial".
+  Group 6 — Industries hub/pages: no changes (already commercial; out of scope).
+  Group 7 — Brand support (5): cleaning-process, pricing, reviews, our-team,
+    free-quote — title + H1 reframed commercial (our-team H1 uses an em dash, not
+    a pipe). NO invented reviews/ratings (reviews page) or prices (pricing page) —
+    wording only.
+
+Contradiction handled: the prompt mandated a HARD 140–160 char meta-description
+limit but several of its provided description strings ran ~200 chars. Per the
+prompt's own "limits are hard, count before writing" rule, each was trimmed to
+≤160 while preserving the commercial lead, primary keyword, and phone.
+
+FAQ/schema integrity: every page derives both the visible FAQSection and the
+FAQPage JSON-LD from a single `faq` array, so edits stay in sync automatically; no
+JSON-LD was hand-edited. No AggregateRating/Review/streetAddress/license/sameAs
+was added or invented. No-fake-data policy upheld (only owner-confirmed facts:
+Scott & Nicole Maland, licensed & insured in Nevada, Blue Ribbon Guarantee, free
+quotes, owner-led walkthroughs, service area).
+
+Validation results:
+  npm run lint        -> 0 errors, 1 pre-existing warning (layout.tsx GTM script).
+  npm run type-check  -> clean.
+  npm run build       -> success, 139/139 static pages (route count unchanged).
+  Spot-checks (rendered out/*.html H1s):
+    /locations/las-vegas              -> "Commercial Cleaning Services in Las Vegas, NV"  ✓
+    /locations/henderson/cadence      -> "Commercial Cleaning Services in Cadence, Henderson, NV"  ✓
+    /services/deep-cleaning           -> "Commercial Deep Cleaning Service in Las Vegas, NV"  ✓
+    /services/move-out-cleaning/henderson -> "Commercial Move-Out Cleaning in Henderson, NV"  ✓
+    /locations/clark-county           -> "Commercial Cleaning Services in Clark County, NV"  ✓
+  Schema: 0 "Family-owned cleaning company serving" strings remain (all -> commercial).
+
+Pre-existing issue surfaced (NOT introduced by this pass, NOT fixed — industries
+were out of scope): 19 industries pages (the /industries hub + 18 industry×city
+pages) render a DOUBLED title suffix "… | Final Touch | Final Touch" because their
+plain-string `title` already ends with "| Final Touch" while the root titleTemplate
+appends another. Fix would be to switch those titles to `title: { absolute: … }`
+(or drop the literal suffix). Flagged for owner decision.
+
+Route count: 139 -> 139 (unchanged, as required).
+Files changed (52): 5 city pages, 19 neighborhood pages, 1 locations hub, 7 service
+hubs, 15 service×city matrix pages, 5 brand-support pages, plus this log.
+Did not commit. Did not deploy.
+
+### Industries Title Bug Fix
+- Bug: all 19 /industries pages used plain string titles, causing the root titleTemplate to append
+  a second | Final Touch suffix on every rendered <title>
+- Fix: converted all 19 to title: { absolute: '...' } to bypass the template
+- Additional: added openGraph blocks to 7 pages that had none
+  (/industries, /chiropractic-cleaning x3, /property-management-cleaning x3)
+- Chiropractic titles shortened from 80-86 rendered chars to 59-61 chars
+- Validation: lint clean, type-check clean, build 139/139, doubled suffix count 0
+- Files changed: 19
+- Nothing committed or deployed
+
+### Clark County Site-Wide Pass
+Status: Implemented pending review
+Date: 2026-06-15
+AI depth: Fast Build Batch (multi-prompt copy/metadata standardization)
+
+Goal: standardize on "family-owned commercial cleaning" language and remove
+"Clark County" from curated metadata and rendered copy site-wide, while preserving
+it where it is accurate and intentional (areaServed schema, nav chip labels, the
+SITE.serviceArea.county constant, the dedicated clark-county target pages, and
+genuine Clark County School District references).
+
+- Prompt 1 — Metadata & schema pass (~70 files): metadata titles, descriptions,
+  openGraph titles/descriptions, and LocalBusiness/Service schema description
+  fields. "family-owned commercial cleaning" applied to location/brand pages;
+  "Clark County" replaced per page type (city → city; service hub → "Las Vegas,
+  Henderson, and the Las Vegas Valley"; industries/builders → "the Las Vegas
+  Valley"; brand → "Las Vegas and Southern Nevada"; matrix → "[City], NV").
+  Descriptions trimmed to the 140–160 hard limit. Lint clean, type-check clean,
+  build 139/139. (Caught + fixed in verification: 5 industries pages the agent
+  missed + 1 ItemList schema description.)
+- Prompt 2 — Headings / sub copy / FAQ pass (~101 files): H1 `heading=` props,
+  H2/SectionHeader `heading=`, HeroSection/CTASection `sub=` props, and FAQ
+  arrays. Homepage H1 → "Commercial Cleaning Company in Las Vegas, NV."; ~190
+  literal "Clark County" instances removed from heading=/sub= → "the Las Vegas
+  Valley"; ~50 FAQ answers reframed to "family-owned commercial cleaning company".
+  Extended to Batch-7 clusters so the site-wide heading/sub grep reached zero.
+  All 5 validations passed; build 139/139.
+- SEO_DEFAULTS update — lib/constants/seo.ts: removed "Clark County" from the
+  default title and description strings (replaced the `${SITE.serviceArea.county}`
+  interpolation with "Las Vegas" / "the Las Vegas Valley" directly). site.ts
+  `county: 'Clark County'` left unchanged (areaServed + clark-county pages depend
+  on it). Result: the 8 utility/legal pages that inherit the default OG
+  (_not-found, 404, accessibility-statement, cookie-policy, privacy-policy,
+  terms-of-service, thank-you, sitemap) no longer carry Clark County in rendered
+  OG tags. Build 139/139.
+- Batch-7 cluster metadata cleanup — 23 files (urgent-cleaning, seasonal,
+  cleaning-solutions, communities): verified metadata.description /
+  openGraph.title / openGraph.description. Only same-day-cleaning-las-vegas had a
+  Clark County occurrence (meta + OG description) → "the Las Vegas Valley"; the
+  other 22 were already clean. Remaining cluster Clark County is body/FAQ/areaServed
+  only (out of scope).
+- Audience card heading fix — app/seasonal/back-to-school-home-reset/page.tsx:
+  data-array card `title:` (rendered as an <h3>) "Landlords near UNLV and Clark
+  County schools" → "Landlords near UNLV and Las Vegas Valley schools".
+- Intentionally preserved — two "Clark County" references in
+  back-to-school-home-reset (one FAQ answer, one body paragraph) are factual
+  references to the Clark County School District (the district's actual name) and
+  are correct as-is. Owner-confirmed to leave them.
+
+Final state: rendered <title>, meta description, og:title, and og:description
+contain zero "Clark County" outside the dedicated clark-county target pages
+(verified by precise content-extraction grep over out/*.html). Clark County
+remains only in areaServed JSON-LD, nav chip labels, the SITE constant, body/FAQ
+copy where accurate, and the clark-county pages. Build 139/139 clean.
+Nothing committed or deployed.

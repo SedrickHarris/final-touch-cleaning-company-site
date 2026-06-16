@@ -9,12 +9,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: `Cleaning Across ${SITE.serviceArea.metro}`,
-  description: `Final Touch serves Las Vegas, Henderson, North Las Vegas, Boulder City, and all of ${SITE.serviceArea.county}, NV. Local team, free quotes. Call ${SITE.phone.display}.`,
+  title: { absolute: 'Commercial Cleaning Across the Las Vegas Valley | Final Touch' },
+  description:
+    'Family-owned commercial cleaning across the Las Vegas Valley — Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: '/locations' },
   openGraph: {
-    title: `Service Area | Final Touch Cleaning Company | ${SITE.serviceArea.county}, NV`,
-    description: `Final Touch serves every part of ${SITE.serviceArea.county}, Nevada: Las Vegas, Henderson, North Las Vegas, and Boulder City. One team, one finishing standard.`,
+    title: `Commercial Cleaning Across the Las Vegas Valley | Final Touch Cleaning Company`,
+    description:
+      'Family-owned commercial cleaning across the Las Vegas Valley — Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations`,
   },
@@ -90,7 +92,7 @@ export default function LocationsPage() {
     <>
       <HeroSection
         eyebrow="Service area"
-        heading={`Cleaning across ${SITE.serviceArea.metro}.`}
+        heading="Commercial Cleaning Across the Las Vegas Valley"
         sub={`${SITE.name} serves every part of ${SITE.serviceArea.county}: ${SITE.serviceArea.cities.join(', ')}. Same team, same finishing standard, regardless of where you are in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -105,7 +107,7 @@ export default function LocationsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Where we work"
-            heading="Five service areas. One standard."
+            heading="Five cities. One commercial cleaning standard."
             sub={`We cover every corner of ${SITE.serviceArea.county}, Nevada, from new-build communities in the southwest to downtown corridors and Boulder City.`}
           />
 

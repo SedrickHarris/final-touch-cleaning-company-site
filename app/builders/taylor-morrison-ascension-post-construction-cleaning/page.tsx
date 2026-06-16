@@ -302,7 +302,7 @@ export default function TaylorMorrisonAscensionPostConstructionPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Service area"
-            heading="Post-construction cleanup across Clark County."
+            heading="Post-construction cleanup across the Las Vegas Valley."
             sub="Final Touch serves communities throughout Henderson and the Las Vegas Valley."
           />
           <div className="mt-6 flex flex-wrap gap-3">
@@ -367,7 +367,7 @@ export default function TaylorMorrisonAscensionPostConstructionPage() {
       {/* 9. Final CTA */}
       <CTASection
         heading="Ready to schedule your Ascension post-construction clean?"
-        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch confirms access arrangements before the walkthrough and cleaning day. ${SITE.owners} and the team serve Clark County, Nevada.`}
+        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch confirms access arrangements before the walkthrough and cleaning day. ${SITE.owners} and the team serve the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

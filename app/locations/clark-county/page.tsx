@@ -11,14 +11,14 @@ import { ROUTES, SERVICES, LOCATIONS } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Clark County, NV',
+  title: 'Commercial Cleaning Services in Clark County, NV',
   description:
-    'Family-owned cleaning services across Clark County, NV. Las Vegas, Henderson, North Las Vegas, Boulder City, and beyond. Call (702) 444-5077.',
+    'Commercial cleaning across Clark County, NV — Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
   alternates: { canonical: '/locations/clark-county' },
   openGraph: {
-    title: 'Cleaning Services in Clark County, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning Services in Clark County, NV | Final Touch Cleaning Company',
     description:
-      'Scott & Nicole Maland serve all of Clark County, NV. Residential and commercial cleaning across Las Vegas, Henderson, North Las Vegas, and Boulder City. Free quotes.',
+      'Commercial cleaning across Clark County, NV — Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/clark-county`,
   },
@@ -52,7 +52,11 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer across Clark County?',
-    a: 'Final Touch offers seven services county-wide: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both residential and commercial properties are served in every city.',
+    a: 'Final Touch offers seven services county-wide: commercial and office cleaning, janitorial services, and post-construction cleanup are the primary focus for businesses and property managers. Move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning are also available. All seven services are offered in every city across the county.',
+  },
+  {
+    q: 'What commercial cleaning services does Final Touch offer across Clark County?',
+    a: `Final Touch provides commercial and office cleaning, janitorial programs, post-construction cleanup, move-in and move-out cleaning for property managers, deep cleaning, and retail space cleaning — seven services in total, available county-wide across Las Vegas, Henderson, North Las Vegas, and Boulder City. Commercial and post-construction work is the primary focus. Call ${SITE.phone.display} to discuss the right program for your facility.`,
   },
   {
     q: 'Is Final Touch based in Clark County?',
@@ -81,6 +85,8 @@ const localBusinessJsonLd = {
   email: SITE.email.display,
   image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  description:
+    'Commercial cleaning company serving all of Clark County, NV. Office, janitorial, post-construction, retail, and property management cleaning.',
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },
@@ -93,13 +99,14 @@ const localBusinessJsonLd = {
     { '@type': 'City', name: 'Boulder City' },
   ],
   serviceType: [
-    'Residential Cleaning',
     'Commercial Cleaning',
     'Post-Construction Cleanup',
+    'Janitorial Services',
     'Move-In Cleaning',
     'Move-Out Cleaning',
     'Deep Cleaning',
     'Retail Space Cleaning',
+    'Residential Cleaning',
   ],
 };
 
@@ -125,7 +132,7 @@ export default function ClarkCountyPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="County-wide service area"
-        heading="Cleaning Services in Clark County, NV"
+        heading="Commercial Cleaning Services in Clark County, NV"
         sub={`Final Touch provides residential and commercial cleaning across all of ${SITE.serviceArea.county}, Nevada. Las Vegas, Henderson, North Las Vegas, Boulder City, and the unincorporated areas in between. ${SITE.owners} own and run the company locally, serving every part of the county with the same standard.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -318,7 +325,7 @@ export default function ClarkCountyPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Services across Clark County"
-            heading="Cleaning services available county-wide."
+            heading="Commercial cleaning services available county-wide."
             sub="All seven services offered in every city. The right service depends on the job, not the zip code."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

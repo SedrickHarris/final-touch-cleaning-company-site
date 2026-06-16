@@ -10,16 +10,16 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Medical Office Cleaning in North Las Vegas, NV | Final Touch',
+  title: { absolute: 'Medical Office Cleaning in North Las Vegas, NV | Final Touch' },
   description:
-    'Professional cleaning for medical offices, dental practices, and clinics in North Las Vegas, NV. Final Touch serves healthcare offices across Clark County. Call (702) 444-5077.',
+    'Medical office cleaning for practices and clinics in North Las Vegas, NV. Serving healthcare offices across the Las Vegas Valley. Call (702) 444-5077.',
   alternates: {
     canonical: `${SITE.url}/industries/medical-office-cleaning/north-las-vegas`,
   },
   openGraph: {
     title: 'Medical Office Cleaning in North Las Vegas, NV | Final Touch Cleaning',
     description:
-      'Professional cleaning for medical offices, dental practices, and clinics in North Las Vegas, NV. Final Touch serves healthcare offices across Clark County. Call (702) 444-5077.',
+      'Medical office cleaning for practices and clinics in North Las Vegas, NV. Serving healthcare offices across the Las Vegas Valley. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/industries/medical-office-cleaning/north-las-vegas`,
   },
@@ -349,7 +349,7 @@ export default function MedicalOfficeCleaningNorthLasVegasPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Medical office cleaning across North Las Vegas and Clark County."
+            heading="Medical office cleaning across North Las Vegas and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

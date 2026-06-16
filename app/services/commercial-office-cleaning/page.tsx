@@ -11,14 +11,14 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch Cleaning' },
+  title: { absolute: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch' },
   description:
-    'Final Touch provides commercial office cleaning across Las Vegas & Clark County, NV. Licensed, insured, scheduled around your business. Call (702) 444-5077.',
+    'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured, scheduled around your business. Call (702) 444-5077.',
   alternates: { canonical: '/services/commercial-office-cleaning' },
   openGraph: {
-    title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch Cleaning',
+    title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Commercial office cleaning across Las Vegas and Clark County, NV. Licensed and insured, scheduled around your business hours. Free walkthrough. Call (702) 444-5077.',
+      'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed, insured, scheduled around your business hours. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/services/commercial-office-cleaning`,
   },
@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: 'Are your commercial cleaners licensed and insured in Nevada?',
-    a: `Yes. Final Touch Cleaning Company is licensed and insured in Nevada. For commercial clients, office managers, and property managers who need to confirm vendor credentials, we can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
+    a: `Yes. Final Touch Cleaning Company is a family-owned commercial cleaning company licensed and insured in Nevada. For commercial clients, office managers, and property managers who need to confirm vendor credentials, we can confirm our general licensing and insurance status. Call ${SITE.phone.display} or request a free walkthrough quote to get started.`,
   },
 ];
 
@@ -65,8 +65,8 @@ const siblings = SERVICES.filter((s) => s.slug !== 'commercial-office-cleaning')
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Commercial & Office Cleaning',
-  serviceType: 'Commercial Cleaning',
+  name: 'Commercial Office Cleaning',
+  serviceType: 'Commercial Office Cleaning',
   provider: {
     '@type': 'Organization',
     name: SITE.name,
@@ -146,7 +146,7 @@ export default function CommercialOfficeCleaningPage() {
           <SectionHeader
             eyebrow="Who we serve"
             heading="Built for offices and commercial spaces of all sizes."
-            sub="From single-suite tenants to multi-room commercial operations, we serve businesses across Clark County that need a consistent, professional clean."
+            sub="From single-suite tenants to multi-room commercial operations, we serve businesses across the Las Vegas Valley that need a consistent, professional clean."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {[
@@ -296,7 +296,7 @@ export default function CommercialOfficeCleaningPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Service area"
-            heading="Commercial cleaning across Clark County."
+            heading="Commercial cleaning across the Las Vegas Valley."
             sub={`We serve commercial clients throughout ${SITE.serviceArea.county}, Nevada. The same team and the same finishing standard across every city we serve.`}
           />
           <ul className="mt-8 flex flex-wrap gap-3">

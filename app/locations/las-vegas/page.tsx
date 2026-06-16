@@ -11,14 +11,14 @@ import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Services in Las Vegas, NV',
+  title: 'Commercial Cleaning Services in Las Vegas, NV',
   description:
-    'Commercial and post-construction cleaning in Las Vegas, NV. Office cleaning, janitorial, move-in/move-out, and retail for businesses and property managers. Licensed and insured. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Las Vegas, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas' },
   openGraph: {
-    title: 'Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Family-Owned Commercial Cleaning in Las Vegas, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Las Vegas and Clark County, NV. Move-out, deep, commercial, post-construction, and more. Free quotes.',
+      'Family-owned commercial cleaning in Las Vegas, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas`,
   },
@@ -57,7 +57,11 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Las Vegas?',
-    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Commercial and post-construction work is the primary focus, with move-in and move-out cleaning available for property managers, landlords, and renters.`,
+    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, and post-construction cleanup are the primary focus — serving businesses, property managers, and landlords across the city. Move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning are also available. Commercial and post-construction work leads the service mix, with residential and rental-turnover cleans available alongside it.`,
+  },
+  {
+    q: 'Does Final Touch provide ongoing commercial cleaning programs for Las Vegas businesses?',
+    a: `Yes. Final Touch offers recurring office and janitorial cleaning programs for Las Vegas businesses. Each program is scoped through a free walkthrough — a phone call or a brief on-site visit — so the frequency and scope reflect the actual facility. ${SITE.owners} own and run the company and are licensed and insured. Call ${SITE.phone.display} to discuss your program.`,
   },
   {
     q: 'Does Final Touch handle post-construction cleaning for Las Vegas new builds and renovations?',
@@ -73,7 +77,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch a local Las Vegas cleaning company or a franchise?',
-    a: `Final Touch is a locally owned, family-run cleaning company based in Southern Nevada, not a franchise. ${SITE.owners} own and operate it. When you call, you reach the owners or the team directly.`,
+    a: `Final Touch is a locally owned, family-run commercial cleaning company based in Southern Nevada, not a franchise. ${SITE.owners} own and operate it. When you call, you reach the owners or the team directly.`,
   },
 ];
 
@@ -86,6 +90,8 @@ const localBusinessJsonLd = {
   email: SITE.email.display,
   image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
+  description:
+    'Family-owned commercial cleaning company serving Las Vegas, NV. Office cleaning, janitorial, post-construction, and property management cleaning.',
   founder: [
     { '@type': 'Person', name: 'Scott Maland' },
     { '@type': 'Person', name: 'Nicole Maland' },
@@ -128,7 +134,7 @@ export default function LasVegasPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
-        heading="Cleaning Services in Las Vegas, NV"
+        heading="Commercial Cleaning Services in Las Vegas, NV"
         sub={`Final Touch provides commercial and post-construction cleaning services across Las Vegas. From recurring office and janitorial programs to post-construction detail work and move-in/move-out cleans for property managers, ${SITE.owners} and the team serve Las Vegas properties with the same standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -259,7 +265,7 @@ export default function LasVegasPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Services in Las Vegas"
-            heading="Cleaning services for Las Vegas homes and businesses."
+            heading="Commercial cleaning services for Las Vegas businesses and property managers."
             sub="All seven services available across the city. Cards ordered by local demand."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

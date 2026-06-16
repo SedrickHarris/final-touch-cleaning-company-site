@@ -10,7 +10,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: 'Retail Store Cleaning in Henderson, NV | Final Touch',
+  title: { absolute: 'Retail Store Cleaning in Henderson, NV | Final Touch' },
   description:
     'Professional cleaning for retail stores and shopping center tenants in Henderson, NV. Green Valley Parkway and citywide. Call (702) 444-5077.',
   alternates: {
@@ -354,7 +354,7 @@ export default function RetailStoreCleaningHendersonPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <SectionHeader
             eyebrow="Service area"
-            heading="Retail store cleaning across Henderson and Clark County."
+            heading="Retail store cleaning across Henderson and the Las Vegas Valley."
           />
           <ul className="mt-8 flex flex-wrap gap-3">
             {serviceAreaChips.map(({ label, href }) => (

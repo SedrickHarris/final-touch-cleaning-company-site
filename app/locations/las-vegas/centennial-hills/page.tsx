@@ -18,14 +18,14 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
 
 export const metadata: Metadata = {
-  title: 'Centennial Hills Cleaning | Las Vegas, NV',
+  title: 'Commercial Cleaning in Centennial Hills, Las Vegas, NV',
   description:
-    'Family-owned commercial, post-construction, and home cleaning in Centennial Hills, Las Vegas, NV. Free quotes across Clark County. Call (702) 444-5077.',
+    'Family-owned commercial cleaning in Centennial Hills, Las Vegas, NV. Move-in, move-out, deep cleaning, and office cleaning. Licensed, insured. (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas/centennial-hills' },
   openGraph: {
-    title: 'Centennial Hills Cleaning Services | Las Vegas, NV | Final Touch Cleaning Company',
+    title: 'Commercial Cleaning in Centennial Hills, Las Vegas, NV | Final Touch',
     description:
-      'Scott & Nicole Maland serve Centennial Hills and the northwest Las Vegas Valley. Commercial, post-construction, and home cleaning. Free quotes across Clark County.',
+      'Family-owned commercial cleaning in Centennial Hills, Las Vegas, NV. Move-in, move-out, deep cleaning, and office cleaning. Licensed, insured. (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/las-vegas/centennial-hills`,
   },
@@ -45,15 +45,15 @@ const CENTENNIAL_HILLS_SERVICES = [
 const faq = [
   {
     q: 'Does Final Touch serve Centennial Hills in Las Vegas?',
-    a: `Yes, Final Touch Cleaning Company serves Centennial Hills as part of our Las Vegas and Clark County service area. We are a family-owned, owner-led company run by Scott and Nicole Maland, cleaning both homes and businesses throughout the northwest Las Vegas Valley. Request a free quote or call ${SITE.phone.display} to get started.`,
+    a: `Yes, Final Touch Cleaning Company serves Centennial Hills as part of our Las Vegas and Las Vegas Valley service area. We are a family-owned, owner-led commercial cleaning company run by Scott and Nicole Maland, cleaning both homes and businesses throughout the northwest Las Vegas Valley. Request a free quote or call ${SITE.phone.display} to get started.`,
   },
   {
     q: 'What cleaning services do you offer in Centennial Hills?',
     a: 'We offer commercial and office cleaning, janitorial programs, post-construction cleanup, move-in and move-out cleaning, deep cleaning, and retail space cleaning. Both businesses and households in Centennial Hills can request any of these services. Tell us your property type and what you need cleaned, and we will tailor the visit to fit it.',
   },
   {
-    q: 'Do you clean new-construction and recently built homes in Centennial Hills?',
-    a: 'Yes. Because Centennial Hills has a high share of newer construction, we regularly provide post-construction cleanup and move-in cleaning for new and recently renovated homes. We remove construction dust, detail the finishes and fixtures, and leave the home move-in ready so you can settle in without the cleanup.',
+    q: 'Do you clean new-construction and recently built properties in Centennial Hills?',
+    a: 'Yes. Because Centennial Hills has a high share of newer construction, we regularly provide post-construction cleanup and move-in cleaning for new and recently renovated homes and commercial spaces. We remove construction dust, detail the finishes and fixtures, and leave the property move-in ready so you can open or settle in without the cleanup.',
   },
   {
     q: 'Can you clean our Centennial Hills office or business after hours?',
@@ -80,7 +80,7 @@ const localBusinessJsonLd = {
     { '@type': 'Place', name: 'Clark County, NV' },
   ],
   description:
-    'Family-owned cleaning company serving Centennial Hills, Las Vegas, and Clark County, NV.',
+    'Family-owned commercial cleaning company serving Centennial Hills, Las Vegas, NV.',
 };
 
 const faqJsonLd = {
@@ -106,7 +106,7 @@ export default function CentennialHillsPage() {
       <Breadcrumb items={breadcrumbItems} />
       <HeroSection
         eyebrow="Northwest Las Vegas Valley"
-        heading="Cleaning Services in Centennial Hills, Las Vegas, NV"
+        heading="Commercial Cleaning Services in Centennial Hills, Las Vegas, NV"
         sub="Family-owned commercial, post-construction, and home cleaning for the northwest Las Vegas Valley. Backed by our Blue Ribbon Guarantee."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
@@ -169,7 +169,7 @@ export default function CentennialHillsPage() {
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-16 sm:py-20 lg:py-24">
           <SectionHeader
             eyebrow="Our services"
-            heading="Popular cleaning services in Centennial Hills."
+            heading="Commercial cleaning services in Centennial Hills."
             sub="Every service is available to Centennial Hills homes and businesses. Reordered by what Centennial Hills customers request most."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -309,7 +309,7 @@ export default function CentennialHillsPage() {
       {/* 8. Final CTA — no duplicate form */}
       <CTASection
         heading="Ready for a spotless Centennial Hills home or business?"
-        sub="Request a free quote or call our team today. We serve Centennial Hills and all of Clark County."
+        sub="Request a free quote or call our team today. We serve Centennial Hills and the wider Las Vegas Valley."
         primaryCta={{ label: CTAS.estimate, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"

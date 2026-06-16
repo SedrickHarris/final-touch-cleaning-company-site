@@ -11,12 +11,12 @@ import { ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: 'Builder Post-Construction Cleaning Las Vegas',
   description:
-    'Post-construction cleanup for new builds across Clark County, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
+    'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: `${SITE.url}/builders` },
   openGraph: {
     title: 'Builder Post-Construction Cleaning Las Vegas | Final Touch',
     description:
-      'Post-construction cleanup for new builds across Clark County, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
+      'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/builders`,
   },
@@ -78,7 +78,7 @@ const builders = [
 const faq = [
   {
     q: 'Which builders does Final Touch serve for post-construction cleaning in Las Vegas?',
-    a: `Final Touch serves post-construction cleanup for homebuyers and project teams from all major Las Vegas Valley builders, including Toll Brothers, Pulte Homes, D.R. Horton, Lennar, KB Home, Taylor Morrison, Tri Pointe, Century Communities, and Taylor Morrison at Ascension. If your builder is not listed, call ${SITE.phone.display}. Final Touch serves any new build in ${SITE.serviceArea.county} regardless of the builder.`,
+    a: `Final Touch is a family-owned commercial cleaning company that serves post-construction cleanup for homebuyers and project teams from all major Las Vegas Valley builders, including Toll Brothers, Pulte Homes, D.R. Horton, Lennar, KB Home, Taylor Morrison, Tri Pointe, Century Communities, and Taylor Morrison at Ascension. If your builder is not listed, call ${SITE.phone.display}. Final Touch serves any new build in ${SITE.serviceArea.county} regardless of the builder.`,
   },
   {
     q: 'What is post-construction cleaning and why do new homes need it?',
@@ -86,7 +86,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch clean new builds from any builder in the Las Vegas Valley?',
-    a: `Yes. Final Touch serves new builds from any builder in ${SITE.serviceArea.county}, not only the builders listed on this page. The listed builders have dedicated pages with community-specific FAQs. For any other builder or community, call ${SITE.phone.display} or request a free quote and describe the build and community at the time of scheduling.`,
+    a: `Yes. Final Touch is a family-owned commercial cleaning company that serves new builds from any builder in ${SITE.serviceArea.county}, not only the builders listed on this page. The listed builders have dedicated pages with community-specific FAQs. For any other builder or community, call ${SITE.phone.display} or request a free quote and describe the build and community at the time of scheduling.`,
   },
   {
     q: 'How do I schedule post-construction cleaning after my builder handoff in Las Vegas?',
@@ -101,7 +101,7 @@ const collectionPageJsonLd = {
   '@type': 'CollectionPage',
   name: 'Builder Post-Construction Cleaning | Final Touch',
   description:
-    'Post-construction cleanup for new builds across Clark County, NV. All major Las Vegas Valley builders.',
+    'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders.',
   url: `${SITE.url}/builders`,
   provider: {
     '@type': 'Organization',
@@ -161,7 +161,7 @@ export default function BuildersHubPage() {
           alt: 'Post-construction cleaning for new builds - Final Touch Cleaning Company, Las Vegas Valley NV',
         }}
         heading="Post-Construction Cleaning for New Builds | Las Vegas Valley Builders"
-        sub="Final Touch provides post-construction cleanup for homebuyers and project teams across Clark County, Nevada, regardless of builder. Select your builder below for community-specific information, or call (702) 444-5077 to schedule a walkthrough and free quote."
+        sub="Final Touch provides post-construction cleanup for homebuyers and project teams across the Las Vegas Valley, regardless of builder. Select your builder below for community-specific information, or call (702) 444-5077 to schedule a walkthrough and free quote."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -282,7 +282,7 @@ export default function BuildersHubPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Service area"
-            heading="New build cleanup across Clark County."
+            heading="New build cleanup across the Las Vegas Valley."
             sub="Final Touch serves builder communities throughout the Las Vegas Valley."
           />
           <div className="mt-6 flex flex-wrap gap-3">
@@ -336,7 +336,7 @@ export default function BuildersHubPage() {
       {/* 8. Final CTA */}
       <CTASection
         heading="Ready to schedule your post-construction clean?"
-        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through every job before quoting. ${SITE.owners} and the team serve Clark County, Nevada.`}
+        sub={`Call ${SITE.phone.display} or request a free quote online. Final Touch walks through every job before quoting. ${SITE.owners} and the team serve the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         tone="blue"
