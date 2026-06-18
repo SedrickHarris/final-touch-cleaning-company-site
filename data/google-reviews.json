@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "lastVerifiedAt": null,
+  "source": "google-business-profile",
+  "placeId": "ChIJq6qq6ql0yIARonMQkF8BczI",
+  "placeUrl": "https://www.google.com/maps?cid=5303198646776788086",
+  "writeReviewUrl": "https://g.page/r/CXZ0dloSv5hJEBI/review",
+  "summary": {
+    "averageRating": 5,
+    "totalReviewCount": 3,
+    "lastFetchedAt": null
+  },
+  "reviews": [
+    {
+      "id": "carmen-mascolo",
+      "reviewerName": "Carmen Mascolo",
+      "avatarUrl": null,
+      "reviewText": "Scott and Nicole were punctual, professional and very detail oriented. Place sparkled when they finished! I would recommend them to anyone!",
+      "starCount": 5,
+      "reviewDate": "May 2026",
+      "publishedAt": "",
+      "city": "Clark County, NV",
+      "reviewUrl": null,
+      "verified": true,
+      "permissionToPublish": true
+    },
+    {
+      "id": "deb-kollpainter",
+      "reviewerName": "Deb Kollpainter",
+      "avatarUrl": null,
+      "reviewText": "I recommend this company highly. I needed some assistance cleaning my home due to illness. I hadn't been able to clean for about a month. Scott and Nicole came and cleaned my house even better than I could clean it on my best day. They are pleasant and trustworthy, Cordial and pay close attention to details getting all the nooks and crannies clean as a whistle. If you need a really good cleaning service reach out to Final Touch. Best cleaning service I've had in the past 30 years",
+      "starCount": 5,
+      "reviewDate": "May 2026",
+      "publishedAt": "",
+      "city": "Clark County, NV",
+      "reviewUrl": null,
+      "verified": true,
+      "permissionToPublish": true
+    },
+    {
+      "id": "sara-green",
+      "reviewerName": "Sara Green",
+      "avatarUrl": null,
+      "reviewText": "Scott and Nicole of Final Touch Cleaning are excellent cleaners … they are professional and responsible… If they miss anything they will go back and make sure it is taken care of … they do what they say they are going to do. I will definitely be calling them back to do more cleaning jobs!",
+      "starCount": 5,
+      "reviewDate": "May 2026",
+      "publishedAt": "",
+      "city": "Clark County, NV",
+      "reviewUrl": null,
+      "verified": true,
+      "permissionToPublish": true
+    }
+  ]
+}

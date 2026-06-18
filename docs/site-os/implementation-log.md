@@ -5140,3 +5140,95 @@ contain zero "Clark County" outside the dedicated clark-county target pages
 remains only in areaServed JSON-LD, nav chip labels, the SITE constant, body/FAQ
 copy where accurate, and the clark-county pages. Build 139/139 clean.
 Nothing committed or deployed.
+
+### GBP Reviews Pipeline + Carousel
+Status: Implemented pending review
+Date: 2026-06-18
+
+Summary:
+Built the full GBP reviews pipeline and replaced the static review cards on
+/reviews and app/page.tsx with a data-driven carousel/grid system.
+
+Files created (10):
+- data/google-reviews.json — seeded with 3 owner-confirmed reviews (verified: true).
+  publishedAt left blank (empty string) — no date was invented; the displayed date
+  comes from reviewDate ("May 2026"). publishedAt is populated with real ISO
+  timestamps on first npm run fetch-reviews. id derived from reviewer name (slug,
+  e.g. "carmen-mascolo"). reviewText verbatim from existing app/reviews/page.tsx
+  source.
+- lib/google-reviews.ts — single access layer. hasVerifiedReviews(), getVerifiedReviews(),
+  getVerifiedSummary(), getPlaceUrl(), getWriteReviewUrl(). All components import
+  from here; nothing imports data/google-reviews.json directly.
+- scripts/fetch-reviews.ts — OAuth2 desktop flow hitting legacy GBP v4 API
+  (mybusiness.googleapis.com/v4/). Writes data/google-reviews.staged.json (gitignored).
+  LOCATION_ID constant is TODO_REPLACE_WITH_NUMERIC_LOCATION_ID — printed to console
+  on first run.
+- scripts/curate-reviews.ts — interactive CLI. Keys: y approve, n skip, e edit name,
+  q quit. Writes data/google-reviews.json with verified: true on approved reviews.
+  Preserves previously approved reviews by id across re-runs.
+- scripts/README.md — full setup and runbook documentation.
+- components/reviews/GoogleReviewCard.tsx — single card, dark/light variants,
+  deterministic avatar color from reviewer name, inline Google "G" badge SVG,
+  "View on Google" link per card.
+- components/reviews/GoogleReviewsCarousel.tsx — auto-advancing carousel, Sirius-style
+  dark section, prev/next arrows, dot indicators, pause on hover/focus, 1/2/3 col
+  responsive, Framer Motion slide transitions.
+- components/reviews/GoogleReviewsGrid.tsx — static responsive grid, light variant,
+  stagger entrance animation.
+- components/reviews/GoogleReviewSummary.tsx — rating chip (average + count + Google
+  badge), dark/light variants, half-star clip-path rendering.
+- components/reviews/GoogleReviewsSection.tsx — Server Component wrapper. Single
+  drop-in for any page. Calls hasVerifiedReviews() internally; renders neutral
+  fallback ("Read our reviews on Google" link) when pipeline has not run. No
+  conditional logic required in consuming pages.
+
+Files updated (5):
+- app/reviews/page.tsx — replaced static card grid with GoogleReviewsSection
+  variant="grid" showSummary. AggregateRating/LocalBusiness JSON-LD stripped per
+  build-status-reconciliation.md §4 (no self-serving rating schema). FAQPage JSON-LD
+  retained. Visible summary chip (attributed text) retained. getVerifiedSummary import
+  removed. CTASection eyebrow prop removed (prop does not exist on CTASection).
+- app/page.tsx — added GoogleReviewsSection import + carousel block immediately after
+  the "Why Final Touch" section closing tag. variant="carousel" autoPlayMs={6000}.
+- package.json — added scripts: fetch-reviews (ts-node scripts/fetch-reviews.ts),
+  curate-reviews (ts-node scripts/curate-reviews.ts). Added top-level ts-node config
+  block (module: commonjs, moduleResolution: node, target: es2022, transpileOnly: true).
+  Added devDependencies: google-auth-library ^9.0.0, googleapis ^144.0.0,
+  ts-node ^10.9.0.
+- .gitignore — added credentials.json, scripts/tokens.json,
+  data/google-reviews.staged.json.
+- tsconfig.json — added "scripts" to exclude array. Scripts run via their own ts-node
+  CommonJS config; they are not part of the Next.js app type-check graph.
+
+No-fake-data compliance:
+- No invented reviews, ratings, or testimonials. The 3 seeded reviews are
+  owner-confirmed verbatim text from the existing app/reviews/page.tsx.
+- No invented dates: publishedAt is blank until the pipeline writes real timestamps.
+- No AggregateRating or Review schema. summary.averageRating (5.0) and
+  totalReviewCount (3) in data/google-reviews.json reflect the confirmed review set
+  and display as attributed text only via GoogleReviewSummary.
+- Neutral fallback ships for any page that calls GoogleReviewsSection before the
+  pipeline runs — no placeholder stars, no fake content.
+
+Validation:
+- npm run lint — pass (pre-existing GTM warning in layout.tsx only)
+- npm run type-check — pass (clean)
+- npm run build — pass (exit 0)
+
+Open items (non-blockers):
+- npm install not yet run — required before npm run fetch-reviews executes.
+  Installs: googleapis, google-auth-library, ts-node.
+- LOCATION_RESOURCE_NAME in scripts/fetch-reviews.ts is a placeholder
+  (accounts/TODO_ACCOUNT_ID/locations/TODO_LOCATION_ID). The script was updated to
+  skip the account/location lookup APIs (only the legacy GMB v4 API is enabled) and
+  hit the reviews endpoint directly, so this full resource name must be set by hand.
+  See scripts/README.md → "Finding your location resource name" (OAuth Playground).
+- The legacy GMB v4 reviews endpoint requires a per-project allowlist approval from
+  Google; until granted, the reviews call returns 403 PERMISSION_DENIED. OAuth itself
+  is working (scripts/tokens.json saved; Testing-mode token, 7-day expiry).
+- Google Cloud project not yet created. Full setup in scripts/README.md.
+- data/google-reviews.json publishedAt values are blank (empty string); not displayed
+  in the UI (reviewDate is shown instead). Populated with real ISO timestamps when
+  the fetch/curate pipeline runs.
+
+Did not commit. Did not deploy.

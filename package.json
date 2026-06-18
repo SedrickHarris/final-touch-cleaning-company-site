@@ -7,7 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "fetch-reviews": "ts-node scripts/fetch-reviews.ts",
+    "curate-reviews": "ts-node scripts/curate-reviews.ts"
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "es2022"
+    },
+    "transpileOnly": true
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
@@ -23,7 +33,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^144.0.0",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.0",
     "typescript": "^5"
   },
   "overrides": {

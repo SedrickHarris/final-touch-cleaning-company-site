@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
+import GoogleReviewsSection from '@/components/reviews/GoogleReviewsSection';
 import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
@@ -279,6 +280,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Reviews Carousel ─────────────────────────────────────────────── */}
+      <GoogleReviewsSection
+        variant="carousel"
+        heading="What our clients say."
+        eyebrow="Google Reviews"
+        autoPlayMs={6000}
+      />
 
       {/* ── How It Works ──────────────────────────────────────────────────── */}
       <section className="bg-brand-white">
