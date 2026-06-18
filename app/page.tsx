@@ -176,7 +176,13 @@ export default function HomePage() {
           label: `${CTAS.call} · ${SITE.phone.display}`,
           href: SITE.phone.href,
         }}
-        formSlot={<QuoteFormPlaceholder />}
+        formSlot={
+          // Desktop only: form sits in the hero's right column. On mobile it would
+          // crowd the video background, so it moves to its own section below.
+          <div className="hidden lg:block">
+            <QuoteFormPlaceholder />
+          </div>
+        }
         video={{
           src: '/videos/hero-bg.mp4',
           // Poster reuses the existing homepage hero photo (no new asset needed).
@@ -184,6 +190,16 @@ export default function HomePage() {
           poster: '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
         }}
       />
+
+      {/* ── Quote Form (mobile only) ──────────────────────────────────────── */}
+      {/* On mobile the form lives here, in a clean white section directly below
+          the video hero, instead of stacking inside it. Desktop renders the form
+          in the hero's right column (above) and hides this section. */}
+      <section className="lg:hidden bg-brand-white py-12 px-4">
+        <div className="mx-auto max-w-xl">
+          <QuoteFormPlaceholder />
+        </div>
+      </section>
 
       {/* ── Trust Bar ─────────────────────────────────────────────────────── */}
       <TrustBar items={trustItems} />

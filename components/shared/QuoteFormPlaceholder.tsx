@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { SITE } from '@/lib/constants/site';
 
@@ -87,6 +87,11 @@ function validate(data: FormState): Errors {
 
 export default function QuoteFormPlaceholder() {
   const router = useRouter();
+  // The homepage renders this form twice (desktop in-hero + mobile section), so
+  // field ids must be unique per instance. `useId` guarantees that; `name`
+  // attributes can repeat safely because radio grouping and submission are scoped
+  // per <form>, and the webhook payload is built from React state, not DOM names.
+  const uid = useId();
   const [form, setForm] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -96,12 +101,15 @@ export default function QuoteFormPlaceholder() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formEl = e.currentTarget;
     const errs = validate(form);
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
-      const firstError = document.querySelector('[data-field-error]');
+      // Scope to THIS form: the page renders the quote form twice, so a
+      // document-wide query could focus the other instance.
+      const firstError = formEl.querySelector('[data-field-error]');
       if (firstError) (firstError as HTMLElement).focus();
       return;
     }
@@ -252,13 +260,13 @@ export default function QuoteFormPlaceholder() {
         {/* What do you need cleaned */}
         <div>
           <label
-            htmlFor="qf-details"
+            htmlFor={`${uid}-details`}
             className="block text-sm font-semibold text-brand-black mb-1.5"
           >
             What do you need cleaned?
           </label>
           <textarea
-            id="qf-details"
+            id={`${uid}-details`}
             name="details"
             rows={4}
             placeholder="Square footage, type of space, specific areas, anything we should know."
@@ -312,7 +320,7 @@ function TextField({
   error?: string;
   onChange: (v: string) => void;
 }) {
-  const id = `qf-${name}`;
+  const id = useId();
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-brand-black mb-1.5">
@@ -363,7 +371,7 @@ function SelectField({
   value: string;
   onChange: (v: string) => void;
 }) {
-  const id = `qf-${name}`;
+  const id = useId();
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-brand-black mb-1.5">
@@ -400,6 +408,7 @@ function RadioGroup({
   value: string;
   onChange: (v: string) => void;
 }) {
+  const groupId = useId();
   return (
     <fieldset>
       <legend className="block text-sm font-semibold text-brand-black mb-2">
@@ -407,7 +416,7 @@ function RadioGroup({
       </legend>
       <div className="flex flex-wrap gap-3">
         {options.map((opt) => {
-          const id = `qf-${name}-${opt.toLowerCase().replace(/\s+/g, '-')}`;
+          const id = `${groupId}-${opt.toLowerCase().replace(/\s+/g, '-')}`;
           return (
             <label
               key={opt}

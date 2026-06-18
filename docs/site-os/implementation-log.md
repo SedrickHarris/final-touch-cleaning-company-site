@@ -17,6 +17,47 @@ Fast Build Batch
 
 ## Log
 
+### Hero Mobile Layout Fix — homepage quote form
+Status: Implemented pending review
+Date: 2026-06-18
+Workflow: Fast Build Batch
+
+Problem: on mobile the QuoteFormPlaceholder stacked inside the video hero, crowding
+the background. Desktop two-column split is correct and unchanged.
+
+Fix: form is hidden inside the hero on mobile (`hidden lg:block` wrapper) and rendered
+once more in its own white section directly below the hero (`lg:hidden`). Desktop
+right-column behavior is untouched.
+
+Scope expansion (approved): the prompt scoped this to app/page.tsx only, but the
+duplicate render exposed a latent bug — QuoteFormPlaceholder used hardcoded ids
+(`qf-<name>`). Two copies in the DOM (both present; `hidden` is display:none) meant
+duplicate ids, which would have broken the MOBILE form: the sr-only radio inputs
+(Property Type, Preferred Contact Method) are operated only via `<label htmlFor>`,
+and a duplicate id resolves to the FIRST match in document order — the hidden desktop
+copy — so mobile radio selection and label-tap focus would target the wrong (hidden)
+instance. Owner approved widening scope to fix it correctly.
+
+Files changed (3):
+  - app/page.tsx — wrapped formSlot in `<div className="hidden lg:block">`; added a
+    `lg:hidden bg-brand-white py-12 px-4` section with a centered `max-w-xl` container
+    holding a second QuoteFormPlaceholder.
+  - components/shared/QuoteFormPlaceholder.tsx — field ids now derive from React
+    `useId()` instead of hardcoded `qf-<name>` (TextField, SelectField, RadioGroup,
+    and the inline details textarea), so each of the two instances gets unique ids.
+    `name` attributes are intentionally unchanged (radio grouping + submission are
+    per-<form>; the webhook payload is built from React state, not DOM names).
+    handleSubmit's error-focus query scoped from `document` to `e.currentTarget` so it
+    can't focus the other instance. GHL webhook submission flow unchanged.
+  - docs/site-os/implementation-log.md — this entry.
+
+Not touched: HeroSection.tsx, layout, config. GoHighLevel webhook URL and payload
+shape unchanged.
+
+Validation: npm run lint (0 errors; only the pre-existing GTM warning in
+app/layout.tsx), npm run type-check (clean), npm run build (compiled successfully;
+139/139 static pages generated). Not committed — pending review.
+
 ### Hero Video Background — homepage
 Status: Implemented pending review
 Date: 2026-06-18
