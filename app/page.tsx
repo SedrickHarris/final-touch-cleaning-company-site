@@ -191,16 +191,6 @@ export default function HomePage() {
         }}
       />
 
-      {/* ── Quote Form (mobile only) ──────────────────────────────────────── */}
-      {/* On mobile the form lives here, in a clean white section directly below
-          the video hero, instead of stacking inside it. Desktop renders the form
-          in the hero's right column (above) and hides this section. */}
-      <section className="lg:hidden bg-brand-white py-12 px-4">
-        <div className="mx-auto max-w-xl">
-          <QuoteFormPlaceholder />
-        </div>
-      </section>
-
       {/* ── Trust Bar ─────────────────────────────────────────────────────── */}
       <TrustBar items={trustItems} />
 
