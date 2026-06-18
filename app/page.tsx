@@ -177,9 +177,11 @@ export default function HomePage() {
           href: SITE.phone.href,
         }}
         formSlot={<QuoteFormPlaceholder />}
-        image={{
-          src: '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
-          alt: 'Commercial office cleaned by Final Touch Cleaning Company in Las Vegas, NV.',
+        video={{
+          src: '/videos/hero-bg.mp4',
+          // Poster reuses the existing homepage hero photo (no new asset needed).
+          // Covers all three fallback cases: pre-load, mobile, and reduced-motion.
+          poster: '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
         }}
       />
 

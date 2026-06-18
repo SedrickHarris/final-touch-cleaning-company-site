@@ -17,6 +17,51 @@ Fast Build Batch
 
 ## Log
 
+### Hero Video Background — homepage
+Status: Implemented pending review
+Date: 2026-06-18
+Workflow: Fast Build Batch
+
+Added an optional looping-video background to the shared `HeroSection`. The existing
+`image` prop behavior is fully preserved; `video` and `image` are mutually exclusive
+and `video` wins when both are passed. No other page, component, layout, or config
+was touched.
+
+Files changed (3):
+  - components/shared/HeroSection.tsx — new `HeroVideo` type + `video?` prop; render
+    branch (`video ? <HeroVideoBackground> : hasImage ? <Image> : gradient`); color
+    block switched from `hasImage` to `hasDarkBg = hasVideo || hasImage` so video
+    activates the same dark-bg/light-text/overlay path as the image hero. New internal
+    `HeroVideoBackground` component + `useReducedMotion` hook + Pause/Play icons.
+  - app/page.tsx — homepage hero `image` prop replaced with `video` prop. eyebrow,
+    heading, emphasis, sub, CTAs, and formSlot unchanged.
+  - docs/site-os/implementation-log.md — this entry.
+
+Asset decision: no new file created. Per owner direction, the `poster` reuses the
+existing homepage hero photo
+(/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp) — the same image
+previously set as the `image` prop. No ffmpeg, no download, no new asset. Video file
+public/videos/hero-bg.mp4 (owner-provided, 2.7 MB) is the only new asset and was
+placed before the build.
+
+Accessibility confirmed:
+  - Decorative video carries aria-hidden="true"; <source> is video/mp4.
+  - Reduced motion: detection via useSyncExternalStore over
+    matchMedia('(prefers-reduced-motion: reduce)'). Under reduce, the <video> is not
+    rendered and never plays (playback is driven by effect, not the autoPlay
+    attribute) — the poster image renders instead and the pause control is omitted
+    (no motion to pause).
+  - WCAG pause control: 44x44 button (h-11 w-11), bottom-4 right-4, semi-transparent
+    dark pill, white icon, visible :focus-visible ring. aria-label toggles between
+    "Pause background video" / "Play background video"; label + icon track the
+    element's real play/pause events.
+  - Poster fallback: shown before load, on mobile when autoplay is blocked, and under
+    reduced motion.
+
+Validation: npm run lint (0 errors; only the pre-existing GTM warning in
+app/layout.tsx remains), npm run type-check (clean), npm run build (compiled
+successfully). Not committed — pending review.
+
 ### Industry Leaf — Chiropractic and PT Office Cleaning (North Las Vegas) — CLUSTER COMPLETE
 Status: Implemented pending review
 Date: 2026-06-07

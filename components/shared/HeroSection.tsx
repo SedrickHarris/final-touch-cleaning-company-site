@@ -3,12 +3,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from 'react';
 import { DURATION, EASE_OUT, fadeUp, stagger } from '@/lib/motion';
 
 type CTA = { label: string; href: string };
 
 type HeroImage = { src: string; alt?: string };
+
+type HeroVideo = {
+  /** Looping MP4 source, e.g. '/videos/hero-bg.mp4'. */
+  src: string;
+  /** Static fallback image shown before load and under reduced motion. */
+  poster: string;
+};
 
 type Props = {
   eyebrow?: string;
@@ -26,6 +39,12 @@ type Props = {
   container?: 'normal' | 'wide';
   /** Background photo. Renders behind content with a 40% black overlay; text switches to light. */
   image?: HeroImage;
+  /**
+   * Looping background video. Renders behind content with the same dark overlay
+   * and light text as `image`. Takes precedence over `image` when both are set.
+   * Honors `prefers-reduced-motion`: no autoplay, poster shown, no pause control.
+   */
+  video?: HeroVideo;
 };
 
 function renderHeading(heading: string, emphasis?: string) {
@@ -55,10 +74,15 @@ export default function HeroSection({
   layout,
   container,
   image,
+  video,
 }: Props) {
   const isSplit = layout === 'split' || (layout !== 'standard' && !!formSlot);
   const isWide = container === 'wide' || (container !== 'normal' && isSplit);
-  const hasImage = !!image;
+  const hasVideo = !!video;
+  // Video and image are mutually exclusive; video wins if both are passed.
+  const hasImage = !hasVideo && !!image;
+  // Either a video or image activates dark-background mode (light text + overlay).
+  const hasDarkBg = hasVideo || hasImage;
 
   const containerClass = isWide
     ? 'max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12'
@@ -68,17 +92,19 @@ export default function HeroSection({
     ? 'text-[2.25rem] sm:text-5xl lg:text-[3.25rem] xl:text-6xl 2xl:text-7xl'
     : 'text-[2.25rem] sm:text-5xl lg:text-6xl xl:text-7xl';
 
-  const sectionBg = hasImage ? 'bg-brand-black' : 'bg-light-gray';
-  const eyebrowColor = hasImage ? 'text-white/90' : 'text-brand-blue';
-  const headingColor = hasImage ? 'text-white' : 'text-brand-black';
-  const subColor = hasImage ? 'text-white/85' : 'text-muted';
-  const secondaryCtaClass = hasImage
+  const sectionBg = hasDarkBg ? 'bg-brand-black' : 'bg-light-gray';
+  const eyebrowColor = hasDarkBg ? 'text-white/90' : 'text-brand-blue';
+  const headingColor = hasDarkBg ? 'text-white' : 'text-brand-black';
+  const subColor = hasDarkBg ? 'text-white/85' : 'text-muted';
+  const secondaryCtaClass = hasDarkBg
     ? 'border-white text-white hover:bg-white hover:text-brand-black'
     : 'border-brand-black text-brand-black hover:bg-brand-black hover:text-white';
 
   return (
     <section className={`relative overflow-hidden ${sectionBg}`}>
-      {hasImage ? (
+      {video ? (
+        <HeroVideoBackground video={video} />
+      ) : hasImage ? (
         <>
           <Image
             src={image.src}
@@ -182,5 +208,124 @@ export default function HeroSection({
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Decorative looping background video with the same dark overlay as the image path.
+ * Accessibility:
+ *  - The <video> is aria-hidden (purely decorative).
+ *  - Under `prefers-reduced-motion: reduce`, no video plays: the poster image is
+ *    shown instead and no pause control renders (there is no motion to pause).
+ *  - Otherwise a WCAG 2.1 AA pause/play control renders bottom-right (44x44 target).
+ */
+function useReducedMotion() {
+  return useSyncExternalStore(
+    (onChange) => {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      mq.addEventListener('change', onChange);
+      return () => mq.removeEventListener('change', onChange);
+    },
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    () => false,
+  );
+}
+
+function HeroVideoBackground({ video }: { video: HeroVideo }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const reducedMotion = useReducedMotion();
+  // `isPlaying` mirrors the element's actual play/pause state via its own events,
+  // so we never call setState synchronously inside an effect.
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Drive playback from the preference rather than the `autoPlay` attribute, so no
+  // motion ever starts under reduced motion. State updates come from the video's
+  // play/pause events below, not from here.
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (reducedMotion) {
+      el.pause();
+    } else {
+      void el.play().catch(() => {});
+    }
+  }, [reducedMotion]);
+
+  const toggle = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (el.paused) void el.play().catch(() => {});
+    else el.pause();
+  };
+
+  return (
+    <>
+      {reducedMotion ? (
+        <Image
+          src={video.poster}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          aria-hidden="true"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          aria-hidden="true"
+          muted
+          loop
+          playsInline
+          poster={video.poster}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={video.src} type="video/mp4" />
+        </video>
+      )}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-black/60"
+      />
+      {!reducedMotion && (
+        <button
+          type="button"
+          onClick={toggle}
+          aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
+          className="absolute bottom-4 right-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          {isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </button>
+      )}
+    </>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+    >
+      <rect x="6" y="5" width="4" height="14" rx="1" />
+      <rect x="14" y="5" width="4" height="14" rx="1" />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+    >
+      <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
+    </svg>
   );
 }
