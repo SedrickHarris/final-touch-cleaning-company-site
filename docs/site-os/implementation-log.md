@@ -5232,3 +5232,52 @@ Open items (non-blockers):
   the fetch/curate pipeline runs.
 
 Did not commit. Did not deploy.
+
+### GBP Reviews — v4 fetch blocked by PER-PROJECT allowlist (not decommissioned); manual curation active
+Status: Investigated, corrected, and simplified
+Date: 2026-06-18
+
+CORRECTION: an earlier version of this entry concluded the v4 reviews API was globally
+decommissioned. That was WRONG. The v4 reviews method works — it is allowlist-gated per
+Google Cloud project, and the Final Touch project simply isn't on the allowlist.
+
+Decisive evidence: the IDENTICAL request returns opposite results by project.
+  - Final Touch project (final-touch-cleaning-gbp-api / 825790152921):
+      GET v4/accounts/106772819283746152/locations/8309093515519409240/reviews
+        -> 404 {"error":{"code":404,"message":"Method not found.","status":"NOT_FOUND"}}
+  - Sirius project (sirius-systems-gbp-api), same user, same endpoint shape, run from
+    sirius-systems-site/scripts/fetch-reviews.ts:
+        -> 48 reviews returned, average 5.0.
+
+"Method not found" (vs 403 SERVICE_DISABLED / 403 PERMISSION_DENIED / 429 / "Requested
+entity was not found") is Google's signal that the v4 method config isn't published to
+this project. The request format was verified byte-for-byte against the official docs
+(accounts.locations.reviews.list) — host, /v4, parent shape, /reviews, GET, pageSize,
+business.manage scope all exact. So it is NOT code, scope, quota, or format. It is purely
+that Google has closed legacy GMB API access to new projects; allowlisted projects
+(Sirius, approved earlier) keep working, newer ones (Final Touch) get "Method not found".
+
+Unblock options (neither is a code change):
+  1. Get final-touch-cleaning-gbp-api allowlisted via the Business Profile API access
+     request (support.google.com/business/contact/api_default) — likely closed/slow.
+  2. Run the fetch with an already-allowlisted project's credentials (e.g. Sirius's).
+     Works, but couples Final Touch's pipeline to another client's GCP project.
+
+ACTIVE PATH: manual curation. The 3 real, owner-confirmed reviews live in
+data/google-reviews.json (verified: true) and render via components/reviews/ on /reviews
+and the homepage carousel. New reviews are added by editing that file by hand
+(VerifiedReview shape in lib/google-reviews.ts). No API or token required.
+
+Simplification pass (this commit):
+  - Removed scripts/curate-reviews.ts; approval is now a manual promotion of entries
+    from data/google-reviews.staged.json into data/google-reviews.json.
+  - Removed the curate-reviews npm script and the now-unused `googleapis` dependency
+    (fetch-reviews.ts uses google-auth-library + native fetch only).
+  - fetch-reviews.ts header rewritten to state the real per-project-allowlist blocker
+    (was incorrectly labelled "DECOMMISSIONED").
+  - scripts/README.md rewritten: manual path is primary; fetch setup + the project
+    allowlist caveat documented accurately.
+  - Render system (data layer, lib/google-reviews.ts, components/reviews/*, /reviews,
+    homepage carousel, neutral fallback) was already correct and is unchanged.
+
+Did not deploy.

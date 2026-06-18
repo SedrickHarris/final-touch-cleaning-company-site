@@ -1,13 +1,29 @@
 // scripts/fetch-reviews.ts
 //
-// Fetches reviews from the Final Touch Cleaning Company Google Business Profile
-// using the legacy GBP v4 API (mybusiness.googleapis.com/v4/) and writes the
-// raw result to data/google-reviews.staged.json.
+// Fetches Google Business Profile reviews for Final Touch via OAuth 2.0 and writes an
+// UNVERIFIED snapshot to data/google-reviews.staged.json (gitignored). Nothing is
+// published automatically — to approve, copy the reviews you want into
+// data/google-reviews.json by hand and set verified + permissionToPublish to true.
+// (There is no separate curate step; manual promotion keeps this minimal.)
 //
-// NEVER commits google-reviews.staged.json — it is gitignored.
-// Run curate-reviews.ts next to approve reviews and write google-reviews.json.
+// Endpoint: GET https://mybusiness.googleapis.com/v4/accounts/{acct}/locations/{loc}/reviews
+// (the legacy GBP v4 API — reviews were never migrated to the newer Business Profile
+// APIs). Scope: business.manage.
 //
-// Usage (PowerShell from repo root):
+// ─── KNOWN BLOCKER (confirmed 2026-06-18) ─────────────────────────────────────────
+// This script and endpoint are CORRECT, but currently cannot fetch for Final Touch:
+// the v4 reviews method is allowlist-gated PER GOOGLE CLOUD PROJECT, and the Final
+// Touch project (final-touch-cleaning-gbp-api / 825790152921) is not on Google's
+// legacy allowlist — the request returns 404 "Method not found". The identical code
+// returned 48 reviews under an allowlisted project (sirius-systems-gbp-api), proving
+// the gap is purely project access, not the code, scope, quota, or URL format. To
+// unblock: get this project allowlisted via the Business Profile API access request
+// (Google has largely closed new legacy access), OR run with an already-allowlisted
+// project's credentials. Until then, reviews are maintained by hand in
+// data/google-reviews.json. See scripts/README.md and docs/site-os/implementation-log.md.
+// ──────────────────────────────────────────────────────────────────────────────────
+//
+// Usage (from repo root):
 //   npm run fetch-reviews
 //
 // First run: opens a browser for OAuth consent.
@@ -16,7 +32,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as http from 'http';
-import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
 
 // --------------------------------------------------------------------------
@@ -26,12 +41,12 @@ import { OAuth2Client } from 'google-auth-library';
 const PLACE_ID = 'ChIJq6qq6ql0yIARonMQkF8BczI';
 const PLACE_URL = 'https://www.google.com/maps?cid=5303198646776788086';
 
-/**
- * GBP numeric location ID for Final Touch, taken from the business.google.com
- * dashboard URL. The location lives in a Business Group, so it does NOT enumerate
- * via accounts.list → locations.list. locations.get (Business Information v1) looks
- * it up directly by this ID and bypasses that enumeration problem.
- */
+// GBP resource ids for Final Touch (both numeric). The account/location lookup
+// APIs are quota-blocked and unnecessary — we hit the v4 reviews endpoint directly
+// with these hardcoded ids and no googleapis calls.
+//   ACCOUNT_ID  — owning account/business-group id (from OAuth Playground accounts.list)
+//   LOCATION_ID — from the business.google.com dashboard URL
+const ACCOUNT_ID = '106772819283746152';
 const LOCATION_ID = '8309093515519409240';
 
 const OAUTH_PORT = 3333;
@@ -161,23 +176,28 @@ const STAR_MAP: Record<GBPReviewRaw['starRating'], 1 | 2 | 3 | 4 | 5> = {
   ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5,
 };
 
-// Raw fetch against the legacy v4 reviews endpoint for one account. Returns the
-// reviews on success, or { ok: false } on the FIRST page so the caller can try the
-// next account (the location lives in a Business Group, so the owning account is
-// not necessarily accounts[0]).
-async function fetchReviewsForAccount(
-  accountName: string,
-  token: string,
-): Promise<
-  | { ok: true; reviews: GBPReviewRaw[]; averageRating: number | null; totalReviewCount: number | null }
-  | { ok: false; status: number; body: string }
-> {
-  const base = `https://mybusiness.googleapis.com/v4/${accountName}/locations/${LOCATION_ID}/reviews`;
-  const all: GBPReviewRaw[] = [];
+// Raw fetch against the legacy v4 reviews endpoint with the hardcoded account +
+// location ids. No googleapis / Account Management / Business Information calls —
+// those APIs are quota-blocked and unnecessary for reading reviews.
+async function fetchAllReviews(client: OAuth2Client): Promise<{
+  reviews: GBPReviewRaw[];
+  averageRating: number | null;
+  totalReviewCount: number | null;
+}> {
+  const tokenRes = await client.getAccessToken();
+  const token = tokenRes.token;
+  if (!token) {
+    console.error('\n❌  Could not obtain an OAuth access token.\n');
+    process.exit(1);
+  }
+
+  const base = `https://mybusiness.googleapis.com/v4/accounts/${ACCOUNT_ID}/locations/${LOCATION_ID}/reviews`;
+  console.log(`✅  Reviews endpoint: accounts/${ACCOUNT_ID}/locations/${LOCATION_ID}/reviews`);
+
+  const allReviews: GBPReviewRaw[] = [];
   let averageRating: number | null = null;
   let totalReviewCount: number | null = null;
   let pageToken: string | undefined;
-  let firstPage = true;
 
   do {
     const url = new URL(base);
@@ -187,85 +207,20 @@ async function fetchReviewsForAccount(
     const res = await fetch(url.toString(), { headers: { Authorization: `Bearer ${token}` } });
     if (!res.ok) {
       const body = await res.text();
-      // First-page failure → let the caller try the next account.
-      if (firstPage) return { ok: false, status: res.status, body };
-      // Mid-pagination failure under an account that already worked → fatal.
-      throw new Error(`Reviews page failed: ${res.status} ${res.statusText}\n${body}`);
+      console.error(`\n❌  Reviews request failed: ${res.status} ${res.statusText}\n${body}\n`);
+      process.exit(1);
     }
-    firstPage = false;
 
     const data = (await res.json()) as GBPListResponse;
     const { reviews = [], nextPageToken, averageRating: avg, totalReviewCount: total } = data;
-    all.push(...reviews);
+    allReviews.push(...reviews);
     if (avg !== undefined) averageRating = avg;
     if (total !== undefined) totalReviewCount = total;
     pageToken = nextPageToken;
-    console.log(`   [${accountName}] fetched ${all.length} review(s) so far...`);
+    console.log(`   Fetched ${allReviews.length} review(s) so far...`);
   } while (pageToken);
 
-  return { ok: true, reviews: all, averageRating, totalReviewCount };
-}
-
-async function fetchAllReviews(client: OAuth2Client): Promise<{
-  reviews: GBPReviewRaw[];
-  averageRating: number | null;
-  totalReviewCount: number | null;
-}> {
-  // 1. Account(s) via Account Management v1.
-  const accountMgmt = google.mybusinessaccountmanagement({ version: 'v1', auth: client });
-  const accountsRes = await accountMgmt.accounts.list({});
-  const accounts = accountsRes.data.accounts ?? [];
-  if (accounts.length === 0) {
-    console.error('\n❌  accounts.list returned no accounts for this Google user.\n');
-    process.exit(1);
-  }
-  console.log(`✅  ${accounts.length} account(s):`);
-  accounts.forEach((a) => console.log(`   - ${a.name} (${a.accountName ?? 'n/a'}, type: ${a.type ?? 'n/a'})`));
-
-  // 2. Location directly by ID via Business Information v1 (bypasses the
-  //    Business-Group enumeration problem). Confirms title + placeId.
-  const bizInfo = google.mybusinessbusinessinformation({ version: 'v1', auth: client });
-  const locationRes = await bizInfo.locations.get({
-    name: `locations/${LOCATION_ID}`,
-    readMask: 'name,title,metadata',
-  });
-  const locationTitle = locationRes.data.title ?? '(no title)';
-  const fetchedPlaceId = locationRes.data.metadata?.placeId ?? null;
-  console.log(`✅  Location: "${locationTitle}"  (id: ${LOCATION_ID}, placeId: ${fetchedPlaceId ?? 'n/a'})`);
-  if (fetchedPlaceId && fetchedPlaceId !== PLACE_ID) {
-    console.warn(`⚠️   placeId mismatch — expected ${PLACE_ID}, got ${fetchedPlaceId}.`);
-  }
-
-  // 3. Reviews via raw fetch against v4. Try each account until one owns the location.
-  const tokenRes = await client.getAccessToken();
-  const token = tokenRes.token;
-  if (!token) {
-    console.error('\n❌  Could not obtain an OAuth access token.\n');
-    process.exit(1);
-  }
-
-  let lastError = '';
-  for (const acct of accounts) {
-    const accountName = acct.name;
-    if (!accountName) continue;
-    console.log(`   Trying reviews under ${accountName}...`);
-    const result = await fetchReviewsForAccount(accountName, token);
-    if (result.ok) {
-      console.log(`✅  Reviews retrieved under ${accountName}.`);
-      return {
-        reviews: result.reviews,
-        averageRating: result.averageRating,
-        totalReviewCount: result.totalReviewCount,
-      };
-    }
-    lastError = `${result.status} — ${result.body}`;
-    console.warn(`   ✗ ${accountName}: HTTP ${result.status}`);
-  }
-
-  console.error(
-    `\n❌  Reviews fetch failed under all ${accounts.length} account(s). Last response:\n${lastError}\n`,
-  );
-  process.exit(1);
+  return { reviews: allReviews, averageRating, totalReviewCount };
 }
 
 // --------------------------------------------------------------------------
@@ -300,7 +255,8 @@ async function main() {
 
   fs.writeFileSync(STAGED_PATH, JSON.stringify(staged, null, 2));
   console.log(`\n✅  Staged ${reviews.length} review(s) to data/google-reviews.staged.json`);
-  console.log('   Run: npm run curate-reviews\n');
+  console.log('   Review them, then copy approved entries into data/google-reviews.json');
+  console.log('   (set verified + permissionToPublish to true). See scripts/README.md.\n');
 }
 
 main().catch((err) => {
