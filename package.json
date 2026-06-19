@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit",
-    "fetch-reviews": "ts-node scripts/fetch-reviews.ts"
+    "fetch-reviews": "ts-node scripts/fetch-reviews.ts",
+    "curate-reviews": "ts-node scripts/curate-reviews.ts"
   },
   "ts-node": {
     "compilerOptions": {

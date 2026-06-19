@@ -1,14 +1,22 @@
 // scripts/fetch-reviews.ts
 //
-// Fetches Google Business Profile reviews for Final Touch via OAuth 2.0 and writes an
-// UNVERIFIED snapshot to data/google-reviews.staged.json (gitignored). Nothing is
-// published automatically — to approve, copy the reviews you want into
-// data/google-reviews.json by hand and set verified + permissionToPublish to true.
-// (There is no separate curate step; manual promotion keeps this minimal.)
+// Step 1 of the GBP review pipeline (mirrors the Sirius Systems setup).
+// Fetches Google Business Profile reviews via OAuth 2.0 and writes an UNCURATED
+// snapshot to data/google-reviews.staged.json (gitignored). Nothing is published
+// here — the separate `npm run curate-reviews` step is the only writer of
+// data/google-reviews.json, and only after human approval.
+//
+// Flow (same as Sirius):
+//   1) OAuth (refresh saved token, else browser consent flow)
+//   2) configured accountId + locationId (no discovery calls)
+//   3) fetch reviews from the legacy v4 endpoint
+//   4) write the staged snapshot
+//   5) curate separately (scripts/curate-reviews.ts)
 //
 // Endpoint: GET https://mybusiness.googleapis.com/v4/accounts/{acct}/locations/{loc}/reviews
 // (the legacy GBP v4 API — reviews were never migrated to the newer Business Profile
-// APIs). Scope: business.manage.
+// APIs). Scope: business.manage. We hit it with a raw fetch using the configured ids,
+// so there are no googleapis / Account Management / Business Information calls.
 //
 // ─── KNOWN BLOCKER (confirmed 2026-06-18) ─────────────────────────────────────────
 // This script and endpoint are CORRECT, but currently cannot fetch for Final Touch:
@@ -24,10 +32,11 @@
 // ──────────────────────────────────────────────────────────────────────────────────
 //
 // Usage (from repo root):
-//   npm run fetch-reviews
+//   npm run fetch-reviews    # OAuth + fetch → data/google-reviews.staged.json
+//   npm run curate-reviews   # interactive approval → data/google-reviews.json
 //
 // First run: opens a browser for OAuth consent.
-// Subsequent runs: reuses the saved refresh token in scripts/tokens.json.
+// Subsequent runs: reuses (and refreshes) the saved token in scripts/tokens.json.
 
 import * as fs from 'fs';
 import * as path from 'path';
@@ -35,37 +44,39 @@ import * as http from 'http';
 import { OAuth2Client } from 'google-auth-library';
 
 // --------------------------------------------------------------------------
-// Constants — update LOCATION_ID after first successful fetch
+// Config — the only block that differs between Final Touch and Sirius
 // --------------------------------------------------------------------------
 
 const PLACE_ID = 'ChIJq6qq6ql0yIARonMQkF8BczI';
 const PLACE_URL = 'https://www.google.com/maps?cid=5303198646776788086';
 
-// GBP resource ids for Final Touch (both numeric). The account/location lookup
-// APIs are quota-blocked and unnecessary — we hit the v4 reviews endpoint directly
-// with these hardcoded ids and no googleapis calls.
+// GBP resource ids for Final Touch (both numeric). Configured directly so we never
+// call accounts.list / locations.get at runtime — those lookups are quota-blocked
+// for this project and unnecessary once the ids are known.
 //   ACCOUNT_ID  — owning account/business-group id (from OAuth Playground accounts.list)
 //   LOCATION_ID — from the business.google.com dashboard URL
 const ACCOUNT_ID = '106772819283746152';
 const LOCATION_ID = '8309093515519409240';
 
 const OAUTH_PORT = 3333;
-const REDIRECT_URI = `http://localhost:${OAUTH_PORT}/oauth2callback`;
+const CALLBACK_PATH = '/oauth2callback';
+const REDIRECT_URI = `http://localhost:${OAUTH_PORT}${CALLBACK_PATH}`;
+const SCOPES = ['https://www.googleapis.com/auth/business.manage'];
 
 // --------------------------------------------------------------------------
 // Paths
 // --------------------------------------------------------------------------
 
 // Launched via `npm run fetch-reviews` from the repo root, so cwd is the project
-// root. Use cwd rather than __dirname: Node 24 runs this .ts file as an ES module
-// (native type stripping + ESM detection), where __dirname is undefined.
+// root. Use cwd rather than __dirname: ts-node runs this as commonjs, but keeping
+// cwd-based paths matches the rest of the pipeline (curate-reviews.ts).
 const ROOT = process.cwd();
 const CREDENTIALS_PATH = path.join(ROOT, 'credentials.json');
 const TOKENS_PATH = path.join(ROOT, 'scripts', 'tokens.json');
 const STAGED_PATH = path.join(ROOT, 'data', 'google-reviews.staged.json');
 
 // --------------------------------------------------------------------------
-// OAuth helpers
+// OAuth helpers (same token-handling pattern as Sirius: refresh, else fresh flow)
 // --------------------------------------------------------------------------
 
 function loadCredentials(): { client_id: string; client_secret: string } {
@@ -80,7 +91,7 @@ function loadCredentials(): { client_id: string; client_secret: string } {
   const raw = JSON.parse(fs.readFileSync(CREDENTIALS_PATH, 'utf8'));
   const creds = raw.installed ?? raw.web;
   if (!creds) {
-    console.error('❌  Unrecognized credentials.json format. Expected "installed" key.');
+    console.error('❌  Unrecognized credentials.json format. Expected an "installed" or "web" key.');
     process.exit(1);
   }
   return { client_id: creds.client_id, client_secret: creds.client_secret };
@@ -94,16 +105,26 @@ function buildOAuthClient(): OAuth2Client {
 async function getAuthorizedClient(): Promise<OAuth2Client> {
   const client = buildOAuthClient();
 
+  // Saved-token path: try a refresh, fall back to a fresh flow on any failure.
   if (fs.existsSync(TOKENS_PATH)) {
-    const saved = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
-    client.setCredentials(saved);
-    console.log('✅  Loaded saved OAuth tokens.');
-    return client;
+    try {
+      const saved = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
+      client.setCredentials(saved);
+      const { credentials } = await client.refreshAccessToken();
+      // Preserve the refresh_token from the prior file if Google omits it on refresh.
+      const merged = { ...saved, ...credentials };
+      client.setCredentials(merged);
+      fs.writeFileSync(TOKENS_PATH, JSON.stringify(merged, null, 2));
+      console.log('✅  Using saved OAuth tokens (refreshed).');
+      return client;
+    } catch {
+      console.log('⚠️   Saved tokens invalid or expired — starting a new OAuth flow.');
+    }
   }
 
   const authUrl = client.generateAuthUrl({
     access_type: 'offline',
-    scope: ['https://www.googleapis.com/auth/business.manage'],
+    scope: SCOPES,
     prompt: 'consent',
   });
 
@@ -121,6 +142,11 @@ async function getAuthorizedClient(): Promise<OAuth2Client> {
   const code = await new Promise<string>((resolve, reject) => {
     const server = http.createServer((req, res) => {
       const url = new URL(req.url ?? '/', `http://localhost:${OAUTH_PORT}`);
+      if (url.pathname !== CALLBACK_PATH) {
+        res.writeHead(404);
+        res.end();
+        return;
+      }
       const authCode = url.searchParams.get('code');
       if (authCode) {
         res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -176,7 +202,7 @@ const STAR_MAP: Record<GBPReviewRaw['starRating'], 1 | 2 | 3 | 4 | 5> = {
   ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5,
 };
 
-// Raw fetch against the legacy v4 reviews endpoint with the hardcoded account +
+// Raw fetch against the legacy v4 reviews endpoint with the configured account +
 // location ids. No googleapis / Account Management / Business Information calls —
 // those APIs are quota-blocked and unnecessary for reading reviews.
 async function fetchAllReviews(client: OAuth2Client): Promise<{
@@ -228,11 +254,14 @@ async function fetchAllReviews(client: OAuth2Client): Promise<{
 // --------------------------------------------------------------------------
 
 async function main() {
-  console.log('\n🔄  Final Touch GBP Reviews Fetch\n');
+  console.log('\n🔄  Final Touch GBP — fetching reviews\n');
   const client = await getAuthorizedClient();
+
   const { reviews, averageRating, totalReviewCount } = await fetchAllReviews(client);
   const now = new Date().toISOString();
 
+  // Staged shape is intentionally Final Touch's VerifiedReview shape with the
+  // approval + manual-display fields left empty — curate-reviews.ts fills them in.
   const staged = {
     fetchedAt: now,
     placeId: PLACE_ID,
@@ -255,8 +284,7 @@ async function main() {
 
   fs.writeFileSync(STAGED_PATH, JSON.stringify(staged, null, 2));
   console.log(`\n✅  Staged ${reviews.length} review(s) to data/google-reviews.staged.json`);
-  console.log('   Review them, then copy approved entries into data/google-reviews.json');
-  console.log('   (set verified + permissionToPublish to true). See scripts/README.md.\n');
+  console.log('   Next: npm run curate-reviews\n');
 }
 
 main().catch((err) => {

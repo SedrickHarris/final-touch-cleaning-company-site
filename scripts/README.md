@@ -5,7 +5,8 @@ How Google Business Profile reviews are sourced and rendered for this site.
 - **Source of truth:** `data/google-reviews.json` — only verified, owner-approved reviews.
 - **Access layer:** `lib/google-reviews.ts` — every page/component imports from here, never the JSON directly.
 - **Display:** `components/reviews/` — carousel (homepage), grid + summary (reviews page), neutral fallback when nothing is verified.
-- **Fetch (optional):** `scripts/fetch-reviews.ts` — OAuth fetch of raw reviews into a staged file. Approval is manual.
+- **Fetch:** `scripts/fetch-reviews.ts` — OAuth fetch of raw reviews into a staged file.
+- **Curate:** `scripts/curate-reviews.ts` — interactive approval; the only writer of `data/google-reviews.json`.
 
 Nothing renders unless `data/google-reviews.json` is marked verified and each review is approved. There is no fake/placeholder content.
 
@@ -48,13 +49,17 @@ If `verified` is false or any review lacks approval, the site shows the neutral
 
 ---
 
-## Running the fetch script (once the project is allowlisted)
+## Running the pipeline (once the project is allowlisted)
+
+This mirrors the Sirius Systems setup: a two-step **fetch → curate** flow where human
+curation is the gate. No review reaches the site without going through curation.
 
 One-time setup:
 
 1. Create / use a Google Cloud project at https://console.cloud.google.com.
-2. Enable the **Google My Business API** (legacy v4 — reviews live here) and the
-   **My Business Account Management** + **Business Information** APIs.
+2. Enable the **Google My Business API** (legacy v4 — reviews live here). The Account
+   Management + Business Information APIs are **not** needed: the account/location ids
+   are configured directly in `scripts/fetch-reviews.ts`, so there are no discovery calls.
 3. **Credentials → Create OAuth client ID → Desktop app.** Add
    `http://localhost:3333/oauth2callback` as an authorized redirect URI.
 4. On the **OAuth consent screen** (Testing mode), add the GBP owner Google account
@@ -67,17 +72,31 @@ One-time setup:
 Run it:
 
 ```
-npm run fetch-reviews
+npm run fetch-reviews    # OAuth + fetch all reviews → data/google-reviews.staged.json
+npm run curate-reviews   # walk each NEW review, approve → data/google-reviews.json
 ```
 
-- First run opens a browser for consent (sign in as the GBP owner); the token is saved
-  to `scripts/tokens.json` (gitignored). Later runs reuse it.
-- Output is written to `data/google-reviews.staged.json` (gitignored). It is **not**
-  published automatically.
+- **`fetch-reviews`** authenticates (refreshing the saved token, else opening a browser
+  for consent — sign in as the GBP owner), then hits the legacy v4 reviews endpoint with
+  the configured ids and writes the raw snapshot to `data/google-reviews.staged.json`
+  (gitignored). It makes **no** account-management or location-validation calls, and it
+  **never** publishes.
+- **`curate-reviews`** walks each review that isn't already in `data/google-reviews.json`:
+  `y` approve · `n` skip · `e` edit display name. On approve you're also prompted for the
+  display `reviewDate` (defaults to the review's month/year) and optional `city`. Only
+  approved reviews are written to `data/google-reviews.json`; previously-approved reviews
+  are preserved and never re-prompted. If zero are approved, top-level `verified` stays
+  false and the site shows the neutral fallback.
+- The first OAuth run saves the token to `scripts/tokens.json` (gitignored); later runs
+  refresh it automatically.
 
-Approve: review the staged file, then copy the entries you approve into
-`data/google-reviews.json` and set `verified` + `permissionToPublish` to true, as in
-"Adding reviews manually" above.
+Then commit the curated file:
+
+```
+git add data/google-reviews.json
+git commit -m "reviews: curate GBP reviews"
+git push
+```
 
 ---
 
