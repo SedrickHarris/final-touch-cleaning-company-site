@@ -100,6 +100,7 @@ export default function GoogleReviewsCarousel({
             {heading}
           </h2>
         </div>
+      </div>
 
         {animate ? (
           // Continuous auto-scrolling marquee. Pauses on hover/focus. Only the first
@@ -107,7 +108,7 @@ export default function GoogleReviewsCarousel({
           // from assistive tech and removed from the tab order via `inert`.
           <div className="overflow-hidden">
             <div
-              className="flex w-max items-stretch gap-5 lg:gap-6"
+              className="flex w-max items-start gap-5 lg:gap-6"
               style={{
                 animation: `ft-reviews-marquee ${durationSec}s linear infinite`,
                 animationPlayState: paused ? 'paused' : 'running',
@@ -132,7 +133,7 @@ export default function GoogleReviewsCarousel({
           // Reduced motion (or a single review): a static, manually scrollable row —
           // no autoplay, fully keyboard/touch accessible.
           <div className="overflow-x-auto">
-            <div className="flex w-max items-stretch gap-5 lg:gap-6 snap-x snap-mandatory">
+            <div className="flex w-max items-start gap-5 lg:gap-6 snap-x snap-mandatory">
               {reviews.map((review) => (
                 <div key={review.id} className={`${CARD_WRAP} snap-start`}>
                   <GoogleReviewCard review={review} variant={variant} />
@@ -142,27 +143,28 @@ export default function GoogleReviewsCarousel({
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-          <Link
-            href={placeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 rounded-[10px] border-2 px-6 py-3 text-sm font-semibold font-body transition-colors min-h-[44px] ${footerLinkCls}`}
-          >
-            View all reviews on Google <span aria-hidden="true">↗</span>
-          </Link>
-          {writeReviewUrl && (
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link
-              href={writeReviewUrl}
+              href={placeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-[10px] bg-brand-blue px-6 py-3 text-sm font-semibold font-body text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
+              className={`inline-flex items-center gap-2 rounded-[10px] border-2 px-6 py-3 text-sm font-semibold font-body transition-colors min-h-[44px] ${footerLinkCls}`}
             >
-              Leave us a review <span aria-hidden="true">→</span>
+              View all reviews on Google <span aria-hidden="true">↗</span>
             </Link>
-          )}
+            {writeReviewUrl && (
+              <Link
+                href={writeReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-brand-blue px-6 py-3 text-sm font-semibold font-body text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
+              >
+                Leave us a review <span aria-hidden="true">→</span>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
     </section>
   );
 }
