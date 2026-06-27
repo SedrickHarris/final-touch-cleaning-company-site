@@ -77,7 +77,7 @@ export default function GoogleReviewsCarousel({
 
   return (
     <section
-      className={`${sectionBg} py-10 sm:py-12 lg:py-14`}
+      className={`${sectionBg} pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-14 lg:pb-10`}
       aria-label="Customer reviews"
       aria-roledescription="carousel"
     >
@@ -97,7 +97,7 @@ export default function GoogleReviewsCarousel({
               {eyebrow}
             </p>
             <h2
-              className={`mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.08] ${headingCls}`}
+              className={`mt-3 font-display text-3xl sm:text-4xl lg:text-4xl font-semibold tracking-tight leading-[1.08] ${headingCls}`}
             >
               {heading}
             </h2>
