@@ -91,8 +91,8 @@ export default function GoogleReviewsCarousel({
 
       {/* Heading row: H2 left · chip center · buttons right */}
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
-          <div className="shrink-0">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center">
+          <div className="flex-1">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
               {eyebrow}
             </p>
@@ -103,7 +103,7 @@ export default function GoogleReviewsCarousel({
             </h2>
           </div>
           {summary && (
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex justify-center py-4 sm:py-0">
               <GoogleReviewSummary
                 averageRating={summary.averageRating}
                 totalReviewCount={summary.totalReviewCount}
@@ -112,7 +112,7 @@ export default function GoogleReviewsCarousel({
               />
             </div>
           )}
-          <div className="flex flex-row items-center gap-3 shrink-0 sm:ml-auto">
+          <div className="flex-1 flex flex-row items-center justify-end gap-3">
             <Link
               href={placeUrl}
               target="_blank"

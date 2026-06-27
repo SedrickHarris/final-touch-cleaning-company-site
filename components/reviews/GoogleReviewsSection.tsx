@@ -110,16 +110,7 @@ export default function GoogleReviewsSection({
   }
 
   return (
-    <div>
-      {showSummary && summary && (
-        <div className={`${isDark ? 'bg-[#0B1120]' : 'bg-light-gray'} pt-12 sm:pt-16 pb-0`}>
-          <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-            <GoogleReviewSummary averageRating={summary.averageRating!} totalReviewCount={summary.totalReviewCount!} placeUrl={placeUrl} isDark={isDark} />
-          </div>
-        </div>
-      )}
-      <GoogleReviewsCarousel reviews={reviews} placeUrl={placeUrl} writeReviewUrl={writeReviewUrl}
-        summary={summary ? { averageRating: summary.averageRating!, totalReviewCount: summary.totalReviewCount! } : null} heading={resolvedHeading} eyebrow={eyebrow} variant={resolvedCardVariant} autoPlayMs={autoPlayMs} />
-    </div>
+    <GoogleReviewsCarousel reviews={reviews} placeUrl={placeUrl} writeReviewUrl={writeReviewUrl}
+      summary={summary ? { averageRating: summary.averageRating!, totalReviewCount: summary.totalReviewCount! } : null} heading={resolvedHeading} eyebrow={eyebrow} variant={resolvedCardVariant} autoPlayMs={autoPlayMs} />
   );
 }
