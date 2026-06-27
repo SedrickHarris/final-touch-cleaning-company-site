@@ -64,8 +64,8 @@ export default function GoogleReviewsCarousel({
   const animate = !reducedMotion && total > 1;
   const paused = hovered || focused;
 
-  // One "copy" = reviews repeated until it comfortably fills the viewport; the track
-  // is two copies so translateX(-50%) lands exactly one copy over → seamless.
+  // One "copy" = reviews repeated until it comfortably fills the viewport; the
+  // track is two copies so translateX(-50%) lands exactly one copy over → seamless.
   const repeats = Math.max(1, Math.ceil(MIN_CARDS_PER_COPY / total));
   const copyCards = Array.from({ length: repeats }, () => reviews).flat();
   const trackCards = [...copyCards, ...copyCards];
@@ -74,13 +74,9 @@ export default function GoogleReviewsCarousel({
 
   return (
     <section
-      className={`${sectionBg} py-16 sm:py-20 lg:py-24`}
+      className={`${sectionBg} py-10 sm:py-12 lg:py-14`}
       aria-label="Customer reviews"
       aria-roledescription="carousel"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
-      onBlurCapture={() => setFocused(false)}
     >
       {/* Marquee keyframes (global, idempotent — same name across instances). */}
       <style
@@ -89,82 +85,90 @@ export default function GoogleReviewsCarousel({
             '@keyframes ft-reviews-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}',
         }}
       />
+
+      {/* Heading row with buttons right-aligned */}
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="mb-10">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
-            {eyebrow}
-          </p>
-          <h2
-            className={`mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.08] ${headingCls}`}
-          >
-            {heading}
-          </h2>
-        </div>
-      </div>
-
-        {animate ? (
-          // Continuous auto-scrolling marquee. Pauses on hover/focus. Only the first
-          // `total` cards are real content; the rest are decorative repeats, hidden
-          // from assistive tech and removed from the tab order via `inert`.
-          <div className="overflow-hidden">
-            <div
-              className="flex w-max items-start gap-5 lg:gap-6"
-              style={{
-                animation: `ft-reviews-marquee ${durationSec}s linear infinite`,
-                animationPlayState: paused ? 'paused' : 'running',
-              }}
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
+              {eyebrow}
+            </p>
+            <h2
+              className={`mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.08] ${headingCls}`}
             >
-              {trackCards.map((review, idx) => {
-                const decorative = idx >= total;
-                return (
-                  <div
-                    key={`${review.id}-${idx}`}
-                    className={CARD_WRAP}
-                    aria-hidden={decorative ? true : undefined}
-                    inert={decorative ? true : undefined}
-                  >
-                    <GoogleReviewCard review={review} variant={variant} />
-                  </div>
-                );
-              })}
-            </div>
+              {heading}
+            </h2>
           </div>
-        ) : (
-          // Reduced motion (or a single review): a static, manually scrollable row —
-          // no autoplay, fully keyboard/touch accessible.
-          <div className="overflow-x-auto">
-            <div className="flex w-max items-start gap-5 lg:gap-6 snap-x snap-mandatory">
-              {reviews.map((review) => (
-                <div key={review.id} className={`${CARD_WRAP} snap-start`}>
-                  <GoogleReviewCard review={review} variant={variant} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+          <div className="flex flex-row items-center gap-3 shrink-0">
             <Link
               href={placeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 rounded-[10px] border-2 px-6 py-3 text-sm font-semibold font-body transition-colors min-h-[44px] ${footerLinkCls}`}
+              className={`inline-flex items-center gap-2 rounded-[10px] border-2 px-5 py-2.5 text-sm font-semibold font-body transition-colors min-h-[44px] ${footerLinkCls}`}
             >
-              View all reviews on Google <span aria-hidden="true">↗</span>
+              View all reviews <span aria-hidden="true">↗</span>
             </Link>
             {writeReviewUrl && (
               <Link
                 href={writeReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-[10px] bg-brand-blue px-6 py-3 text-sm font-semibold font-body text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-brand-blue px-5 py-2.5 text-sm font-semibold font-body text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
               >
                 Leave us a review <span aria-hidden="true">→</span>
               </Link>
             )}
           </div>
         </div>
+      </div>
+
+      {animate ? (
+        // Continuous auto-scrolling marquee. Pauses on hover/focus over the track
+        // only — heading and buttons are unaffected. Only the first `total` cards
+        // are real content; the rest are decorative repeats, hidden from assistive
+        // tech and removed from the tab order via `inert`.
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onFocusCapture={() => setFocused(true)}
+          onBlurCapture={() => setFocused(false)}
+        >
+          <div
+            className="flex w-max items-start gap-5 lg:gap-6"
+            style={{
+              animation: `ft-reviews-marquee ${durationSec}s linear infinite`,
+              animationPlayState: paused ? 'paused' : 'running',
+            }}
+          >
+            {trackCards.map((review, idx) => {
+              const decorative = idx >= total;
+              return (
+                <div
+                  key={`${review.id}-${idx}`}
+                  className={CARD_WRAP}
+                  aria-hidden={decorative ? true : undefined}
+                  inert={decorative ? true : undefined}
+                >
+                  <GoogleReviewCard review={review} variant={variant} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        // Reduced motion (or a single review): a static, manually scrollable row —
+        // no autoplay, fully keyboard/touch accessible.
+        <div className="overflow-x-auto">
+          <div className="flex w-max items-start gap-5 lg:gap-6 snap-x snap-mandatory">
+            {reviews.map((review) => (
+              <div key={review.id} className={`${CARD_WRAP} snap-start`}>
+                <GoogleReviewCard review={review} variant={variant} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
