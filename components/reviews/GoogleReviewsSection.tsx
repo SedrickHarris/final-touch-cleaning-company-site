@@ -68,7 +68,6 @@ export default function GoogleReviewsSection({
   const summary = getVerifiedSummary();
   const writeReviewUrl = getWriteReviewUrl();
   const resolvedCardVariant: CardVariant = cardVariant ?? (variant === 'carousel' ? 'dark' : 'light');
-  const isDark = resolvedCardVariant === 'dark';
   const defaultHeading = variant === 'carousel' ? 'What our clients say.' : 'Verified customer reviews.';
   const resolvedHeading = heading ?? defaultHeading;
 
