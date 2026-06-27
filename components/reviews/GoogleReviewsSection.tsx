@@ -84,6 +84,26 @@ export default function GoogleReviewsSection({
             )}
           </div>
           <GoogleReviewsGrid reviews={reviews} variant={resolvedCardVariant} />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link
+              href={placeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-[10px] border-2 border-brand-blue px-6 py-3 text-sm font-semibold font-body text-brand-blue hover:bg-soft-blue transition-colors min-h-[44px]"
+            >
+              View all reviews on Google <span aria-hidden="true">↗</span>
+            </Link>
+            {writeReviewUrl && (
+              <Link
+                href={writeReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-brand-blue px-6 py-3 text-sm font-semibold font-body text-white hover:bg-brand-blue-hover transition-colors min-h-[44px]"
+              >
+                Leave us a review <span aria-hidden="true">→</span>
+              </Link>
+            )}
+          </div>
         </div>
       </section>
     );
