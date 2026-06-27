@@ -119,7 +119,7 @@ export default function GoogleReviewsSection({
         </div>
       )}
       <GoogleReviewsCarousel reviews={reviews} placeUrl={placeUrl} writeReviewUrl={writeReviewUrl}
-        heading={resolvedHeading} eyebrow={eyebrow} variant={resolvedCardVariant} autoPlayMs={autoPlayMs} />
+        summary={summary ? { averageRating: summary.averageRating!, totalReviewCount: summary.totalReviewCount! } : null} heading={resolvedHeading} eyebrow={eyebrow} variant={resolvedCardVariant} autoPlayMs={autoPlayMs} />
     </div>
   );
 }

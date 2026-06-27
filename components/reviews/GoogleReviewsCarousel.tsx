@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import GoogleReviewCard from './GoogleReviewCard';
+import GoogleReviewSummary from './GoogleReviewSummary';
 import type { VerifiedReview } from '@/lib/google-reviews';
 import type { CardVariant } from './GoogleReviewCard';
 
@@ -24,6 +25,7 @@ type Props = {
   reviews: VerifiedReview[];
   placeUrl: string;
   writeReviewUrl: string | null;
+  summary?: { averageRating: number; totalReviewCount: number } | null;
   heading?: string;
   eyebrow?: string;
   variant?: CardVariant;
@@ -40,6 +42,7 @@ export default function GoogleReviewsCarousel({
   reviews: allReviews,
   placeUrl,
   writeReviewUrl,
+  summary,
   heading = 'What our clients say.',
   eyebrow = 'Google Reviews',
   variant = 'dark',
@@ -86,10 +89,10 @@ export default function GoogleReviewsCarousel({
         }}
       />
 
-      {/* Heading row with buttons right-aligned */}
+      {/* Heading row: H2 left · chip center · buttons right */}
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <div>
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="shrink-0">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
               {eyebrow}
             </p>
@@ -99,7 +102,17 @@ export default function GoogleReviewsCarousel({
               {heading}
             </h2>
           </div>
-          <div className="flex flex-row items-center gap-3 shrink-0">
+          {summary && (
+            <div className="flex-1 flex justify-center">
+              <GoogleReviewSummary
+                averageRating={summary.averageRating}
+                totalReviewCount={summary.totalReviewCount}
+                placeUrl={placeUrl}
+                isDark={true}
+              />
+            </div>
+          )}
+          <div className="flex flex-row items-center gap-3 shrink-0 sm:ml-auto">
             <Link
               href={placeUrl}
               target="_blank"
