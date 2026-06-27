@@ -9,7 +9,7 @@
     "lint": "eslint",
     "type-check": "tsc --noEmit",
     "fetch-reviews": "ts-node scripts/fetch-reviews.ts",
-    "curate-reviews": "ts-node scripts/curate-reviews.ts"
+    "check-gbp": "ts-node scripts/check-gbp-access.ts"
   },
   "ts-node": {
     "compilerOptions": {
