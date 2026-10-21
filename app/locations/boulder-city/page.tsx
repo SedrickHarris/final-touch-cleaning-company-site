@@ -6,6 +6,9 @@ import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
+import { getOtherCityCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -356,61 +359,25 @@ export default function BoulderCityPage() {
         </div>
       </section>
 
-      {/* Nearby neighborhoods */}
-      <section className="bg-brand-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <SectionHeader
-            eyebrow="Boulder City neighborhoods"
-            heading="Neighborhoods we serve in Boulder City."
-          />
-          <div className="mt-6 flex flex-wrap gap-3">
-            {/* TODO-BATCH-5: Boulder City neighborhood pages to be added when Batch 5 ships */}
-          </div>
-          <p className="mt-2 text-sm text-muted">
-            Boulder City neighborhood pages are coming in the next build batch. In the meantime,{' '}
-            <a
-              href={SITE.phone.href}
-              className="font-semibold text-brand-blue hover:underline tabular-nums"
-            >
-              call {SITE.phone.display}
-            </a>{' '}
-            to confirm coverage for your specific area.
-          </p>
-        </div>
-      </section>
-
       {/* Related cities */}
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-          <p className="text-sm font-semibold text-muted uppercase tracking-widest mb-4">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-12">
+          <h2 className="font-body text-sm font-semibold text-muted uppercase tracking-widest mb-4">
             Also serving nearby
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/locations/las-vegas"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Las Vegas
-            </Link>
-            <Link
-              href="/locations/henderson"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Henderson
-            </Link>
-            <Link
-              href="/locations/north-las-vegas"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              North Las Vegas
-            </Link>
-            <Link
-              href="/locations/clark-county"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Clark County
-            </Link>
-          </div>
+          </h2>
+          <LocationCardGrid columns="4">
+            {getOtherCityCards('boulder-city').map((card) => (
+              <LocationCard
+                key={card.href}
+                href={card.href}
+                name={card.name}
+                description={card.description}
+                image={card.image}
+                aspect="4/3"
+                headingLevel="h3"
+              />
+            ))}
+          </LocationCardGrid>
         </div>
       </section>
 

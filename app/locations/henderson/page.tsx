@@ -6,8 +6,11 @@ import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -40,12 +43,7 @@ const HENDERSON_SERVICES = [
   SERVICES.find((s) => s.slug === 'retail-space-cleaning')!,
 ];
 
-// Built Henderson neighborhood pages, derived from the NEIGHBORHOODS constant
-// by filtering on parentCity. Single source of truth — new neighborhoods appear
-// here automatically as they are added to lib/constants/routes.ts.
-const HENDERSON_NEIGHBORHOODS = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).filter(
-  (n) => n.parentCity === 'henderson' && n.built,
-);
+const NEIGHBORHOOD_CARDS = getNeighborhoodCards('henderson');
 
 const faq = [
   {
@@ -357,22 +355,25 @@ export default function HendersonPage() {
 
       {/* Nearby neighborhoods */}
       <section className="bg-brand-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-12 sm:py-16">
           <SectionHeader
             eyebrow="Henderson neighborhoods"
             heading="Neighborhoods we serve in Henderson."
           />
-          <div className="mt-6 flex flex-wrap gap-3">
-            {HENDERSON_NEIGHBORHOODS.map((n) => (
-              <Link
-                key={n.href}
-                href={n.href}
-                className="inline-flex items-center rounded-full border border-border-subtle bg-light-gray min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-              >
-                {n.name}
-              </Link>
-            ))}
-          </div>
+          <div className="mt-8">
+              <LocationCardGrid>
+                {NEIGHBORHOOD_CARDS.map((card) => (
+                  <LocationCard
+                    key={card.href}
+                    href={card.href}
+                    name={card.name}
+                    description={card.description}
+                    image={card.image}
+                    headingLevel="h3"
+                  />
+                ))}
+              </LocationCardGrid>
+            </div>
           <p className="mt-5 text-sm text-muted">
             More Henderson neighborhood pages are coming in the next build batch. In the meantime,{' '}
             <a
@@ -388,36 +389,23 @@ export default function HendersonPage() {
 
       {/* Related cities */}
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-          <p className="text-sm font-semibold text-muted uppercase tracking-widest mb-4">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-12">
+          <h2 className="font-body text-sm font-semibold text-muted uppercase tracking-widest mb-4">
             Also serving nearby
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/locations/las-vegas"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Las Vegas
-            </Link>
-            <Link
-              href="/locations/north-las-vegas"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              North Las Vegas
-            </Link>
-            <Link
-              href="/locations/boulder-city"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Boulder City
-            </Link>
-            <Link
-              href="/locations/clark-county"
-              className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
-            >
-              Clark County
-            </Link>
-          </div>
+          </h2>
+          <LocationCardGrid columns="4">
+            {getOtherCityCards('henderson').map((card) => (
+              <LocationCard
+                key={card.href}
+                href={card.href}
+                name={card.name}
+                description={card.description}
+                image={card.image}
+                aspect="4/3"
+                headingLevel="h3"
+              />
+            ))}
+          </LocationCardGrid>
         </div>
       </section>
 

@@ -6,8 +6,11 @@ import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
+import { getOtherCityCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
-import { ROUTES, SERVICES, LOCATIONS } from '@/lib/constants/routes';
+import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -37,9 +40,6 @@ const CLARK_COUNTY_SERVICES = [
   SERVICES.find((s) => s.slug === 'janitorial-services')!,
   SERVICES.find((s) => s.slug === 'retail-space-cleaning')!,
 ];
-
-// City child pages — sourced from LOCATIONS constant, excluding clark-county itself.
-const CITY_PAGES = LOCATIONS.filter((l) => l.slug !== 'clark-county');
 
 const faq = [
   {
@@ -175,28 +175,20 @@ export default function ClarkCountyPage() {
             heading="Every city in Clark County we serve."
             sub="Explore cleaning services by city. Each page covers local demand, popular services, and neighborhood context specific to that area."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            {CITY_PAGES.map((city) => (
-              <Link
-                key={city.slug}
-                href={city.href}
-                className="group block rounded-[14px] border border-border-subtle bg-brand-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(26,26,26,0.08)] hover:border-brand-blue/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
-              >
-                <h3 className="font-display text-xl font-semibold text-brand-black group-hover:text-brand-blue transition-colors">
-                  {city.name}
-                </h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">{city.shortDescription}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue">
-                  View {city.name}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform duration-200 group-hover:translate-x-0.5"
-                  >
-                    →
-                  </span>
-                </span>
-              </Link>
-            ))}
+          <div className="mt-10">
+            <LocationCardGrid columns="4">
+              {getOtherCityCards('clark-county').map((card) => (
+                <LocationCard
+                  key={card.href}
+                  href={card.href}
+                  name={card.name}
+                  description={card.description}
+                  image={card.image}
+                  aspect="4/3"
+                  headingLevel="h3"
+                />
+              ))}
+            </LocationCardGrid>
           </div>
         </div>
       </section>
