@@ -101,3 +101,18 @@ New images go to `public/images/<ratio>/<category>/` based on their real pixel d
 | `images/services/move-out-cleaning-las-vegas-nv-final-touch.webp` | `images/16x10/services/move-out-cleaning-las-vegas-nv-final-touch.webp` |
 | `images/services/post-construction-cleanup-las-vegas-nv-final-touch.webp` | `images/16x10/services/post-construction-cleanup-las-vegas-nv-final-touch.webp` |
 | `images/services/retail-space-cleaning-las-vegas-nv-final-touch.webp` | `images/16x10/services/retail-space-cleaning-las-vegas-nv-final-touch.webp` |
+
+
+## Community images (added)
+
+Added as new files (not relocations). Not yet referenced by any page.
+
+| New path | Ratio | Dimensions | File size | Intended page |
+|---|---|---|---|---|
+| `images/16x9/communities/active-adult-communities-las-vegas-nv-hero-image.webp` | 16x9 | 2752x1536 | 224.7 KB | Communities hub hero (/communities) |
+| `images/16x9/communities/sun-city-anthem-cleaning-services-hero-image.webp` | 16x9 | 2752x1536 | 300.7 KB | Sun City Anthem page hero |
+| `images/16x9/communities/sun-city-summerlin-cleaning-services-hero-image.webp` | 16x9 | 2752x1536 | 319.5 KB | Sun City Summerlin page hero |
+| `images/16x9/communities/heritage-at-cadence-cleaning-services-hero-image.webp` | 16x9 | 2752x1536 | 169.3 KB | Heritage at Cadence page hero |
+| `images/4x3/communities/sun-city-anthem-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 282.3 KB | Sun City Anthem card |
+| `images/4x3/communities/sun-city-summerlin-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 338.3 KB | Sun City Summerlin card |
+| `images/4x3/communities/heritage-at-cadence-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 197.9 KB | Heritage at Cadence card |
