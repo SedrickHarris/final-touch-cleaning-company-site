@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Retail Space Cleaning in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Retail Space Cleaning, Las Vegas Valley | Final Touch' },
   description:
     'Retail space cleaning for storefronts across Las Vegas, Henderson, and the Las Vegas Valley. After-hours scheduling. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/retail-space-cleaning' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Retail Space Cleaning in Las Vegas, NV | Final Touch',
+    title: 'Retail Space Cleaning, Las Vegas Valley | Final Touch',
     description:
       'Retail space cleaning in Las Vegas, Henderson, and the Las Vegas Valley. After-hours and after-close scheduling. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
@@ -104,7 +104,7 @@ export default function RetailSpaceCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Retail Cleaning"
-        heading="Retail Space Cleaning in Las Vegas, NV"
+        heading="Retail Space Cleaning Across the Las Vegas Valley"
         sub={`Professional retail space cleaning for storefronts and shopping center tenants across ${SITE.serviceArea.county}. After-hours and after-close scheduling available. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

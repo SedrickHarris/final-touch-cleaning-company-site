@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Post-Construction Cleanup, Las Vegas Valley | Final Touch' },
   description:
     'Post-construction cleanup across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
   alternates: { canonical: '/services/post-construction-cleanup' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch',
+    title: 'Post-Construction Cleanup, Las Vegas Valley | Final Touch',
     description:
       'Post-construction cleanup in Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Scheduled around your handoff date. Call (702) 444-5077.',
     type: 'website',
@@ -104,7 +104,7 @@ export default function PostConstructionCleanupPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Post-Construction Cleanup"
-        heading="Post-Construction Cleanup in Las Vegas, NV"
+        heading="Post-Construction Cleanup Across the Las Vegas Valley"
         sub={`Final-touch detail cleans after new builds and renovations across ${SITE.serviceArea.county}. Residential and commercial. Licensed and insured in Nevada. Scheduled around your handoff date.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

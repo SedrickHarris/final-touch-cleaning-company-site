@@ -15,7 +15,7 @@ import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locatio
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Commercial Cleaning Services in Las Vegas, NV',
+  title: 'Family-Owned Commercial Cleaning in Las Vegas, NV',
   description:
     'Family-owned commercial cleaning in Las Vegas, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/las-vegas' },

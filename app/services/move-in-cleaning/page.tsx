@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Commercial Move-In Cleaning, Las Vegas Valley | Final Touch' },
   description:
     'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, home preps, and apartment cleans. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-in-cleaning' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch',
+    title: 'Commercial Move-In Cleaning, Las Vegas Valley | Final Touch',
     description:
       'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, apartment preps, and home cleans. Licensed and insured. Call (702) 444-5077.',
     type: 'website',
@@ -104,7 +104,7 @@ export default function MoveInCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Move-In Cleaning"
-        heading="Commercial Move-In Cleaning Services in Las Vegas, NV"
+        heading="Commercial Move-In Cleaning Across the Las Vegas Valley"
         sub={`Top-to-bottom cleaning before you settle into your new space. We serve homebuyers, renters, and property managers across ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

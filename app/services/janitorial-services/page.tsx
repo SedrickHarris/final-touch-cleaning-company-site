@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Janitorial Services in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Janitorial Services, Las Vegas Valley | Final Touch' },
   description:
     'Scheduled janitorial programs for commercial facilities across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/janitorial-services' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Janitorial Services in Las Vegas, NV | Final Touch',
+    title: 'Janitorial Services, Las Vegas Valley | Final Touch',
     description:
       'Commercial janitorial programs in Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. After-hours scheduling available. Call (702) 444-5077.',
     type: 'website',
@@ -104,7 +104,7 @@ export default function JanitorialServicesPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Janitorial Services"
-        heading="Janitorial Services in Las Vegas, NV"
+        heading="Janitorial Services Across the Las Vegas Valley"
         sub={`Scheduled janitorial programs for offices and commercial facilities across ${SITE.serviceArea.county}. After-hours scheduling available. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Commercial Deep Cleaning in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Commercial Deep Cleaning, Las Vegas Valley | Final Touch' },
   description:
     'Deep cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Periodic resets beyond standard janitorial. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/deep-cleaning' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Commercial Deep Cleaning in Las Vegas, NV | Final Touch',
+    title: 'Commercial Deep Cleaning, Las Vegas Valley | Final Touch',
     description:
       'Deep cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Periodic resets beyond janitorial for commercial spaces and rentals. Call (702) 444-5077.',
     type: 'website',
@@ -108,7 +108,7 @@ export default function DeepCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Deep Cleaning"
-        heading="Commercial Deep Cleaning Service in Las Vegas, NV"
+        heading="Commercial Deep Cleaning Across the Las Vegas Valley"
         sub={`Periodic deep cleans for the corners standard service skips. We reset commercial spaces and rental properties across ${SITE.serviceArea.county} to a standard a routine clean cannot reach.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

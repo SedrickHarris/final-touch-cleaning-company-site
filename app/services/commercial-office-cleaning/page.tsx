@@ -12,13 +12,13 @@ import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch' },
+  title: { absolute: 'Office Cleaning Across the Las Vegas Valley | Final Touch' },
   description:
     'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured, scheduled around your business. Call (702) 444-5077.',
   alternates: { canonical: '/services/commercial-office-cleaning' },
   openGraph: {
     ...OG_DEFAULTS,
-    title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch',
+    title: 'Office Cleaning Across the Las Vegas Valley | Final Touch',
     description:
       'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed, insured, scheduled around your business hours. Call (702) 444-5077.',
     type: 'website',
@@ -104,7 +104,7 @@ export default function CommercialOfficeCleaningPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="Commercial Cleaning"
-        heading="Commercial &amp; Office Cleaning in Las Vegas, NV"
+        heading="Commercial &amp; Office Cleaning Across the Las Vegas Valley"
         sub={`Professional office and commercial interior cleaning across ${SITE.serviceArea.county}. Scheduled around your business hours. Licensed and insured in Nevada.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
