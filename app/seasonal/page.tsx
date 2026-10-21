@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: { absolute: 'Seasonal Cleaning Services in Las Vegas, NV | Final Touch' },
-  description: `Seasonal cleaning services in Las Vegas, NV — spring, summer, holiday, and move-out cleans for commercial properties. Call ${SITE.phone.display}.`,
+  description: `Seasonal cleaning services in Las Vegas, NV - spring, summer, holiday, and move-out cleans for commercial properties. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal',
   },
   openGraph: {
     title: 'Seasonal Cleaning Services in Las Vegas, NV | Final Touch',
-    description: `Seasonal cleaning services in Las Vegas, NV — spring, summer, holiday, and move-out cleans for commercial properties. Call ${SITE.phone.display}.`,
+    description: `Seasonal cleaning services in Las Vegas, NV - spring, summer, holiday, and move-out cleans for commercial properties. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal`,
   },
@@ -86,7 +86,7 @@ const whySeasonalCards = [
   },
   {
     title: 'Owner-confirmed scope for each season',
-    body: `${SITE.owners} walk every property before work begins. Seasonal cleans are scoped to what the property actually needs at that point in the year — not a standard template applied across every client. Call ${SITE.phone.display} to discuss your property.`,
+    body: `${SITE.owners} walk every property before work begins. Seasonal cleans are scoped to what the property actually needs at that point in the year - not a standard template applied across every client. Call ${SITE.phone.display} to discuss your property.`,
   },
 ];
 
@@ -105,7 +105,7 @@ const faq = [
   },
   {
     q: 'Does seasonal cleaning cost more than regular cleaning?',
-    a: `Seasonal cleans typically involve more scope than a standard recurring visit — deeper surface work, less-accessed areas, or areas that accumulate seasonal buildup. Final Touch quotes every job based on the actual scope confirmed during the walkthrough. Call ${SITE.phone.display} or request a free quote to discuss your property's seasonal needs.`,
+    a: `Seasonal cleans typically involve more scope than a standard recurring visit - deeper surface work, less-accessed areas, or areas that accumulate seasonal buildup. Final Touch quotes every job based on the actual scope confirmed during the walkthrough. Call ${SITE.phone.display} or request a free quote to discuss your property's seasonal needs.`,
   },
   {
     q: 'Can Final Touch handle seasonal cleaning for a commercial property or managed building?',
@@ -179,7 +179,7 @@ export default function SeasonalHubPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Seasonal cleaning in Las Vegas is professional cleaning timed to the specific demands of each
-            part of the year — spring deep resets, summer dust-load cleaning, holiday preparation, and
+            part of the year - spring deep resets, summer dust-load cleaning, holiday preparation, and
             student move-out cleans.{' '}
             <Link href={ROUTES.services} className="text-brand-blue font-semibold hover:underline">
               Final Touch cleaning services

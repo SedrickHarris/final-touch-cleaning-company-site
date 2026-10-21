@@ -82,7 +82,7 @@ export default function GoogleReviewCard({ review, variant = 'dark' }: Props) {
       {review.reviewText ? (
         <p className={`text-sm font-body leading-relaxed flex-1 ${isDark ? 'text-white/80' : 'text-brand-black/80'}`}>&ldquo;{review.reviewText}&rdquo;</p>
       ) : (
-        <p className={`text-sm font-body italic flex-1 ${isDark ? 'text-white/40' : 'text-muted'}`}>Rating only — no written review.</p>
+        <p className={`text-sm font-body italic flex-1 ${isDark ? 'text-white/40' : 'text-muted'}`}>Rating only - no written review.</p>
       )}
       <div className={`flex items-center justify-between pt-3 mt-auto border-t ${isDark ? 'border-white/10' : 'border-border-subtle'}`}>
         <GoogleBadge isDark={isDark} />

@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Post-Holiday Cleanup in Las Vegas, NV',
-  description: `Post holiday cleanup Las Vegas — January reset cleaning for commercial properties, offices, and event spaces after the holiday season. Call ${SITE.phone.display}.`,
+  description: `Post holiday cleanup Las Vegas - January reset cleaning for commercial properties, offices, and event spaces after the holiday season. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/post-holiday-cleanup',
   },
   openGraph: {
     title: 'Post-Holiday Cleanup in Las Vegas, NV | Final Touch',
-    description: `Post holiday cleanup Las Vegas — January reset cleaning for commercial properties, offices, and event spaces after the holiday season. Call ${SITE.phone.display}.`,
+    description: `Post holiday cleanup Las Vegas - January reset cleaning for commercial properties, offices, and event spaces after the holiday season. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/post-holiday-cleanup`,
   },
@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: 'Is post-holiday cleanup different from holiday cleaning?',
-    a: 'Yes. Holiday cleaning (November–December) prepares a property for the season by addressing pre-season buildup and setting a high-presentation baseline. Post-holiday cleanup (January) addresses the wear that accumulates through the season itself — event residue, elevated floor wear, high-touch surface buildup, and the general aftermath of holiday foot traffic. Both are available from Final Touch.',
+    a: 'Yes. Holiday cleaning (November–December) prepares a property for the season by addressing pre-season buildup and setting a high-presentation baseline. Post-holiday cleanup (January) addresses the wear that accumulates through the season itself - event residue, elevated floor wear, high-touch surface buildup, and the general aftermath of holiday foot traffic. Both are available from Final Touch.',
   },
   {
     q: 'Does Final Touch do post-holiday cleanup for office holiday parties?',
@@ -117,7 +117,7 @@ const whyTimingCards = [
   },
   {
     heading: 'New year operational cadence starts clean',
-    body: 'Commercial operators and property managers who align their cleaning calendar with the new year benefit from a clean baseline at the start of Q1. Post-holiday cleanup in early January is the practical foundation for that alignment — establishing condition before the new operational cycle begins.',
+    body: 'Commercial operators and property managers who align their cleaning calendar with the new year benefit from a clean baseline at the start of Q1. Post-holiday cleanup in early January is the practical foundation for that alignment - establishing condition before the new operational cycle begins.',
   },
 ];
 

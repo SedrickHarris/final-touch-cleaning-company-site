@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Holiday Cleaning Services in Las Vegas, NV',
-  description: `Holiday cleaning services Las Vegas — commercial properties, retail stores, offices, and event spaces prepped for the holiday season. Call ${SITE.phone.display}.`,
+  description: `Holiday cleaning services Las Vegas - commercial properties, retail stores, offices, and event spaces prepped for the holiday season. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/holiday-cleaning-services',
   },
   openGraph: {
     title: 'Holiday Cleaning Services in Las Vegas, NV | Final Touch',
-    description: `Holiday cleaning services Las Vegas — commercial properties, retail stores, offices, and event spaces prepped for the holiday season. Call ${SITE.phone.display}.`,
+    description: `Holiday cleaning services Las Vegas - commercial properties, retail stores, offices, and event spaces prepped for the holiday season. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/holiday-cleaning-services`,
   },
@@ -30,11 +30,11 @@ const faq = [
   },
   {
     q: 'When should I schedule holiday cleaning for my Las Vegas business?',
-    a: 'For most Las Vegas commercial properties, holiday cleaning should be scheduled in October or early November — before the holiday shopping and event season begins in earnest. Properties that host events or see strong holiday foot traffic benefit from a pre-season clean that sets a baseline before heavy use. Post-holiday cleanup can be scheduled for January.',
+    a: 'For most Las Vegas commercial properties, holiday cleaning should be scheduled in October or early November - before the holiday shopping and event season begins in earnest. Properties that host events or see strong holiday foot traffic benefit from a pre-season clean that sets a baseline before heavy use. Post-holiday cleanup can be scheduled for January.',
   },
   {
     q: 'Does Final Touch provide holiday cleaning for retail stores in Las Vegas?',
-    a: `Yes. Final Touch provides holiday cleaning for Las Vegas retail stores, restaurants, offices, and commercial properties across ${SITE.serviceArea.county}. Holiday cleaning is scheduled around your operating hours — before open, after close, or at another agreed time. Call ${SITE.phone.display} or request a free quote.`,
+    a: `Yes. Final Touch provides holiday cleaning for Las Vegas retail stores, restaurants, offices, and commercial properties across ${SITE.serviceArea.county}. Holiday cleaning is scheduled around your operating hours - before open, after close, or at another agreed time. Call ${SITE.phone.display} or request a free quote.`,
   },
   {
     q: 'How is holiday cleaning different from regular commercial cleaning?',

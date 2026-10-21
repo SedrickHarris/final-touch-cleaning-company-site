@@ -134,7 +134,7 @@ export default function BoulderCityPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Commercial Cleaning Services in Boulder City, NV"
-        sub={`Final Touch provides commercial, renovation, and post-construction cleaning throughout Boulder City, Nevada's only city without gambling and one of the valley's most distinct communities. From historic downtown storefronts and small-business offices to post-construction cleanup on renovated older properties and move-in/move-out cleans for landlords, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in the Las Vegas Valley.`}
+        sub={`Final Touch provides commercial, renovation, and post-construction cleaning throughout Boulder City, Nevada. From historic downtown storefronts and small-business offices to post-construction cleanup on renovated older properties and move-in/move-out cleans for landlords, ${SITE.owners} and the team serve Boulder City with the same standard as anywhere else in the Las Vegas Valley.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}

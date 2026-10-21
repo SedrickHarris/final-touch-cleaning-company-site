@@ -78,7 +78,7 @@ const faqJsonLd = {
 const audienceCards = [
   {
     title: 'Residents arranging their own cleaning',
-    body: 'Sun City Anthem residents who want a professional cleaning team they can rely on — for a one-time deep clean, a move-out clean, or a recurring program. Final Touch is owner-led, licensed, and insured in Nevada.',
+    body: 'Sun City Anthem residents who want a professional cleaning team they can rely on - for a one-time deep clean, a move-out clean, or a recurring program. Final Touch is owner-led, licensed, and insured in Nevada.',
   },
   {
     title: 'Family members coordinating cleaning for a relative',
@@ -86,7 +86,7 @@ const audienceCards = [
   },
   {
     title: 'Residents moving into or out of a home',
-    body: 'Move-in cleaning before settling into a new Sun City Anthem home, or move-out cleaning when vacating — whether selling, transitioning to another arrangement, or turning over a unit. Scope confirmed per home.',
+    body: 'Move-in cleaning before settling into a new Sun City Anthem home, or move-out cleaning when vacating - whether selling, transitioning to another arrangement, or turning over a unit. Scope confirmed per home.',
   },
 ];
 
@@ -97,7 +97,7 @@ const whyCards = [
   },
   {
     title: 'Licensed and insured in Nevada',
-    body: 'Final Touch is licensed and fully insured in Nevada. Documentation available on request — useful for residents or family members who keep records.',
+    body: 'Final Touch is licensed and fully insured in Nevada. Documentation available on request - useful for residents or family members who keep records.',
   },
   {
     title: 'Blue Ribbon Guarantee',
@@ -140,7 +140,7 @@ export default function SunCityAnthemPage() {
       <HeroSection
         eyebrow="Active Adult Community · Henderson, NV"
         heading="Cleaning Services in Sun City Anthem, Henderson, NV"
-        sub={`Final Touch provides professional home cleaning for Sun City Anthem — an age-restricted active adult community in Henderson, NV. Move-in cleaning, move-out cleaning, deep cleaning, and recurring programs. Free quotes. Licensed and insured. Call ${SITE.phone.display}.`}
+        sub={`Final Touch provides professional home cleaning for Sun City Anthem - an age-restricted active adult community in Henderson, NV. Move-in cleaning, move-out cleaning, deep cleaning, and recurring programs. Free quotes. Licensed and insured. Call ${SITE.phone.display}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}

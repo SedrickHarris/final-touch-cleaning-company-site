@@ -37,7 +37,7 @@ const urgentServices = [
     slug: 'emergency-cleaning-services',
     name: 'Emergency Cleaning Services',
     description:
-      'Unexpected spills, post-event messes, or urgent facility situations — call us to discuss what happened and whether we can mobilize a crew.',
+      'Unexpected spills, post-event messes, or urgent facility situations - call us to discuss what happened and whether we can mobilize a crew.',
     href: '/urgent-cleaning/emergency-cleaning-services',
   },
   {
@@ -51,7 +51,7 @@ const urgentServices = [
     slug: 'weekend-cleaning-services',
     name: 'Weekend Cleaning Services',
     description:
-      'Need cleaning scheduled for Saturday or Sunday? Weekend availability varies — call ahead so we can confirm whether a crew slot is open.',
+      'Need cleaning scheduled for Saturday or Sunday? Weekend availability varies - call ahead so we can confirm whether a crew slot is open.',
     href: '/urgent-cleaning/weekend-cleaning-services',
   },
 ];
@@ -63,7 +63,7 @@ const whoWeServeCards = [
   },
   {
     title: 'Property managers with tight turnarounds',
-    body: 'Unit turn windows shrink when a tenant leaves late or the next tenant moves in early. Property managers across Las Vegas and Clark County rely on Final Touch to work through tight scheduling windows — call to discuss your timeline.',
+    body: 'Unit turn windows shrink when a tenant leaves late or the next tenant moves in early. Property managers across Las Vegas and Clark County rely on Final Touch to work through tight scheduling windows - call to discuss your timeline.',
   },
   {
     title: 'Businesses before key events',
@@ -71,18 +71,18 @@ const whoWeServeCards = [
   },
   {
     title: 'Move-out clients with deadline pressure',
-    body: 'Whether you are returning a commercial lease or handing back a residential unit, a tight move-out cleaning deadline is one of the most common urgent requests Final Touch receives. Subject to crew availability — call (702) 444-5077.',
+    body: 'Whether you are returning a commercial lease or handing back a residential unit, a tight move-out cleaning deadline is one of the most common urgent requests Final Touch receives. Subject to crew availability - call (702) 444-5077.',
   },
 ];
 
 const faq = [
   {
     q: 'Does Final Touch offer same-day or emergency cleaning in Las Vegas?',
-    a: `Final Touch works to accommodate urgent and time-sensitive cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. The best approach is to call ${SITE.phone.display} as early in the day as possible — the earlier you reach us, the more options we have to work with.`,
+    a: `Final Touch works to accommodate urgent and time-sensitive cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. The best approach is to call ${SITE.phone.display} as early in the day as possible - the earlier you reach us, the more options we have to work with.`,
   },
   {
     q: 'How quickly can Final Touch respond to an urgent cleaning request?',
-    a: 'Response times depend on crew availability at the time of your call. Final Touch does not guarantee a specific response window for urgent requests. Call us directly at (702) 444-5077 and we will tell you what is available. The further in advance you call — even by a few hours — the better your chances of securing a crew.',
+    a: 'Response times depend on crew availability at the time of your call. Final Touch does not guarantee a specific response window for urgent requests. Call us directly at (702) 444-5077 and we will tell you what is available. The further in advance you call - even by a few hours - the better your chances of securing a crew.',
   },
   {
     q: 'What types of urgent cleaning requests does Final Touch handle?',
@@ -94,7 +94,7 @@ const faq = [
   },
   {
     q: 'Is Final Touch available 24 hours a day for emergencies?',
-    a: `Final Touch is a family-owned cleaning company in Clark County — not a 24/7 emergency dispatch service. For urgent cleaning needs, call ${SITE.phone.display} during business hours as early as possible. We will do our best to accommodate time-sensitive requests within our crew scheduling capacity.`,
+    a: `Final Touch is a family-owned cleaning company in Clark County - not a 24/7 emergency dispatch service. For urgent cleaning needs, call ${SITE.phone.display} during business hours as early as possible. We will do our best to accommodate time-sensitive requests within our crew scheduling capacity.`,
   },
 ];
 
@@ -144,7 +144,7 @@ export default function UrgentCleaningHubPage() {
       <HeroSection
         eyebrow="Urgent Cleaning · Las Vegas, NV"
         heading="Emergency and Same-Day Cleaning in Las Vegas, NV"
-        sub={`When your office, commercial space, or rental unit needs cleaning faster than your regular schedule allows, call Final Touch at ${SITE.phone.display} to check availability. We work to accommodate urgent requests across the Las Vegas Valley — subject to crew scheduling.`}
+        sub={`When your office, commercial space, or rental unit needs cleaning faster than your regular schedule allows, call Final Touch at ${SITE.phone.display} to check availability. We work to accommodate urgent requests across the Las Vegas Valley - subject to crew scheduling.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -154,7 +154,7 @@ export default function UrgentCleaningHubPage() {
       <section className="bg-brand-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
-            Urgent cleaning in Las Vegas means calling to check availability — not booking online and
+            Urgent cleaning in Las Vegas means calling to check availability - not booking online and
             assuming a crew will appear. Final Touch handles same-day, emergency, last-minute
             move-out, and weekend cleaning requests across Las Vegas and{' '}
             {SITE.serviceArea.county} subject to crew availability.{' '}
@@ -210,7 +210,7 @@ export default function UrgentCleaningHubPage() {
           <SectionHeader
             eyebrow="Who we serve"
             heading="Commercial clients and property managers with urgent timelines."
-            sub="Most urgent cleaning requests in Las Vegas come from office managers, property managers, and commercial tenants — not residential clients. Final Touch is built for that caller."
+            sub="Most urgent cleaning requests in Las Vegas come from office managers, property managers, and commercial tenants - not residential clients. Final Touch is built for that caller."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {whoWeServeCards.map((item) => (
@@ -248,7 +248,7 @@ export default function UrgentCleaningHubPage() {
             {[
               'Your location (address, city, building access details)',
               'Approximate square footage or number of rooms',
-              'What needs to be cleaned — scope description',
+              'What needs to be cleaned - scope description',
               'Your target date and time window',
               'Whether the space is currently occupied or vacant',
               'Any access requirements, codes, or key arrangements',

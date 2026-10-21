@@ -76,7 +76,7 @@ const faq = [
   },
   {
     q: 'Can Final Touch set up a recurring commercial cleaning program for my Henderson office or facility?',
-    a: `Yes. Final Touch offers recurring commercial cleaning programs for Henderson offices and facilities. Each program is scoped through a free walkthrough — by phone or a brief on-site visit — so the schedule and scope reflect the actual space. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to get started.`,
+    a: `Yes. Final Touch offers recurring commercial cleaning programs for Henderson offices and facilities. Each program is scoped through a free walkthrough - by phone or a brief on-site visit - so the schedule and scope reflect the actual space. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to get started.`,
   },
 ];
 

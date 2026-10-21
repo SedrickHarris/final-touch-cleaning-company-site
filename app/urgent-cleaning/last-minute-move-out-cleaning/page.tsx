@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'Can Final Touch handle a last-minute move-out clean in Las Vegas?',
-    a: `Final Touch works to accommodate last-minute move-out cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. Call ${SITE.phone.display} as early as possible with your move-out date and location — the sooner you call, the better the options.`,
+    a: `Final Touch works to accommodate last-minute move-out cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. Call ${SITE.phone.display} as early as possible with your move-out date and location - the sooner you call, the better the options.`,
   },
   {
     q: 'What does a move-out cleaning include?',
@@ -36,7 +36,7 @@ const faq = [
   },
   {
     q: 'How much notice does Final Touch need for a move-out clean?',
-    a: 'Final Touch works to accommodate last-minute requests, but there is no minimum notice guarantee. Calling two to three days in advance gives the best chance of securing a crew on your timeline. For requests with less than 24 hours of notice, availability is more limited — call immediately at (702) 444-5077 and we will assess what is possible.',
+    a: 'Final Touch works to accommodate last-minute requests, but there is no minimum notice guarantee. Calling two to three days in advance gives the best chance of securing a crew on your timeline. For requests with less than 24 hours of notice, availability is more limited - call immediately at (702) 444-5077 and we will assess what is possible.',
   },
   {
     q: 'Does Final Touch serve property managers needing rapid unit turns?',
@@ -44,11 +44,11 @@ const faq = [
   },
   {
     q: 'Can Final Touch handle commercial move-out cleaning in Las Vegas?',
-    a: `Yes. Final Touch handles move-out cleaning for commercial spaces — offices, suites, and leased commercial interiors — as well as residential units. Commercial move-out scope is confirmed per space. Call ${SITE.phone.display} to describe your commercial space and timeline.`,
+    a: `Yes. Final Touch handles move-out cleaning for commercial spaces - offices, suites, and leased commercial interiors - as well as residential units. Commercial move-out scope is confirmed per space. Call ${SITE.phone.display} to describe your commercial space and timeline.`,
   },
   {
     q: 'What should I have ready when I call about a last-minute move-out clean?',
-    a: 'Have the address, the size of the unit (square footage or number of rooms and bathrooms), your move-out or handover deadline, access information (key pickup, lockbox code, property manager contact), and any specific scope notes — particularly if appliances, carpets, or any areas require special attention. The more specific you can be, the faster we can give you an answer.',
+    a: 'Have the address, the size of the unit (square footage or number of rooms and bathrooms), your move-out or handover deadline, access information (key pickup, lockbox code, property manager contact), and any specific scope notes - particularly if appliances, carpets, or any areas require special attention. The more specific you can be, the faster we can give you an answer.',
   },
 ];
 
@@ -79,7 +79,7 @@ const faqJsonLd = {
 const audienceCards = [
   {
     title: 'Property managers with compressed unit turns',
-    body: 'When a tenant vacates later than expected or a new tenant moves in ahead of schedule, the unit turn window shrinks fast. Property managers in Las Vegas call Final Touch to work through tight turnaround schedules — availability confirmed on the call based on current crew scheduling.',
+    body: 'When a tenant vacates later than expected or a new tenant moves in ahead of schedule, the unit turn window shrinks fast. Property managers in Las Vegas call Final Touch to work through tight turnaround schedules - availability confirmed on the call based on current crew scheduling.',
   },
   {
     title: 'Tenants with a hard move-out deadline',
@@ -87,17 +87,17 @@ const audienceCards = [
   },
   {
     title: 'Commercial tenants vacating leased space',
-    body: 'Commercial move-outs often carry specific lease-end cleaning obligations tied to the condition the tenant returns the space in. Final Touch handles commercial move-out cleaning for offices and leased commercial interiors across Las Vegas and Clark County — scope confirmed per space.',
+    body: 'Commercial move-outs often carry specific lease-end cleaning obligations tied to the condition the tenant returns the space in. Final Touch handles commercial move-out cleaning for offices and leased commercial interiors across Las Vegas and Clark County - scope confirmed per space.',
   },
 ];
 
 const checklistItems = [
   'Full address including unit or suite number',
-  'Unit size — square footage or number of bedrooms and bathrooms',
+  'Unit size - square footage or number of bedrooms and bathrooms',
   'Your move-out or handover deadline (specific date and time if possible)',
-  'Access instructions — key pickup location, lockbox code, or property manager contact',
+  'Access instructions - key pickup location, lockbox code, or property manager contact',
   'Any appliances that need to be cleaned inside (oven, refrigerator)',
-  'Any areas of particular concern — staining, heavy soiling, carpet condition',
+  'Any areas of particular concern - staining, heavy soiling, carpet condition',
   'Whether the unit is already vacated or still being cleared',
 ];
 
@@ -127,7 +127,7 @@ export default function LastMinuteMoveOutCleaningPage() {
       <HeroSection
         eyebrow="Last-Minute Move-Out Cleaning · Las Vegas, NV"
         heading="Last-Minute Move-Out Cleaning in Las Vegas, NV"
-        sub={`Move-out deadline approaching in Las Vegas? Call ${SITE.phone.display} to check availability. Final Touch works to accommodate compressed move-out cleaning timelines for tenants, property managers, and commercial tenants across the Las Vegas Valley — subject to crew scheduling.`}
+        sub={`Move-out deadline approaching in Las Vegas? Call ${SITE.phone.display} to check availability. Final Touch works to accommodate compressed move-out cleaning timelines for tenants, property managers, and commercial tenants across the Las Vegas Valley - subject to crew scheduling.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -139,7 +139,7 @@ export default function LastMinuteMoveOutCleaningPage() {
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Last-minute move-out cleaning in Las Vegas is one of the most common urgent requests Final
             Touch receives from property managers and tenants across Clark County. Availability depends
-            on crew scheduling — call{' '}
+            on crew scheduling - call{' '}
             <a
               href={SITE.phone.href}
               className="text-brand-blue font-semibold hover:underline tabular-nums"
@@ -229,7 +229,7 @@ export default function LastMinuteMoveOutCleaningPage() {
             {[
               {
                 heading: 'Lease end dates do not move',
-                body: 'A lease end date is fixed. When a tenant is running behind on packing or has not arranged cleaning in advance, the window between vacancy and key handover is often less than a day. Calling Final Touch early — even the day before — gives the best chance of fitting a crew into the schedule.',
+                body: 'A lease end date is fixed. When a tenant is running behind on packing or has not arranged cleaning in advance, the window between vacancy and key handover is often less than a day. Calling Final Touch early - even the day before - gives the best chance of fitting a crew into the schedule.',
               },
               {
                 heading: 'Property managers face overlap pressure',

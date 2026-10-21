@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Move-Out Cleaning for College Students in Las Vegas, NV',
-  description: `Student move-out cleaning Las Vegas — deposit-ready cleans aligned with the UNLV academic calendar for landlords, property managers, and student renters. Call ${SITE.phone.display}.`,
+  description: `Student move-out cleaning Las Vegas - deposit-ready cleans aligned with the UNLV academic calendar for landlords, property managers, and student renters. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/move-out-cleaning-for-college-students',
   },
   openGraph: {
     title: 'Move-Out Cleaning for College Students in Las Vegas, NV | Final Touch',
-    description: `Student move-out cleaning Las Vegas — deposit-ready cleans aligned with the UNLV academic calendar for landlords, property managers, and student renters. Call ${SITE.phone.display}.`,
+    description: `Student move-out cleaning Las Vegas - deposit-ready cleans aligned with the UNLV academic calendar for landlords, property managers, and student renters. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/move-out-cleaning-for-college-students`,
   },
@@ -38,11 +38,11 @@ const faq = [
   },
   {
     q: 'Does a move-out clean help get a security deposit back?',
-    a: "A professional move-out clean addresses the cleaning conditions that most lease agreements require tenants to meet before vacating. Whether a deposit is returned depends on the landlord's inspection and the specific lease terms — Final Touch cannot guarantee deposit outcomes. What Final Touch can do is provide a thorough, deposit-ready clean that meets standard move-out cleaning expectations. Scope is confirmed at the walkthrough.",
+    a: "A professional move-out clean addresses the cleaning conditions that most lease agreements require tenants to meet before vacating. Whether a deposit is returned depends on the landlord's inspection and the specific lease terms - Final Touch cannot guarantee deposit outcomes. What Final Touch can do is provide a thorough, deposit-ready clean that meets standard move-out cleaning expectations. Scope is confirmed at the walkthrough.",
   },
   {
     q: 'Can Final Touch clean a student apartment in Las Vegas on short notice?',
-    a: `Scheduling depends on availability at the time of the request. Final Touch does not guarantee same-day or next-day availability — scheduling is confirmed during the booking process. Call ${SITE.phone.display} as early as possible before your move-out date to confirm timing, particularly during the peak May–June move-out window when demand is highest.`,
+    a: `Scheduling depends on availability at the time of the request. Final Touch does not guarantee same-day or next-day availability - scheduling is confirmed during the booking process. Call ${SITE.phone.display} as early as possible before your move-out date to confirm timing, particularly during the peak May–June move-out window when demand is highest.`,
   },
   {
     q: 'What is included in a deposit-ready move-out clean for a Las Vegas rental unit?',
@@ -85,7 +85,7 @@ const audienceCards = [
   },
   {
     title: 'Student renters vacating Las Vegas apartments',
-    body: 'UNLV students and other Las Vegas college renters who want a professional move-out clean before handing back the keys use Final Touch to handle the cleaning that their lease requires. A professionally cleaned unit is in better condition for the landlord inspection than a self-cleaned unit — scope is confirmed per unit at the walkthrough.',
+    body: 'UNLV students and other Las Vegas college renters who want a professional move-out clean before handing back the keys use Final Touch to handle the cleaning that their lease requires. A professionally cleaned unit is in better condition for the landlord inspection than a self-cleaned unit - scope is confirmed per unit at the walkthrough.',
   },
   {
     title: 'Parents coordinating move-out for students',
@@ -118,7 +118,7 @@ const whyTimingCards = [
   },
   {
     heading: 'Summer heat makes delayed unit turns harder',
-    body: "Units that sit vacant through the Las Vegas summer accumulate dust and heat exposure that compounds the cleaning work needed before re-leasing. A move-out clean at the end of the lease — before summer heat sets in — is easier and more effective than a clean attempted in July or August after weeks of sealed, unoccupied exposure to desert heat and dust.",
+    body: "Units that sit vacant through the Las Vegas summer accumulate dust and heat exposure that compounds the cleaning work needed before re-leasing. A move-out clean at the end of the lease - before summer heat sets in - is easier and more effective than a clean attempted in July or August after weeks of sealed, unoccupied exposure to desert heat and dust.",
   },
 ];
 

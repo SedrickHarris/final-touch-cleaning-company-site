@@ -68,7 +68,7 @@ const whyItems = [
     body: '100% satisfaction or Final Touch returns within 24 hours to make it right. No arguments. No runaround.',
   },
   {
-    title: 'Free quotes — no obligation',
+    title: 'Free quotes - no obligation',
     body: 'Every cleaning starts with a free quote. Scott or Nicole will discuss your home, your timing, and what you need before any work begins.',
   },
   {

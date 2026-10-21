@@ -79,7 +79,7 @@ export default function OurTeamPage() {
     <>
       <HeroSection
         eyebrow="Our Team"
-        heading="Meet Scott & Nicole Maland — Owners of Final Touch Cleaning Company"
+        heading="Meet Scott & Nicole Maland - Owners of Final Touch Cleaning Company"
         formSlot={ownerImageSlot}
         sub="Final Touch Cleaning Company is owned and run by Scott & Nicole Maland, a husband-and-wife team based in Southern Nevada. The same owners who set the cleaning standard also answer the phone, walk through the space, and confirm the finish on every job."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}

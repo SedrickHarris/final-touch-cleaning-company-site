@@ -16,12 +16,12 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Services in Clark County, NV',
   description:
-    'Commercial cleaning across Clark County, NV — Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
+    'Commercial cleaning across Clark County, NV - Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
   alternates: { canonical: '/locations/clark-county' },
   openGraph: {
     title: 'Commercial Cleaning Services in Clark County, NV | Final Touch Cleaning Company',
     description:
-      'Commercial cleaning across Clark County, NV — Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
+      'Commercial cleaning across Clark County, NV - Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations/clark-county`,
   },
@@ -56,7 +56,7 @@ const faq = [
   },
   {
     q: 'What commercial cleaning services does Final Touch offer across Clark County?',
-    a: `Final Touch provides commercial and office cleaning, janitorial programs, post-construction cleanup, move-in and move-out cleaning for property managers, deep cleaning, and retail space cleaning — seven services in total, available county-wide across Las Vegas, Henderson, North Las Vegas, and Boulder City. Commercial and post-construction work is the primary focus. Call ${SITE.phone.display} to discuss the right program for your facility.`,
+    a: `Final Touch provides commercial and office cleaning, janitorial programs, post-construction cleanup, move-in and move-out cleaning for property managers, deep cleaning, and retail space cleaning - seven services in total, available county-wide across Las Vegas, Henderson, North Las Vegas, and Boulder City. Commercial and post-construction work is the primary focus. Call ${SITE.phone.display} to discuss the right program for your facility.`,
   },
   {
     q: 'Is Final Touch based in Clark County?',

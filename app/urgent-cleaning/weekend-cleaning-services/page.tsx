@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'Does Final Touch offer weekend cleaning in Las Vegas?',
-    a: `Final Touch works with Las Vegas businesses that need cleaning on Saturday or Sunday. Weekend availability depends on crew scheduling and is not guaranteed in advance. Call ${SITE.phone.display} to check what is available for your preferred weekend date — earlier in the week is better for securing a slot.`,
+    a: `Final Touch works with Las Vegas businesses that need cleaning on Saturday or Sunday. Weekend availability depends on crew scheduling and is not guaranteed in advance. Call ${SITE.phone.display} to check what is available for your preferred weekend date - earlier in the week is better for securing a slot.`,
   },
   {
     q: 'Why would a business need cleaning on a weekend in Las Vegas?',
@@ -36,11 +36,11 @@ const faq = [
   },
   {
     q: 'Is weekend cleaning more expensive than weekday cleaning?',
-    a: `Pricing depends on the scope of the job — what needs to be cleaned, the size of the space, and the access logistics. Call ${SITE.phone.display} or request a free quote online. ${SITE.owners} will assess the scope and give you a price before any work begins. No booking until you approve.`,
+    a: `Pricing depends on the scope of the job - what needs to be cleaned, the size of the space, and the access logistics. Call ${SITE.phone.display} or request a free quote online. ${SITE.owners} will assess the scope and give you a price before any work begins. No booking until you approve.`,
   },
   {
     q: 'How far in advance should I schedule a weekend cleaning in Las Vegas?',
-    a: 'Booking earlier in the week — Tuesday or Wednesday — gives the best chance of securing a Saturday or Sunday crew slot. Weekend slots fill faster than midweek availability. If you need weekend cleaning and it is already Thursday or Friday, call immediately at (702) 444-5077 and we will tell you what is available.',
+    a: 'Booking earlier in the week - Tuesday or Wednesday - gives the best chance of securing a Saturday or Sunday crew slot. Weekend slots fill faster than midweek availability. If you need weekend cleaning and it is already Thursday or Friday, call immediately at (702) 444-5077 and we will tell you what is available.',
   },
   {
     q: 'Does Final Touch clean commercial spaces on weekends, or residential only?',
@@ -79,7 +79,7 @@ const faqJsonLd = {
 const audienceCards = [
   {
     title: 'Offices closed on weekdays but cleaning-ready on weekends',
-    body: 'Some Las Vegas offices are easier to clean when staff are absent on the weekend. Booking a Saturday or Sunday clean avoids disruption during working hours and ensures the space is ready for Monday morning. Weekend slot availability varies — call to check.',
+    body: 'Some Las Vegas offices are easier to clean when staff are absent on the weekend. Booking a Saturday or Sunday clean avoids disruption during working hours and ensures the space is ready for Monday morning. Weekend slot availability varies - call to check.',
   },
   {
     title: 'Property managers with weekend unit turns',
@@ -87,17 +87,17 @@ const audienceCards = [
   },
   {
     title: 'Retail and hospitality operators before Monday open',
-    body: 'Las Vegas retail and commercial operators who close for the weekend sometimes need a thorough clean done before they reopen. A Friday-night or Saturday clean can be scheduled based on crew availability — call ahead so the weekend slot can be assessed and held.',
+    body: 'Las Vegas retail and commercial operators who close for the weekend sometimes need a thorough clean done before they reopen. A Friday-night or Saturday clean can be scheduled based on crew availability - call ahead so the weekend slot can be assessed and held.',
   },
 ];
 
 const checklistItems = [
   'Address and suite or unit number',
-  'Specific day needed — Saturday, Sunday, or either',
+  'Specific day needed - Saturday, Sunday, or either',
   'Preferred time window on that day',
   'Approximate size of the space (square footage or room count)',
   'Description of what needs to be cleaned',
-  'Access instructions — key location, entry code, or building contact',
+  'Access instructions - key location, entry code, or building contact',
   'Whether the space will be occupied or empty during cleaning',
 ];
 
@@ -127,7 +127,7 @@ export default function WeekendCleaningServicesPage() {
       <HeroSection
         eyebrow="Weekend Cleaning · Las Vegas, NV"
         heading="Weekend Cleaning Services in Las Vegas, NV"
-        sub={`Need your Las Vegas office or commercial space cleaned on Saturday or Sunday? Call ${SITE.phone.display} to check weekend availability. Final Touch works with businesses that operate on a schedule cleaning cannot wait until Monday to address — subject to crew scheduling.`}
+        sub={`Need your Las Vegas office or commercial space cleaned on Saturday or Sunday? Call ${SITE.phone.display} to check weekend availability. Final Touch works with businesses that operate on a schedule cleaning cannot wait until Monday to address - subject to crew scheduling.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -140,7 +140,7 @@ export default function WeekendCleaningServicesPage() {
             Weekend cleaning in Las Vegas is a real scheduling need for commercial operators, property
             managers, and businesses that cannot fit cleaning into a standard weekday window. Final
             Touch works to accommodate Saturday and Sunday cleaning requests across Las Vegas and{' '}
-            {SITE.serviceArea.county} based on crew availability — call{' '}
+            {SITE.serviceArea.county} based on crew availability - call{' '}
             <a
               href={SITE.phone.href}
               className="text-brand-blue font-semibold hover:underline tabular-nums"
@@ -200,7 +200,7 @@ export default function WeekendCleaningServicesPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted">
-            Weekend availability is confirmed on the call. Book earlier in the week when possible —
+            Weekend availability is confirmed on the call. Book earlier in the week when possible -
             Saturday and Sunday slots fill faster than midweek availability. Call{' '}
             <a
               href={SITE.phone.href}
@@ -228,11 +228,11 @@ export default function WeekendCleaningServicesPage() {
               },
               {
                 heading: 'Call early in the week for weekend slots',
-                body: 'Weekend cleaning slots are more limited than weekday availability. Calling on Tuesday or Wednesday for a Saturday clean gives a meaningful advantage over calling Friday afternoon. If you need weekend cleaning, do not wait — call (702) 444-5077 and we will check what is on the schedule.',
+                body: 'Weekend cleaning slots are more limited than weekday availability. Calling on Tuesday or Wednesday for a Saturday clean gives a meaningful advantage over calling Friday afternoon. If you need weekend cleaning, do not wait - call (702) 444-5077 and we will check what is on the schedule.',
               },
               {
                 heading: 'Same standard, different day',
-                body: `Weekend cleaning by Final Touch follows the same scope, quality standard, and owner oversight as any weekday clean. ${SITE.owners} oversee every account. The Blue Ribbon Guarantee — 100% satisfaction or we return within 24 hours — applies regardless of the day of the week.`,
+                body: `Weekend cleaning by Final Touch follows the same scope, quality standard, and owner oversight as any weekday clean. ${SITE.owners} oversee every account. The Blue Ribbon Guarantee - 100% satisfaction or we return within 24 hours - applies regardless of the day of the week.`,
               },
             ].map(({ heading, body }) => (
               <div

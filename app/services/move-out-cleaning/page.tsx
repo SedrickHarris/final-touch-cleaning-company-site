@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: "What if my move-out clean doesn't meet my expectations?",
-    a: `Every move-out clean from Final Touch — a family-owned commercial cleaning company — is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
+    a: `Every move-out clean from Final Touch - a family-owned commercial cleaning company - is backed by the Blue Ribbon Guarantee: 100% satisfaction or we return within 24 hours to fix what fell short. You reach ${SITE.owners} directly, not a call center. If something was missed or not done to the agreed scope, we come back and make it right.`,
   },
 ];
 

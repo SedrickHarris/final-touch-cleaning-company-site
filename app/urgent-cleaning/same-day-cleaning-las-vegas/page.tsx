@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'Does Final Touch offer same-day cleaning in Las Vegas?',
-    a: `Final Touch works to accommodate same-day cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. Call ${SITE.phone.display} as early in the day as possible — the earlier you reach us, the more options we have to work with on the same day.`,
+    a: `Final Touch works to accommodate same-day cleaning requests across Las Vegas and Clark County. Availability depends on crew scheduling at the time of your call. Call ${SITE.phone.display} as early in the day as possible - the earlier you reach us, the more options we have to work with on the same day.`,
   },
   {
     q: 'What types of spaces does Final Touch clean on the same day?',
-    a: 'Same-day cleaning requests handled by Final Touch typically involve commercial office spaces, small business interiors, and property management unit turnovers. Scope and feasibility are confirmed on the call. Large-scale or highly specialized cleans may not be schedulable same-day — that is assessed when you call.',
+    a: 'Same-day cleaning requests handled by Final Touch typically involve commercial office spaces, small business interiors, and property management unit turnovers. Scope and feasibility are confirmed on the call. Large-scale or highly specialized cleans may not be schedulable same-day - that is assessed when you call.',
   },
   {
     q: 'How far in advance should I call for a same-day cleaning slot?',
@@ -40,7 +40,7 @@ const faq = [
   },
   {
     q: 'Is there an extra charge for same-day cleaning in Las Vegas?',
-    a: `Pricing is discussed when you call. Final Touch provides a quote based on the specific scope and conditions of your space. Call ${SITE.phone.display} or request a free quote online — ${SITE.owners} will discuss what the job requires and give you a price before any work begins.`,
+    a: `Pricing is discussed when you call. Final Touch provides a quote based on the specific scope and conditions of your space. Call ${SITE.phone.display} or request a free quote online - ${SITE.owners} will discuss what the job requires and give you a price before any work begins.`,
   },
   {
     q: 'Does Final Touch serve Henderson and North Las Vegas for same-day cleaning?',
@@ -83,7 +83,7 @@ const audienceCards = [
   },
   {
     title: 'Property managers with rapid unit turns',
-    body: 'When a tenant vacates ahead of schedule or the next occupant arrives sooner than expected, property managers in Las Vegas need a reliable cleaning partner who can work through a compressed turnaround. Same-day unit turns are subject to crew availability — call as early as possible.',
+    body: 'When a tenant vacates ahead of schedule or the next occupant arrives sooner than expected, property managers in Las Vegas need a reliable cleaning partner who can work through a compressed turnaround. Same-day unit turns are subject to crew availability - call as early as possible.',
   },
   {
     title: 'Business owners preparing for unexpected guests',
@@ -94,9 +94,9 @@ const audienceCards = [
 const checklistItems = [
   'Full address including suite or unit number',
   'Approximate square footage or number of rooms',
-  'What needs to be cleaned — surfaces, rooms, specific areas',
+  'What needs to be cleaned - surfaces, rooms, specific areas',
   'Your available time window for the same day',
-  'Access instructions — key pickup, entry code, building contact',
+  'Access instructions - key pickup, entry code, building contact',
   'Whether the space is currently occupied or vacant',
 ];
 
@@ -126,7 +126,7 @@ export default function SameDayCleaningLasVegasPage() {
       <HeroSection
         eyebrow="Same-Day Cleaning · Las Vegas, NV"
         heading="Same-Day Cleaning in Las Vegas, NV"
-        sub={`Need your Las Vegas office or commercial space cleaned today? Call ${SITE.phone.display} to check availability. Final Touch works to accommodate same-day requests based on crew scheduling — the earlier you call, the better your options.`}
+        sub={`Need your Las Vegas office or commercial space cleaned today? Call ${SITE.phone.display} to check availability. Final Touch works to accommodate same-day requests based on crew scheduling - the earlier you call, the better your options.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -163,7 +163,7 @@ export default function SameDayCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="Who we serve"
             heading="Commercial clients who need cleaning today."
-            sub="Same-day cleaning requests most often come from offices, property managers, and business owners with an urgent timeline — not residential clients."
+            sub="Same-day cleaning requests most often come from offices, property managers, and business owners with an urgent timeline - not residential clients."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {audienceCards.map((item) => (
@@ -198,7 +198,7 @@ export default function SameDayCleaningLasVegasPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted">
-            Same-day availability is confirmed on the call — not guaranteed in advance. Call{' '}
+            Same-day availability is confirmed on the call - not guaranteed in advance. Call{' '}
             <a
               href={SITE.phone.href}
               className="text-brand-blue font-semibold hover:underline tabular-nums"
@@ -221,7 +221,7 @@ export default function SameDayCleaningLasVegasPage() {
             {[
               {
                 heading: 'Crew availability drives same-day feasibility',
-                body: 'Same-day cleaning is not a standing offer — it is a real-time assessment. When you call, Final Touch checks whether a crew is available in your area for the time window you need. Some days that is possible; some days it is not. That honest answer is what you get when you call.',
+                body: 'Same-day cleaning is not a standing offer - it is a real-time assessment. When you call, Final Touch checks whether a crew is available in your area for the time window you need. Some days that is possible; some days it is not. That honest answer is what you get when you call.',
               },
               {
                 heading: 'Scope clarity speeds up the decision',

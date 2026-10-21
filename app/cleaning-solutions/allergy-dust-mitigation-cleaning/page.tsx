@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Can cleaning help with allergies?',
-    a: 'Regular, thorough dust removal can reduce the amount of settled dust and common allergens on surfaces in your space. Final Touch focuses on detailed cleaning of the affected surfaces. We do not make medical claims or promise specific health outcomes — what we offer is a thorough, targeted clean of where dust and allergens collect, which many people find makes a noticeable difference.',
+    a: 'Regular, thorough dust removal can reduce the amount of settled dust and common allergens on surfaces in your space. Final Touch focuses on detailed cleaning of the affected surfaces. We do not make medical claims or promise specific health outcomes - what we offer is a thorough, targeted clean of where dust and allergens collect, which many people find makes a noticeable difference.',
   },
   {
     q: 'Is this service for businesses as well as homes?',
@@ -151,7 +151,7 @@ export default function AllergyDustMitigationCleaningPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Allergy and dust mitigation cleaning is a detailed clean that targets where dust and
-            common allergens settle — vents, fixtures, blinds, baseboards, and other surfaces a
+            common allergens settle - vents, fixtures, blinds, baseboards, and other surfaces a
             quick clean skips. It is a real concern in the Las Vegas Valley because the high desert
             climate keeps fine dust airborne with dry heat and frequent wind, so it settles back
             onto surfaces between cleanings.{' '}
@@ -189,7 +189,7 @@ export default function AllergyDustMitigationCleaningPage() {
           </ul>
           <p className="mt-6 text-sm text-muted">
             Final Touch provides thorough, targeted cleaning of the affected surfaces. We do not make
-            medical claims or promise specific health outcomes — what we offer is a detailed clean of
+            medical claims or promise specific health outcomes - what we offer is a detailed clean of
             where dust and allergens collect.
           </p>
         </div>

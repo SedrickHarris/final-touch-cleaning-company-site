@@ -36,7 +36,7 @@ const solutionCards = [
     name: 'Allergy and Dust Mitigation Cleaning',
     href: '/cleaning-solutions/allergy-dust-mitigation-cleaning',
     description:
-      'Thorough dust removal for the surfaces standard cleaning skips — a real concern in the dry, dusty Las Vegas Valley climate.',
+      'Thorough dust removal for the surfaces standard cleaning skips - a real concern in the dry, dusty Las Vegas Valley climate.',
   },
   {
     name: 'Hard Water Stain Removal Cleaning',
@@ -69,7 +69,7 @@ const faq = [
   },
   {
     q: 'Are these services for homes or businesses?',
-    a: 'Both. Final Touch is a commercial-first cleaning company serving offices, retail spaces, rentals, and property managers across Las Vegas and Clark County, and we also serve residents. Many of these solutions matter most for commercial turnover and property management — hard water in shared restrooms, odor remediation between tenants, or sanitation after illness in a shared workplace.',
+    a: 'Both. Final Touch is a commercial-first cleaning company serving offices, retail spaces, rentals, and property managers across Las Vegas and Clark County, and we also serve residents. Many of these solutions matter most for commercial turnover and property management - hard water in shared restrooms, odor remediation between tenants, or sanitation after illness in a shared workplace.',
   },
   {
     q: 'How do I know which cleaning solution I need?',
@@ -77,7 +77,7 @@ const faq = [
   },
   {
     q: 'How do I get a quote for a cleaning solution in Las Vegas?',
-    a: `Call ${SITE.phone.display} or request a free quote online. Final Touch is family-owned by ${SITE.owners}, licensed and insured in Nevada, and backs work with the Blue Ribbon Guarantee — if something is not right, let us know within 24 hours and we will return to make it right.`,
+    a: `Call ${SITE.phone.display} or request a free quote online. Final Touch is family-owned by ${SITE.owners}, licensed and insured in Nevada, and backs work with the Blue Ribbon Guarantee - if something is not right, let us know within 24 hours and we will return to make it right.`,
   },
 ];
 
@@ -124,7 +124,7 @@ export default function CleaningSolutionsPage() {
       <HeroSection
         eyebrow="Cleaning Solutions · Las Vegas, NV"
         heading="Cleaning Solutions for Common Problems in Las Vegas, NV"
-        sub="Some cleaning problems need more than a standard clean. Final Touch offers targeted solutions for the issues Las Vegas homes and businesses see most — pet hair, dust and allergens, hard water stains, smoke odor, and post-illness sanitation. Scope confirmed per space at an owner-led walkthrough."
+        sub="Some cleaning problems need more than a standard clean. Final Touch offers targeted solutions for the issues Las Vegas homes and businesses see most - pet hair, dust and allergens, hard water stains, smoke odor, and post-illness sanitation. Scope confirmed per space at an owner-led walkthrough."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}

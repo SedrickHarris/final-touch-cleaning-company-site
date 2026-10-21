@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Summer Deep Cleaning in Las Vegas, NV',
-  description: `Summer deep cleaning Las Vegas — June–August deep cleaning for commercial properties managing desert heat and dust infiltration. Call ${SITE.phone.display}.`,
+  description: `Summer deep cleaning Las Vegas - June–August deep cleaning for commercial properties managing desert heat and dust infiltration. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/summer-deep-cleaning',
   },
   openGraph: {
     title: 'Summer Deep Cleaning in Las Vegas, NV | Final Touch',
-    description: `Summer deep cleaning Las Vegas — June–August deep cleaning for commercial properties managing desert heat and dust infiltration. Call ${SITE.phone.display}.`,
+    description: `Summer deep cleaning Las Vegas - June–August deep cleaning for commercial properties managing desert heat and dust infiltration. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/summer-deep-cleaning`,
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'What makes summer deep cleaning different in Las Vegas?',
-    a: 'Las Vegas summers are defined by extreme heat and high particulate levels. Buildings seal up completely — doors and windows closed, HVAC running continuously — which means interior air circulates dust and particulate matter across every surface with no natural ventilation to flush it out. Summer deep cleaning addresses the accelerated buildup on HVAC-adjacent surfaces, flooring, and less-accessed areas that accumulate desert dust through the June–August period.',
+    a: 'Las Vegas summers are defined by extreme heat and high particulate levels. Buildings seal up completely - doors and windows closed, HVAC running continuously - which means interior air circulates dust and particulate matter across every surface with no natural ventilation to flush it out. Summer deep cleaning addresses the accelerated buildup on HVAC-adjacent surfaces, flooring, and less-accessed areas that accumulate desert dust through the June–August period.',
   },
   {
     q: 'What does summer deep cleaning include for a commercial property?',
@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: 'When should I schedule summer deep cleaning in Las Vegas?',
-    a: 'June through August is the primary window. Many commercial operators schedule summer deep cleaning in June before the peak of the heat season, or in late August as a reset before the back-to-school and fall operational period. Either timing is practical — the key is addressing buildup while the peak dust-load season is active or immediately after it winds down.',
+    a: 'June through August is the primary window. Many commercial operators schedule summer deep cleaning in June before the peak of the heat season, or in late August as a reset before the back-to-school and fall operational period. Either timing is practical - the key is addressing buildup while the peak dust-load season is active or immediately after it winds down.',
   },
   {
     q: 'Does Final Touch provide summer deep cleaning for offices and commercial spaces?',
@@ -85,7 +85,7 @@ const audienceCards = [
   },
   {
     title: 'Property managers overseeing summer unit turns',
-    body: "Property managers handling summer unit turns — particularly in the student housing market near UNLV — use summer deep cleaning as part of their turn process. The combination of summer dust load and vacated unit condition makes a thorough deep clean the right approach before re-leasing.",
+    body: "Property managers handling summer unit turns - particularly in the student housing market near UNLV - use summer deep cleaning as part of their turn process. The combination of summer dust load and vacated unit condition makes a thorough deep clean the right approach before re-leasing.",
   },
   {
     title: 'Managed buildings with seasonal maintenance cycles',
@@ -110,11 +110,11 @@ const checklist = [
 const whyTimingCards = [
   {
     heading: 'Sealed buildings accumulate desert dust faster',
-    body: 'Las Vegas buildings operate in a sealed state through summer — windows and doors closed, HVAC running constantly. Unlike spring and fall when ventilation provides some natural air exchange, summer locks interior air into a recirculating loop. Desert particulate that enters through door traffic and HVAC intake settles on every horizontal surface without being flushed out. The result is accelerated buildup on floors, vents, blinds, and baseboards.',
+    body: 'Las Vegas buildings operate in a sealed state through summer - windows and doors closed, HVAC running constantly. Unlike spring and fall when ventilation provides some natural air exchange, summer locks interior air into a recirculating loop. Desert particulate that enters through door traffic and HVAC intake settles on every horizontal surface without being flushed out. The result is accelerated buildup on floors, vents, blinds, and baseboards.',
   },
   {
     heading: 'Summer HVAC systems distribute dust throughout the building',
-    body: 'A continuously running HVAC system in a sealed Las Vegas building does not just cool the air — it distributes whatever particulate it picks up from intake and interior sources across every room. Surfaces near vents and registers accumulate dust faster in summer than in any other season. Deep cleaning that addresses vent areas and HVAC-adjacent surfaces is specific to the summer operating environment.',
+    body: 'A continuously running HVAC system in a sealed Las Vegas building does not just cool the air - it distributes whatever particulate it picks up from intake and interior sources across every room. Surfaces near vents and registers accumulate dust faster in summer than in any other season. Deep cleaning that addresses vent areas and HVAC-adjacent surfaces is specific to the summer operating environment.',
   },
   {
     heading: 'August reset before the fall season',

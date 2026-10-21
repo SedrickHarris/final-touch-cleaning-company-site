@@ -9,12 +9,12 @@ import { ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: { absolute: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV' },
   description:
-    'Family-owned commercial cleaning company in Las Vegas, NV — answers about services, scheduling & quotes. Final Touch Cleaning Company. Call (702) 444-5077.',
+    'Family-owned commercial cleaning company in Las Vegas, NV - answers about services, scheduling & quotes. Final Touch Cleaning Company. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV',
     description:
-      'Family-owned commercial cleaning company in Las Vegas, NV. Answers about services, scheduling, and quotes — Final Touch Cleaning Company. Call (702) 444-5077.',
+      'Family-owned commercial cleaning company in Las Vegas, NV. Answers about services, scheduling, and quotes - Final Touch Cleaning Company. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/faq`,
   },

@@ -33,11 +33,11 @@ const faq = [
   },
   {
     q: 'Why do people request post-illness cleaning?',
-    a: 'After an illness moves through a household, office, or shared facility, people want the high-touch surfaces thoroughly cleaned and sanitized before normal use resumes. It is a common request anywhere people share space — homes, workplaces, and facilities alike. Las Vegas businesses with shared workspaces and high foot traffic schedule it to reset a space after an illness has circulated among staff or occupants.',
+    a: 'After an illness moves through a household, office, or shared facility, people want the high-touch surfaces thoroughly cleaned and sanitized before normal use resumes. It is a common request anywhere people share space - homes, workplaces, and facilities alike. Las Vegas businesses with shared workspaces and high foot traffic schedule it to reset a space after an illness has circulated among staff or occupants.',
   },
   {
     q: 'Does Final Touch disinfect or just clean?',
-    a: 'Final Touch combines thorough cleaning with surface sanitation of high-touch points. We focus on detailed cleaning and surface sanitation of the affected areas. We do not make medical or clinical claims, do not represent this as medical-grade decontamination, and do not guarantee the elimination of any specific pathogen — what we provide is a thorough clean with focused attention on the surfaces people handle most.',
+    a: 'Final Touch combines thorough cleaning with surface sanitation of high-touch points. We focus on detailed cleaning and surface sanitation of the affected areas. We do not make medical or clinical claims, do not represent this as medical-grade decontamination, and do not guarantee the elimination of any specific pathogen - what we provide is a thorough clean with focused attention on the surfaces people handle most.',
   },
   {
     q: 'Is this service available for offices and shared facilities?',
@@ -141,7 +141,7 @@ export default function PostIllnessDeepSanitationCleaningPage() {
       <HeroSection
         eyebrow="Post-Illness Problem · Las Vegas, NV"
         heading="Post-Illness Deep Sanitation Cleaning in Las Vegas, NV"
-        sub="After illness moves through a home, office, or shared facility, the high-touch surfaces need a thorough reset. Final Touch provides post-illness deep sanitation cleaning for Las Vegas homes and businesses — detailed cleaning and surface sanitation, scoped at an owner-led walkthrough."
+        sub="After illness moves through a home, office, or shared facility, the high-touch surfaces need a thorough reset. Final Touch provides post-illness deep sanitation cleaning for Las Vegas homes and businesses - detailed cleaning and surface sanitation, scoped at an owner-led walkthrough."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -151,7 +151,7 @@ export default function PostIllnessDeepSanitationCleaningPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Post-illness deep sanitation cleaning is a thorough clean with focused attention on the
-            high-touch surfaces people handle most — door handles, switches, fixtures, railings, and
+            high-touch surfaces people handle most - door handles, switches, fixtures, railings, and
             shared controls. It is a common request anywhere people share space: homes, workplaces,
             and facilities. Las Vegas businesses with shared workspaces and high foot traffic often
             schedule it to reset a space after an illness has circulated.{' '}
@@ -190,7 +190,7 @@ export default function PostIllnessDeepSanitationCleaningPage() {
           <p className="mt-6 text-sm text-muted">
             Final Touch combines thorough cleaning with surface sanitation of high-touch points. We
             do not make medical or clinical claims, do not represent this as medical-grade
-            decontamination, and do not guarantee the elimination of any specific pathogen — what we
+            decontamination, and do not guarantee the elimination of any specific pathogen - what we
             provide is a thorough clean with focused attention on the surfaces people handle most.
           </p>
         </div>

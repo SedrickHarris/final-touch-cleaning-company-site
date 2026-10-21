@@ -10,14 +10,14 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
-  title: "New Year's Clean Start — Las Vegas, NV",
-  description: `New Year cleaning Las Vegas — late December and January professional cleaning reset for commercial properties, offices, and managed spaces. Call ${SITE.phone.display}.`,
+  title: "New Year's Clean Start - Las Vegas, NV",
+  description: `New Year cleaning Las Vegas - late December and January professional cleaning reset for commercial properties, offices, and managed spaces. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/new-years-clean-start',
   },
   openGraph: {
-    title: "New Year's Clean Start — Las Vegas, NV | Final Touch",
-    description: `New Year cleaning Las Vegas — late December and January professional cleaning reset for commercial properties, offices, and managed spaces. Call ${SITE.phone.display}.`,
+    title: "New Year's Clean Start - Las Vegas, NV | Final Touch",
+    description: `New Year cleaning Las Vegas - late December and January professional cleaning reset for commercial properties, offices, and managed spaces. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/new-years-clean-start`,
   },
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "What is a New Year's clean start for a Las Vegas commercial property?",
-    a: `A New Year's clean start is a late December or January professional cleaning reset for commercial properties, offices, and managed spaces that want to begin the calendar year from a thoroughly cleaned baseline. It differs from a standard recurring visit in scope — addressing areas that accumulate buildup through the year and have not been reached since the last deep clean. Final Touch serves commercial and managed properties across Las Vegas and ${SITE.serviceArea.county}. Call ${SITE.phone.display}.`,
+    a: `A New Year's clean start is a late December or January professional cleaning reset for commercial properties, offices, and managed spaces that want to begin the calendar year from a thoroughly cleaned baseline. It differs from a standard recurring visit in scope - addressing areas that accumulate buildup through the year and have not been reached since the last deep clean. Final Touch serves commercial and managed properties across Las Vegas and ${SITE.serviceArea.county}. Call ${SITE.phone.display}.`,
   },
   {
     q: "When should I schedule a New Year's cleaning in Las Vegas?",
-    a: "The New Year's cleaning window spans late December through early January. Many commercial operators schedule between Christmas and New Year's Day when operations are quieter, or in the first week of January before the standard operating schedule resumes. Either timing works — scope and scheduling are confirmed at the walkthrough based on your property's calendar.",
+    a: "The New Year's cleaning window spans late December through early January. Many commercial operators schedule between Christmas and New Year's Day when operations are quieter, or in the first week of January before the standard operating schedule resumes. Either timing works - scope and scheduling are confirmed at the walkthrough based on your property's calendar.",
   },
   {
     q: "How is a New Year's clean different from post-holiday cleanup?",
-    a: "Post-holiday cleanup (also available from Final Touch) focuses on the aftermath of the holiday season — event residue, high-traffic wear, and the accumulated use from November and December. A New Year's clean start is a broader reset focused on beginning the calendar year from a clean baseline, which may overlap with post-holiday areas or extend to other parts of the property. Scope is confirmed per property at the walkthrough.",
+    a: "Post-holiday cleanup (also available from Final Touch) focuses on the aftermath of the holiday season - event residue, high-traffic wear, and the accumulated use from November and December. A New Year's clean start is a broader reset focused on beginning the calendar year from a clean baseline, which may overlap with post-holiday areas or extend to other parts of the property. Scope is confirmed per property at the walkthrough.",
   },
   {
     q: "Does Final Touch provide New Year's cleaning for commercial offices in Las Vegas?",
@@ -53,7 +53,7 @@ const faq = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: "New Year's Clean Start — Las Vegas, NV",
+  name: "New Year's Clean Start - Las Vegas, NV",
   serviceType: "New Year's Cleaning",
   provider: {
     '@type': 'Organization',
@@ -114,11 +114,11 @@ const whyTimingCards = [
   },
   {
     heading: 'Calendar year transition creates a natural reset point',
-    body: "The start of a new calendar year is when most businesses reset their operating budgets, service contracts, and maintenance schedules. Aligning a professional cleaning reset with the new year means starting Q1 from a clean, documented baseline — practical for both operational presentation and any vendor or facility management records.",
+    body: "The start of a new calendar year is when most businesses reset their operating budgets, service contracts, and maintenance schedules. Aligning a professional cleaning reset with the new year means starting Q1 from a clean, documented baseline - practical for both operational presentation and any vendor or facility management records.",
   },
   {
     heading: 'Late December operations often allow easier access',
-    body: "Many Las Vegas commercial offices and managed properties operate with reduced staff between Christmas and New Year's Day. This quieter window is often the most practical time for a thorough cleaning reset — longer access windows, fewer staff to work around, and no disruption to peak operational hours. Final Touch schedules around your specific access calendar.",
+    body: "Many Las Vegas commercial offices and managed properties operate with reduced staff between Christmas and New Year's Day. This quieter window is often the most practical time for a thorough cleaning reset - longer access windows, fewer staff to work around, and no disruption to peak operational hours. Final Touch schedules around your specific access calendar.",
   },
 ];
 
@@ -156,7 +156,7 @@ export default function NewYearsCleanStartPage() {
       {/* 1. Hero */}
       <HeroSection
         eyebrow="New Year's Cleaning · Las Vegas, NV"
-        heading="New Year's Clean Start — Las Vegas, NV"
+        heading="New Year's Clean Start - Las Vegas, NV"
         sub="Late December and January professional cleaning reset for commercial properties, offices, and managed spaces in Las Vegas. Scope confirmed per property."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}

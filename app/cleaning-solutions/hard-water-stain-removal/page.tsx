@@ -33,11 +33,11 @@ const faq = [
   },
   {
     q: 'Why is hard water staining so common in Las Vegas?',
-    a: 'Water across Southern Nevada draws heavily from the Colorado River and carries a high mineral content. As that water dries on glass, fixtures, and tile, it leaves behind calcium and mineral deposits — the cloudy white film and spotting people recognize as hard water stains. Because the mineral content is consistently high here, buildup returns over time even after a thorough clean.',
+    a: 'Water across Southern Nevada draws heavily from the Colorado River and carries a high mineral content. As that water dries on glass, fixtures, and tile, it leaves behind calcium and mineral deposits - the cloudy white film and spotting people recognize as hard water stains. Because the mineral content is consistently high here, buildup returns over time even after a thorough clean.',
   },
   {
     q: 'Can you remove cloudy film from glass shower doors?',
-    a: 'Final Touch provides targeted cleaning to remove visible mineral buildup and film from glass shower doors, fixtures, and tile. We focus on thorough cleaning of the affected surfaces. In cases where minerals have etched into the glass over a long period, some staining may be permanent at the surface level — we will assess and tell you honestly at the walkthrough rather than over-promise a result.',
+    a: 'Final Touch provides targeted cleaning to remove visible mineral buildup and film from glass shower doors, fixtures, and tile. We focus on thorough cleaning of the affected surfaces. In cases where minerals have etched into the glass over a long period, some staining may be permanent at the surface level - we will assess and tell you honestly at the walkthrough rather than over-promise a result.',
   },
   {
     q: 'Is hard water cleaning useful for move-outs and turnovers?',
@@ -152,7 +152,7 @@ export default function HardWaterStainRemovalPage() {
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Hard water stain removal is targeted cleaning of the mineral buildup that collects on
             glass, fixtures, and tile. It is common across Las Vegas because water in Southern Nevada
-            draws heavily from the Colorado River and carries a high mineral content — as it dries,
+            draws heavily from the Colorado River and carries a high mineral content - as it dries,
             it leaves the cloudy film and spotting people recognize as hard water stains.{' '}
             <Link href={ROUTES.services} className="text-brand-blue font-semibold hover:underline">
               Final Touch
@@ -189,7 +189,7 @@ export default function HardWaterStainRemovalPage() {
           <p className="mt-6 text-sm text-muted">
             Final Touch focuses on thorough, targeted cleaning of the affected surfaces. Where
             minerals have etched into glass over a long period, some staining may be permanent at the
-            surface level — we will assess and tell you honestly at the walkthrough rather than
+            surface level - we will assess and tell you honestly at the walkthrough rather than
             over-promise.
           </p>
         </div>

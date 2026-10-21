@@ -12,14 +12,14 @@ import { ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: 'Emergency Cleaning Services in Las Vegas, NV',
   description:
-    'Emergency cleaning Las Vegas: unexpected spills, post-event messes, or urgent facility situations. Call (702) 444-5077 — Final Touch works to mobilize based on crew availability.',
+    'Emergency cleaning Las Vegas: unexpected spills, post-event messes, or urgent facility situations. Call (702) 444-5077 - Final Touch works to mobilize based on crew availability.',
   alternates: {
     canonical: '/urgent-cleaning/emergency-cleaning-services',
   },
   openGraph: {
     title: 'Emergency Cleaning Services in Las Vegas, NV | Final Touch',
     description:
-      'Emergency cleaning Las Vegas: unexpected spills, post-event messes, or urgent facility situations. Call (702) 444-5077 — Final Touch works to mobilize based on crew availability.',
+      'Emergency cleaning Las Vegas: unexpected spills, post-event messes, or urgent facility situations. Call (702) 444-5077 - Final Touch works to mobilize based on crew availability.',
     type: 'website',
     url: `${SITE.url}/urgent-cleaning/emergency-cleaning-services`,
   },
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     q: 'Does Final Touch handle emergency cleaning for commercial properties only?',
-    a: `Final Touch is a commercial-first cleaning company. Emergency cleaning requests are assessed based on scope and type of space — office buildings, commercial interiors, retail spaces, and property-managed units are typical. Call ${SITE.phone.display} to describe your situation and we will tell you whether it falls within our scope.`,
+    a: `Final Touch is a commercial-first cleaning company. Emergency cleaning requests are assessed based on scope and type of space - office buildings, commercial interiors, retail spaces, and property-managed units are typical. Call ${SITE.phone.display} to describe your situation and we will tell you whether it falls within our scope.`,
   },
   {
     q: 'What should I tell Final Touch when I call about an emergency cleaning situation?',
@@ -79,7 +79,7 @@ const faqJsonLd = {
 const audienceCards = [
   {
     title: 'Commercial property managers',
-    body: 'A flooded break room, a post-party mess in a common area, or a facility condition discovered the morning before an inspection — property managers across Las Vegas need a cleaning partner who can respond to unplanned situations. Final Touch works through these requests based on crew availability.',
+    body: 'A flooded break room, a post-party mess in a common area, or a facility condition discovered the morning before an inspection - property managers across Las Vegas need a cleaning partner who can respond to unplanned situations. Final Touch works through these requests based on crew availability.',
   },
   {
     title: 'Office and facility managers',
@@ -87,7 +87,7 @@ const audienceCards = [
   },
   {
     title: 'Business owners before key inspections',
-    body: 'A health inspection, a licensing review, or a surprise audit can create a genuine emergency cleaning need. Final Touch handles urgent commercial cleaning situations across Las Vegas and Clark County when crew scheduling allows — subject to availability.',
+    body: 'A health inspection, a licensing review, or a surprise audit can create a genuine emergency cleaning need. Final Touch handles urgent commercial cleaning situations across Las Vegas and Clark County when crew scheduling allows - subject to availability.',
   },
 ];
 
@@ -95,8 +95,8 @@ const checklistItems = [
   'Address and suite or unit number of the affected space',
   'Description of what happened and what needs to be cleaned',
   'Approximate size of the affected area',
-  'Your timeline — when the space needs to be usable again',
-  'Access details — entry codes, key location, building contact',
+  'Your timeline - when the space needs to be usable again',
+  'Access details - entry codes, key location, building contact',
   'Whether the space is currently occupied or if access is unrestricted',
 ];
 
@@ -126,7 +126,7 @@ export default function EmergencyCleaningServicesPage() {
       <HeroSection
         eyebrow="Emergency Cleaning · Las Vegas, NV"
         heading="Emergency Cleaning Services in Las Vegas, NV"
-        sub={`When something unexpected happens in your commercial space, call Final Touch at ${SITE.phone.display}. We assess the situation on the call and work to mobilize a crew based on scope and availability. Describe what happened — we will tell you what we can do.`}
+        sub={`When something unexpected happens in your commercial space, call Final Touch at ${SITE.phone.display}. We assess the situation on the call and work to mobilize a crew based on scope and availability. Describe what happened - we will tell you what we can do.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -138,8 +138,8 @@ export default function EmergencyCleaningServicesPage() {
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Emergency cleaning in Las Vegas means calling to describe what happened and finding out
             whether a crew can be dispatched. Final Touch handles urgent commercial cleaning
-            situations — post-event messes, unexpected spills, facility conditions requiring immediate
-            attention — across Las Vegas and{' '}
+            situations - post-event messes, unexpected spills, facility conditions requiring immediate
+            attention - across Las Vegas and{' '}
             {SITE.serviceArea.county}, subject to crew availability. Call{' '}
             <a
               href={SITE.phone.href}
@@ -165,7 +165,7 @@ export default function EmergencyCleaningServicesPage() {
           <SectionHeader
             eyebrow="Who we serve"
             heading="Commercial clients facing an unplanned cleaning situation."
-            sub="Emergency cleaning requests typically come from commercial operators, property managers, and facility teams — not residential clients."
+            sub="Emergency cleaning requests typically come from commercial operators, property managers, and facility teams - not residential clients."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {audienceCards.map((item) => (
@@ -224,7 +224,7 @@ export default function EmergencyCleaningServicesPage() {
             {[
               {
                 heading: 'Scope assessment on the call',
-                body: 'When you call about an emergency cleaning situation, Final Touch will ask you to describe what happened, where the space is, and what needs to be addressed. That conversation is what determines whether mobilization is feasible — not a form or a chatbot.',
+                body: 'When you call about an emergency cleaning situation, Final Touch will ask you to describe what happened, where the space is, and what needs to be addressed. That conversation is what determines whether mobilization is feasible - not a form or a chatbot.',
               },
               {
                 heading: 'Availability is real, not a promise',

@@ -30,11 +30,11 @@ const faq = [
   },
   {
     q: 'Why does spring cleaning matter in Las Vegas specifically?',
-    a: 'Las Vegas winters are mild but still generate dust accumulation in areas that see less foot traffic during cooler months. Spring also marks the transition into the desert heat season, when windows close and HVAC systems run constantly — making it the right time to reset interior surfaces before the summer dust cycle begins. Spring cleaning is the best opportunity to address winter buildup before it gets locked in by closed-window summer conditions.',
+    a: 'Las Vegas winters are mild but still generate dust accumulation in areas that see less foot traffic during cooler months. Spring also marks the transition into the desert heat season, when windows close and HVAC systems run constantly - making it the right time to reset interior surfaces before the summer dust cycle begins. Spring cleaning is the best opportunity to address winter buildup before it gets locked in by closed-window summer conditions.',
   },
   {
     q: 'When is the right time to schedule spring cleaning in Las Vegas?',
-    a: 'March through May is the primary spring cleaning window for Las Vegas commercial and managed properties. This window falls before the summer heat season, when windows and doors remain closed and interior dust accumulation increases. Scheduling around your property\'s operational calendar is standard — call to confirm availability for your preferred dates.',
+    a: 'March through May is the primary spring cleaning window for Las Vegas commercial and managed properties. This window falls before the summer heat season, when windows and doors remain closed and interior dust accumulation increases. Scheduling around your property\'s operational calendar is standard - call to confirm availability for your preferred dates.',
   },
   {
     q: 'Does Final Touch do spring cleaning for commercial offices in Las Vegas?',
@@ -114,11 +114,11 @@ const whyTimingCards = [
   },
   {
     heading: 'HVAC transition point',
-    body: 'Spring marks the shift from winter heating to summer cooling in Las Vegas commercial buildings. HVAC filters, vents, and the surfaces they serve are best cleaned at this transition point — before the summer dust cycle begins in earnest. A spring clean sets a clean baseline for the surfaces your HVAC system will recirculate air across for the next five months.',
+    body: 'Spring marks the shift from winter heating to summer cooling in Las Vegas commercial buildings. HVAC filters, vents, and the surfaces they serve are best cleaned at this transition point - before the summer dust cycle begins in earnest. A spring clean sets a clean baseline for the surfaces your HVAC system will recirculate air across for the next five months.',
   },
   {
     heading: 'Inspection and lease cycle alignment',
-    body: 'Spring is a common inspection and lease renewal period for commercial and residential properties in Las Vegas. A spring cleaning creates a documented, verifiable baseline for property condition — useful for both landlord inspections and tenant turnovers. Scheduling around the renewal or inspection date is straightforward.',
+    body: 'Spring is a common inspection and lease renewal period for commercial and residential properties in Las Vegas. A spring cleaning creates a documented, verifiable baseline for property condition - useful for both landlord inspections and tenant turnovers. Scheduling around the renewal or inspection date is straightforward.',
   },
 ];
 
@@ -211,7 +211,7 @@ export default function SpringCleaningLasVegasPage() {
           <SectionHeader
             eyebrow="Scope"
             heading="What spring cleaning covers."
-            sub="Scope is confirmed per property at the initial walkthrough. The list below covers typical spring cleaning areas — your property may include all or a subset based on your needs."
+            sub="Scope is confirmed per property at the initial walkthrough. The list below covers typical spring cleaning areas - your property may include all or a subset based on your needs."
           />
           <ul className="mt-8 space-y-3">
             {checklist.map((item) => (

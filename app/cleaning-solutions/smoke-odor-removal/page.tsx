@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: 'Can cleaning remove smoke smell completely?',
-    a: 'Final Touch provides thorough cleaning of the hard surfaces where smoke residue settles, which reduces the source of lingering odor. We focus on detailed cleaning of the affected surfaces rather than promising a guaranteed result. Heavy, long-term smoke saturation in porous materials like drywall or carpet padding can require remediation beyond cleaning — we will assess and tell you honestly at the walkthrough.',
+    a: 'Final Touch provides thorough cleaning of the hard surfaces where smoke residue settles, which reduces the source of lingering odor. We focus on detailed cleaning of the affected surfaces rather than promising a guaranteed result. Heavy, long-term smoke saturation in porous materials like drywall or carpet padding can require remediation beyond cleaning - we will assess and tell you honestly at the walkthrough.',
   },
   {
     q: 'Is this service useful for rentals and turnovers?',
@@ -89,7 +89,7 @@ const whatWeDo = [
 const audienceCards = [
   {
     title: 'Landlords and property managers',
-    body: 'Smoke odor between tenants is a recurring turnover problem in Las Vegas rentals — a unit cannot show or re-rent well with it lingering. Final Touch frequently includes smoke and odor cleaning in turnover work so the next occupant walks into a clean space. Scope confirmed per unit at the walkthrough.',
+    body: 'Smoke odor between tenants is a recurring turnover problem in Las Vegas rentals - a unit cannot show or re-rent well with it lingering. Final Touch frequently includes smoke and odor cleaning in turnover work so the next occupant walks into a clean space. Scope confirmed per unit at the walkthrough.',
   },
   {
     title: 'Vacation and short-term rentals',
@@ -141,7 +141,7 @@ export default function SmokeOdorRemovalPage() {
       <HeroSection
         eyebrow="Smoke & Odor Problem · Las Vegas, NV"
         heading="Smoke and Odor Removal Cleaning in Las Vegas, NV"
-        sub="Lingering smoke and odor keep a space from showing, selling, or re-renting. Final Touch provides thorough smoke and odor removal cleaning for homes, rentals, and commercial spaces — detailed cleaning of the affected surfaces, scoped at an owner-led walkthrough."
+        sub="Lingering smoke and odor keep a space from showing, selling, or re-renting. Final Touch provides thorough smoke and odor removal cleaning for homes, rentals, and commercial spaces - detailed cleaning of the affected surfaces, scoped at an owner-led walkthrough."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -152,8 +152,8 @@ export default function SmokeOdorRemovalPage() {
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Smoke and odor removal cleaning is a thorough, detailed clean of the hard surfaces where
             smoke residue and odor-causing buildup settle. It is a common request in Las Vegas
-            because of the large rental and turnover market — smoke odor from prior occupants is one
-            of the top reasons a unit needs a detailed clean before the next tenant — and the dry
+            because of the large rental and turnover market - smoke odor from prior occupants is one
+            of the top reasons a unit needs a detailed clean before the next tenant - and the dry
             desert air can concentrate lingering odors indoors.{' '}
             <Link href={ROUTES.services} className="text-brand-blue font-semibold hover:underline">
               Final Touch
@@ -190,7 +190,7 @@ export default function SmokeOdorRemovalPage() {
           <p className="mt-6 text-sm text-muted">
             Final Touch provides thorough cleaning of the hard surfaces where residue settles, which
             reduces the source of lingering odor. Heavy, long-term smoke saturation in porous
-            materials like drywall or carpet padding can require remediation beyond cleaning — we
+            materials like drywall or carpet padding can require remediation beyond cleaning - we
             will assess and tell you honestly at the walkthrough rather than over-promise a result.
           </p>
         </div>

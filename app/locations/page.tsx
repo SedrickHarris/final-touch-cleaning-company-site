@@ -14,12 +14,12 @@ import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 export const metadata: Metadata = {
   title: { absolute: 'Commercial Cleaning Across the Las Vegas Valley | Final Touch' },
   description:
-    'Family-owned commercial cleaning across the Las Vegas Valley — Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
+    'Family-owned commercial cleaning across the Las Vegas Valley: Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: '/locations' },
   openGraph: {
     title: `Commercial Cleaning Across the Las Vegas Valley | Final Touch Cleaning Company`,
     description:
-      'Family-owned commercial cleaning across the Las Vegas Valley — Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
+      'Family-owned commercial cleaning across the Las Vegas Valley: Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
     type: 'website',
     url: `${SITE.url}/locations`,
   },

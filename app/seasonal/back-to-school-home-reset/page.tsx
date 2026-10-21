@@ -11,13 +11,13 @@ import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
   title: 'Back-to-School Home Reset Cleaning, Las Vegas, NV',
-  description: `Back to school cleaning Las Vegas — August schedule-shift cleaning for rental units, common areas, and managed properties. Call ${SITE.phone.display}.`,
+  description: `Back to school cleaning Las Vegas - August schedule-shift cleaning for rental units, common areas, and managed properties. Call ${SITE.phone.display}.`,
   alternates: {
     canonical: '/seasonal/back-to-school-home-reset',
   },
   openGraph: {
     title: 'Back-to-School Home Reset Cleaning, Las Vegas, NV | Final Touch',
-    description: `Back to school cleaning Las Vegas — August schedule-shift cleaning for rental units, common areas, and managed properties. Call ${SITE.phone.display}.`,
+    description: `Back to school cleaning Las Vegas - August schedule-shift cleaning for rental units, common areas, and managed properties. Call ${SITE.phone.display}.`,
     type: 'website',
     url: `${SITE.url}/seasonal/back-to-school-home-reset`,
   },
@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: 'When should back-to-school cleaning be scheduled in Las Vegas?',
-    a: 'August is the primary window — specifically the two to three weeks before UNLV classes begin and before K-12 school starts in Clark County. For property managers with August lease starts, scheduling in late July or early August ensures units are ready before incoming tenants arrive. For families, mid-August cleaning aligns with the schedule shift before the school year.',
+    a: 'August is the primary window - specifically the two to three weeks before UNLV classes begin and before K-12 school starts in Clark County. For property managers with August lease starts, scheduling in late July or early August ensures units are ready before incoming tenants arrive. For families, mid-August cleaning aligns with the schedule shift before the school year.',
   },
   {
     q: 'Does Final Touch do cleaning for properties near UNLV?',
@@ -81,7 +81,7 @@ const audienceCards = [
   },
   {
     title: 'Landlords near UNLV and Las Vegas Valley schools',
-    body: "Landlords with properties near UNLV and other Las Vegas educational institutions see increased unit turnover in August as the academic year begins. Back-to-school cleaning gets units ready for incoming tenants — deposit-ready condition, common areas reset, and any summer accumulation addressed.",
+    body: "Landlords with properties near UNLV and other Las Vegas educational institutions see increased unit turnover in August as the academic year begins. Back-to-school cleaning gets units ready for incoming tenants - deposit-ready condition, common areas reset, and any summer accumulation addressed.",
   },
   {
     title: 'HOA and common area managers',
@@ -113,7 +113,7 @@ const whyTimingCards = [
   },
   {
     heading: 'Summer conditions leave units in need of a reset',
-    body: 'Las Vegas summers are hard on interiors. Sealed buildings, continuous HVAC operation, and elevated dust accumulation mean that units vacated in May or June — and sitting through the summer heat season — accumulate desert particulate on floors, surfaces, and vents. A back-to-school clean addresses the summer condition before new tenants move in.',
+    body: 'Las Vegas summers are hard on interiors. Sealed buildings, continuous HVAC operation, and elevated dust accumulation mean that units vacated in May or June - and sitting through the summer heat season - accumulate desert particulate on floors, surfaces, and vents. A back-to-school clean addresses the summer condition before new tenants move in.',
   },
   {
     heading: 'Schedule-shift cleaning sets the year in motion',
@@ -167,7 +167,7 @@ export default function BackToSchoolHomeResetPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-lg sm:text-xl text-brand-black leading-relaxed">
             Back-to-school cleaning in Las Vegas is August cleaning timed to the academic calendar
-            transition — unit turns for property managers and landlords near UNLV, common-area resets
+            transition - unit turns for property managers and landlords near UNLV, common-area resets
             for managed buildings, and household resets for families returning to school-year routines.{' '}
             <Link href={ROUTES.services} className="text-brand-blue font-semibold hover:underline">
               Final Touch cleaning services

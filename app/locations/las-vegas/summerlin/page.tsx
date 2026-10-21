@@ -53,7 +53,7 @@ const faq = [
   },
   {
     q: 'Why do Summerlin properties need more frequent deep cleaning than other parts of Las Vegas?',
-    a: "Summerlin sits at the base of the Spring Mountains, putting businesses and homes closer to desert dust sources and seasonal wind events. Fine particulate from the surrounding terrain settles on surfaces throughout offices, retail spaces, and residences — especially on window tracks, vents, baseboards, and high ledges. A periodic deep clean addresses the buildup that regular maintenance misses.",
+    a: "Summerlin sits at the base of the Spring Mountains, putting businesses and homes closer to desert dust sources and seasonal wind events. Fine particulate from the surrounding terrain settles on surfaces throughout offices, retail spaces, and residences - especially on window tracks, vents, baseboards, and high ledges. A periodic deep clean addresses the buildup that regular maintenance misses.",
   },
   {
     q: 'What cleaning services does Final Touch offer in Summerlin?',

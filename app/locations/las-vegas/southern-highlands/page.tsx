@@ -342,7 +342,6 @@ export default function SouthernHighlandsPage() {
       <section className="bg-brand-white border-t border-border-subtle">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-14 sm:py-18 lg:py-20">
           <SectionHeader eyebrow="More neighborhoods" heading="Other neighborhoods we serve." />
-          {/* TODO-BATCH-5: Add Downtown Las Vegas pill link once that page is built. */}
           <div className="mt-8">
             <LocationCardGrid>
               {SIBLING_CARDS.map((card) => (
