@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
@@ -32,6 +33,7 @@ const communities = [
     name: 'Sun City Anthem',
     slug: 'sun-city-anthem-cleaning-services',
     href: '/communities/sun-city-anthem-cleaning-services',
+    image: '/images/4x3/communities/sun-city-anthem-cleaning-services-card-image.webp',
     city: 'Henderson, NV',
     description:
       'Cleaning services for residents and families coordinating care in Sun City Anthem, an age-restricted active adult community in Henderson. Move-in, move-out, and recurring deep cleaning.',
@@ -40,6 +42,7 @@ const communities = [
     name: 'Sun City Summerlin',
     slug: 'sun-city-summerlin-cleaning-services',
     href: '/communities/sun-city-summerlin-cleaning-services',
+    image: '/images/4x3/communities/sun-city-summerlin-cleaning-services-card-image.webp',
     city: 'Las Vegas, NV',
     description:
       'Cleaning services for residents and families coordinating care in Sun City Summerlin, an age-restricted active adult community in the Summerlin area of Las Vegas. Move-in, move-out, and deep cleaning.',
@@ -48,6 +51,7 @@ const communities = [
     name: 'Heritage at Cadence',
     slug: 'heritage-at-cadence-cleaning-services',
     href: '/communities/heritage-at-cadence-cleaning-services',
+    image: '/images/4x3/communities/heritage-at-cadence-cleaning-services-card-image.webp',
     city: 'Henderson, NV',
     description:
       'Cleaning services for residents and families coordinating care in Heritage at Cadence, an age-restricted active adult community in Henderson. Move-in, move-out, and deep cleaning.',
@@ -236,8 +240,17 @@ export default function CommunitiesHubPage() {
             {communities.map((c) => (
               <li
                 key={c.slug}
-                className="flex flex-col rounded-[14px] border border-border-subtle bg-brand-white p-6 shadow-sm"
+                className="flex flex-col overflow-hidden rounded-[14px] border border-border-subtle bg-brand-white p-6 shadow-sm"
               >
+                <div className="relative -mx-6 -mt-6 mb-6 aspect-[4/3] overflow-hidden border-b border-border-subtle bg-light-gray">
+                  <Image
+                    src={c.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue">
                   {c.city}
                 </p>
