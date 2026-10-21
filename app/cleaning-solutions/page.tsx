@@ -128,6 +128,7 @@ export default function CleaningSolutionsPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/cleaning-solutions/final-touch-cleaning-solutions-las-vegas-nv-hero-image.webp', alt: 'Cleaning solutions in Las Vegas, NV' }}
       />
 
       <section className="bg-brand-white">

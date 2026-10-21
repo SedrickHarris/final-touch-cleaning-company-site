@@ -161,6 +161,7 @@ export default function MoveOutCleaningCollegeStudentsPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/seasonal/final-touch-cleaning-move-out-cleaning-college-students-nv-hero-image.webp', alt: 'Move-out cleaning for college students in Las Vegas, NV' }}
       />
 
       {/* 2. Direct-answer paragraph */}

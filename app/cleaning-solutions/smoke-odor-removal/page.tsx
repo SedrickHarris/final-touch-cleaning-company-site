@@ -145,6 +145,7 @@ export default function SmokeOdorRemovalPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/cleaning-solutions/final-touch-cleaning-smoke-odor-removal-nv-hero-image.webp', alt: 'Smoke and odor removal in Las Vegas, NV' }}
       />
 
       <section className="bg-brand-white">

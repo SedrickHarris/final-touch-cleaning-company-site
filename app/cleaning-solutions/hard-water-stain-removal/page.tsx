@@ -145,6 +145,7 @@ export default function HardWaterStainRemovalPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/cleaning-solutions/final-touch-cleaning-hard-water-stain-removal-nv-hero-image.webp', alt: 'Hard water stain removal in Las Vegas, NV' }}
       />
 
       <section className="bg-brand-white">

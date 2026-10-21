@@ -223,7 +223,6 @@ export default function ChiropracticCleaningLasVegasPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* 1. Hero */}
-      {/* TODO-PHOTO: public/images/16x9/industries/chiropractic-cleaning-las-vegas-nv-hero-image.webp */}
       <HeroSection
         eyebrow="Chiropractic and Physical Therapy Cleaning · Las Vegas, NV"
         heading="Chiropractic and Physical Therapy Office Cleaning in Las Vegas, NV"
@@ -231,6 +230,7 @@ export default function ChiropracticCleaningLasVegasPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/industries/final-touch-cleaning-las-vegas-nv-chiropractic-office-cleaning-hero-image.webp', alt: 'Chiropractic office cleaning in Las Vegas, NV' }}
       />
 
       {/* 2. Direct-answer paragraph */}

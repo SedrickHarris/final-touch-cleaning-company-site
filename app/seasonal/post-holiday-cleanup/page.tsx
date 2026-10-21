@@ -160,6 +160,7 @@ export default function PostHolidayCleanupPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/seasonal/final-touch-cleaning-post-holiday-cleanup-nv-hero-image.webp', alt: 'Post-holiday cleanup in Las Vegas, NV' }}
       />
 
       {/* 2. Direct-answer paragraph */}

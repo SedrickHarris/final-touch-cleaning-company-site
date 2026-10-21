@@ -160,6 +160,7 @@ export default function HolidayCleaningServicesPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/seasonal/final-touch-cleaning-holiday-cleaning-services-nv-hero-image.webp', alt: 'Holiday cleaning services in Las Vegas, NV' }}
       />
 
       {/* 2. Direct-answer paragraph */}

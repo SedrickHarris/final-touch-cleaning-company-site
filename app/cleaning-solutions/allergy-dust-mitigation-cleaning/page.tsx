@@ -145,6 +145,7 @@ export default function AllergyDustMitigationCleaningPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/cleaning-solutions/final-touch-cleaning-allergy-dust-mitigation-cleaning-nv-hero-image.webp', alt: 'Allergy and dust mitigation cleaning in Las Vegas, NV' }}
       />
 
       <section className="bg-brand-white">

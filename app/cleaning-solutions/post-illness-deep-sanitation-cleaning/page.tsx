@@ -145,6 +145,7 @@ export default function PostIllnessDeepSanitationCleaningPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/cleaning-solutions/final-touch-cleaning-post-illness-deep-sanitation-cleaning-nv-hero-image.webp', alt: 'Post-illness deep sanitation cleaning in Las Vegas, NV' }}
       />
 
       <section className="bg-brand-white">

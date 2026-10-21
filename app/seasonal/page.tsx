@@ -172,6 +172,7 @@ export default function SeasonalHubPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/seasonal/final-touch-cleaning-seasonal-cleaning-las-vegas-nv-hero-image.webp', alt: 'Seasonal cleaning in Las Vegas, NV' }}
       />
 
       {/* 2. Direct-answer paragraph */}

@@ -130,6 +130,7 @@ export default function SameDayCleaningLasVegasPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/urgency/final-touch-cleaning-las-vegas-nv-hero-image.webp', alt: 'Same-day cleaning in Las Vegas, NV' }}
       />
 
       {/* 3. Direct-answer paragraph */}
