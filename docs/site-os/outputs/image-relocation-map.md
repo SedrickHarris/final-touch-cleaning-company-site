@@ -116,3 +116,7 @@ Added as new files (not relocations). Not yet referenced by any page.
 | `images/4x3/communities/sun-city-anthem-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 282.3 KB | Sun City Anthem card |
 | `images/4x3/communities/sun-city-summerlin-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 338.3 KB | Sun City Summerlin card |
 | `images/4x3/communities/heritage-at-cadence-cleaning-services-card-image.webp` | 4x3 | 2400x1792 | 197.9 KB | Heritage at Cadence card |
+
+### Community card images replaced (2026-10-21)
+
+The three 4x3 community card images were replaced with new versions on 2026-10-21 (center-cropped to 4:3 and resized to 1448x1086, same filenames). The 2400x1792 originals are stored outside the repo in the owner source-images backup folder.
