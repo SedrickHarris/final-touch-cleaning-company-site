@@ -10,6 +10,8 @@ type Props = {
   label?: string;
   headingLevel?: 'h3' | 'h4';
   aspect?: '16/10' | '4/3';
+  /** Image sizes hint. Defaults to a 3-column desktop grid; LocationCardGrid overrides it for 4 columns. */
+  sizes?: string;
 };
 
 // Full class strings so Tailwind can see them.
@@ -29,6 +31,7 @@ export default function LocationCard({
   label,
   headingLevel = 'h3',
   aspect = '16/10',
+  sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
 }: Props) {
   const Heading = headingLevel;
   return (
@@ -50,7 +53,7 @@ export default function LocationCard({
           src={image.src}
           alt=""
           fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          sizes={sizes}
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
         />
       </div>
