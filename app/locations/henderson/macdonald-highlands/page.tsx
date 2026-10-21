@@ -6,8 +6,11 @@ import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import { NEIGHBORHOOD_CARDS } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 // Parent city derived from this neighborhood's own NEIGHBORHOODS record —
@@ -16,6 +19,13 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
   (n) => n.slug === 'macdonald-highlands',
 )!;
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
+
+// Sibling neighborhood cards, in display order, sourced from lib/constants/locations.ts.
+const SIBLING_CARDS = [
+  '/locations/henderson/seven-hills',
+  '/locations/henderson/anthem',
+  '/locations/henderson/green-valley-ranch',
+].map((href) => NEIGHBORHOOD_CARDS.find((c) => c.href === href)!);
 
 export const metadata: Metadata = {
   title: 'Commercial Cleaning in MacDonald Highlands, NV',
@@ -294,25 +304,6 @@ export default function MacdonaldHighlandsPage() {
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/locations/henderson/seven-hills"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
-            >
-              Seven Hills
-            </Link>
-            <Link
-              href="/locations/henderson/anthem"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
-            >
-              Anthem
-            </Link>
-            <Link
-              href="/locations/henderson/green-valley-ranch"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
-            >
-              Green Valley Ranch
-            </Link>
-            {/* TODO-BATCH-5: Add Lake Las Vegas pill link once that page is built. */}
-            <Link
               href="/services/deep-cleaning/henderson"
               className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-light-gray min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-black hover:border-brand-blue/30 hover:text-brand-blue transition-colors"
             >
@@ -342,6 +333,29 @@ export default function MacdonaldHighlandsPage() {
             >
               View all services
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sibling neighborhoods */}
+      <section className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-14 sm:py-18 lg:py-20">
+          <SectionHeader eyebrow="More neighborhoods" heading="Other neighborhoods we serve." />
+          {/* TODO-BATCH-5: Add Lake Las Vegas pill link once that page is built. */}
+          <div className="mt-8">
+            <LocationCardGrid>
+              {SIBLING_CARDS.map((card) => (
+                <LocationCard
+                  key={card.href}
+                  href={card.href}
+                  name={card.name}
+                  description={card.description}
+                  image={card.image}
+                  label={card.parentCity !== NEIGHBORHOOD.parentCity ? card.label : undefined}
+                  headingLevel="h3"
+                />
+              ))}
+            </LocationCardGrid>
           </div>
         </div>
       </section>
