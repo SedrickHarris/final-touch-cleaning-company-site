@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function PostConstructionCleanupBoulderCityPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Post-Construction Cleanup · Boulder City, NV"
         heading="Post-Construction Cleanup in Boulder City, NV"
         sub={`Boulder City is an established community with little large-scale new development. Post-construction cleanup here is driven by homeowners renovating older properties and small commercial owners updating historic downtown storefronts. Final Touch serves renovation cleanup across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('post-construction-cleanup', 'boulder-city')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

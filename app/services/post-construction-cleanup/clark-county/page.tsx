@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -119,13 +120,14 @@ export default function PostConstructionCleanupClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Post-Construction Cleanup · Clark County, NV"
         heading="Post-Construction Cleanup in Clark County, NV"
         sub={`Clark County is one of the fastest-growing regions in the United States, with active residential construction, commercial buildout, and ongoing renovations across every city. Final Touch provides post-construction cleanup county-wide: new builds, industrial buildouts, and renovation projects across all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('post-construction-cleanup', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

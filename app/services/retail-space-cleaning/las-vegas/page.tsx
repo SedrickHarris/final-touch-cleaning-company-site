@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -117,13 +118,14 @@ export default function RetailSpaceCleaningLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Retail Space Cleaning · Las Vegas, NV"
         heading="Retail Space Cleaning in Las Vegas, NV"
         sub={`Las Vegas has a high concentration of strip malls, shopping corridors, and mixed-use retail. Final Touch provides scheduled retail space cleaning for storefronts, strip mall tenants, and retail interiors across Las Vegas and ${SITE.serviceArea.county}, including after-hours scheduling.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('retail-space-cleaning', 'las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

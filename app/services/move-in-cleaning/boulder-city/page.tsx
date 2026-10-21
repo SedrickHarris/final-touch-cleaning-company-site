@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function MoveInCleaningBoulderCityPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Boulder City, NV"
         heading="Commercial Move-In Cleaning in Boulder City, NV"
         sub={`Boulder City draws buyers from Las Vegas and Henderson seeking a smaller-community setting, often moving into older, established homes that have had prior occupants for years. Final Touch provides thorough move-in cleaning for Boulder City property owners, landlords, renters, and buyers across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('move-in-cleaning', 'boulder-city')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

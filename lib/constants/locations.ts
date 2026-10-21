@@ -1,4 +1,10 @@
-import { LOCATIONS, NEIGHBORHOODS, type LocationSlug } from '@/lib/constants/routes';
+import {
+  LOCATIONS,
+  NEIGHBORHOODS,
+  SERVICES,
+  type LocationSlug,
+  type ServiceSlug,
+} from '@/lib/constants/routes';
 
 // Card-ready view of LOCATIONS and NEIGHBORHOODS (routes.ts stays the source of truth
 // for names, hrefs, and descriptions). Only the neighborhood hero image paths live
@@ -81,4 +87,29 @@ export function getNeighborhoodCards(citySlug: LocationSlug): LocationCardData[]
 // Every other city card, in LOCATIONS order (Clark County included).
 export function getOtherCityCards(citySlug: LocationSlug): LocationCardData[] {
   return CITY_CARDS.filter((c) => c.slug !== citySlug);
+}
+
+// One shared hero photo per city, used by that city's 7 service pages at
+// app/services/<service>/<city>/page.tsx. Per-page uniqueness comes from the
+// headline, copy, and the alt text composed in getServiceCityHero.
+const CITY_SERVICE_HERO: Readonly<Record<LocationSlug, string>> = {
+  'las-vegas': '/images/16x9/service-areas/final-touch-las-vegas-nv-commercial-cleaning-service-hero-image.webp',
+  'henderson': '/images/16x9/service-areas/final-touch-henderson-nv-commercial-cleaning-service-hero-image.webp',
+  'north-las-vegas': '/images/16x9/service-areas/final-touch-north-las-vegas-nv-commercial-cleaning-service-hero-image.webp',
+  'boulder-city': '/images/16x9/service-areas/final-touch-boulder-city-nv-commercial-cleaning-service-hero-image.webp',
+  'clark-county': '/images/16x9/heroes/locations/clark-county-nv-commercial-cleaning-hero.webp',
+};
+
+// Hero image for a service + city page. Alt is "<Service name> in <City name>, NV".
+export function getServiceCityHero(
+  serviceSlug: ServiceSlug,
+  citySlug: LocationSlug,
+): { src: string; alt: string } {
+  const service = SERVICES.find((s) => s.slug === serviceSlug);
+  if (!service) throw new Error(`Unknown service slug "${serviceSlug}"`);
+  const city = LOCATIONS.find((l) => l.slug === citySlug);
+  if (!city) throw new Error(`Unknown city slug "${citySlug}"`);
+  const src = CITY_SERVICE_HERO[citySlug];
+  if (!src) throw new Error(`No service hero image mapped for city "${citySlug}"`);
+  return { src, alt: `${service.name} in ${city.name}, NV` };
 }

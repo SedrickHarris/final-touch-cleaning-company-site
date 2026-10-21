@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -117,13 +118,14 @@ export default function PostConstructionCleanupLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Post-Construction Cleanup · Las Vegas, NV"
         heading="Post-Construction Cleanup in Las Vegas, NV"
         sub={`Las Vegas has one of the most active construction markets in the region: residential subdivisions, commercial buildouts, and ongoing renovations throughout the metro. Final Touch provides thorough post-construction cleanup for new builds and renovations across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('post-construction-cleanup', 'las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -119,13 +120,14 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Commercial Office Cleaning · Clark County, NV"
         heading="Commercial Office Cleaning in Clark County, NV"
         sub={`Clark County's commercial sector spans Las Vegas's large professional and hospitality-adjacent businesses, Henderson's medical and suburban professional corridors, North Las Vegas's industrial facility offices, and Boulder City's historic downtown small businesses. Final Touch provides commercial office cleaning across all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('commercial-office-cleaning', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

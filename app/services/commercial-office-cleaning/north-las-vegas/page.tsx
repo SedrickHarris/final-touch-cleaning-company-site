@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function CommercialOfficeCleaningNorthLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Commercial Office Cleaning · North Las Vegas, NV"
         heading="Commercial Office Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas has a large industrial and logistics corridor alongside its commercial and residential corridors. Final Touch provides commercial office cleaning for warehouse facility offices, small businesses, and commercial tenants across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('commercial-office-cleaning', 'north-las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

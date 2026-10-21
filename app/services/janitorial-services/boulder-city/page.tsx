@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function JanitorialServicesBoulderCityPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Janitorial Services · Boulder City, NV"
         heading="Janitorial Services in Boulder City, NV"
         sub={`Boulder City's small-business community (centered on a historic downtown with tourism-adjacent businesses near Lake Mead) needs janitorial programs tailored to smaller-scale operations. Final Touch provides recurring janitorial services for businesses across Boulder City and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('janitorial-services', 'boulder-city')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

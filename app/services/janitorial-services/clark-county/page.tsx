@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -119,13 +120,14 @@ export default function JanitorialServicesClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Janitorial Services · Clark County, NV"
         heading="Janitorial Services in Clark County, NV"
         sub={`Clark County's commercial buildings range from Las Vegas's large office corridors to Henderson's suburban medical parks to North Las Vegas's industrial facilities to Boulder City's small historic-downtown businesses. Final Touch provides recurring janitorial programs for all of them, county-wide, one standard.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('janitorial-services', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

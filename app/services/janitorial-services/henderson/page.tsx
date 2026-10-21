@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function JanitorialServicesHendersonPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Janitorial Services · Henderson, NV"
         heading="Janitorial Services in Henderson, NV"
         sub={`Henderson's commercial buildings serve an established, professionally-oriented community: office parks along Green Valley Parkway, medical buildings, and smaller commercial properties adjacent to master-planned neighborhoods. Final Touch provides recurring janitorial programs across Henderson and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('janitorial-services', 'henderson')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

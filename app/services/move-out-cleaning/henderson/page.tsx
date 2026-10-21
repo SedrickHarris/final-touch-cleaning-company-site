@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -117,13 +118,14 @@ export default function MoveOutCleaningHendersonPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Move-Out Cleaning · Henderson, NV"
         heading="Commercial Move-Out Cleaning in Henderson, NV"
         sub={`Henderson's established master-planned communities (Green Valley, Anthem, Green Valley Ranch) have a mix of owner-occupied and rental properties where landlords expect a higher finishing standard at lease-end. Final Touch provides professional move-out cleaning across all Henderson neighborhoods and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('move-out-cleaning', 'henderson')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

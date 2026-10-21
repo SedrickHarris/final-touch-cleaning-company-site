@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -117,13 +118,14 @@ export default function DeepCleaningNorthLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Deep Cleaning · North Las Vegas, NV"
         heading="Commercial Deep Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas is one of the most actively growing residential areas in the Las Vegas Valley, with a large rental population and ongoing construction activity. Final Touch provides thorough deep cleaning for rental properties, new builds, and established neighborhoods across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('deep-cleaning', 'north-las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

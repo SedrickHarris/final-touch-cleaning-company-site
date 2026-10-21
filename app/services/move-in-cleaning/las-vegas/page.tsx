@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -117,13 +118,14 @@ export default function MoveInCleaningLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Move-In Cleaning · Las Vegas, NV"
         heading="Commercial Move-In Cleaning in Las Vegas, NV"
         sub={`Las Vegas has an active new construction pipeline and a large rental market, both of which create demand for a professional clean before move-in day. Final Touch provides thorough move-in cleaning for new builds, resale homes, and rental units across Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('move-in-cleaning', 'las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

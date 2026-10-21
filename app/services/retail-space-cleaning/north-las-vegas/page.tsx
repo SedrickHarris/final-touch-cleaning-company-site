@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function RetailSpaceCleaningNorthLasVegasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Retail Space Cleaning · North Las Vegas, NV"
         heading="Retail Space Cleaning in North Las Vegas, NV"
         sub={`North Las Vegas commercial corridors serve a large, working-class residential population with a mix of retail, restaurants, auto services, and community businesses. Final Touch provides scheduled retail space cleaning for storefronts and retail interiors across North Las Vegas and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('retail-space-cleaning', 'north-las-vegas')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

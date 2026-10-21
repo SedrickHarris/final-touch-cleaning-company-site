@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -119,13 +120,14 @@ export default function RetailSpaceCleaningClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Retail Space Cleaning · Clark County, NV"
         heading="Retail Space Cleaning in Clark County, NV"
         sub={`Clark County's retail landscape spans Las Vegas's high-density strip mall corridors, Henderson's community-serving neighborhood shopping centers, North Las Vegas's working-class commercial strips, and Boulder City's historic downtown storefronts. Final Touch provides retail space cleaning across all of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('retail-space-cleaning', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

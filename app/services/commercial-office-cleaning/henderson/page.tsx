@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -113,13 +114,14 @@ export default function CommercialOfficeCleaningHendersonPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Commercial Office Cleaning · Henderson, NV"
         heading="Commercial Office Cleaning in Henderson, NV"
         sub={`Henderson's commercial sector runs along Green Valley Parkway and the Sunset Road corridor: professional services, medical offices, and retail-adjacent commercial spaces serving the city's large master-planned community base. Final Touch provides recurring commercial office cleaning for businesses across Henderson and ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('commercial-office-cleaning', 'henderson')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

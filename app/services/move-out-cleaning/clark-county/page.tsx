@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -123,13 +124,14 @@ export default function MoveOutCleaningClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Move-Out Cleaning · Clark County, NV"
         heading="Commercial Move-Out Cleaning in Clark County, NV"
         sub={`Clark County has a large and varied rental market: high-density apartments in North Las Vegas, master-planned community rentals in Henderson, urban rentals in Las Vegas, and established homes in Boulder City. Final Touch serves move-out cleaning clients across every part of ${SITE.serviceArea.county}.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('move-out-cleaning', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 

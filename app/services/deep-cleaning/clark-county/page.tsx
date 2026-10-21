@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
+import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -123,13 +124,14 @@ export default function DeepCleaningClarkCountyPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* 1. Hero. Hero background photo will be added later. */}
+      {/* 1. Hero. */}
       <HeroSection
         eyebrow="Deep Cleaning · Clark County, NV"
         heading="Commercial Deep Cleaning in Clark County, NV"
         sub={`Final Touch provides deep cleaning across all of ${SITE.serviceArea.county}: Las Vegas, Henderson, North Las Vegas, Boulder City, and unincorporated areas throughout the Las Vegas Valley. One team, one standard, every city in the county.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
+        image={getServiceCityHero('deep-cleaning', 'clark-county')}
         formSlot={<QuoteFormPlaceholder />}
       />
 
