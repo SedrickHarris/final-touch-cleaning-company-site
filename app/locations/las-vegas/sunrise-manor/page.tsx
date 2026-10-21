@@ -6,8 +6,11 @@ import HeroSection from '@/components/shared/HeroSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
+import { NEIGHBORHOOD_CARDS } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
 // Parent city derived from this neighborhood's own NEIGHBORHOODS record —
@@ -16,6 +19,12 @@ const NEIGHBORHOOD = NEIGHBORHOODS.flatMap((g) => g.neighborhoods).find(
   (n) => n.slug === 'sunrise-manor',
 )!;
 const PARENT_CITY = LOCATIONS.find((l) => l.slug === NEIGHBORHOOD.parentCity)!;
+
+// Sibling neighborhood cards, in display order, sourced from lib/constants/locations.ts.
+const SIBLING_CARDS = [
+  '/locations/las-vegas/downtown-las-vegas',
+  '/locations/north-las-vegas/nellis-area',
+].map((href) => NEIGHBORHOOD_CARDS.find((c) => c.href === href)!);
 
 export const metadata: Metadata = {
   title: 'Commercial Cleaning in Sunrise Manor, Las Vegas, NV',
@@ -272,6 +281,28 @@ export default function SunriseManorPage() {
             >
               Contact us
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sibling neighborhoods */}
+      <section className="bg-brand-white border-t border-border-subtle">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-14 sm:py-18 lg:py-20">
+          <SectionHeader eyebrow="More neighborhoods" heading="Other neighborhoods we serve." />
+          <div className="mt-8">
+            <LocationCardGrid>
+              {SIBLING_CARDS.map((card) => (
+                <LocationCard
+                  key={card.href}
+                  href={card.href}
+                  name={card.name}
+                  description={card.description}
+                  image={card.image}
+                  label={card.parentCity !== NEIGHBORHOOD.parentCity ? card.label : undefined}
+                  headingLevel="h3"
+                />
+              ))}
+            </LocationCardGrid>
           </div>
         </div>
       </section>
