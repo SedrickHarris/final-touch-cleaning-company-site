@@ -9,6 +9,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning in Henderson, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Family-Owned Commercial Cleaning in Henderson, NV | Final Touch',
     description:
       'Family-owned commercial cleaning in Henderson, NV. Office, janitorial, post-construction, and property management. Licensed and insured. Call (702) 444-5077.',

@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: '/seasonal/holiday-cleaning-services',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Holiday Cleaning Services in Las Vegas, NV | Final Touch',
     description: `Holiday cleaning services Las Vegas - commercial properties, retail stores, offices, and event spaces prepped for the holiday season. Call ${SITE.phone.display}.`,
     type: 'website',

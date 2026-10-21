@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     canonical: '/cleaning-solutions/pet-hair-removal-cleaning',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Pet Hair Removal Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Pet hair removal cleaning in Las Vegas, NV. Final Touch lifts embedded pet hair and dander from floors, soft surfaces, and high-touch areas. Call (702) 444-5077.',

@@ -5,6 +5,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Get a free commercial cleaning estimate from Final Touch Cleaning Company. Las Vegas, Henderson, and the Las Vegas Valley. No obligation. Call (702) 444-5077.',
   alternates: { canonical: '/free-quote' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Free Commercial Cleaning Quote | Final Touch Cleaning Company',
     description:
       'Commercial cleaning company serving the Las Vegas Valley. Tell us about your space and get a real quote after a short walkthrough. No templated rates.',

@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     'Scheduled janitorial programs for commercial facilities across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/janitorial-services' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Janitorial Services in Las Vegas, NV | Final Touch',
     description:
       'Commercial janitorial programs in Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured. After-hours scheduling available. Call (702) 444-5077.',

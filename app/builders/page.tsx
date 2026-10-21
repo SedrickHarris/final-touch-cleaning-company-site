@@ -6,6 +6,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: `${SITE.url}/builders` },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Builder Post-Construction Cleaning Las Vegas | Final Touch',
     description:
       'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders. Final Touch. Call (702) 444-5077.',

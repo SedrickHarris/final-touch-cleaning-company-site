@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/services/post-construction-cleanup/las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Post-Construction Cleanup in Las Vegas, NV | Final Touch',
     description:
       'Post-construction cleanup in Las Vegas, NV. Final Touch clears drywall dust, debris, and residue for move-in-ready results. Call (702) 444-5077.',

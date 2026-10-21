@@ -10,6 +10,7 @@ import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { getOtherCityCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     'Commercial cleaning across Clark County, NV - Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',
   alternates: { canonical: '/locations/clark-county' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning Services in Clark County, NV | Final Touch Cleaning Company',
     description:
       'Commercial cleaning across Clark County, NV - Las Vegas, Henderson, North Las Vegas, Boulder City. Office, janitorial, post-construction. Call (702) 444-5077.',

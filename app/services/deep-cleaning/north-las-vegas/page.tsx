@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/services/deep-cleaning/north-las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Deep Cleaning in North Las Vegas, NV | Final Touch',
     description:
       'Commercial deep cleaning for rental properties in North Las Vegas, NV. Serving property managers, commercial operators, and landlords. Call (702) 444-5077.',

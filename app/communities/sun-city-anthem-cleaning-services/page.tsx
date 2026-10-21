@@ -8,6 +8,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     'Professional home cleaning for Sun City Anthem in Henderson, NV. Move-in, move-out, and deep cleaning. Licensed & insured. Free quotes. Call (702) 444-5077.',
   alternates: { canonical: '/communities/sun-city-anthem-cleaning-services' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Cleaning Services in Sun City Anthem, Henderson, NV | Final Touch',
     description:
       'Professional home cleaning for Sun City Anthem in Henderson, NV. Move-in, move-out, and deep cleaning. Licensed & insured. Free quotes. Call (702) 444-5077.',

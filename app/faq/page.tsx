@@ -4,6 +4,7 @@ import HeroSection from '@/components/shared/HeroSection';
 import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning company in Las Vegas, NV - answers about services, scheduling & quotes. Final Touch Cleaning Company. Call (702) 444-5077.',
   alternates: { canonical: '/faq' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning FAQ | Final Touch | Las Vegas, NV',
     description:
       'Family-owned commercial cleaning company in Las Vegas, NV. Answers about services, scheduling, and quotes - Final Touch Cleaning Company. Call (702) 444-5077.',

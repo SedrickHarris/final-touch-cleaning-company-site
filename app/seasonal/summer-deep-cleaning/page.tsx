@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: '/seasonal/summer-deep-cleaning',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Summer Deep Cleaning in Las Vegas, NV | Final Touch',
     description: `Summer deep cleaning Las Vegas - June–August deep cleaning for commercial properties managing desert heat and dust infiltration. Call ${SITE.phone.display}.`,
     type: 'website',

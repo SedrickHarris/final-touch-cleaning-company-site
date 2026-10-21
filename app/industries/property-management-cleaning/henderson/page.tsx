@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries/property-management-cleaning/henderson`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Property Management Cleaning in Henderson, NV | Final Touch Cleaning',
     description:
       'Final Touch provides unit turn cleaning, HOA common areas, and portfolio cleaning for property managers in Henderson and the Las Vegas Valley. Call (702) 444-5077.',

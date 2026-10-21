@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries/chiropractic-cleaning/north-las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Chiropractic Office Cleaning in North Las Vegas, NV | Final Touch Cleaning',
     description:
       'Final Touch provides scheduled cleaning for chiropractic offices and physical therapy clinics in North Las Vegas, NV. Treatment rooms, therapy surfaces, waiting areas, and restrooms. Call (702) 444-5077.',

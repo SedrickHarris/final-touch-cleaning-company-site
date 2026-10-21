@@ -6,6 +6,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Industry Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
     description:
       'Industry cleaning across the Las Vegas Valley: medical offices, law firms, restaurants, retail stores, and property management. Call (702) 444-5077.',

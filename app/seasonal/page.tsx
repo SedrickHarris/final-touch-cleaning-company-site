@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: '/seasonal',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Seasonal Cleaning Services in Las Vegas, NV | Final Touch',
     description: `Seasonal cleaning services in Las Vegas, NV - spring, summer, holiday, and move-out cleans for commercial properties. Call ${SITE.phone.display}.`,
     type: 'website',

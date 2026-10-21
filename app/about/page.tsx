@@ -7,6 +7,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import TrustBar from '@/components/shared/TrustBar';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning company in Las Vegas, NV, serving offices, contractors & property managers in Southern Nevada. Call (702) 444-5077.',
   alternates: { canonical: '/about' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'About Final Touch Cleaning Company | Las Vegas, NV',
     description:
       'Family-owned commercial cleaning in Las Vegas, NV. Scott & Nicole Maland. Offices, contractors, property managers. Licensed and insured. Call (702) 444-5077.',

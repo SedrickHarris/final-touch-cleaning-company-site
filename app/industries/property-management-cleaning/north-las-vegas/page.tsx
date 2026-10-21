@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries/property-management-cleaning/north-las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Property Management Cleaning in North Las Vegas, NV | Final Touch Cleaning',
     description:
       'Final Touch provides unit turn cleaning and portfolio programs for property managers and landlords in North Las Vegas, NV. Call (702) 444-5077.',

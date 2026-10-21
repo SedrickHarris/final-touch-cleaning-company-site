@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed and insured, scheduled around your business. Call (702) 444-5077.',
   alternates: { canonical: '/services/commercial-office-cleaning' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Office Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Commercial office cleaning across Las Vegas, Henderson, and the Las Vegas Valley. Licensed, insured, scheduled around your business hours. Call (702) 444-5077.',

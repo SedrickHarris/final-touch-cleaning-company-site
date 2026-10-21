@@ -5,6 +5,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Call (702) 444-5077, email info@finaltouchcleaningteam.com, or send a quote request. Final Touch serves Las Vegas, Henderson, and the Las Vegas Valley.',
   alternates: { canonical: '/contact' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Contact Final Touch Cleaning Company | Las Vegas, NV',
     description:
       'Call, email, or send a quote request. Scott & Nicole Maland own and run Final Touch, a family-owned cleaning company based in Southern Nevada.',

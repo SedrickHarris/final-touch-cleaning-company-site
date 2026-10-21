@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries/law-firm-cleaning/las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Law Firm Cleaning in Las Vegas, NV | Final Touch Cleaning',
     description:
       'Professional cleaning for law firms and legal offices in Las Vegas, NV. After-hours scheduling, owner-led walkthroughs. Call (702) 444-5077.',

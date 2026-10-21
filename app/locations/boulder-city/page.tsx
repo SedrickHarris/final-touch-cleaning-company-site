@@ -10,6 +10,7 @@ import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { getOtherCityCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning in Boulder City, NV. Office, janitorial, post-construction, and retail. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/boulder-city' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Family-Owned Commercial Cleaning in Boulder City, NV | Final Touch',
     description:
       'Family-owned commercial cleaning in Boulder City, NV. Office, janitorial, post-construction, and retail. Licensed and insured. Call (702) 444-5077.',

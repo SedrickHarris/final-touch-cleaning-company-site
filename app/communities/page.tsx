@@ -9,6 +9,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import ServiceCard from '@/components/shared/ServiceCard';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     'Professional cleaning for active adult communities in Las Vegas and Henderson, NV. Move-in, move-out, and deep cleaning. Licensed & insured. Call (702) 444-5077.',
   alternates: { canonical: '/communities' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Cleaning Services for Active Adult Communities | Las Vegas, NV | Final Touch',
     description:
       'Professional cleaning for active adult communities in Las Vegas and Henderson, NV. Move-in, move-out, and deep cleaning. Licensed & insured. Call (702) 444-5077.',

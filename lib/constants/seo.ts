@@ -12,3 +12,21 @@ export const SEO_DEFAULTS = {
   themeColor: '#1A5FB4',
   locale: 'en_US',
 } as const;
+
+// Default social image for Open Graph and Twitter. The relative url resolves
+// through metadataBase in app/layout.tsx. Pages spread OG_DEFAULTS first inside
+// their own openGraph block, because a page-level openGraph replaces the
+// layout's entirely (including images).
+export const OG_DEFAULT_IMAGE = {
+  url: '/images/og/og-default-final-touch-cleaning-las-vegas.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Final Touch Cleaning Company - Where small details bring BIG RESULTS',
+  type: 'image/jpeg',
+};
+
+export const OG_DEFAULTS = {
+  siteName: SEO_DEFAULTS.siteName,
+  locale: SEO_DEFAULTS.locale,
+  images: [OG_DEFAULT_IMAGE],
+};

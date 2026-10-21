@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/industries/medical-office-cleaning/north-las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Medical Office Cleaning in North Las Vegas, NV | Final Touch Cleaning',
     description:
       'Medical office cleaning for practices and clinics in North Las Vegas, NV. Serving healthcare offices across the Las Vegas Valley. Call (702) 444-5077.',

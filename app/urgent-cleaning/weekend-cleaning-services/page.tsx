@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: '/urgent-cleaning/weekend-cleaning-services',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Weekend Cleaning Services in Las Vegas, NV | Final Touch',
     description:
       'Weekend cleaning Las Vegas: need Saturday or Sunday service for your office or commercial space? Final Touch works with businesses that cannot wait until Monday. Call (702) 444-5077.',

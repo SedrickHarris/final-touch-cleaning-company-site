@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: '/seasonal/back-to-school-home-reset',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Back-to-School Home Reset Cleaning, Las Vegas, NV | Final Touch',
     description: `Back to school cleaning Las Vegas - August schedule-shift cleaning for rental units, common areas, and managed properties. Call ${SITE.phone.display}.`,
     type: 'website',

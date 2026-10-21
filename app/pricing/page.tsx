@@ -5,6 +5,7 @@ import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Final Touch provides custom quotes for every commercial cleaning job. No published rate card. Request a free, no-obligation estimate for your space. Call (702) 444-5077.',
   alternates: { canonical: '/pricing' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning Pricing | Final Touch | Las Vegas, NV',
     description:
       'Final Touch prices every job by confirmed scope. No flat rates, no hourly guesses. Free estimate for your space across the Las Vegas Valley. (702) 444-5077.',

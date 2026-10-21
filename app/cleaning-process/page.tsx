@@ -5,6 +5,7 @@ import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'How Final Touch Commercial Cleaning works: quote, walkthrough, scope, cleaning visit, and the Blue Ribbon Guarantee. Las Vegas Valley, NV. (702) 444-5077.',
   alternates: { canonical: '/cleaning-process' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Our Commercial Cleaning Process | Final Touch | Las Vegas, NV',
     description:
       'Every Final Touch commercial cleaning job follows the same five-step process. Free quote, owner walkthrough, confirmed scope, cleaning visit, and a 100% satisfaction guarantee.',

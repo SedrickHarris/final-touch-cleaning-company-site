@@ -4,7 +4,7 @@ import { Fraunces, Manrope } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MotionProvider from '@/components/motion/MotionProvider';
-import { SEO_DEFAULTS } from '@/lib/constants/seo';
+import { OG_DEFAULT_IMAGE, SEO_DEFAULTS } from '@/lib/constants/seo';
 import { SITE } from '@/lib/constants/site';
 import './globals.css';
 
@@ -22,8 +22,6 @@ const manrope = Manrope({
   display: 'swap',
   weight: ['400', '500', '600', '700'],
 });
-
-const OG_IMAGE = '/images/16x9/heroes/final-touch-cleaning-services-las-vegas-hero.webp';
 
 // Global LocalBusiness JSON-LD — single site-wide node per
 // docs/site-os/build-status-reconciliation.md §5. Service-area business:
@@ -66,13 +64,13 @@ export const metadata: Metadata = {
     siteName: SEO_DEFAULTS.siteName,
     locale: SEO_DEFAULTS.locale,
     type: 'website',
-    images: [{ url: OG_IMAGE, alt: SEO_DEFAULTS.siteName }],
+    images: [OG_DEFAULT_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: SEO_DEFAULTS.defaultTitle,
     description: SEO_DEFAULTS.description,
-    images: [OG_IMAGE],
+    images: [OG_DEFAULT_IMAGE],
   },
   icons: {
     icon: [

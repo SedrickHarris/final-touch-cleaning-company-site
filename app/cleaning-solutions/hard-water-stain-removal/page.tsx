@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     canonical: '/cleaning-solutions/hard-water-stain-removal',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Hard Water Stain Removal Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Hard water stain cleaning in Las Vegas, NV. Final Touch targets mineral buildup on glass, fixtures, and tile from Southern Nevada hard water. Call (702) 444-5077.',

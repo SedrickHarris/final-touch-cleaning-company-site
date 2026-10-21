@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     canonical: '/seasonal/new-years-clean-start',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "New Year's Clean Start - Las Vegas, NV | Final Touch",
     description: `New Year cleaning Las Vegas - late December and January professional cleaning reset for commercial properties, offices, and managed spaces. Call ${SITE.phone.display}.`,
     type: 'website',

@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     canonical: '/cleaning-solutions/post-illness-deep-sanitation-cleaning',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Post-Illness Deep Sanitation Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Post illness cleaning in Las Vegas, NV. Final Touch deep-cleans and sanitizes high-touch surfaces after illness for homes, offices, and shared facilities. Call (702) 444-5077.',

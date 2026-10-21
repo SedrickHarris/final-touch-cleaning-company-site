@@ -6,6 +6,7 @@ import Breadcrumb from '@/components/shared/Breadcrumb';
 import GoogleReviewsSection from '@/components/reviews/GoogleReviewsSection';
 import { getPlaceUrl } from '@/lib/google-reviews';
 import { CTAS, GOOGLE_REVIEW_URL, REVIEWS_SITE_URL, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning reviews for Final Touch Cleaning Company, serving Las Vegas and the Las Vegas Valley, NV. Call (702) 444-5077.',
   alternates: { canonical: '/reviews' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning Reviews | Final Touch | Las Vegas, NV',
     description:
       'Family-owned commercial cleaning reviews for Final Touch Cleaning Company, serving Las Vegas and the Las Vegas Valley, NV. Call (702) 444-5077.',

@@ -9,6 +9,7 @@ import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { getNeighborhoodCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning across the Las Vegas Valley: Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',
   alternates: { canonical: '/locations' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: `Commercial Cleaning Across the Las Vegas Valley | Final Touch Cleaning Company`,
     description:
       'Family-owned commercial cleaning across the Las Vegas Valley: Las Vegas, Henderson, North Las Vegas, and Boulder City. Final Touch. Call (702) 444-5077.',

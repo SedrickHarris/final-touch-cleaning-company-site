@@ -9,6 +9,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 import { NEIGHBORHOOD_CARDS } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     'Family-owned commercial and office cleaning in Green Valley Ranch, NV. Move-out, deep cleaning, and janitorial for property managers. (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/green-valley-ranch' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning in Green Valley Ranch, NV | Final Touch Cleaning',
     description:
       'Family-owned commercial and office cleaning in Green Valley Ranch, NV. Move-out, deep cleaning, and janitorial for property managers. (702) 444-5077.',

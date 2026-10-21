@@ -5,6 +5,7 @@ import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 import Image from 'next/image';
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     'Final Touch Commercial Cleaning is owned and run by Scott & Nicole Maland in Southern Nevada. Owner-led on every commercial job. Call (702) 444-5077.',
   alternates: { canonical: '/our-team' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Our Team | Commercial Cleaning Company | Final Touch',
     description:
       'Final Touch Commercial Cleaning is owned and run by Scott & Nicole Maland in Southern Nevada. Owner-led on every commercial job. Call (702) 444-5077.',

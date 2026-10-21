@@ -8,6 +8,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     canonical: '/cleaning-solutions/smoke-odor-removal',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Smoke and Odor Removal Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Smoke odor cleaning in Las Vegas, NV. Final Touch deep-cleans surfaces affected by smoke and lingering odors in homes, rentals, and commercial spaces. Call (702) 444-5077.',

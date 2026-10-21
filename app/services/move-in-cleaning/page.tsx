@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, home preps, and apartment cleans. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/services/move-in-cleaning' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Move-In Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Move-in cleaning in Las Vegas, Henderson, and the Las Vegas Valley. Unit turns, apartment preps, and home cleans. Licensed and insured. Call (702) 444-5077.',

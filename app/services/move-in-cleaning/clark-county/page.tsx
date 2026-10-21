@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/services/move-in-cleaning/clark-county`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Move-In Cleaning in Clark County, NV | Final Touch',
     description:
       'Commercial move-in cleaning for property management, rental turnovers, and new builds across Clark County, NV. Every city county-wide. Call (702) 444-5077.',

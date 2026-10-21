@@ -9,6 +9,7 @@ import ServiceCard from '@/components/shared/ServiceCard';
 import LocationCard from '@/components/shared/LocationCard';
 import LocationCardGrid from '@/components/shared/LocationCardGrid';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES, SERVICES } from '@/lib/constants/routes';
 import { NEIGHBORHOOD_CARDS } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     'Family-owned commercial cleaning in MacDonald Highlands, NV. Deep cleaning and move-in for luxury custom homes. Licensed and insured. Call (702) 444-5077.',
   alternates: { canonical: '/locations/henderson/macdonald-highlands' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning in MacDonald Highlands, NV | Final Touch Cleaning',
     description:
       'Family-owned commercial cleaning in MacDonald Highlands, NV. Deep cleaning and move-in for luxury custom homes. Licensed and insured. Call (702) 444-5077.',

@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getServiceCityHero } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/services/janitorial-services/las-vegas`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Janitorial Services in Las Vegas, NV | Final Touch',
     description:
       'Professional janitorial services in Las Vegas, NV. Recurring cleaning programs for offices, buildings, and commercial spaces. Call (702) 444-5077.',

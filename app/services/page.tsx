@@ -7,6 +7,7 @@ import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServicesPreview from '@/components/shared/ServicesPreview';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 
 // ─── Metadata ────────────────────────────────────────────────────────────────
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     'Final Touch offers seven commercial cleaning services in Las Vegas, Henderson & the Las Vegas Valley: office, janitorial & post-construction. (702) 444-5077.',
   alternates: { canonical: '/services' },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Commercial Cleaning Services in Las Vegas, NV | Final Touch Cleaning Company',
     description:
       'Seven commercial cleaning services across Las Vegas, Henderson, and the Las Vegas Valley: office cleaning, janitorial, post-construction, retail. Free quotes.',

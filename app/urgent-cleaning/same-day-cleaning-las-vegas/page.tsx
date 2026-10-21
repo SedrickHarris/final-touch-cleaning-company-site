@@ -7,6 +7,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: '/urgent-cleaning/same-day-cleaning-las-vegas',
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'Same-Day Cleaning in Las Vegas, NV | Final Touch',
     description:
       'Need same day cleaning Las Vegas? Final Touch works to accommodate same-day requests for offices and commercial spaces across the Las Vegas Valley. Call (702) 444-5077 to check availability.',

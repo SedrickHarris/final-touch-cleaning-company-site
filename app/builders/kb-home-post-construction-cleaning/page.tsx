@@ -6,6 +6,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import QuoteFormPlaceholder from '@/components/shared/QuoteFormPlaceholder';
 import { CTAS, SITE } from '@/lib/constants/site';
+import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES } from '@/lib/constants/routes';
 import { BUILDERS } from '@/lib/constants/builders';
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE.url}/builders/kb-home-post-construction-cleaning`,
   },
   openGraph: {
+    ...OG_DEFAULTS,
     title: 'KB Home Post-Construction Cleaning Las Vegas | Final Touch',
     description:
       'Post-construction cleanup after your KB Home handoff in Las Vegas, NV. Custom finish and tile residue addressed. Las Vegas Valley local. Call (702) 444-5077.',
