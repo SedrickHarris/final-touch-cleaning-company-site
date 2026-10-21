@@ -174,7 +174,7 @@ export const LOCATIONS: ReadonlyArray<{
     slug: 'clark-county',
     name: 'Clark County',
     href: '/locations/clark-county',
-    shortDescription: 'County-wide service for Clark County, Nevada. One team, one standard.',
+    shortDescription: 'Commercial cleaning across Clark County, Nevada.',
     image: {
       src: '/images/4x3/locations/clark-county-commercial-cleaning-location-card-image.webp',
       alt: 'County-wide cleaning across Clark County, NV by Final Touch.',
@@ -222,13 +222,13 @@ export const NEIGHBORHOODS: ReadonlyArray<{
     neighborhoods: [
       { slug: 'anthem',              name: 'Anthem',              parentCity: 'henderson', built: true,  href: '/locations/henderson/anthem',              shortDescription: 'Established master-planned community in the Henderson foothills.' },
       { slug: 'green-valley-ranch',  name: 'Green Valley Ranch',  parentCity: 'henderson', built: true,  href: '/locations/henderson/green-valley-ranch',  shortDescription: 'Established residential and commercial community in Henderson.' },
-      { slug: 'seven-hills',         name: 'Seven Hills',         parentCity: 'henderson', built: true,  href: '/locations/henderson/seven-hills',         shortDescription: "Luxury hillside community in Henderson's eastern foothills." },
-      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', parentCity: 'henderson', built: true,  href: '/locations/henderson/macdonald-highlands', shortDescription: 'Guard-gated luxury hillside enclave in Henderson.' },
+      { slug: 'seven-hills',         name: 'Seven Hills',         parentCity: 'henderson', built: true,  href: '/locations/henderson/seven-hills',         shortDescription: "Hillside community in Henderson's eastern foothills." },
+      { slug: 'macdonald-highlands', name: 'MacDonald Highlands', parentCity: 'henderson', built: true,  href: '/locations/henderson/macdonald-highlands', shortDescription: 'Residential community in Henderson.' },
       { slug: 'inspirada',           name: 'Inspirada',           parentCity: 'henderson', built: true,  href: '/locations/henderson/inspirada',           shortDescription: 'Newer master-planned community in southern Henderson.' },
-      { slug: 'cadence',             name: 'Cadence',             parentCity: 'henderson', built: true,  href: '/locations/henderson/cadence',             shortDescription: "Henderson's most actively developing master-planned community." },
+      { slug: 'cadence',             name: 'Cadence',             parentCity: 'henderson', built: true,  href: '/locations/henderson/cadence',             shortDescription: 'Master-planned community in Henderson.' },
       { slug: 'lake-las-vegas',      name: 'Lake Las Vegas',      parentCity: 'henderson', built: true,  href: '/locations/henderson/lake-las-vegas',      shortDescription: 'Resort-adjacent lakefront community in Henderson.' },
       { slug: 'green-valley',        name: 'Green Valley',        parentCity: 'henderson', built: true,  href: '/locations/henderson/green-valley',        shortDescription: 'Established master-planned area in central Henderson.' },
-      { slug: 'tuscany-village',     name: 'Tuscany Village',     parentCity: 'henderson', built: true,  href: '/locations/henderson/tuscany-village',     shortDescription: 'Guard-gated residential community in eastern Henderson.' },
+      { slug: 'tuscany-village',     name: 'Tuscany Village',     parentCity: 'henderson', built: true,  href: '/locations/henderson/tuscany-village',     shortDescription: 'Residential community in eastern Henderson.' },
     ],
   },
   {

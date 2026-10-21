@@ -5,6 +5,9 @@ import CTASection from '@/components/shared/CTASection';
 import FAQSection from '@/components/shared/FAQSection';
 import SectionHeader from '@/components/shared/SectionHeader';
 import ServiceCard from '@/components/shared/ServiceCard';
+import LocationCard from '@/components/shared/LocationCard';
+import LocationCardGrid from '@/components/shared/LocationCardGrid';
+import { getNeighborhoodCards } from '@/lib/constants/locations';
 import { CTAS, SITE } from '@/lib/constants/site';
 import { LOCATIONS, NEIGHBORHOODS, ROUTES } from '@/lib/constants/routes';
 
@@ -111,9 +114,6 @@ export default function LocationsPage() {
             sub={`We cover every corner of ${SITE.serviceArea.county}, Nevada, from new-build communities in the southwest to downtown corridors and Boulder City.`}
           />
 
-          {/* TODO-BATCH-4: Per-city pages at /locations/<city> are not yet
-              built. Cards link to those routes. They will 404 until Batch 4
-              ships. */}
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {LOCATIONS.map((loc) => (
               <li key={loc.slug} className="h-full">
@@ -154,18 +154,20 @@ export default function LocationsPage() {
                 <h3 className="font-display text-xl font-semibold text-brand-black">
                   {group.cityName}
                 </h3>
-                <ul className="mt-4 flex flex-wrap gap-3">
-                  {group.neighborhoods.map((nb) => (
-                    <li key={nb.href}>
-                      <Link
-                        href={nb.href}
-                        className="inline-flex items-center rounded-full border border-border-subtle bg-brand-white min-h-[44px] px-4 py-2 text-sm font-semibold text-brand-blue hover:border-brand-blue/40 hover:bg-soft-blue transition-colors"
-                      >
-                        {nb.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-4">
+                  <LocationCardGrid>
+                    {getNeighborhoodCards(group.citySlug).map((card) => (
+                      <LocationCard
+                        key={card.href}
+                        href={card.href}
+                        name={card.name}
+                        description={card.description}
+                        image={card.image}
+                        headingLevel="h4"
+                      />
+                    ))}
+                  </LocationCardGrid>
+                </div>
               </div>
             ))}
           </div>
