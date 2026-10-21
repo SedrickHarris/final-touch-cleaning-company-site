@@ -362,7 +362,7 @@ export default function TaylorMorrisonAscensionPostConstructionPage() {
       </section>
 
       {/* 8. FAQ */}
-      <FAQSection items={faq} />
+      <FAQSection heading="Frequently asked questions" items={faq} />
 
       {/* 9. Final CTA */}
       <CTASection

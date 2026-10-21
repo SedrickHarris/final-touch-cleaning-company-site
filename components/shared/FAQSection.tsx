@@ -16,7 +16,7 @@ type Props = {
 // aria-labelledby. The motion-animated height is purely presentational —
 // the underlying control is a standard button and is keyboard operable.
 export default function FAQSection({
-  heading = 'Frequently asked questions',
+  heading,
   items,
   defaultOpenFirst = false,
 }: Props) {
@@ -26,11 +26,21 @@ export default function FAQSection({
 
   return (
     <section className="bg-brand-white">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-black">
-          {heading}
-        </h2>
-        <ul className="mt-8 divide-y divide-border-subtle border-t border-b border-border-subtle">
+      <div
+        className={
+          heading
+            ? 'mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24'
+            : 'mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12'
+        }
+      >
+        {heading && (
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-black">
+            {heading}
+          </h2>
+        )}
+        <ul
+          className={`${heading ? 'mt-8 ' : ''}divide-y divide-border-subtle border-t border-b border-border-subtle`}
+        >
           {items.map((it, i) => {
             const isOpen = openIndex === i;
             const triggerId = `faq-trigger-${i}`;
