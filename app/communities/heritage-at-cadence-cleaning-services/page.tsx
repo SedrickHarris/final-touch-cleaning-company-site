@@ -144,6 +144,7 @@ export default function HeritageAtCadencePage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/communities/heritage-at-cadence-cleaning-services-hero-image.webp' }}
       />
 
       {/* 3. Direct-answer paragraph */}

@@ -144,6 +144,7 @@ export default function SunCityAnthemPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/communities/sun-city-anthem-cleaning-services-hero-image.webp' }}
       />
 
       {/* 3. Direct-answer paragraph */}

@@ -162,6 +162,7 @@ export default function CommunitiesHubPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
+        image={{ src: '/images/16x9/communities/active-adult-communities-las-vegas-nv-hero-image.webp' }}
       />
 
       {/* 3. Direct-answer paragraph */}
