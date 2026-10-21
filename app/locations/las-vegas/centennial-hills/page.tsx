@@ -76,24 +76,6 @@ const faq = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: `${SITE.url}/locations/las-vegas/centennial-hills`,
-  telephone: SITE.phone.href.replace('tel:', ''),
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  areaServed: [
-    { '@type': 'Place', name: 'Centennial Hills, Las Vegas, NV' },
-    { '@type': 'Place', name: 'Las Vegas, NV' },
-    { '@type': 'Place', name: 'Clark County, NV' },
-  ],
-  description:
-    'Family-owned commercial cleaning company serving Centennial Hills, Las Vegas, NV.',
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -349,10 +331,6 @@ export default function CentennialHillsPage() {
       />
 
       {/* Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

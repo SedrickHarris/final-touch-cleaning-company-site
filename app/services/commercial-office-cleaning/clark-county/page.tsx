@@ -70,35 +70,11 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Commercial & Office Cleaning',
   serviceType: 'Commercial Office Cleaning',
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
   areaServed: {
     '@type': 'AdministrativeArea',
     name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}`,
   },
-};
-
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: SITE.url,
-  telephone: SITE.phone.href.replace('tel:', ''),
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  areaServed: [
-    { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
-    ...SITE.serviceArea.cities.map((city) => ({
-      '@type': 'City' as const,
-      name: `${city}, ${SITE.serviceArea.stateAbbr}`,
-    })),
-  ],
 };
 
 const faqJsonLd = {
@@ -340,10 +316,6 @@ export default function CommercialOfficeCleaningClarkCountyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
       <script
         type="application/ld+json"

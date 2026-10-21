@@ -78,40 +78,6 @@ const faq = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: SITE.url,
-  telephone: '+17024445077',
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  description:
-    'Commercial cleaning company serving all of Clark County, NV. Office, janitorial, post-construction, retail, and property management cleaning.',
-  founder: [
-    { '@type': 'Person', name: 'Scott Maland' },
-    { '@type': 'Person', name: 'Nicole Maland' },
-  ],
-  areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
-    { '@type': 'City', name: 'Las Vegas' },
-    { '@type': 'City', name: 'Henderson' },
-    { '@type': 'City', name: 'North Las Vegas' },
-    { '@type': 'City', name: 'Boulder City' },
-  ],
-  serviceType: [
-    'Commercial Cleaning',
-    'Post-Construction Cleanup',
-    'Janitorial Services',
-    'Move-In Cleaning',
-    'Move-Out Cleaning',
-    'Deep Cleaning',
-    'Retail Space Cleaning',
-    'Residential Cleaning',
-  ],
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -421,10 +387,6 @@ export default function ClarkCountyPage() {
         tone="blue"
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -76,24 +76,6 @@ const faq = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: `${SITE.url}/locations/north-las-vegas/nellis-area`,
-  telephone: SITE.phone.href.replace('tel:', ''),
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  areaServed: [
-    { '@type': 'Place', name: 'Nellis Area, North Las Vegas, NV' },
-    { '@type': 'Place', name: 'North Las Vegas, NV' },
-    { '@type': 'Place', name: 'Clark County, NV' },
-  ],
-  description:
-    'Family-owned commercial cleaning company serving the Nellis area, North Las Vegas, NV.',
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -341,10 +323,6 @@ export default function NellisAreaPage() {
       />
 
       {/* Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

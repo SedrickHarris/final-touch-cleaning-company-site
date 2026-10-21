@@ -83,37 +83,6 @@ const faq = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: SITE.url,
-  telephone: '+17024445077',
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  description:
-    'Family-owned commercial cleaning company serving North Las Vegas, NV. Office, janitorial, post-construction, and property management cleaning.',
-  founder: [
-    { '@type': 'Person', name: 'Scott Maland' },
-    { '@type': 'Person', name: 'Nicole Maland' },
-  ],
-  areaServed: [
-    { '@type': 'City', name: 'North Las Vegas', sameAs: 'https://www.wikidata.org/wiki/Q975168' },
-    { '@type': 'AdministrativeArea', name: 'Clark County, Nevada' },
-  ],
-  serviceType: [
-    'Commercial Cleaning',
-    'Post-Construction Cleanup',
-    'Janitorial Services',
-    'Move-In Cleaning',
-    'Move-Out Cleaning',
-    'Deep Cleaning',
-    'Retail Space Cleaning',
-    'Residential Cleaning',
-  ],
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -438,10 +407,6 @@ export default function NorthLasVegasPage() {
         tone="blue"
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -32,13 +32,14 @@ const manrope = Manrope({
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': `${SITE.url}/#localbusiness`,
   name: 'Final Touch Cleaning Company LLC',
   url: SITE.url,
   telephone: '+17024445077',
   email: SITE.email.display,
   image: `${SITE.url}/images/logo/final-touch-cleaning-company-logo.webp`,
   description:
-    'Family-owned commercial and residential cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City in Clark County, NV.',
+    'Family-owned commercial cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City in Clark County, NV.',
   areaServed: [
     { '@type': 'City', name: 'Las Vegas' },
     { '@type': 'City', name: 'Henderson' },

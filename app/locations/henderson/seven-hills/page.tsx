@@ -85,24 +85,6 @@ const faq = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE.name,
-  url: `${SITE.url}/locations/henderson/seven-hills`,
-  telephone: SITE.phone.href.replace('tel:', ''),
-  email: SITE.email.display,
-  image: 'https://www.finaltouchcleaningteam.com/images/logo/final-touch-cleaning-company-logo.webp',
-  sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],
-  areaServed: [
-    { '@type': 'Place', name: 'Seven Hills, Henderson, NV' },
-    { '@type': 'Place', name: 'Henderson, NV' },
-    { '@type': 'Place', name: 'Clark County, NV' },
-  ],
-  description:
-    'Family-owned commercial cleaning company serving Seven Hills, Henderson, NV.',
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -396,10 +378,6 @@ export default function SevenHillsPage() {
       />
 
       {/* Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
