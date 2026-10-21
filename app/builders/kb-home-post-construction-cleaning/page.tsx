@@ -165,7 +165,7 @@ export default function KBHomePostConstructionPage() {
       <HeroSection
         eyebrow="KB Home · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/kb-home-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/kb-home-post-construction-cleaning-hero-image.webp',
           alt: 'KB Home post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="KB Home Post-Construction Cleanup | Las Vegas, NV"

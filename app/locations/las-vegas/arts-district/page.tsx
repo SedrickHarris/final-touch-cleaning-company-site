@@ -112,7 +112,7 @@ export default function ArtsDistrictPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/arts-district-las-vegas-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/arts-district-las-vegas-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in the Las Vegas Arts District, NV.',
         }}
       />

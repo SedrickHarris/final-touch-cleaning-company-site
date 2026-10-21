@@ -165,7 +165,7 @@ export default function CenturyCommunitiesPostConstructionPage() {
       <HeroSection
         eyebrow="Century Communities · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/century-communities-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/century-communities-post-construction-cleaning-hero-image.webp',
           alt: 'Century Communities post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Century Communities Post-Construction Cleanup | Las Vegas, NV"

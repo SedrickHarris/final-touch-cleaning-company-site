@@ -218,7 +218,7 @@ export default function LawFirmCleaningHendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/law-firm-cleaning-henderson-nv-hero-image.webp',
+          src: '/images/16x9/industries/law-firm-cleaning-henderson-nv-hero-image.webp',
           alt: 'Law firm cleaning in Henderson, NV by Final Touch.',
         }}
       />

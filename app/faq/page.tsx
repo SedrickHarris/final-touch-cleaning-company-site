@@ -307,7 +307,7 @@ export default function FAQPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         image={{
-          src: '/images/heroes/cleaning-service-faq-las-vegas-hero.webp',
+          src: '/images/16x9/heroes/cleaning-service-faq-las-vegas-hero.webp',
           alt: 'Final Touch Cleaning Company FAQs for Las Vegas, NV.',
         }}
       />

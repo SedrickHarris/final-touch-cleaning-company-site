@@ -127,7 +127,7 @@ export default function TollBrothersPostConstructionPage() {
       <HeroSection
         eyebrow="Toll Brothers · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/toll-brothers-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/toll-brothers-post-construction-cleaning-hero-image.webp',
           alt: 'Toll Brothers post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Toll Brothers Post-Construction Cleanup | Las Vegas, NV"

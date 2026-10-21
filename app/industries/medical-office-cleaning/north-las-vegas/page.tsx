@@ -216,7 +216,7 @@ export default function MedicalOfficeCleaningNorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/medical-office-cleaning-north-las-vegas-nv-hero-image.webp',
+          src: '/images/16x9/industries/medical-office-cleaning-north-las-vegas-nv-hero-image.webp',
           alt: 'Medical office cleaning in North Las Vegas, NV by Final Touch.',
         }}
       />

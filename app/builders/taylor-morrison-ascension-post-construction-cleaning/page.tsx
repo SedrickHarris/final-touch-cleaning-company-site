@@ -165,7 +165,7 @@ export default function TaylorMorrisonAscensionPostConstructionPage() {
       <HeroSection
         eyebrow="Taylor Morrison · Ascension · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/taylor-morrison-ascension-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/taylor-morrison-ascension-post-construction-cleaning-hero-image.webp',
           alt: 'Taylor Morrison at Ascension post-construction cleanup - Final Touch Cleaning Company, Henderson NV',
         }}
         heading="Taylor Morrison at Ascension Post-Construction Cleanup | Henderson, NV"

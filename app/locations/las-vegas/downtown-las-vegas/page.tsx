@@ -125,7 +125,7 @@ export default function DowntownLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/downtown-las-vegas-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/downtown-las-vegas-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Downtown Las Vegas, NV.',
         }}
       />

@@ -64,7 +64,7 @@ const faqJsonLd = {
 const ownerImageSlot = (
   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[16px] border border-border-subtle shadow-[0_8px_28px_rgba(26,26,26,0.08)]">
     <Image
-      src="/images/owners/team.webp"
+      src="/images/portrait-9x11/owners/team.webp"
       alt="Scott and Nicole Maland, owners of Final Touch Cleaning Company, Las Vegas NV"
       fill
       sizes="(min-width: 1024px) 45vw, 100vw"

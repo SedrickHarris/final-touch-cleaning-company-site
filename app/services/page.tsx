@@ -139,7 +139,7 @@ export default function ServicesPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/cleaning-services-las-vegas-clark-county-hero.webp',
+          src: '/images/16x9/heroes/cleaning-services-las-vegas-clark-county-hero.webp',
           alt: 'Commercial cleaning services in Las Vegas and Clark County, NV by Final Touch.',
         }}
       />

@@ -97,7 +97,7 @@ export default function LocationsPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         image={{
-          src: '/images/heroes/clark-county-cleaning-service-area-hero.webp',
+          src: '/images/16x9/heroes/clark-county-cleaning-service-area-hero.webp',
           alt: 'Clark County, Nevada service area cleaned by Final Touch.',
         }}
       />

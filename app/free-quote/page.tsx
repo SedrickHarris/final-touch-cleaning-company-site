@@ -85,7 +85,7 @@ export default function FreeQuotePage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/free-cleaning-quote-las-vegas-hero.webp',
+          src: '/images/16x9/heroes/free-cleaning-quote-las-vegas-hero.webp',
           alt: 'Request a free cleaning quote from Final Touch in Las Vegas, NV.',
         }}
       />

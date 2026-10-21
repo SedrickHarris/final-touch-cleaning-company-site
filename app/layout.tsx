@@ -23,7 +23,7 @@ const manrope = Manrope({
   weight: ['400', '500', '600', '700'],
 });
 
-const OG_IMAGE = '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp';
+const OG_IMAGE = '/images/16x9/heroes/final-touch-cleaning-services-las-vegas-hero.webp';
 
 // Global LocalBusiness JSON-LD — single site-wide node per
 // docs/site-os/build-status-reconciliation.md §5. Service-area business:

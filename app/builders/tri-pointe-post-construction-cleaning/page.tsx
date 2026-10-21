@@ -165,7 +165,7 @@ export default function TriPointePostConstructionPage() {
       <HeroSection
         eyebrow="Tri Pointe Homes · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/tri-pointe-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/tri-pointe-post-construction-cleaning-hero-image.webp',
           alt: 'Tri Pointe Homes post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Tri Pointe Homes Post-Construction Cleanup | Las Vegas & Summerlin, NV"

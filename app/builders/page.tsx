@@ -157,7 +157,7 @@ export default function BuildersHubPage() {
       <HeroSection
         eyebrow="Builder Post-Construction Cleaning"
         image={{
-          src: '/images/builders/builders-post-construction-cleaning-hub-hero-image.webp',
+          src: '/images/16x9/builders/builders-post-construction-cleaning-hub-hero-image.webp',
           alt: 'Post-construction cleaning for new builds - Final Touch Cleaning Company, Las Vegas Valley NV',
         }}
         heading="Post-Construction Cleaning for New Builds | Las Vegas Valley Builders"

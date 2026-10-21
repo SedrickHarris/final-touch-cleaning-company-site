@@ -167,7 +167,7 @@ export default function PulteHomesPostConstructionPage() {
       <HeroSection
         eyebrow="Pulte Homes · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/pulte-homes-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/pulte-homes-post-construction-cleaning-hero-image.webp',
           alt: 'Pulte Homes post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Pulte Homes Post-Construction Cleanup | Las Vegas, NV"

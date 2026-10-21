@@ -165,7 +165,7 @@ export default function DRHortonPostConstructionPage() {
       <HeroSection
         eyebrow="D.R. Horton · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/dr-horton-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/dr-horton-post-construction-cleaning-hero-image.webp',
           alt: 'D.R. Horton post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="D.R. Horton Post-Construction Cleanup | Las Vegas, NV"

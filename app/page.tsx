@@ -188,7 +188,7 @@ export default function HomePage() {
           src: '/videos/hero-bg.mp4',
           // Poster reuses the existing homepage hero photo (no new asset needed).
           // Covers all three fallback cases: pre-load, mobile, and reduced-motion.
-          poster: '/images/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
+          poster: '/images/16x9/heroes/final-touch-cleaning-services-las-vegas-hero.webp',
         }}
       />
 

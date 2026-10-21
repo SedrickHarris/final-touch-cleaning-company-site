@@ -81,7 +81,7 @@ export default function PricingPage() {
       <HeroSection
         eyebrow="Pricing"
         image={{
-          src: '/images/builders/pricing-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/pricing-commercial-cleaning-hero-image.webp',
           alt: 'Free cleaning quote and walkthrough - Final Touch Cleaning Company, Las Vegas NV',
         }}
         heading="How Commercial Cleaning Pricing Works at Final Touch"

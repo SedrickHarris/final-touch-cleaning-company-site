@@ -217,7 +217,7 @@ export default function RestaurantCleaningHendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/restaurant-cleaning-henderson-nv-hero-image.webp',
+          src: '/images/16x9/industries/restaurant-cleaning-henderson-nv-hero-image.webp',
           alt: 'Restaurant cleaning in Henderson, NV by Final Touch.',
         }}
       />

@@ -213,7 +213,7 @@ export default function PropertyManagementCleaningNorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/property-management-cleaning-north-las-vegas-nv-hero-image.webp',
+          src: '/images/16x9/industries/property-management-cleaning-north-las-vegas-nv-hero-image.webp',
           alt: 'Property management cleaning in North Las Vegas, NV by Final Touch.',
         }}
       />

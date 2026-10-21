@@ -165,7 +165,7 @@ export default function LennarPostConstructionPage() {
       <HeroSection
         eyebrow="Lennar · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/lennar-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/lennar-post-construction-cleaning-hero-image.webp',
           alt: 'Lennar post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Lennar Post-Construction Cleanup | Henderson & Las Vegas, NV"

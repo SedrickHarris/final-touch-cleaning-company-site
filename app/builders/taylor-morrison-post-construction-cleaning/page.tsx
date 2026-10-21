@@ -165,7 +165,7 @@ export default function TaylorMorrisonPostConstructionPage() {
       <HeroSection
         eyebrow="Taylor Morrison · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/taylor-morrison-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/taylor-morrison-post-construction-cleaning-hero-image.webp',
           alt: 'Taylor Morrison post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Taylor Morrison Post-Construction Cleanup | Henderson & Las Vegas, NV"

@@ -50,7 +50,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/commercial-office-cleaning',
     shortDescription: 'Routine and detail-led cleans for offices and commercial interiors.',
     image: {
-      src: '/images/services/commercial-office-cleaning-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/commercial-office-cleaning-las-vegas-nv-final-touch.webp',
       alt: 'Commercial office cleaning by Final Touch in Las Vegas, NV.',
     },
   },
@@ -60,7 +60,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/janitorial-services',
     shortDescription: 'Scheduled cleaning programs for ongoing facility maintenance.',
     image: {
-      src: '/images/services/janitorial-services-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/janitorial-services-las-vegas-nv-final-touch.webp',
       alt: 'Janitorial services by Final Touch in Las Vegas, NV.',
     },
   },
@@ -70,7 +70,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/post-construction-cleanup',
     shortDescription: 'Final-touch detail cleans after new builds and renovations.',
     image: {
-      src: '/images/services/post-construction-cleanup-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/post-construction-cleanup-las-vegas-nv-final-touch.webp',
       alt: 'Post-construction cleanup by Final Touch in Las Vegas, NV.',
     },
   },
@@ -80,7 +80,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/move-in-cleaning',
     shortDescription: 'Top-to-bottom cleans before you settle into a new space.',
     image: {
-      src: '/images/services/move-in-cleaning-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/move-in-cleaning-las-vegas-nv-final-touch.webp',
       alt: 'Move-in cleaning by Final Touch in Las Vegas, NV.',
     },
   },
@@ -90,7 +90,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/move-out-cleaning',
     shortDescription: 'Deposit-ready cleans when you hand back the keys.',
     image: {
-      src: '/images/services/move-out-cleaning-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/move-out-cleaning-las-vegas-nv-final-touch.webp',
       alt: 'Move-out cleaning by Final Touch in Las Vegas, NV.',
     },
   },
@@ -100,7 +100,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/deep-cleaning',
     shortDescription: 'Periodic deep cleans for the corners standard service skips.',
     image: {
-      src: '/images/services/deep-cleaning-baseboards-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/deep-cleaning-baseboards-las-vegas-nv-final-touch.webp',
       alt: 'Deep cleaning of baseboards by Final Touch in Las Vegas, NV.',
     },
   },
@@ -110,7 +110,7 @@ export const SERVICES: ReadonlyArray<{
     href: '/services/retail-space-cleaning',
     shortDescription: 'Customer-ready cleans for storefronts and retail interiors.',
     image: {
-      src: '/images/services/retail-space-cleaning-las-vegas-nv-final-touch.webp',
+      src: '/images/16x10/services/retail-space-cleaning-las-vegas-nv-final-touch.webp',
       alt: 'Retail space cleaning by Final Touch in Las Vegas, NV.',
     },
   },
@@ -136,7 +136,7 @@ export const LOCATIONS: ReadonlyArray<{
     href: '/locations/las-vegas',
     shortDescription: 'Cleaning services for homes and businesses across Las Vegas.',
     image: {
-      src: '/images/locations/las-vegas-commercial-cleaning-location-card-image.webp',
+      src: '/images/4x3/locations/las-vegas-commercial-cleaning-location-card-image.webp',
       alt: 'Commercial cleaning services in Las Vegas, NV by Final Touch.',
     },
   },
@@ -146,7 +146,7 @@ export const LOCATIONS: ReadonlyArray<{
     href: '/locations/henderson',
     shortDescription: 'Detail-focused cleaning across Henderson neighborhoods and corridors.',
     image: {
-      src: '/images/locations/henderson-commercial-cleaning-location-card-image.webp',
+      src: '/images/4x3/locations/henderson-commercial-cleaning-location-card-image.webp',
       alt: 'Commercial cleaning services in Henderson, NV by Final Touch.',
     },
   },
@@ -156,7 +156,7 @@ export const LOCATIONS: ReadonlyArray<{
     href: '/locations/north-las-vegas',
     shortDescription: 'Cleaning services for North Las Vegas residents and businesses.',
     image: {
-      src: '/images/locations/north-las-vegas-commercial-cleaning-location-card-image.webp',
+      src: '/images/4x3/locations/north-las-vegas-commercial-cleaning-location-card-image.webp',
       alt: 'Commercial cleaning services in North Las Vegas, NV by Final Touch.',
     },
   },
@@ -166,7 +166,7 @@ export const LOCATIONS: ReadonlyArray<{
     href: '/locations/boulder-city',
     shortDescription: 'Local cleaning for Boulder City homes and storefronts.',
     image: {
-      src: '/images/locations/boulder-city-commercial-cleaning-location-card-image.webp',
+      src: '/images/4x3/locations/boulder-city-commercial-cleaning-location-card-image.webp',
       alt: 'Commercial cleaning in Boulder City, NV by Final Touch.',
     },
   },
@@ -176,7 +176,7 @@ export const LOCATIONS: ReadonlyArray<{
     href: '/locations/clark-county',
     shortDescription: 'County-wide service for Clark County, Nevada. One team, one standard.',
     image: {
-      src: '/images/locations/clark-county-commercial-cleaning-location-card-image.webp',
+      src: '/images/4x3/locations/clark-county-commercial-cleaning-location-card-image.webp',
       alt: 'County-wide cleaning across Clark County, NV by Final Touch.',
     },
   },

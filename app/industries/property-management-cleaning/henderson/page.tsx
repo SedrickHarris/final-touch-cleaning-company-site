@@ -225,7 +225,7 @@ export default function PropertyManagementCleaningHendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/property-management-cleaning-henderson-nv-hero-image.webp',
+          src: '/images/16x9/industries/property-management-cleaning-henderson-nv-hero-image.webp',
           alt: 'Property management cleaning in Henderson, NV by Final Touch.',
         }}
       />

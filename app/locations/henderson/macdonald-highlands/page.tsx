@@ -120,7 +120,7 @@ export default function MacdonaldHighlandsPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/macdonald-highlands-henderson-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/macdonald-highlands-henderson-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in MacDonald Highlands, Henderson, NV.',
         }}
       />

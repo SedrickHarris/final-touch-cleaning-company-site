@@ -121,7 +121,7 @@ export default function GreenValleyRanchPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/green-valley-ranch-henderson-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/green-valley-ranch-henderson-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Green Valley Ranch, Henderson, NV.',
         }}
       />

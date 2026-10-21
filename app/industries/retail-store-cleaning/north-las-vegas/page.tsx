@@ -208,7 +208,7 @@ export default function RetailStoreCleaningNorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/retail-store-cleaning-north-las-vegas-nv-hero-image.webp',
+          src: '/images/16x9/industries/retail-store-cleaning-north-las-vegas-nv-hero-image.webp',
           alt: 'Retail store cleaning in North Las Vegas, NV by Final Touch.',
         }}
       />

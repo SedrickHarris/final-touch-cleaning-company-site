@@ -61,7 +61,7 @@ export default function ReviewsPage() {
       <HeroSection
         eyebrow="Customer Reviews"
         image={{
-          src: '/images/builders/reviews-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/reviews-commercial-cleaning-hero-image.webp',
           alt: 'Customer reviewed cleaning service - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="What Commercial Cleaning Clients Say About Final Touch"

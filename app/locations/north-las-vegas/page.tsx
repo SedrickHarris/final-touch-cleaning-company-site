@@ -143,7 +143,7 @@ export default function NorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/locations/north-las-vegas-commercial-cleaning-hero.webp',
+          src: '/images/16x9/heroes/locations/north-las-vegas-commercial-cleaning-hero.webp',
           alt: 'Commercial cleaning in North Las Vegas, NV by Final Touch.',
         }}
       />

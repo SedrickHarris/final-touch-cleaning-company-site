@@ -208,7 +208,7 @@ export default function RetailStoreCleaningHendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/retail-store-cleaning-henderson-nv-hero-image.webp',
+          src: '/images/16x9/industries/retail-store-cleaning-henderson-nv-hero-image.webp',
           alt: 'Retail store cleaning in Henderson, NV by Final Touch.',
         }}
       />

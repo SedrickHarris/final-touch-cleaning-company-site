@@ -138,7 +138,7 @@ export default function ClarkCountyPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/locations/clark-county-commercial-cleaning-service-area-hero.webp',
+          src: '/images/16x9/heroes/locations/clark-county-commercial-cleaning-service-area-hero.webp',
           alt: 'County-wide cleaning across Clark County, NV by Final Touch.',
         }}
       />

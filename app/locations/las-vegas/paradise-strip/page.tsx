@@ -113,7 +113,7 @@ export default function ParadiseStripPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/paradise-las-vegas-strip-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/paradise-las-vegas-strip-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Paradise and the Las Vegas Strip, NV.',
         }}
       />

@@ -218,7 +218,7 @@ export default function LawFirmCleaningNorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/law-firm-cleaning-north-las-vegas-nv-hero-image.webp',
+          src: '/images/16x9/industries/law-firm-cleaning-north-las-vegas-nv-hero-image.webp',
           alt: 'Law firm cleaning in North Las Vegas, NV by Final Touch.',
         }}
       />

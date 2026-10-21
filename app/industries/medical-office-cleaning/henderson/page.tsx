@@ -228,7 +228,7 @@ export default function MedicalOfficeCleaningHendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/industries/medical-office-cleaning-henderson-nv-hero-image.webp',
+          src: '/images/16x9/industries/medical-office-cleaning-henderson-nv-hero-image.webp',
           alt: 'Medical office cleaning in Henderson, NV by Final Touch.',
         }}
       />

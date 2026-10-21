@@ -213,7 +213,7 @@ export default function AboutPage() {
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         image={{
-          src: '/images/heroes/family-owned-cleaning-company-las-vegas-hero.webp',
+          src: '/images/16x9/heroes/family-owned-cleaning-company-las-vegas-hero.webp',
           alt: 'Family-owned commercial cleaning team serving Las Vegas, NV.',
         }}
       />
@@ -257,7 +257,7 @@ export default function AboutPage() {
             <figure className="order-1 lg:order-none">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[14px] border border-border-subtle bg-light-gray">
                 <Image
-                  src="/images/owners/team.webp"
+                  src="/images/portrait-9x11/owners/team.webp"
                   alt={`${SITE.owners}, owners of ${SITE.name}.`}
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"

@@ -113,7 +113,7 @@ export default function AlianteNorthLasVegasPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/aliante-north-las-vegas-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/aliante-north-las-vegas-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Aliante, North Las Vegas, NV.',
         }}
       />

@@ -223,7 +223,7 @@ export default function ChiropracticCleaningNorthLasVegasPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* 1. Hero */}
-      {/* TODO-PHOTO: public/images/industries/chiropractic-cleaning-north-las-vegas-nv-hero-image.webp */}
+      {/* TODO-PHOTO: public/images/16x9/industries/chiropractic-cleaning-north-las-vegas-nv-hero-image.webp */}
       <HeroSection
         eyebrow="Chiropractic and Physical Therapy Cleaning · North Las Vegas, NV"
         heading="Chiropractic and Physical Therapy Office Cleaning in North Las Vegas, NV"

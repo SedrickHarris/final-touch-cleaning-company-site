@@ -279,7 +279,7 @@ export default function IndustriesHubPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/commercial-cleaning-industries-hub-hero-image.webp',
+          src: '/images/16x9/heroes/commercial-cleaning-industries-hub-hero-image.webp',
           alt: 'Industry cleaning services in Las Vegas, NV by Final Touch.',
         }}
       />

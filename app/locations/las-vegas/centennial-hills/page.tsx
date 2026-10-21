@@ -112,7 +112,7 @@ export default function CentennialHillsPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/centennial-hills-las-vegas-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/centennial-hills-las-vegas-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Centennial Hills, Las Vegas, NV.',
         }}
       />

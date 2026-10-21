@@ -112,7 +112,7 @@ export default function SunriseManorPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/locations/sunrise-manor-las-vegas-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/locations/sunrise-manor-las-vegas-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning service by Final Touch in Sunrise Manor, Las Vegas, NV.',
         }}
       />

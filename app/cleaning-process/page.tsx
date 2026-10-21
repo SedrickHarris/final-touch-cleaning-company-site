@@ -111,7 +111,7 @@ export default function CleaningProcessPage() {
       <HeroSection
         eyebrow="Our Process"
         image={{
-          src: '/images/builders/cleaning-process-commercial-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/cleaning-process-commercial-cleaning-hero-image.webp',
           alt: 'Professional cleaning process - Final Touch Cleaning Company, Las Vegas NV',
         }}
         heading="How Final Touch's Commercial Cleaning Process Works"

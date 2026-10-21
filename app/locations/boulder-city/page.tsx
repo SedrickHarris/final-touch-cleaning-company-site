@@ -136,7 +136,7 @@ export default function BoulderCityPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/locations/boulder-city-commercial-cleaning-hero.webp',
+          src: '/images/16x9/heroes/locations/boulder-city-commercial-cleaning-hero.webp',
           alt: 'Commercial cleaning in Boulder City, NV by Final Touch.',
         }}
       />

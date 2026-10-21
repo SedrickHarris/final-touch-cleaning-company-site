@@ -165,7 +165,7 @@ export default function SheaHomesPostConstructionPage() {
       <HeroSection
         eyebrow="Shea Homes · Post-Construction Cleaning"
         image={{
-          src: '/images/builders/shea-homes-post-construction-cleaning-hero-image.webp',
+          src: '/images/16x9/builders/shea-homes-post-construction-cleaning-hero-image.webp',
           alt: 'Shea Homes post-construction cleanup - Final Touch Cleaning Company, Clark County NV',
         }}
         heading="Shea Homes Post-Construction Cleanup | Las Vegas & Summerlin, NV"

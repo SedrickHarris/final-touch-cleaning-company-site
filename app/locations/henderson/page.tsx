@@ -141,7 +141,7 @@ export default function HendersonPage() {
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
         image={{
-          src: '/images/heroes/locations/henderson-commercial-cleaning-hero.webp',
+          src: '/images/16x9/heroes/locations/henderson-commercial-cleaning-hero.webp',
           alt: 'Commercial cleaning in Henderson, NV by Final Touch.',
         }}
       />
