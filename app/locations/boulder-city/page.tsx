@@ -58,11 +58,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Boulder City?',
-    a: 'Final Touch offers seven services in Boulder City: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning. Both commercial and residential properties are served.',
-  },
-  {
-    q: 'Does Final Touch clean older and historic homes in Boulder City?',
-    a: 'Yes. Boulder City has a stock of older, character-rich homes that benefit from a thorough deep clean that reaches the surfaces and areas routine maintenance skips. Final Touch brings a detail-focused approach to homes of all ages and styles throughout the city.',
+    a: 'Final Touch offers seven services in Boulder City: commercial and office cleaning, janitorial services, post-construction cleanup, move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning.',
   },
   {
     q: 'Can Final Touch handle cleaning for Boulder City small businesses and storefronts?',

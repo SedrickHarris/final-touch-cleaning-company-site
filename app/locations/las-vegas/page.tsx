@@ -57,7 +57,7 @@ const faq = [
   },
   {
     q: 'What cleaning services does Final Touch offer in Las Vegas?',
-    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, and post-construction cleanup are the primary focus - serving businesses, property managers, and landlords across the city. Move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning are also available. Commercial and post-construction work leads the service mix, with residential and rental-turnover cleans available alongside it.`,
+    a: `Final Touch offers seven services in Las Vegas: commercial and office cleaning, janitorial services, and post-construction cleanup are the primary focus - serving businesses, property managers, and landlords across the city. Move-in cleaning, move-out cleaning, deep cleaning, and retail space cleaning are also available. Commercial and post-construction work leads the service mix, with rental-turnover cleans available alongside it.`,
   },
   {
     q: 'Does Final Touch provide ongoing commercial cleaning programs for Las Vegas businesses?',

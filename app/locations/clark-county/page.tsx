@@ -101,7 +101,7 @@ export default function ClarkCountyPage() {
       <HeroSection
         eyebrow="County-wide service area"
         heading="Commercial Cleaning Services in Clark County, NV"
-        sub={`Final Touch provides residential and commercial cleaning across all of ${SITE.serviceArea.county}, Nevada. Las Vegas, Henderson, North Las Vegas, Boulder City, and the unincorporated areas in between. ${SITE.owners} own and run the company locally, serving every part of the county with the same standard.`}
+        sub={`Final Touch provides commercial cleaning across all of ${SITE.serviceArea.county}, Nevada. Las Vegas, Henderson, North Las Vegas, Boulder City, and the unincorporated areas in between. ${SITE.owners} own and run the company locally, serving every part of the county with the same standard.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
