@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: 'What makes cleaning in Anthem different from other Henderson neighborhoods?',
-    a: "Anthem is a master-planned community in Henderson, with a mix of long-term owner-occupied homes and properties that see active buyer turnover. Homes in Anthem often carry higher finish levels and larger square footage than the Henderson average, which means deep cleaning and move-in services require more time and attention to detail to meet the community's standard.",
+    a: "Anthem is one of Henderson's most established master-planned communities, with a mix of long-term owner-occupied homes and properties that see active buyer turnover. Homes in Anthem often carry higher finish levels and larger square footage than the Henderson average, which means deep cleaning and move-in services require more time and attention to detail to meet the community's standard.",
   },
   {
     q: 'What cleaning services does Final Touch offer in Anthem?',
@@ -120,7 +120,7 @@ export default function AnthemPage() {
       <HeroSection
         eyebrow="Master-Planned Community"
         heading="Commercial Cleaning Services in Anthem, Henderson, NV"
-        sub={`Final Touch serves homes and businesses throughout Anthem, Henderson. Move-in, move-out, deep cleaning, and commercial cleaning for a master-planned community in Henderson. Call ${SITE.phone.display} or request a free quote.`}
+        sub={`Final Touch serves homes and businesses throughout Anthem, Henderson. Move-in, move-out, deep cleaning, and commercial cleaning for one of Henderson's most established communities. Call ${SITE.phone.display} or request a free quote.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
@@ -158,7 +158,7 @@ export default function AnthemPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                heading: 'A master-planned community in southern Henderson',
+                heading: "One of Henderson's most established communities",
                 body: 'Anthem is a large master-planned community in southern Henderson that developed primarily in the late 1990s and 2000s. It includes a range of neighborhoods from more accessible single-family homes to the guard-gated Anthem Country Club enclave. The community is mature, well-maintained, and draws buyers who value established infrastructure and community character.',
               },
               {

@@ -135,7 +135,7 @@ export default function NorthLasVegasPage() {
       <HeroSection
         eyebrow={`Serving ${SITE.serviceArea.county}, NV`}
         heading="Commercial Cleaning Services in North Las Vegas, NV"
-        sub={`Final Touch provides commercial and post-construction cleaning across North Las Vegas. From post-construction detail work on new builds to commercial programs along the industrial corridors, ${SITE.owners} and the team serve North Las Vegas properties with the same standard every time.`}
+        sub={`Final Touch provides commercial and post-construction cleaning across North Las Vegas, one of the fastest-growing cities in the Las Vegas Valley. From post-construction detail work on new builds to commercial programs along the industrial corridors, ${SITE.owners} and the team serve North Las Vegas properties with the same standard every time.`}
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
         formSlot={<QuoteFormPlaceholder />}
