@@ -5,7 +5,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import GoogleReviewsSection from '@/components/reviews/GoogleReviewsSection';
 import { getPlaceUrl } from '@/lib/google-reviews';
-import { CTAS, SITE } from '@/lib/constants/site';
+import { CTAS, GOOGLE_REVIEW_URL, REVIEWS_SITE_URL, SITE } from '@/lib/constants/site';
 import { ROUTES } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 };
 
 const GBP_URL = getPlaceUrl();
-const GBP_REVIEW_URL = 'https://g.page/r/CXZ0dloSv5hJEBI/review';
 
 const faq = [
   {
@@ -73,6 +72,24 @@ export default function ReviewsPage() {
 
       <GoogleReviewsSection variant="carousel" heading="What our clients say." eyebrow="Google Reviews" showSummary autoPlayMs={6000} />
 
+      <section aria-labelledby="all-reviews-heading" className="bg-brand-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 text-center">
+          <h2 id="all-reviews-heading" className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-brand-black">See Every Review in One Place</h2>
+          <p className="mt-3 text-base sm:text-lg text-muted leading-relaxed">
+            The full set of Google reviews is also available on our dedicated reviews page.
+          </p>
+          <a
+            href={REVIEWS_SITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-6 py-4 text-base font-semibold text-white hover:bg-brand-blue-hover transition-colors min-h-[48px]"
+          >
+            View All Google Reviews
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </section>
+
       <section className="bg-light-gray">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-brand-black">About these reviews</h2>
@@ -80,7 +97,7 @@ export default function ReviewsPage() {
             Every review displayed on this page comes directly from the Final Touch Cleaning Company Google Business Profile. Reviews are posted by verified Google users who hired Final Touch for cleaning services across Clark County, NV, including Las Vegas, Henderson, North Las Vegas, and Boulder City. No reviews on this page are invented, altered, or anonymized. Visit the{' '}
             <a href={GBP_URL} target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">Final Touch Google listing</a>{' '}
             to see the complete and current review history, or{' '}
-            <a href={GBP_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">leave a review</a>{' '}
+            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">leave a review</a>{' '}
             if you have used the service.
           </p>
         </div>

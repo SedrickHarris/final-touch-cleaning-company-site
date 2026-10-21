@@ -26,6 +26,12 @@ export const SITE = {
   },
 } as const;
 
+// Dedicated Google reviews site (separate domain). Link to it from /reviews only.
+export const REVIEWS_SITE_URL = 'https://finaltouchcleaningteamreviews.com/';
+
+// Owner-confirmed Google review link. Single source for hardcoded uses in app code.
+export const GOOGLE_REVIEW_URL = 'https://g.page/r/CXZ0dloSv5hJEBE/review';
+
 export const CTAS = {
   primary: 'Request a Free Quote',
   call: 'Call Now',

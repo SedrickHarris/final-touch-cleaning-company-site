@@ -5281,3 +5281,21 @@ Simplification pass (this commit):
     homepage carousel, neutral fallback) was already correct and is unchanged.
 
 Did not deploy.
+
+
+## Reviews site link and review-link fix (2026-10-20)
+
+**Scope:** Fast Build Batch. `app/reviews/page.tsx`, `lib/constants/site.ts`, and this log only. No package, config, or deployment changes. No commit, push, or deploy. The reviews repo was not modified.
+
+**Changes:**
+- `lib/constants/site.ts`: added `REVIEWS_SITE_URL` (`https://finaltouchcleaningteamreviews.com/`) and `GOOGLE_REVIEW_URL` (`https://g.page/r/CXZ0dloSv5hJEBE/review`, owner-confirmed).
+- `app/reviews/page.tsx`: removed the hardcoded `CXZ0dloSv5hJEBI` link and the local `GBP_REVIEW_URL`; the "leave a review" link now uses `GOOGLE_REVIEW_URL`. Added a "See Every Review in One Place" block under the carousel with a "View All Google Reviews" button to `REVIEWS_SITE_URL` (`target="_blank"`, `rel="noopener noreferrer"`).
+
+**Old link occurrences found (`CXZ0dloSv5hJEBI`):**
+1. `app/reviews/page.tsx:26` - fixed.
+2. `data/google-reviews.json:7` (`writeReviewUrl`) - NOT changed (out of scope for this batch). It feeds the "Leave a review" button in the reviews carousel on `/reviews` and in the grid/carousel on the home page via `getWriteReviewUrl()`. The fetch script preserves this field, so editing the JSON is stable. **Open item: owner decision needed to update this value.**
+3. This log (historical entry, left as written).
+
+**Reminder:** do not push until https://finaltouchcleaningteamreviews.com/ is live over HTTPS, because pushes to main auto-deploy and the new button would otherwise point to a dead domain.
+
+**Follow-up (owner-approved):** updated `writeReviewUrl` in `data/google-reviews.json` to `https://g.page/r/CXZ0dloSv5hJEBE/review`. This was the remaining source of the old `CXZ0dloSv5hJEBI` link in the carousel and grid on `/reviews` and the home page. Only that one field changed; reviews and summary are untouched. The old link now appears only in the historical log entry above.
