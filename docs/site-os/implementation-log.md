@@ -5299,3 +5299,34 @@ Did not deploy.
 **Reminder:** do not push until https://finaltouchcleaningteamreviews.com/ is live over HTTPS, because pushes to main auto-deploy and the new button would otherwise point to a dead domain.
 
 **Follow-up (owner-approved):** updated `writeReviewUrl` in `data/google-reviews.json` to `https://g.page/r/CXZ0dloSv5hJEBE/review`. This was the remaining source of the old `CXZ0dloSv5hJEBI` link in the carousel and grid on `/reviews` and the home page. Only that one field changed; reviews and summary are untouched. The old link now appears only in the historical log entry above.
+
+## Blog hub, category pages, and post template (2026-11-17)
+
+**Workflow:** Fast Build Batch. **Status:** Implemented pending review. No commit, deploy, or package changes.
+
+**Created:** `lib/constants/blog.ts`, `lib/content/blog/{types.ts,posts.ts,render.tsx}`, `components/blog/{BlogCard,BlogHero,BlogCategoryChips,BlogPostHeader,BlogArticleBody,BlogToc,BlogSidebar,BlogInlineCta}.tsx`, `app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, `docs/site-os/owner-confirmed-facts.md`.
+**Edited:** `lib/constants/routes.ts` (`ROUTES.blog`, Blog in `FOOTER_NAV.company` only), `docs/site-os/no-fake-data-policy.md` (one pointer line to owner-confirmed-facts.md, user-requested), this log, `internal-link-map.md`.
+
+**Routes added (3):** `/blog`, `/blog/post-construction-cleaning`, `/blog/what-should-be-cleaned-after-construction-work`. HTML files in `out/`: 138 before, 141 after.
+
+**Validation:** lint (0 errors; warnings are the pre-existing GTM one in layout.tsx), type-check, and build pass. One H1, canonical, description, and valid JSON-LD on each page. Post emits Article + FAQPage + BreadcrumbList. No em dashes, AggregateRating, Review, or streetAddress. The "Person" and sameAs strings in blog output come only from the existing global LocalBusiness in layout.tsx.
+
+**Open items:**
+- TODO-VERIFY (RESOLVED 2026-11-17): post 1 publish date confirmed by owner as 2026-11-17 and set in `posts.ts`.
+- TODO-BATCH-8 (RESOLVED 2026-11-17, see Blog sitemap fix entry): XML sitemap (`app/sitemap.ts`) skips `[param]` routes, so the two dynamic blog URLs (category and post) are missing. The `/sitemap` page (`app/sitemap/page.tsx`) has a hardcoded list with no blog entries. Both files are outside Step 1 scope; neither edited.
+- No global mobile sticky CTA bar exists (only a sticky header). Gap, not built here.
+- `docs/site-os/blog-launch-list.md` was missing from the repo; not created.
+
+
+## Blog sitemap fix (2026-11-17)
+
+**Workflow:** Fast Build Batch. **Status:** Implemented pending review. No commit, deploy, or package changes. Resolves both blog `TODO-BATCH-8` items.
+
+**Changed:**
+- `lib/constants/blog.ts`: added `getBlogRoutes()` (hub, categories with a published post, published posts; `lastModified` from `updatedAt` else `publishedAt`, omitted if neither).
+- `app/sitemap.ts`: merges `getBlogRoutes()` into the existing file scan (de-duplicated, so `/blog` appears once). Still `force-static`. Existing entries unchanged; `lastmod` is emitted only when a post has a date.
+- `app/sitemap/page.tsx`: new "Blog" section built from `getBlogRoutes()`, using the existing `LinkList` and `Section` markup. Posts show their title.
+
+**Verified:** lint (0 errors; the existing GTM warning in layout.tsx remains), type-check, and build pass. `sitemap.xml` URLs 127 to 129 (+2: the category and the post; `/blog` was already listed once). Exactly the three blog URLs, no trailing slash, no `lastmod` (post has no date). `/sitemap` links to all three blog URLs, which resolve. HTML file count unchanged at 141. No em dashes. `public/robots.txt` references the sitemap.
+
+**Future posts:** verified by reading the code, not by a stub test. A new entry in `posts.ts` flows through `getPublishedPosts()` into `getBlogRoutes()`, which feeds both files, and into `generateStaticParams`. A category appears once it has a published post.

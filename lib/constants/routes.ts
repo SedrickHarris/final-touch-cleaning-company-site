@@ -13,6 +13,7 @@ export const ROUTES = {
   gallery: '/gallery',
   pricing: '/pricing',
   faq: '/faq',
+  blog: '/blog',
   contact: '/contact',
   freeQuote: '/free-quote',
   ourTeam: '/our-team',
@@ -265,6 +266,7 @@ export const FOOTER_NAV = {
     { label: 'Builders',         href: ROUTES.builders },
     { label: 'Industries',       href: ROUTES.industries },
     { label: 'Reviews',          href: ROUTES.reviews },
+    { label: 'Blog',             href: ROUTES.blog },
     { label: 'Contact',          href: ROUTES.contact },
   ],
   legal: [

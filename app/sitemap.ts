@@ -1,11 +1,15 @@
 // Generated at build time from app/**/page.tsx.
 // - Excludes noindex pages (source contains `index: false`), e.g. /sitemap and /thank-you.
 // - Excludes move-out routes. Remove that filter after the move-out deletion lands.
-// Output is url only: there is no real per-page date source, so no lastmod.
+// - Blog category and post routes are dynamic ([slug]), so they are added from
+//   getBlogRoutes() (published content only). lastModified comes from a post's
+//   updatedAt or publishedAt, and is omitted when neither exists.
+// Other pages are url only: there is no real per-page date source, so no lastmod.
 import type { MetadataRoute } from 'next';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { SITE } from '@/lib/constants/site';
+import { getBlogRoutes } from '@/lib/constants/blog';
 
 export const dynamic = 'force-static';
 
@@ -45,7 +49,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
     .map(fileToRoute);
 
-  return Array.from(new Set(routes))
+  const blog = getBlogRoutes();
+  const lastModified = new Map(blog.map((r) => [r.href, r.lastModified]));
+
+  return Array.from(new Set([...routes, ...blog.map((r) => r.href)]))
     .sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)))
-    .map((route) => ({ url: route === '/' ? `${SITE.url}/` : `${SITE.url}${route}` }));
+    .map((route) => {
+      const url = route === '/' ? `${SITE.url}/` : `${SITE.url}${route}`;
+      const lm = lastModified.get(route);
+      return lm ? { url, lastModified: lm } : { url };
+    });
 }

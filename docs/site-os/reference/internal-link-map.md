@@ -147,3 +147,14 @@ Pattern (applies to every matrix page):
 Site OS — Internal Link Map v1.0
 Created: 2026-05-18
 Reason: provide a state file for Mode 2 audit prompts so link integrity checks have a source of truth to read against rather than re-inferring intent from source code and TODO comments.
+
+## Blog (built routes, 2026-11-17)
+
+| Route | Type | Outbound | Inbound | Status |
+|-------|------|----------|---------|--------|
+| /blog | Blog hub | /free-quote; featured and listed posts; category chips | Footer (Company) | Built |
+| /blog/post-construction-cleaning | Blog category | /blog; /free-quote; category posts | /blog chips; post breadcrumb and chip | Built |
+| /blog/what-should-be-cleaned-after-construction-work | Blog post | /services/post-construction-cleanup (once in body, plus sidebar pillar card); /services/post-construction-cleanup/{clark-county,las-vegas,henderson,north-las-vegas,boulder-city}; /services/retail-space-cleaning; /services/commercial-office-cleaning; /our-team; /cleaning-process; /faq; /free-quote (inline CTA, article close, sidebar, final CTA) | /blog featured card; category page | Built |
+
+Deferred or not linked: `/pricing` (pricing not owner-confirmed), `/certifications` (not built).
+Follow-ups (out of scope): inbound links to the post from `/services/post-construction-cleanup` and the five post-construction city pages; Blog in `PRIMARY_NAV` (owner decision).

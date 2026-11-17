@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE } from '@/lib/constants/site';
+import { getBlogRoutes } from '@/lib/constants/blog';
 import { ROUTES, SERVICES, LOCATIONS, NEIGHBORHOODS } from '@/lib/constants/routes';
 
 export const metadata: Metadata = {
@@ -56,6 +57,13 @@ const serviceCityPages: SitemapLink[] = SERVICES.flatMap((s) =>
     href: `${s.href}/${l.slug}`,
   })),
 );
+
+// Blog: hub, published categories, and published posts, from the same data as
+// the pages and sitemap.xml. New posts appear here with no edit to this file.
+const blogPages: SitemapLink[] = getBlogRoutes().map((r) => ({
+  label: r.label,
+  href: r.href,
+}));
 
 const legalPages: SitemapLink[] = [
   { label: 'Privacy Policy', href: ROUTES.privacyPolicy },
@@ -140,6 +148,10 @@ export default function SitemapPage() {
 
         <Section heading="Service + City Pages">
           <LinkList links={serviceCityPages} />
+        </Section>
+
+        <Section heading="Blog">
+          <LinkList links={blogPages} />
         </Section>
 
         <Section heading="Legal & Utility">

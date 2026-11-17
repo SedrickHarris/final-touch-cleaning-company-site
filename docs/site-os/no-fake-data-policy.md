@@ -2,6 +2,8 @@
 
 A standalone universal policy preventing invented or unsupported data across schema, copy, CTAs, reviews, ratings, trust signals, business credentials, listings, addresses, phone numbers, service claims, images, APIs, and external data sources. Applies to every Site OS Master client build regardless of session, stack, workflow mode, or page type.
 
+**Before flagging any claim as unverified, read `docs/site-os/owner-confirmed-facts.md`. Facts listed there are verified: do not add TODO-VERIFY flags to them or remove them as unsupported.**
+
 ## Purpose
 
 Prevent fabricated, invented, scraped-without-consent, or auto-pulled-without-verification data from appearing in production client websites — in body copy, structured data (schema), CTAs, trust signals, images, or external integrations.
