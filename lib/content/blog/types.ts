@@ -39,6 +39,8 @@ export type BlogPost = {
   /** ISO date (YYYY-MM-DD). Omit when not owner-confirmed. */
   publishedAt?: string;
   updatedAt?: string;
+  /** Owner-supplied article image. Falls back to the placeholder when omitted. */
+  image?: { src: string; alt: string };
   pillar: { label: string; href: string };
   /** Published post slugs only. */
   relatedSlugs: ReadonlyArray<string>;

@@ -37,6 +37,10 @@ export default function BlogHubPage() {
         eyebrow="The Final Touch Blog"
         heading="Commercial Cleaning Guides from the Final Touch Cleaning Team"
         emphasis="Final Touch Cleaning Team"
+        image={{
+          src: '/images/blog/heros/final-touch-commercial-cleaning-guides-southern-nevada.webp',
+          alt: 'Modern Las Vegas office lobby and hallway with a janitorial cart and a view of the city skyline.',
+        }}
         sub="Practical advice for contractors, property managers, and business owners across Southern Nevada, written from hands-on cleaning work."
       >
         <BlogCategoryChips />

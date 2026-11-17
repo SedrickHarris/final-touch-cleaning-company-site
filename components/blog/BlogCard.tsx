@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import ServiceImagePlaceholder from '@/components/shared/ServiceImagePlaceholder';
 import { getCategory, postHref } from '@/lib/constants/blog';
@@ -9,8 +10,7 @@ type Props = {
   featured?: boolean;
 };
 
-// TODO: replace the placeholder with an owner-supplied photo (next/image,
-// same aspect ratio, object-cover). No stock or AI photography.
+// Uses post.image when set; otherwise the placeholder. Owner-supplied images only.
 export default function BlogCard({ post, featured = false }: Props) {
   const category = getCategory(post.categorySlug);
   const TitleTag = featured ? 'h2' : 'h3';
@@ -22,12 +22,28 @@ export default function BlogCard({ post, featured = false }: Props) {
         featured ? 'flex-col lg:grid lg:grid-cols-2' : 'h-full flex-col'
       }`}
     >
-      <div className={featured ? 'lg:h-full' : ''}>
-        <ServiceImagePlaceholder
-          aspect="16/10"
-          className={featured ? 'lg:h-full lg:aspect-auto lg:min-h-[320px] lg:border-b-0 lg:border-r' : ''}
-        />
-      </div>
+      {post.image ? (
+        <div
+          className={`relative aspect-[16/10] w-full overflow-hidden border-b border-border-subtle bg-light-gray ${
+            featured ? 'lg:aspect-auto lg:min-h-[320px] lg:border-b-0 lg:border-r' : ''
+          }`}
+        >
+          <Image
+            src={post.image.src}
+            alt={post.image.alt}
+            fill
+            sizes={featured ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'}
+            className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+      ) : (
+        <div className={featured ? 'lg:h-full' : ''}>
+          <ServiceImagePlaceholder
+            aspect="16/10"
+            className={featured ? 'lg:h-full lg:aspect-auto lg:min-h-[320px] lg:border-b-0 lg:border-r' : ''}
+          />
+        </div>
+      )}
       <div className={`flex flex-1 flex-col ${featured ? 'p-6 sm:p-8 lg:p-10 lg:justify-center' : 'p-6'}`}>
         {category && (
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-blue">

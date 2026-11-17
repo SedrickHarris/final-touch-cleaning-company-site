@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { categoryHref, formatPostDate, getCategory, getReadTimeMinutes } from '@/lib/constants/blog';
 import type { BlogPost } from '@/lib/content/blog/types';
@@ -27,11 +28,23 @@ export default function BlogPostHeader({ post }: { post: BlogPost }) {
           {' · '}
           {minutes} min read
         </p>
-        {/* TODO: replace with an owner-supplied project photo (21:9, object-cover). */}
-        <div
-          aria-hidden="true"
-          className="mt-8 aspect-[21/9] w-full overflow-hidden rounded-[16px] border border-border-subtle bg-[radial-gradient(120%_80%_at_30%_20%,var(--color-soft-blue),var(--color-brand-white))]"
-        />
+        {post.image ? (
+          <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-[16px] border border-border-subtle bg-light-gray sm:aspect-[21/9]">
+            <Image
+              src={post.image.src}
+              alt={post.image.alt}
+              fill
+              priority
+              sizes="(min-width: 1280px) 1216px, 100vw"
+              className="object-cover object-[50%_65%]"
+            />
+          </div>
+        ) : (
+          <div
+            aria-hidden="true"
+            className="mt-8 aspect-[21/9] w-full overflow-hidden rounded-[16px] border border-border-subtle bg-[radial-gradient(120%_80%_at_30%_20%,var(--color-soft-blue),var(--color-brand-white))]"
+          />
+        )}
       </div>
     </header>
   );

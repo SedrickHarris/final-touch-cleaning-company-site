@@ -18,6 +18,10 @@ export const posts: ReadonlyArray<BlogPost> = [
     status: 'published',
     featured: true,
     publishedAt: '2026-11-17',
+    image: {
+      src: '/images/blog/articles/final-touch-what-should-be-cleaned-after-construction-work.webp',
+      alt: 'Empty finished office floor with a vacuum and a folded microfiber cloth on a windowsill overlooking the Las Vegas Valley.',
+    },
     pillar: { label: 'Post-Construction Cleanup', href: '/services/post-construction-cleanup' },
     relatedSlugs: [],
     blocks: [
