@@ -5330,3 +5330,14 @@ Did not deploy.
 **Verified:** lint (0 errors; the existing GTM warning in layout.tsx remains), type-check, and build pass. `sitemap.xml` URLs 127 to 129 (+2: the category and the post; `/blog` was already listed once). Exactly the three blog URLs, no trailing slash, no `lastmod` (post has no date). `/sitemap` links to all three blog URLs, which resolve. HTML file count unchanged at 141. No em dashes. `public/robots.txt` references the sitemap.
 
 **Future posts:** verified by reading the code, not by a stub test. A new entry in `posts.ts` flows through `getPublishedPosts()` into `getBlogRoutes()`, which feeds both files, and into `generateStaticParams`. A category appears once it has a published post.
+
+
+## Post 1 closing banner heading and /free-quote audit (2026-11-17)
+
+**Workflow:** Fast Build Batch. **Status:** Implemented pending review. No commit, deploy, or package changes.
+
+**Changed:** `app/blog/[slug]/page.tsx`: the post template's closing `CTASection` heading is now "Talk to us about your project" (was "Ready to schedule your post-construction cleaning?"). Sub line, buttons, and blue tone unchanged. The category and hub banners are unchanged. Article `blocks` untouched.
+
+**/free-quote audit (post page, 5 links):** site header "Request a Free Quote" button (Header.tsx, global); inline CTA block; article closing paragraph; sidebar quote card; closing banner. The earlier "one more in the closing area" was the global header button, not a duplicate. No link removed.
+
+**Verified:** lint, type-check, build pass. One H1. Article JSON-LD and FAQPage JSON-LD byte-identical before and after. Sitemap 129 URLs, 141 HTML files. No em dashes.

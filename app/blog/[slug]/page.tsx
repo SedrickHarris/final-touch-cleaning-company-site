@@ -205,7 +205,7 @@ function PostView({ slug }: { slug: string }) {
       )}
 
       <CTASection
-        heading="Ready to schedule your post-construction cleaning?"
+        heading="Talk to us about your project"
         sub="We will walk your project and define a scope that fits your handover schedule."
         primaryCta={{ label: CTAS.primary, href: ROUTES.freeQuote }}
         secondaryCta={{ label: `${CTAS.call} · ${SITE.phone.display}`, href: SITE.phone.href }}
