@@ -60,12 +60,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Smoke and Odor Removal Cleaning in Las Vegas, NV',
   serviceType: 'Smoke and Odor Removal Cleaning',
-  provider: {
-    '@type': 'Organization',
-    name: 'Final Touch Cleaning Company LLC',
-    url: SITE.url,
-    telephone: '+17024445077',
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
   areaServed: { '@type': 'City', name: 'Las Vegas, NV' },
 };
 

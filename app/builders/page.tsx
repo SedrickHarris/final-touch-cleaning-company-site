@@ -105,13 +105,7 @@ const collectionPageJsonLd = {
   description:
     'Post-construction cleanup for new builds across the Las Vegas Valley, NV. All major Las Vegas Valley builders.',
   url: `${SITE.url}/builders`,
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

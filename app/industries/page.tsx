@@ -208,13 +208,7 @@ const collectionPageJsonLd = {
   description:
     'Commercial cleaning tailored to your industry across Clark County, NV. Medical offices, law firms, restaurants, retail stores, and property management.',
   url: `${SITE.url}/industries`,
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

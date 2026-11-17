@@ -60,12 +60,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Allergy and Dust Mitigation Cleaning in Las Vegas, NV',
   serviceType: 'Allergy and Dust Mitigation Cleaning',
-  provider: {
-    '@type': 'Organization',
-    name: 'Final Touch Cleaning Company LLC',
-    url: SITE.url,
-    telephone: '+17024445077',
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
   areaServed: { '@type': 'City', name: 'Las Vegas, NV' },
 };
 

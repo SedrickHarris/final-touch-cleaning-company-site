@@ -117,13 +117,7 @@ const collectionPageJsonLd = {
   description:
     'Professional cleaning for active adult communities in Las Vegas and Henderson, NV. Move-in, move-out, and deep cleaning.',
   url: `${SITE.url}/communities`,
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: '+17024445077',
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

@@ -122,13 +122,7 @@ const collectionPageJsonLd = {
   description:
     'Seasonal cleaning services in Las Vegas, NV for commercial properties, offices, and managed units. Spring, summer, holiday, move-out, and year-reset cleans.',
   url: `${SITE.url}/seasonal`,
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

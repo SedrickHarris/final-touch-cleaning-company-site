@@ -89,12 +89,7 @@ const collectionJsonLd = {
   name: 'Cleaning Solutions for Common Problems in Las Vegas, NV',
   url: `${SITE.url}/cleaning-solutions`,
   about: solutionCards.map((c) => ({ '@type': 'Service', name: c.name })),
-  provider: {
-    '@type': 'Organization',
-    name: 'Final Touch Cleaning Company LLC',
-    url: SITE.url,
-    telephone: '+17024445077',
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

@@ -67,13 +67,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Toll Brothers Post-Construction Cleanup',
   serviceType: 'Post-Construction Cleaning',
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
   areaServed: [
     { '@type': 'AdministrativeArea', name: `${SITE.serviceArea.county}, ${SITE.serviceArea.stateAbbr}` },
     ...SITE.serviceArea.cities.map((name) => ({

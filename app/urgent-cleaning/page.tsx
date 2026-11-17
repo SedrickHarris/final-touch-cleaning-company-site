@@ -107,13 +107,7 @@ const collectionPageJsonLd = {
   description:
     'Urgent cleaning services for Las Vegas offices, commercial spaces, and move-out situations. Call to check availability.',
   url: `${SITE.url}/urgent-cleaning`,
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: '+17024445077',
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
 };
 
 const faqJsonLd = {

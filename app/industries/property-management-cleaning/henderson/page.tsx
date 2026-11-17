@@ -161,13 +161,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Property Management Cleaning in Henderson, NV',
   serviceType: 'Property Management Cleaning',
-  provider: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    telephone: SITE.phone.href.replace('tel:', ''),
-    email: SITE.email.display,
-  },
+  provider: { '@id': `${SITE.url}/#localbusiness` },
   areaServed: [
     { '@type': 'City', name: 'Henderson', containedInPlace: { '@type': 'State', name: 'Nevada' } },
     { '@type': 'City', name: 'Las Vegas', containedInPlace: { '@type': 'State', name: 'Nevada' } },
