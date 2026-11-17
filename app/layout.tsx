@@ -6,6 +6,12 @@ import Footer from '@/components/layout/Footer';
 import MotionProvider from '@/components/motion/MotionProvider';
 import { OG_DEFAULT_IMAGE, SEO_DEFAULTS } from '@/lib/constants/seo';
 import { SITE } from '@/lib/constants/site';
+import {
+  CITY_AREA_SERVED,
+  FOUNDERS,
+  LOCAL_BUSINESS_ID,
+  SERVICE_TYPES,
+} from '@/lib/constants/schema';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -23,16 +29,16 @@ const manrope = Manrope({
   weight: ['400', '500', '600', '700'],
 });
 
-// Global LocalBusiness JSON-LD — single site-wide node per
-// docs/site-os/build-status-reconciliation.md §5. Service-area business:
-// NO streetAddress, NO aggregateRating, NO review (self-serving). Owner-
-// confirmed data only. Per-page LocalBusiness nodes on city pages stay
-// (city-scoped areaServed variant); the homepage node was removed earlier
-// to avoid duplication.
+// Global LocalBusiness JSON-LD: the ONLY LocalBusiness node on the site, per
+// docs/site-os/build-status-reconciliation.md §5. Every other page references
+// it by @id (LOCAL_BUSINESS_ID) instead of redefining it: service pages via
+// `provider`, city-tier location pages via cityServiceSchema() in
+// lib/constants/schema.ts. Service-area business: NO streetAddress, NO
+// aggregateRating, NO review (self-serving). Owner-confirmed data only.
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': `${SITE.url}/#localbusiness`,
+  '@id': LOCAL_BUSINESS_ID,
   name: 'Final Touch Cleaning Company LLC',
   url: SITE.url,
   telephone: '+17024445077',
@@ -40,11 +46,10 @@ const localBusinessJsonLd = {
   image: `${SITE.url}/images/logo/final-touch-cleaning-company-logo.webp`,
   description:
     'Family-owned commercial cleaning company serving Las Vegas, Henderson, North Las Vegas, and Boulder City in Clark County, NV.',
+  founder: FOUNDERS,
+  serviceType: SERVICE_TYPES,
   areaServed: [
-    { '@type': 'City', name: 'Las Vegas' },
-    { '@type': 'City', name: 'Henderson' },
-    { '@type': 'City', name: 'North Las Vegas' },
-    { '@type': 'City', name: 'Boulder City' },
+    ...CITY_AREA_SERVED,
     { '@type': 'AdministrativeArea', name: 'Clark County' },
   ],
   sameAs: ['https://www.google.com/maps?cid=5303198646776788086'],

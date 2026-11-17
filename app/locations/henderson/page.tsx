@@ -13,6 +13,7 @@ import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
+import { cityServiceSchema } from '@/lib/constants/schema';
 
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Services in Henderson, NV',
@@ -81,6 +82,8 @@ const faq = [
     a: `Yes. Final Touch offers recurring commercial cleaning programs for Henderson offices and facilities. Each program is scoped through a free walkthrough - by phone or a brief on-site visit - so the schedule and scope reflect the actual space. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to get started.`,
   },
 ];
+
+const cityServiceJsonLd = cityServiceSchema('Henderson');
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -405,6 +408,10 @@ export default function HendersonPage() {
         tone="blue"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

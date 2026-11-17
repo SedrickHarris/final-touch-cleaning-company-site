@@ -13,6 +13,7 @@ import { CTAS, SITE } from '@/lib/constants/site';
 import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import Breadcrumb from '@/components/shared/Breadcrumb';
+import { cityServiceSchema } from '@/lib/constants/schema';
 
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Services in Boulder City, NV',
@@ -77,6 +78,8 @@ const faq = [
     a: `Yes. Final Touch provides commercial cleaning for small businesses, storefronts, and office spaces in Boulder City. Both one-time and recurring programs are available, and each job is scoped through a free walkthrough before quoting. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to discuss your space.`,
   },
 ];
+
+const cityServiceJsonLd = cityServiceSchema('Boulder City');
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -373,6 +376,10 @@ export default function BoulderCityPage() {
         tone="blue"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -13,6 +13,7 @@ import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
+import { cityServiceSchema } from '@/lib/constants/schema';
 
 export const metadata: Metadata = {
   title: 'Family-Owned Commercial Cleaning in Las Vegas, NV',
@@ -80,6 +81,8 @@ const faq = [
     a: `Final Touch is a locally owned, family-run commercial cleaning company based in Southern Nevada, not a franchise. ${SITE.owners} own and operate it. When you call, you reach the owners or the team directly.`,
   },
 ];
+
+const cityServiceJsonLd = cityServiceSchema('Las Vegas');
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -382,6 +385,10 @@ export default function LasVegasPage() {
         tone="blue"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

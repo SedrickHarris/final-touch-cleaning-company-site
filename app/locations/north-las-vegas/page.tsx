@@ -13,6 +13,7 @@ import { OG_DEFAULTS } from '@/lib/constants/seo';
 import { ROUTES, SERVICES } from '@/lib/constants/routes';
 import { getNeighborhoodCards, getOtherCityCards } from '@/lib/constants/locations';
 import Breadcrumb from '@/components/shared/Breadcrumb';
+import { cityServiceSchema } from '@/lib/constants/schema';
 
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Services in North Las Vegas, NV',
@@ -82,6 +83,8 @@ const faq = [
     a: `Final Touch provides commercial cleaning for offices, janitorial programs, and post-construction cleanup throughout North Las Vegas. Warehouse common-area and facility office cleaning falls within scope. For specific commercial or warehouse facility questions, a free walkthrough - by phone or on-site - scopes the right program. The company is owner-led, licensed, and insured. Call ${SITE.phone.display} to discuss your facility.`,
   },
 ];
+
+const cityServiceJsonLd = cityServiceSchema('North Las Vegas');
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -407,6 +410,10 @@ export default function NorthLasVegasPage() {
         tone="blue"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
